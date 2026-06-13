@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khulna University CSE - Calculus Solution Repository</title>
-  
+
+  <!-- Flash-prevention: apply theme before any paint -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -144,6 +153,181 @@
       margin-left: 0.375rem;
       font-family: 'Fira Code', monospace;
     }
+
+
+    /* === Dark Mode Overrides === */
+    [data-theme="dark"] body {
+      background-color: #0d1117;
+      color: #e6edf3;
+    }
+    [data-theme="dark"] .bg-white {
+      background-color: #161b22;
+    }
+    [data-theme="dark"] .border-slate-200\/80 {
+      border-color: #30363d;
+    }
+    [data-theme="dark"] .text-slate-900,
+    [data-theme="dark"] h2.text-slate-900,
+    [data-theme="dark"] h3.text-blue-900,
+    [data-theme="dark"] h4.text-slate-900 {
+      color: #e6edf3;
+    }
+    [data-theme="dark"] .text-slate-700 {
+      color: #c9d1d9;
+    }
+    [data-theme="dark"] .text-slate-800 {
+      color: #e6edf3;
+    }
+    [data-theme="dark"] .text-slate-300 {
+      color: #8b949e;
+    }
+    [data-theme="dark"] .text-slate-400 {
+      color: #6e7681;
+    }
+    [data-theme="dark"] .text-slate-600 {
+      color: #8b949e;
+    }
+    [data-theme="dark"] .border-slate-100 {
+      border-color: #30363d;
+    }
+    [data-theme="dark"] .bg-slate-100 {
+      background-color: #1c2128;
+      color: #8b949e;
+    }
+    [data-theme="dark"] .bg-slate-50 {
+      background-color: #0d1117;
+    }
+    [data-theme="dark"] header .text-emerald-400 {
+      color: #3fb950;
+    }
+    [data-theme="dark"] .text-blue-600,
+    [data-theme="dark"] .toc-group-link:hover,
+    [data-theme="dark"] .toc-q-link:hover,
+    [data-theme="dark"] .toc-q-link.active {
+      color: #58a6ff;
+    }
+    [data-theme="dark"] .hover\:text-blue-800:hover {
+      color: #79c0ff;
+    }
+    [data-theme="dark"] .border-blue-600 {
+      border-color: #1f6feb;
+    }
+    [data-theme="dark"] .text-blue-600 {
+      color: #58a6ff;
+    }
+    [data-theme="dark"] .bg-blue-50\/50 {
+      background-color: #0c2d6b;
+      border-left-color: #1f6feb;
+    }
+    [data-theme="dark"] .text-blue-900 {
+      color: #79c0ff;
+    }
+    [data-theme="dark"] .bg-amber-100 {
+      background-color: #3d2700;
+    }
+    [data-theme="dark"] .text-amber-800 {
+      color: #d29922;
+    }
+    [data-theme="dark"] .bg-emerald-50 {
+      background-color: #0d2818;
+    }
+    [data-theme="dark"] .border-emerald-100 {
+      border-color: #238636;
+    }
+    [data-theme="dark"] .bg-blue-600 {
+      background-color: #1f6feb;
+    }
+    [data-theme="dark"] .hover\:bg-blue-700:hover {
+      background-color: #388bfd;
+    }
+    [data-theme="dark"] footer {
+      background-color: #161b22;
+      border-color: #30363d;
+      color: #6e7681;
+    }
+    [data-theme="dark"] .toc-year-btn {
+      color: #e6edf3;
+    }
+    [data-theme="dark"] .toc-year-btn:hover {
+      background: #1c2128;
+    }
+    [data-theme="dark"] .toc-year-btn .toc-arrow {
+      color: #6e7681;
+    }
+    [data-theme="dark"] .toc-group-link {
+      color: #8b949e;
+    }
+    [data-theme="dark"] .toc-group-link:hover {
+      background: #1c2128;
+    }
+    [data-theme="dark"] .toc-q-link {
+      color: #6e7681;
+    }
+    [data-theme="dark"] .toc-q-link:hover {
+      background: #1c2128;
+    }
+    [data-theme="dark"] .toc-badge {
+      background: #1c2128;
+      color: #8b949e;
+    }
+    [data-theme="dark"] .bg-slate-900 {
+      background-color: #161b22;
+    }
+    [data-theme="dark"] .border-slate-800 {
+      border-color: #30363d;
+    }
+    [data-theme="dark"] .from-blue-900 {
+      --tw-gradient-from: #0c2d6b;
+    }
+    [data-theme="dark"] .to-indigo-950 {
+      --tw-gradient-to: #111827;
+    }
+    [data-theme="dark"] .bg-emerald-500 {
+      background-color: #238636;
+    }
+    [data-theme="dark"] .bg-emerald-500.text-slate-900 {
+      color: #e6edf3;
+    }
+    [data-theme="dark"] .border-emerald-500 {
+      border-color: #238636;
+    }
+    [data-theme="dark"] .hover\:bg-slate-50:hover {
+      background-color: #1c2128;
+    }
+    /* MathJax text contrast in dark mode */
+    [data-theme="dark"] .mjx-container {
+      color: #e6edf3;
+    }
+    [data-theme="dark"] .mjx-container[style] {
+      color: #e6edf3 !important;
+    }
+    [data-theme="dark"] mjx-container,
+    [data-theme="dark"] mjx-container * {
+      color: #e6edf3 !important;
+    }
+    /* Theme toggle button */
+    .theme-toggle-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.375rem;
+      border-radius: 0.5rem;
+      color: #e6edf3;
+      transition: background 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .theme-toggle-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    [data-theme="dark"] .theme-toggle-btn {
+      color: #f0c040;
+    }
+    .theme-toggle-btn svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
@@ -156,9 +340,19 @@
         <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2">Calculus Question Bank Solutions</h1>
         <p class="text-slate-300 mt-1 text-sm md:text-base">Comprehensive step-by-step solved archive: CSE-25 (Math 1151 / CSE)</p>
       </div>
-      <div class="text-right md:text-right flex flex-col items-end">
-        <span class="text-xs text-slate-300">Format: Responsive Math Canvas</span>
-        <span class="text-xs text-emerald-400 font-semibold mt-1">Fully Solved Continuous Guide</span>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:none">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+        <div class="text-right md:text-right flex flex-col items-end">
+          <span class="text-xs text-slate-300">Format: Responsive Math Canvas</span>
+          <span class="text-xs text-emerald-400 font-semibold mt-1">Fully Solved Continuous Guide</span>
+        </div>
       </div>
     </div>
   </header>
@@ -400,6 +594,134 @@
             </div> <!-- /.space-y-8 (CT1) -->
           </div> <!-- /#cse25-ct1 -->
 
+          <!-- ============ CT2 (Sec A) ============ -->
+          <div id="cse25-ct2" data-toc="group" data-toc-label="CT2 (Sec A)">
+            <div class="bg-blue-50/50 border-l-4 border-blue-500 p-4 rounded-r-xl">
+              <h3 class="font-bold text-blue-900">CT2 — Section A (CSE)</h3>
+            </div>
+            <div class="space-y-8 mt-6">
+
+          <!-- CSE-25: CT2 (Sec A) Q1 -->
+          <article id="cse25-ct2-q1" data-toc="question" data-toc-label="Q1" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q1</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Expand $f(x) = \dfrac{1}{x+1}$ in Taylor series in power of $x - 3$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Taylor series definition</p>
+              <p>The Taylor series expansion about $x = a$ is:</p>
+              <div class="overflow-x-auto">$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^n$$</div>
+              <p>Here $a = 3$ and $f(x) = (x+1)^{-1}$.</p>
+              <p class="font-semibold text-slate-900">Step 2: Find the $n$-th derivative</p>
+              <div class="overflow-x-auto">$$f^{(n)}(x) = (-1)^n n! (x+1)^{-(n+1)}$$</div>
+              <p class="font-semibold text-slate-900">Step 3: Evaluate at $x = 3$</p>
+              <div class="overflow-x-auto">$$f^{(n)}(3) = \frac{(-1)^n n!}{4^{n+1}}$$</div>
+              <p class="font-semibold text-slate-900">Step 4: Substitute into the series</p>
+              <div class="overflow-x-auto">$$f(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{4^{n+1}} (x-3)^n$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$f(x) = \frac{1}{4} - \frac{1}{16}(x-3) + \frac{1}{64}(x-3)^2 - \frac{1}{256}(x-3)^3 + \dots$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT2 (Sec A) Q2 -->
+          <article id="cse25-ct2-q2" data-toc="question" data-toc-label="Q2" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q2</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Verify Rolle's theorem for $f(x) = x^2 - 3x + 2$ in $[1,2]$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Conditions of Rolle's Theorem</p>
+              <p>If $f$ is continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a)=f(b)$, then $\exists c \in (a,b)$ with $f'(c)=0$.</p>
+              <p class="font-semibold text-slate-900">Step 2: Verify conditions</p>
+              <p>$f(x)=x^2-3x+2$ is a polynomial, hence continuous on $[1,2]$ and differentiable on $(1,2)$.</p>
+              <p>$f(1)=1-3+2=0$, $f(2)=4-6+2=0$, so $f(1)=f(2)$.</p>
+              <p class="font-semibold text-slate-900">Step 3: Find $c$</p>
+              <p>$f'(x) = 2x-3$. Set $f'(c)=0$:</p>
+              <div class="overflow-x-auto">$$2c-3=0 \implies c = \frac{3}{2} \in (1,2)$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong> Rolle's theorem is verified with $c = \frac{3}{2}$.</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT2 (Sec A) Q3 -->
+          <article id="cse25-ct2-q3" data-toc="question" data-toc-label="Q3" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q3</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\displaystyle\lim_{x \to 0} \left[ \dfrac{1}{x^2} - \dfrac{1}{\sin^2 x} \right]$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Combine into a single fraction</p>
+              <div class="overflow-x-auto">$$L = \lim_{x \to 0} \frac{\sin^2 x - x^2}{x^2 \sin^2 x}$$</div>
+              <p>This is $\frac{0}{0}$ indeterminate form. Using $\sin^2 x \sim x^2$ as $x\to0$, replace $x^2\sin^2 x$ with $x^4$:</p>
+              <div class="overflow-x-auto">$$L = \lim_{x \to 0} \frac{\sin^2 x - x^2}{x^4}$$</div>
+              <p class="font-semibold text-slate-900">Step 2: Use Maclaurin series for $\sin x$</p>
+              <div class="overflow-x-auto">$$\sin x = x - \frac{x^3}{6} + \frac{x^5}{120} - \dots$$</div>
+              <div class="overflow-x-auto">$$\sin^2 x = x^2 - \frac{x^4}{3} + \mathcal{O}(x^6)$$</div>
+              <p class="font-semibold text-slate-900">Step 3: Substitute and evaluate</p>
+              <div class="overflow-x-auto">$$L = \lim_{x \to 0} \frac{-\frac{x^4}{3} + \mathcal{O}(x^6)}{x^4} = -\frac{1}{3}$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$\boxed{-\frac{1}{3}}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT2 (Sec A) Q4 -->
+          <article id="cse25-ct2-q4" data-toc="question" data-toc-label="Q4" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q4</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $u = \tan^{-1}\left( \dfrac{x^3 + y^3}{x+y} \right)$ then show that $x u_x + y u_y = \sin 2u$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Rewrite and check homogeneity</p>
+              <p>Let $z = \tan u = \dfrac{x^3+y^3}{x+y}$. Then:</p>
+              <div class="overflow-x-auto">$$z(tx, ty) = \frac{t^3(x^3+y^3)}{t(x+y)} = t^2 z(x,y)$$</div>
+              <p>So $z$ is homogeneous of degree $n=2$.</p>
+              <p class="font-semibold text-slate-900">Step 2: Apply Euler's Theorem</p>
+              <div class="overflow-x-auto">$$x \frac{\partial z}{\partial x} + y \frac{\partial z}{\partial y} = 2z$$</div>
+              <p class="font-semibold text-slate-900">Step 3: Express in terms of $u$</p>
+              <p>Since $z = \tan u$: $\frac{\partial z}{\partial x} = \sec^2 u \cdot u_x$, $\frac{\partial z}{\partial y} = \sec^2 u \cdot u_y$.</p>
+              <div class="overflow-x-auto">$$\sec^2 u (x u_x + y u_y) = 2 \tan u$$</div>
+              <div class="overflow-x-auto">$$x u_x + y u_y = 2 \sin u \cos u = \sin 2u$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong> $x u_x + y u_y = \sin 2u$ (proved).</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT2 (Sec A) Q5 -->
+          <article id="cse25-ct2-q5" data-toc="question" data-toc-label="Q5" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q5</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Determine the extremum value and extremum points of $f(x) = \sin x + \cos 2x$, $0 &lt; x &lt; 2\pi$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Find critical points</p>
+              <div class="overflow-x-auto">$$f'(x) = \cos x - 2\sin 2x = \cos x(1 - 4\sin x) = 0$$</div>
+              <p>$\cos x = 0 \implies x = \frac{\pi}{2}, \frac{3\pi}{2}$.</p>
+              <p>$\sin x = \frac{1}{4} \implies x = \sin^{-1}\!\left(\frac{1}{4}\right),\; \pi - \sin^{-1}\!\left(\frac{1}{4}\right)$.</p>
+              <p class="font-semibold text-slate-900">Step 2: Second derivative test</p>
+              <div class="overflow-x-auto">$$f''(x) = -\sin x - 4\cos 2x$$</div>
+              <p>At $x=\frac{\pi}{2}$: $f''=3>0$ (min). $f(\frac{\pi}{2})=0$.</p>
+              <p>At $x=\frac{3\pi}{2}$: $f''=5>0$ (min). $f(\frac{3\pi}{2})=-2$.</p>
+              <p>Where $\sin x = \frac{1}{4}$: $f''=-\frac{15}{4}<0$ (max). $f(x)=\frac{9}{8}$.</p>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong> Minima at $(\frac{\pi}{2},0)$ and $(\frac{3\pi}{2},-2)$; maxima at $x=\sin^{-1}(\frac{1}{4}),\pi-\sin^{-1}(\frac{1}{4})$ with value $\frac{9}{8}$.</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+            </div> <!-- /.space-y-8 (CT2) -->
+          </div> <!-- /#cse25-ct2 -->
+
           <!-- ============ ECE CT1 ============ -->
           <div id="cse25-ece-ct1" data-toc="group" data-toc-label="ECE CT1">
             <div class="bg-blue-50/50 border-l-4 border-blue-500 p-4 rounded-r-xl">
@@ -575,6 +897,128 @@
             </div> <!-- /.space-y-8 (ECE CT1) -->
           </div> <!-- /#cse25-ece-ct1 -->
 
+          <!-- ============ ECE CT2 ============ -->
+          <div id="cse25-ece-ct2" data-toc="group" data-toc-label="ECE CT2">
+            <div class="bg-blue-50/50 border-l-4 border-blue-500 p-4 rounded-r-xl">
+              <h3 class="font-bold text-blue-900">CT2 — Section A (ECE)</h3>
+            </div>
+            <div class="space-y-8 mt-6">
+
+          <!-- CSE-25: ECE CT2 Q1 -->
+          <article id="cse25-ece-ct2-q1" data-toc="question" data-toc-label="Q1" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT2 - Q1</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Expand $f(x) = \sin x$ in Taylor series in power of $x - \dfrac{\pi}{2}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Taylor series about $a = \frac{\pi}{2}$</p>
+              <div class="overflow-x-auto">$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(\frac{\pi}{2})}{n!} \left(x-\frac{\pi}{2}\right)^n$$</div>
+              <p class="font-semibold text-slate-900">Step 2: Derivatives of $\sin x$ at $\frac{\pi}{2}$</p>
+              <p>$f(\frac{\pi}{2})=1$, $f'(\frac{\pi}{2})=0$, $f''(\frac{\pi}{2})=-1$, $f'''(\frac{\pi}{2})=0$, $f^{(4)}(\frac{\pi}{2})=1$, ...</p>
+              <p>Odd derivatives vanish; even ones alternate: $f^{(2k)}(\frac{\pi}{2}) = (-1)^k$.</p>
+              <p class="font-semibold text-slate-900">Step 3: Construct the series</p>
+              <div class="overflow-x-auto">$$\sin x = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} \left(x-\frac{\pi}{2}\right)^{2n}$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$\sin x = 1 - \frac{1}{2!}\left(x-\frac{\pi}{2}\right)^2 + \frac{1}{4!}\left(x-\frac{\pi}{2}\right)^4 - \dots$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT2 Q2 -->
+          <article id="cse25-ece-ct2-q2" data-toc="question" data-toc-label="Q2" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT2 - Q2</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Verify mean value theorem for $f(x) = 3 + 2x - x^2$ in $[0,1]$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Conditions of MVT</p>
+              <p>$f$ is a polynomial, hence continuous on $[0,1]$ and differentiable on $(0,1)$.</p>
+              <p class="font-semibold text-slate-900">Step 2: Apply the theorem</p>
+              <p>There exists $c \in (0,1)$ such that $f'(c) = \frac{f(1)-f(0)}{1-0}$.</p>
+              <p>$f(0)=3$, $f(1)=4$.</p>
+              <div class="overflow-x-auto">$$f'(c) = \frac{4-3}{1} = 1$$</div>
+              <p>$f'(x) = 2-2x$, so $2-2c=1 \implies c = \frac{1}{2}$.</p>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong> MVT is verified with $c = \frac{1}{2} \in (0,1)$.</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT2 Q3 -->
+          <article id="cse25-ece-ct2-q3" data-toc="question" data-toc-label="Q3" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT2 - Q3</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\displaystyle\lim_{x \to 0} \left[ \dfrac{1}{x} - \dfrac{1}{x^2}\log(1+x) \right]$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Combine into a single fraction</p>
+              <div class="overflow-x-auto">$$L = \lim_{x \to 0} \frac{x - \log(1+x)}{x^2}$$</div>
+              <p>This is $\frac{0}{0}$ indeterminate form.</p>
+              <p class="font-semibold text-slate-900">Step 2: Use Maclaurin series for $\log(1+x)$</p>
+              <div class="overflow-x-auto">$$\log(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \dots$$</div>
+              <p class="font-semibold text-slate-900">Step 3: Substitute and evaluate</p>
+              <div class="overflow-x-auto">$$L = \lim_{x \to 0} \frac{x - \left(x - \frac{x^2}{2} + \frac{x^3}{3} - \dots\right)}{x^2} = \lim_{x \to 0} \left(\frac{1}{2} - \frac{x}{3} + \dots\right) = \frac{1}{2}$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong> $\boxed{\dfrac{1}{2}}$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT2 Q4 -->
+          <article id="cse25-ece-ct2-q4" data-toc="question" data-toc-label="Q4" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT2 - Q4</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $u = \sin^{-1}\left( \dfrac{x^2 + y^2}{x+y} \right)$ then show that $x u_x + y u_y = \tan u$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Rewrite and check homogeneity</p>
+              <p>Let $z = \sin u = \dfrac{x^2+y^2}{x+y}$. Then:</p>
+              <div class="overflow-x-auto">$$z(tx, ty) = \frac{t^2(x^2+y^2)}{t(x+y)} = t^1 z(x,y)$$</div>
+              <p>So $z$ is homogeneous of degree $n=1$.</p>
+              <p class="font-semibold text-slate-900">Step 2: Apply Euler's Theorem</p>
+              <div class="overflow-x-auto">$$x \frac{\partial z}{\partial x} + y \frac{\partial z}{\partial y} = z$$</div>
+              <p class="font-semibold text-slate-900">Step 3: Express in terms of $u$</p>
+              <p>Since $z = \sin u$: $\frac{\partial z}{\partial x} = \cos u \cdot u_x$, $\frac{\partial z}{\partial y} = \cos u \cdot u_y$.</p>
+              <div class="overflow-x-auto">$$\cos u (x u_x + y u_y) = \sin u$$</div>
+              <div class="overflow-x-auto">$$x u_x + y u_y = \tan u$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong> $x u_x + y u_y = \tan u$ (proved).</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT2 Q5 -->
+          <article id="cse25-ece-ct2-q5" data-toc="question" data-toc-label="Q5" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT2 - Q5</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Determine the extremum values and extremum points of $f(x) = x + \sin 2x$, $0 &lt; x &lt; 2\pi$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Find critical points</p>
+              <div class="overflow-x-auto">$$f'(x) = 1 + 2\cos 2x = 0 \implies \cos 2x = -\frac{1}{2}$$</div>
+              <p>In $0&lt;x&lt;2\pi$: $2x = \frac{2\pi}{3}, \frac{4\pi}{3}, \frac{8\pi}{3}, \frac{10\pi}{3}$.</p>
+              <div class="overflow-x-auto">$$x = \frac{\pi}{3},\; \frac{2\pi}{3},\; \frac{4\pi}{3},\; \frac{5\pi}{3}$$</div>
+              <p class="font-semibold text-slate-900">Step 2: Second derivative test</p>
+              <div class="overflow-x-auto">$$f''(x) = -4\sin 2x$$</div>
+              <p>At $x=\frac{\pi}{3}$: $f''=-2\sqrt{3}&lt;0$ (max). Value: $\frac{\pi}{3}+\frac{\sqrt{3}}{2}$.</p>
+              <p>At $x=\frac{2\pi}{3}$: $f''=2\sqrt{3}&gt;0$ (min). Value: $\frac{2\pi}{3}-\frac{\sqrt{3}}{2}$.</p>
+              <p>At $x=\frac{4\pi}{3}$: $f''=-2\sqrt{3}&lt;0$ (max). Value: $\frac{4\pi}{3}+\frac{\sqrt{3}}{2}$.</p>
+              <p>At $x=\frac{5\pi}{3}$: $f''=2\sqrt{3}&gt;0$ (min). Value: $\frac{5\pi}{3}-\frac{\sqrt{3}}{2}$.</p>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong> Maxima at $\frac{\pi}{3},\frac{4\pi}{3}$; minima at $\frac{2\pi}{3},\frac{5\pi}{3}$.</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+            </div> <!-- /.space-y-8 (ECE CT2) -->
+          </div> <!-- /#cse25-ece-ct2 -->
+
         </div> <!-- /.space-y-12 -->
       </section>
 
@@ -598,6 +1042,38 @@
       <p>Calculus problem solutions for personal study. Not affiliated with any university.</p>
     </div>
   </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('theme-toggle');
+      var sun = document.getElementById('theme-icon-sun');
+      var moon = document.getElementById('theme-icon-moon');
+      if (!btn) return;
+
+      function updateIcons(theme) {
+        if (theme === 'dark') {
+          sun.style.display = 'none';
+          moon.style.display = '';
+        } else {
+          sun.style.display = '';
+          moon.style.display = 'none';
+        }
+      }
+
+      // Set initial icon state
+      var current = document.documentElement.getAttribute('data-theme') || 'light';
+      updateIcons(current);
+
+      btn.addEventListener('click', function() {
+        var theme = document.documentElement.getAttribute('data-theme');
+        var next = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateIcons(next);
+      });
+    });
+  </script>
 
   <!-- TOC Auto-Generation Script -->
   <script>

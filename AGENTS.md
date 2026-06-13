@@ -4,16 +4,56 @@ Single static HTML page — no build, no server, no tests.
 
 ## View
 
-Open `calculus_answers_canvas.html` in any browser. Requires internet (Tailwind CSS, MathJax 3, Google Fonts loaded from CDN).
+Open `index.html` in any browser. Requires internet (Tailwind CSS, MathJax 3, Google Fonts loaded from CDN).
 
 ## Structure
 
-- `calculus_answers_canvas.html` — the entire site, ~750 lines.
+- `index.html` — the entire site, ~1000 lines.
 - Batches CSE-25 (current) down to CSE-16 (archived), each in a `<section>` with `data-toc="year"`.
 - Within each year, CT groups are wrapped in `<div data-toc="group">`.
 - Each question is an `<article data-toc="question">` inside its group.
 - Answers use MathJax: `$...$` inline, `$$...$$` display.
 - Step-by-step proofs with a green result box (`bg-emerald-50`).
+
+## Theme System (Light / Dark)
+
+Dark mode uses the `data-theme` attribute on `<html>`:
+- `data-theme="light"` — default light mode (Tailwind slate palette)
+- `data-theme="dark"` — GitHub Dark Dimmed-inspired palette
+
+### How to add new dark mode overrides
+
+All dark mode CSS lives in the `<style>` block under `/* === Dark Mode Overrides === */`.
+
+To add a new override, use the pattern:
+```css
+[data-theme="dark"] .tailwind-class-name {
+  property: dark-value;
+}
+```
+
+Key overrides already in place:
+- **Backgrounds**: `bg-slate-50` → `#0d1117`, `bg-white` → `#161b22`, `bg-slate-100` → `#1c2128`
+- **Text**: `text-slate-900/800` → `#e6edf3`, `text-slate-700` → `#c9d1d9`, `text-slate-400` → `#6e7681`
+- **Borders**: all `border-slate-200/80`, `border-slate-100` → `#30363d`
+- **Accents**: `text-blue-600` → `#58a6ff`, `bg-blue-50/50` → `#0c2d6b`
+- **Badges**: `bg-amber-100` → `#3d2700`, `text-amber-800` → `#d29922`
+- **Result boxes**: `bg-emerald-50` → `#0d2818`, `border-emerald-100` → `#238636`
+- **Header gradient**: `from-blue-900` → `#0c2d6b`, `to-indigo-950` → `#111827`
+- **MathJax**: SVG text color forced to `#e6edf3`
+- **TOC**: all link/text/badge colors match the dark palette
+
+### Flash prevention
+
+An inline script at the top of `<head>` reads `localStorage.getItem('theme')` (or falls back to `prefers-color-scheme`) and sets `data-theme` before the page renders, preventing a flash of light mode.
+
+### Toggle button
+
+Located in the header. Places a sun/moon SVG icon. Toggle JS:
+1. Toggles `data-theme` on `<html>`
+2. Persists to `localStorage`
+3. Swaps the visible icon
+4. Runs on DOMContentLoaded to set the correct initial icon
 
 ## Section setup
 
@@ -101,14 +141,19 @@ Example:
 
 ## Answer workflow
 
-- New answers arrive in `answers.md` (Markdown, Gemini-generated).
-- Convert each answer into an `<article>` with `data-toc="question"` and proper `id`.
+- New answers arrive as individual Markdown files in `answers/` directory.
+  - Naming convention: `{YEAR}_{EXAM_TYPE}-{NUMBER}.md` (e.g., `CSE-25_CT-2.md`).
+  - Each file contains multiple questions separated by `---` or headers.
+  - Each question block has metadata (year, exam_type, ct_number, question_number, discipline).
+- Read the Markdown file, parse each question, and convert to HTML `<article>`:
   - Write the question in `<h4>`, wrap display math in `<div class="overflow-x-auto">`.
-  - Badge labels: `CT1 (Sec A) - Q1`, `CT1 (Sec A) - Q2`, etc. for Section A CTs; `ECE CT1 - Q1`, etc. for ECE CTs.
+  - Badge labels: `CT2 (Sec A) - Q1`, `CT2 (Sec A) - Q2`, etc. for Section A CTs; `ECE CT2 - Q1`, etc. for ECE CTs.
+  - Use `bg-amber-100` badge for regular questions, `bg-indigo-100` for term final.
   - Final result box: `<div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">`.
   - Always include the `Back to Table of Contents` link at the bottom pointing to `#toc-top`.
+  - Always include `data-toc="question"` with proper `id` and `data-toc-label`.
 - Insert under the correct batch `<section>` inside the correct group `<div>`.
-- If a new CT group is needed (e.g. CT2), add a new `<div data-toc="group" data-toc-label="CT2 (Sec A)">` with anchor `cse25-ct2`.
+- If a new CT group is needed (e.g. CT2), add a new `<div data-toc="group" data-toc-label="CT2 (Sec A)">` with anchor `cse25-ct2` (CSE) or `ece25-ct2` (ECE).
 - If a new year is needed, add a new `<section data-toc="year">` at the end (before `</main>`).
-- Commit every change with `git add calculus_answers_canvas.html AGENTS.md && git commit -m "..."`.
+- Commit every change with `git add index.html AGENTS.md && git commit -m "..."`.
 - Repo-local git identity is already configured; no `--global` needed.
