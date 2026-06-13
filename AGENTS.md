@@ -21,3 +21,15 @@ Open `calculus_answers_canvas.html` in any browser. Requires internet (Tailwind 
 - Keep the `scroll-mt-6` class on sections for anchor scroll.
 - Final answer boxes use `bg-emerald-50 p-4 rounded-xl border border-emerald-100`.
 - No JavaScript logic — purely static HTML+CSS.
+
+## Answer workflow
+
+- New answers arrive in `answers.md` (Markdown, Gemini-generated).
+- Convert each answer into an `<article>` following the existing HTML structure.
+  - Write the question in `<h4>`, wrap display math in `<div class="overflow-x-auto">`.
+  - Badge labels: `CT (CSE) - Q1`, `CT (CSE) - Q2`, etc. for CSE CTs; `ECE CT - Q1`, etc. for ECE CTs.
+  - Final result box: `<div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">`.
+  - Always include the "Back to Table of Contents" link at the bottom.
+- Insert under the correct batch `<section>` — for CSE-25 CT questions, place after CT2 Q2 and before the Term Final divider.
+- Commit every change with `git add calculus_answers_canvas.html AGENTS.md && git commit -m "..."`.
+- Repo-local git identity is already configured; no `--global` needed.
