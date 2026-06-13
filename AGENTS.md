@@ -136,7 +136,8 @@ Example:
 - Always include `data-toc`, `data-toc-label`, and `id` on every year, group, and question element.
 - Label badges: `bg-amber-100` for regular questions, `bg-indigo-100` for term final.
 - Keep the `scroll-mt-6` class on year sections for anchor scroll.
-- Final answer boxes use `bg-emerald-50 p-4 rounded-xl border border-emerald-100`.
+- Final answer boxes use `bg-emerald-50 p-4 rounded-xl border border-emerald-100` for inline-only results, or a `.final-answer-box` wrapper for results containing display math (`$$...$$`).
+- `.final-answer-box` structure: `<div class="final-answer-box"><h4><strong>Final Result:</strong></h4><div class="overflow-x-auto">$$...$$</div></div>` — wraps both the label and the display math together so the math stays inside the green box.
 - No manual TOC links needed — the JS auto-generates everything.
 
 ## Answer workflow
@@ -149,7 +150,7 @@ Example:
   - Write the question in `<h4>`, wrap display math in `<div class="overflow-x-auto">`.
   - Badge labels: `CT2 (Sec A) - Q1`, `CT2 (Sec A) - Q2`, etc. for Section A CTs; `ECE CT2 - Q1`, etc. for ECE CTs.
   - Use `bg-amber-100` badge for regular questions, `bg-indigo-100` for term final.
-  - Final result box: `<div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">`.
+  - Final result box: `<div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">` for inline-only results (`$...$`), or `<div class="final-answer-box">` wrapping both the label and display math (`$$...$$`).
   - Always include the `Back to Table of Contents` link at the bottom pointing to `#toc-top`.
   - Always include `data-toc="question"` with proper `id` and `data-toc-label`.
 - Insert under the correct batch `<section>` inside the correct group `<div>`.
