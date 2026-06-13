@@ -1,6 +1,6 @@
 # Calculus Course Answers
 
-Single static HTML page — no build, no server, no tests.
+Single static site — no build, no server, no tests.
 
 ## View
 
@@ -8,7 +8,15 @@ Open `index.html` in any browser. Requires internet (Tailwind CSS, MathJax 3, Go
 
 ## Structure
 
-- `index.html` — the entire site, ~1000 lines.
+### Files
+
+| File | Purpose |
+|------|---------|
+| `index.html` | HTML structure (~780 lines) |
+| `style.css` | All styles incl. TOC, dark mode, MathJax overrides |
+| `script.js` | Theme toggle + auto-generated TOC with scroll spy |
+
+### Content layout
 - Batches CSE-25 (current) down to CSE-16 (archived), each in a `<section>` with `data-toc="year"`.
 - Within each year, CT groups are wrapped in `<div data-toc="group">`.
 - Each question is an `<article data-toc="question">` inside its group.
@@ -23,7 +31,7 @@ Dark mode uses the `data-theme` attribute on `<html>`:
 
 ### How to add new dark mode overrides
 
-All dark mode CSS lives in the `<style>` block under `/* === Dark Mode Overrides === */`.
+All dark mode CSS lives in `style.css` under `/* === Dark Mode Overrides === */`.
 
 To add a new override, use the pattern:
 ```css
@@ -69,7 +77,7 @@ The sidebar TOC is **auto-generated** on page load — no manual TOC links neede
 
 ### How it works
 
-The JS script in the `<body>` scans `[data-toc]` attributes:
+The JS script in `script.js` scans `[data-toc]` attributes:
 
 ```
 [data-toc="year"]       → top-level collapsible year entry
@@ -156,6 +164,6 @@ Example:
 - Insert under the correct batch `<section>` inside the correct group `<div>`.
 - If a new CT group is needed (e.g. CT2), add a new `<div data-toc="group" data-toc-label="CT2 (Sec A)">` with anchor `cse25-ct2` (CSE) or `ece25-ct2` (ECE).
 - If a new year is needed, add a new `<section data-toc="year">` at the end (before `</main>`).
-- Commit every change with `git add index.html AGENTS.md && git commit -m "..."`.
+- Commit every change with `git add index.html style.css script.js AGENTS.md && git commit -m "..."`.
 - **NEVER delete or remove `.github/workflows/static.yml`** — it is the GitHub Actions deployment workflow that auto-deploys the site to GitHub Pages on every push. Without it, the site won't update.
 - Repo-local git identity is already configured; no `--global` needed.
