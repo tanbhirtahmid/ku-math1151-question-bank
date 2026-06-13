@@ -164,6 +164,7 @@ Example:
 - Insert under the correct batch `<section>` inside the correct group `<div>`.
 - If a new CT group is needed (e.g. CT2), add a new `<div data-toc="group" data-toc-label="CT2 (Sec A)">` with anchor `cse25-ct2` (CSE) or `ece25-ct2` (ECE).
 - If a new year is needed, add a new `<section data-toc="year">` at the end (before `</main>`).
+- Before committing on main branch, run `./update-version.sh` to inject a cache-busting version (`?v=N`) into the `style.css` and `script.js` URLs in `index.html`. The version number is the Git commit count, guaranteeing a fresh URL on every deploy.
 - Commit every change with `git add index.html style.css script.js AGENTS.md && git commit -m "..."`.
 - **NEVER delete or remove `.github/workflows/static.yml`** — it is the GitHub Actions deployment workflow that auto-deploys the site to GitHub Pages on every push. Without it, the site won't update.
 - Repo-local git identity is already configured; no `--global` needed.
