@@ -156,4 +156,5 @@ Example:
 - If a new CT group is needed (e.g. CT2), add a new `<div data-toc="group" data-toc-label="CT2 (Sec A)">` with anchor `cse25-ct2` (CSE) or `ece25-ct2` (ECE).
 - If a new year is needed, add a new `<section data-toc="year">` at the end (before `</main>`).
 - Commit every change with `git add index.html AGENTS.md && git commit -m "..."`.
+- **NEVER delete or remove `.github/workflows/static.yml`** — it is the GitHub Actions deployment workflow that auto-deploys the site to GitHub Pages on every push. Without it, the site won't update.
 - Repo-local git identity is already configured; no `--global` needed.
