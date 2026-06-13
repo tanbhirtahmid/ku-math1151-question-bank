@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khulna University CSE - Calculus Solution Repository</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- MathJax Configuration for perfect LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .code-font {
+      font-family: 'Fira Code', monospace;
+    }
+    /* Custom horizontal scrollbar for MathJax equations on small screens */
+    .mjx-container {
+      max-width: 100% !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white py-8 px-6 shadow-md border-b-4 border-emerald-500">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="bg-emerald-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">KU CSE Academic Resources</span>
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2">Calculus Question Bank Solutions</h1>
+        <p class="text-slate-300 mt-1 text-sm md:text-base">Comprehensive step-by-step solved archive: CSE-25 to CSE-16 (Math 1151 / CSE)</p>
+      </div>
+      <div class="text-right md:text-right flex flex-col items-end">
+        <span class="text-xs text-slate-300">Format: Responsive Math Canvas</span>
+        <span class="text-xs text-emerald-400 font-semibold mt-1">Fully Solved Continuous Guide</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Layout Wrapper -->
+  <div class="max-w-6xl w-full mx-auto px-4 md:px-6 py-8 flex-grow flex flex-col lg:flex-row gap-8">
+    
+    <!-- Left Navigation Bar / Sidebar TOC (Sticky) -->
+    <aside class="lg:w-1/4 flex-shrink-0">
+      <div class="sticky top-6 bg-white rounded-2xl shadow-sm border border-slate-200/80 p-5 max-h-[85vh] overflow-y-auto">
+        <h2 class="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center justify-between">
+          <span>Table of Contents</span>
+          <span class="text-xs bg-slate-100 px-2.5 py-1 rounded-full text-slate-600 font-mono">10 Batches</span>
+        </h2>
+        <nav class="space-y-1 text-sm">
+          <a href="#cse-25" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-25 (Batch 25)</a>
+          <a href="#cse-24" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-24</a>
+          <a href="#cse-23" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-23</a>
+          <a href="#cse-22" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-22</a>
+          <a href="#cse-21" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-21 (Unified)</a>
+          <a href="#cse-20" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-20</a>
+          <a href="#cse-19" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-19</a>
+          <a href="#cse-18" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-18</a>
+          <a href="#cse-17" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-17</a>
+          <a href="#cse-16" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700 hover:text-blue-600 transition-colors">CSE-16</a>
+        </nav>
+        <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400">
+          Click links to scroll down instantly. Math equations scale adaptively to mobile widths.
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Answers Canvas -->
+    <main class="lg:w-3/4 flex-grow space-y-16">
+
+      <!-- ==========================================
+           CSE-25 (BATCH 25)
+           ========================================== -->
+      <section id="cse-25" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Current Academic Term</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-25 (Batch 25)</h2>
+        </div>
+
+        <!-- Section CTs -->
+        <div class="space-y-8">
+          <div class="bg-blue-50/50 border-l-4 border-blue-500 p-4 rounded-r-xl">
+            <h3 class="font-bold text-blue-900">Class Tests & Continuous Assessments (Section A & ECE)</h3>
+          </div>
+
+          <!-- CSE-25: CT1 Q1 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT1 (Sec A) - Q1</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">State and Prove Rolle's Theorem.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-4">
+                <span class="font-semibold text-slate-900 block mb-1">Theorem Statement:</span>
+                If a real-valued function $f(x)$ is:
+                <ul class="list-decimal pl-5 mt-2 space-y-1">
+                  <li>Continuous on the closed interval $[a, b]$,</li>
+                  <li>Differentiable on the open interval $(a, b)$, and</li>
+                  <li>$f(a) = f(b)$,</li>
+                </ul>
+                then there exists at least one number $c \in (a, b)$ such that $f'(c) = 0$.
+              </div>
+              <p class="font-semibold text-slate-900">Proof:</p>
+              <p>Since $f$ is continuous on the closed and bounded interval $[a, b]$, by the Extreme Value Theorem, $f$ must attain an absolute maximum value $M$ and an absolute minimum value $m$ in $[a, b]$. Thus, there exist $c_1, c_2 \in [a, b]$ such that $f(c_1) = m$ and $f(c_2) = M$.</p>
+              
+              <p>We consider two cases:</p>
+              
+              <div class="pl-4 border-l-2 border-slate-300 space-y-4">
+                <p><strong>Case 1: $f(x)$ is constant on $[a, b]$.</strong><br>
+                If $f(x) = k$ for all $x \in [a, b]$, then $f'(x) = 0$ for all $x \in (a, b)$. Any point $c \in (a, b)$ satisfies $f'(c) = 0$.</p>
+                
+                <p><strong>Case 2: $f(x)$ is not constant on $[a, b]$.</strong><br>
+                Since $f(a) = f(b)$, and the function is not constant, it must go either above or below the boundary value. Therefore, at least one of the extreme values (the maximum $M$ or minimum $m$) must be attained at an interior point $c \in (a, b)$.</p>
+                <p>Suppose $f$ attains its absolute maximum at $c \in (a, b)$, so $f(c) = M$. Since $f$ is differentiable at $c$, the derivative $f'(c)$ exists. We evaluate the derivative using left- and right-hand limits:</p>
+                <div class="overflow-x-auto my-2">
+                  $$f'(c) = \lim_{h \to 0} \frac{f(c+h) - f(c)}{h}$$
+                </div>
+                <p>Since $f(c)$ is the absolute maximum, $f(c+h) \leq f(c) \implies f(c+h) - f(c) \leq 0$.</p>
+                <p>For $h > 0$ (right-hand limit):</p>
+                <div class="overflow-x-auto my-2">
+                  $$\frac{f(c+h) - f(c)}{h} \leq 0 \implies \lim_{h \to 0^+} \frac{f(c+h) - f(c)}{h} \leq 0$$
+                </div>
+                <p>For $h < 0$ (left-hand limit):</p>
+                <div class="overflow-x-auto my-2">
+                  $$\frac{f(c+h) - f(c)}{h} \geq 0 \implies \lim_{h \to 0^-} \frac{f(c+h) - f(c)}{h} \geq 0$$
+                </div>
+                <p>Because $f$ is differentiable at $c$, the left-hand limit and right-hand limit must be equal. Therefore:</p>
+                <div class="overflow-x-auto my-2">
+                  $$0 \leq f'(c) \leq 0 \implies f'(c) = 0$$
+                </div>
+                <p>A completely symmetric proof holds if $f$ attains its absolute minimum at $c$. This completes the proof.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT1 Q2 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT1 (Sec A) - Q2</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">State and Prove Lagrange's Mean Value Theorem.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-4">
+                <span class="font-semibold text-slate-900 block mb-1">Theorem Statement:</span>
+                If a real-valued function $f(x)$ is continuous on the closed interval $[a, b]$ and differentiable on the open interval $(a, b)$, then there exists at least one point $c \in (a, b)$ such that:
+                $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+              </div>
+              <p class="font-semibold text-slate-900">Proof:</p>
+              <p>We construct an auxiliary function $\phi(x)$ designed to satisfy the criteria of Rolle's Theorem. Let:</p>
+              <div class="overflow-x-auto">
+                $$\phi(x) = f(x) - A x$$
+              </div>
+              <p>where $A$ is a constant chosen such that $\phi(a) = \phi(b)$. We solve for $A$:</p>
+              <div class="overflow-x-auto">
+                $$f(a) - Aa = f(b) - Ab \implies A(b-a) = f(b) - f(a) \implies A = \frac{f(b) - f(a)}{b-a}$$
+              </div>
+              <p>Let's verify the Rolle's conditions for $\phi(x)$ on $[a, b]$:</p>
+              <ol class="list-decimal pl-5 space-y-1">
+                <li>Since $f(x)$ is continuous on $[a, b]$ and $Ax$ is continuous everywhere, $\phi(x)$ is continuous on $[a, b]$.</li>
+                <li>Since $f(x)$ is differentiable on $(a, b)$ and $Ax$ is differentiable everywhere, $\phi(x)$ is differentiable on $(a, b)$.</li>
+                <li>By design, $\phi(a) = \phi(b)$.</li>
+              </ol>
+              <p>Applying Rolle's Theorem to $\phi(x)$, there must exist some point $c \in (a, b)$ such that:</p>
+              <div class="overflow-x-auto">
+                $$\phi'(c) = 0$$
+              </div>
+              <p>Differentiating $\phi(x)$ gives $\phi'(x) = f'(x) - A$. At $x = c$:</p>
+              <div class="overflow-x-auto">
+                $$f'(c) - A = 0 \implies f'(c) = A$$
+              </div>
+              <p>Substituting the value of $A$ back into the equation:</p>
+              <div class="overflow-x-auto">
+                $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+              </div>
+              <p>Thus, Lagrange's Mean Value Theorem is proved.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT1 Q1 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT1 - Q1</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $y = e^{a \sin^{-1} x}$, show that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: First derivative</strong></p>
+              <p>Differentiating $y$ with respect to $x$:</p>
+              <div class="overflow-x-auto">
+                $$y_1 = \frac{dy}{dx} = e^{a \sin^{-1} x} \cdot \frac{a}{\sqrt{1-x^2}} = \frac{a y}{\sqrt{1-x^2}}$$
+              </div>
+              <p>Squaring both sides and cross-multiplying to eliminate fractions and radicals:</p>
+              <div class="overflow-x-auto">
+                $$(1-x^2) y_1^2 = a^2 y^2$$
+              </div>
+
+              <p><strong>Step 2: Second derivative</strong></p>
+              <p>Differentiating both sides with respect to $x$ using the product rule:</p>
+              <div class="overflow-x-auto">
+                $$(1-x^2) \cdot 2 y_1 y_2 + (-2x) y_1^2 = a^2 \cdot 2 y y_1$$
+              </div>
+              <p>Dividing throughout by the common term $2y_1$ (since $y_1 \neq 0$):</p>
+              <div class="overflow-x-auto">
+                $$(1-x^2) y_2 - x y_1 = a^2 y \implies (1-x^2) y_2 - x y_1 - a^2 y = 0$$
+              </div>
+
+              <p><strong>Step 3: Finding the $n$-th derivative using Leibnitz's Theorem</strong></p>
+              <p>Recall Leibnitz's theorem for the $n$-th derivative of a product of two functions: $(uv)_n = \sum_{k=0}^n \binom{n}{k} u_{n-k} v_k$. We apply this term-by-term:</p>
+              
+              <p>For the first term $(1-x^2) y_2$, we choose $u = y_2$ and $v = 1-x^2$:</p>
+              <div class="overflow-x-auto">
+                $$D^n[(1-x^2) y_2] = \binom{n}{0} y_{n+2} (1-x^2) + \binom{n}{1} y_{n+1} (-2x) + \binom{n}{2} y_n (-2) + 0$$
+                $$= (1-x^2) y_{n+2} - 2n x y_{n+1} - n(n-1) y_n$$
+              </div>
+
+              <p>For the second term $-x y_1$, we choose $u = y_1$ and $v = x$:</p>
+              <div class="overflow-x-auto">
+                $$D^n[-x y_1] = - \left[ \binom{n}{0} y_{n+1} x + \binom{n}{1} y_n (1) + 0 \right] = - x y_{n+1} - n y_n$$
+              </div>
+
+              <p>For the third term $-a^2 y$:</p>
+              <div class="overflow-x-auto">
+                $$D^n[-a^2 y] = - a^2 y_n$$
+              </div>
+
+              <p>Adding these components together:</p>
+              <div class="overflow-x-auto">
+                $$(1-x^2) y_{n+2} - 2n x y_{n+1} - n(n-1) y_n - x y_{n+1} - n y_n - a^2 y_n = 0$$
+              </div>
+              <p>Combining like terms:</p>
+              <div class="overflow-x-auto">
+                $$(1-x^2) y_{n+2} - (2n+1) x y_{n+1} - [n(n-1) + n + a^2] y_n = 0$$
+                $$(1-x^2) y_{n+2} - (2n+1) x y_{n+1} - (n^2 + a^2) y_n = 0$$
+              </div>
+              <p>Thus, the relation is proved.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT1 Q2 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT1 - Q2</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\lim_{x \to 0} \frac{\tan x - x}{x^2 \tan x}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>We first rewrite the limit to simplify the denominator. Since $\lim_{x \to 0} \frac{\tan x}{x} = 1$, we can multiply the denominator by $\frac{x}{x}$:</p>
+              <div class="overflow-x-auto">
+                $$\lim_{x \to 0} \frac{\tan x - x}{x^2 \tan x} = \lim_{x \to 0} \left( \frac{\tan x - x}{x^3} \cdot \frac{x}{\tan x} \right)$$
+              </div>
+              <p>Since $\lim_{x\to 0} \frac{x}{\tan x} = 1$, the limit simplifies to:</p>
+              <div class="overflow-x-auto">
+                $$L = \lim_{x \to 0} \frac{\tan x - x}{x^3}$$
+              </div>
+              <p>This is a $\frac{0}{0}$ indeterminate form. Applying L'Hospital's Rule by differentiating numerator and denominator with respect to $x$:</p>
+              <div class="overflow-x-auto">
+                $$L = \lim_{x \to 0} \frac{\sec^2 x - 1}{3x^2} = \lim_{x \to 0} \frac{\tan^2 x}{3x^2} = \frac{1}{3} \lim_{x \to 0} \left( \frac{\tan x}{x} \right)^2$$
+              </div>
+              <p>Using the standard limit $\lim_{x \to 0} \frac{\tan x}{x} = 1$:</p>
+              <div class="overflow-x-auto">
+                $$L = \frac{1}{3} \cdot (1)^2 = \frac{1}{3}$$
+              </div>
+              <p>The limit value is $\frac{1}{3}$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT2 Q1 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q1</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the points of inflection of the curve $y = 3x^4 - 4x^3 + 1$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Recall that points of inflection are points where the concavity of the curve changes, requiring $y'' = 0$ (or undefined) and $y''' \neq 0$ (or a sign change in $y''$).</p>
+              <p>First, calculate the first and second derivatives:</p>
+              <div class="overflow-x-auto">
+                $$y' = 12x^3 - 12x^2$$
+                $$y'' = 36x^2 - 24x$$
+              </div>
+              <p>Set $y'' = 0$ to find potential points of inflection:</p>
+              <div class="overflow-x-auto">
+                $$36x^2 - 24x = 0 \implies 12x(3x - 2) = 0 \implies x = 0 \quad \text{or} \quad x = \frac{2}{3}$$
+              </div>
+              <p>To confirm if these are points of inflection, check the third derivative $y'''$:</p>
+              <div class="overflow-x-auto">
+                $$y''' = 72x - 24$$
+              </div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>At $x = 0$: $y'''(0) = -24 \neq 0$. Therefore, $x = 0$ is a point of inflection. The corresponding $y$-value is $y(0) = 3(0)^4 - 4(0)^3 + 1 = 1$. The point is $(0, 1)$.</li>
+                <li>At $x = \frac{2}{3}$: $y'''(\frac{2}{3}) = 72(\frac{2}{3}) - 24 = 48 - 24 = 24 \neq 0$. Therefore, $x = \frac{2}{3}$ is also a point of inflection. The corresponding $y$-value is:
+                  $$y(\frac{2}{3}) = 3\left(\frac{16}{81}\right) - 4\left(\frac{8}{27}\right) + 1 = \frac{16}{27} - \frac{32}{27} + \frac{27}{27} = \frac{11}{27}$$
+                  The point is $(\frac{2}{3}, \frac{11}{27})$.
+                </li>
+              </ul>
+              <p>The points of inflection are $(0, 1)$ and $(\frac{2}{3}, \frac{11}{27})$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT2 Q2 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q2</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Determine the asymptotes of the curve $x^3 + y^3 = 3axy$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>The given equation of the curve is:</p>
+              <div class="overflow-x-auto">
+                $$x^3 + y^3 - 3axy = 0$$
+              </div>
+              <p>This is a third-degree algebraic curve. Let's find its oblique asymptotes of the form $y = mx + c$.</p>
+              <p>Substitute $x = 1$ and $y = m$ into the highest degree terms to find $\phi_n(m)$:</p>
+              <div class="overflow-x-auto">
+                $$\phi_3(m) = 1 + m^3$$
+                $$\phi_2(m) = -3am$$
+              </div>
+              <p>Set the highest degree term function to zero to find the slope $m$:</p>
+              <div class="overflow-x-auto">
+                $$\phi_3(m) = 0 \implies m^3 + 1 = 0 \implies (m+1)(m^2-m+1) = 0$$
+              </div>
+              <p>This yields one real root $m = -1$ (the other two roots are complex conjugates).</p>
+              <p>For $m = -1$, we find the constant $c$ using the formula:</p>
+              <div class="overflow-x-auto">
+                $$c = -\frac{\phi_{n-1}(m)}{\phi'_n(m)} = -\frac{\phi_2(m)}{\phi'_3(m)}$$
+              </div>
+              <p>We compute the derivative $\phi'_3(m)$:</p>
+              <div class="overflow-x-auto">
+                $$\phi'_3(m) = \frac{d}{dm}(1 + m^3) = 3m^2$$
+              </div>
+              <p>Substituting $m = -1$:</p>
+              <div class="overflow-x-auto">
+                $$c = -\frac{-3a(-1)}{3(-1)^2} = -\frac{3a}{3} = -a$$
+              </div>
+              <p>Therefore, the asymptote equation is $y = mx + c \implies y = -x - a$, which can be rewritten as:</p>
+              <div class="overflow-x-auto">
+                $$x + y + a = 0$$
+              </div>
+              <p>There are no other real asymptotes. The curve has one oblique asymptote: $x + y + a = 0$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CT (CSE) Additional Questions divider -->
+          <div class="bg-blue-50/50 border-l-4 border-blue-500 p-4 rounded-r-xl mt-12">
+            <h3 class="font-bold text-blue-900">Additional CT Questions — Section A (CSE)</h3>
+          </div>
+
+          <!-- CSE-25: CT (CSE) Q1 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT (CSE) - Q1</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Draw the graph of the following function and find the domain and range of it.
+              $$f(x) = \begin{cases} 0, & x \le -1 \\ \sqrt{1-x^2}, & -1 < x < 1 \\ x, & x \ge 1 \end{cases}$$
+            </h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Analyze the piecewise components</p>
+              <p><strong>Interval 1 ($x \le -1$):</strong> $f(x) = 0$. This is a horizontal line along the x-axis from $-\infty$ up to and including $x = -1$.</p>
+              <p><strong>Interval 2 ($-1 < x < 1$):</strong> $f(x) = \sqrt{1-x^2}$. Squaring gives $y^2 = 1 - x^2 \implies x^2 + y^2 = 1$. Since $y \ge 0$, this is the upper semi-circle of radius $1$ centered at the origin, excluding $x = \pm 1$.</p>
+              <p><strong>Interval 3 ($x \ge 1$):</strong> $f(x) = x$. This is the line $y = x$ starting at $(1, 1)$ to $+\infty$.</p>
+              <p class="font-semibold text-slate-900">Step 2: Domain</p>
+              <p>The function is defined for $x \le -1$, $-1 < x < 1$, and $x \ge 1$. The union covers all real numbers.</p>
+              <div class="overflow-x-auto">$$\text{Domain} = \mathbb{R} \quad (-\infty, \infty)$$</div>
+              <p class="font-semibold text-slate-900">Step 3: Range</p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>$x \le -1$: $y = 0$.</li>
+                <li>$-1 < x < 1$: $y = \sqrt{1-x^2} \in (0, 1]$.</li>
+                <li>$x \ge 1$: $y = x \in [1, \infty)$.</li>
+              </ul>
+              <div class="overflow-x-auto">$$\text{Range} = \{0\} \cup (0, 1] \cup [1, \infty) = [0, \infty)$$</div>
+              <p class="font-semibold text-slate-900">Step 4: Graph Description</p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>$(-\infty, -1]$: Horizontal line $y = 0$, solid dot at $(-1, 0)$.</li>
+                <li>$(-1, 1)$: Upper semicircle of $x^2 + y^2 = 1$, open at $(\pm 1, 0)$.</li>
+                <li>$[1, \infty)$: Ray $y = x$, solid dot at $(1, 1)$.</li>
+              </ul>
+              <p>Jump discontinuity at $x = 1$: left limit $0$, right value $1$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT (CSE) Q2 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT (CSE) - Q2</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Write the conditions of continuity. Discuss the continuity of $f(x) = \begin{cases} x \cos \frac{1}{x}, & x \neq 0 \\ 0, & x = 0 \end{cases}$ at $x = 0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Step 1: Conditions of Continuity</p>
+              <p>A function $f(x)$ is continuous at $x = a$ if:</p>
+              <ol class="list-decimal pl-5 space-y-1">
+                <li>$f(a)$ is defined.</li>
+                <li>$\displaystyle\lim_{x \to a} f(x)$ exists.</li>
+                <li>$\displaystyle\lim_{x \to a} f(x) = f(a)$.</li>
+              </ol>
+              <p class="font-semibold text-slate-900">Step 2: Check $f(0)$</p>
+              <p>From definition, $f(0) = 0$.</p>
+              <p class="font-semibold text-slate-900">Step 3: Evaluate $\displaystyle\lim_{x \to 0} f(x)$</p>
+              <p>We need $\displaystyle\lim_{x \to 0} x \cos \frac{1}{x}$. Using the Squeeze Theorem: since $-1 \le \cos \frac{1}{x} \le 1$,</p>
+              <div class="overflow-x-auto">$$-|x| \le x \cos \frac{1}{x} \le |x|$$</div>
+              <p>As $x \to 0$, both $-|x|$ and $|x|$ approach $0$, so by the Squeeze Theorem:</p>
+              <div class="overflow-x-auto">$$\lim_{x \to 0} x \cos \frac{1}{x} = 0$$</div>
+              <p class="font-semibold text-slate-900">Step 4: Compare limit and function value</p>
+              <div class="overflow-x-auto">$$\lim_{x \to 0} f(x) = 0 = f(0)$$</div>
+              <p>All three conditions are satisfied. Hence $f(x)$ is continuous at $x = 0$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT (CSE) Q3(i) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT (CSE) - Q3(i)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find $\dfrac{dy}{dx}$ of $y = \sin^{-1}\left(e^{\tan^{-1} x}\right)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let $u = e^{\tan^{-1} x}$. Then $y = \sin^{-1}(u)$.</p>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = \frac{1}{\sqrt{1-u^2}} \cdot \frac{du}{dx}$$</div>
+              <p>Now $\frac{du}{dx} = e^{\tan^{-1} x} \cdot \frac{1}{1+x^2}$. Substituting back:</p>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = \frac{1}{\sqrt{1 - e^{2\tan^{-1} x}}} \cdot \frac{e^{\tan^{-1} x}}{1+x^2}$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = \frac{e^{\tan^{-1} x}}{(1+x^2)\sqrt{1 - e^{2\tan^{-1} x}}}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT (CSE) Q3(ii) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT (CSE) - Q3(ii)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find $\dfrac{dy}{dx}$ of $y = (\tan x)^{\cot x} + (\cot x)^{\tan x}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let $y = u + v$ where $u = (\tan x)^{\cot x}$ and $v = (\cot x)^{\tan x}$.</p>
+              <p class="font-semibold text-slate-900">For $u = (\tan x)^{\cot x}$:</p>
+              <p>Take $\ln u = \cot x \ln(\tan x)$. Differentiate:</p>
+              <div class="overflow-x-auto">$$\frac{1}{u}\frac{du}{dx} = -\csc^2 x \ln(\tan x) + \cot x \cdot \frac{1}{\tan x} \cdot \sec^2 x$$</div>
+              <p>Since $\cot x \cdot \frac{1}{\tan x} \cdot \sec^2 x = \csc^2 x$:</p>
+              <div class="overflow-x-auto">$$\frac{du}{dx} = (\tan x)^{\cot x} \csc^2 x (1 - \ln(\tan x))$$</div>
+              <p class="font-semibold text-slate-900">For $v = (\cot x)^{\tan x}$:</p>
+              <p>Take $\ln v = \tan x \ln(\cot x)$. Differentiate:</p>
+              <div class="overflow-x-auto">$$\frac{1}{v}\frac{dv}{dx} = \sec^2 x \ln(\cot x) + \tan x \cdot \frac{1}{\cot x} \cdot (-\csc^2 x)$$</div>
+              <p>Since $\tan x \cdot \frac{1}{\cot x} \cdot (-\csc^2 x) = -\sec^2 x$:</p>
+              <div class="overflow-x-auto">$$\frac{dv}{dx} = (\cot x)^{\tan x} \sec^2 x (\ln(\cot x) - 1)$$</div>
+              <p class="font-semibold text-slate-900">Combining:</p>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = (\tan x)^{\cot x} \csc^2 x (1 - \ln(\tan x)) + (\cot x)^{\tan x} \sec^2 x (\ln(\cot x) - 1)$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT (CSE) Q3(iii) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT (CSE) - Q3(iii)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find $\dfrac{dy}{dx}$ of $x^y = e^{x-y}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Taking natural log of both sides:</p>
+              <div class="overflow-x-auto">$$\ln(x^y) = \ln(e^{x-y}) \implies y \ln x = x - y$$</div>
+              <p>Solving for $y$:</p>
+              <div class="overflow-x-auto">$$y(\ln x + 1) = x \implies y = \frac{x}{1 + \ln x}$$</div>
+              <p>Differentiate using the quotient rule:</p>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = \frac{(1)(1 + \ln x) - x \cdot \frac{1}{x}}{(1 + \ln x)^2} = \frac{1 + \ln x - 1}{(1 + \ln x)^2}$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = \frac{\ln x}{(1 + \ln x)^2}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT (CSE) Q4 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT (CSE) - Q4</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">State Leibnitz's Theorem. If $y = \sin(a \sin^{-1} x)$, show that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} + (n^2 - a^2)y_n = 0$ and find $(y_n)_0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Leibnitz's Theorem:</p>
+              <p>If $u(x)$ and $v(x)$ possess $n$-th order derivatives, then:</p>
+              <div class="overflow-x-auto">$$(uv)_n = \sum_{r=0}^{n} \binom{n}{r} u_{n-r} v_r$$</div>
+              <p class="font-semibold text-slate-900">Step 1: Establish the base equation</p>
+              <p>Given $y = \sin(a \sin^{-1} x)$. Differentiating:</p>
+              <div class="overflow-x-auto">$$y_1 = \cos(a \sin^{-1} x) \cdot \frac{a}{\sqrt{1-x^2}}$$</div>
+              <p>Squaring and using $\cos^2\theta = 1 - \sin^2\theta$:</p>
+              <div class="overflow-x-auto">$$(1-x^2)y_1^2 = a^2(1-y^2)$$</div>
+              <p>Differentiating both sides and dividing by $2y_1$:</p>
+              <div class="overflow-x-auto">$$(1-x^2)y_2 - xy_1 + a^2y = 0 \tag{1}$$</div>
+              <p class="font-semibold text-slate-900">Step 2: Apply Leibnitz's Theorem $n$ times</p>
+              <p>Differentiating (1) $n$ times using Leibnitz's theorem:</p>
+              <div class="overflow-x-auto">$$D^n[(1-x^2)y_2] - D^n[x y_1] + a^2 y_n = 0$$</div>
+              <p>For $(1-x^2)y_2$: let $u = y_2$, $v = 1-x^2$ ($v_1 = -2x$, $v_2 = -2$, $v_r = 0$ for $r \ge 3$):</p>
+              <div class="overflow-x-auto">$$D^n[(1-x^2)y_2] = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n$$</div>
+              <p>For $x y_1$: let $u = y_1$, $v = x$ ($v_1 = 1$, $v_r = 0$ for $r \ge 2$):</p>
+              <div class="overflow-x-auto">$$D^n[x y_1] = x y_{n+1} + n y_n$$</div>
+              <p>Substituting:</p>
+              <div class="overflow-x-auto">$$(1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - x y_{n+1} - n y_n + a^2 y_n = 0$$</div>
+              <div class="overflow-x-auto">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} + (a^2 - n^2)y_n = 0$$</div>
+              <p>This is equivalent to $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - a^2)y_n = 0$.</p>
+              <p class="font-semibold text-slate-900">Step 3: Find $(y_n)_0$</p>
+              <p>At $x = 0$: $y(0) = 0$, $y_1(0) = a$, $y_2(0) = 0$.</p>
+              <p>Substituting $x = 0$ into the relation:</p>
+              <div class="overflow-x-auto">$$(y_{n+2})_0 = (n^2 - a^2)(y_n)_0$$</div>
+              <p>For even $n = 2k$: $(y_n)_0 = 0$.</p>
+              <p>For odd $n = 2k+1$:</p>
+              <div class="overflow-x-auto">$$(y_n)_0 = a(1^2 - a^2)(3^2 - a^2)\cdots((n-2)^2 - a^2)$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$(y_n)_0 = \begin{cases} 0, & n \text{ even} \\ a(1^2 - a^2)(3^2 - a^2)\cdots((n-2)^2 - a^2), & n \text{ odd} \end{cases}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: CT (CSE) Q5 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT (CSE) - Q5</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the $n$-th derivative of $y = e^{ax} \sin(bx+c)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Given $y = e^{ax} \sin(bx+c)$. Differentiating:</p>
+              <div class="overflow-x-auto">$$y_1 = e^{ax}[a \sin(bx+c) + b \cos(bx+c)]$$</div>
+              <p>Let $a = r \cos\phi$, $b = r \sin\phi$, so $r = \sqrt{a^2+b^2}$ and $\phi = \tan^{-1}(b/a)$. Then:</p>
+              <div class="overflow-x-auto">$$y_1 = r e^{ax} \sin(bx+c+\phi)$$</div>
+              <p>By induction:</p>
+              <div class="overflow-x-auto">$$y_n = r^n e^{ax} \sin(bx+c+n\phi)$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$y_n = (a^2+b^2)^{n/2} e^{ax} \sin\left(bx+c+n\tan^{-1}\frac{b}{a}\right)$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- ECE CT Additional Questions divider -->
+          <div class="bg-blue-50/50 border-l-4 border-blue-500 p-4 rounded-r-xl mt-12">
+            <h3 class="font-bold text-blue-900">Additional CT Questions — ECE</h3>
+          </div>
+
+          <!-- CSE-25: ECE CT Q1 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT - Q1</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Define one-one and onto functions with examples. Draw the graph and find the domain and range of $f(x) = |x-4| + |x| + |x+4|$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">One-One (Injective) Function:</p>
+              <p>$f: A \to B$ is one-one if $f(x_1) = f(x_2) \implies x_1 = x_2$. Example: $f(x) = 2x+3$.</p>
+              <p class="font-semibold text-slate-900">Onto (Surjective) Function:</p>
+              <p>$f: A \to B$ is onto if $\text{Range}(f) = B$. Example: $f(x) = x^3$ for $f: \mathbb{R} \to \mathbb{R}$.</p>
+              <p class="font-semibold text-slate-900">Analysis of $f(x) = |x-4| + |x| + |x+4|$:</p>
+              <p>Critical points at $x = -4, 0, 4$. Piecewise expansion:</p>
+              <div class="overflow-x-auto">$$f(x) = \begin{cases} -3x, & x < -4 \\ -x+8, & -4 \le x < 0 \\ x+8, & 0 \le x < 4 \\ 3x, & x \ge 4 \end{cases}$$</div>
+              <p><strong>Domain:</strong> $\mathbb{R}$ (all real numbers).</p>
+              <p><strong>Range:</strong> Minimum value is $f(0) = 8$. Function goes to $\infty$ at both ends.</p>
+              <div class="overflow-x-auto">$$\text{Range} = [8, \infty)$$</div>
+              <p><strong>Graph:</strong> Symmetric about the y-axis. Line with slope $-3$ from $(-\infty, -4)$, then slope $-1$ to $(0, 8)$, then slope $+1$ to $(4, 12)$, then slope $+3$ to $\infty$. Vertices at $(-4, 12)$, $(0, 8)$, $(4, 12)$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT Q2 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT - Q2</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Define limit of a function. Test the continuity of $f(x) = \begin{cases} \dfrac{\sin^2 ax}{x^2}, & x \neq 0 \\ 1, & x = 0 \end{cases}$ at $x = 0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Limit Definition:</p>
+              <p>$\displaystyle\lim_{x \to c} f(x) = L$ if for every $\epsilon > 0$, there exists $\delta > 0$ such that $0 < |x-c| < \delta \implies |f(x) - L| < \epsilon$.</p>
+              <p class="font-semibold text-slate-900">Continuity Test at $x = 0$:</p>
+              <p>$f(0) = 1$ (given). For $x \neq 0$:</p>
+              <div class="overflow-x-auto">$$\lim_{x \to 0} f(x) = \lim_{x \to 0} \frac{\sin^2 ax}{x^2} = \lim_{x \to 0} \left(a \cdot \frac{\sin ax}{ax}\right)^2 = a^2$$</div>
+              <p>For continuity, $\lim_{x \to 0} f(x) = f(0) \implies a^2 = 1 \implies a = \pm 1$.</p>
+              <p>If $a = \pm 1$, the function is continuous at $x = 0$. If $a \neq \pm 1$, it has a removable discontinuity at $x = 0$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT Q3(i) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT - Q3(i)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find $\dfrac{dy}{dx}$ of $y = \sin\left(2\tan^{-1}\sqrt{\dfrac{1-x}{1+x}}\right)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let $x = \cos\theta$. Using half-angle identities:</p>
+              <div class="overflow-x-auto">$$\sqrt{\frac{1-x}{1+x}} = \sqrt{\frac{1-\cos\theta}{1+\cos\theta}} = \sqrt{\frac{2\sin^2\frac{\theta}{2}}{2\cos^2\frac{\theta}{2}}} = \tan\frac{\theta}{2}$$</div>
+              <p>Then:</p>
+              <div class="overflow-x-auto">$$y = \sin\left(2\tan^{-1}\left(\tan\frac{\theta}{2}\right)\right) = \sin\theta = \sqrt{1-x^2}$$</div>
+              <p>Differentiating:</p>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = \frac{d}{dx}\sqrt{1-x^2} = \frac{-2x}{2\sqrt{1-x^2}} = -\frac{x}{\sqrt{1-x^2}}$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = -\frac{x}{\sqrt{1-x^2}}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT Q3(ii) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT - Q3(ii)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find $\dfrac{dy}{dx}$ of $y = (\tan x)^{\sec x} + (\cot x)^{\csc x}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let $y = u + v$ where $u = (\tan x)^{\sec x}$ and $v = (\cot x)^{\csc x}$.</p>
+              <p class="font-semibold text-slate-900">For $u$:</p>
+              <div class="overflow-x-auto">$$\ln u = \sec x \ln(\tan x)$$</div>
+              <div class="overflow-x-auto">$$\frac{1}{u}\frac{du}{dx} = \sec x \tan x \ln(\tan x) + \sec x \cdot \frac{1}{\tan x} \cdot \sec^2 x$$</div>
+              <div class="overflow-x-auto">$$\frac{du}{dx} = (\tan x)^{\sec x} [\sec x \tan x \ln(\tan x) + \csc x \sec^2 x]$$</div>
+              <p class="font-semibold text-slate-900">For $v$:</p>
+              <div class="overflow-x-auto">$$\ln v = \csc x \ln(\cot x)$$</div>
+              <div class="overflow-x-auto">$$\frac{1}{v}\frac{dv}{dx} = -\csc x \cot x \ln(\cot x) + \csc x \cdot \frac{1}{\cot x} \cdot (-\csc^2 x)$$</div>
+              <div class="overflow-x-auto">$$\frac{dv}{dx} = -(\cot x)^{\csc x} [\csc x \cot x \ln(\cot x) + \sec x \csc^2 x]$$</div>
+              <p class="font-semibold text-slate-900">Combining:</p>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = (\tan x)^{\sec x} [\sec x \tan x \ln(\tan x) + \csc x \sec^2 x] - (\cot x)^{\csc x} [\csc x \cot x \ln(\cot x) + \sec x \csc^2 x]$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT Q3(iii) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT - Q3(iii)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find $\dfrac{dy}{dx}$ of $x = y^{y^{y^{\dots}}}$ (infinite tower).</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Since the tower is infinite, the exponent of $y$ equals the tower itself, which is $x$:</p>
+              <div class="overflow-x-auto">$$x = y^x$$</div>
+              <p>Taking natural log:</p>
+              <div class="overflow-x-auto">$$\ln x = x \ln y$$</div>
+              <p>Differentiate implicitly:</p>
+              <div class="overflow-x-auto">$$\frac{1}{x} = \ln y + \frac{x}{y}\frac{dy}{dx}$$</div>
+              <p>Solving for $\frac{dy}{dx}$:</p>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = \frac{y(1 - x \ln y)}{x^2}$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = \frac{y(1 - x \ln y)}{x^2}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT Q4 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT - Q4</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">State Leibnitz's Theorem. If $y = \cosh(m \cosh^{-1} x)$, show that $(x^2-1)y_{n+2} + (2n+1)xy_{n+1} + (n^2-m^2)y_n = 0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Leibnitz's Theorem:</p>
+              <div class="overflow-x-auto">$$(uv)_n = \sum_{r=0}^{n} \binom{n}{r} u_{n-r} v_r$$</div>
+              <p class="font-semibold text-slate-900">Step 1: Establish the base equation</p>
+              <p>Given $y = \cosh(m \cosh^{-1} x)$. Differentiating:</p>
+              <div class="overflow-x-auto">$$y_1 = \sinh(m \cosh^{-1} x) \cdot \frac{m}{\sqrt{x^2-1}}$$</div>
+              <p>Squaring and using $\sinh^2\theta = \cosh^2\theta - 1$:</p>
+              <div class="overflow-x-auto">$$(x^2-1)y_1^2 = m^2(y^2-1)$$</div>
+              <p>Differentiating and dividing by $2y_1$:</p>
+              <div class="overflow-x-auto">$$(x^2-1)y_2 + xy_1 - m^2 y = 0 \tag{1}$$</div>
+              <p class="font-semibold text-slate-900">Step 2: Apply Leibnitz's Theorem $n$ times</p>
+              <p>Differentiating (1) $n$ times:</p>
+              <div class="overflow-x-auto">$$D^n[(x^2-1)y_2] + D^n[x y_1] - m^2 y_n = 0$$</div>
+              <p>For $(x^2-1)y_2$: $v = x^2-1$, $v_1 = 2x$, $v_2 = 2$:</p>
+              <div class="overflow-x-auto">$$D^n[(x^2-1)y_2] = (x^2-1)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n$$</div>
+              <p>For $x y_1$:</p>
+              <div class="overflow-x-auto">$$D^n[x y_1] = x y_{n+1} + n y_n$$</div>
+              <p>Substituting:</p>
+              <div class="overflow-x-auto">$$(x^2-1)y_{n+2} + 2nxy_{n+1} + n(n-1)y_n + xy_{n+1} + ny_n - m^2 y_n = 0$$</div>
+              <div class="overflow-x-auto">$$(x^2-1)y_{n+2} + (2n+1)xy_{n+1} + (n^2 - m^2)y_n = 0$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25: ECE CT Q5 -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">ECE CT - Q5</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the $n$-th derivative of $y = e^{ax} \cos(bx+c)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Given $y = e^{ax} \cos(bx+c)$. Differentiating:</p>
+              <div class="overflow-x-auto">$$y_1 = e^{ax}[a \cos(bx+c) - b \sin(bx+c)]$$</div>
+              <p>Let $a = r \cos\phi$, $b = r \sin\phi$, so $r = \sqrt{a^2+b^2}$ and $\phi = \tan^{-1}(b/a)$. Then:</p>
+              <div class="overflow-x-auto">$$y_1 = r e^{ax} \cos(bx+c+\phi)$$</div>
+              <p>By induction:</p>
+              <div class="overflow-x-auto">$$y_n = r^n e^{ax} \cos(bx+c+n\phi)$$</div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></div>
+              <div class="overflow-x-auto">$$y_n = (a^2+b^2)^{n/2} e^{ax} \cos\left(bx+c+n\tan^{-1}\frac{b}{a}\right)$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- Term Final divider -->
+          <div class="bg-indigo-50/60 border-l-4 border-indigo-500 p-4 rounded-r-xl mt-12" id="cse25-tf">
+            <h3 class="font-bold text-indigo-900">Term Final (20-11-2025) — Section A: Differential Calculus</h3>
+          </div>
+
+          <!-- CSE-25 TF Q1(a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q1(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $y = (x^2-1)^n$, prove that $(x^2-1)y_{n+2} + 2xy_{n+1} - n(n+1)y_n = 0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Find the first derivative.</strong></p>
+              <p>Given $y = (x^2-1)^n$, differentiating with respect to $x$:</p>
+              <div class="overflow-x-auto">
+                $$y_1 = n(x^2-1)^{n-1}(2x) = \frac{2nx(x^2-1)^n}{x^2-1} = \frac{2nxy}{x^2-1}$$
+              </div>
+              <p>Rearranging gives a useful relation free of fractional powers:</p>
+              <div class="overflow-x-auto">
+                $$(x^2-1)y_1 = 2nxy$$
+              </div>
+              <p><strong>Step 2: Differentiate $(n+1)$ times using Leibnitz's Theorem.</strong></p>
+              <p>Apply $D^{n+1}$ to both sides of $(x^2-1)y_1 = 2nxy$.</p>
+              <p>For the left side, treat $u = y_1$ and $v = x^2-1$ (so $v' = 2x$, $v'' = 2$, and all higher derivatives of $v$ vanish). By Leibnitz's theorem:</p>
+              <div class="overflow-x-auto">
+                $$D^{n+1}[(x^2-1)y_1] = (x^2-1)y_{n+2} + \binom{n+1}{1}(2x)y_{n+1} + \binom{n+1}{2}(2)y_n$$
+                $$= (x^2-1)y_{n+2} + 2(n+1)xy_{n+1} + n(n+1)y_n$$
+              </div>
+              <p>For the right side, treat $u=y$ and $v=2nx$ (so $v'=2n$, higher derivatives vanish):</p>
+              <div class="overflow-x-auto">
+                $$D^{n+1}[2nxy] = 2nxy_{n+1} + \binom{n+1}{1}(2n)y_n = 2nxy_{n+1} + 2n(n+1)y_n$$
+              </div>
+              <p>Equating both sides:</p>
+              <div class="overflow-x-auto">
+                $$(x^2-1)y_{n+2} + 2(n+1)xy_{n+1} + n(n+1)y_n = 2nxy_{n+1} + 2n(n+1)y_n$$
+              </div>
+              <p>Collecting terms:</p>
+              <div class="overflow-x-auto">
+                $$(x^2-1)y_{n+2} + [2(n+1)-2n]xy_{n+1} + [n(n+1)-2n(n+1)]y_n = 0$$
+                $$(x^2-1)y_{n+2} + 2xy_{n+1} - n(n+1)y_n = 0$$
+              </div>
+              <p>Hence proved.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q1(b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q1(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the $n$-th derivative of $\dfrac{1}{x^2+a^2}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Resolve into partial (complex) fractions.</strong></p>
+              <p>Since $x^2 + a^2 = (x+ia)(x-ia)$, we write:</p>
+              <div class="overflow-x-auto">
+                $$\frac{1}{x^2+a^2} = \frac{1}{2ia}\left(\frac{1}{x-ia} - \frac{1}{x+ia}\right)$$
+              </div>
+              <p><strong>Step 2: Use the standard result $D^n\left[\frac{1}{x-k}\right] = \frac{(-1)^n n!}{(x-k)^{n+1}}$.</strong></p>
+              <div class="overflow-x-auto">
+                $$y_n = \frac{(-1)^n n!}{2ia}\left[\frac{1}{(x-ia)^{n+1}} - \frac{1}{(x+ia)^{n+1}}\right]$$
+              </div>
+              <p><strong>Step 3: Convert to polar form.</strong></p>
+              <p>Let $x - ia = re^{-i\theta}$ and $x+ia = re^{i\theta}$, where $r=\sqrt{x^2+a^2}$ and $\theta = \tan^{-1}\left(\dfrac{a}{x}\right)$.</p>
+              <p>Then:</p>
+              <div class="overflow-x-auto">
+                $$\frac{1}{(x-ia)^{n+1}} - \frac{1}{(x+ia)^{n+1}} = r^{-(n+1)}\left[e^{i(n+1)\theta} - e^{-i(n+1)\theta}\right] = r^{-(n+1)} \cdot 2i\sin((n+1)\theta)$$
+              </div>
+              <p>Substituting back:</p>
+              <div class="overflow-x-auto">
+                $$y_n = \frac{(-1)^n n!}{2ia} \cdot 2i\, r^{-(n+1)}\sin((n+1)\theta) = \frac{(-1)^n n!}{a}\, r^{-(n+1)}\sin((n+1)\theta)$$
+              </div>
+              <p><strong>Step 4: Simplify using $\sin\theta = \dfrac{a}{r}$ (so $r^{-(n+1)} = \dfrac{\sin^{n+1}\theta}{a^{n+1}}$).</strong></p>
+              <div class="overflow-x-auto">
+                $$y_n = \frac{(-1)^n n!}{a}\cdot \frac{\sin^{n+1}\theta}{a^{n+1}}\sin((n+1)\theta)$$
+              </div>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></p>
+              <div class="overflow-x-auto">
+                $$y_n = \frac{(-1)^n n!}{a^{n+2}}\sin^{n+1}\theta \sin\big((n+1)\theta\big), \qquad \theta = \tan^{-1}\left(\frac{a}{x}\right)$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q2(a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q2(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">State and prove Cauchy's Mean Value Theorem.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-4">
+                <span class="font-semibold text-slate-900 block mb-1">Statement:</span>
+                If $f(x)$ and $g(x)$ are two functions such that:
+                <ul class="list-decimal pl-5 mt-2 space-y-1">
+                  <li>Both are continuous on $[a,b]$,</li>
+                  <li>Both are differentiable on $(a,b)$, and</li>
+                  <li>$g'(x) \neq 0$ for any $x \in (a,b)$,</li>
+                </ul>
+                then there exists at least one $c \in (a,b)$ such that:
+                $$\frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f'(c)}{g'(c)}$$
+              </div>
+              <p class="font-semibold text-slate-900">Proof:</p>
+              <p>Note first that $g(b) \neq g(a)$ — if they were equal, Rolle's theorem applied to $g$ would force $g'(x)=0$ for some $x \in (a,b)$, contradicting the hypothesis.</p>
+              <p>Define an auxiliary function $\phi(x)$ on $[a,b]$ by:</p>
+              <div class="overflow-x-auto">
+                $$\phi(x) = f(x) - f(a) - \frac{f(b)-f(a)}{g(b)-g(a)}\big[g(x) - g(a)\big]$$
+              </div>
+              <p>Check the conditions of Rolle's theorem for $\phi(x)$:</p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>$\phi(x)$ is continuous on $[a,b]$ (sum/combination of continuous functions).</li>
+                <li>$\phi(x)$ is differentiable on $(a,b)$.</li>
+                <li>$\phi(a) = f(a)-f(a) - \frac{f(b)-f(a)}{g(b)-g(a)}[g(a)-g(a)] = 0$.</li>
+                <li>$\phi(b) = f(b)-f(a) - \frac{f(b)-f(a)}{g(b)-g(a)}[g(b)-g(a)] = f(b)-f(a) - [f(b)-f(a)] = 0$.</li>
+              </ul>
+              <p>Since $\phi(a)=\phi(b)=0$, by Rolle's Theorem there exists $c \in (a,b)$ such that $\phi'(c)=0$.</p>
+              <p>Differentiating $\phi(x)$:</p>
+              <div class="overflow-x-auto">
+                $$\phi'(x) = f'(x) - \frac{f(b)-f(a)}{g(b)-g(a)}g'(x)$$
+              </div>
+              <p>Setting $\phi'(c)=0$:</p>
+              <div class="overflow-x-auto">
+                $$f'(c) - \frac{f(b)-f(a)}{g(b)-g(a)}g'(c) = 0 \implies \frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f'(c)}{g'(c)}$$
+              </div>
+              <p>This completes the proof. (Note: setting $g(x)=x$ recovers Lagrange's Mean Value Theorem as a special case.)</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q2(b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q2(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Expand $f(x)=\cos x$ in a Taylor series about $x=\dfrac{\pi}{3}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>The Taylor series of $f(x)$ about a point $x=a$ is:</p>
+              <div class="overflow-x-auto">
+                $$f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \cdots$$
+              </div>
+              <p>Here $a = \dfrac{\pi}{3}$. Let $h = x - \dfrac{\pi}{3}$. We compute the successive derivatives of $\cos x$ and evaluate them at $x=\dfrac{\pi}{3}$:</p>
+              <div class="overflow-x-auto">
+                $$f(x)=\cos x \implies f\left(\tfrac{\pi}{3}\right) = \cos\tfrac{\pi}{3} = \tfrac{1}{2}$$
+                $$f'(x)=-\sin x \implies f'\left(\tfrac{\pi}{3}\right) = -\sin\tfrac{\pi}{3} = -\tfrac{\sqrt{3}}{2}$$
+                $$f''(x)=-\cos x \implies f''\left(\tfrac{\pi}{3}\right) = -\tfrac{1}{2}$$
+                $$f'''(x)=\sin x \implies f'''\left(\tfrac{\pi}{3}\right) = \tfrac{\sqrt{3}}{2}$$
+                $$f^{(4)}(x)=\cos x \implies f^{(4)}\left(\tfrac{\pi}{3}\right) = \tfrac{1}{2}$$
+              </div>
+              <p>Substituting into the Taylor expansion:</p>
+              <div class="overflow-x-auto">
+                $$\cos x = \frac{1}{2} - \frac{\sqrt{3}}{2}h - \frac{1}{2}\cdot\frac{h^2}{2!} + \frac{\sqrt{3}}{2}\cdot\frac{h^3}{3!} + \frac{1}{2}\cdot\frac{h^4}{4!} - \cdots$$
+              </div>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result</strong> (where $h = x - \frac{\pi}{3}$):</p>
+              <div class="overflow-x-auto">
+                $$\cos x = \frac{1}{2} - \frac{\sqrt{3}}{2}h - \frac{h^2}{4} + \frac{\sqrt{3}}{12}h^3 + \frac{h^4}{48} - \cdots$$
+              </div>
+              <p>This pattern repeats with period 4 in the derivative sequence ($\cos, -\sin, -\cos, \sin, \cos, \ldots$), so the series can be continued indefinitely using this cycle.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q3(a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q3(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\displaystyle\lim_{x \to 0}\left(\frac{\tan x}{x}\right)^{1/x^2}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>This is a $1^\infty$ indeterminate form. Let $L$ denote the limit. Taking the natural log of both sides:</p>
+              <div class="overflow-x-auto">
+                $$\ln L = \lim_{x\to 0} \frac{1}{x^2}\ln\left(\frac{\tan x}{x}\right)$$
+              </div>
+              <p><strong>Step 1: Expand $\tan x$ using Maclaurin's series.</strong></p>
+              <div class="overflow-x-auto">
+                $$\tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \cdots$$
+              </div>
+              <p>Dividing by $x$:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\tan x}{x} = 1 + \frac{x^2}{3} + \frac{2x^4}{15} + \cdots$$
+              </div>
+              <p><strong>Step 2: Take the logarithm using $\ln(1+u) = u - \frac{u^2}{2} + \cdots$, with $u = \frac{x^2}{3}+\cdots$.</strong></p>
+              <div class="overflow-x-auto">
+                $$\ln\left(\frac{\tan x}{x}\right) = \left(\frac{x^2}{3} + \frac{2x^4}{15}\right) - \frac{1}{2}\left(\frac{x^2}{3}\right)^2 + \cdots = \frac{x^2}{3} + O(x^4)$$
+              </div>
+              <p><strong>Step 3: Substitute into the limit.</strong></p>
+              <div class="overflow-x-auto">
+                $$\ln L = \lim_{x\to 0}\frac{1}{x^2}\left(\frac{x^2}{3} + O(x^4)\right) = \lim_{x \to 0}\left(\frac{1}{3} + O(x^2)\right) = \frac{1}{3}$$
+              </div>
+              <p>Therefore:</p>
+              <div class="overflow-x-auto">
+                $$L = e^{1/3}$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q3(b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q3(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $u = \ln(x^3+y^3+z^3-3xyz)$, show that $\dfrac{\partial u}{\partial x} + \dfrac{\partial u}{\partial y} + \dfrac{\partial u}{\partial z} = \dfrac{3}{x+y+z}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Use the algebraic identity.</strong></p>
+              <p>Let $f = x^3+y^3+z^3-3xyz$. Recall the standard factorization:</p>
+              <div class="overflow-x-auto">
+                $$f = x^3+y^3+z^3-3xyz = (x+y+z)(x^2+y^2+z^2-xy-yz-zx)$$
+              </div>
+              <p><strong>Step 2: Compute the partial derivatives of $f$.</strong></p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial f}{\partial x} = 3x^2 - 3yz, \quad \frac{\partial f}{\partial y} = 3y^2 - 3xz, \quad \frac{\partial f}{\partial z} = 3z^2 - 3xy$$
+              </div>
+              <p>Since $u = \ln f$, we have $\dfrac{\partial u}{\partial x} = \dfrac{1}{f}\dfrac{\partial f}{\partial x}$, and similarly for $y,z$.</p>
+              <p><strong>Step 3: Sum the partial derivatives of $f$.</strong></p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}+\frac{\partial f}{\partial z} = 3(x^2+y^2+z^2) - 3(yz+xz+xy) = 3(x^2+y^2+z^2-xy-yz-zx)$$
+              </div>
+              <p><strong>Step 4: Use the factorization to relate this sum back to $f$.</strong></p>
+              <p>From Step 1, $x^2+y^2+z^2-xy-yz-zx = \dfrac{f}{x+y+z}$. Substituting:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}+\frac{\partial f}{\partial z} = 3\cdot\frac{f}{x+y+z} = \frac{3f}{x+y+z}$$
+              </div>
+              <p><strong>Step 5: Sum the partial derivatives of $u$.</strong></p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial u}{\partial x}+\frac{\partial u}{\partial y}+\frac{\partial u}{\partial z} = \frac{1}{f}\left(\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}+\frac{\partial f}{\partial z}\right) = \frac{1}{f}\cdot\frac{3f}{x+y+z} = \frac{3}{x+y+z}$$
+              </div>
+              <p>Hence proved.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q4(a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q4(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the condition for the curves $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ and $\dfrac{x^2}{a'^2}+\dfrac{y^2}{b'^2}=1$ to intersect orthogonally.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Find the slopes of the tangents at a common point $(x_1,y_1)$.</strong></p>
+              <p>Differentiating the first curve implicitly:</p>
+              <div class="overflow-x-auto">
+                $$\frac{2x}{a^2} + \frac{2y}{b^2}\frac{dy}{dx}=0 \implies m_1 = \left.\frac{dy}{dx}\right|_{(x_1,y_1)} = -\frac{b^2 x_1}{a^2 y_1}$$
+              </div>
+              <p>Similarly, for the second curve:</p>
+              <div class="overflow-x-auto">
+                $$m_2 = -\frac{b'^2 x_1}{a'^2 y_1}$$
+              </div>
+              <p><strong>Step 2: Apply the orthogonality condition $m_1 m_2 = -1$.</strong></p>
+              <div class="overflow-x-auto">
+                $$\left(-\frac{b^2x_1}{a^2y_1}\right)\left(-\frac{b'^2x_1}{a'^2y_1}\right) = -1 \implies \frac{b^2b'^2x_1^2}{a^2a'^2y_1^2} = -1 \quad \cdots (\ast)$$
+              </div>
+              <p><strong>Step 3: Use both curve equations to express $x_1^2/y_1^2$.</strong></p>
+              <p>Since $(x_1,y_1)$ lies on both curves:</p>
+              <div class="overflow-x-auto">
+                $$\frac{x_1^2}{a^2}+\frac{y_1^2}{b^2}=1 \quad \text{and} \quad \frac{x_1^2}{a'^2}+\frac{y_1^2}{b'^2}=1$$
+              </div>
+              <p>Subtracting these two equations:</p>
+              <div class="overflow-x-auto">
+                $$x_1^2\left(\frac{1}{a^2}-\frac{1}{a'^2}\right) = y_1^2\left(\frac{1}{b'^2}-\frac{1}{b^2}\right) \quad \cdots (\ast\ast)$$
+              </div>
+              <p><strong>Step 4: Combine $(\ast)$ and $(\ast\ast)$.</strong></p>
+              <p>From $(\ast)$: $\dfrac{x_1^2}{y_1^2} = -\dfrac{a^2a'^2}{b^2b'^2}$. Substitute into $(\ast\ast)$:</p>
+              <div class="overflow-x-auto">
+                $$-\frac{a^2a'^2}{b^2b'^2}\left(\frac{a'^2-a^2}{a^2a'^2}\right) = \frac{b^2-b'^2}{b^2b'^2}$$
+              </div>
+              <p>Simplifying the left side:</p>
+              <div class="overflow-x-auto">
+                $$-\frac{a'^2-a^2}{b^2b'^2} = \frac{b^2-b'^2}{b^2b'^2} \implies a^2-a'^2 = b^2-b'^2$$
+              </div>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Required Condition:</strong></p>
+              <div class="overflow-x-auto">
+                $$a^2 - b^2 = a'^2 - b'^2$$
+              </div>
+              <p>This is the well-known condition for two confocal central conics to cut orthogonally.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q4(b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q4(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the maximum and minimum values of $f(x) = x^5 - 5x^4 + 5x^3 - 1$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Find critical points using $f'(x)=0$.</strong></p>
+              <div class="overflow-x-auto">
+                $$f'(x) = 5x^4 - 20x^3 + 15x^2 = 5x^2(x^2 - 4x + 3) = 5x^2(x-1)(x-3)$$
+              </div>
+              <p>Setting $f'(x)=0$: $x = 0, \; x=1, \; x=3$.</p>
+              <p><strong>Step 2: Test each critical point using the second derivative.</strong></p>
+              <div class="overflow-x-auto">
+                $$f''(x) = 20x^3 - 60x^2 + 30x = 10x(2x^2-6x+3)$$
+              </div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li><strong>At $x=0$:</strong> $f''(0)=0$, so the second derivative test fails. Examine $f'(x)=5x^2(x-1)(x-3)$ near $x=0$: the factor $x^2 \geq 0$ is always non-negative, and $(x-1)(x-3) > 0$ for $x$ near $0$ (both factors negative, product positive). So $f'(x) > 0$ on both sides of $x=0$ — the sign of $f'$ does <em>not</em> change. Hence $x=0$ is <strong>not</strong> an extremum (it is a point of inflection with a horizontal tangent).</li>
+                <li><strong>At $x=1$:</strong> $f''(1) = 10(1)(2-6+3) = 10(-1) = -10 < 0$. Since $f''(1)<0$, this is a <strong>local maximum</strong>.
+                $$f(1) = 1 - 5 + 5 - 1 = 0$$
+                </li>
+                <li><strong>At $x=3$:</strong> $f''(3) = 10(3)(18-18+3) = 10(3)(3) = 90 > 0$. Since $f''(3)>0$, this is a <strong>local minimum</strong>.
+                $$f(3) = 243 - 5(81) + 5(27) - 1 = 243 - 405 + 135 - 1 = -28$$
+                </li>
+              </ul>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></p>
+              <div class="overflow-x-auto">
+                $$\text{Local maximum value} = 0 \text{ at } x=1, \qquad \text{Local minimum value} = -28 \text{ at } x=3$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- Section B divider -->
+          <div class="bg-indigo-50/60 border-l-4 border-indigo-500 p-4 rounded-r-xl mt-12">
+            <h3 class="font-bold text-indigo-900">Term Final (20-11-2025) — Section B: Integral Calculus</h3>
+          </div>
+
+          <!-- CSE-25 TF Q5(a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q5(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\displaystyle\int \frac{3x+1}{(x-1)^2(x+2)}\,dx$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Set up the partial fraction decomposition.</strong></p>
+              <div class="overflow-x-auto">
+                $$\frac{3x+1}{(x-1)^2(x+2)} = \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+2}$$
+              </div>
+              <p>Multiplying through by $(x-1)^2(x+2)$:</p>
+              <div class="overflow-x-auto">
+                $$3x+1 = A(x-1)(x+2) + B(x+2) + C(x-1)^2$$
+              </div>
+              <p><strong>Step 2: Substitute convenient values of $x$.</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Let $x=1$: $\;4 = B(3) \implies B = \dfrac{4}{3}$</li>
+                <li>Let $x=-2$: $\;-5 = C(9) \implies C = -\dfrac{5}{9}$</li>
+                <li>Compare coefficients of $x^2$: $\;0 = A + C \implies A = \dfrac{5}{9}$</li>
+              </ul>
+              <p><strong>Step 3: Integrate term by term.</strong></p>
+              <div class="overflow-x-auto">
+                $$\int\frac{3x+1}{(x-1)^2(x+2)}dx = \frac{5}{9}\int\frac{dx}{x-1} + \frac{4}{3}\int\frac{dx}{(x-1)^2} - \frac{5}{9}\int\frac{dx}{x+2}$$
+              </div>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></p>
+              <div class="overflow-x-auto">
+                $$= \frac{5}{9}\ln|x-1| - \frac{4}{3(x-1)} - \frac{5}{9}\ln|x+2| + C = \frac{5}{9}\ln\left|\frac{x-1}{x+2}\right| - \frac{4}{3(x-1)} + C$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q5(b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q5(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\displaystyle\int \frac{dx}{(x+1)\sqrt{x^2-1}}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Substitute $x+1 = \dfrac{1}{t}$, so $x = \dfrac{1-t}{t}$ and $dx = -\dfrac{1}{t^2}dt$.</strong></p>
+              <p>Express $x^2-1=(x-1)(x+1)$ in terms of $t$. Since $x+1=\frac{1}{t}$, we have $x-1 = \frac{1}{t}-2 = \frac{1-2t}{t}$, so:</p>
+              <div class="overflow-x-auto">
+                $$x^2-1 = (x-1)(x+1) = \frac{1-2t}{t}\cdot\frac{1}{t} = \frac{1-2t}{t^2}$$
+              </div>
+              <p>Therefore $\sqrt{x^2-1} = \dfrac{\sqrt{1-2t}}{|t|}$, and:</p>
+              <div class="overflow-x-auto">
+                $$(x+1)\sqrt{x^2-1} = \frac{1}{t}\cdot\frac{\sqrt{1-2t}}{t} = \frac{\sqrt{1-2t}}{t^2}$$
+              </div>
+              <p><strong>Step 2: Substitute into the integral.</strong></p>
+              <div class="overflow-x-auto">
+                $$\int\frac{dx}{(x+1)\sqrt{x^2-1}} = \int\frac{-\frac{1}{t^2}dt}{\frac{\sqrt{1-2t}}{t^2}} = -\int\frac{dt}{\sqrt{1-2t}}$$
+              </div>
+              <p><strong>Step 3: Integrate.</strong></p>
+              <div class="overflow-x-auto">
+                $$-\int(1-2t)^{-1/2}dt = -\left[-\sqrt{1-2t}\right] + C = \sqrt{1-2t}+C$$
+              </div>
+              <p><strong>Step 4: Substitute back $t = \dfrac{1}{x+1}$.</strong></p>
+              <div class="overflow-x-auto">
+                $$1-2t = 1-\frac{2}{x+1} = \frac{x-1}{x+1}$$
+              </div>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></p>
+              <div class="overflow-x-auto">
+                $$\int\frac{dx}{(x+1)\sqrt{x^2-1}} = \sqrt{\frac{x-1}{x+1}} + C$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q6(a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q6(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Establish a reduction formula for $\int \sec^n x\,dx$ and hence evaluate $\int_0^{\pi/4}\sec^4x\,dx$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Set up integration by parts.</strong></p>
+              <p>Write $I_n = \int \sec^n x \,dx = \int \sec^{n-2}x \cdot \sec^2x \,dx$. Let $u=\sec^{n-2}x$ and $dv=\sec^2x\,dx$, so $du = (n-2)\sec^{n-3}x\sec x\tan x\,dx$ and $v=\tan x$.</p>
+              <div class="overflow-x-auto">
+                $$I_n = \sec^{n-2}x\tan x - (n-2)\int \sec^{n-2}x\tan^2x\,dx$$
+              </div>
+              <p><strong>Step 2: Use $\tan^2x = \sec^2x - 1$.</strong></p>
+              <div class="overflow-x-auto">
+                $$I_n = \sec^{n-2}x\tan x - (n-2)\int\sec^{n-2}x(\sec^2x-1)\,dx = \sec^{n-2}x\tan x - (n-2)I_n + (n-2)I_{n-2}$$
+              </div>
+              <p><strong>Step 3: Collect $I_n$ terms.</strong></p>
+              <div class="overflow-x-auto">
+                $$I_n + (n-2)I_n = \sec^{n-2}x\tan x + (n-2)I_{n-2}$$
+              </div>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Reduction Formula:</strong></p>
+              <div class="overflow-x-auto">
+                $$I_n = \frac{\sec^{n-2}x\tan x}{n-1} + \frac{n-2}{n-1}I_{n-2}$$
+              </div>
+              <p><strong>Application: Evaluate $I_4 = \int_0^{\pi/4}\sec^4x\,dx$.</strong></p>
+              <p>With $n=4$: $I_4 = \dfrac{\sec^2x\tan x}{3} + \dfrac{2}{3}I_2$, where $I_2 = \int\sec^2x\,dx = \tan x$.</p>
+              <div class="overflow-x-auto">
+                $$I_4 = \frac{\sec^2x\tan x}{3} + \frac{2}{3}\tan x = \frac{\tan x(\sec^2x+2)}{3}$$
+              </div>
+              <p>Evaluate at the bounds $x=0$ to $x=\pi/4$. At $x=\pi/4$: $\tan\frac{\pi}{4}=1$, $\sec^2\frac{\pi}{4}=2$. At $x=0$: $\tan 0 = 0$.</p>
+              <div class="overflow-x-auto">
+                $$I_4 = \frac{1\cdot(2+2)}{3} - 0 = \frac{4}{3}$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q6(b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q6(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\displaystyle\lim_{n\to\infty}\sum_{r=1}^n \frac{n}{n^2+r^2}$ as a definite integral.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Rewrite the summand by factoring $n^2$ from the denominator.</strong></p>
+              <div class="overflow-x-auto">
+                $$\frac{n}{n^2+r^2} = \frac{n}{n^2\left(1+\frac{r^2}{n^2}\right)} = \frac{1}{n}\cdot\frac{1}{1+\left(\frac{r}{n}\right)^2}$$
+              </div>
+              <p><strong>Step 2: Recognize the Riemann sum form.</strong></p>
+              <p>The sum becomes:</p>
+              <div class="overflow-x-auto">
+                $$S_n = \sum_{r=1}^n \frac{1}{n}\cdot\frac{1}{1+\left(\frac{r}{n}\right)^2}$$
+              </div>
+              <p>This is a Riemann sum for $f(x) = \dfrac{1}{1+x^2}$ over $[0,1]$, with $x_r = \dfrac{r}{n}$ and step size $\Delta x = \dfrac{1}{n}$.</p>
+              <p><strong>Step 3: Convert to a definite integral.</strong></p>
+              <div class="overflow-x-auto">
+                $$\lim_{n\to\infty}S_n = \int_0^1 \frac{dx}{1+x^2}$$
+              </div>
+              <p><strong>Step 4: Evaluate.</strong></p>
+              <div class="overflow-x-auto">
+                $$\int_0^1\frac{dx}{1+x^2} = \Big[\tan^{-1}x\Big]_0^1 = \tan^{-1}(1) - \tan^{-1}(0) = \frac{\pi}{4} - 0$$
+              </div>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong> $\displaystyle\lim_{n\to\infty}\sum_{r=1}^n\frac{n}{n^2+r^2} = \frac{\pi}{4}$</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q7(a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q7(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Prove that $\Gamma(n+1) = n\,\Gamma(n)$ and find the value of $\Gamma\left(\dfrac{1}{2}\right)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Part 1: Prove $\Gamma(n+1) = n\Gamma(n)$.</strong></p>
+              <p>By definition, $\Gamma(n) = \displaystyle\int_0^\infty x^{n-1}e^{-x}\,dx$. Therefore:</p>
+              <div class="overflow-x-auto">
+                $$\Gamma(n+1) = \int_0^\infty x^n e^{-x}\,dx$$
+              </div>
+              <p>Integrate by parts with $u = x^n$ (so $du=nx^{n-1}dx$) and $dv = e^{-x}dx$ (so $v=-e^{-x}$):</p>
+              <div class="overflow-x-auto">
+                $$\Gamma(n+1) = \Big[-x^ne^{-x}\Big]_0^\infty + n\int_0^\infty x^{n-1}e^{-x}\,dx$$
+              </div>
+              <p>The boundary term vanishes at both limits ($x^ne^{-x}\to 0$ as $x\to\infty$, and equals $0$ at $x=0$ for $n>0$). Hence:</p>
+              <div class="overflow-x-auto">
+                $$\Gamma(n+1) = n\int_0^\infty x^{n-1}e^{-x}\,dx = n\,\Gamma(n)$$
+              </div>
+              <p><strong>Part 2: Find $\Gamma\left(\frac{1}{2}\right)$.</strong></p>
+              <div class="overflow-x-auto">
+                $$\Gamma\left(\tfrac{1}{2}\right) = \int_0^\infty x^{-1/2}e^{-x}\,dx$$
+              </div>
+              <p>Substitute $x=u^2$, so $dx = 2u\,du$:</p>
+              <div class="overflow-x-auto">
+                $$\Gamma\left(\tfrac{1}{2}\right) = \int_0^\infty u^{-1}e^{-u^2}(2u\,du) = 2\int_0^\infty e^{-u^2}\,du$$
+              </div>
+              <p>Using the standard Gaussian integral $\displaystyle\int_0^\infty e^{-u^2}du = \dfrac{\sqrt{\pi}}{2}$:</p>
+              <div class="overflow-x-auto">
+                $$\Gamma\left(\tfrac{1}{2}\right) = 2\cdot\frac{\sqrt{\pi}}{2} = \sqrt{\pi}$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q7(b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q7(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\displaystyle\int_0^1 x^4(1-x^2)^{3/2}\,dx$ by converting it into a Beta function.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Substitute $x^2 = t$, so $x=\sqrt{t}$ and $dx = \dfrac{dt}{2\sqrt{t}}$.</strong></p>
+              <div class="overflow-x-auto">
+                $$\int_0^1 x^4(1-x^2)^{3/2}dx = \int_0^1 t^2(1-t)^{3/2}\cdot\frac{dt}{2\sqrt{t}} = \frac{1}{2}\int_0^1 t^{3/2}(1-t)^{3/2}dt$$
+              </div>
+              <p><strong>Step 2: Recognize the Beta function form $B(m,n)=\int_0^1 t^{m-1}(1-t)^{n-1}dt$.</strong></p>
+              <p>Here $m-1 = \frac{3}{2} \implies m=\frac{5}{2}$, and similarly $n=\frac{5}{2}$:</p>
+              <div class="overflow-x-auto">
+                $$\frac{1}{2}\int_0^1 t^{3/2}(1-t)^{3/2}dt = \frac{1}{2}B\left(\tfrac{5}{2},\tfrac{5}{2}\right)$$
+              </div>
+              <p><strong>Step 3: Convert to Gamma functions using $B(m,n)=\dfrac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}$.</strong></p>
+              <div class="overflow-x-auto">
+                $$B\left(\tfrac{5}{2},\tfrac{5}{2}\right) = \frac{\Gamma(5/2)\Gamma(5/2)}{\Gamma(5)} = \frac{[\Gamma(5/2)]^2}{\Gamma(5)}$$
+              </div>
+              <p><strong>Step 4: Evaluate $\Gamma(5/2)$ and $\Gamma(5)$.</strong></p>
+              <p>Using $\Gamma(n+1)=n\Gamma(n)$ repeatedly:</p>
+              <div class="overflow-x-auto">
+                $$\Gamma\left(\tfrac{5}{2}\right) = \tfrac{3}{2}\cdot\tfrac{1}{2}\cdot\Gamma\left(\tfrac{1}{2}\right) = \tfrac{3}{4}\sqrt{\pi}$$
+                $$\Gamma(5) = 4! = 24$$
+              </div>
+              <p>So:</p>
+              <div class="overflow-x-auto">
+                $$B\left(\tfrac{5}{2},\tfrac{5}{2}\right) = \frac{\left(\frac{3}{4}\sqrt{\pi}\right)^2}{24} = \frac{\frac{9\pi}{16}}{24} = \frac{9\pi}{384} = \frac{3\pi}{128}$$
+              </div>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></p>
+              <div class="overflow-x-auto">
+                $$\int_0^1 x^4(1-x^2)^{3/2}dx = \frac{1}{2}\cdot\frac{3\pi}{128} = \frac{3\pi}{256}$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q8(a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q8(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the total area of the cardioid $r = a(1+\cos\theta)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Recall the area formula in polar coordinates.</strong></p>
+              <div class="overflow-x-auto">
+                $$A = \frac{1}{2}\int_0^{2\pi} r^2\,d\theta$$
+              </div>
+              <p><strong>Step 2: Substitute $r=a(1+\cos\theta)$ and expand $r^2$.</strong></p>
+              <div class="overflow-x-auto">
+                $$r^2 = a^2(1+\cos\theta)^2 = a^2\left(1+2\cos\theta+\cos^2\theta\right)$$
+              </div>
+              <p>Using $\cos^2\theta = \dfrac{1+\cos2\theta}{2}$:</p>
+              <div class="overflow-x-auto">
+                $$r^2 = a^2\left(\frac{3}{2}+2\cos\theta+\frac{\cos2\theta}{2}\right)$$
+              </div>
+              <p><strong>Step 3: Integrate over $\theta \in [0,2\pi]$.</strong></p>
+              <p>Note that $\int_0^{2\pi}\cos\theta\,d\theta = 0$ and $\int_0^{2\pi}\cos2\theta\,d\theta = 0$ (full periods), so only the constant term survives:</p>
+              <div class="overflow-x-auto">
+                $$\int_0^{2\pi}r^2\,d\theta = a^2\left(\frac{3}{2}\right)(2\pi) = 3\pi a^2$$
+              </div>
+              <p><strong>Step 4: Apply the area formula.</strong></p>
+              <div class="overflow-x-auto">
+                $$A = \frac{1}{2}(3\pi a^2) = \frac{3\pi a^2}{2}$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-25 TF Q8(b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final — Q8(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the volume of the solid generated by revolving the ellipse $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ about the $x$-axis.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Step 1: Recall the disk method formula.</strong></p>
+              <p>When revolving the region under $y=y(x)$ about the $x$-axis from $x=-a$ to $x=a$:</p>
+              <div class="overflow-x-auto">
+                $$V = \pi\int_{-a}^{a} y^2\,dx$$
+              </div>
+              <p><strong>Step 2: Express $y^2$ from the ellipse equation.</strong></p>
+              <div class="overflow-x-auto">
+                $$\frac{y^2}{b^2} = 1 - \frac{x^2}{a^2} \implies y^2 = b^2\left(1-\frac{x^2}{a^2}\right)$$
+              </div>
+              <p><strong>Step 3: Set up and evaluate the integral.</strong> By symmetry, integrate from $0$ to $a$ and double:</p>
+              <div class="overflow-x-auto">
+                $$V = \pi\int_{-a}^a b^2\left(1-\frac{x^2}{a^2}\right)dx = 2\pi b^2\int_0^a\left(1-\frac{x^2}{a^2}\right)dx$$
+              </div>
+              <div class="overflow-x-auto">
+                $$= 2\pi b^2\left[x - \frac{x^3}{3a^2}\right]_0^a = 2\pi b^2\left(a - \frac{a}{3}\right) = 2\pi b^2 \cdot \frac{2a}{3}$$
+              </div>
+              <p class="bg-emerald-50 p-4 rounded-xl border border-emerald-100"><strong>Final Result:</strong></p>
+              <div class="overflow-x-auto">
+                $$V = \frac{4\pi a b^2}{3}$$
+              </div>
+              <p>(Note: when $a=b=r$, this reduces correctly to the sphere volume formula $\frac{4}{3}\pi r^3$.)</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#cse-25" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           CSE-24
+           ========================================== -->
+      <section id="cse-24" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Past Academic Term</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-24</h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- CSE-24 Term Final Q1 (a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final (Sec A) - Q1(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the $n$-th derivative of $e^{ax} \sin(bx+c)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let $y = e^{ax} \sin(bx+c)$.</p>
+              <p>Differentiating once with respect to $x$:</p>
+              <div class="overflow-x-auto">
+                $$y_1 = a e^{ax} \sin(bx+c) + b e^{ax} \cos(bx+c) = e^{ax} [a \sin(bx+c) + b \cos(bx+c)]$$
+              </div>
+              <p>Let $a = r \cos \phi$ and $b = r \sin \phi$. Squaring and adding these equations yields:</p>
+              <div class="overflow-x-auto">
+                $$a^2 + b^2 = r^2(\cos^2 \phi + \sin^2 \phi) \implies r = \sqrt{a^2 + b^2}$$
+                $$\tan \phi = \frac{b}{a} \implies \phi = \tan^{-1}\left(\frac{b}{a}\right)$$
+              </div>
+              <p>Substituting these into the derivative equation:</p>
+              <div class="overflow-x-auto">
+                $$y_1 = e^{ax} [r \cos \phi \sin(bx+c) + r \sin \phi \cos(bx+c)]$$
+                $$y_1 = r e^{ax} \sin(bx+c+\phi)$$
+              </div>
+              <p>Differentiating a second time yields the same structural form with an additional factor of $r$ and shift of $\phi$:</p>
+              <div class="overflow-x-auto">
+                $$y_2 = r^2 e^{ax} \sin(bx+c+2\phi)$$
+              </div>
+              <p>By mathematical induction, the $n$-th derivative is:</p>
+              <div class="overflow-x-auto">
+                $$y_n = r^n e^{ax} \sin(bx+c+n\phi)$$
+              </div>
+              <p>Substituting $r = (a^2+b^2)^{1/2}$ and $\phi = \tan^{-1}(b/a)$:</p>
+              <div class="overflow-x-auto">
+                $$y_n = (a^2+b^2)^{n/2} e^{ax} \sin\left(bx+c+n\tan^{-1}\frac{b}{a}\right)$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-24 Term Final Q7 (a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final (Sec B) - Q7(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">State and prove the relationship between Beta and Gamma functions: $B(m,n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p><strong>Definitions:</strong></p>
+              <div class="overflow-x-auto">
+                $$\Gamma(n) = \int_0^\infty e^{-t} t^{n-1} \, dt \quad (n > 0)$$
+                $$B(m,n) = \int_0^1 x^{m-1}(1-x)^{n-1} \, dx = 2\int_0^{\pi/2} \sin^{2m-1}\theta \cos^{2n-1}\theta \, d\theta$$
+              </div>
+              <p><strong>Proof:</strong></p>
+              <p>Let's write the Gamma function using substitution $t = x^2$:</p>
+              <div class="overflow-x-auto">
+                $$\Gamma(m) = \int_0^\infty e^{-x^2} (x^2)^{m-1} \cdot 2x \, dx = 2\int_0^\infty e^{-x^2} x^{2m-1} \, dx$$
+                $$\text{Similarly, } \Gamma(n) = 2\int_0^\infty e^{-y^2} y^{2n-1} \, dy$$
+              </div>
+              <p>Multiply $\Gamma(m)$ and $\Gamma(n)$ together:</p>
+              <div class="overflow-x-auto">
+                $$\Gamma(m)\Gamma(n) = \left( 2\int_0^\infty e^{-x^2} x^{2m-1} \, dx \right) \left( 2\int_0^\infty e^{-y^2} y^{2n-1} \, dy \right)$$
+                $$\Gamma(m)\Gamma(n) = 4\int_0^\infty \int_0^\infty e^{-(x^2+y^2)} x^{2m-1} y^{2n-1} \, dx \, dy$$
+              </div>
+              <p>We convert this double integral into polar coordinates by substituting $x = r\cos\theta$, $y = r\sin\theta$. The Jacobian of the transformation is $dx\,dy = r\,dr\,d\theta$. The region of integration $x \geq 0, y \geq 0$ corresponds to $r \in [0, \infty)$ and $\theta \in [0, \pi/2]$:</p>
+              <div class="overflow-x-auto">
+                $$\Gamma(m)\Gamma(n) = 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} (r\cos\theta)^{2m-1} (r\sin\theta)^{2n-1} r \, dr \, d\theta$$
+                $$= 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} r^{2m+2n-2} \cos^{2m-1}\theta \sin^{2n-1}\theta \cdot r \, dr \, d\theta$$
+                $$= \left( 2 \int_0^{\pi/2} \sin^{2n-1}\theta \cos^{2m-1}\theta \, d\theta \right) \left( 2 \int_0^\infty e^{-r^2} r^{2(m+n)-1} \, dr \right)$$
+              </div>
+              <p>Recognizing the terms within the parentheses:</p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>The first term is the trigonometric definition of the Beta function, specifically $B(n,m) = B(m,n)$.</li>
+                <li>The second term is the definition of $\Gamma(m+n)$.</li>
+              </ul>
+              <p>Therefore, we get:</p>
+              <div class="overflow-x-auto">
+                $$\Gamma(m)\Gamma(n) = B(m,n) \cdot \Gamma(m+n)$$
+                $$B(m,n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}$$
+              </div>
+              <p>The relation is proved.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           CSE-23
+           ========================================== -->
+      <section id="cse-23" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived Paper</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-23</h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- CSE-23 Q3 (a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final - Q3(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $v = (x^2+y^2+z^2)^{-1/2}$, show that $\frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} + \frac{\partial^2 v}{\partial z^2} = 0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let $r^2 = x^2 + y^2 + z^2$. Thus, $v = \frac{1}{r} = r^{-1}$.</p>
+              <p>First, differentiate $r$ with respect to $x$:</p>
+              <div class="overflow-x-auto">
+                $$2r \frac{\partial r}{\partial x} = 2x \implies \frac{\partial r}{\partial x} = \frac{x}{r}$$
+              </div>
+              <p>Now, calculate the first partial derivative of $v$ with respect to $x$ using the chain rule:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial v}{\partial x} = \frac{d v}{d r} \frac{\partial r}{\partial x} = -r^{-2} \left(\frac{x}{r}\right) = -x r^{-3}$$
+              </div>
+              <p>Now, differentiate again with respect to $x$ using the product rule:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial^2 v}{\partial x^2} = \frac{\partial}{\partial x} \left( -x r^{-3} \right) = -r^{-3} - x \left( -3r^{-4} \frac{\partial r}{\partial x} \right)$$
+                $$= -r^{-3} + 3x r^{-4} \left(\frac{x}{r}\right) = -r^{-3} + 3x^2 r^{-5}$$
+              </div>
+              <p>By symmetry, the second partial derivatives with respect to $y$ and $z$ are:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial^2 v}{\partial y^2} = -r^{-3} + 3y^2 r^{-5}$$
+                $$\frac{\partial^2 v}{\partial z^2} = -r^{-3} + 3z^2 r^{-5}$$
+              </div>
+              <p>Summing these three equations:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} + \frac{\partial^2 v}{\partial z^2} = \left( -r^{-3} + 3x^2 r^{-5} \right) + \left( -r^{-3} + 3y^2 r^{-5} \right) + \left( -r^{-3} + 3z^2 r^{-5} \right)$$
+                $$= -3r^{-3} + 3r^{-5}(x^2 + y^2 + z^2)$$
+              </div>
+              <p>Since $x^2 + y^2 + z^2 = r^2$:</p>
+              <div class="overflow-x-auto">
+                $$= -3r^{-3} + 3r^{-5}(r^2) = -3r^{-3} + 3r^{-3} = 0$$
+              </div>
+              <p>Hence, the equation holds true.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           CSE-22
+           ========================================== -->
+      <section id="cse-22" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived Paper</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-22</h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- CSE-22 Q4 (b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final - Q4(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Show that the maximum value of $(1/x)^x$ is $e^{1/e}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let $y = \left( \frac{1}{x} \right)^x = x^{-x}$.</p>
+              <p>Taking natural logarithm on both sides:</p>
+              <div class="overflow-x-auto">
+                $$\ln y = \ln(x^{-x}) = -x \ln x$$
+              </div>
+              <p>Differentiating both sides with respect to $x$:</p>
+              <div class="overflow-x-auto">
+                $$\frac{1}{y} \frac{dy}{dx} = -\ln x - x \left(\frac{1}{x}\right) = -(1 + \ln x)$$
+                $$\frac{dy}{dx} = -y(1 + \ln x) = -x^{-x}(1 + \ln x)$$
+              </div>
+              <p>For critical points, set $\frac{dy}{dx} = 0$. Since $x^{-x} \neq 0$ for finite positive $x$, we have:</p>
+              <div class="overflow-x-auto">
+                $$1 + \ln x = 0 \implies \ln x = -1 \implies x = e^{-1} = \frac{1}{e}$$
+              </div>
+              <p>To determine if this is a maximum or minimum, we check the second derivative $\frac{d^2y}{dx^2}$ at $x = 1/e$:</p>
+              <div class="overflow-x-auto">
+                $$\frac{d^2 y}{dx^2} = \frac{d}{dx}\left[ -y(1 + \ln x) \right] = -\frac{dy}{dx}(1+\ln x) - y\left(\frac{1}{x}\right)$$
+              </div>
+              <p>At $x = 1/e$, since $\frac{dy}{dx} = 0$:</p>
+              <div class="overflow-x-auto">
+                $$\frac{d^2 y}{dx^2} = 0 - y(e) \cdot e = -e \cdot y(1/e)$$
+              </div>
+              <p>Since $y(1/e) = e^{1/e} > 0$, the second derivative is negative ($-e \cdot e^{1/e} < 0$). This confirms that the function attains its maximum value at $x = 1/e$.</p>
+              <p>The maximum value of the function is:</p>
+              <div class="overflow-x-auto">
+                $$y_{\text{max}} = \left( \frac{1}{1/e} \right)^{1/e} = e^{1/e}$$
+              </div>
+              <p>This completes the proof.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           CSE-21
+           ========================================== -->
+      <section id="cse-21" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived Paper</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-21 (Unified)</h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- CSE-21 Q1 (a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final - Q1(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the $n$-th derivative of $\frac{x^2}{(x-1)^2(x+2)}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let $y = \frac{x^2}{(x-1)^2(x+2)}$. We first resolve this expression into partial fractions:</p>
+              <div class="overflow-x-auto">
+                $$\frac{x^2}{(x-1)^2(x+2)} = \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+2}$$
+              </div>
+              <p>Multiplying both sides by $(x-1)^2(x+2)$:</p>
+              <div class="overflow-x-auto">
+                $$x^2 = A(x-1)(x+2) + B(x+2) + C(x-1)^2$$
+              </div>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Set $x = 1$: $1 = B(3) \implies B = \frac{1}{3}$.</li>
+                <li>Set $x = -2$: $4 = C(-3)^2 \implies 4 = 9C \implies C = \frac{4}{9}$.</li>
+                <li>Compare coefficients of $x^2$: $1 = A + C \implies A = 1 - \frac{4}{9} = \frac{5}{9}$.</li>
+              </ul>
+              <p>So, the partial fraction form is:</p>
+              <div class="overflow-x-auto">
+                $$y = \frac{5}{9}(x-1)^{-1} + \frac{1}{3}(x-1)^{-2} + \frac{4}{9}(x+2)^{-1}$$
+              </div>
+              <p>Now, we find the $n$-th derivative using the standard differentiation formulas:</p>
+              <div class="overflow-x-auto">
+                $$D^n [ (x-a)^{-1} ] = \frac{(-1)^n n!}{(x-a)^{n+1}}$$
+                $$D^n [ (x-a)^{-2} ] = \frac{(-1)^n (n+1)!}{(x-a)^{n+2}}$$
+              </div>
+              <p>Applying these formulas to each term of $y$:</p>
+              <div class="overflow-x-auto">
+                $$y_n = \frac{5}{9} \frac{(-1)^n n!}{(x-1)^{n+1}} + \frac{1}{3} \frac{(-1)^n (n+1)!}{(x-1)^{n+2}} + \frac{4}{9} \frac{(-1)^n n!}{(x+2)^{n+1}}$$
+              </div>
+              <p>Factoring out the shared elements for a clean solution representation:</p>
+              <div class="overflow-x-auto">
+                $$y_n = \frac{(-1)^n n!}{9} \left[ \frac{5}{(x-1)^{n+1}} + \frac{3(n+1)}{(x-1)^{n+2}} + \frac{4}{(x+2)^{n+1}} \right]$$
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           CSE-20
+           ========================================== -->
+      <section id="cse-20" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived Paper</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-20</h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- CSE-20 Q3 (b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final - Q3(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\lim_{x \to 0} \left( \frac{1}{x^2} - \frac{1}{\sin^2 x} \right)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let's combine the fractions first:</p>
+              <div class="overflow-x-auto">
+                $$L = \lim_{x \to 0} \frac{\sin^2 x - x^2}{x^2 \sin^2 x}$$
+              </div>
+              <p>Since $\lim_{x \to 0} \frac{\sin x}{x} = 1$, we can replace the $\sin^2 x$ term in the denominator with $x^2$ to simplify calculation complexity:</p>
+              <div class="overflow-x-auto">
+                $$L = \lim_{x \to 0} \frac{\sin^2 x - x^2}{x^4}$$
+              </div>
+              <p>This is a $\frac{0}{0}$ form. Using Taylor series expansions is significantly cleaner than applying L'Hospital's rule multiple times. Recall the expansion for $\sin x$:</p>
+              <div class="overflow-x-auto">
+                $$\sin x = x - \frac{x^3}{6} + \frac{x^5}{120} - \dots$$
+              </div>
+              <p>Squaring the series:</p>
+              <div class="overflow-x-auto">
+                $$\sin^2 x = \left( x - \frac{x^3}{6} + \mathcal{O}(x^5) \right)^2 = x^2 - 2x \left(\frac{x^3}{6}\right) + \mathcal{O}(x^6) = x^2 - \frac{x^4}{3} + \mathcal{O}(x^6)$$
+              </div>
+              <p>Substitute this expansion back into our limit equation:</p>
+              <div class="overflow-x-auto">
+                $$L = \lim_{x \to 0} \frac{\left(x^2 - \frac{x^4}{3} + \mathcal{O}(x^6)\right) - x^2}{x^4}$$
+                $$L = \lim_{x \to 0} \frac{-\frac{x^4}{3} + \mathcal{O}(x^6)}{x^4} = -\frac{1}{3}$$
+              </div>
+              <p>The limit value is $-\frac{1}{3}$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           CSE-19
+           ========================================== -->
+      <section id="cse-19" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived Paper</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-19</h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- CSE-19 Q3 (a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final - Q3(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $u = \ln(x^2+xy+y^2)$, prove that $x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} = 2$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>We solve this directly using the partial derivatives of $u$:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial u}{\partial x} = \frac{1}{x^2+xy+y^2} \cdot (2x+y) = \frac{2x+y}{x^2+xy+y^2}$$
+                $$\frac{\partial u}{\partial y} = \frac{1}{x^2+xy+y^2} \cdot (x+2y) = \frac{x+2y}{x^2+xy+y^2}$$
+              </div>
+              <p>Multiplying and summing as requested:</p>
+              <div class="overflow-x-auto">
+                $$x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} = x\left(\frac{2x+y}{x^2+xy+y^2}\right) + y\left(\frac{x+2y}{x^2+xy+y^2}\right)$$
+                $$= \frac{2x^2 + xy + xy + 2y^2}{x^2+xy+y^2} = \frac{2(x^2+xy+y^2)}{x^2+xy+y^2} = 2$$
+              </div>
+              <p>This holds true and is also consistent with Euler's Theorem for homogeneous functions of degree 0 since the argument of the logarithm is homogeneous of degree 2.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           CSE-18
+           ========================================== -->
+      <section id="cse-18" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived Paper</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-18</h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- CSE-18 Q3 (a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final - Q3(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $u = f(y-z, z-x, x-y)$, prove that $\frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} + \frac{\partial u}{\partial z} = 0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let the variables be $r = y-z$, $s = z-x$, and $t = x-y$. Therefore, $u = f(r, s, t)$.</p>
+              <p>Using the multivariable chain rule:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial u}{\partial x} = \frac{\partial f}{\partial r}\frac{\partial r}{\partial x} + \frac{\partial f}{\partial s}\frac{\partial s}{\partial x} + \frac{\partial f}{\partial t}\frac{\partial t}{\partial x}$$
+              </div>
+              <p>Calculate the partial derivatives of $r, s, t$ with respect to $x$:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial r}{\partial x} = 0, \quad \frac{\partial s}{\partial x} = -1, \quad \frac{\partial t}{\partial x} = 1$$
+              </div>
+              <p>Substitute these values back:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial u}{\partial x} = -\frac{\partial f}{\partial s} + \frac{\partial f}{\partial t}$$
+              </div>
+              <p>Similarly, for $y$ and $z$:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial u}{\partial y} = \frac{\partial f}{\partial r}\frac{\partial r}{\partial y} + \frac{\partial f}{\partial s}\frac{\partial s}{\partial y} + \frac{\partial f}{\partial t}\frac{\partial t}{\partial y} = \frac{\partial f}{\partial r}(1) + \frac{\partial f}{\partial s}(0) + \frac{\partial f}{\partial t}(-1) = \frac{\partial f}{\partial r} - \frac{\partial f}{\partial t}$$
+                $$\frac{\partial u}{\partial z} = \frac{\partial f}{\partial r}\frac{\partial r}{\partial z} + \frac{\partial f}{\partial s}\frac{\partial s}{\partial z} + \frac{\partial f}{\partial t}\frac{\partial t}{\partial z} = \frac{\partial f}{\partial r}(-1) + \frac{\partial f}{\partial s}(1) + \frac{\partial f}{\partial t}(0) = -\frac{\partial f}{\partial r} + \frac{\partial f}{\partial s}$$
+              </div>
+              <p>Summing these derivatives:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} + \frac{\partial u}{\partial z} = \left( -\frac{\partial f}{\partial s} + \frac{\partial f}{\partial t} \right) + \left( \frac{\partial f}{\partial r} - \frac{\partial f}{\partial t} \right) + \left( -\frac{\partial f}{\partial r} + \frac{\partial f}{\partial s} \right) = 0$$
+              </div>
+              <p>Hence proved.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           CSE-17
+           ========================================== -->
+      <section id="cse-17" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived Paper</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-17</h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- CSE-17 Q3 (a) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final - Q3(a)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $u = \sin^{-1}\left(\frac{x^2+y^2}{x+y}\right)$, show that $x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} = \tan u$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let $f(u) = \sin u = \frac{x^2+y^2}{x+y}$.</p>
+              <p>Let $V = \sin u$. Since $V(x,y)$ is a homogeneous function of degree $n = 2 - 1 = 1$, we can apply Euler's Theorem:</p>
+              <div class="overflow-x-auto">
+                $$x\frac{\partial V}{\partial x} + y\frac{\partial V}{\partial y} = n V = 1 \cdot V$$
+              </div>
+              <p>Calculate partial derivatives of $V$ with respect to $x$ and $y$ using chain rule:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\partial V}{\partial x} = \cos u \frac{\partial u}{\partial x}$$
+                $$\frac{\partial V}{\partial y} = \cos u \frac{\partial u}{\partial y}$$
+              </div>
+              <p>Substitute these into the Euler equation:</p>
+              <div class="overflow-x-auto">
+                $$x \left( \cos u \frac{\partial u}{\partial x} \right) + y \left( \cos u \frac{\partial u}{\partial y} \right) = \sin u$$
+                $$\cos u \left( x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} \right) = \sin u$$
+              </div>
+              <p>Dividing by $\cos u$:</p>
+              <div class="overflow-x-auto">
+                $$x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} = \frac{\sin u}{\cos u} = \tan u$$
+              </div>
+              <p>Thus, the relationship is proved.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           CSE-16
+           ========================================== -->
+      <section id="cse-16" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived Paper</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-16</h2>
+        </div>
+
+        <div class="space-y-8">
+          <!-- CSE-16 Q3 (b) -->
+          <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Term Final - Q3(b)</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\lim_{x \to 0} \left(\frac{\sin x}{x}\right)^{1/x^2}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p>Let the limit be $L = \lim_{x \to 0} \left(\frac{\sin x}{x}\right)^{1/x^2}$. This is a $1^\infty$ indeterminate form.</p>
+              <p>Taking natural logarithm on both sides:</p>
+              <div class="overflow-x-auto">
+                $$\ln L = \lim_{x \to 0} \ln\left[ \left(\frac{\sin x}{x}\right)^{1/x^2} \right] = \lim_{x \to 0} \frac{\ln\left(\frac{\sin x}{x}\right)}{x^2}$$
+              </div>
+              <p>We use the Taylor series expansion of $\frac{\sin x}{x}$ to solve this limit cleanly:</p>
+              <div class="overflow-x-auto">
+                $$\frac{\sin x}{x} = \frac{x - \frac{x^3}{6} + \frac{x^5}{120} - \dots}{x} = 1 - \frac{x^2}{6} + \frac{x^4}{120} - \dots$$
+              </div>
+              <p>Now, use the logarithmic expansion $\ln(1 - u) \approx -u$ as $u \to 0$:</p>
+              <div class="overflow-x-auto">
+                $$\ln\left(\frac{\sin x}{x}\right) = \ln\left(1 - \left[\frac{x^2}{6} - \frac{x^4}{120} + \dots\right]\right) = -\left(\frac{x^2}{6} - \frac{x^4}{120} + \dots\right) - \frac{1}{2}\left(\frac{x^2}{6} - \dots\right)^2$$
+                $$= -\frac{x^2}{6} + \mathcal{O}(x^4)$$
+              </div>
+              <p>Substitute this back into the limit equation:</p>
+              <div class="overflow-x-auto">
+                $$\ln L = \lim_{x \to 0} \frac{-\frac{x^2}{6} + \mathcal{O}(x^4)}{x^2} = -\frac{1}{6}$$
+              </div>
+              <p>Since $\ln L = -\frac{1}{6}$, we solve for $L$ by exponentiation:</p>
+              <div class="overflow-x-auto">
+                $$L = e^{-1/6}$$
+              </div>
+              <p>The limit value is $e^{-1/6}$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Persistent Sticky Mobile/Desktop TOC Navigation Button -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+      <span>Top / TOC</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-8 px-6 text-center text-sm border-t border-slate-800 mt-16">
+    <div class="max-w-6xl mx-auto space-y-2">
+      <p class="text-slate-300 font-semibold">Khulna University Department of Computer Science & Engineering</p>
+      <p>Continuous Calculus Solution Ledger &bull; Standard MathJax Rendering</p>
+      <p class="text-xs text-slate-500 pt-4">&copy; 2026 KU CSE. Managed & rendered dynamically with local Canvas modules.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
