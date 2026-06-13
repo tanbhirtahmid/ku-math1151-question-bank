@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var btn = document.createElement('button');
         btn.className = 'toc-year-btn';
-        btn.setAttribute('aria-expanded', window.innerWidth >= 1024 ? 'true' : 'false');
+        btn.setAttribute('aria-expanded', 'true');
         btn.innerHTML = '<span>' + label + '</span><span class="toc-arrow">&darr;</span>';
 
         var childrenDiv = document.createElement('div');

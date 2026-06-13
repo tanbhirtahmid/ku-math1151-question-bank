@@ -88,11 +88,10 @@ body {
   font-weight: 600;
 }
 
-/* Desktop always expanded */
+/* Desktop always expanded by default (still toggleable) */
 @media (min-width: 1024px) {
-  .toc-children {
-    grid-template-rows: 1fr !important;
-    transition: none;
+  .toc-year-btn[aria-expanded="false"] + .toc-children {
+    grid-template-rows: 0fr;
   }
 }
 
