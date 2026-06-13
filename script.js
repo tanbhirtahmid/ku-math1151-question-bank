@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var btn = document.createElement('button');
         btn.className = 'toc-year-btn';
-        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-expanded', window.innerWidth >= 1024 ? 'true' : 'false');
         btn.innerHTML = '<span>' + label + '</span><span class="toc-arrow">&darr;</span>';
 
         var childrenDiv = document.createElement('div');
@@ -60,11 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.addEventListener('click', function () {
           var expanded = btn.getAttribute('aria-expanded') === 'true';
           btn.setAttribute('aria-expanded', !expanded);
-          if (expanded) {
-            childrenDiv.style.gridTemplateRows = '0fr';
-          } else {
-            childrenDiv.style.gridTemplateRows = '1fr';
-          }
         });
 
         yearWrapper.appendChild(btn);

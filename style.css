@@ -51,7 +51,7 @@ body {
 .toc-children > div {
   overflow: hidden;
 }
-.toc-children:not(.hidden) {
+.toc-year-btn[aria-expanded="true"] + .toc-children {
   grid-template-rows: 1fr;
 }
 
@@ -88,12 +88,7 @@ body {
   font-weight: 600;
 }
 
-/* Mobile collapsed by default */
-@media (max-width: 1023px) {
-  .toc-year-btn[aria-expanded="true"] + .toc-children {
-    grid-template-rows: 1fr;
-  }
-}
+/* Desktop always expanded */
 @media (min-width: 1024px) {
   .toc-children {
     grid-template-rows: 1fr !important;
