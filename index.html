@@ -41,7 +41,7 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 
-  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="style.css?v=19">
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
 
@@ -1076,6 +1076,172 @@
         </div> <!-- /.space-y-12 -->
       </section>
 
+      <!-- ============================================================== -->
+      <!-- CSE-22 (Batch 22) -->
+      <!-- ============================================================== -->
+      <section id="cse22" data-toc="year" data-toc-label="CSE-22 (Batch 22)" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-22 (Batch 22)</h2>
+        </div>
+
+        <div class="space-y-12">
+
+          <!-- ============ CT2 (Sec A) ============ -->
+          <div id="cse22-ct2" data-toc="group" data-toc-label="CT2 (Sec A)">
+            <div class="bg-blue-50/50 border-l-4 border-blue-500 p-4 rounded-r-xl">
+              <h3 class="font-bold text-blue-900">CT2 — Section A (CSE)</h3>
+            </div>
+            <div class="space-y-8 mt-6">
+
+          <!-- CSE-22: CT2 (Sec A) Q1 -->
+          <article id="cse22-ct2-q1" data-toc="question" data-toc-label="Q1" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q1</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Evaluate $\displaystyle\lim_{x \to \pi/2} \frac{\log(x - \pi/2)}{\tan x}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Solution</p>
+              <p><strong>Step 1:</strong> Substitute $t = x - \frac{\pi}{2}$. As $x \to \frac{\pi}{2}^+$, $t \to 0^+$. Then $\tan x = \tan(t + \frac{\pi}{2}) = -\cot t$.</p>
+              <div class="overflow-x-auto">$$L = \lim_{t \to 0^+} \frac{\log t}{-\cot t} = -\lim_{t \to 0^+} \frac{\log t}{\cot t}$$</div>
+              <p><strong>Step 2:</strong> This is the $\frac{\infty}{\infty}$ indeterminate form. Apply L'Hôpital's Rule:</p>
+              <div class="overflow-x-auto">$$L = -\lim_{t \to 0^+} \frac{1/t}{-\csc^2 t} = \lim_{t \to 0^+} \frac{\sin^2 t}{t}$$</div>
+              <p><strong>Step 3:</strong> Evaluate:</p>
+              <div class="overflow-x-auto">$$L = \lim_{t \to 0^+} \left( \frac{\sin t}{t} \cdot \sin t \right) = 1 \cdot 0 = 0$$</div>
+            </div>
+            <div class="final-answer-box">
+              <h4><strong>Final Result:</strong></h4>
+              <div class="overflow-x-auto">$$\boxed{0}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-22: CT2 (Sec A) Q2 -->
+          <article id="cse22-ct2-q2" data-toc="question" data-toc-label="Q2" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q2</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">If $u = \tan^{-1} \dfrac{x^3 + y^3}{x + y}$ then show that $x \dfrac{\partial u}{\partial x} + y \dfrac{\partial u}{\partial y} = \sin 2u$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Solution</p>
+              <p><strong>Step 1:</strong> Let $V(x, y) = \tan u = \dfrac{x^3 + y^3}{x + y}$. Check homogeneity:</p>
+              <div class="overflow-x-auto">$$V(tx, ty) = \frac{t^3(x^3 + y^3)}{t(x + y)} = t^2 V(x, y)$$</div>
+              <p>Thus $V$ is homogeneous of degree $n = 2$.</p>
+              <p><strong>Step 2:</strong> By Euler's Theorem: $x \dfrac{\partial V}{\partial x} + y \dfrac{\partial V}{\partial y} = 2V$.</p>
+              <p><strong>Step 3:</strong> Since $V = \tan u$, $\dfrac{\partial V}{\partial x} = \sec^2 u \dfrac{\partial u}{\partial x}$, $\dfrac{\partial V}{\partial y} = \sec^2 u \dfrac{\partial u}{\partial y}$.</p>
+              <div class="overflow-x-auto">$$\sec^2 u \left( x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} \right) = 2 \tan u$$</div>
+              <div class="overflow-x-auto">$$x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} = \frac{2 \tan u}{\sec^2 u} = 2 \sin u \cos u = \sin 2u$$</div>
+            </div>
+            <div class="final-answer-box">
+              <h4><strong>Final Result:</strong></h4>
+              <div class="overflow-x-auto">$$\boxed{x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} = \sin 2u}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-22: CT2 (Sec A) Q3 -->
+          <article id="cse22-ct2-q3" data-toc="question" data-toc-label="Q3" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q3</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Find the extrema of $f(x) = x^4 - 8x^3 + 22x^2 - 24x + 5$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Solution</p>
+              <p><strong>Step 1:</strong> First derivative: $f'(x) = 4x^3 - 24x^2 + 44x - 24$.</p>
+              <p><strong>Step 2:</strong> Set $f'(x) = 0$:</p>
+              <div class="overflow-x-auto">$$4(x^3 - 6x^2 + 11x - 6) = 0$$</div>
+              <p>$x = 1$ is a root. Factor: $(x-1)(x-2)(x-3) = 0$. Critical points: $x = 1, 2, 3$.</p>
+              <p><strong>Step 3:</strong> Second derivative: $f''(x) = 12x^2 - 48x + 44$.</p>
+              <p><strong>Step 4:</strong> Second derivative test:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>At $x = 1$: $f''(1) = 8 &gt; 0$, so local minimum. $f(1) = -4$.</li>
+                <li>At $x = 2$: $f''(2) = -4 &lt; 0$, so local maximum. $f(2) = -3$.</li>
+                <li>At $x = 3$: $f''(3) = 8 &gt; 0$, so local minimum. $f(3) = -4$.</li>
+              </ul>
+            </div>
+            <div class="final-answer-box">
+              <h4><strong>Final Result:</strong></h4>
+              <div class="overflow-x-auto">$$\boxed{\text{Local minimum of } -4 \text{ at } x = 1 \text{ and } x = 3;\ \text{Local maximum of } -3 \text{ at } x = 2}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-22: CT2 (Sec A) Q4 -->
+          <article id="cse22-ct2-q4" data-toc="question" data-toc-label="Q4" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q4</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">State mean value theorem. Verify the mean value theorem for $f(x) = 3 + 2x - x^2$ in $(0, 1)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Part 1: Statement of Lagrange's Mean Value Theorem (MVT)</p>
+              <p>If a function $f(x)$ is:</p>
+              <ol class="list-decimal pl-6 space-y-1">
+                <li>Continuous in $[a, b]$, and</li>
+                <li>Differentiable in $(a, b)$,</li>
+              </ol>
+              <p>then there exists at least one $c \in (a, b)$ such that $f'(c) = \dfrac{f(b) - f(a)}{b - a}$.</p>
+              <p class="font-semibold text-slate-900">Part 2: Verification for $f(x) = 3 + 2x - x^2$ on $[0, 1]$</p>
+              <p><strong>Step 1:</strong> $f$ is a polynomial, hence continuous on $[0, 1]$ and differentiable on $(0, 1)$.</p>
+              <p><strong>Step 2:</strong> $f(0) = 3$, $f(1) = 4$. Mean slope: $\dfrac{4 - 3}{1 - 0} = 1$.</p>
+              <p><strong>Step 3:</strong> $f'(x) = 2 - 2x$. Set $f'(c) = 1$:</p>
+              <div class="overflow-x-auto">$$2 - 2c = 1 \implies c = \frac{1}{2}$$</div>
+              <p>Since $c = \frac{1}{2} \in (0, 1)$, MVT is verified.</p>
+            </div>
+            <div class="final-answer-box">
+              <h4><strong>Final Result:</strong></h4>
+              <div class="overflow-x-auto">$$\boxed{c = \frac{1}{2} \in (0, 1)}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-22: CT2 (Sec A) Q5 -->
+          <article id="cse22-ct2-q5" data-toc="question" data-toc-label="Q5" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q5</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">State Leibnitz theorem. If $y = e^{a\cos^{-1}x}$ then show that $(1 - x^2)y_{n+2} - (2n + 1)xy_{n+1} - (n^2 + a^2)y_n = 0$ and find the value of $(y_n)_0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Part 1: Statement of Leibnitz Theorem</p>
+              <p>If $u(x)$ and $v(x)$ are $n$-times differentiable, then:</p>
+              <div class="overflow-x-auto">$$(u \cdot v)_n = u_n v + n u_{n-1} v_1 + \frac{n(n-1)}{2} u_{n-2} v_2 + \dots$$</div>
+              <p class="font-semibold text-slate-900">Part 2: Proving the recurrence relation</p>
+              <p><strong>Step 1:</strong> $y = e^{a\cos^{-1}x}$.</p>
+              <div class="overflow-x-auto">$$y_1 = e^{a\cos^{-1}x} \cdot \left( \frac{-a}{\sqrt{1 - x^2}} \right) = -\frac{ay}{\sqrt{1 - x^2}}$$</div>
+              <p><strong>Step 2:</strong> Square and rearrange:</p>
+              <div class="overflow-x-auto">$$(1 - x^2) y_1^2 = a^2 y^2$$</div>
+              <p><strong>Step 3:</strong> Differentiate implicitly:</p>
+              <div class="overflow-x-auto">$$(1 - x^2) y_2 - x y_1 - a^2 y = 0$$</div>
+              <p><strong>Step 4:</strong> Differentiate $n$ times using Leibnitz Theorem:</p>
+              <div class="overflow-x-auto">$$\left[ (1 - x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n \right] - \left[ xy_{n+1} + ny_n \right] - a^2 y_n = 0$$</div>
+              <div class="overflow-x-auto">$$(1 - x^2)y_{n+2} - (2n + 1)xy_{n+1} - (n^2 + a^2)y_n = 0$$</div>
+              <p class="font-semibold text-slate-900">Part 3: Finding $(y_n)_0$</p>
+              <p>At $x = 0$: $(y_{n+2})_0 = (n^2 + a^2)(y_n)_0$.</p>
+              <p>Base values: $(y)_0 = e^{a\pi/2}$, $(y_1)_0 = -a e^{a\pi/2}$, $(y_2)_0 = a^2 e^{a\pi/2}$.</p>
+              <div class="overflow-x-auto">$$(y_n)_0 = \begin{cases} a^2(2^2 + a^2)(4^2 + a^2) \dots ((n-2)^2 + a^2) e^{a\pi/2}, & n \text{ even} \\ -a(1^2 + a^2)(3^2 + a^2) \dots ((n-2)^2 + a^2) e^{a\pi/2}, & n \text{ odd} \end{cases}$$</div>
+            </div>
+            <div class="final-answer-box">
+              <h4><strong>Final Result:</strong></h4>
+              <div class="overflow-x-auto">$$\boxed{(y_n)_0 = \begin{cases} a^2(2^2 + a^2)(4^2 + a^2) \dots ((n-2)^2 + a^2) e^{a\pi/2}, & n \text{ even} \\ -a(1^2 + a^2)(3^2 + a^2) \dots ((n-2)^2 + a^2) e^{a\pi/2}, & n \text{ odd} \end{cases}}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+            </div> <!-- /.space-y-8 (CT2) -->
+          </div> <!-- /#cse22-ct2 -->
+
+        </div> <!-- /.space-y-12 -->
+      </section>
+
     </main>
   </div>
 
@@ -1096,7 +1262,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=18"></script>
+  <script src="script.js?v=19"></script>
 
 </body>
 </html>

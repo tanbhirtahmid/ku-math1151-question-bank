@@ -1,0 +1,416 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{fontspec}
+
+% Set default fonts to handle compile-time defaults cleanly
+\setmainfont{Noto Sans}
+
+\begin{document}
+
+\begin{verbatim}
+<!-- FILE: CSE-22_CT-2.md -->
+
+## CT2 (Sec A) - Q1
+
+    discipline: CSE
+    year: CSE-22
+    exam_type: CT
+    section: A
+    ct_number: 2
+    question_number: 1
+
+**Question:**
+
+Evaluate $\lim_{x \to \pi/2} \frac{\log(x - \pi/2)}{\tan x}$
+
+**Solution:**
+
+Step 1: Substitute $t = x - \frac{\pi}{2}$. As $x \to \frac{\pi}{2}^+$, we have $t \to 0^+$.
+The term $\tan x$ becomes:
+$$
+\tan x = \tan\left(t + \frac{\pi}{2}\right) = -\cot t
+$$
+
+Step 2: Rewrite the limit in terms of $t$:
+$$
+L = \lim_{t \to 0^+} \frac{\log t}{-\cot t} = -\lim_{t \to 0^+} \frac{\log t}{\cot t}
+$$
+
+Step 3: Since $\lim_{t \to 0^+} \log t = -\infty$ and $\lim_{t \to 0^+} \cot t = \infty$, the limit is in the indeterminate form $\frac{\infty}{\infty}$. Applying L'Hôpital's Rule:
+$$
+L = -\lim_{t \to 0^+} \frac{\frac{d}{dt} (\log t)}{\frac{d}{dt} (\cot t)}
+$$
+$$
+L = -\lim_{t \to 0^+} \frac{\frac{1}{t}}{-\csc^2 t}
+$$
+$$
+L = \lim_{t \to 0^+} \frac{\sin^2 t}{t}
+$$
+
+Step 4: Evaluate the resulting limit:
+$$
+L = \lim_{t \to 0^+} \left( \frac{\sin t}{t} \cdot \sin t \right) = 1 \cdot 0 = 0
+$$
+
+**Final Answer:**
+
+$$
+0
+$$
+
+    topic: Limits
+    difficulty: Medium
+    question_type: Repeated PYQ Pattern
+    techniques_used:
+      - Substitution
+      - L'Hôpital's Rule
+
+---
+
+## CT2 (Sec A) - Q2
+
+    discipline: CSE
+    year: CSE-22
+    exam_type: CT
+    section: A
+    ct_number: 2
+    question_number: 2
+
+**Question:**
+
+If $u = \tan^{-1} \frac{x^3+y^3}{x+y}$ then show that $x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} = \sin 2u$
+
+**Solution:**
+
+Step 1: Rewrite the given equation to isolate the algebraic portion:
+$$
+\tan u = \frac{x^3 + y^3}{x + y}
+$$
+
+Step 2: Let $V(x, y) = \tan u = \frac{x^3 + y^3}{x+y}$. 
+We check if $V(x, y)$ is a homogeneous function of degree $n$:
+$$
+V(tx, ty) = \frac{(tx)^3 + (ty)^3}{tx + ty} = \frac{t^3 (x^3 + y^3)}{t(x + y)} = t^2 \frac{x^3+y^3}{x+y} = t^2 V(x, y)
+$$
+Thus, $V(x, y)$ is a homogeneous function of degree $n = 2$.
+
+Step 3: By Euler's Theorem for homogeneous functions:
+$$
+x \frac{\partial V}{\partial x} + y \frac{\partial V}{\partial y} = n V \implies x \frac{\partial V}{\partial x} + y \frac{\partial V}{\partial y} = 2 V
+$$
+
+Step 4: Find the partial derivatives of $V = \tan u$ with respect to $x$ and $y$ using the chain rule:
+$$
+\frac{\partial V}{\partial x} = \sec^2 u \frac{\partial u}{\partial x}
+$$
+$$
+\frac{\partial V}{\partial y} = \sec^2 u \frac{\partial u}{\partial y}
+$$
+
+Step 5: Substitute these derivatives into Euler's equation:
+$$
+x \left( \sec^2 u \frac{\partial u}{\partial x} \right) + y \left( \sec^2 u \frac{\partial u}{\partial y} \right) = 2 \tan u
+$$
+$$
+\sec^2 u \left( x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} \right) = 2 \tan u
+$$
+$$
+x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} = \frac{2 \tan u}{\sec^2 u}
+$$
+
+Step 6: Simplify the trigonometric expression:
+$$
+\frac{2 \tan u}{\sec^2 u} = 2 \frac{\sin u}{\cos u} \cdot \cos^2 u = 2 \sin u \cos u = \sin 2u
+$$
+Hence,
+$$
+x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} = \sin 2u
+$$
+
+**Final Answer:**
+
+$$
+x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} = \sin 2u
+$$
+
+    topic: Partial Derivatives
+    difficulty: Medium
+    question_type: Repeated PYQ Pattern
+    techniques_used:
+      - Euler's Theorem on Homogeneous Functions
+      - Chain Rule
+
+---
+
+## CT2 (Sec A) - Q3
+
+    discipline: CSE
+    year: CSE-22
+    exam_type: CT
+    section: A
+    ct_number: 2
+    question_number: 3
+
+**Question:**
+
+Find the extrema of $f(x) = x^4 - 8x^3 + 22x^2 - 24x + 5$
+
+**Solution:**
+
+Step 1: Find the first derivative of $f(x)$ with respect to $x$:
+$$
+f'(x) = 4x^3 - 24x^2 + 44x - 24
+$$
+
+Step 2: Find the critical points by setting $f'(x) = 0$:
+$$
+4(x^3 - 6x^2 + 11x - 6) = 0
+$$
+By rational root theorem, test $x = 1$:
+$$
+1^3 - 6(1)^2 + 11(1) - 6 = 1 - 6 + 11 - 6 = 0
+$$
+Since $x=1$ is a root, $(x-1)$ is a factor. Dividing $x^3 - 6x^2 + 11x - 6$ by $(x-1)$ yields:
+$$
+(x-1)(x^2 - 5x + 6) = 0
+$$
+$$
+(x-1)(x-2)(x-3) = 0
+$$
+The critical points are $x = 1$, $x = 2$, and $x = 3$.
+
+Step 3: Find the second derivative $f''(x)$:
+$$
+f''(x) = 12x^2 - 48x + 44
+$$
+
+Step 4: Apply the second derivative test at each critical point:
+* **At $x = 1$**:
+    $$f''(1) = 12(1)^2 - 48(1) + 44 = 8 > 0$$
+    Since $f''(1) > 0$, $x = 1$ is a local minimum.
+    $$f(1) = 1^4 - 8(1)^3 + 22(1)^2 - 24(1) + 5 = -4$$
+
+* **At $x = 2$**:
+    $$f''(2) = 12(2)^2 - 48(2) + 44 = 48 - 96 + 44 = -4 < 0$$
+    Since $f''(2) < 0$, $x = 2$ is a local maximum.
+    $$f(2) = 2^4 - 8(2)^3 + 22(2)^2 - 24(2) + 5 = 16 - 64 + 88 - 48 + 5 = -3$$
+
+* **At $x = 3$**:
+    $$f''(3) = 12(3)^2 - 48(3) + 44 = 108 - 144 + 44 = 8 > 0$$
+    Since $f''(3) > 0$, $x = 3$ is a local minimum.
+    $$f(3) = 3^4 - 8(3)^3 + 22(3)^2 - 24(3) + 5 = 81 - 216 + 198 - 72 + 5 = -4$$
+
+**Final Answer:**
+
+$$
+\text{Local minimum of } -4 \text{ at } x = 1 \text{ and } x = 3; \text{ Local maximum of } -3 \text{ at } x = 2
+$$
+
+    topic: Applications of Derivatives
+    difficulty: Medium
+    question_type: Repeated PYQ Pattern
+    techniques_used:
+      - First Derivative Test
+      - Second Derivative Test
+      - Polynomial Factorization
+
+---
+
+## CT2 (Sec A) - Q4
+
+    discipline: CSE
+    year: CSE-22
+    exam_type: CT
+    section: A
+    ct_number: 2
+    question_number: 4
+
+**Question:**
+
+State mean value theorem. Verify the mean value theorem of $f(x) = 3 + 2x - x^2$ in $(0, 1)$.
+
+**Solution:**
+
+### Part 1: Statement of Lagrange's Mean Value Theorem (MVT)
+If a function $f(x)$ is:
+1. Continuous in a closed interval $[a, b]$, and
+2. Differentiable in the open interval $(a, b)$,
+
+then there exists at least one point $c \in (a, b)$ such that:
+$$
+f'(c) = \frac{f(b) - f(a)}{b - a}
+$$
+
+---
+
+### Part 2: Verification for $f(x) = 3 + 2x - x^2$ on $[0, 1]$
+Step 1: Check conditions of MVT.
+* $f(x)$ is a polynomial function, so it is continuous everywhere, including on the closed interval $[0, 1]$.
+* $f'(x) = 2 - 2x$, which exists for all real numbers, so the function is differentiable on the open interval $(0, 1)$.
+
+Step 2: Calculate $f(a)$ and $f(b)$ where $a = 0$ and $b = 1$:
+$$
+f(0) = 3 + 2(0) - (0)^2 = 3
+$$
+$$
+f(1) = 3 + 2(1) - (1)^2 = 4
+$$
+
+Step 3: Calculate the mean derivative value:
+$$
+\frac{f(1) - f(0)}{1 - 0} = \frac{4 - 3}{1} = 1
+$$
+
+Step 4: Find $c \in (0, 1)$ such that $f'(c) = 1$:
+$$
+f'(c) = 2 - 2c = 1
+$$
+$$
+2c = 1 \implies c = \frac{1}{2}
+$$
+
+Step 5: Verify if $c \in (0, 1)$:
+Since $c = \frac{1}{2}$ lies in $(0, 1)$, the Mean Value Theorem is verified.
+
+**Final Answer:**
+
+$$
+c = \frac{1}{2} \in (0, 1)
+$$
+
+    topic: Applications of Derivatives
+    difficulty: Easy
+    question_type: New
+    techniques_used:
+      - Differentiation
+      - Algebraic Solving
+
+---
+
+## CT2 (Sec A) - Q5
+
+    discipline: CSE
+    year: CSE-22
+    exam_type: CT
+    section: A
+    ct_number: 2
+    question_number: 5
+
+**Question:**
+
+State Leibnitz theorem. If $y = e^{a\cos^{-1}x}$ then show that $(1 - x^2)y_{n+2} - (2n + 1)xy_{n+1} - (n^2 + a^2)y_n = 0$ and find the value of $(y_n)_0$.
+
+**Solution:**
+
+### Part 1: Statement of Leibnitz Theorem
+If $u(x)$ and $v(x)$ are two functions of $x$ that are $n$-times differentiable, then the $n$-th derivative of their product is given by:
+$$
+(u \cdot v)_n = u_n v + n u_{n-1} v_1 + \frac{n(n-1)}{2} u_{n-2} v_2 + \dots
+$$
+where the subscripts denote the order of differentiation with respect to $x$.
+
+---
+
+### Part 2: Proving $(1 - x^2)y_{n+2} - (2n + 1)xy_{n+1} - (n^2 + a^2)y_n = 0$
+
+Step 1: First derivative of $y$:
+$$
+y = e^{a\cos^{-1}x}
+$$
+$$
+y_1 = e^{a\cos^{-1}x} \cdot \left( \frac{-a}{\sqrt{1 - x^2}} \right) = -\frac{ay}{\sqrt{1 - x^2}}
+$$
+
+Step 2: Square both sides and rearrange:
+$$
+y_1^2 = \frac{a^2 y^2}{1 - x^2} \implies (1 - x^2) y_1^2 = a^2 y^2
+$$
+
+Step 3: Differentiate implicitly with respect to $x$:
+$$
+(1 - x^2)(2 y_1 y_2) + (-2x)(y_1^2) = a^2 (2 y y_1)
+$$
+Dividing throughout by $2y_1$:
+$$
+(1 - x^2) y_2 - x y_1 - a^2 y = 0
+$$
+
+Step 4: Differentiate $n$ times using the Leibnitz Theorem:
+* **For $D^n\left[(1 - x^2) y_2\right]$:**
+    $$
+    = (1 - x^2) y_{n+2} - 2n x y_{n+1} - n(n-1) y_n
+    $$
+
+* **For $D^n\left[x y_1\right]$:**
+    $$
+    = x y_{n+1} + n y_n
+    $$
+
+* **For $D^n\left[a^2 y\right]$:**
+    $$
+    = a^2 y_n
+    $$
+
+Step 5: Substitute these back into the differential equation:
+$$
+\left[ (1 - x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n \right] - \left[ xy_{n+1} + ny_n \right] - a^2 y_n = 0
+$$
+$$
+(1 - x^2)y_{n+2} - (2n + 1)xy_{n+1} - (n^2 + a^2)y_n = 0
+$$
+
+---
+
+### Part 3: Finding $(y_n)_0$ (The value of $y_n$ at $x = 0$)
+
+Step 1: Set $x = 0$ in the main $n$-th derivative relation:
+$$
+(y_{n+2})_0 = (n^2 + a^2)(y_n)_0
+$$
+
+Step 2: Find base values at $x = 0$:
+* From $y = e^{a\cos^{-1}x}$:
+    $$
+    (y)_0 = e^{\frac{a\pi}{2}}
+    $$
+* From $(1 - x^2) y_2 - x y_1 - a^2 y = 0$ at $x=0$:
+    $$
+    (y_1)_0 = -a e^{\frac{a\pi}{2}}
+    $$
+    $$
+    (y_2)_0 = a^2 e^{\frac{a\pi}{2}}
+    $$
+
+Step 3: Establish the recurrence relations:
+* **Case 1: If $n$ is even ($n = 2k$):**
+    $$
+    (y_{2k})_0 = [(2k-2)^2 + a^2](y_{2k-2})_0 = [(2k-2)^2 + a^2][(2k-4)^2 + a^2] \dots [2^2 + a^2][a^2] e^{\frac{a\pi}{2}}
+    $$
+
+* **Case 2: If $n$ is odd ($n = 2k + 1$):**
+    $$
+    (y_{2k+1})_0 = [(2k-1)^2 + a^2](y_{2k-1})_0 = [(2k-1)^2 + a^2] \dots [1^2 + a^2] (-a e^{\frac{a\pi}{2}})
+    $$
+
+**Final Answer:**
+
+$$
+(y_n)_0 = 
+\begin{cases} 
+a^2(2^2 + a^2)(4^2 + a^2) \dots ((n-2)^2 + a^2) e^{\frac{a\pi}{2}}, & \text{if } n \text{ is even} \\ 
+-a(1^2 + a^2)(3^2 + a^2) \dots ((n-2)^2 + a^2) e^{\frac{a\pi}{2}}, & \text{if } n \text{ is odd} 
+\end{cases}
+$$
+
+    topic: Differentiation
+    difficulty: Hard
+    question_type: Repeated PYQ Pattern
+    techniques_used:
+      - Leibnitz Theorem
+      - Recurrence Relations
+      - Implicit Differentiation
+
+---
+\end{verbatim}
+
+\end{document}
