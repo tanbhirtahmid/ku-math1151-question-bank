@@ -41,7 +41,7 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=18">
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
 
@@ -930,6 +930,152 @@
         </div> <!-- /.space-y-12 -->
       </section>
 
+      <!-- ============================================================== -->
+      <!-- CSE-23 (Batch 23) -->
+      <!-- ============================================================== -->
+      <section id="cse23" data-toc="year" data-toc-label="CSE-23 (Batch 23)" class="scroll-mt-6">
+        <div class="border-b-4 border-blue-600 pb-3 mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Archived</span>
+          <h2 class="text-3xl font-black text-slate-900 mt-1">CSE-23 (Batch 23)</h2>
+        </div>
+
+        <div class="space-y-12">
+
+          <!-- ============ CT2 (Sec A) ============ -->
+          <div id="cse23-ct2" data-toc="group" data-toc-label="CT2 (Sec A)">
+            <div class="bg-blue-50/50 border-l-4 border-blue-500 p-4 rounded-r-xl">
+              <h3 class="font-bold text-blue-900">CT2 — Section A (CSE)</h3>
+            </div>
+            <div class="space-y-8 mt-6">
+
+          <!-- CSE-23: CT2 (Sec A) Q1 -->
+          <article id="cse23-ct2-q1" data-toc="question" data-toc-label="Q1" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q1</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Distinguish between extremum points and inflection points of $f(x)=0$. Find the extremum values of $y = x + \sin x$ for $0 &lt; x &lt; 2\pi$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Part 1: Distinction between Extremum Points and Inflection Points</p>
+              <p><strong>Extremum Points (Local Maxima/Minima):</strong> A point $x = c$ is an extremum point of a continuous function $y = f(x)$ if $f(c)$ is either a local maximum or a local minimum value of the function in an open interval containing $c$.</p>
+              <p><strong>First Derivative Test:</strong> At an extremum point, the first derivative $f'(c) = 0$ (or is undefined), and $f'(x)$ changes sign as $x$ passes through $c$. If $f'(x)$ changes from positive to negative, $c$ is a local maximum. If $f'(x)$ changes from negative to positive, $c$ is a local minimum.</p>
+              <p><strong>Inflection Points:</strong> A point $x = c$ is an inflection point of a curve $y = f(x)$ if the graph of the function changes its concavity at $c$ (from concave upward to concave downward, or vice versa).</p>
+              <p><strong>Second Derivative Test:</strong> At an inflection point, the second derivative $f''(c) = 0$ (or is undefined), and $f''(x)$ changes sign as $x$ passes through $c$. The first derivative $f'(x)$ does not need to change sign at this point, meaning an inflection point is not necessarily an extremum.</p>
+              <p class="font-semibold text-slate-900">Part 2: Extremum values of $y = x + \sin x$ for $0 &lt; x &lt; 2\pi$</p>
+              <p><strong>Step 1:</strong> Find the first derivative.</p>
+              <div class="overflow-x-auto">$$\frac{dy}{dx} = 1 + \cos x$$</div>
+              <p><strong>Step 2:</strong> Find critical points by setting $\frac{dy}{dx} = 0$.</p>
+              <div class="overflow-x-auto">$$1 + \cos x = 0 \implies \cos x = -1$$</div>
+              <p>Within $0 &lt; x &lt; 2\pi$, the only solution is $x = \pi$.</p>
+              <p><strong>Step 3:</strong> Analyze the nature of $x = \pi$ using the Second Derivative Test.</p>
+              <div class="overflow-x-auto">$$\frac{d^2y}{dx^2} = -\sin x \implies \left. \frac{d^2y}{dx^2} \right|_{x=\pi} = -\sin(\pi) = 0$$</div>
+              <p>Since the second derivative is zero, use the First Derivative Test:</p>
+              <p>For $x &lt; \pi$ in $(0, \pi)$: $\cos x &gt; -1 \implies \frac{dy}{dx} &gt; 0$.</p>
+              <p>For $x &gt; \pi$ in $(\pi, 2\pi)$: $\cos x &gt; -1 \implies \frac{dy}{dx} &gt; 0$.</p>
+              <p>Since $\frac{dy}{dx}$ is positive on both sides of $x = \pi$, the sign does not change. Therefore, $x = \pi$ is a point of inflection, not an extremum.</p>
+              <p>Since there are no other critical points, the function has no local extremum values in the open interval.</p>
+            </div>
+            <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+              <p class="text-slate-700">There are <strong>no extremum values</strong> for the curve $y = x + \sin x$ in the open interval $0 &lt; x &lt; 2\pi$.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-23: CT2 (Sec A) Q2 -->
+          <article id="cse23-ct2-q2" data-toc="question" data-toc-label="Q2" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q2</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Write the singular (indeterminate) forms. Evaluate $\displaystyle\lim_{x\to 0} \frac{a^x - 1 - x\log_e a}{x^2}$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Part 1: Indeterminate (Singular) Forms of Limits</p>
+              <p>The 7 standard indeterminate forms are: $\frac{0}{0}$, $\frac{\infty}{\infty}$, $0 \cdot \infty$, $\infty - \infty$, $0^0$, $1^{\infty}$, $\infty^0$.</p>
+              <p class="font-semibold text-slate-900">Part 2: Evaluate the limit</p>
+              <div class="overflow-x-auto">$$L = \lim_{x\to 0} \frac{a^x - 1 - x\ln a}{x^2}$$</div>
+              <p><strong>Step 1:</strong> As $x \to 0$, numerator $\to 0$ and denominator $\to 0$, so it is the $\frac{0}{0}$ indeterminate form.</p>
+              <p><strong>Step 2:</strong> Apply L'Hôpital's Rule.</p>
+              <div class="overflow-x-auto">$$L = \lim_{x\to 0} \frac{a^x \ln a - \ln a}{2x} = \lim_{x\to 0} \frac{\ln a \cdot (a^x - 1)}{2x}$$</div>
+              <p><strong>Step 3:</strong> Still $\frac{0}{0}$. Apply L'Hôpital's Rule again.</p>
+              <div class="overflow-x-auto">$$L = \lim_{x\to 0} \frac{(\ln a)^2 a^x}{2} = \frac{(\ln a)^2}{2}$$</div>
+            </div>
+            <div class="final-answer-box">
+              <h4><strong>Final Result:</strong></h4>
+              <div class="overflow-x-auto">$$\boxed{\frac{(\ln a)^2}{2}}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-23: CT2 (Sec A) Q3 -->
+          <article id="cse23-ct2-q3" data-toc="question" data-toc-label="Q3" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q3</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Define subtangent and subnormal. Find the equation of tangent line and normal line at $(2, 2)$ of the curve $xy^2 = 4(4-x)$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Part 1: Definitions</p>
+              <p>Let $P(x_1, y_1)$ be a point on a curve $y = f(x)$. Let the tangent and normal lines at $P$ intersect the $x$-axis at $T$ and $N$ respectively, and $M$ be the foot of the ordinate.</p>
+              <p><strong>Subtangent:</strong> The projection of the tangent segment $PT$ onto the $x$-axis, i.e. $TM$. Length: $\left| \dfrac{y_1}{\frac{dy}{dx}} \right|$.</p>
+              <p><strong>Subnormal:</strong> The projection of the normal segment $PN$ onto the $x$-axis, i.e. $MN$. Length: $\left| y_1 \frac{dy}{dx} \right|$.</p>
+              <p class="font-semibold text-slate-900">Part 2: Equations of Tangent and Normal lines</p>
+              <p><strong>Step 1:</strong> Verify $(2, 2)$ lies on the curve: $2(2)^2 = 8$ and $4(4-2) = 8$. LHS = RHS, so it lies on the curve.</p>
+              <p><strong>Step 2:</strong> Differentiate implicitly:</p>
+              <div class="overflow-x-auto">$$x y^2 = 16 - 4x \implies y^2 + 2xy \frac{dy}{dx} = -4 \implies \frac{dy}{dx} = \frac{-4 - y^2}{2xy}$$</div>
+              <p><strong>Step 3:</strong> Slope at $(2, 2)$: $m = \dfrac{-4 - 4}{8} = -1$.</p>
+              <p><strong>Step 4:</strong> Tangent equation: $y - 2 = -1(x - 2) \implies x + y - 4 = 0$.</p>
+              <p><strong>Step 5:</strong> Normal slope: $m_n = 1$. Normal equation: $y - 2 = 1(x - 2) \implies x - y = 0$.</p>
+            </div>
+            <div class="final-answer-box">
+              <h4><strong>Final Result:</strong></h4>
+              <div class="overflow-x-auto">$$\text{Tangent: } \boxed{x + y - 4 = 0}$$</div>
+              <div class="overflow-x-auto">$$\text{Normal: } \boxed{x - y = 0}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+          <!-- CSE-23: CT2 (Sec A) Q4 -->
+          <article id="cse23-ct2-q4" data-toc="question" data-toc-label="Q4" class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 md:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">CT2 (Sec A) - Q4</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-4">Define homogeneous function of two variables with example. If $u = x\phi(x+y) + y\psi(x+y)$ then show that $\displaystyle\frac{\partial^2 u}{\partial x^2} - 2\frac{\partial^2 u}{\partial x \partial y} + \frac{\partial^2 u}{\partial y^2} = 0$.</h4>
+            <div class="prose prose-slate max-w-none space-y-4 text-slate-700">
+              <p class="font-semibold text-slate-900">Part 1: Definition of Homogeneous Function</p>
+              <p>A function $f(x, y)$ of two variables is called a homogeneous function of degree $n$ if for any real $t$, $f(tx, ty) = t^n f(x, y)$.</p>
+              <p><strong>Example:</strong> $f(x, y) = x^3 + 3x^2y$. Then $f(tx, ty) = t^3(x^3 + 3x^2 y) = t^3 f(x, y)$, so it is homogeneous of degree $3$.</p>
+              <p class="font-semibold text-slate-900">Part 2: Proof of the PDE</p>
+              <p>Given $u = x\phi(z) + y\psi(z)$ where $z = x + y$, with $\frac{\partial z}{\partial x} = \frac{\partial z}{\partial y} = 1$.</p>
+              <p><strong>Step 1:</strong> First-order partial derivatives:</p>
+              <div class="overflow-x-auto">$$\frac{\partial u}{\partial x} = \phi(z) + x\phi'(z) + y\psi'(z)$$</div>
+              <div class="overflow-x-auto">$$\frac{\partial u}{\partial y} = x\phi'(z) + \psi(z) + y\psi'(z)$$</div>
+              <p><strong>Step 2:</strong> Second-order partial derivatives:</p>
+              <div class="overflow-x-auto">$$\frac{\partial^2 u}{\partial x^2} = 2\phi'(z) + x\phi''(z) + y\psi''(z)$$</div>
+              <div class="overflow-x-auto">$$\frac{\partial^2 u}{\partial y^2} = 2\psi'(z) + x\phi''(z) + y\psi''(z)$$</div>
+              <div class="overflow-x-auto">$$\frac{\partial^2 u}{\partial x \partial y} = \phi'(z) + \psi'(z) + x\phi''(z) + y\psi''(z)$$</div>
+              <p><strong>Step 3:</strong> Substitute into the LHS:</p>
+              <div class="overflow-x-auto">$$\text{LHS} = \left[2\phi'(z) + x\phi''(z) + y\psi''(z)\right] - 2\left[\phi'(z) + \psi'(z) + x\phi''(z) + y\psi''(z)\right] + \left[2\psi'(z) + x\phi''(z) + y\psi''(z)\right]$$</div>
+              <p>Simplify: $\phi'(z)$ terms cancel, $\psi'(z)$ terms cancel, $x\phi''(z)$ terms cancel, $y\psi''(z)$ terms cancel.</p>
+              <div class="overflow-x-auto">$$\text{LHS} = 0 = \text{RHS}$$</div>
+            </div>
+            <div class="final-answer-box">
+              <h4><strong>Final Result:</strong></h4>
+              <div class="overflow-x-auto">$$\boxed{\frac{\partial^2 u}{\partial x^2} - 2\frac{\partial^2 u}{\partial x \partial y} + \frac{\partial^2 u}{\partial y^2} = 0}$$</div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+              <a href="#toc-top" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">Back to Table of Contents &uarr;</a>
+            </div>
+          </article>
+
+            </div> <!-- /.space-y-8 (CT2) -->
+          </div> <!-- /#cse23-ct2 -->
+
+        </div> <!-- /.space-y-12 -->
+      </section>
+
     </main>
   </div>
 
@@ -950,7 +1096,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=17"></script>
+  <script src="script.js?v=18"></script>
 
 </body>
 </html>
