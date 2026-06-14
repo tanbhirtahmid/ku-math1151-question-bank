@@ -1,170 +1,101 @@
-# Calculus Course Answers
+# Calculus Question Bank Redesign
 
-Single static site — no build, no server, no tests.
+Dynamic, data-driven Question Bank application — no build, no server. Works offline and on GitHub Pages.
 
 ## View
 
-Open `index.html` in any browser. Requires internet (Tailwind CSS, MathJax 3, Google Fonts loaded from CDN).
+Open `index.html` in any browser. Requires internet for CDNs (Tailwind CSS, MathJax 3, Google Fonts).
 
-## Structure
+## Architecture
 
 ### Files
 
 | File | Purpose |
 |------|---------|
-| `index.html` | HTML structure (~780 lines) |
-| `style.css` | All styles incl. TOC, dark mode, MathJax overrides |
-| `script.js` | Theme toggle + auto-generated TOC with scroll spy |
+| `data/questions.js` | **Source of Truth**. Array of question objects with metadata. |
+| `index.html` | Application shell and dynamic view containers. |
+| `script.js` | Routing, filtering, searching, and dynamic rendering logic. |
+| `style.css` | Global styles and dark mode overrides. |
 
-### Content layout
-- Batches CSE-25 (current) down to CSE-16 (archived), each in a `<section>` with `data-toc="year"`.
-- Within each year, CT groups are wrapped in `<div data-toc="group">`.
-- Each question is an `<article data-toc="question">` inside its group.
-- Answers use MathJax: `$...$` inline, `$$...$$` display.
-- Step-by-step proofs with a green result box (`bg-emerald-50`).
+### Data Model (`data/questions.js`)
+
+Each question is an object in the `questions` array:
+
+```javascript
+{
+  id: "cse25-ct1-q1",
+  discipline: "CSE", // "CSE" | "ECE"
+  batch: 25,
+  year: 2025,
+  examType: "CT", // "CT" | "Term Final"
+  examNumber: 1,
+  section: "A",
+  questionNumber: "1",
+  topics: ["Limits & Continuity"],
+  difficulty: "Medium", // "Easy" | "Medium" | "Hard"
+  length: "Medium", // "Short" | "Medium" | "Long"
+  frequency: 1,
+  appearances: [],
+  tags: [], // e.g., "last-minute"
+  questionHtml: "...",
+  solutionHtml: "...",
+  finalAnswerHtml: "..."
+}
+```
+
+### Topic Taxonomy
+- **Limits & Continuity**
+- **Differentiation** (Basic, Successive, Leibnitz Rule, Implicit, Logarithmic)
+- **Applications of Derivatives** (Tangent & Normal, Maxima & Minima, Rolle's Theorem, Mean Value Theorem, Curve Sketching)
+- **Integration** (Substitution, By Parts, Partial Fractions, Trigonometric, Reduction Formula)
+- **Differential Equations** (Variable Separable, Homogeneous, Linear)
+- **Partial Derivatives** (Euler's Theorem, Homogeneous Functions, Total Derivatives)
+- **Series Expansion** (Taylor, Maclaurin)
+- **Miscellaneous**
+
+## Rendering Engine (`script.js`)
+
+- **Routing**: Uses `window.location.hash` to switch views (`#dashboard`, `#papers`, `#topics`, `#repeated`, `#revision`).
+- **Filtering**: Combines sidebar filters and global search query to filter the `questions` array.
+- **MathJax**: Calls `MathJax.typesetPromise()` after every DOM update to render LaTeX equations.
+
+## Navigation Views
+
+1.  **Dashboard**: Landing page with statistics and quick-navigation cards.
+2.  **Papers Explorer**: Browse questions grouped by Batch and Examination.
+3.  **Topic Explorer**: Find questions categorized by mathematical concepts.
+4.  **Repeated Questions**: Infrastructure for identifying high-frequency exam questions.
+5.  **Revision Mode**: Specialized view for "Last Minute Revision" and curated "Top Questions".
 
 ## Theme System (Light / Dark)
 
 Dark mode uses the `data-theme` attribute on `<html>`:
-- `data-theme="light"` — default light mode (Tailwind slate palette)
-- `data-theme="dark"` — GitHub Dark Dimmed-inspired palette
-
-### How to add new dark mode overrides
-
-All dark mode CSS lives in `style.css` under `/* === Dark Mode Overrides === */`.
-
-To add a new override, use the pattern:
-```css
-[data-theme="dark"] .tailwind-class-name {
-  property: dark-value;
-}
-```
-
-Key overrides already in place:
-- **Backgrounds**: `bg-slate-50` → `#0d1117`, `bg-white` → `#161b22`, `bg-slate-100` → `#1c2128`
-- **Text**: `text-slate-900/800` → `#e6edf3`, `text-slate-700` → `#c9d1d9`, `text-slate-400` → `#6e7681`
-- **Borders**: all `border-slate-200/80`, `border-slate-100` → `#30363d`
-- **Accents**: `text-blue-600` → `#58a6ff`, `bg-blue-50/50` → `#0c2d6b`
-- **Badges**: `bg-amber-100` → `#3d2700`, `text-amber-800` → `#d29922`
-- **Result boxes**: `bg-emerald-50` → `#0d2818`, `border-emerald-100` → `#238636`
-- **Header gradient**: `from-blue-900` → `#0c2d6b`, `to-indigo-950` → `#111827`
-- **MathJax**: SVG text color forced to `#e6edf3`
-- **TOC**: all link/text/badge colors match the dark palette
+- `data-theme="light"` (default)
+- `data-theme="dark"` (GitHub Dark Dimmed-inspired)
 
 ### Flash prevention
+An inline script in `<head>` sets `data-theme` from `localStorage` before the first paint.
 
-An inline script at the top of `<head>` reads `localStorage.getItem('theme')` (or falls back to `prefers-color-scheme`) and sets `data-theme` before the page renders, preventing a flash of light mode.
+## Answer Workflow
 
-### Toggle button
+### 1. New Answer Intake
+- New solutions arrive as individual Markdown files in `answers/`.
+- Naming convention: `{YEAR}_{EXAM_TYPE}-{NUMBER}.md`.
 
-Located in the header. Places a sun/moon SVG icon. Toggle JS:
-1. Toggles `data-theme` on `<html>`
-2. Persists to `localStorage`
-3. Swaps the visible icon
-4. Runs on DOMContentLoaded to set the correct initial icon
+### 2. Processing & Appending
+- Convert Markdown content to HTML strings.
+- Create a new question object with proper metadata.
+- **Append** the new object to the `questions` array in `data/questions.js`.
+- Update the `id` following the convention: `{discipline}{batch}-{examType}{examNumber}-q{number}`.
 
-## Section setup
+### 3. Deployment
+- Run `./update-version.sh` to update cache-busting strings in `index.html`.
+- Commit changes: `git add . && git commit -m "Add [Batch] [Exam] solutions"`.
+- Push to trigger GitHub Actions deployment.
 
-- **Section A** = Differential Calculus (course teacher: Firoz sir).
-- **Section B** = Integral Calculus (course teacher: Laskar sir).
-- CTs for Section A are labeled `CT1 (Sec A) - Q1`, `CT2 (Sec A) - Q1`, etc.
-- ECE CTs are labeled `ECE CT1 - Q1`, `ECE CT2 - Q1`, etc.
-- Term Final uses `bg-indigo-100` badges with `Term Final — Q1(a)` format.
-
-## TOC Architecture (auto-generated by JS)
-
-The sidebar TOC is **auto-generated** on page load — no manual TOC links needed.
-
-### How it works
-
-The JS script in `script.js` scans `[data-toc]` attributes:
-
-```
-[data-toc="year"]       → top-level collapsible year entry
-  [data-toc="group"]    → CT / Term Final group within year
-    [data-toc="question"] → individual question link
-```
-
-Naming convention for the 3 levels:
-
-| Level | Target | Attribute | Example |
-|-------|--------|-----------|---------|
-| Year | `<section>` | `data-toc="year"` | `#cse25`, `#cse24` |
-| Group | `<div>` | `data-toc="group"` | `#cse25-ct1`, `#cse25-ece-ct1`, `#cse25-final` |
-| Question | `<article>` | `data-toc="question"` | `#cse25-ct1-q1`, `#cse25-ece-ct1-q3ii` |
-
-### Anchor ID conventions
-
-```
-Year:      cse25, cse24, cse23, ...        (no hyphen after "cse")
-CT group:  cse25-ct1, cse25-ct2, ...       (cseXX-ctN)
-ECE group: cse25-ece-ct1, cse25-ece-ct1   (cseXX-ece-ctN)
-Term Final:cse25-final                     (cseXX-final)
-Questions: cse25-ct1-q1, cse25-ct1-q3ii, cse25-ece-ct1-q5
-```
-
-### Each data-toc element needs:
-
-- **`data-toc-label`**: human-readable label for the TOC entry.
-- **`data-toc`**: one of `"year"`, `"group"`, `"question"`.
-- **`id`**: unique anchor ID matching conventions above.
-
-Example:
-
-```html
-<section id="cse25" data-toc="year" data-toc-label="CSE-25 (Batch 25)">
-
-  <div id="cse25-ct1" data-toc="group" data-toc-label="CT1 (Sec A)">
-    <div class="bg-blue-50/50 ..."><h3>CT1 — Section A (CSE)</h3></div>
-    <div class="space-y-8 mt-6">
-      <article id="cse25-ct1-q1" data-toc="question" data-toc-label="Q1" class="...">
-        ...
-      </article>
-    </div>
-  </div>
-
-  <div id="cse25-final" data-toc="group" data-toc-label="Term Final">
-    ...
-  </div>
-
-</section>
-```
-
-### Features
-
-- **Collapsible**: years collapse/expand on click; collapsed by default on mobile.
-- **Question count badge**: shows count per year and per group.
-- **Scroll spy**: active question is highlighted in TOC; parent year auto-expands on scroll.
-- **Desktop**: sticky sidebar, always expanded.
-- **Mobile**: collapsed by default, expand by tapping year name.
-
-## Edit conventions
-
-- Add new batch sections following the pattern above (year `<section>` + group `<div>` + question `<article>`).
-- Always include `data-toc`, `data-toc-label`, and `id` on every year, group, and question element.
-- Label badges: `bg-amber-100` for regular questions, `bg-indigo-100` for term final.
-- Keep the `scroll-mt-6` class on year sections for anchor scroll.
-- Final answer boxes use `bg-emerald-50 p-4 rounded-xl border border-emerald-100` for inline-only results, or a `.final-answer-box` wrapper for results containing display math (`$$...$$`).
-- `.final-answer-box` structure: `<div class="final-answer-box"><h4><strong>Final Result:</strong></h4><div class="overflow-x-auto">$$...$$</div></div>` — wraps both the label and the display math together so the math stays inside the green box.
-- No manual TOC links needed — the JS auto-generates everything.
-
-## Answer workflow
-
-- New answers arrive as individual Markdown files in `answers/` directory.
-  - Naming convention: `{YEAR}_{EXAM_TYPE}-{NUMBER}.md` (e.g., `CSE-25_CT-2.md`).
-  - Each file contains multiple questions separated by `---` or headers.
-  - Each question block has metadata (year, exam_type, ct_number, question_number, discipline).
-- Read the Markdown file, parse each question, and convert to HTML `<article>`:
-  - Write the question in `<h4>`, wrap display math in `<div class="overflow-x-auto">`.
-  - Badge labels: `CT2 (Sec A) - Q1`, `CT2 (Sec A) - Q2`, etc. for Section A CTs; `ECE CT2 - Q1`, etc. for ECE CTs.
-  - Use `bg-amber-100` badge for regular questions, `bg-indigo-100` for term final.
-  - Final result box: `<div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">` for inline-only results (`$...$`), or `<div class="final-answer-box">` wrapping both the label and display math (`$$...$$`).
-  - Always include the `Back to Table of Contents` link at the bottom pointing to `#toc-top`.
-  - Always include `data-toc="question"` with proper `id` and `data-toc-label`.
-- Insert under the correct batch `<section>` inside the correct group `<div>`.
-- If a new CT group is needed (e.g. CT2), add a new `<div data-toc="group" data-toc-label="CT2 (Sec A)">` with anchor `cse25-ct2` (CSE) or `ece25-ct2` (ECE).
-- If a new year is needed, add a new `<section data-toc="year">` at the end (before `</main>`).
-- Before committing on main branch, run `./update-version.sh` to inject a cache-busting version (`?v=N`) into the `style.css` and `script.js` URLs in `index.html`. The version number is the Git commit count, guaranteeing a fresh URL on every deploy.
-- Commit every change with `git add index.html style.css script.js AGENTS.md && git commit -m "..."`.
-- **NEVER delete or remove `.github/workflows/static.yml`** — it is the GitHub Actions deployment workflow that auto-deploys the site to GitHub Pages on every push. Without it, the site won't update.
-- Repo-local git identity is already configured; no `--global` needed.
+## Technical Mandates
+- **Static First**: No node_modules, no build step. The site must work when opened directly via `file://`.
+- **Metadata Integrity**: Every question must have at least one topic and correct exam metadata.
+- **MathJax Consistency**: Always wrap display math in `<div class="overflow-x-auto">$$...$$</div>` within content strings.
+- **Security**: Never include sensitive data in the repo.
+- **GitHub Actions**: Do not modify `.github/workflows/static.yml`.
