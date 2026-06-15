@@ -164,15 +164,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     appContainer.innerHTML = `
       <div class="max-w-6xl mx-auto px-4 md:px-6 py-8">
-        <div class="flex flex-col md:flex-row gap-8">
-          <!-- Sidebar -->
-          <aside class="explorer-sidebar md:w-72 flex-shrink-0 space-y-6">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Left Sidebar: TOC -->
+          <aside class="explorer-sidebar lg:w-64 flex-shrink-0">
             <div>
               <h2 class="text-2xl font-extrabold text-slate-900 mb-1">${title}</h2>
-              <p class="text-slate-500 text-sm">${filteredQuestions.length} questions found</p>
+              <p class="text-slate-500 text-sm mb-6">${filteredQuestions.length} questions found</p>
             </div>
             
-            <!-- TOC Section -->
             <div class="toc-wrapper">
               <button id="toc-mobile-toggle" class="toc-mobile-toggle" aria-label="Toggle table of contents">
                 <span>Table of Contents</span>
@@ -186,9 +185,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
               </div>
             </div>
-            
-            <!-- Filters Section -->
+          </aside>
+
+          <!-- Center: Questions -->
+          <main class="flex-grow space-y-6 min-w-0">
+            ${filteredQuestions.length > 0 ? 
+              filteredQuestions.map(q => renderQuestionCard(q)).join('') : 
+              renderEmptyState()}
+          </main>
+
+          <!-- Right Sidebar: Filters -->
+          <aside class="explorer-sidebar lg:w-72 flex-shrink-0">
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+              <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400">Filters</h3>
               ${renderFilterDropdown('discipline', 'Discipline', ['All', 'CSE', 'ECE'])}
               ${renderFilterDropdown('batch', 'Batch', ['All', ...new Set(questions.map(q => q.batch))].sort().reverse())}
               ${renderFilterDropdown('topic', 'Topic', ['All', ...topicTaxonomy])}
@@ -208,13 +217,6 @@ document.addEventListener("DOMContentLoaded", function () {
               </button>
             </div>
           </aside>
-
-          <!-- Question List -->
-          <main class="flex-grow space-y-6">
-            ${filteredQuestions.length > 0 ? 
-              filteredQuestions.map(q => renderQuestionCard(q)).join('') : 
-              renderEmptyState()}
-          </main>
         </div>
       </div>
     `;

@@ -58,7 +58,7 @@ body {
   /* Default: normal flow (mobile). On desktop, sticky and independently scrollable. */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .explorer-sidebar {
     position: sticky;
     top: 56px;
@@ -183,7 +183,7 @@ body {
   transform: rotate(180deg);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .toc-mobile-toggle {
     display: flex;
   }
@@ -197,7 +197,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .toc-mobile-toggle {
     display: none !important;
   }
@@ -363,7 +363,7 @@ body {
 }
 
 /* Sidebar scrollbar in dark mode */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   [data-theme="dark"] .explorer-sidebar::-webkit-scrollbar-thumb {
     background: #30363d;
   }
