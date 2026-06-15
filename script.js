@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="max-w-6xl mx-auto px-4 md:px-6 py-8">
         <div class="flex flex-col lg:flex-row gap-8">
           <!-- Left Sidebar: TOC -->
-          <aside class="explorer-sidebar lg:w-56 flex-shrink-0">
+          <aside class="explorer-sidebar lg:w-56 flex-shrink-0 lg:order-1">
             <div>
               <h2 class="text-2xl font-extrabold text-slate-900 mb-1">${title}</h2>
               <p class="text-slate-500 text-sm mb-6">${filteredQuestions.length} questions found</p>
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span>Table of Contents</span>
               </button>
               <div class="toc-container bg-white rounded-2xl border border-slate-200 shadow-sm">
-                <div class="toc-header px-6 py-3 border-b border-slate-100">
+                <div class="toc-header hidden lg:block px-6 py-3 border-b border-slate-100">
                   <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400">Table of Contents</h3>
                 </div>
                 <div class="p-2">
@@ -187,15 +187,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </aside>
 
-          <!-- Center: Questions -->
-          <main class="flex-grow space-y-6 min-w-0">
-            ${filteredQuestions.length > 0 ? 
-              filteredQuestions.map(q => renderQuestionCard(q)).join('') : 
-              renderEmptyState()}
-          </main>
-
-          <!-- Right Sidebar: Filters -->
-          <aside class="explorer-sidebar lg:w-56 flex-shrink-0">
+          <!-- Right Sidebar: Filters (before questions in DOM for mobile order) -->
+          <aside class="explorer-sidebar lg:w-56 flex-shrink-0 lg:order-3">
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
               <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400">Filters</h3>
               ${renderFilterDropdown('discipline', 'Discipline', ['All', 'CSE', 'ECE'])}
@@ -217,6 +210,9 @@ document.addEventListener("DOMContentLoaded", function () {
               </button>
             </div>
           </aside>
+
+          <!-- Center: Questions -->
+          <main class="flex-grow space-y-6 min-w-0 lg:order-2">
         </div>
       </div>
     `;
