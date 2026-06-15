@@ -213,6 +213,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <!-- Center: Questions -->
           <main class="flex-grow space-y-6 min-w-0 lg:order-2">
+            ${filteredQuestions.length > 0 ? 
+              filteredQuestions.map(q => renderQuestionCard(q)).join('') : 
+              renderEmptyState()}
+          </main>
         </div>
       </div>
     `;
