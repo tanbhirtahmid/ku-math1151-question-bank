@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="max-w-6xl mx-auto px-4 md:px-6 py-8">
         <div class="flex flex-col md:flex-row gap-8">
           <!-- Sidebar -->
-          <aside class="md:w-72 flex-shrink-0 space-y-6">
+          <aside class="explorer-sidebar md:w-72 flex-shrink-0 space-y-6">
             <div>
               <h2 class="text-2xl font-extrabold text-slate-900 mb-1">${title}</h2>
               <p class="text-slate-500 text-sm">${filteredQuestions.length} questions found</p>
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <button id="toc-mobile-toggle" class="toc-mobile-toggle" aria-label="Toggle table of contents">
                 <span>Table of Contents</span>
               </button>
-              <div class="toc-container bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <div class="toc-container bg-white rounded-2xl border border-slate-200 shadow-sm">
                 <div class="toc-header px-6 py-3 border-b border-slate-100">
                   <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400">Table of Contents</h3>
                 </div>

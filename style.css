@@ -52,6 +52,29 @@ body {
   }
 }
 
+/* === Sidebar (Desktop) === */
+
+.explorer-sidebar {
+  /* Default: normal flow (mobile). On desktop, sticky and independently scrollable. */
+}
+
+@media (min-width: 768px) {
+  .explorer-sidebar {
+    position: sticky;
+    top: 56px;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+    align-self: start;
+  }
+  .explorer-sidebar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .explorer-sidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+  }
+}
+
 /* === Table of Contents Styles === */
 
 .toc-wrapper {
@@ -59,17 +82,8 @@ body {
 }
 
 .toc-container {
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-.toc-container::-webkit-scrollbar {
-  width: 4px;
-}
-
-.toc-container::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 2px;
+  /* No overflow/max-height here — sidebar handles scrolling on desktop,
+     mobile uses the .open class for its drawer behavior */ 
 }
 
 /* Group label */
@@ -346,6 +360,13 @@ body {
 [data-theme="dark"] mjx-container,
 [data-theme="dark"] mjx-container * {
   color: #e6edf3 !important;
+}
+
+/* Sidebar scrollbar in dark mode */
+@media (min-width: 768px) {
+  [data-theme="dark"] .explorer-sidebar::-webkit-scrollbar-thumb {
+    background: #30363d;
+  }
 }
 
 /* TOC in dark mode */

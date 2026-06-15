@@ -191,6 +191,28 @@ Common use cases that must work seamlessly:
 
 ---
 
+### Cross-Platform UX
+
+Both desktop and mobile are first-class experiences — neither platform should be sacrificed for the other.
+
+#### Desktop expectations (1366×768 and 1920×1080)
+- Sidebar is **sticky** and **independently scrollable** (mouse wheel, trackpad, keyboard arrows work natively)
+- TOC remains visible alongside question content in a two-column layout
+- No horizontal scroll; equations scroll within their container
+- No drag-scrollbars-required behavior
+
+#### Mobile expectations (390×844 and 412×915)
+- TOC collapses into a toggle-activated drawer
+- Equations are slightly smaller (90%) but still readable
+- No horizontal page scroll
+
+#### TOC scrolling implementation
+- The sidebar itself is the scroll container on desktop (`overflow-y: auto`, `max-height: calc(100vh - nav-height)`)
+- The TOC container inside it has no overflow constraints — it expands naturally
+- This avoids `overflow` shorthand conflicts and keeps wheel/trackpad events working
+
+---
+
 ## Technical Mandates
 - **Static First**: No node_modules, no build step. The site must work when opened directly via `file://`.
 - **Metadata Integrity**: Every question must have at least one topic and correct exam metadata.
