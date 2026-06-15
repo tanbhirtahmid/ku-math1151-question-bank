@@ -16,13 +16,180 @@ body {
   scrollbar-width: none;
 }
 
-/* --- MathJax --- */
+/* --- MathJax & Equation Containers --- */
 .mjx-container {
   max-width: 100% !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.math-container,
+.overflow-x-auto {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Prevent page-level horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Reduce equation size on small screens */
+@media (max-width: 480px) {
+  .overflow-x-auto {
+    font-size: 90%;
+  }
+  .math-container {
+    font-size: 90%;
+  }
+  mjx-container {
+    font-size: 90% !important;
+  }
+}
+
+/* === Table of Contents Styles === */
+
+.toc-wrapper {
+  position: relative;
+}
+
+.toc-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.toc-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.toc-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+/* Group label */
+.toc-group-label {
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #1e293b;
+  transition: background 0.15s;
+}
+
+.toc-group-label:hover {
+  background-color: #f1f5f9;
+}
+
+.toc-group-label .toc-chevron {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.toc-group-label .toc-chevron.open {
+  transform: rotate(90deg);
+}
+
+.toc-children {
+  margin-left: 1.25rem;
+}
+
+/* Exam item */
+.toc-exam-item {
+  cursor: pointer;
+  user-select: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #475569;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.toc-exam-item:hover {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.toc-exam-item.active {
+  background-color: #dbeafe;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.toc-exam-count {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Mobile TOC toggle */
+.toc-mobile-toggle {
+  display: none;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.15s;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toc-mobile-toggle:hover {
+  background: #f8fafc;
+}
+
+.toc-mobile-toggle::after {
+  content: "▼";
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.toc-mobile-toggle.open::after {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 767px) {
+  .toc-mobile-toggle {
+    display: flex;
+  }
+  .toc-container {
+    display: none;
+  }
+  .toc-container.open {
+    display: block;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .toc-mobile-toggle {
+    display: none !important;
+  }
+  .toc-container {
+    display: block !important;
+  }
 }
 
 /* --- Typography --- */
@@ -179,4 +346,34 @@ body {
 [data-theme="dark"] mjx-container,
 [data-theme="dark"] mjx-container * {
   color: #e6edf3 !important;
+}
+
+/* TOC in dark mode */
+[data-theme="dark"] .toc-group-label {
+  color: #e6edf3;
+}
+[data-theme="dark"] .toc-group-label:hover {
+  background-color: #1c2128;
+}
+[data-theme="dark"] .toc-group-label .toc-chevron {
+  color: #484f58;
+}
+[data-theme="dark"] .toc-exam-item {
+  color: #8b949e;
+}
+[data-theme="dark"] .toc-exam-item:hover {
+  background-color: #1c2128;
+  color: #58a6ff;
+}
+[data-theme="dark"] .toc-exam-item.active {
+  background-color: #0c2d6b;
+  color: #58a6ff;
+}
+[data-theme="dark"] .toc-mobile-toggle {
+  background: #161b22;
+  border-color: #30363d;
+  color: #e6edf3;
+}
+[data-theme="dark"] .toc-mobile-toggle:hover {
+  background: #1c2128;
 }

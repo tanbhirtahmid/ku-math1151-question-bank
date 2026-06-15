@@ -93,6 +93,104 @@ An inline script in `<head>` sets `data-theme` from `localStorage` before the fi
 - Commit changes: `git add . && git commit -m "Add [Batch] [Exam] solutions"`.
 - Push to trigger GitHub Actions deployment.
 
+## UX Priorities
+
+### Mobile-First Philosophy
+The site targets students studying on-the-go (walking to campus, on a bus, quick revision before a CT). The mobile experience is a **first-class experience**, not secondary.
+
+### Prioritized Work Order
+1. **Mobile equation rendering** — no layout breakage on small screens
+2. **Table of Contents navigation** — restore hierarchical exam browsing
+3. **Mobile TOC usability** — responsive accordion/drawer
+4. **Further feature work**
+
+---
+
+### Dual Navigation System
+
+Both systems coexist and serve different purposes:
+
+| System | Purpose |
+|--------|---------|
+| **Table of Contents** | **Navigation** — known-path browsing by batch/exam |
+| **Filters + Search** | **Discovery** — finding questions by topic, difficulty, etc. |
+
+#### Desktop sidebar layout
+
+```
+Table of Contents
+-----------------
+CSE-25
+  CT 1
+  CT 2
+  Term Final
+
+CSE-24
+  CT 1
+  CT 2
+  Term Final
+
+...
+
+-----------------
+
+Filters
+-----------------
+Discipline
+Topic
+Difficulty
+Length
+Search
+```
+
+The TOC is the primary navigation structure. Filters appear below it.
+
+#### Mobile TOC behavior
+- Collapsible accordion panel or drawer
+- Activated by a toggle button
+- Easy to collapse after navigation
+- Does not consume excessive screen space
+
+---
+
+### Mobile Equation Rendering (High Priority)
+
+#### Requirements
+- Math expressions must work properly on Android phones, iPhones, and small screens (~360–430px width).
+- The page itself must **never** horizontally scroll.
+- Only the equation container may scroll horizontally.
+
+#### Per-equation container rules
+- `max-width: 100%`
+- `overflow-x: auto`
+- `overflow-y: hidden`
+- `-webkit-overflow-scrolling: touch` (smooth touch scrolling)
+- `scroll-behavior: smooth`
+- Container must stay inside its card boundary
+
+#### Mobile typography
+- Reduce equation font-size slightly on screens ≤480px wide
+- Do NOT make equations unreadably small
+
+#### Long derivations
+- Multi-line content: allow wrapping when mathematically reasonable
+- Otherwise place inside a horizontally scrollable container
+- Container must never break the layout
+
+---
+
+### Study Flow Preservation
+
+Common use cases that must work seamlessly:
+| Scenario | Requirement |
+|----------|-------------|
+| Walking to campus | One-handed navigation, readable equations |
+| Bus commute | No horizontal scrolling, fast load |
+| Pre-CT quick revision | Quick access to specific batch/exam via TOC |
+| Pre-final revision | Browse by topic or repeated questions |
+
+---
+
 ## Technical Mandates
 - **Static First**: No node_modules, no build step. The site must work when opened directly via `file://`.
 - **Metadata Integrity**: Every question must have at least one topic and correct exam metadata.

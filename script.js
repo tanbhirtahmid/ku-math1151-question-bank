@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       difficulty: 'All',
       batch: 'All',
       examType: 'All',
+      examNumber: 'All',
       section: 'All'
     },
     searchQuery: '',
@@ -159,16 +160,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function renderExplorer(filteredQuestions, title) {
+    const tocData = buildTOCData();
+
     appContainer.innerHTML = `
       <div class="max-w-6xl mx-auto px-4 md:px-6 py-8">
         <div class="flex flex-col md:flex-row gap-8">
-          <!-- Filter Sidebar -->
-          <aside class="md:w-64 flex-shrink-0 space-y-6">
+          <!-- Sidebar -->
+          <aside class="md:w-72 flex-shrink-0 space-y-6">
             <div>
               <h2 class="text-2xl font-extrabold text-slate-900 mb-1">${title}</h2>
               <p class="text-slate-500 text-sm">${filteredQuestions.length} questions found</p>
             </div>
             
+            <!-- TOC Section -->
+            <div class="toc-wrapper">
+              <button id="toc-mobile-toggle" class="toc-mobile-toggle" aria-label="Toggle table of contents">
+                <span>Table of Contents</span>
+              </button>
+              <div class="toc-container bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="toc-header px-6 py-3 border-b border-slate-100">
+                  <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400">Table of Contents</h3>
+                </div>
+                <div class="p-2">
+                  ${renderTOC(tocData)}
+                </div>
+              </div>
+            </div>
+            
+            <!-- Filters Section -->
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
               ${renderFilterDropdown('discipline', 'Discipline', ['All', 'CSE', 'ECE'])}
               ${renderFilterDropdown('batch', 'Batch', ['All', ...new Set(questions.map(q => q.batch))].sort().reverse())}
@@ -213,6 +232,9 @@ document.addEventListener("DOMContentLoaded", function () {
       applyFiltersAndRender();
     });
 
+    // Initialize TOC interactions
+    initTOC();
+    
     // Re-initialize solutions toggles
     initSolutionToggles();
     
@@ -300,7 +322,76 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   }
 
-  // --- 4. View Logic ---
+  // --- 4. Table of Contents ---
+
+  function buildTOCData() {
+    const map = {};
+
+    questions.forEach(q => {
+      const groupKey = `${q.discipline}-${q.batch}`;
+      if (!map[groupKey]) {
+        map[groupKey] = {
+          discipline: q.discipline,
+          batch: q.batch,
+          exams: {}
+        };
+      }
+      const examKey = q.examType + (q.examNumber ? '-' + q.examNumber : '');
+      if (!map[groupKey].exams[examKey]) {
+        map[groupKey].exams[examKey] = {
+          examType: q.examType,
+          examNumber: q.examNumber || null,
+          count: 0
+        };
+      }
+      map[groupKey].exams[examKey].count++;
+    });
+
+    const groups = Object.values(map).sort((a, b) => {
+      if (a.batch !== b.batch) return b.batch - a.batch;
+      return a.discipline.localeCompare(b.discipline);
+    });
+
+    groups.forEach(g => {
+      g.exams = Object.values(g.exams).sort((a, b) => {
+        if (a.examType !== b.examType) {
+          return a.examType === 'CT' ? -1 : 1;
+        }
+        return (a.examNumber || 0) - (b.examNumber || 0);
+      });
+    });
+
+    return groups;
+  }
+
+  function renderTOC(tocData) {
+    return tocData.map(group => `
+      <div class="toc-group mb-1">
+        <div class="toc-group-label" data-group="${group.discipline}-${group.batch}">
+          <svg class="toc-chevron open" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+          ${group.discipline}-${group.batch}
+        </div>
+        <ul class="toc-children">
+          ${group.exams.map(exam => `
+            <li class="toc-exam-item"
+                data-discipline="${group.discipline}"
+                data-batch="${group.batch}"
+                data-examtype="${exam.examType}"
+                data-examnumber="${exam.examNumber || ''}"
+                role="button"
+                tabindex="0">
+              ${exam.examType}${exam.examNumber ? ' ' + exam.examNumber : ''}
+              <span class="toc-exam-count">(${exam.count})</span>
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+    `).join('');
+  }
+
+  // --- 5. View Logic ---
 
   function applyFiltersAndRender() {
     let filtered = questions.filter(q => {
@@ -310,6 +401,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const tMatch = state.filters.topic === 'All' || q.topics.includes(state.filters.topic);
       const diffMatch = state.filters.difficulty === 'All' || q.difficulty === state.filters.difficulty;
       const etMatch = state.filters.examType === 'All' || q.examType === state.filters.examType;
+      const enMatch = state.filters.examNumber === 'All' || !state.filters.examNumber || 
+        q.examNumber.toString() === state.filters.examNumber.toString();
 
       // Search logic
       const query = state.searchQuery.toLowerCase();
@@ -318,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
         q.topics.some(t => t.toLowerCase().includes(query)) ||
         q.id.toLowerCase().includes(query);
 
-      return dMatch && bMatch && tMatch && diffMatch && etMatch && sMatch;
+      return dMatch && bMatch && tMatch && diffMatch && etMatch && enMatch && sMatch;
     });
 
     // Sub-view specific filtering
@@ -344,7 +437,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderRepeatedView() { applyFiltersAndRender(); }
   function renderRevisionView() { applyFiltersAndRender(); }
 
-  // --- 5. Interactions & Utilities ---
+  // --- 6. Interactions & Utilities ---
 
   function initSolutionToggles() {
     document.querySelectorAll('.toggle-solution-btn').forEach(btn => {
@@ -367,6 +460,52 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       };
     });
+  }
+
+  function initTOC() {
+    // TOC exam item click — sets filters and navigates to papers view
+    document.querySelectorAll('.toc-exam-item').forEach(item => {
+      item.addEventListener('click', function() {
+        state.filters.discipline = this.dataset.discipline;
+        state.filters.batch = this.dataset.batch;
+        state.filters.examType = this.dataset.examtype;
+        state.filters.examNumber = this.dataset.examnumber || 'All';
+        state.filters.topic = 'All';
+        state.filters.difficulty = 'All';
+        state.filters.section = 'All';
+        state.searchQuery = '';
+        if (globalSearchInput) globalSearchInput.value = '';
+
+        // Force re-render: hashchange won't fire if already on papers
+        const wasPapers = state.currentView === 'papers';
+        window.location.hash = '#papers';
+        if (wasPapers) {
+          applyFiltersAndRender();
+        }
+      });
+    });
+
+    // TOC group collapse/expand
+    document.querySelectorAll('.toc-group-label').forEach(label => {
+      label.addEventListener('click', function() {
+        const chevron = this.querySelector('.toc-chevron');
+        const children = this.nextElementSibling;
+        if (children) {
+          children.classList.toggle('hidden');
+          chevron.classList.toggle('open');
+        }
+      });
+    });
+
+    // Mobile TOC toggle
+    const tocToggle = document.getElementById('toc-mobile-toggle');
+    const tocContainer = document.querySelector('.toc-container');
+    if (tocToggle && tocContainer) {
+      tocToggle.addEventListener('click', function() {
+        tocContainer.classList.toggle('open');
+        this.classList.toggle('open');
+      });
+    }
   }
 
   // Handle Search Input
