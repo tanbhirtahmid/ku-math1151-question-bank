@@ -1,0 +1,109 @@
+% FILE: CSE-23_CT-2.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-ct2-secb-q1
+% discipline=CSE
+% year=2023
+% exam_type=CT
+% section=B
+% ct_number=2
+% question_number=1
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec B) - Q1}
+Question:
+State and derive the relation between the beta and gamma functions.
+
+Solution:
+Step 1: State the relationship.
+The relation between the Beta function $B(m, n)$ and the Gamma function $\Gamma(x)$ for $m > 0$ and $n > 0$ is given by:
+\[
+B(m, n) = \frac{\Gamma(m) \Gamma(n)}{\Gamma(m+n)}
+\]
+
+Step 2: Express the Gamma functions in exponential form.
+By definition, the Gamma function is:
+\[
+\Gamma(n) = \int_0^\infty e^{-t} t^{n-1} \, dt
+\]
+Let $t = x^2$. Then $dt = 2x \, dx$. The limits of integration remain $0$ to $\infty$. Substituting these:
+\[
+\Gamma(n) = \int_0^\infty e^{-x^2} (x^2)^{n-1} (2x \, dx) = 2 \int_0^\infty e^{-x^2} x^{2n-1} \, dx
+\]
+Similarly, we can write $\Gamma(m)$ using a different dummy variable $y$:
+\[
+\Gamma(m) = 2 \int_0^\infty e^{-y^2} y^{2m-1} \, dy
+\]
+
+Step 3: Multiply the two Gamma functions.
+Multiplying the two expressions together:
+\[
+\Gamma(m) \Gamma(n) = \left( 2 \int_0^\infty e^{-y^2} y^{2m-1} \, dy \right) \left( 2 \int_0^\infty e^{-x^2} x^{2n-1} \, dx \right)
+\]
+Combining this into a double integral over the first quadrant of the $xy$-plane ($x \ge 0, y \ge 0$):
+\[
+\Gamma(m) \Gamma(n) = 4 \int_0^\infty \int_0^\infty e^{-(x^2+y^2)} x^{2n-1} y^{2m-1} \, dx \, dy
+\]
+
+Step 4: Transform to polar coordinates.
+Let $x = r \cos \theta$ and $y = r \sin \theta$.
+The differential area element is $dx \, dy = r \, dr \, d\theta$.
+The boundary of the first quadrant corresponds to $r$ running from $0$ to $\infty$ and $\theta$ running from $0$ to $\frac{\pi}{2}$.
+Substituting these transformations:
+\[
+\Gamma(m) \Gamma(n) = 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} (r \cos \theta)^{2n-1} (r \sin \theta)^{2m-1} r \, dr \, d\theta
+\]
+\[
+\Gamma(m) \Gamma(n) = 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} r^{2n-1+2m-1+1} \cos^{2n-1} \theta \sin^{2m-1} \theta \, dr \, d\theta
+\]
+\[
+\Gamma(m) \Gamma(n) = 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} r^{2(m+n)-1} \sin^{2m-1} \theta \cos^{2n-1} \theta \, dr \, d\theta
+\]
+
+Step 5: Separate the integrals.
+Since the limits of integration are independent constants, we can factor the integrals:
+\[
+\Gamma(m) \Gamma(n) = 2 \left( \int_0^\infty e^{-r^2} r^{2(m+n)-1} \, dr \right) \cdot 2 \left( \int_0^{\pi/2} \sin^{2m-1} \theta \cos^{2n-1} \theta \, d\theta \right)
+\]
+
+Step 6: Identify the integral components.
+Using the definition established in Step 2:
+\[
+2 \int_0^\infty e^{-r^2} r^{2(m+n)-1} \, dr = \Gamma(m+n)
+\]
+Using the trigonometric form of the Beta function:
+\[
+2 \int_0^{\pi/2} \sin^{2m-1} \theta \cos^{2n-1} \theta \, d\theta = B(m, n)
+\]
+
+Step 7: Solve for the Beta-Gamma relation.
+Substitute these two identities back into the equation:
+\[
+\Gamma(m) \Gamma(n) = \Gamma(m+n) B(m, n)
+\]
+Dividing both sides by $\Gamma(m+n)$:
+\[
+B(m, n) = \frac{\Gamma(m) \Gamma(n)}{\Gamma(m+n)}
+\]
+
+Final Answer:
+\[
+\boxed{B(m, n) = \frac{\Gamma(m) \Gamma(n)}{\Gamma(m+n)}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

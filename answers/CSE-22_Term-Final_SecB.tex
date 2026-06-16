@@ -1,0 +1,662 @@
+% FILE: CSE-22_TermFinal.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q5i
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5i
+% topic=Indefinite Integration
+% subtopic=General
+% difficulty=Easy
+% length=Short
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(i)}
+Question:
+Integrate the following:
+\[
+\int \frac{dx}{1+\cos x}
+\]
+
+Solution:
+Step 1: Simplify the integrand using trigonometric half-angle identities.
+Recall that \(1 + \cos x = 2 \cos^2\left(\frac{x}{2}\right)\).
+Substituting this into the integral:
+\[
+\int \frac{dx}{1+\cos x} = \int \frac{dx}{2 \cos^2\left(\frac{x}{2}\right)}
+\]
+
+Step 2: Rewrite in terms of secant and integrate.
+\[
+\frac{1}{2} \int \sec^2\left(\frac{x}{2}\right) \, dx
+\]
+Using the standard integration formula \(\int \sec^2(u) \, du = \tan(u) + C\):
+\[
+\frac{1}{2} \cdot \left( \frac{\tan\left(\frac{x}{2}\right)}{\frac{1}{2}} \right) + C = \tan\left(\frac{x}{2}\right) + C
+\]
+
+Final Answer:
+\[
+\boxed{\tan\left(\frac{x}{2}\right) + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q5ii
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5ii
+% topic=Indefinite Integration
+% subtopic=Substitution
+% difficulty=Easy
+% length=Short
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(ii)}
+Question:
+Integrate the following:
+\[
+\int \frac{e^{2x}}{e^x+1} \, dx
+\]
+
+Solution:
+Step 1: Apply substitution.
+Let \(u = e^x\). Then \(du = e^x \, dx\).
+We can rewrite the numerator as \(e^{2x} = e^x \cdot e^x\).
+The integral becomes:
+\[
+\int \frac{e^x}{e^x+1} (e^x \, dx) = \int \frac{u}{u+1} \, du
+\]
+
+Step 2: Perform algebraic manipulation on the integrand.
+\[
+\int \frac{u+1-1}{u+1} \, du = \int \left( 1 - \frac{1}{u+1} \right) du
+\]
+
+Step 3: Integrate and substitute back \(u = e^x\).
+\[
+u - \ln|u+1| + C = e^x - \ln(e^x+1) + C
+\]
+
+Final Answer:
+\[
+\boxed{e^x - \ln(e^x+1) + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q5iii
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5iii
+% topic=Indefinite Integration
+% subtopic=Integration by Parts
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(iii)}
+Question:
+Integrate the following:
+\[
+\int e^{2x} \sin 4x \, dx
+\]
+
+Solution:
+Step 1: Use the standard formula for integrals of the type \(\int e^{ax} \sin bx \, dx\).
+Recall the formula:
+\[
+\int e^{ax} \sin bx \, dx = \frac{e^{ax}}{a^2+b^2} (a \sin bx - b \cos bx) + C
+\]
+
+Step 2: Substitute the parameters \(a=2\) and \(b=4\) into the formula.
+\[
+\int e^{2x} \sin 4x \, dx = \frac{e^{2x}}{2^2+4^2} (2 \sin 4x - 4 \cos 4x) + C
+\]
+\[
+= \frac{e^{2x}}{20} (2 \sin 4x - 4 \cos 4x) + C
+\]
+
+Step 3: Simplify the expression.
+\[
+= \frac{e^{2x}}{10} (\sin 4x - 2 \cos 4x) + C
+\]
+
+Final Answer:
+\[
+\boxed{\frac{e^{2x}}{10} (\sin 4x - 2 \cos 4x) + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q5iv
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5iv
+% topic=Indefinite Integration
+% subtopic=Partial Fractions
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(iv)}
+Question:
+Integrate the following:
+\[
+\int \frac{x \, dx}{x^2-12x+35}
+\]
+
+Solution:
+Step 1: Factor the denominator.
+The quadratic expression \(x^2-12x+35\) can be factored as:
+\[
+x^2-12x+35 = (x-5)(x-7)
+\]
+
+Step 2: Apply partial fraction decomposition.
+\[
+\frac{x}{(x-5)(x-7)} = \frac{A}{x-5} + \frac{B}{x-7}
+\]
+Multiply both sides by \((x-5)(x-7)\):
+\[
+x = A(x-7) + B(x-5)
+\]
+
+Step 3: Solve for constants \(A\) and \(B\).
+For \(x = 5\):
+\[
+5 = A(5-7) \implies 5 = -2A \implies A = -\frac{5}{2}
+\]
+For \(x = 7\):
+\[
+7 = B(7-5) \implies 7 = 2B \implies B = \frac{7}{2}
+\]
+
+Step 4: Integrate the decomposed terms.
+\[
+\int \frac{x \, dx}{x^2-12x+35} = -\frac{5}{2} \int \frac{dx}{x-5} + \frac{7}{2} \int \frac{dx}{x-7}
+\]
+\[
+= -\frac{5}{2} \ln|x-5| + \frac{7}{2} \ln|x-7| + C
+\]
+
+Final Answer:
+\[
+\boxed{\frac{7}{2} \ln|x-7| - \frac{5}{2} \ln|x-5| + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q6a
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q6(a)}
+Question:
+Define definite integral. Find \(\int_1^2 x \, dx\) as the limit of sum.
+
+Solution:
+Step 1: State the definition of a definite integral.
+Let \(f(x)\) be a continuous function defined on a closed interval \([a, b]\). The definite integral of \(f(x)\) from \(a\) to \(b\) is defined as the limit of Riemann sums as the width of the subintervals approaches zero:
+\[
+\int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i) \Delta x
+\]
+where \(\Delta x = \frac{b-a}{n}\) and \(x_i = a + i\Delta x\).
+
+Step 2: Set up the limit of sum for \(\int_1^2 x \, dx\).
+Here, \(f(x) = x\), \(a = 1\), and \(b = 2\).
+\[
+\Delta x = \frac{2-1}{n} = \frac{1}{n}
+\]
+\[
+x_i = 1 + i\Delta x = 1 + \frac{i}{n}
+\]
+
+Step 3: Substitute the variables into the summation formula.
+\[
+\int_1^2 x \, dx = \lim_{n \to \infty} \sum_{i=1}^{n} \left(1 + \frac{i}{n}\right) \frac{1}{n}
+\]
+\[
+= \lim_{n \to \infty} \frac{1}{n} \left[ \sum_{i=1}^{n} 1 + \frac{1}{n} \sum_{i=1}^{n} i \right]
+\]
+
+Step 4: Evaluate the summations.
+Recall that \(\sum_{i=1}^{n} 1 = n\) and \(\sum_{i=1}^{n} i = \frac{n(n+1)}{2}\).
+\[
+\int_1^2 x \, dx = \lim_{n \to \infty} \frac{1}{n} \left[ n + \frac{n(n+1)}{2n} \right]
+\]
+\[
+= \lim_{n \to \infty} \left[ 1 + \frac{n+1}{2n} \right]
+\]
+\[
+= \lim_{n \to \infty} \left[ 1 + \frac{1}{2} + \frac{1}{2n} \right] = 1 + \frac{1}{2} = \frac{3}{2}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{3}{2}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q6b
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q6(b)}
+Question:
+Evaluate \(\lim_{n \to \infty} \left[\frac{1}{n+m} + \frac{1}{n+2m} + \frac{1}{n+3m} + \dots + \frac{1}{n+nm}\right]\).
+
+Solution:
+Step 1: Express the sequence as a summation.
+The given expression can be written as:
+\[
+S_n = \sum_{r=1}^{n} \frac{1}{n+rm}
+\]
+
+Step 2: Convert the summation into a Riemann sum form.
+Factor out \(n\) from the denominator:
+\[
+S_n = \sum_{r=1}^{n} \frac{1}{n\left(1 + m\frac{r}{n}\right)} = \frac{1}{n} \sum_{r=1}^{n} \frac{1}{1 + m\left(\frac{r}{n}\right)}
+\]
+
+Step 3: Convert the limit of the Riemann sum into a definite integral.
+As \(n \to \infty\), let \(\frac{r}{n} \to x\) and \(\frac{1}{n} \to dx\). The limits of integration run from \(x = 0\) (for \(r=1\)) to \(x = 1\) (for \(r=n\)).
+\[
+\lim_{n \to \infty} S_n = \int_0^1 \frac{1}{1+mx} \, dx
+\]
+
+Step 4: Integrate and evaluate the expression.
+Using the substitution method or standard integration rule:
+\[
+\int_0^1 \frac{1}{1+mx} \, dx = \left[ \frac{\ln(1+mx)}{m} \right]_0^1
+\]
+\[
+= \frac{\ln(1+m)}{m} - \frac{\ln(1)}{m} = \frac{\ln(1+m)}{m}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\ln(1+m)}{m}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q7a
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Easy
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7(a)}
+Question:
+What are beta function and gamma function? Write the relation between them.
+
+Solution:
+Step 1: Define the Beta Function.
+The Beta Function, denoted by \(B(m, n)\), is a first-kind Eulerian integral defined for \(m > 0, n > 0\) as:
+\[
+B(m, n) = \int_0^1 x^{m-1} (1-x)^{n-1} \, dx
+\]
+
+Step 2: Define the Gamma Function.
+The Gamma Function, denoted by \(\Gamma(n)\), is a second-kind Eulerian integral extension of the factorial function to real and complex numbers, defined for \(n > 0\) as:
+\[
+\Gamma(n) = \int_0^\infty e^{-x} x^{n-1} \, dx
+\]
+
+Step 3: Write the relationship between them.
+The relationship connecting the Beta and Gamma functions is given by:
+\[
+B(m, n) = \frac{\Gamma(m) \Gamma(n)}{\Gamma(m+n)}
+\]
+
+Final Answer:
+\[
+\boxed{B(m, n) = \frac{\Gamma(m) \Gamma(n)}{\Gamma(m+n)}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q7b
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7(b)}
+Question:
+Evaluate \(\int_0^1 \frac{dx}{(1-x^6)^{1/6}}\) by Beta-Gamma function.
+
+Solution:
+Step 1: Set up substitution to match the Beta function form.
+Let \(x^6 = y \implies x = y^{1/6}\).
+Differentiating both sides:
+\[
+dx = \frac{1}{6} y^{-5/6} \, dy
+\]
+When \(x=0, y=0\), and when \(x=1, y=1\).
+
+Step 2: Express the integral in terms of \(y\).
+\[
+\int_0^1 \frac{dx}{(1-x^6)^{1/6}} = \int_0^1 \frac{\frac{1}{6} y^{-5/6}}{(1-y)^{1/6}} \, dy
+\]
+\[
+= \frac{1}{6} \int_0^1 y^{-5/6} (1-y)^{-1/6} \, dy
+\]
+
+Step 3: Match with the standard Beta function definition.
+Recall the definition: \(B(p, q) = \int_0^1 y^{p-1} (1-y)^{q-1} \, dy\).
+Comparing the powers:
+\[
+p - 1 = -\frac{5}{6} \implies p = \frac{1}{6}
+\]
+\[
+q - 1 = -\frac{1}{6} \implies q = \frac{5}{6}
+\]
+Thus, the integral is:
+\[
+\frac{1}{6} B\left(\frac{1}{6}, \frac{5}{6}\right) = \frac{1}{6} \frac{\Gamma(1/6)\Gamma(5/6)}{\Gamma(1/6+5/6)} = \frac{1}{6} \frac{\Gamma(1/6)\Gamma(5/6)}{\Gamma(1)}
+\]
+
+Step 4: Use Euler's reflection formula to evaluate the Gamma product.
+Recall Euler's reflection formula: \(\Gamma(z)\Gamma(1-z) = \frac{\pi}{\sin(\pi z)}\).
+Here, \(z = 1/6\):
+\[
+\Gamma(1/6)\Gamma(5/6) = \frac{\pi}{\sin(\pi/6)} = \frac{\pi}{1/2} = 2\pi
+\]
+Since \(\Gamma(1) = 1\), the integral evaluates to:
+\[
+\frac{1}{6} \cdot 2\pi = \frac{\pi}{3}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{3}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q7c
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7c
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7(c)}
+Question:
+Find the area of the region bounded above by \(y = x + b\), bounded below by \(y = x^2\), and bounded on the sides by the lines \(x = 0\) and \(x = 2\).
+
+Solution:
+Step 1: Set up the definite integral for the area.
+The area \(A\) between two curves \(y_{top} = f(x)\) and \(y_{bottom} = g(x)\) on the interval \([a, b]\) is given by:
+\[
+A = \int_a^b [f(x) - g(x)] \, dx
+\]
+Substituting the given equations and boundaries:
+\[
+A = \int_0^2 [(x + b) - x^2] \, dx
+\]
+
+Step 2: Integrate the term with respect to \(x\).
+\[
+A = \left[ \frac{x^2}{2} + bx - \frac{x^3}{3} \right]_0^2
+\]
+
+Step 3: Evaluate the expression at the boundaries.
+\[
+A = \left( \frac{2^2}{2} + b(2) - \frac{2^3}{3} \right) - (0)
+\]
+\[
+A = 2 + 2b - \frac{8}{3}
+\]
+\[
+A = 2b - \frac{2}{3}
+\]
+
+Final Answer:
+\[
+\boxed{2b - \frac{2}{3}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q8a
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8a
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Easy
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q8(a)}
+Question:
+Derive the formula for the volume of a sphere of radius \(r\).
+
+Solution:
+Step 1: Set up the geometric model.
+Consider a circle with its center at the origin and radius \(r\), given by the equation:
+\[
+x^2 + y^2 = r^2 \implies y^2 = r^2 - x^2
+\]
+If we rotate the upper semi-circle \(y = \sqrt{r^2 - x^2}\) about the \(x\)-axis, it generates a solid sphere of radius \(r\).
+
+Step 2: Formulate the volume using the disc method.
+The volume of a representative disc of thickness \(dx\) and radius \(y\) is \(dV = \pi y^2 \, dx\).
+Integrating this from \(x = -r\) to \(x = r\):
+\[
+V = \int_{-r}^{r} \pi y^2 \, dx = \pi \int_{-r}^{r} (r^2 - x^2) \, dx
+\]
+
+Step 3: Use symmetry and integrate.
+Since the integrand is an even function, we can multiply by 2 and integrate from \(0\) to \(r\):
+\[
+V = 2\pi \int_0^r (r^2 - x^2) \, dx
+\]
+\[
+V = 2\pi \left[ r^2 x - \frac{x^3}{3} \right]_0^r
+\]
+
+Step 4: Evaluate the integrated expression.
+\[
+V = 2\pi \left( r^3 - \frac{r^3}{3} \right)
+\]
+\[
+V = 2\pi \left( \frac{2r^3}{3} \right) = \frac{4}{3}\pi r^3
+\]
+
+Final Answer:
+\[
+\boxed{\frac{4}{3}\pi r^3}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-final-q8b
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8b
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q8(b)}
+Question:
+Find the area of the surface that is generated by revolving the portion of the curve \(y = x^3\) between \(x = 0\) and \(x = 1\) about the \(x\)-axis.
+
+Solution:
+Step 1: State the formula for the surface area of revolution.
+The surface area \(S\) of a solid generated by rotating a curve \(y = f(x)\) on the interval \([a, b]\) about the \(x\)-axis is given by:
+\[
+S = 2\pi \int_a^b y \sqrt{1 + \left(\frac{dy}{dx}\right)^2} \, dx
+\]
+
+Step 2: Compute the derivative of the given function.
+Here, \(y = x^3 \implies \frac{dy}{dx} = 3x^2\).
+Now, compute \(1 + \left(\frac{dy}{dx}\right)^2\):
+\[
+1 + (3x^2)^2 = 1 + 9x^4
+\]
+
+Step 3: Set up the integration.
+Substitute these values into the surface area formula:
+\[
+S = 2\pi \int_0^1 x^3 \sqrt{1 + 9x^4} \, dx
+\]
+
+Step 4: Solve the integral using \(u\)-substitution.
+Let \(u = 1 + 9x^4\).
+Then \(du = 36x^3 \, dx \implies x^3 \, dx = \frac{du}{36}\).
+Change the limits of integration:
+When \(x = 0 \implies u = 1\).
+When \(x = 1 \implies u = 10\).
+
+Substituting these into the integral:
+\[
+S = 2\pi \int_1^{10} \sqrt{u} \frac{du}{36} = \frac{\pi}{18} \int_1^{10} u^{1/2} \, du
+\]
+\[
+= \frac{\pi}{18} \left[ \frac{2}{3} u^{3/2} \right]_1^{10}
+\]
+\[
+= \frac{\pi}{27} (10^{3/2} - 1^{3/2}) = \frac{\pi}{27} (10\sqrt{10} - 1)
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{27} (10\sqrt{10} - 1)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

@@ -1436,7 +1436,23 @@ const questions = [
     "questionHtml": "Find the volume formed by revolving about the x-axis of a loop of $(x - 4a)y^2 = ax(x - 3a)$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Volume setup</p>\r\n              <div class=\"overflow-x-auto\">$$V = \\pi a \\int_0^{3a} (x+a + \\frac{4a^2}{x-4a}) dx = \\pi a^3 (15/2 - 8\\log 2)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\pi a^3 \\left( \\frac{15}{2} - 8\\log 2 \\right)$$</div>"
-  }
-];
+  },
+  {
+    "id": "cse23-ct2-secb-q1",
+    "discipline": "CSE",
+    "batch": 23,
+    "year": 2023,
+    "examType": "CT",
+    "examNumber": 2,
+    "section": "B",
+    "questionNumber": "1",
+    "topics": ["Definite Integration", "Beta-Gamma Function"],
+    "difficulty": "Medium",
+    "length": "Long",
+    "frequency": 1,
+    "appearances": [],
+    "tags": [],
+    "questionHtml": "State and derive the relation between the beta and gamma functions.",
+    "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: State the relationship.</p>The relation between the Beta function $B(m, n)$ and the Gamma function $\\Gamma(x)$ for $m > 0$ and $n > 0$ is given by:<div class=\"overflow-x-auto\">$$ B(m, n) = \\frac{\\Gamma(m) \\Gamma(n)}{\\Gamma(m+n)} $$</div><p class=\"font-semibold text-slate-900\">Step 2: Express the Gamma functions in exponential form.</p>By definition, the Gamma function is:<div class=\"overflow-x-auto\">$$ \\Gamma(n) = \\int_0^\\infty e^{-t} t^{n-1} \\, dt $$</div>Let $t = x^2$. Then $dt = 2x \\, dx$. The limits of integration remain $0$ to $\\infty$. Substituting these:<div class=\"overflow-x-auto\">$$ \\Gamma(n) = \\int_0^\\infty e^{-x^2} (x^2)^{n-1} (2x \\, dx) = 2 \\int_0^\\infty e^{-x^2} x^{2n-1} \\, dx $$</div>Similarly, we can write $\\Gamma(m)$ using a different dummy variable $y$:<div class=\"overflow-x-auto\">$$ \\Gamma(m) = 2 \\int_0^\\infty e^{-y^2} y^{2m-1} \\, dy $$</div><p class=\"font-semibold text-slate-900\">Step 3: Multiply the two Gamma functions.</p>Multiplying the two expressions together:<div class=\"overflow-x-auto\">$$ \\Gamma(m) \\Gamma(n) = \\left( 2 \\int_0^\\infty e^{-y^2} y^{2m-1} \\, dy \\right) \\left( 2 \\int_0^\\infty e^{-x^2} x^{2n-1} \\, dx \\right) $$</div>Combining this into a double integral over the first quadrant of the $xy$-plane ($x \\ge 0, y \\ge 0$):<div class=\"overflow-x-auto\">$$ \\Gamma(m) \\Gamma(n) = 4 \\int_0^\\infty \\int_0^\\infty e^{-(x^2+y^2)} x^{2n-1} y^{2m-1} \\, dx \\, dy $$</div><p class=\"font-semibold text-slate-900\">Step 4: Transform to polar coordinates.</p>Let $x = r \\cos \\theta$ and $y = r \\sin \\theta$. The differential area element is $dx \\, dy = r \\, dr \\, d\\theta$. The boundary of the first quadrant corresponds to $r$ running from $0$ to $\\infty$ and $\\theta$ running from $0$ to $\\frac{\\pi}{2}$. Substituting these transformations:<div class=\"overflow-x-auto\">$$ \\Gamma(m) \\Gamma(n) = 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} (r \\cos \\theta)^{2n-1} (r \\sin \\theta)^{2m-1} r \\, dr \\, d\\theta $$</div><div class=\"overflow-x-auto\">$$ \\Gamma(m) \\Gamma(n) = 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} r^{2n-1+2m-1+1} \\cos^{2n-1} \\theta \\sin^{2m-1} \\theta \\, dr \\, d\\theta $$</div><div class=\"overflow-x-auto\">$$ \\Gamma(m) \\Gamma(n) = 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\sin^{2m-1} \theta \\cos^{2n-1} \theta \\, dr \\, d\\theta $$</div><p class=\"font-semibold text-slate-900\">Step 5: Separate the integrals.</p>Since the limits of integration are independent constants, we can factor the integrals:<div class=\"overflow-x-auto\">$$ \\Gamma(m) \\Gamma(n) = 2 \\left( \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\, dr \\right) \\cdot 2 \\left( \\int_0^{\\pi/2} \\sin^{2m-1} \theta \\cos^{2n-1} \theta \\, d\\theta \\right) $$</div><p class=\"font-semibold text-slate-900\">Step 6: Identify the integral components.</p>Using the definition established in Step 2:<div class=\"overflow-x-auto\">$$ 2 \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\, dr = \\Gamma(m+n) $$</div>Using the trigonometric form of the Beta function:<div class=\"overflow-x-auto\">$$ 2 \\int_0^{\\pi/2} \\sin^{2m-1} \theta \\cos^{2n-1} \theta \\, d\\theta = B(m, n) $$</div><p class=\"font-semibold text-slate-900\">Step 7: Solve for the Beta-Gamma relation.</p>Substitute these two identities back into the equation:<div class=\"overflow-x-auto\">$$ \\Gamma(m) \\Gamma(n) = \\Gamma(m+n) B(m, n) $$</div>Dividing both sides by $\\Gamma(m+n)$:<div class=\"overflow-x-auto\">$$ B(m, n) = \\frac{\\Gamma(m) \\Gamma(n)}{\\Gamma(m+n)} $$</div>\",\n  \"finalAnswerHtml\": \"<div class=\"overflow-x-auto\">$$ B(m, n) = \\frac{\\Gamma(m) \\Gamma(n)}{\\Gamma(m+n)} $$</div>\"\n}\n];
 
 if (typeof module !== 'undefined') module.exports = questions;
