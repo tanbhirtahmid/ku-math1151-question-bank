@@ -1,0 +1,869 @@
+% FILE: CSE-20_TermFinal.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q1a
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1a
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q1(a)}
+Question:
+Define uniform continuity. Find the limit of
+\[
+\lim_{x \to -\infty} \frac{4x^2 - x}{2x^3 - 5}
+\]
+
+Solution:
+Step 1: Define uniform continuity.
+A real-valued function $f(x)$ is said to be uniformly continuous on an interval $I$ if for every $\epsilon > 0$, there exists a $\delta > 0$ (depending only on $\epsilon$ and not on any particular point in $I$) such that for all $x_1, x_2 \in I$:
+\[
+|x_1 - x_2| < \delta \implies |f(x_1) - f(x_2)| < \epsilon
+\]
+
+Step 2: Find the given limit.
+Let \( L = \lim_{x \to -\infty} \frac{4x^2 - x}{2x^3 - 5} \).
+Divide both the numerator and denominator by the highest power of $x$ in the denominator, which is $x^3$:
+\[
+L = \lim_{x \to -\infty} \frac{\frac{4x^2}{x^3} - \frac{x}{x^3}}{\frac{2x^3}{x^3} - \frac{5}{x^3}}
+\]
+\[
+L = \lim_{x \to -\infty} \frac{\frac{4}{x} - \frac{1}{x^2}}{2 - \frac{5}{x^3}}
+\]
+
+Step 3: Evaluate the limits of individual terms as $x \to -\infty$.
+As $x \to -\infty$, the terms $\frac{4}{x} \to 0$, $\frac{1}{x^2} \to 0$, and $\frac{5}{x^3} \to 0$.
+Substituting these values:
+\[
+L = \frac{0 - 0}{2 - 0} = 0
+\]
+
+Final Answer:
+\[
+\boxed{0}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q1b
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1b
+% topic=Continuity
+% subtopic=General
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q1(b)}
+Question:
+For what values of $x$ is there a discontinuity in the graph of $y = \frac{x^2 - 9}{x^2 - 5x + 6}$?
+
+Solution:
+Step 1: Set up the condition for discontinuity.
+A rational function is discontinuous at values of $x$ where its denominator evaluates to zero.
+Therefore, we set the denominator equal to zero:
+\[
+x^2 - 5x + 6 = 0
+\]
+
+Step 2: Solve the quadratic equation.
+Factor the quadratic expression:
+\[
+(x - 2)(x - 3) = 0
+\]
+This gives:
+\[
+x = 2 \quad \text{or} \quad x = 3
+\]
+
+Step 3: Discuss the types of discontinuity (optional but comprehensive).
+- At $x = 3$, the numerator $x^2 - 9 = (3)^2 - 9 = 0$. Since both numerator and denominator are zero, $x = 3$ represents a removable discontinuity.
+- At $x = 2$, the numerator is $(2)^2 - 9 = -5 \ne 0$. Thus, $x = 2$ represents an infinite discontinuity.
+
+Final Answer:
+\[
+\boxed{x = 2, 3}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q2ai
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2ai
+% topic=Differentiation
+% subtopic=Basic Differentiation
+% difficulty=Medium
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)(i)}
+Question:
+Find the derivative of the following:
+\[
+y = (1 + x^5 \cot x)^{-8}
+\]
+
+Solution:
+Step 1: Use the chain rule for differentiation.
+Let $u = 1 + x^5 \cot x$, so $y = u^{-8}$.
+The derivative is:
+\[
+\frac{dy}{dx} = -8u^{-9} \cdot \frac{du}{dx}
+\]
+\[
+\frac{dy}{dx} = -8(1 + x^5 \cot x)^{-9} \cdot \frac{d}{dx}(1 + x^5 \cot x)
+\]
+
+Step 2: Differentiate the inner expression using the product rule.
+Using the product rule on $x^5 \cot x$:
+\[
+\frac{d}{dx}(1 + x^5 \cot x) = \frac{d}{dx}(x^5) \cot x + x^5 \frac{d}{dx}(\cot x)
+\]
+Since $\frac{d}{dx}(x^5) = 5x^4$ and $\frac{d}{dx}(\cot x) = -\csc^2 x$:
+\[
+\frac{d}{dx}(1 + x^5 \cot x) = 5x^4 \cot x - x^5 \csc^2 x
+\]
+
+Step 3: Combine the results.
+\[
+\frac{dy}{dx} = -8(1 + x^5 \cot x)^{-9} (5x^4 \cot x - x^5 \csc^2 x)
+\]
+
+Final Answer:
+\[
+\boxed{-8(1 + x^5 \cot x)^{-9} (5x^4 \cot x - x^5 \csc^2 x)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q2aii
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2aii
+% topic=Differentiation
+% subtopic=Implicit Differentiation
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)(ii)}
+Question:
+Find the derivative of the following:
+\[
+\frac{xy^3}{1+\sec y} = 1 + y^4
+\]
+
+Solution:
+Step 1: Rewrite the equation to avoid quotient rule.
+Multiply both sides of the equation by $(1 + \sec y)$:
+\[
+xy^3 = (1 + y^4)(1 + \sec y)
+\]
+Expanding the right-hand side:
+\[
+xy^3 = 1 + \sec y + y^4 + y^4 \sec y
+\]
+
+Step 2: Differentiate both sides implicitly with respect to $x$.
+Applying the product rule on the left-hand side ($xy^3$):
+\[
+\frac{d}{dx}(xy^3) = y^3 + 3xy^2 \frac{dy}{dx}
+\]
+Applying differentiation rules on the right-hand side, keeping in mind that $y$ is a function of $x$:
+\[
+\frac{d}{dx}(1 + \sec y + y^4 + y^4 \sec y) = \sec y \tan y \frac{dy}{dx} + 4y^3 \frac{dy}{dx} + \left(4y^3 \sec y \frac{dy}{dx} + y^4 \sec y \tan y \frac{dy}{dx}\right)
+\]
+
+Step 3: Group the terms involving $\frac{dy}{dx}$.
+\[
+y^3 + 3xy^2 \frac{dy}{dx} = \left[ \sec y \tan y + 4y^3 + 4y^3 \sec y + y^4 \sec y \tan y \right] \frac{dy}{dx}
+\]
+Rearrange terms to isolate $\frac{dy}{dx}$:
+\[
+y^3 = \left[ \sec y \tan y (1 + y^4) + 4y^3 (1 + \sec y) - 3xy^2 \right] \frac{dy}{dx}
+\]
+
+Step 4: Solve for $\frac{dy}{dx}$.
+\[
+\frac{dy}{dx} = \frac{y^3}{\sec y \tan y (1 + y^4) + 4y^3 (1 + \sec y) - 3xy^2}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{dy}{dx} = \frac{y^3}{\sec y \tan y (1 + y^4) + 4y^3 (1 + \sec y) - 3xy^2}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q2aiii
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2aiii
+% topic=Differentiation
+% subtopic=Logarithmic Differentiation
+% difficulty=Medium
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)(iii)}
+Question:
+Find the derivative of the following:
+\[
+y = \log\left(\frac{x^2 \sin x}{\sqrt{1+x}}\right)
+\]
+
+Solution:
+Step 1: Simplify the logarithmic expression using log properties.
+Recall that $\log\left(\frac{ab}{c}\right) = \log a + \log b - \log c$ and $\log(a^k) = k \log a$:
+\[
+y = \log(x^2 \sin x) - \log(\sqrt{1+x})
+\]
+\[
+y = 2\log x + \log(\sin x) - \frac{1}{2} \log(1+x)
+\]
+
+Step 2: Differentiate term by term with respect to $x$.
+- For $2\log x$:
+  \[
+  \frac{d}{dx}(2\log x) = \frac{2}{x}
+  \]
+- For $\log(\sin x)$ (using the chain rule):
+  \[
+  \frac{d}{dx}(\log(\sin x)) = \frac{1}{\sin x} \cdot \cos x = \cot x
+  \]
+- For $-\frac{1}{2}\log(1+x)$:
+  \[
+  \frac{d}{dx}\left(-\frac{1}{2}\log(1+x)\right) = -\frac{1}{2(1+x)}
+  \]
+
+Step 3: Combine all terms to get the final derivative.
+\[
+\frac{dy}{dx} = \frac{2}{x} + \cot x - \frac{1}{2(1+x)}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{2}{x} + \cot x - \frac{1}{2(1+x)}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q3a
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3a
+% topic=Differentiation
+% subtopic=Tangent \& Normal
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q3(a)}
+Question:
+Find the equation for the tangent line to the Folium of Descartes $x^3 + y^3 = 3xy$ at the point $\left(\frac{3}{2}, \frac{3}{2}\right)$.
+
+Solution:
+Step 1: Differentiate the given equation implicitly with respect to $x$.
+\[
+\frac{d}{dx}(x^3 + y^3) = \frac{d}{dx}(3xy)
+\]
+\[
+3x^2 + 3y^2 \frac{dy}{dx} = 3y + 3x \frac{dy}{dx}
+\]
+Divide the entire equation by 3:
+\[
+x^2 + y^2 \frac{dy}{dx} = y + x \frac{dy}{dx}
+\]
+
+Step 2: Isolate the derivative $\frac{dy}{dx}$.
+\[
+\left(y^2 - x\right) \frac{dy}{dx} = y - x^2
+\]
+\[
+\frac{dy}{dx} = \frac{y - x^2}{y^2 - x}
+\]
+
+Step 3: Evaluate the slope of the tangent line ($m$) at the point $\left(\frac{3}{2}, \frac{3}{2}\right)$.
+\[
+m = \left. \frac{dy}{dx} \right|_{\left(\frac{3}{2}, \frac{3}{2}\right)} = \frac{\frac{3}{2} - \left(\frac{3}{2}\right)^2}{\left(\frac{3}{2}\right)^2 - \frac{3}{2}}
+\]
+\[
+m = \frac{\frac{3}{2} - \frac{9}{4}}{\frac{9}{4} - \frac{3}{2}} = \frac{-\frac{3}{4}}{\frac{3}{4}} = -1
+\]
+
+Step 4: Write the equation of the tangent line.
+Using the point-slope form $y - y_1 = m(x - x_1)$ with point $\left(\frac{3}{2}, \frac{3}{2}\right)$ and slope $m = -1$:
+\[
+y - \frac{3}{2} = -1 \left(x - \frac{3}{2}\right)
+\]
+\[
+y - \frac{3}{2} = -x + \frac{3}{2}
+\]
+\[
+x + y = 3
+\]
+
+Final Answer:
+\[
+\boxed{x + y = 3}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q3b
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3b
+% topic=Differentiation
+% subtopic=Successive Differentiation
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q3(b)}
+Question:
+Find $y''\left(\frac{\pi}{4}\right)$ if $y(x) = \sec x$.
+
+Solution:
+Step 1: Compute the first derivative.
+\[
+y'(x) = \sec x \tan x
+\]
+
+Step 2: Compute the second derivative using the product rule.
+\[
+y''(x) = \frac{d}{dx}(\sec x) \tan x + \sec x \frac{d}{dx}(\tan x)
+\]
+Since $\frac{d}{dx}(\sec x) = \sec x \tan x$ and $\frac{d}{dx}(\tan x) = \sec^2 x$:
+\[
+y''(x) = (\sec x \tan x) \tan x + \sec x (\sec^2 x)
+\]
+\[
+y''(x) = \sec x \tan^2 x + \sec^3 x
+\]
+
+Step 3: Evaluate $y''(x)$ at $x = \frac{\pi}{4}$.
+Recall that $\sec\left(\frac{\pi}{4}\right) = \sqrt{2}$ and $\tan\left(\frac{\pi}{4}\right) = 1$.
+\[
+y''\left(\frac{\pi}{4}\right) = \sqrt{2} (1)^2 + (\sqrt{2})^3
+\]
+\[
+y''\left(\frac{\pi}{4}\right) = \sqrt{2} + 2\sqrt{2} = 3\sqrt{2}
+\]
+
+Final Answer:
+\[
+\boxed{3\sqrt{2}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q4a
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4a
+% topic=Applications of Derivatives
+% subtopic=Maxima \& Minima
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q4(a)}
+Question:
+Find the maxima and minima of $f(x) = 2x^3 - 15x^2 + 36x$ on the interval $[1, 5]$ and determine where the maximum and minimum occur.
+
+Solution:
+Step 1: Find the critical points of $f(x)$.
+Differentiate $f(x)$ with respect to $x$:
+\[
+f'(x) = 6x^2 - 30x + 36
+\]
+Set the derivative to zero to find the critical points:
+\[
+6(x^2 - 5x + 6) = 0 \implies 6(x-2)(x-3) = 0
+\]
+This yields:
+\[
+x = 2 \quad \text{and} \quad x = 3
+\]
+Since both $x = 2$ and $x = 3$ lie within the interval $[1, 5]$, they are valid critical points.
+
+Step 2: Evaluate the function at the critical points and the boundary endpoints of the interval.
+Evaluate $f(x)$ at $x = 1, 2, 3, 5$:
+- At $x = 1$:
+  \[
+  f(1) = 2(1)^3 - 15(1)^2 + 36(1) = 2 - 15 + 36 = 23
+  \]
+- At $x = 2$:
+  \[
+  f(2) = 2(2)^3 - 15(2)^2 + 36(2) = 16 - 60 + 72 = 28
+  \]
+- At $x = 3$:
+  \[
+  f(3) = 2(3)^3 - 15(3)^2 + 36(3) = 54 - 135 + 108 = 27
+  \]
+- At $x = 5$:
+  \[
+  f(5) = 2(5)^3 - 15(5)^2 + 36(5) = 250 - 375 + 180 = 55
+  \]
+
+Step 3: Identify absolute and relative extrema.
+Comparing all the calculated values:
+- The absolute maximum value is $55$ and it occurs at the endpoint $x = 5$.
+- The absolute minimum value is $23$ and it occurs at the endpoint $x = 1$.
+- There is a local maximum at $x = 2$ with value $28$.
+- There is a local minimum at $x = 3$ with value $27$.
+
+Final Answer:
+\[
+\boxed{\text{Absolute Maximum is 55 at } x = 5, \text{ Absolute Minimum is 23 at } x = 1}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q5i
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5i
+% topic=Indefinite Integration
+% subtopic=Trigonometric Integrals
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(i)}
+Question:
+Evaluate the following integral:
+\[
+\int \sin^3 x \cos^2 x \, dx
+\]
+
+Solution:
+Step 1: Rewrite the integrand to prepare for substitution.
+Separate one power of $\sin x$:
+\[
+\sin^3 x \cos^2 x = \sin^2 x \cos^2 x \sin x = (1 - \cos^2 x) \cos^2 x \sin x
+\]
+The integral becomes:
+\[
+\int (1 - \cos^2 x) \cos^2 x \sin x \, dx
+\]
+
+Step 2: Apply u-substitution.
+Let $u = \cos x$. Then $du = -\sin x \, dx \implies \sin x \, dx = -du$.
+Substitute these into the integral:
+\[
+\int (1 - u^2) u^2 (-du) = \int (u^4 - u^2) \, du
+\]
+
+Step 3: Integrate and substitute back.
+\[
+\int (u^4 - u^2) \, du = \frac{u^5}{5} - \frac{u^3}{3} + C
+\]
+Substituting back $u = \cos x$:
+\[
+\frac{\cos^5 x}{5} - \frac{\cos^3 x}{3} + C
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\cos^5 x}{5} - \frac{\cos^3 x}{3} + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q5ii
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5ii
+% topic=Indefinite Integration
+% subtopic=Substitution
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(ii)}
+Question:
+Evaluate the following integral:
+\[
+\int \frac{4e^x + 6e^{-x}}{9e^x - 4e^{-x}} \, dx
+\]
+
+Solution:
+Step 1: Express the numerator in terms of the denominator and its derivative.
+Let the numerator equal $A \cdot (\text{Denominator}) + B \cdot (\text{Derivative of Denominator})$:
+\[
+4e^x + 6e^{-x} = A(9e^x - 4e^{-x}) + B \frac{d}{dx}(9e^x - 4e^{-x})
+\]
+Since $\frac{d}{dx}(9e^x - 4e^{-x}) = 9e^x + 4e^{-x}$:
+\[
+4e^x + 6e^{-x} = A(9e^x - 4e^{-x}) + B(9e^x + 4e^{-x})
+\]
+
+Step 2: Solve for coefficients $A$ and $B$.
+Group coefficients of $e^x$ and $e^{-x}$:
+\[
+4 = 9A + 9B \implies A + B = \frac{4}{9} \quad \text{--- (Equation 1)}
+\]
+\[
+6 = -4A + 4B \implies -A + B = \frac{6}{4} = \frac{3}{2} \quad \text{--- (Equation 2)}
+\]
+Adding Equations 1 and 2:
+\[
+2B = \frac{4}{9} + \frac{3}{2} = \frac{8 + 27}{18} = \frac{35}{18} \implies B = \frac{35}{36}
+\]
+Subtracting Equation 2 from Equation 1:
+\[
+2A = \frac{4}{9} - \frac{3}{2} = \frac{8 - 27}{18} = -\frac{19}{18} \implies A = -\frac{19}{36}
+\]
+
+Step 3: Integrate using the decomposed terms.
+We rewrite the integral as:
+\[
+\int \frac{4e^x + 6e^{-x}}{9e^x - 4e^{-x}} \, dx = \int \left( A + B \frac{9e^x + 4e^{-x}}{9e^x - 4e^{-x}} \right) dx
+\]
+\[
+= A \int dx + B \int \frac{9e^x + 4e^{-x}}{9e^x - 4e^{-x}} \, dx
+\]
+\[
+= Ax + B \ln|9e^x - 4e^{-x}| + C
+\]
+Substituting the values of $A$ and $B$:
+\[
+= -\frac{19}{36}x + \frac{35}{36}\ln|9e^x - 4e^{-x}| + C
+\]
+
+Final Answer:
+\[
+\boxed{-\frac{19}{36}x + \frac{35}{36}\ln|9e^x - 4e^{-x}| + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q6
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q6}
+Question:
+Prove that, $\int_0^{\pi/2} \log(\sin x) \, dx = \int_0^{\pi/2} \log(\cos x) \, dx = \frac{\pi}{2} \log\left(\frac{1}{2}\right)$.
+
+Solution:
+Step 1: Set up the equality between the sin and cos integrals.
+Let $I = \int_0^{\pi/2} \log(\sin x) \, dx$.
+Using the property $\int_a^b f(x) \, dx = \int_a^b f(a+b-x) \, dx$:
+\[
+I = \int_0^{\pi/2} \log\left(\sin\left(\frac{\pi}{2} - x\right)\right) \, dx = \int_0^{\pi/2} \log(\cos x) \, dx
+\]
+Thus, the first equality is proven.
+
+Step 2: Sum the two expressions of $I$.
+Adding both forms of $I$:
+\[
+2I = \int_0^{\pi/2} \log(\sin x) \, dx + \int_0^{\pi/2} \log(\cos x) \, dx
+\]
+\[
+2I = \int_0^{\pi/2} \left[ \log(\sin x) + \log(\cos x) \right] \, dx = \int_0^{\pi/2} \log(\sin x \cos x) \, dx
+\]
+Using the double-angle identity $\sin x \cos x = \frac{\sin 2x}{2}$:
+\[
+2I = \int_0^{\pi/2} \log\left(\frac{\sin 2x}{2}\right) \, dx = \int_0^{\pi/2} \log(\sin 2x) \, dx - \int_0^{\pi/2} \log 2 \, dx
+\]
+
+Step 3: Evaluate the simple component integral.
+\[
+\int_0^{\pi/2} \log 2 \, dx = \log 2 \cdot [x]_0^{\pi/2} = \frac{\pi}{2} \log 2
+\]
+
+Step 4: Formulate and transform the remaining integral.
+Let $J = \int_0^{\pi/2} \log(\sin 2x) \, dx$.
+Apply substitution $t = 2x \implies dt = 2dx \implies dx = \frac{dt}{2}$.
+- When $x = 0$, $t = 0$.
+- When $x = \frac{\pi}{2}$, $t = \pi$.
+\[
+J = \frac{1}{2} \int_0^{\pi} \log(\sin t) \, dt
+\]
+Using the symmetry property $\int_0^{2a} f(t) \, dt = 2\int_0^a f(t) \, dt$ if $f(2a-t) = f(t)$, since $\sin(\pi - t) = \sin t$:
+\[
+J = \frac{1}{2} \left( 2 \int_0^{\pi/2} \log(\sin t) \, dt \right) = \int_0^{\pi/2} \log(\sin t) \, dt = I
+\]
+
+Step 5: Equate and solve for $I$.
+Substitute $J = I$ and the result of Step 3 back into Step 2:
+\[
+2I = I - \frac{\pi}{2} \log 2
+\]
+\[
+I = -\frac{\pi}{2} \log 2 = \frac{\pi}{2} \log\left(2^{-1}\right) = \frac{\pi}{2} \log\left(\frac{1}{2}\right)
+\]
+
+Final Answer:
+\[
+\text{Hence, } \int_0^{\pi/2} \log(\sin x) \, dx = \int_0^{\pi/2} \log(\cos x) \, dx = \frac{\pi}{2} \log\left(\frac{1}{2}\right) \text{ is proved.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q7
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7}
+Question:
+Define gamma and beta functions. Evaluate $\int_0^1 \frac{dx}{(1-x^8)^{1/8}}$ by using gamma-beta function.
+
+Solution:
+Step 1: Define Gamma and Beta functions.
+- The Beta function, denoted as $B(m, n)$, is defined as:
+  \[
+  B(m, n) = \int_0^1 x^{m-1} (1-x)^{n-1} \, dx \quad (m > 0, n > 0)
+  \]
+- The Gamma function, denoted as $\Gamma(n)$, is defined as:
+  \[
+  \Gamma(n) = \int_0^\infty e^{-x} x^{n-1} \, dx \quad (n > 0)
+  \]
+The relationship between them is expressed as:
+  \[
+  B(m, n) = \frac{\Gamma(m) \Gamma(n)}{\Gamma(m+n)}
+  \]
+
+Step 2: Set up substitution for the given integral.
+Let $I = \int_0^1 \frac{dx}{(1-x^8)^{1/8}}$.
+Substitute $x^8 = y \implies x = y^{1/8}$.
+Differentiating both sides:
+\[
+dx = \frac{1}{8} y^{-7/8} \, dy
+\]
+The boundaries of integration stay unchanged: when $x=0, y=0$ and when $x=1, y=1$.
+
+Step 3: Convert the integral to Beta function form.
+\[
+I = \int_0^1 \frac{\frac{1}{8} y^{-7/8}}{(1-y)^{1/8}} \, dy = \frac{1}{8} \int_0^1 y^{-7/8} (1-y)^{-1/8} \, dy
+\]
+Match with $B(m, n) = \int_0^1 y^{m-1} (1-y)^{n-1} \, dy$:
+\[
+m - 1 = -\frac{7}{8} \implies m = \frac{1}{8}
+\]
+\[
+n - 1 = -\frac{1}{8} \implies n = \frac{7}{8}
+\]
+Thus, the integral is:
+\[
+I = \frac{1}{8} B\left(\frac{1}{8}, \frac{7}{8}\right) = \frac{1}{8} \frac{\Gamma\left(\frac{1}{8}\right) \Gamma\left(\frac{7}{8}\right)}{\Gamma\left(\frac{1}{8} + \frac{7}{8}\right)} = \frac{1}{8} \frac{\Gamma\left(\frac{1}{8}\right) \Gamma\left(\frac{7}{8}\right)}{\Gamma(1)}
+\]
+
+Step 4: Evaluate the product of Gamma functions using Euler's reflection formula.
+Euler's reflection formula states:
+\[
+\Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin(\pi z)}
+\]
+Substituting $z = \frac{1}{8}$ (and noting $\Gamma(1) = 1$):
+\[
+\Gamma\left(\frac{1}{8}\right) \Gamma\left(\frac{7}{8}\right) = \frac{\pi}{\sin\left(\frac{\pi}{8}\right)}
+\]
+So the integral evaluates to:
+\[
+I = \frac{\pi}{8 \sin\left(\frac{\pi}{8}\right)}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{8 \sin\left(\frac{\pi}{8}\right)}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse20-final-q8
+% discipline=CSE
+% year=2020
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q8}
+Question:
+Find the volume of the solid obtained by revolving the cardioid $r = a(1 - \cos \theta)$ about the initial line.
+
+Solution:
+Step 1: Set up the volume formula in polar coordinates.
+The volume $V$ of a solid generated by revolving a polar curve $r = f(\theta)$ about the initial line ($x$-axis) is given by:
+\[
+V = \frac{2}{3} \pi \int_{\alpha}^{\beta} r^3 \sin \theta \, d\theta
+\]
+For a cardioid symmetric with respect to the initial line, the upper boundary runs from $\theta = 0$ to $\theta = \pi$.
+
+Step 2: Substitute $r = a(1 - \cos \theta)$ into the volume formula.
+\[
+V = \frac{2}{3} \pi \int_0^\pi \left[ a(1 - \cos \theta) \right]^3 \sin \theta \, d\theta
+\]
+\[
+V = \frac{2}{3} \pi a^3 \int_0^\pi (1 - \cos \theta)^3 \sin \theta \, d\theta
+\]
+
+Step 3: Solve the integral using substitution.
+Let $u = 1 - \cos \theta \implies du = \sin \theta \, d\theta$.
+Change the limits of integration:
+- When $\theta = 0$, $u = 1 - \cos(0) = 0$.
+- When $\theta = \pi$, $u = 1 - \cos(\pi) = 2$.
+Substituting these values:
+\[
+V = \frac{2}{3} \pi a^3 \int_0^2 u^3 \, du
+\]
+
+Step 4: Integrate and evaluate.
+\[
+V = \frac{2}{3} \pi a^3 \left[ \frac{u^4}{4} \right]_0^2 = \frac{2}{3} \pi a^3 \left( \frac{16}{4} - 0 \right)
+\]
+\[
+V = \frac{2}{3} \pi a^3 (4) = \frac{8}{3} \pi a^3
+\]
+
+Final Answer:
+\[
+\boxed{\frac{8}{3} \pi a^3}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

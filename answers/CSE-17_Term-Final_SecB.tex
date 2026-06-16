@@ -1,0 +1,757 @@
+% FILE: CSE-17_TermFinal.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q5ai
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5ai
+% topic=Indefinite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(a)(i)}
+Question:
+Integrate the following:
+\[
+\int \frac{x^2+1}{x^4+1} \, dx
+\]
+
+Solution:
+Step 1: Divide the numerator and the denominator by $x^2$.
+\[
+\int \frac{x^2+1}{x^4+1} \, dx = \int \frac{1 + \frac{1}{x^2}}{x^2 + \frac{1}{x^2}} \, dx
+\]
+
+Step 2: Apply a algebraic transformation to the denominator.
+Recall that $x^2 + \frac{1}{x^2} = \left(x - \frac{1}{x}\right)^2 + 2$.
+Substituting this into the integral yields:
+\[
+\int \frac{1 + \frac{1}{x^2}}{\left(x - \frac{1}{x}\right)^2 + 2} \, dx
+\]
+
+Step 3: Solve the integral using substitution.
+Let $u = x - \frac{1}{x}$. Differentiating both sides:
+\[
+du = \left(1 + \frac{1}{x^2}\right) dx
+\]
+Substituting these values back into the integral:
+\[
+\int \frac{du}{u^2 + 2}
+\]
+Using the standard integration formula $\int \frac{dw}{w^2+a^2} = \frac{1}{a} \tan^{-1}\left(\frac{w}{a}\right) + c$:
+\[
+= \frac{1}{\sqrt{2}} \tan^{-1}\left(\frac{u}{\sqrt{2}}\right) + c
+\]
+
+Step 4: Substitute back $u = x - \frac{1}{x}$.
+\[
+= \frac{1}{\sqrt{2}} \tan^{-1}\left(\frac{x - \frac{1}{x}}{\sqrt{2}}\right) + c = \frac{1}{\sqrt{2}} \tan^{-1}\left(\frac{x^2-1}{\sqrt{2}x}\right) + c
+\]
+
+Final Answer:
+\[
+\boxed{\frac{1}{\sqrt{2}} \tan^{-1}\left(\frac{x^2-1}{\sqrt{2}x}\right) + c}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q5aii
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5aii
+% topic=Indefinite Integration
+% subtopic=Trigonometric Integrals
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(a)(ii)}
+Question:
+Integrate the following:
+\[
+\int \frac{dx}{\sec x + \csc x}
+\]
+
+Solution:
+Step 1: Simplify the integrand in terms of sine and cosine.
+\[
+\int \frac{dx}{\frac{1}{\cos x} + \frac{1}{\sin x}} = \int \frac{\sin x \cos x}{\sin x + \cos x} \, dx
+\]
+
+Step 2: Represent the numerator in terms of the denominator.
+Recall that $(\sin x + \cos x)^2 = \sin^2 x + \cos^2 x + 2\sin x \cos x = 1 + 2\sin x \cos x$.
+Thus, we can write:
+\[
+\sin x \cos x = \frac{(\sin x + \cos x)^2 - 1}{2}
+\]
+Substituting this identity back into the integral:
+\[
+\int \frac{\frac{1}{2}\left[(\sin x + \cos x)^2 - 1\right]}{\sin x + \cos x} \, dx = \frac{1}{2} \int \left( \sin x + \cos x - \frac{1}{\sin x + \cos x} \right) dx
+\]
+
+Step 3: Integrate the terms.
+- For the first portion:
+  \[
+  \frac{1}{2} \int (\sin x + \cos x) \, dx = \frac{1}{2} (\sin x - \cos x)
+  \]
+- For the second portion, simplify $\sin x + \cos x$ using trigonometric identities:
+  \[
+  \sin x + \cos x = \sqrt{2} \left( \frac{1}{\sqrt{2}}\sin x + \frac{1}{\sqrt{2}}\cos x \right) = \sqrt{2} \sin\left(x + \frac{\pi}{4}\right)
+  \]
+  Thus:
+  \[
+  \frac{1}{2} \int \frac{dx}{\sin x + \cos x} = \frac{1}{2\sqrt{2}} \int \csc\left(x + \frac{\pi}{4}\right) \, dx
+  \]
+  Using the standard formula $\int \csc w \, dw = \ln|\csc w - \cot w| = \ln\left|\tan\left(\frac{w}{2}\right)\right|$:
+  \[
+  = \frac{1}{2\sqrt{2}} \ln\left| \tan\left( \frac{x}{2} + \frac{\pi}{8} \right) \right|
+  \]
+
+Step 4: Combine the portions.
+\[
+= \frac{1}{2}(\sin x - \cos x) - \frac{1}{2\sqrt{2}} \ln\left| \tan\left( \frac{x}{2} + \frac{\pi}{8} \right) \right| + c
+\]
+
+Final Answer:
+\[
+\boxed{\frac{1}{2}(\sin x - \cos x) - \frac{1}{2\sqrt{2}} \ln\left| \tan\left( \frac{x}{2} + \frac{\pi}{8} \right) \right| + c}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q5aiii
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5aiii
+% topic=Indefinite Integration
+% subtopic=General
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(a)(iii)}
+Question:
+Integrate the following:
+\[
+\int \frac{dx}{\sqrt{x^2 - 4x + 3}}
+\]
+
+Solution:
+Step 1: Complete the square for the quadratic expression inside the radical.
+\[
+x^2 - 4x + 3 = (x-2)^2 - 4 + 3 = (x-2)^2 - 1
+\]
+Substituting this back into the integral:
+\[
+\int \frac{dx}{\sqrt{(x-2)^2 - 1}}
+\]
+
+Step 2: Solve using the standard integration formula.
+Recall the standard integration formula:
+\[
+\int \frac{du}{\sqrt{u^2 - a^2}} = \ln\left| u + \sqrt{u^2 - a^2} \right| + c
+\]
+Applying this with $u = x-2$ and $a = 1$:
+\[
+= \ln\left| x - 2 + \sqrt{(x-2)^2 - 1} \right| + c
+\]
+Simplify the expression inside the radical:
+\[
+= \ln\left| x - 2 + \sqrt{x^2 - 4x + 3} \right| + c
+\]
+
+Final Answer:
+\[
+\boxed{\ln\left| x - 2 + \sqrt{x^2 - 4x + 3} \right| + c}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q5bi
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5bi
+% topic=Indefinite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(b)(i)}
+Question:
+Show that:
+\[
+\int \frac{x+\sin x}{1+\cos x} \, dx = x \tan \frac{x}{2} + c
+\]
+
+Solution:
+Step 1: Substitute trigonometric half-angle identities.
+Recall that $1 + \cos x = 2\cos^2\left(\frac{x}{2}\right)$ and $\sin x = 2\sin\left(\frac{x}{2}\right)\cos\left(\frac{x}{2}\right)$.
+Substitute these into the integral:
+\[
+\int \frac{x+\sin x}{1+\cos x} \, dx = \int \frac{x + 2\sin\left(\frac{x}{2}\right)\cos\left(\frac{x}{2}\right)}{2\cos^2\left(\frac{x}{2}\right)} \, dx
+\]
+
+Step 2: Separate the integrand into two terms.
+\[
+= \int \frac{x}{2\cos^2\left(\frac{x}{2}\right)} \, dx + \int \frac{2\sin\left(\frac{x}{2}\right)\cos\left(\frac{x}{2}\right)}{2\cos^2\left(\frac{x}{2}\right)} \, dx
+\]
+\[
+= \frac{1}{2} \int x \sec^2\left(\frac{x}{2}\right) \, dx + \int \tan\left(\frac{x}{2}\right) \, dx
+\]
+
+Step 3: Integrate the first term using integration by parts.
+For $\int x \sec^2\left(\frac{x}{2}\right) \, dx$, let:
+- $u = x \implies du = dx$
+- $dv = \sec^2\left(\frac{x}{2}\right) dx \implies v = 2\tan\left(\frac{x}{2}\right)$
+
+Applying the integration by parts formula $\int u \, dv = uv - \int v \, du$:
+\[
+\int x \sec^2\left(\frac{x}{2}\right) \, dx = 2x \tan\left(\frac{x}{2}\right) - \int 2\tan\left(\frac{x}{2}\right) \, dx
+\]
+
+Step 4: Combine the results back into the equation.
+\[
+\int \frac{x+\sin x}{1+\cos x} \, dx = \frac{1}{2} \left[ 2x\tan\left(\frac{x}{2}\right) - 2 \int \tan\left(\frac{x}{2}\right) \, dx \right] + \int \tan\left(\frac{x}{2}\right) \, dx
+\]
+\[
+= x \tan\left(\frac{x}{2}\right) - \int \tan\left(\frac{x}{2}\right) \, dx + \int \tan\left(\frac{x}{2}\right) \, dx = x\tan\left(\frac{x}{2}\right) + c
+\]
+Hence proved.
+
+Final Answer:
+\[
+\boxed{x \tan \frac{x}{2} + c}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q5bii
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5bii
+% topic=Indefinite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(b)(ii)}
+Question:
+Show that:
+\[
+\int \frac{x^2+1}{(x+1)^2} e^x \, dx = e^x \left(\frac{x-1}{x+1}\right) + c
+\]
+
+Solution:
+Step 1: Simplify the algebraic fraction.
+\[
+\frac{x^2+1}{(x+1)^2} = \frac{x^2 - 1 + 2}{(x+1)^2} = \frac{(x-1)(x+1) + 2}{(x+1)^2} = \frac{x-1}{x+1} + \frac{2}{(x+1)^2}
+\]
+Substituting this back into the integral:
+\[
+\int e^x \left[ \frac{x-1}{x+1} + \frac{2}{(x+1)^2} \right] dx
+\]
+
+Step 2: Identify the pattern of the integrand.
+Recall the standard integration rule:
+\[
+\int e^x [f(x) + f'(x)] \, dx = e^x f(x) + c
+\]
+Let $f(x) = \frac{x-1}{x+1}$. Differentiating this using the quotient rule:
+\[
+f'(x) = \frac{1(x+1) - (x-1)(1)}{(x+1)^2} = \frac{2}{(x+1)^2}
+\]
+This perfectly matches our simplified expression.
+
+Step 3: Evaluate the integral.
+\[
+\int e^x [f(x) + f'(x)] \, dx = e^x \left(\frac{x-1}{x+1}\right) + c
+\]
+Hence proved.
+
+Final Answer:
+\[
+\boxed{e^x \left(\frac{x-1}{x+1}\right) + c}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q6a
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q6(a)}
+Question:
+Evaluate:
+\[
+\int_0^{\pi/2} \frac{\sin^2 x}{\sin x + \cos x} \, dx
+\]
+
+Solution:
+Step 1: Use the definite integration property to find an alternative form.
+Let $I = \int_0^{\pi/2} \frac{\sin^2 x}{\sin x + \cos x} \, dx$.
+Recall the property $\int_0^a f(x) \, dx = \int_0^a f(a-x) \, dx$:
+\[
+I = \int_0^{\pi/2} \frac{\sin^2\left(\frac{\pi}{2}-x\right)}{\sin\left(\frac{\pi}{2}-x\right) + \cos\left(\frac{\pi}{2}-x\right)} \, dx = \int_0^{\pi/2} \frac{\cos^2 x}{\cos x + \sin x} \, dx
+\]
+
+Step 2: Add both equations of $I$ together.
+\[
+2I = \int_0^{\pi/2} \frac{\sin^2 x + \cos^2 x}{\sin x + \cos x} \, dx = \int_0^{\pi/2} \frac{dx}{\sin x + \cos x}
+\]
+
+Step 3: Evaluate the combined integral.
+Recall the trigonometric simplification $\sin x + \cos x = \sqrt{2} \sin\left(x + \frac{\pi}{4}\right)$:
+\[
+2I = \frac{1}{\sqrt{2}} \int_0^{\pi/2} \csc\left(x + \frac{\pi}{4}\right) \, dx
+\]
+\[
+2I = \frac{1}{\sqrt{2}} \left[ \ln\left| \tan\left( \frac{x}{2} + \frac{\pi}{8} \right) \right| \right]_0^{\pi/2}
+\]
+Evaluate at the limits:
+- At $x = \pi/2$: $\tan\left(\frac{\pi}{4} + \frac{\pi}{8}\right) = \tan\left(\frac{3\pi}{8}\right) = \sqrt{2} + 1$
+- At $x = 0$: $\tan\left(\frac{\pi}{8}\right) = \sqrt{2} - 1$
+\[
+2I = \frac{1}{\sqrt{2}} \left[ \ln(\sqrt{2} + 1) - \ln(\sqrt{2} - 1) \right]
+\]
+
+Step 4: Simplify the logarithmic term.
+Since $(\sqrt{2}-1)(\sqrt{2}+1) = 1 \implies \sqrt{2}-1 = \frac{1}{\sqrt{2}+1}$:
+\[
+\ln(\sqrt{2}+1) - \ln(\sqrt{2}-1) = \ln(\sqrt{2}+1) - \ln\left(\frac{1}{\sqrt{2}+1}\right) = 2\ln(\sqrt{2}+1)
+\]
+Substitute this back:
+\[
+2I = \frac{1}{\sqrt{2}} \cdot 2\ln(\sqrt{2} + 1) \implies I = \frac{1}{\sqrt{2}}\ln(\sqrt{2}+1)
+\]
+
+Final Answer:
+\[
+\boxed{\frac{1}{\sqrt{2}}\ln(\sqrt{2}+1)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q6b
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q6(b)}
+Question:
+Show that:
+\[
+\int_0^{\pi/4} \log(1 + \tan\theta) \, d\theta = \frac{\pi}{8} \log 2
+\]
+
+Solution:
+Step 1: Set up the integral with the definite integral property.
+Let $I = \int_0^{\pi/4} \log(1 + \tan\theta) \, d\theta$.
+Using the property $\int_0^a f(x) \, dx = \int_0^a f(a-x) \, dx$:
+\[
+I = \int_0^{\pi/4} \log\left( 1 + \tan\left( \frac{\pi}{4} - \theta \right) \right) d\theta
+\]
+
+Step 2: Simplify the tangent component.
+Recall the subtraction formula: $\tan\left(\frac{\pi}{4} - \theta\right) = \frac{1-\tan\theta}{1+\tan\theta}$.
+\[
+1 + \tan\left(\frac{\pi}{4} - \theta\right) = 1 + \frac{1-\tan\theta}{1+\tan\theta} = \frac{1+\tan\theta + 1-\tan\theta}{1+\tan\theta} = \frac{2}{1+\tan\theta}
+\]
+Substitute this back:
+\[
+I = \int_0^{\pi/4} \log\left( \frac{2}{1+\tan\theta} \right) d\theta
+\]
+
+Step 3: Separate the logarithmic term.
+\[
+I = \int_0^{\pi/4} \left[ \log 2 - \log(1+\tan\theta) \right] d\theta
+\]
+\[
+I = \int_0^{\pi/4} \log 2 \, d\theta - I
+\]
+\[
+2I = \log 2 \cdot [\theta]_0^{\pi/4} = \frac{\pi}{4} \log 2
+\]
+\[
+I = \frac{\pi}{8} \log 2
+\]
+Hence proved.
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{8} \log 2}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q7a
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7(a)}
+Question:
+Prove that:
+\[
+\beta(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}
+\]
+
+Solution:
+Step 1: Write Gamma functions using polar-coordinate substitution.
+Recall the definition of the Gamma function:
+\[
+\Gamma(m) = \int_0^\infty e^{-t} t^{m-1} \, dt
+\]
+Letting $t = x^2 \implies dt = 2x \, dx$:
+\[
+\Gamma(m) = 2 \int_0^\infty e^{-x^2} x^{2m-1} \, dx
+\]
+Similarly:
+\[
+\Gamma(n) = 2 \int_0^\infty e^{-y^2} y^{2n-1} \, dy
+\]
+
+Step 2: Multiply the two Gamma functions together.
+\[
+\Gamma(m)\Gamma(n) = 4 \int_0^\infty \int_0^\infty e^{-(x^2+y^2)} x^{2m-1} y^{2n-1} \, dx \, dy
+\]
+
+Step 3: Convert the double integral into polar coordinates.
+Let $x = r\cos\theta$ and $y = r\sin\theta$. The Jacobian is $dx \, dy = r \, dr \, d\theta$.
+The boundaries for the first quadrant are $r \in [0, \infty)$ and $\theta \in [0, \pi/2]$:
+\[
+\Gamma(m)\Gamma(n) = 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} (r\cos\theta)^{2m-1} (r\sin\theta)^{2n-1} r \, dr \, d\theta
+\]
+\[
+= 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} r^{2(m+n)-1} \cos^{2m-1}\theta \sin^{2n-1}\theta \, dr \, d\theta
+\]
+Separate the terms:
+\[
+= 2 \left( \int_0^\infty e^{-r^2} r^{2(m+n)-1} \, dr \right) \cdot 2 \left( \int_0^{\pi/2} \sin^{2n-1}\theta \cos^{2m-1}\theta \, d\theta \right)
+\]
+
+Step 4: Relate the components back to Gamma and Beta definitions.
+- The first part is: $\Gamma(m+n)$
+- The second part is the trigonometric form of the Beta function: $B(n, m) = B(m, n)$
+Therefore:
+\[
+\Gamma(m)\Gamma(n) = \Gamma(m+n) B(m, n)
+\]
+\[
+B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}
+\]
+Hence proved.
+
+Final Answer:
+\[
+\boxed{B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q7b
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7(b)}
+Question:
+If $U_n = \int_0^1 x^n \tan^{-1} x \, dx$, then prove that:
+\[
+(n+1)U_n + (n-1)U_{n-2} = \frac{\pi}{2} - \frac{1}{n}
+\]
+
+Solution:
+Step 1: Integrate $U_n$ by parts.
+For $U_n = \int_0^1 x^n \tan^{-1} x \, dx$, let:
+- $u = \tan^{-1} x \implies du = \frac{dx}{1+x^2}$
+- $dv = x^n \, dx \implies v = \frac{x^{n+1}}{n+1}$
+
+Applying integration by parts:
+\[
+U_n = \left[ \frac{x^{n+1}}{n+1} \tan^{-1} x \right]_0^1 - \int_0^1 \frac{x^{n+1}}{(n+1)(1+x^2)} \, dx
+\]
+Multiply both sides by $(n+1)$:
+\[
+(n+1)U_n = \tan^{-1}(1) - \int_0^1 \frac{x^{n+1}}{1+x^2} \, dx
+\]
+\[
+(n+1)U_n = \frac{\pi}{4} - \int_0^1 \frac{x^{n+1}}{1+x^2} \, dx \quad \text{--- (Equation 1)}
+\]
+
+Step 2: Express $(n-1)U_{n-2}$ using a similar form.
+By substituting $n$ with $n-2$ in Equation 1:
+\[
+(n-1)U_{n-2} = \frac{\pi}{4} - \int_0^1 \frac{x^{n-1}}{1+x^2} \, dx \quad \text{--- (Equation 2)}
+\]
+
+Step 3: Sum Equation 1 and Equation 2.
+\[
+(n+1)U_n + (n-1)U_{n-2} = \frac{\pi}{2} - \int_0^1 \frac{x^{n+1} + x^{n-1}}{1+x^2} \, dx
+\]
+
+Step 4: Evaluate the remaining integral.
+Simplify the integrand:
+\[
+\frac{x^{n+1} + x^{n-1}}{1+x^2} = \frac{x^{n-1}(x^2+1)}{1+x^2} = x^{n-1}
+\]
+Thus:
+\[
+\int_0^1 x^{n-1} \, dx = \left[ \frac{x^n}{n} \right]_0^1 = \frac{1}{n}
+\]
+Substituting this back yields:
+\[
+(n+1)U_n + (n-1)U_{n-2} = \frac{\pi}{2} - \frac{1}{n}
+\]
+Hence proved.
+
+Final Answer:
+\[
+\boxed{(n+1)U_n + (n-1)U_{n-2} = \frac{\pi}{2} - \frac{1}{n}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q8a
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8a
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q8(a)}
+Question:
+Find the area of the segment cut off from the parabola $y^2 = 2x$ by the straight line $y = 4x - 1$.
+
+Solution:
+Step 1: Find the points of intersection.
+From the linear equation:
+\[
+x = \frac{y+1}{4}
+\]
+Substitute this into the parabola equation $y^2 = 2x$:
+\[
+y^2 = 2\left(\frac{y+1}{4}\right) \implies y^2 = \frac{y+1}{2} \implies 2y^2 - y - 1 = 0
+\]
+Factoring the quadratic equation:
+\[
+(2y + 1)(y - 1) = 0 \implies y = -\frac{1}{2} \quad \text{or} \quad y = 1
+\]
+
+Step 2: Set up the area integration with respect to $y$.
+For the interval $y \in [-1/2, 1]$, the line is bounded to the right of the parabola ($x_{line} \ge x_{parabola}$).
+The area $A$ is:
+\[
+A = \int_{-1/2}^1 \left( x_{line} - x_{parabola} \right) dy = \int_{-1/2}^1 \left( \frac{y+1}{4} - \frac{y^2}{2} \right) dy
+\]
+
+Step 3: Evaluate the definite integral.
+\[
+A = \left[ \frac{y^2}{8} + \frac{y}{4} - \frac{y^3}{6} \right]_{-1/2}^1
+\]
+- At $y = 1$:
+  \[
+  \frac{1}{8} + \frac{1}{4} - \frac{1}{6} = \frac{3 + 6 - 4}{24} = \frac{5}{24}
+  \]
+- At $y = -1/2$:
+  \[
+  \frac{1}{32} - \frac{1}{8} + \frac{1}{48} = \frac{3 - 12 + 2}{96} = -\frac{7}{96}
+  \]
+Subtracting the lower boundary evaluation:
+\[
+A = \frac{5}{24} - \left(-\frac{7}{96}\right) = \frac{20}{96} + \frac{7}{96} = \frac{27}{96} = \frac{9}{32}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{9}{32}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse17-final-q8b
+% discipline=CSE
+% year=2017
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8b
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q8(b)}
+Question:
+Find the length of one arc of the cycloid $x = a(\theta - \sin\theta)$, $y = a(1 - \cos\theta)$.
+
+Solution:
+Step 1: Set the limits of integration.
+One complete arc of a cycloid is generated as the parameter $\theta$ runs from $0$ to $2\pi$.
+
+Step 2: Find the derivatives of $x$ and $y$ with respect to $\theta$.
+\[
+\frac{dx}{d\theta} = a(1 - \cos\theta)
+\]
+\[
+\frac{dy}{d\theta} = a\sin\theta
+\]
+
+Step 3: Setup the arc length differential element.
+\[
+ds = \sqrt{ \left(\frac{dx}{d\theta}\right)^2 + \left(\frac{dy}{d\theta}\right)^2 } \, d\theta
+\]
+\[
+ds = \sqrt{ a^2(1 - \cos\theta)^2 + a^2\sin^2\theta } \, d\theta
+\]
+\[
+ds = a \sqrt{ 1 - 2\cos\theta + \cos^2\theta + \sin^2\theta } \, d\theta = a\sqrt{2 - 2\cos\theta} \, d\theta
+\]
+Using the half-angle identity $2 - 2\cos\theta = 4\sin^2\left(\frac{\theta}{2}\right)$:
+\[
+ds = a \sqrt{4\sin^2\left(\frac{\theta}{2}\right)} \, d\theta = 2a\sin\left(\frac{\theta}{2}\right) d\theta
+\]
+
+Step 4: Integrate from $0$ to $2\pi$.
+\[
+L = \int_0^{2\pi} 2a \sin\left(\frac{\theta}{2}\right) d\theta = \left[ -4a \cos\left(\frac{\theta}{2}\right) \right]_0^{2\pi}
+\]
+\[
+= -4a [\cos\pi - \cos 0] = -4a [-1 - 1] = 8a
+\]
+
+Final Answer:
+\[
+\boxed{8a}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

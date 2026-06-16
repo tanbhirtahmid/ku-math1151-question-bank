@@ -1,0 +1,663 @@
+% FILE: CSE-19_TermFinal.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-final-q5a
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5a
+% topic=Definite Integration
+% subtopic=Reduction Formula
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(a)}
+Question:
+Evaluate $\int_0^{\pi/2} \sin^n x \, dx$.
+
+Solution:
+Step 1: Set up the reduction formula.
+Let $I_n = \int_0^{\pi/2} \sin^n x \, dx$. We can write this as:
+\[
+I_n = \int_0^{\pi/2} \sin^{n-1} x \sin x \, dx
+\]
+Using integration by parts:
+Let $u = \sin^{n-1} x \implies du = (n-1)\sin^{n-2} x \cos x \, dx$.
+Let $dv = \sin x \, dx \implies v = -\cos x$.
+
+Applying the integration by parts formula $\int u \, dv = uv - \int v \, du$:
+\[
+I_n = \left[ -\sin^{n-1} x \cos x \right]_0^{\pi/2} + \int_0^{\pi/2} (n-1)\sin^{n-2} x \cos^2 x \, dx
+\]
+
+Step 2: Evaluate boundaries and simplify.
+Since $\cos(\pi/2) = 0$ and $\sin(0) = 0$, the boundary term is zero.
+\[
+I_n = (n-1) \int_0^{\pi/2} \sin^{n-2} x (1 - \sin^2 x) \, dx
+\]
+\[
+I_n = (n-1) \int_0^{\pi/2} \sin^{n-2} x \, dx - (n-1) \int_0^{\pi/2} \sin^n x \, dx
+\]
+\[
+I_n = (n-1) I_{n-2} - (n-1) I_n
+\]
+
+Step 3: Solve for $I_n$.
+\[
+I_n + (n-1) I_n = (n-1) I_{n-2}
+\]
+\[
+n I_n = (n-1) I_{n-2} \implies I_n = \frac{n-1}{n} I_{n-2}
+\]
+
+Step 4: Analyze cases for $n$.
+- **Case 1: $n$ is an odd positive integer.**
+  Applying the reduction formula successively down to $I_1$:
+  \[
+  I_1 = \int_0^{\pi/2} \sin x \, dx = [-\cos x]_0^{\pi/2} = 1
+  \]
+  Thus:
+  \[
+  I_n = \frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdot \frac{n-5}{n-4} \cdots \frac{2}{3} \cdot 1
+  \]
+
+- **Case 2: $n$ is an even positive integer.**
+  Applying the reduction formula successively down to $I_0$:
+  \[
+  I_0 = \int_0^{\pi/2} 1 \, dx = \frac{\pi}{2}
+  \]
+  Thus:
+  \[
+  I_n = \frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdot \frac{n-5}{n-4} \cdots \frac{1}{2} \cdot \frac{\pi}{2}
+  \]
+
+Final Answer:
+\[
+\boxed{I_n = 
+\begin{cases} 
+\frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdots \frac{2}{3} & \text{if } n \text{ is odd} \\ 
+\frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdots \frac{1}{2} \cdot \frac{\pi}{2} & \text{if } n \text{ is even} 
+\end{cases}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-final-q5bi
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5bi
+% topic=Indefinite Integration
+% subtopic=Trigonometric Integrals
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(b)(i)}
+Question:
+Evaluate the following integral:
+\[
+\int \frac{1-\tan^2 x}{1+\tan^2 x} \, dx
+\]
+
+Solution:
+Step 1: Simplify the integrand using trigonometric identities.
+Recall that $1 + \tan^2 x = \sec^2 x$.
+Substituting this in:
+\[
+\frac{1-\tan^2 x}{1+\tan^2 x} = \frac{1-\tan^2 x}{\sec^2 x}
+\]
+Rewrite in terms of sine and cosine:
+\[
+= \left(1 - \frac{\sin^2 x}{\cos^2 x}\right) \cos^2 x = \cos^2 x - \sin^2 x
+\]
+Using the double-angle identity:
+\[
+\cos^2 x - \sin^2 x = \cos 2x
+\]
+
+Step 2: Integrate the simplified term.
+\[
+\int \cos 2x \, dx = \frac{1}{2} \sin 2x + C
+\]
+
+Final Answer:
+\[
+\boxed{\frac{1}{2} \sin 2x + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-final-q5bii
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5bii
+% topic=Indefinite Integration
+% subtopic=Trigonometric Integrals
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(b)(ii)}
+Question:
+Evaluate the following integral:
+\[
+\int \frac{dx}{\sin^2 x \cos^2 x}
+\]
+
+Solution:
+Step 1: Rewrite the numerator using trigonometric identities.
+Recall that $1 = \sin^2 x + \cos^2 x$.
+Substituting this into the numerator of the integrand:
+\[
+\int \frac{\sin^2 x + \cos^2 x}{\sin^2 x \cos^2 x} \, dx
+\]
+
+Step 2: Split the fraction into separate terms.
+\[
+= \int \left( \frac{\sin^2 x}{\sin^2 x \cos^2 x} + \frac{\cos^2 x}{\sin^2 x \cos^2 x} \right) dx
+\]
+\[
+= \int \left( \frac{1}{\cos^2 x} + \frac{1}{\sin^2 x} \right) dx
+\]
+\[
+= \int \left( \sec^2 x + \csc^2 x \right) dx
+\]
+
+Step 3: Perform the integration.
+Using standard integration formulas $\int \sec^2 x \, dx = \tan x$ and $\int \csc^2 x \, dx = -\cot x$:
+\[
+= \tan x - \cot x + C
+\]
+
+Final Answer:
+\[
+\boxed{\tan x - \cot x + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-final-q6a
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6a
+% topic=Multiple Integrals
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q6(a)}
+Question:
+Find the entire area within the cardioid $r = 1 - \cos \theta$.
+
+Solution:
+Step 1: Use the polar area formula.
+The area $A$ in polar coordinates bounded by $r = f(\theta)$ is given by:
+\[
+A = \frac{1}{2} \int_{0}^{2\pi} r^2 \, d\theta
+\]
+
+Step 2: Substitute $r = 1 - \cos \theta$ into the formula.
+\[
+A = \frac{1}{2} \int_{0}^{2\pi} (1 - \cos \theta)^2 \, d\theta
+\]
+Expand the integrand:
+\[
+(1 - \cos \theta)^2 = 1 - 2\cos \theta + \cos^2 \theta
+\]
+
+Step 3: Simplify using the double-angle identity.
+Recall $\cos^2 \theta = \frac{1 + \cos 2\theta}{2}$.
+Substituting this in:
+\[
+(1 - \cos \theta)^2 = 1 - 2\cos \theta + \frac{1}{2} + \frac{1}{2}\cos 2\theta = \frac{3}{2} - 2\cos \theta + \frac{1}{2}\cos 2\theta
+\]
+
+Step 4: Integrate term by term over the interval $[0, 2\pi]$.
+\[
+A = \frac{1}{2} \int_{0}^{2\pi} \left( \frac{3}{2} - 2\cos \theta + \frac{1}{2}\cos 2\theta \right) d\theta
+\]
+\[
+A = \frac{1}{2} \left[ \frac{3}{2}\theta - 2\sin \theta + \frac{1}{4}\sin 2\theta \right]_0^{2\pi}
+\]
+Evaluate at the limits:
+\[
+A = \frac{1}{2} \left[ \left( \frac{3}{2}(2\pi) - 2(0) + \frac{1}{4}(0) \right) - (0) \right]
+\]
+\[
+A = \frac{1}{2} \cdot 3\pi = \frac{3\pi}{2}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{3\pi}{2}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-final-q6b
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6b
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q6(b)}
+Question:
+Find the area of the surface that is generated by revolving the portion of the curve $y = x^3$ between $x = 0$ and $x = 1$ about the $x$-axis.
+
+Solution:
+Step 1: State the formula for the surface area of revolution.
+The surface area $S$ generated by rotating a curve $y = f(x)$ on the interval $[a, b]$ about the $x$-axis is:
+\[
+S = 2\pi \int_a^b y \sqrt{1 + \left(\frac{dy}{dx}\right)^2} \, dx
+\]
+
+Step 2: Find the derivative of the given curve.
+Here, $y = x^3 \implies \frac{dy}{dx} = 3x^2$.
+Compute the radical part:
+\[
+1 + \left(\frac{dy}{dx}\right)^2 = 1 + (3x^2)^2 = 1 + 9x^4
+\]
+
+Step 3: Setup the integration.
+Substitute these values into the formula:
+\[
+S = 2\pi \int_0^1 x^3 \sqrt{1 + 9x^4} \, dx
+\]
+
+Step 4: Solve using substitution.
+Let $u = 1 + 9x^4 \implies du = 36x^3 \, dx \implies x^3 \, dx = \frac{du}{36}$.
+Update boundaries:
+- When $x = 0 \implies u = 1$.
+- When $x = 1 \implies u = 10$.
+
+Substitute variables into the integral:
+\[
+S = 2\pi \int_1^{10} \sqrt{u} \, \frac{du}{36} = \frac{\pi}{18} \int_1^{10} u^{1/2} \, du
+\]
+\[
+S = \frac{\pi}{18} \left[ \frac{2}{3}u^{3/2} \right]_1^{10} = \frac{\pi}{27} (10^{3/2} - 1^{3/2}) = \frac{\pi}{27}(10\sqrt{10} - 1)
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{27}(10\sqrt{10} - 1)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-final-q7a
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7(a)}
+Question:
+What is antiderivative? Find the area of the curve $y = x^2$ and $[0,1]$ by rectangle method dividing 10 and 15 intervals.
+
+Solution:
+Step 1: Define antiderivative.
+An antiderivative of a continuous function $f(x)$ is a differentiable function $F(x)$ whose derivative is equal to the original function, i.e., $F'(x) = f(x)$ for all $x$ in the domain.
+
+Step 2: Set up the rectangle (Riemann sum) method for $y = x^2$ on $[0,1]$.
+Let $[a, b] = [0, 1]$. The width of each of the $n$ subintervals is:
+\[
+\Delta x = \frac{1-0}{n} = \frac{1}{n}
+\]
+The evaluation points for a right-endpoint approximation are $x_i = a + i\Delta x = \frac{i}{n}$ for $i=1, 2, \dots, n$.
+The right Riemann sum approximation is:
+\[
+R_n = \sum_{i=1}^n f(x_i) \Delta x = \sum_{i=1}^n \left(\frac{i}{n}\right)^2 \frac{1}{n} = \frac{1}{n^3} \sum_{i=1}^n i^2
+\]
+Recall that $\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$.
+\[
+R_n = \frac{n(n+1)(2n+1)}{6n^3} = \frac{(n+1)(2n+1)}{6n^2}
+\]
+
+Alternatively, using the left-endpoint approximation (lower sum) where $x_{i-1} = \frac{i-1}{n}$:
+\[
+L_n = \sum_{i=1}^n f(x_{i-1}) \Delta x = \frac{1}{n^3} \sum_{i=0}^{n-1} i^2 = \frac{(n-1)(n)(2n-1)}{6n^3} = \frac{(n-1)(2n-1)}{6n^2}
+\]
+
+Step 3: Compute approximations for $n = 10$.
+- **Right Endpoint sum ($R_{10}$):**
+  \[
+  R_{10} = \frac{(10+1)(20+1)}{6(10)^2} = \frac{11 \times 21}{600} = \frac{231}{600} = 0.385
+  \]
+- **Left Endpoint sum ($L_{10}$):**
+  \[
+  L_{10} = \frac{(10-1)(20-1)}{6(10)^2} = \frac{9 \times 19}{600} = \frac{171}{600} = 0.285
+  \]
+
+Step 4: Compute approximations for $n = 15$.
+- **Right Endpoint sum ($R_{15}$):**
+  \[
+  R_{15} = \frac{(15+1)(30+1)}{6(15)^2} = \frac{16 \times 31}{6 \times 225} = \frac{496}{1350} \approx 0.3674
+  \]
+- **Left Endpoint sum ($L_{15}$):**
+  \[
+  L_{15} = \frac{(15-1)(30-1)}{6(15)^2} = \frac{14 \times 29}{1350} = \frac{406}{1350} \approx 0.3007
+  \]
+
+Final Answer:
+\[
+\boxed{
+\begin{aligned}
+\text{For } n=10: & \quad \text{Right sum} = 0.385, \quad \text{Left sum} = 0.285 \\
+\text{For } n=15: & \quad \text{Right sum} \approx 0.3674, \quad \text{Left sum} \approx 0.3007
+\end{aligned}
+}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-final-q7b
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7(b)}
+Question:
+Explain the integration graphically:
+(i) $\int_0^{\pi/2} \sin x \, dx$ 
+(ii) $\int_0^{\pi} \sin x \, dx$ 
+(iii) $\int_0^{3\pi/2} \sin x \, dx$
+
+Solution:
+Step 1: State the graphical interpretation of definite integration.
+The definite integral $\int_a^b f(x) \, dx$ represents the "net signed area" between the curve $y = f(x)$ and the $x$-axis from $x=a$ to $x=b$. Areas above the $x$-axis are counted as positive, and areas below the $x$-axis are counted as negative.
+
+Step 2: Analyze part (i) graphically.
+For $\int_0^{\pi/2} \sin x \, dx$:
+- Over $[0, \pi/2]$, the function $y = \sin x$ is completely positive (above the $x$-axis).
+- Graphically, this is the area under the first half of the sine curve arch.
+- Mathematically:
+  \[
+  \int_0^{\pi/2} \sin x \, dx = [-\cos x]_0^{\pi/2} = 0 - (-1) = 1
+  \]
+  Thus, the graph encloses a positive area of $1$.
+
+Step 3: Analyze part (ii) graphically.
+For $\int_0^{\pi} \sin x \, dx$:
+- Over $[0, \pi]$, the function $y = \sin x$ is non-negative and represents the entire positive arch of the sine curve.
+- Graphically, this is the complete area under the sine curve arch.
+- Mathematically:
+  \[
+  \int_0^{\pi} \sin x \, dx = [-\cos x]_0^{\pi} = -(-1) - (-1) = 2
+  \]
+  Thus, the graph encloses a total positive area of $2$.
+
+Step 4: Analyze part (iii) graphically.
+For $\int_0^{3\pi/2} \sin x \, dx$:
+- Over $[0, \pi]$, the function $y = \sin x$ is positive, enclosing an area of $+2$.
+- Over $[\pi, 3\pi/2]$, the function $y = \sin x$ is negative (below the $x$-axis), enclosing a signed area of $-1$.
+- Graphically, the total integral represents the net area where the negative region cancels out a part of the positive region.
+- Mathematically:
+  \[
+  \int_0^{3\pi/2} \sin x \, dx = [-\cos x]_0^{3\pi/2} = 0 - (-1) = 1
+  \]
+  This equals $\text{Area}_{[0, \pi]} - \text{Area}_{[\pi, 3\pi/2]} = 2 - 1 = 1$.
+
+Final Answer:
+\[
+\boxed{
+\begin{aligned}
+\text{(i) represents a positive area of } 1 \text{ under the half-arch of the sine wave.} \\
+\text{(ii) represents a positive area of } 2 \text{ under the full positive arch of the sine wave.} \\
+\text{(iii) represents a net signed area of } 1 \text{ where } +2 \text{ is partially canceled by } -1.
+\end{aligned}
+}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-final-q8a
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q8(a)}
+Question:
+Prove that $\int_0^{\pi/2} \log \sin x \, dx = \int_0^{\pi/2} \log \cos x \, dx = \frac{\pi}{2} \log \frac{1}{2}$.
+
+Solution:
+Step 1: Set up the initial integrals and properties.
+Let $I = \int_0^{\pi/2} \log(\sin x) \, dx$.
+Applying the identity $\int_a^b f(x) \, dx = \int_a^b f(a+b-x) \, dx$:
+\[
+I = \int_0^{\pi/2} \log\left(\sin\left(\frac{\pi}{2} - x\right)\right) \, dx = \int_0^{\pi/2} \log(\cos x) \, dx
+\]
+This proves the first equality.
+
+Step 2: Add the two equations for $I$.
+\[
+2I = \int_0^{\pi/2} \log(\sin x) \, dx + \int_0^{\pi/2} \log(\cos x) \, dx
+\]
+\[
+2I = \int_0^{\pi/2} \log(\sin x \cos x) \, dx
+\]
+Use identity $\sin x \cos x = \frac{\sin 2x}{2}$:
+\[
+2I = \int_0^{\pi/2} \log\left(\frac{\sin 2x}{2}\right) \, dx
+\]
+\[
+2I = \int_0^{\pi/2} \log(\sin 2x) \, dx - \int_0^{\pi/2} \log 2 \, dx \quad \text{--- (Equation 1)}
+\]
+
+Step 3: Evaluate the simple constant integral.
+\[
+\int_0^{\pi/2} \log 2 \, dx = \log 2 [x]_0^{\pi/2} = \frac{\pi}{2} \log 2
+\]
+
+Step 4: Solve the remaining integral $J = \int_0^{\pi/2} \log(\sin 2x) \, dx$.
+Let $t = 2x \implies dt = 2dx \implies dx = \frac{dt}{2}$.
+- When $x = 0 \implies t = 0$.
+- When $x = \frac{\pi}{2} \implies t = \pi$.
+\[
+J = \frac{1}{2} \int_0^{\pi} \log(\sin t) \, dt
+\]
+Using the symmetry property $\int_0^{2a} f(t) \, dt = 2\int_0^a f(t) \, dt$ since $\sin(\pi - t) = \sin t$:
+\[
+J = \frac{1}{2} \left( 2 \int_0^{\pi/2} \log(\sin t) \, dt \right) = \int_0^{\pi/2} \log(\sin t) \, dt = I
+\]
+
+Step 5: Substitute findings back into Equation 1.
+\[
+2I = I - \frac{\pi}{2} \log 2
+\]
+\[
+I = -\frac{\pi}{2} \log 2 = \frac{\pi}{2} \log\left(2^{-1}\right) = \frac{\pi}{2} \log\left(\frac{1}{2}\right)
+\]
+
+Final Answer:
+\[
+\text{Hence, } \int_0^{\pi/2} \log \sin x \, dx = \int_0^{\pi/2} \log \cos x \, dx = \frac{\pi}{2} \log \frac{1}{2} \text{ is proved.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-final-q8b
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8b
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q8(b)}
+Question:
+Find the length of one loop of the curve $8y^2 = x^2(1-x^2)$.
+
+Solution:
+Step 1: Determine the limits of the loop.
+For real values of $y$, the right side must be non-negative:
+\[
+x^2(1-x^2) \ge 0 \implies 1-x^2 \ge 0 \implies -1 \le x \le 1
+\]
+The loop is symmetric about both axes. One loop exists in the region $x \in [0, 1]$ (or $x \in [-1, 0]$). We will compute the arc length of the loop for $x \in [0, 1]$.
+
+Step 2: Express $y$ and its derivative in terms of $x$.
+For $x \ge 0$, the upper half of the loop is:
+\[
+y = \frac{x\sqrt{1-x^2}}{\sqrt{8}} = \frac{x\sqrt{1-x^2}}{2\sqrt{2}}
+\]
+Differentiating with respect to $x$ using the product rule:
+\[
+\frac{dy}{dx} = \frac{1}{2\sqrt{2}} \left[ \sqrt{1-x^2} + x \cdot \left(\frac{-x}{\sqrt{1-x^2}}\right) \right] = \frac{1}{2\sqrt{2}} \left[ \frac{1-x^2-x^2}{\sqrt{1-x^2}} \right] = \frac{1-2x^2}{2\sqrt{2}\sqrt{1-x^2}}
+\]
+
+Step 3: Set up the arc length element $\sqrt{1 + (y')^2}$.
+\[
+1 + \left(\frac{dy}{dx}\right)^2 = 1 + \frac{(1-2x^2)^2}{8(1-x^2)} = \frac{8(1-x^2) + (1 - 4x^2 + 4x^4)}{8(1-x^2)}
+\]
+\[
+= \frac{8 - 8x^2 + 1 - 4x^2 + 4x^4}{8(1-x^2)} = \frac{9 - 12x^2 + 4x^4}{8(1-x^2)} = \frac{(3-2x^2)^2}{8(1-x^2)}
+\]
+Taking the square root:
+\[
+\sqrt{1 + \left(\frac{dy}{dx}\right)^2} = \frac{3-2x^2}{2\sqrt{2}\sqrt{1-x^2}}
+\]
+
+Step 4: Compute the total loop length.
+The loop consists of a symmetric upper half and a lower half. Thus, the total length of one loop is:
+\[
+L = 2 \int_{0}^{1} \sqrt{1 + \left(\frac{dy}{dx}\right)^2} \, dx = 2 \int_{0}^{1} \frac{3-2x^2}{2\sqrt{2}\sqrt{1-x^2}} \, dx
+\]
+\[
+L = \frac{1}{\sqrt{2}} \int_{0}^{1} \frac{3-2x^2}{\sqrt{1-x^2}} \, dx
+\]
+
+Step 5: Integrate using algebraic split.
+Rewrite the numerator: $3-2x^2 = 1 + 2(1-x^2)$.
+\[
+L = \frac{1}{\sqrt{2}} \int_{0}^{1} \left( \frac{1}{\sqrt{1-x^2}} + 2\frac{1-x^2}{\sqrt{1-x^2}} \right) dx
+\]
+\[
+L = \frac{1}{\sqrt{2}} \int_{0}^{1} \left( \frac{1}{\sqrt{1-x^2}} + 2\sqrt{1-x^2} \right) dx
+\]
+Using standard integrals:
+- $\int_0^1 \frac{dx}{\sqrt{1-x^2}} = [\sin^{-1} x]_0^1 = \frac{\pi}{2}$
+- $\int_0^1 2\sqrt{1-x^2} \, dx = 2\left[\frac{x}{2}\sqrt{1-x^2} + \frac{1}{2}\sin^{-1} x\right]_0^1 = 2\left(0 + \frac{1}{2}\left(\frac{\pi}{2}\right)\right) = \frac{\pi}{2}$
+
+Summing the integral evaluations:
+\[
+\int_{0}^{1} \left( \frac{1}{\sqrt{1-x^2}} + 2\sqrt{1-x^2} \right) dx = \frac{\pi}{2} + \frac{\pi}{2} = \pi
+\]
+Multiply by the scalar factor:
+\[
+L = \frac{\pi}{\sqrt{2}}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{\sqrt{2}}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

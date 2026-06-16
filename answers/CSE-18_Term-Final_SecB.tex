@@ -1,0 +1,715 @@
+% FILE: CSE-18_TermFinal.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q5ai
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5ai
+% topic=Indefinite Integration
+% subtopic=Trigonometric Integrals
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(a)(i)}
+Question:
+Integrate the following:
+\[
+\int \frac{\sin x + \csc x}{\tan x} \, dx
+\]
+
+Solution:
+Step 1: Simplify the integrand using trigonometric identities.
+Rewrite the terms in terms of sine and cosine:
+\[
+\frac{\sin x + \csc x}{\tan x} = \frac{\sin x + \frac{1}{\sin x}}{\frac{\sin x}{\cos x}}
+\]
+Multiply both terms in the numerator by the reciprocal of the denominator, \(\frac{\cos x}{\sin x}\):
+\[
+= \left( \sin x + \frac{1}{\sin x} \right) \frac{\cos x}{\sin x}
+\]
+\[
+= \cos x + \frac{\cos x}{\sin^2 x}
+\]
+
+Step 2: Split the integral and integrate term by term.
+\[
+\int \left( \cos x + \frac{\cos x}{\sin^2 x} \right) dx = \int \cos x \, dx + \int \csc x \cot x \, dx
+\]
+Using the standard integration formulas \(\int \cos x \, dx = \sin x\) and \(\int \csc x \cot x \, dx = -\csc x\):
+\[
+= \sin x - \csc x + C
+\]
+
+Final Answer:
+\[
+\boxed{\sin x - \csc x + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q5aii
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5aii
+% topic=Indefinite Integration
+% subtopic=Substitution
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(a)(ii)}
+Question:
+Integrate the following:
+\[
+\int \frac{4x+3}{3x^2+3x+1} \, dx
+\]
+
+Solution:
+Step 1: Relate the numerator to the derivative of the quadratic denominator.
+Let \(f(x) = 3x^2 + 3x + 1\). Its derivative is:
+\[
+f'(x) = 6x + 3
+\]
+We express the numerator \(4x + 3\) as a linear combination of \(f'(x)\) and a constant:
+\[
+4x + 3 = A(6x + 3) + B
+\]
+Equating coefficients of \(x\):
+\[
+4 = 6A \implies A = \frac{2}{3}
+\]
+Equating constant terms:
+\[
+3 = 3A + B \implies 3 = 3\left(\frac{2}{3}\right) + B \implies B = 1
+\]
+Thus, we can rewrite the integral as:
+\[
+\int \frac{4x+3}{3x^2+3x+1} \, dx = \frac{2}{3} \int \frac{6x+3}{3x^2+3x+1} \, dx + \int \frac{1}{3x^2+3x+1} \, dx
+\]
+
+Step 2: Solve the first integral.
+Using substitution \(u = 3x^2 + 3x + 1 \implies du = (6x+3)dx\):
+\[
+\frac{2}{3} \int \frac{du}{u} = \frac{2}{3} \ln|3x^2 + 3x + 1|
+\]
+
+Step 3: Solve the second integral by completing the square.
+\[
+\int \frac{dx}{3(x^2 + x + 1/3)} = \frac{1}{3} \int \frac{dx}{\left(x + \frac{1}{2}\right)^2 - \frac{1}{4} + \frac{1}{3}}
+\]
+\[
+= \frac{1}{3} \int \frac{dx}{\left(x + \frac{1}{2}\right)^2 + \frac{1}{12}}
+\]
+Use the integration formula \(\int \frac{dw}{w^2 + a^2} = \frac{1}{a} \tan^{-1}\left(\frac{w}{a}\right)\) with \(w = x + 1/2\) and \(a = \frac{1}{\sqrt{12}}\):
+\[
+= \frac{1}{3} \cdot \sqrt{12} \tan^{-1}\left( \sqrt{12} \left(x + \frac{1}{2}\right) \right)
+\]
+Since \(\sqrt{12} = 2\sqrt{3}\) and \(\frac{2\sqrt{3}}{3} = \frac{2}{\sqrt{3}}\):
+\[
+= \frac{2}{\sqrt{3}} \tan^{-1}\left( \sqrt{3}(2x + 1) \right)
+\]
+
+Step 4: Combine the results.
+\[
+\int \frac{4x+3}{3x^2+3x+1} \, dx = \frac{2}{3} \ln|3x^2+3x+1| + \frac{2}{\sqrt{3}} \tan^{-1}\left(\sqrt{3}(2x+1)\right) + C
+\]
+
+Final Answer:
+\[
+\boxed{\frac{2}{3} \ln|3x^2+3x+1| + \frac{2}{\sqrt{3}} \tan^{-1}\left(\sqrt{3}(2x+1)\right) + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q5aiii
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5aiii
+% topic=Indefinite Integration
+% subtopic=Integration by Parts
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(a)(iii)}
+Question:
+Integrate the following:
+\[
+\int \frac{\cos^3 x}{e^{3x}} \, dx
+\]
+
+Solution:
+Step 1: Simplify the integrand using a trigonometric identity.
+Recall the triple-angle identity for cosine:
+\[
+\cos 3x = 4\cos^3 x - 3\cos x \implies \cos^3 x = \frac{1}{4}(\cos 3x + 3\cos x)
+\]
+Substituting this back into the integral:
+\[
+\int e^{-3x} \cos^3 x \, dx = \frac{1}{4} \int e^{-3x} \cos 3x \, dx + \frac{3}{4} \int e^{-3x} \cos x \, dx
+\]
+
+Step 2: Apply the standard integration formula for exponential-trigonometric integrals.
+Recall the general integration formula:
+\[
+\int e^{ax} \cos bx \, dx = \frac{e^{ax}}{a^2 + b^2} (a \cos bx + b \sin bx)
+\]
+
+- For \(I_1 = \int e^{-3x} \cos 3x \, dx\), we have \(a = -3\) and \(b = 3\):
+  \[
+  I_1 = \frac{e^{-3x}}{(-3)^2 + 3^2} (-3 \cos 3x + 3 \sin 3x) = \frac{e^{-3x}}{18} (-3 \cos 3x + 3 \sin 3x) = \frac{e^{-3x}}{6} (\sin 3x - \cos 3x)
+  \]
+
+- For \(I_2 = \int e^{-3x} \cos x \, dx\), we have \(a = -3\) and \(b = 1\):
+  \[
+  I_2 = \frac{e^{-3x}}{(-3)^2 + 1^2} (-3 \cos x + \sin x) = \frac{e^{-3x}}{10} (\sin x - 3 \cos x)
+  \]
+
+Step 3: Sum the evaluated integrals.
+\[
+\int e^{-3x} \cos^3 x \, dx = \frac{1}{4} \left[ \frac{e^{-3x}}{6} (\sin 3x - \cos 3x) \right] + \frac{3}{4} \left[ \frac{e^{-3x}}{10} (\sin x - 3 \cos x) \right] + C
+\]
+\[
+= e^{-3x} \left[ \frac{1}{24}(\sin 3x - \cos 3x) + \frac{3}{40}(\sin x - 3 \cos x) \right] + C
+\]
+
+Final Answer:
+\[
+\boxed{e^{-3x} \left[ \frac{1}{24}(\sin 3x - \cos 3x) + \frac{3}{40}(\sin x - 3 \cos x) \right] + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q5aiv
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5aiv
+% topic=Indefinite Integration
+% subtopic=Partial Fractions
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q5(a)(iv)}
+Question:
+Integrate the following:
+\[
+\int \frac{x \, dx}{(x-1)(x^2+4)}
+\]
+
+Solution:
+Step 1: Set up the partial fraction decomposition.
+\[
+\frac{x}{(x-1)(x^2+4)} = \frac{A}{x-1} + \frac{Bx+C}{x^2+4}
+\]
+Multiply both sides by \((x-1)(x^2+4)\):
+\[
+x = A(x^2+4) + (Bx+C)(x-1)
+\]
+
+Step 2: Solve for the constants \(A\), \(B\), and \(C\).
+- Set \(x = 1\):
+  \[
+  1 = A(1^2+4) \implies 1 = 5A \implies A = \frac{1}{5}
+  \]
+- Set \(x = 0\):
+  \[
+  0 = 4A - C \implies C = 4A \implies C = \frac{4}{5}
+  \]
+- Equate coefficients of \(x^2\):
+  \[
+  0 = A + B \implies B = -A \implies B = -\frac{1}{5}
+  \]
+
+Step 3: Integrate the decomposed expression.
+\[
+\int \frac{x \, dx}{(x-1)(x^2+4)} = \frac{1}{5} \int \frac{dx}{x-1} - \frac{1}{5} \int \frac{x-4}{x^2+4} \, dx
+\]
+\[
+= \frac{1}{5} \int \frac{dx}{x-1} - \frac{1}{10} \int \frac{2x}{x^2+4} \, dx + \frac{4}{5} \int \frac{dx}{x^2+4}
+\]
+\[
+= \frac{1}{5} \ln|x-1| - \frac{1}{10} \ln(x^2+4) + \frac{2}{5} \tan^{-1}\left(\frac{x}{2}\right) + C
+\]
+
+Final Answer:
+\[
+\boxed{\frac{1}{5} \ln|x-1| - \frac{1}{10} \ln(x^2+4) + \frac{2}{5} \tan^{-1}\left(\frac{x}{2}\right) + C}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q6a
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q6(a)}
+Question:
+If \(f(2a-x) = -f(x)\) then show that \(\int_0^{2a} f(x) \, dx = 0\).
+
+Solution:
+Step 1: Split the integral into two equal subintervals.
+Using integration properties, split the integral at \(x = a\):
+\[
+\int_0^{2a} f(x) \, dx = \int_0^a f(x) \, dx + \int_a^{2a} f(x) \, dx
+\]
+
+Step 2: Apply variable substitution to the second integral.
+Let \(u = 2a - x \implies dx = -du\).
+Evaluate the new boundaries of integration:
+- When \(x = a \implies u = a\).
+- When \(x = 2a \implies u = 0\).
+Substituting these into the second integral:
+\[
+\int_a^{2a} f(x) \, dx = \int_a^0 f(2a-u) (-du) = \int_0^a f(2a-u) \, du
+\]
+
+Step 3: Apply the given condition \(f(2a-u) = -f(u)\).
+\[
+\int_0^a f(2a-u) \, du = \int_0^a -f(u) \, du = -\int_0^a f(x) \, dx
+\]
+
+Step 4: Combine the two integrals together.
+\[
+\int_0^{2a} f(x) \, dx = \int_0^a f(x) \, dx - \int_0^a f(x) \, dx = 0
+\]
+Hence proved.
+
+Final Answer:
+\[
+\text{Hence proved that } \boxed{\int_0^{2a} f(x) \, dx = 0} \text{ if } f(2a-x) = -f(x).
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q6b
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q6(b)}
+Question:
+Show that \(\int_0^{\pi/2} \log(\sin x) \, dx = \frac{\pi}{2} \log \frac{1}{2}\).
+
+Solution:
+Step 1: Declare the integral and apply definite integration properties.
+Let \(I = \int_0^{\pi/2} \log(\sin x) \, dx\).
+Using the property \(\int_a^b f(x) \, dx = \int_a^b f(a+b-x) \, dx\):
+\[
+I = \int_0^{\pi/2} \log\left(\sin\left(\frac{\pi}{2} - x\right)\right) \, dx = \int_0^{\pi/2} \log(\cos x) \, dx
+\]
+
+Step 2: Sum both equations for \(I\).
+\[
+2I = \int_0^{\pi/2} \log(\sin x) \, dx + \int_0^{\pi/2} \log(\cos x) \, dx = \int_0^{\pi/2} \log(\sin x \cos x) \, dx
+\]
+Substitute \(\sin x \cos x = \frac{\sin 2x}{2}\):
+\[
+2I = \int_0^{\pi/2} \log\left(\frac{\sin 2x}{2}\right) \, dx = \int_0^{\pi/2} \log(\sin 2x) \, dx - \int_0^{\pi/2} \log 2 \, dx
+\]
+
+Step 3: Compute the simple integral component.
+\[
+\int_0^{\pi/2} \log 2 \, dx = \log 2 \cdot [x]_0^{\pi/2} = \frac{\pi}{2} \log 2
+\]
+
+Step 4: Solve the remaining integral using variable substitution.
+Let \(J = \int_0^{\pi/2} \log(\sin 2x) \, dx\).
+Substitute \(t = 2x \implies dx = \frac{dt}{2}\).
+Evaluate boundaries: when \(x = 0 \implies t = 0\), and when \(x = \pi/2 \implies t = \pi\).
+\[
+J = \frac{1}{2} \int_0^{\pi} \log(\sin t) \, dt
+\]
+Using symmetry properties, since \(\sin(\pi - t) = \sin t\):
+\[
+J = \frac{1}{2} \left( 2 \int_0^{\pi/2} \log(\sin t) \, dt \right) = \int_0^{\pi/2} \log(\sin t) \, dt = I
+\]
+
+Step 5: Combine findings to find \(I\).
+\[
+2I = I - \frac{\pi}{2} \log 2 \implies I = -\frac{\pi}{2} \log 2 = \frac{\pi}{2} \log\left(\frac{1}{2}\right)
+\]
+Hence proved.
+
+Final Answer:
+\[
+\text{Hence proved that } \boxed{\int_0^{\pi/2} \log(\sin x) \, dx = \frac{\pi}{2} \log \frac{1}{2}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q7a
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7(a)}
+Question:
+Prove that \(\Gamma(m) \Gamma\left(m + \frac{1}{2}\right) = \frac{\sqrt{\pi}}{2^{2m-1}} \Gamma(2m)\).
+
+Solution:
+Step 1: Set up the Beta function definition and its relation to Gamma.
+Recall the definition of the Beta function in terms of Gamma functions:
+\[
+B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}
+\]
+The trigonometric form of the Beta function is:
+\[
+B(m, n) = 2 \int_0^{\pi/2} \sin^{2m-1} \theta \cos^{2n-1} \theta \, d\theta
+\]
+
+Step 2: Let \(n = m\) and simplify the integral.
+\[
+B(m, m) = 2 \int_0^{\pi/2} \sin^{2m-1} \theta \cos^{2m-1} \theta \, d\theta = 2 \int_0^{\pi/2} \left( \frac{\sin 2\theta}{2} \right)^{2m-1} \, d\theta
+\]
+\[
+B(m, m) = \frac{2}{2^{2m-1}} \int_0^{\pi/2} \sin^{2m-1} (2\theta) \, d\theta
+\]
+
+Step 3: Perform variable substitution on the integral.
+Let \(\phi = 2\theta \implies d\theta = \frac{d\phi}{2}\).
+- When \(\theta = 0 \implies \phi = 0\).
+- When \(\theta = \pi/2 \implies \phi = \pi\).
+\[
+B(m, m) = \frac{2}{2^{2m-1}} \int_0^\pi \sin^{2m-1} \phi \frac{d\phi}{2} = \frac{1}{2^{2m-1}} \int_0^\pi \sin^{2m-1} \phi \, d\phi
+\]
+Using symmetry properties:
+\[
+\int_0^\pi \sin^{2m-1} \phi \, d\phi = 2 \int_0^{\pi/2} \sin^{2m-1} \phi \, d\phi = B\left(m, \frac{1}{2}\right)
+\]
+Thus:
+\[
+B(m, m) = \frac{1}{2^{2m-1}} B\left(m, \frac{1}{2}\right)
+\]
+
+Step 4: Substitute Gamma definitions back into the identity.
+\[
+\frac{\Gamma(m)\Gamma(m)}{\Gamma(2m)} = \frac{1}{2^{2m-1}} \frac{\Gamma(m)\Gamma\left(\frac{1}{2}\right)}{\Gamma\left(m + \frac{1}{2}\right)}
+\]
+Since \(\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}\), we can divide both sides by \(\Gamma(m)\):
+\[
+\frac{\Gamma(m)}{\Gamma(2m)} = \frac{\sqrt{\pi}}{2^{2m-1} \Gamma\left(m + \frac{1}{2}\right)}
+\]
+Rearranging terms yields:
+\[
+\Gamma(m)\Gamma\left(m + \frac{1}{2}\right) = \frac{\sqrt{\pi}}{2^{2m-1}} \Gamma(2m)
+\]
+Hence proved.
+
+Final Answer:
+\[
+\text{Hence proved Legendre's Duplication Formula: } \boxed{\Gamma(m)\Gamma\left(m + \frac{1}{2}\right) = \frac{\sqrt{\pi}}{2^{2m-1}} \Gamma(2m)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q7b
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q7(b)}
+Question:
+Express \(\int_0^1 x^m (1 - x^n)^p \, dx\) in terms of the beta function and hence evaluate \(\int_0^1 x^5 (1 - x^3)^{10} \, dx\).
+
+Solution:
+Step 1: Set up substitution to express the general integral in terms of Beta.
+Let \(I = \int_0^1 x^m (1 - x^n)^p \, dx\).
+Substitute \(y = x^n \implies x = y^{1/n}\).
+Differentiating:
+\[
+dx = \frac{1}{n} y^{\frac{1}{n} - 1} \, dy
+\]
+The limits of integration remain \(0\) to \(1\). Substituting these values into \(I\):
+\[
+I = \int_0^1 \left(y^{1/n}\right)^m (1-y)^p \left(\frac{1}{n} y^{\frac{1}{n}-1}\right) dy
+\]
+\[
+= \frac{1}{n} \int_0^1 y^{\frac{m}{n}} y^{\frac{1}{n}-1} (1-y)^p \, dy
+\]
+\[
+= \frac{1}{n} \int_0^1 y^{\frac{m+1}{n}-1} (1-y)^{(p+1)-1} \, dy
+\]
+
+Step 2: Relate to the standard definition of the Beta function.
+Using \(B(a, b) = \int_0^1 y^{a-1}(1-y)^{b-1} \, dy\):
+\[
+I = \frac{1}{n} B\left(\frac{m+1}{n}, p+1\right)
+\]
+
+Step 3: Evaluate the given definite integral \(\int_0^1 x^5 (1 - x^3)^{10} \, dx\).
+Here, we have \(m = 5\), \(n = 3\), and \(p = 10\).
+Using our derived formula:
+\[
+\int_0^1 x^5 (1 - x^3)^{10} \, dx = \frac{1}{3} B\left(\frac{5+1}{3}, 10+1\right) = \frac{1}{3} B(2, 11)
+\]
+
+Step 4: Compute the value using Gamma identities.
+\[
+B(2, 11) = \frac{\Gamma(2)\Gamma(11)}{\Gamma(13)} = \frac{1! \cdot 10!}{12!} = \frac{10!}{12 \cdot 11 \cdot 10!} = \frac{1}{132}
+\]
+So:
+\[
+I = \frac{1}{3} \cdot \frac{1}{132} = \frac{1}{396}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{1}{n} B\left(\frac{m+1}{n}, p+1\right) = \frac{1}{396}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q8a
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8a
+% topic=Multiple Integrals
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q8(a)}
+Question:
+Find the area common to the circles \(r = a\sqrt{2}\) and \(r = 2a \cos \theta\).
+
+Solution:
+Step 1: Find the points of intersection.
+Set the two circle expressions equal to each other:
+\[
+a\sqrt{2} = 2a \cos \theta \implies \cos \theta = \frac{\sqrt{2}}{2} \implies \theta = \pm \frac{\pi}{4}
+\]
+
+Step 2: Understand the layout of both curves.
+- \(r = a\sqrt{2}\) is a circle centered at the origin with radius \(a\sqrt{2}\).
+- \(r = 2a\cos\theta\) is a circle centered at \((a, 0)\) with radius \(a\).
+Due to symmetry with respect to the initial line (\(\theta=0\)), the total area \(A\) is twice the area of the upper half:
+\[
+A = 2 \left[ \frac{1}{2} \int_0^{\pi/4} \left(a\sqrt{2}\right)^2 \, d\theta + \frac{1}{2} \int_{\pi/4}^{\pi/2} (2a\cos\theta)^2 \, d\theta \right]
+\]
+
+Step 3: Integrate both portions.
+\[
+A = \int_0^{\pi/4} 2a^2 \, d\theta + \int_{\pi/4}^{\pi/2} 4a^2 \cos^2 \theta \, d\theta
+\]
+\[
+= 2a^2 [\theta]_0^{\pi/4} + 2a^2 \int_{\pi/4}^{\pi/2} (1 + \cos 2\theta) \, d\theta
+\]
+\[
+= 2a^2 \left(\frac{\pi}{4}\right) + 2a^2 \left[ \theta + \frac{\sin 2\theta}{2} \right]_{\pi/4}^{\pi/2}
+\]
+\[
+= \frac{\pi a^2}{2} + 2a^2 \left[ \left(\frac{\pi}{2} + 0\right) - \left(\frac{\pi}{4} + \frac{1}{2}\right) \right]
+\]
+\[
+= \frac{\pi a^2}{2} + 2a^2 \left( \frac{\pi}{4} - \frac{1}{2} \right) = \frac{\pi a^2}{2} + \frac{\pi a^2}{2} - a^2 = a^2(\pi - 1)
+\]
+
+Final Answer:
+\[
+\boxed{a^2(\pi - 1)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse18-final-q8b
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8b
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec B) - Q8(b)}
+Question:
+Find the length of the curve \(x^2 = a^2(1 - e^{y/a})\) measured from \((0,0)\) to \((x,y)\).
+
+Solution:
+Step 1: Check boundaries and express terms.
+From the equation \(x^2 = a^2(1 - e^{y/a})\), since \(x^2 \ge 0\), we must have:
+\[
+1 - e^{y/a} \ge 0 \implies e^{y/a} \le 1 \implies \frac{y}{a} \le 0 \implies y \le 0 \quad (\text{for } a > 0)
+\]
+We integrate with respect to \(y\) from \(y\) to \(0\) (the positive direction).
+Differentiating both sides with respect to \(y\):
+\[
+2x \frac{dx}{dy} = a^2 \left( -e^{y/a} \cdot \frac{1}{a} \right) \implies 2x \frac{dx}{dy} = -a e^{y/a} \implies \frac{dx}{dy} = \frac{-a e^{y/a}}{2x}
+\]
+
+Step 2: Formulate the arc length differential element \(ds = \sqrt{1 + \left(\frac{dx}{dy}\right)^2} \, dy\).
+\[
+\left(\frac{dx}{dy}\right)^2 = \frac{a^2 e^{2y/a}}{4x^2} = \frac{a^2 e^{2y/a}}{4a^2(1-e^{y/a})} = \frac{e^{2y/a}}{4(1-e^{y/a})}
+\]
+Adding 1:
+\[
+1 + \left(\frac{dx}{dy}\right)^2 = 1 + \frac{e^{2y/a}}{4(1-e^{y/a})} = \frac{4 - 4e^{y/a} + e^{2y/a}}{4(1-e^{y/a})} = \frac{(2-e^{y/a})^2}{4(1-e^{y/a})}
+\]
+Taking the square root (since \(e^{y/a} \le 1\), we have \(2-e^{y/a} > 0\)):
+\[
+\sqrt{1 + \left(\frac{dx}{dy}\right)^2} = \frac{2-e^{y/a}}{2\sqrt{1-e^{y/a}}}
+\]
+
+Step 3: Solve the integral using variable substitution.
+\[
+L = \int_{y}^0 \frac{2-e^{y/a}}{2\sqrt{1-e^{y/a}}} \, dy
+\]
+Let \(u = \sqrt{1-e^{y/a}} \implies u^2 = 1-e^{y/a} \implies e^{y/a} = 1-u^2\).
+Differentiating:
+\[
+\frac{1}{a} e^{y/a} \, dy = -2u \, du \implies dy = \frac{-2au \, du}{1-u^2}
+\]
+Substitute limits of integration:
+- When \(y = 0 \implies u = 0\).
+- When \(y = y \implies u = \sqrt{1-e^{y/a}}\).
+Replacing variables in the integral:
+\[
+L = \int_{\sqrt{1-e^{y/a}}}^0 \left( \frac{1+u^2}{2u} \right) \left( \frac{-2au \, du}{1-u^2} \right) = a \int_0^{\sqrt{1-e^{y/a}}} \frac{1+u^2}{1-u^2} \, du
+\]
+\[
+= a \int_0^{\sqrt{1-e^{y/a}}} \left( -1 + \frac{2}{1-u^2} \right) du = a \left[ -u + \ln\left| \frac{1+u}{1-u} \right| \right]_0^{\sqrt{1-e^{y/a}}}
+\]
+
+Step 4: Evaluate the result.
+Let \(u_0 = \sqrt{1-e^{y/a}}\):
+\[
+L = a \left[ \ln\left( \frac{1+u_0}{1-u_0} \right) - u_0 \right]
+\]
+Substitute \(u_0\) back in:
+\[
+L = a \ln\left( \frac{1+\sqrt{1-e^{y/a}}}{1-\sqrt{1-e^{y/a}}} \right) - a\sqrt{1-e^{y/a}}
+\]
+Simplifying the logarithmic term using algebraic rationalization:
+\[
+\ln\left( \frac{1+\sqrt{1-e^{y/a}}}{1-\sqrt{1-e^{y/a}}} \right) = \ln\left( \frac{\left(1+\sqrt{1-e^{y/a}}\right)^2}{e^{y/a}} \right) = 2\ln\left(1+\sqrt{1-e^{y/a}}\right) - \frac{y}{a}
+\]
+Substituting back:
+\[
+L = 2a\ln\left(1+\sqrt{1-e^{y/a}}\right) - y - a\sqrt{1-e^{y/a}}
+\]
+
+Final Answer:
+\[
+\boxed{2a\ln\left(1+\sqrt{1-e^{y/a}}\right) - y - a\sqrt{1-e^{y/a}}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
