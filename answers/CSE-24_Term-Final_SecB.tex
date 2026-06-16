@@ -1,0 +1,799 @@
+% FILE: CSE-24_TermFinal.tex
+
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+
+% Set default/Latin font to Sans Serif in the main (rm) slot
+\babelfont{rm}{Noto Sans}
+
+% --- EXTRA PACKAGES FOR MATHEMATICS AND FORMATTING ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q5ai
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5ai
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q5(a)(i)}
+
+Question:
+Evaluate the following integral:
+\[
+\int_{0}^{\frac{\pi}{2}} x \log(\sin x) \, dx
+\]
+[L5; CLO7]
+
+Solution:
+Step 1: Write down the Fourier series expansion for $\log(\sin x)$.
+On the interval $(0, \pi)$, the function $\log(\sin x)$ can be represented by its Fourier cosine series:
+\[
+\log(\sin x) = -\log 2 - \sum_{k=1}^{\infty} \frac{\cos(2kx)}{k}
+\]
+
+Step 2: Substitute this series into the integral and integrate term-by-term.
+\[
+I = \int_{0}^{\frac{\pi}{2}} x \log(\sin x) \, dx = \int_{0}^{\frac{\pi}{2}} x \left( -\log 2 - \sum_{k=1}^{\infty} \frac{\cos(2kx)}{k} \right) dx
+\]
+We can split this expression into two parts:
+\[
+I = -\log 2 \int_{0}^{\frac{\pi}{2}} x \, dx - \sum_{k=1}^{\infty} \frac{1}{k} \int_{0}^{\frac{\pi}{2}} x \cos(2kx) \, dx
+\]
+
+Step 3: Evaluate the first term.
+\[
+-\log 2 \left[ \frac{x^2}{2} \right]_{0}^{\frac{\pi}{2}} = -\log 2 \left( \frac{\pi^2}{8} \right) = -\frac{\pi^2}{8} \log 2
+\]
+
+Step 4: Evaluate the second term using integration by parts.
+For each term in the sum, let $u = x$ and $dv = \cos(2kx) \, dx$. Thus, $du = dx$ and $v = \frac{\sin(2kx)}{2k}$.
+\[
+\int_{0}^{\frac{\pi}{2}} x \cos(2kx) \, dx = \left[ x \frac{\sin(2kx)}{2k} \right]_{0}^{\frac{\pi}{2}} - \int_{0}^{\frac{\pi}{2}} \frac{\sin(2kx)}{2k} \, dx
+\]
+The boundary term vanishes because $\sin(2k \cdot \frac{\pi}{2}) = \sin(k\pi) = 0$ and $x = 0$ gives $0$.
+\[
+= \left[ \frac{\cos(2kx)}{4k^2} \right]_{0}^{\frac{\pi}{2}} = \frac{\cos(k\pi) - \cos(0)}{4k^2} = \frac{(-1)^k - 1}{4k^2}
+\]
+
+Step 5: Substitute this result back into the summation.
+\[
+I = -\frac{\pi^2}{8} \log 2 - \sum_{k=1}^{\infty} \frac{1}{k} \left( \frac{(-1)^k - 1}{4k^2} \right) = -\frac{\pi^2}{8} \log 2 - \sum_{k=1}^{\infty} \frac{(-1)^k - 1}{4k^3}
+\]
+Observe that when $k$ is even, $(-1)^k - 1 = 0$. When $k$ is odd ($k = 2m-1$ for positive integers $m$), $(-1)^k - 1 = -2$.
+Thus, only the odd terms contribute to the sum:
+\[
+I = -\frac{\pi^2}{8} \log 2 - \sum_{m=1}^{\infty} \frac{-2}{4(2m-1)^3} = -\frac{\pi^2}{8} \log 2 + \frac{1}{2} \sum_{m=1}^{\infty} \frac{1}{(2m-1)^3}
+\]
+
+Step 6: Express the odd sum in terms of the Riemann Zeta function $\zeta(3)$.
+Recall that:
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^3} = \zeta(3)
+\]
+We can split the full sum into even and odd parts:
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^3} = \sum_{m=1}^{\infty} \frac{1}{(2m-1)^3} + \sum_{m=1}^{\infty} \frac{1}{(2m)^3} \implies \zeta(3) = \sum_{m=1}^{\infty} \frac{1}{(2m-1)^3} + \frac{1}{8} \zeta(3)
+\]
+\[
+\sum_{m=1}^{\infty} \frac{1}{(2m-1)^3} = \frac{7}{8} \zeta(3)
+\]
+Substituting this back into our expression for $I$:
+\[
+I = -\frac{\pi^2}{8} \log 2 + \frac{1}{2} \left( \frac{7}{8} \zeta(3) \right) = \frac{7}{16} \zeta(3) - \frac{\pi^2}{8} \log 2
+\]
+
+Final Answer:
+\[
+\boxed{\frac{7}{16} \zeta(3) - \frac{\pi^2}{8} \log 2}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q5aii
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5aii
+% topic=Definite Integration
+% subtopic=Substitution
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q5(a)(ii)}
+
+Question:
+Evaluate the following integral:
+\[
+\int_{0}^{\frac{\pi}{2}} \frac{\sin 2\theta}{\sin^4 \theta + \cos^4 \theta} \, d\theta
+\]
+[L5; CLO7]
+
+Solution:
+Step 1: Simplify the integrand using trigonometric identities.
+We know that $\sin 2\theta = 2 \sin \theta \cos \theta$. The integral can be written as:
+\[
+J = \int_{0}^{\frac{\pi}{2}} \frac{2 \sin \theta \cos \theta}{\sin^4 \theta + \cos^4 \theta} \, d\theta
+\]
+
+Step 2: Divide both the numerator and the denominator by $\cos^4 \theta$.
+\[
+J = \int_{0}^{\frac{\pi}{2}} \frac{\frac{2 \sin \theta \cos \theta}{\cos^4 \theta}}{\frac{\sin^4 \theta + \cos^4 \theta}{\cos^4 \theta}} \, d\theta = \int_{0}^{\frac{\pi}{2}} \frac{2 \tan \theta \sec^2 \theta}{\tan^4 \theta + 1} \, d\theta
+\]
+
+Step 3: Use substitution.
+Let $u = \tan^2 \theta$.
+Differentiating both sides:
+\[
+du = 2 \tan \theta \sec^2 \theta \, d\theta
+\]
+Now, determine the new boundaries of integration:
+\begin{itemize}
+    \item When $\theta = 0$, $u = \tan^2(0) = 0$.
+    \item When $\theta \to \frac{\pi}{2}$, $u \to \infty$.
+\end{itemize}
+
+Step 4: Substitute and integrate.
+\[
+J = \int_{0}^{\infty} \frac{du}{u^2 + 1} = \left[ \tan^{-1} u \right]_{0}^{\infty}
+\]
+Evaluate the limits:
+\[
+J = \tan^{-1}(\infty) - \tan^{-1}(0) = \frac{\pi}{2} - 0 = \frac{\pi}{2}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{2}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q5b
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5b
+% topic=Indefinite Integration
+% subtopic=Reduction Formula
+% difficulty=Medium
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q5(b)}
+
+Question:
+Obtain a reduction formula for $\int_{0}^{\frac{\pi}{2}} \sin^m x \cos^n x \, dx$ and apply it to evaluate $\int_{0}^{\frac{\pi}{2}} \sin^8 x \cos^6 x \, dx$. [L5; CLO7]
+
+Solution:
+Step 1: Derive the reduction formula.
+Let $I_{m, n} = \int_{0}^{\frac{\pi}{2}} \sin^m x \cos^n x \, dx$. We can rewrite this as:
+\[
+I_{m, n} = \int_{0}^{\frac{\pi}{2}} \sin^{m-1} x (\sin x \cos^n x) \, dx
+\]
+Apply integration by parts: $\int u \, dv = uv - \int v \, du$.
+Let $u = \sin^{m-1} x \implies du = (m-1)\sin^{m-2} x \cos x \, dx$.
+Let $dv = \sin x \cos^n x \, dx \implies v = -\frac{\cos^{n+1} x}{n+1}$.
+Thus,
+\[
+I_{m, n} = \left[ -\frac{\sin^{m-1} x \cos^{n+1} x}{n+1} \right]_{0}^{\frac{\pi}{2}} + \frac{m-1}{n+1} \int_{0}^{\frac{\pi}{2}} \sin^{m-2} x \cos^{n+2} x \, dx
+\]
+Since $m \ge 2$, the boundary term evaluates to $0$ at both limits:
+\[
+I_{m, n} = \frac{m-1}{n+1} \int_{0}^{\frac{\pi}{2}} \sin^{m-2} x \cos^n x (1 - \sin^2 x) \, dx
+\]
+\[
+I_{m, n} = \frac{m-1}{n+1} \left( \int_{0}^{\frac{\pi}{2}} \sin^{m-2} x \cos^n x \, dx - \int_{0}^{\frac{\pi}{2}} \sin^m x \cos^n x \, dx \right)
+\]
+\[
+I_{m, n} = \frac{m-1}{n+1} I_{m-2, n} - \frac{m-1}{n+1} I_{m, n}
+\]
+Rearranging terms:
+\[
+I_{m, n} \left( 1 + \frac{m-1}{n+1} \right) = \frac{m-1}{n+1} I_{m-2, n} \implies I_{m, n} \left( \frac{m+n}{n+1} \right) = \frac{m-1}{n+1} I_{m-2, n}
+\]
+\[
+I_{m, n} = \frac{m-1}{m+n} I_{m-2, n}
+\]
+
+Step 2: Apply the reduction formula to find $I_{8, 6}$.
+We need to evaluate $I_{8, 6} = \int_{0}^{\frac{\pi}{2}} \sin^8 x \cos^6 x \, dx$:
+\[
+I_{8, 6} = \frac{8-1}{8+6} I_{6, 6} = \frac{7}{14} I_{6, 6} = \frac{1}{2} I_{6, 6}
+\]
+\[
+I_{6, 6} = \frac{6-1}{6+6} I_{4, 6} = \frac{5}{12} I_{4, 6}
+\]
+\[
+I_{4, 6} = \frac{4-1}{4+6} I_{2, 6} = \frac{3}{10} I_{2, 6}
+\]
+\[
+I_{2, 6} = \frac{2-1}{2+6} I_{0, 6} = \frac{1}{8} I_{0, 6}
+\]
+
+Step 3: Evaluate the base case $I_{0, 6} = \int_{0}^{\frac{\pi}{2}} \cos^6 x \, dx$.
+Using Walli's formula for the single trigonometric integral of $\cos^6 x$:
+\[
+I_{0, 6} = \frac{5}{6} \cdot \frac{3}{4} \cdot \frac{1}{2} \cdot \frac{\pi}{2} = \frac{15\pi}{96} = \frac{5\pi}{32}
+\]
+
+Step 4: Compute the final value of $I_{8, 6}$.
+\[
+I_{8, 6} = \frac{1}{2} \cdot \frac{5}{12} \cdot \frac{3}{10} \cdot \frac{1}{8} \cdot \frac{5\pi}{32}
+\]
+\[
+I_{8, 6} = \frac{75\pi}{61440} = \frac{5\pi}{4096}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{5\pi}{4096}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q6a
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6a
+% topic=Differentiation
+% subtopic=Basic Differentiation
+% difficulty=Easy
+% length=Short
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q6(a)}
+
+Question:
+Find the antiderivative $F(x)$ of $f(x) = \sqrt[3]{x}$ that satisfies $F(1) = 2$. [L1; CLO7]
+
+Solution:
+Step 1: Express $f(x)$ in exponential form and integrate to find the general antiderivative.
+\[
+f(x) = x^{\frac{1}{3}}
+\]
+The general antiderivative is:
+\[
+F(x) = \int x^{\frac{1}{3}} \, dx = \frac{x^{\frac{4}{3}}}{\frac{4}{3}} + C = \frac{3}{4} x^{\frac{4}{3}} + C
+\]
+where $C$ is the constant of integration.
+
+Step 2: Apply the initial condition $F(1) = 2$ to find the constant $C$.
+\[
+F(1) = \frac{3}{4}(1)^{\frac{4}{3}} + C = 2 \implies \frac{3}{4} + C = 2 \implies C = 2 - \frac{3}{4} = \frac{5}{4}
+\]
+
+Step 3: Write down the final unique antiderivative.
+\[
+F(x) = \frac{3}{4} x^{\frac{4}{3}} + \frac{5}{4}
+\]
+
+Final Answer:
+\[
+\boxed{F(x) = \frac{3}{4}x^{\frac{4}{3}} + \frac{5}{4}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q6b
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q6(b)}
+
+Question:
+Write the following series in integral form and evaluate it:
+\[
+\lim_{n \to \infty} \left[ \frac{n}{n^2 + 1^2} + \frac{n}{n^2 + 2^2} + \frac{n}{n^2 + 3^2} + \dots + \frac{n}{n^2 + n^2} \right]
+\]
+[L2; CLO4]
+
+Solution:
+Step 1: Write the expression using summation notation.
+Let the series sum be $S_n$:
+\[
+S_n = \sum_{r=1}^{n} \frac{n}{n^2 + r^2}
+\]
+
+Step 2: Factor out terms to structure it as a Riemann sum.
+Divide both the numerator and the denominator by $n^2$:
+\[
+S_n = \sum_{r=1}^{n} \frac{\frac{n}{n^2}}{1 + \left(\frac{r}{n}\right)^2} = \sum_{r=1}^{n} \frac{1}{n} \left( \frac{1}{1 + \left(\frac{r}{n}\right)^2} \right)
+\]
+
+Step 3: Convert the Riemann sum into its definite integral form.
+As $n \to \infty$, the sum represents a Riemann sum with:
+\begin{itemize}
+    \item Width element, $dx = \frac{1}{n}$
+    \item Sample points, $x = \frac{r}{n}$
+    \item Integration limits:
+    \begin{itemize}
+        \item Lower limit: $x_{\text{min}} = \lim_{n \to \infty} \frac{1}{n} = 0$
+        \item Upper limit: $x_{\text{max}} = \lim_{n \to \infty} \frac{n}{n} = 1$
+    \end{itemize}
+\end{itemize}
+Thus, the limit of the series is:
+\[
+\int_{0}^{1} \frac{1}{1 + x^2} \, dx
+\]
+
+Step 4: Evaluate the definite integral.
+\[
+\int_{0}^{1} \frac{1}{1 + x^2} \, dx = \left[ \tan^{-1} x \right]_{0}^{1} = \tan^{-1}(1) - \tan^{-1}(0) = \frac{\pi}{4} - 0 = \frac{\pi}{4}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{4}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q6c
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6c
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q6(c)}
+
+Question:
+Examine the convergence of the improper integral $\int_{0}^{\infty} \frac{dx}{x^2 - 1}$. [L4; CLO8]
+
+Solution:
+Step 1: Identify the points of singularity.
+The integrand is $f(x) = \frac{1}{x^2 - 1}$. The singularities of $f(x)$ occur when:
+\[
+x^2 - 1 = 0 \implies x = \pm 1
+\]
+Since our interval of integration is $[0, \infty)$, there is an internal singularity at $x = 1$. The interval also has an infinite upper bound ($\infty$).
+
+Step 2: Decompose the integral.
+To evaluate the convergence, we split the interval of integration around the singularity at $x = 1$ and at a intermediate proper point, say $x = 2$:
+\[
+I = \int_{0}^{\infty} \frac{dx}{x^2 - 1} = \int_{0}^{1} \frac{dx}{x^2 - 1} + \int_{1}^{2} \frac{dx}{x^2 - 1} + \int_{2}^{\infty} \frac{dx}{x^2 - 1}
+\]
+For the total integral to converge, each of these decomposed improper integrals must converge individually.
+
+Step 3: Analyze the convergence of the first part $I_1 = \int_{0}^{1} \frac{dx}{x^2 - 1}$.
+The integrand near the singularity $x = 1$ behaves as:
+\[
+\frac{1}{x^2 - 1} = \frac{1}{(x-1)(x+1)} \approx \frac{1}{2(x-1)} \quad \text{as } x \to 1^{-}
+\]
+By the Limit Comparison Test with $g(x) = \frac{1}{1-x}$:
+\[
+\int_{0}^{1} \frac{1}{1-x} \, dx = \lim_{t \to 1^{-}} \left[ -\log(1-x) \right]_{0}^{t} = \lim_{t \to 1^{-}} -\log(1-t) = \infty
+\]
+Since $\int_{0}^{1} g(x) \, dx$ diverges, the integral $I_1$ diverges.
+
+Conclusion:
+Since at least one of the decomposed improper integrals diverges, the entire improper integral $\int_{0}^{\infty} \frac{dx}{x^2 - 1}$ diverges.
+
+Final Answer:
+\[
+\boxed{\text{The improper integral diverges.}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q7a
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q7(a)}
+
+Question:
+Derive a relation between beta function and gamma function. [L4; CLO4]
+
+Solution:
+Step 1: Write down the definition of the Gamma function.
+The Gamma function is defined as:
+\[
+\Gamma(m) = \int_{0}^{\infty} x^{m-1} e^{-x} \, dx
+\]
+Let $x = u^2 \implies dx = 2u \, du$:
+\[
+\Gamma(m) = \int_{0}^{\infty} (u^2)^{m-1} e^{-u^2} (2u \, du) = 2 \int_{0}^{\infty} u^{2m-1} e^{-u^2} \, du \quad \text{--- (1)}
+\]
+Similarly, for $\Gamma(n)$:
+\[
+\Gamma(n) = 2 \int_{0}^{\infty} v^{2n-1} e^{-v^2} \, dv \quad \text{--- (2)}
+\]
+
+Step 2: Multiply equation (1) and equation (2).
+\[
+\Gamma(m)\Gamma(n) = 4 \left( \int_{0}^{\infty} u^{2m-1} e^{-u^2} \, du \right) \left( \int_{0}^{\infty} v^{2n-1} e^{-v^2} \, dv \right)
+\]
+Using a double integral over the first quadrant ($u \ge 0, v \ge 0$):
+\[
+\Gamma(m)\Gamma(n) = 4 \int_{0}^{\infty} \int_{0}^{\infty} u^{2m-1} v^{2n-1} e^{-(u^2 + v^2)} \, du \, dv
+\]
+
+Step 3: Change to polar coordinates.
+Let $u = r \cos \theta$ and $v = r \sin \theta$. The Jacobian of the transformation is $du \, dv = r \, dr \, d\theta$.
+The boundaries for $u \ge 0, v \ge 0$ in polar coordinates are $r \in [0, \infty)$ and $\theta \in [0, \frac{\pi}{2}]$.
+Substituting these into the double integral:
+\[
+\Gamma(m)\Gamma(n) = 4 \int_{0}^{\frac{\pi}{2}} \int_{0}^{\infty} (r \cos \theta)^{2m-1} (r \sin \theta)^{2n-1} e^{-r^2} r \, dr \, d\theta
+\]
+\[
+= 4 \left( \int_{0}^{\frac{\pi}{2}} \cos^{2m-1}\theta \sin^{2n-1}\theta \, d\theta \right) \left( \int_{0}^{\infty} r^{2(m+n)-1} e^{-r^2} \, dr \right) \quad \text{--- (3)}
+\]
+
+Step 4: Identify the trigonometric and radial integrals in equation (3).
+1. By the trigonometric definition of the Beta function:
+\[
+B(n, m) = 2 \int_{0}^{\frac{\pi}{2}} \sin^{2n-1}\theta \cos^{2m-1}\theta \, d\theta \implies \int_{0}^{\frac{\pi}{2}} \cos^{2m-1}\theta \sin^{2n-1}\theta \, d\theta = \frac{1}{2} B(m, n)
+\]
+2. For the radial integral, let $t = r^2 \implies dt = 2r \, dr$:
+\[
+\int_{0}^{\infty} r^{2(m+n)-1} e^{-r^2} \, dr = \frac{1}{2} \int_{0}^{\infty} t^{(m+n)-1} e^{-t} \, dt = \frac{1}{2} \Gamma(m+n)
+\]
+
+Step 5: Substitute these back into equation (3).
+\[
+\Gamma(m)\Gamma(n) = 4 \left( \frac{1}{2} B(m, n) \right) \left( \frac{1}{2} \Gamma(m+n) \right) = B(m, n) \Gamma(m+n)
+\]
+Rearranging terms yields:
+\[
+B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}
+\]
+
+Final Answer:
+\[
+\boxed{B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q7b
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q7(b)}
+
+Question:
+Integrate $\int_{0}^{1} x^4 (1 - \sqrt{x})^5 \, dx$ by using gamma-beta function. [L3; CLO8]
+
+Solution:
+Step 1: Simplify the integral using substitution.
+Let $u = \sqrt{x} \implies x = u^2$.
+Differentiating:
+\[
+dx = 2u \, du
+\]
+The integration boundaries:
+\begin{itemize}
+    \item When $x = 0$, $u = 0$.
+    \item When $x = 1$, $u = 1$.
+\end{itemize}
+
+Step 2: Substitute into the integral.
+\[
+I = \int_{0}^{1} x^4 (1 - \sqrt{x})^5 \, dx = \int_{0}^{1} (u^2)^4 (1 - u)^5 (2u \, du)
+\]
+\[
+= 2 \int_{0}^{1} u^8 (1 - u)^5 u \, du = 2 \int_{0}^{1} u^9 (1 - u)^5 \, du
+\]
+
+Step 3: Relate to the Beta function.
+The definition of the Beta function is:
+\[
+B(p, q) = \int_{0}^{1} u^{p-1} (1-u)^{q-1} \, du
+\]
+Comparing this with our integral:
+\[
+p - 1 = 9 \implies p = 10
+\]
+\[
+q - 1 = 5 \implies q = 6
+\]
+So,
+\[
+I = 2 B(10, 6)
+\]
+
+Step 4: Evaluate using the relation $B(p, q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$.
+\[
+I = 2 \frac{\Gamma(10)\Gamma(6)}{\Gamma(16)}
+\]
+Since $p$ and $q$ are positive integers, $\Gamma(k) = (k-1)!$:
+\[
+I = 2 \frac{9! \cdot 5!}{15!} = 2 \frac{9! \cdot 120}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9!}
+\]
+Simplifying the terms:
+\[
+I = 2 \frac{120}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10} = \frac{240}{3603600} = \frac{1}{15015}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{1}{15015}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q8a
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q8(a)}
+
+Question:
+Evaluate the whole length of the asteroid $x^{\frac{2}{3}} + y^{\frac{2}{3}} = a^{\frac{2}{3}}$. [L5; CLO9]
+
+Solution:
+Step 1: Set up parametric representation of the astroid.
+The equation $x^{\frac{2}{3}} + y^{\frac{2}{3}} = a^{\frac{2}{3}}$ can be parameterized as:
+\[
+x = a \cos^3 t, \quad y = a \sin^3 t \quad \text{for } t \in [0, 2\pi]
+\]
+
+Step 2: Utilize symmetry.
+The astroid is symmetric with respect to both axes. Therefore, the total arc length $L$ is four times the length of the arc in the first quadrant, where $t \in [0, \frac{\pi}{2}]$:
+\[
+L = 4 \int_{0}^{\frac{\pi}{2}} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} \, dt
+\]
+
+Step 3: Differentiate $x$ and $y$ with respect to $t$.
+\[
+\frac{dx}{dt} = -3a \cos^2 t \sin t
+\]
+\[
+\frac{dy}{dt} = 3a \sin^2 t \cos t
+\]
+
+Step 4: Compute the arc length element $ds$.
+\[
+\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 = 9a^2 \cos^4 t \sin^2 t + 9a^2 \sin^4 t \cos^2 t
+\]
+\[
+= 9a^2 \sin^2 t \cos^2 t (\cos^2 t + \sin^2 t) = 9a^2 \sin^2 t \cos^2 t
+\]
+Taking the square root for $t \in [0, \frac{\pi}{2}]$ (where both sine and cosine are non-negative):
+\[
+\sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} = 3a \sin t \cos t
+\]
+
+Step 5: Integrate to find the total length.
+\[
+L = 4 \int_{0}^{\frac{\pi}{2}} 3a \sin t \cos t \, dt = 6a \int_{0}^{\frac{\pi}{2}} 2\sin t \cos t \, dt = 6a \int_{0}^{\frac{\pi}{2}} \sin 2t \, dt
+\]
+\[
+= 6a \left[ -\frac{\cos 2t}{2} \right]_{0}^{\frac{\pi}{2}} = -3a \left[ \cos \pi - \cos 0 \right] = -3a \left[ -1 - 1 \right] = 6a
+\]
+
+Final Answer:
+\[
+\boxed{6a}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse24-final-secb-q8b
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q8(b)}
+
+Question:
+Show that the volume of the solid obtained by revolving the ellipse $\frac{x^2}{25} + \frac{y^2}{16} = 1$ about the $y$-axis is $\frac{400\pi}{3}$. [L2; CLO9]
+
+Solution:
+Step 1: Set up the formula for volume of revolution.
+The volume $V$ of a solid generated by revolving a curve about the $y$-axis from $y = c$ to $y = d$ is given by:
+\[
+V = \pi \int_{c}^{d} x^2 \, dy
+\]
+
+Step 2: Find the integration boundaries for $y$.
+The ellipse intersects the $y$-axis when $x = 0$:
+\[
+\frac{y^2}{16} = 1 \implies y = \pm 4
+\]
+Thus, the boundaries of integration are $c = -4$ and $d = 4$.
+
+Step 3: Express $x^2$ in terms of $y$.
+From the equation of the ellipse:
+\[
+\frac{x^2}{25} = 1 - \frac{y^2}{16} \implies x^2 = 25 \left( 1 - \frac{y^2}{16} \right)
+\]
+
+Step 4: Compute the volume integral.
+\[
+V = \pi \int_{-4}^{4} 25 \left( 1 - \frac{y^2}{16} \right) \, dy
+\]
+Since the integrand is an even function, we can simplify using symmetry:
+\[
+V = 50\pi \int_{0}^{4} \left( 1 - \frac{y^2}{16} \right) \, dy
+\]
+\[
+V = 50\pi \left[ y - \frac{y^3}{48} \right]_{0}^{4}
+\]
+Evaluate at the limits:
+\[
+V = 50\pi \left[ \left(4 - \frac{64}{48}\right) - 0 \right] = 50\pi \left[ 4 - \frac{4}{3} \right] = 50\pi \left[ \frac{8}{3} \right] = \frac{400\pi}{3}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{400\pi}{3}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

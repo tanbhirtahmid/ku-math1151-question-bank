@@ -87,6 +87,10 @@ An inline script in `<head>` sets `data-theme` from `localStorage` before the fi
 - Create a new question object with proper metadata.
 - **Append** the new object to the `questions` array in `data/questions.js`.
 - Update the `id` following the convention: `{discipline}{batch}-{examType}{examNumber}-q{number}`.
+- **Special Functions Tagging**:
+  - For questions involving Beta functions: `topics: ["Definite Integration", "Beta Function"]`.
+  - For Gamma functions: `topics: ["Definite Integration", "Gamma Function"]`.
+  - For both or relationships: `topics: ["Definite Integration", "Beta-Gamma Function"]`.
 
 ### 3. Deployment
 - Run `./update-version.sh` to update cache-busting strings in `index.html`.

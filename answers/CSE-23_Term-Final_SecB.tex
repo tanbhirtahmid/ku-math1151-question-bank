@@ -1,0 +1,823 @@
+% FILE: CSE-23_TermFinal.tex
+
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+
+% Set default/Latin font to Sans Serif in the main (rm) slot
+\babelfont{rm}{Noto Sans}
+
+% --- EXTRA PACKAGES FOR MATHEMATICS AND FORMATTING ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q5a
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Easy
+% length=Short
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q5(a)}
+
+Question:
+What is anti-derivative? Find a function $f(x)$ such that $f''(x) = x + \cos x$ where $f(0) = 1$ and $f'(0) = 2$. [Marks: 04]
+
+Solution:
+Step 1: Define anti-derivative.
+An antiderivative of a function $f(x)$ on an interval $I$ is a differentiable function $F(x)$ whose derivative is equal to the original function $f(x)$ for all $x \in I$. That is:
+\[
+F'(x) = f(x) \quad \text{for all } x \in I
+\]
+
+Step 2: Find $f'(x)$ by integrating $f''(x)$.
+Given the second derivative:
+\[
+f''(x) = x + \cos x
+\]
+Integrating both sides once with respect to $x$ gives:
+\[
+f'(x) = \int (x + \cos x) \, dx = \frac{x^2}{2} + \sin x + C_1
+\]
+where $C_1$ is an arbitrary constant of integration.
+
+Step 3: Use the initial condition $f'(0) = 2$ to find $C_1$.
+\[
+f'(0) = \frac{0^2}{2} + \sin(0) + C_1 = 2 \implies C_1 = 2
+\]
+Thus, the first derivative is:
+\[
+f'(x) = \frac{x^2}{2} + \sin x + 2
+\]
+
+Step 4: Find $f(x)$ by integrating $f'(x)$.
+Integrating $f'(x)$ with respect to $x$:
+\[
+f(x) = \int \left( \frac{x^2}{2} + \sin x + 2 \right) \, dx = \frac{x^3}{6} - \cos x + 2x + C_2
+\]
+where $C_2$ is another constant of integration.
+
+Step 5: Use the initial condition $f(0) = 1$ to find $C_2$.
+\[
+f(0) = \frac{0^3}{6} - \cos(0) + 2(0) + C_2 = 1 \implies -1 + C_2 = 1 \implies C_2 = 2
+\]
+Therefore, the function is:
+\[
+f(x) = \frac{x^3}{6} - \cos x + 2x + 2
+\]
+
+Final Answer:
+\[
+\boxed{f(x) = \frac{x^3}{6} - \cos x + 2x + 2}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q5b
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5b
+% topic=Indefinite Integration
+% subtopic=Reduction Formula
+% difficulty=Medium
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q5(b)}
+
+Question:
+Obtain the reduction formula for $\int \cos^n x \, dx$ and hence deduce the integral $\int_{0}^{\frac{\pi}{2}} \cos^9 x \, dx$. [Marks: 06]
+
+Solution:
+Step 1: Obtain the reduction formula.
+Let $J_n = \int \cos^n x \, dx$. Rewrite the integrand:
+\[
+J_n = \int \cos^{n-1} x \cdot \cos x \, dx
+\]
+Apply integration by parts: $\int u \, dv = uv - \int v \, du$.
+Let $u = \cos^{n-1} x \implies du = -(n-1)\cos^{n-2} x \sin x \, dx$.
+Let $dv = \cos x \, dx \implies v = \sin x$.
+Applying the integration by parts formula:
+\[
+J_n = \cos^{n-1} x \sin x - \int \sin x \cdot \left[ -(n-1)\cos^{n-2} x \sin x \right] \, dx
+\]
+\[
+J_n = \cos^{n-1} x \sin x + (n-1) \int \cos^{n-2} x \sin^2 x \, dx
+\]
+Substitute $\sin^2 x = 1 - \cos^2 x$:
+\[
+J_n = \cos^{n-1} x \sin x + (n-1) \int \cos^{n-2} x (1 - \cos^2 x) \, dx
+\]
+\[
+J_n = \cos^{n-1} x \sin x + (n-1) \int \cos^{n-2} x \, dx - (n-1) \int \cos^n x \, dx
+\]
+Using our notation $J_n$:
+\[
+J_n = \cos^{n-1} x \sin x + (n-1) J_{n-2} - (n-1) J_n
+\]
+Rearranging and grouping $J_n$ terms:
+\[
+J_n + (n-1) J_n = \cos^{n-1} x \sin x + (n-1) J_{n-2} \implies n J_n = \cos^{n-1} x \sin x + (n-1) J_{n-2}
+\]
+Thus, the reduction formula is:
+\[
+J_n = \frac{\cos^{n-1} x \sin x}{n} + \frac{n-1}{n} J_{n-2}
+\]
+
+Step 2: Adapt the reduction formula to the definite integral $I_n = \int_{0}^{\frac{\pi}{2}} \cos^n x \, dx$.
+\[
+I_n = \left[ \frac{\cos^{n-1} x \sin x}{n} \right]_{0}^{\frac{\pi}{2}} + \frac{n-1}{n} I_{n-2}
+\]
+Since $\cos(\frac{\pi}{2}) = 0$ (for $n \ge 2$) and $\sin(0) = 0$, the boundary term evaluates to $0$:
+\[
+I_n = \frac{n-1}{n} I_{n-2}
+\]
+
+Step 3: Evaluate $I_9 = \int_{0}^{\frac{\pi}{2}} \cos^9 x \, dx$.
+Applying the recurrence relation repeatedly:
+\[
+I_9 = \frac{8}{9} I_7 = \frac{8}{9} \left( \frac{6}{7} I_5 \right) = \frac{8}{9} \cdot \frac{6}{7} \cdot \frac{4}{5} I_3 = \frac{8}{9} \cdot \frac{6}{7} \cdot \frac{4}{5} \cdot \frac{2}{3} I_1
+\]
+Compute the base case $I_1$:
+\[
+I_1 = \int_{0}^{\frac{\pi}{2}} \cos x \, dx = \left[ \sin x \right]_{0}^{\frac{\pi}{2}} = \sin\left(\frac{\pi}{2}\right) - \sin(0) = 1
+\]
+Therefore,
+\[
+I_9 = \frac{8 \cdot 6 \cdot 4 \cdot 2}{9 \cdot 7 \cdot 5 \cdot 3} \cdot 1 = \frac{384}{945} = \frac{128}{315}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{128}{315}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q6a
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q6(a)}
+
+Question:
+State and prove the fundamental theorem of calculus. [Marks: 04]
+
+Solution:
+Step 1: State the Fundamental Theorem of Calculus (FTC).
+The Fundamental Theorem of Calculus consists of two parts:
+
+**Part 1:** If $f$ is continuous on the closed interval $[a, b]$, then the function $g$ defined by:
+\[
+g(x) = \int_{a}^{x} f(t) \, dt \quad a \le x \le b
+\]
+is continuous on $[a, b]$, differentiable on $(a, b)$, and its derivative is:
+\[
+g'(x) = f(x)
+\]
+
+**Part 2:** If $f$ is continuous on $[a, b]$, and $F$ is any antiderivative of $f$ (so that $F'(x) = f(x)$), then:
+\[
+\int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\]
+
+Step 2: Prove Part 1 of the theorem.
+By the definition of the derivative:
+\[
+g'(x) = \lim_{h \to 0} \frac{g(x+h) - g(x)}{h}
+\]
+Substituting the definition of $g(x)$:
+\[
+g(x+h) - g(x) = \int_{a}^{x+h} f(t) \, dt - \int_{a}^{x} f(t) \, dt = \int_{x}^{x+h} f(t) \, dt
+\]
+For $h \ne 0$, we have:
+\[
+\frac{g(x+h) - g(x)}{h} = \frac{1}{h} \int_{x}^{x+h} f(t) \, dt
+\]
+By the Mean Value Theorem for Integrals, if $f$ is continuous on $[x, x+h]$, there exists a number $c$ in this interval such that:
+\[
+\int_{x}^{x+h} f(t) \, dt = f(c) h
+\]
+Thus:
+\[
+\frac{g(x+h) - g(x)}{h} = \frac{1}{h} (f(c) h) = f(c)
+\]
+Taking the limit as $h \to 0$, the interval $[x, x+h]$ shrinks to the single point $x$, forcing $c \to x$. Since $f$ is continuous, we get:
+\[
+g'(x) = \lim_{h \to 0} f(c) = f(x)
+\]
+This completes the proof of Part 1.
+
+Step 3: Prove Part 2 of the theorem.
+Let $g(x) = \int_{a}^{x} f(t) \, dt$. From Part 1, we know that $g'(x) = f(x)$.
+If $F$ is any other antiderivative of $f$, then $F'(x) = f(x) = g'(x)$.
+Thus, $g(x)$ and $F(x)$ differ by a constant $C$:
+\[
+g(x) = F(x) + C \quad \text{for } a \le x \le b
+\]
+To find $C$, evaluate this equation at $x = a$:
+\[
+g(a) = F(a) + C \implies \int_{a}^{a} f(t) \, dt = F(a) + C \implies 0 = F(a) + C \implies C = -F(a)
+\]
+Substitute $C$ back into the relation:
+\[
+g(x) = F(x) - F(a)
+\]
+Now evaluate at $x = b$:
+\[
+g(b) = F(b) - F(a) \implies \int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\]
+This completes the proof of Part 2.
+
+Final Answer:
+\[
+\boxed{\text{FTC Part 1: } \frac{d}{dx}\int_a^x f(t)dt = f(x); \text{ Part 2: } \int_a^b f(x)dx = F(b)-F(a). \text{ Proved using MVT for integrals and antiderivatives.}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q6b
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q6(b)}
+
+Question:
+Evaluate the integral $\int_{2}^{3} x^2 \, dx$ as the limit of a sum. [Marks: 03]
+
+Solution:
+Step 1: Set up the limit of a sum definition of a definite integral.
+The definition of the definite integral as the limit of a Riemann sum is:
+\[
+\int_{a}^{b} f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(a + i \Delta x) \Delta x
+\]
+where $a = 2$, $b = 3$, $f(x) = x^2$, and:
+\[
+\Delta x = \frac{b-a}{n} = \frac{3-2}{n} = \frac{1}{n}
+\]
+The evaluation points are:
+\[
+x_i = a + i \Delta x = 2 + \frac{i}{n}
+\]
+
+Step 2: Express the function at the evaluation points.
+\[
+f(x_i) = \left( 2 + \frac{i}{n} \right)^2 = 4 + \frac{4i}{n} + \frac{i^2}{n^2}
+\]
+
+Step 3: Write down the summation expression.
+\[
+S_n = \sum_{i=1}^{n} \left( 4 + \frac{4i}{n} + \frac{i^2}{n^2} \right) \frac{1}{n} = \frac{4}{n} \sum_{i=1}^{n} 1 + \frac{4}{n^2} \sum_{i=1}^{n} i + \frac{1}{n^3} \sum_{i=1}^{n} i^2
+\]
+Using the standard summation formulas:
+\[
+\sum_{i=1}^{n} 1 = n, \quad \sum_{i=1}^{n} i = \frac{n(n+1)}{2}, \quad \sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}
+\]
+Substitute these into the expression:
+\[
+S_n = \frac{4}{n}(n) + \frac{4}{n^2} \left[ \frac{n(n+1)}{2} \right] + \frac{1}{n^3} \left[ \frac{n(n+1)(2n+1)}{6} \right]
+\]
+\[
+S_n = 4 + 2 \left( 1 + \frac{1}{n} \right) + \frac{1}{6} \left( 1 + \frac{1}{n} \right) \left( 2 + \frac{1}{n} \right)
+\]
+
+Step 4: Take the limit of $S_n$ as $n \to \infty$.
+\[
+\lim_{n \to \infty} S_n = 4 + 2(1) + \frac{1}{6}(1)(2) = 4 + 2 + \frac{1}{3} = 6 + \frac{1}{3} = \frac{19}{3}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{19}{3}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q6c
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6c
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q6(c)}
+
+Question:
+Prove that $\int_{0}^{\pi} \frac{x \, dx}{1 + \sin x} = \pi$. [Marks: 03]
+
+Solution:
+Step 1: Set up the integral and apply the definite integral property.
+Let:
+\[
+I = \int_{0}^{\pi} \frac{x \, dx}{1 + \sin x} \quad \text{--- (1)}
+\]
+Using the property $\int_{a}^{b} f(x) \, dx = \int_{a}^{b} f(a+b-x) \, dx$:
+\[
+I = \int_{0}^{\pi} \frac{(\pi - x) \, dx}{1 + \sin(\pi - x)} = \int_{0}^{\pi} \frac{(\pi - x) \, dx}{1 + \sin x} \quad \text{--- (2)}
+\]
+
+Step 2: Add equations (1) and (2).
+\[
+2I = \int_{0}^{\pi} \frac{x + \pi - x}{1 + \sin x} \, dx = \pi \int_{0}^{\pi} \frac{dx}{1 + \sin x}
+\]
+
+Step 3: Evaluate the integral $J = \int_{0}^{\pi} \frac{dx}{1 + \sin x}$.
+To handle this strictly and avoid the discontinuity of standard trigonometric transformations at $\frac{\pi}{2}$, we use Weierstrass substitution ($t = \tan \frac{x}{2}$):
+\[
+dx = \frac{2 \, dt}{1 + t^2}, \quad \sin x = \frac{2t}{1 + t^2}
+\]
+Determine the new boundaries of integration:
+\begin{itemize}
+    \item When $x = 0 \implies t = \tan(0) = 0$.
+    \item When $x \to \pi \implies t \to \infty$.
+\end{itemize}
+Substitute these into the integral:
+\[
+J = \int_{0}^{\infty} \frac{\frac{2 \, dt}{1 + t^2}}{1 + \frac{2t}{1 + t^2}} = \int_{0}^{\infty} \frac{2 \, dt}{t^2 + 2t + 1} = \int_{0}^{\infty} \frac{2 \, dt}{(t + 1)^2}
+\]
+Evaluate the improper integral:
+\[
+J = \left[ -\frac{2}{t + 1} \right]_{0}^{\infty} = 0 - (-2) = 2
+\]
+
+Step 4: Solve for $I$.
+Since $2I = \pi J$:
+\[
+2I = \pi (2) \implies I = \pi \quad \text{(Proved)}
+\]
+
+Final Answer:
+\[
+\boxed{\pi}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q7a
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q7(a)}
+
+Question:
+Define Beta and Gamma functions. Prove that $\beta(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}$. [Marks: 04]
+
+Solution:
+Step 1: Define Beta and Gamma functions.
+1. **Gamma Function ($\Gamma(n)$):** For $n > 0$, the Gamma function is defined as:
+\[
+\Gamma(n) = \int_{0}^{\infty} x^{n-1} e^{-x} \, dx
+\]
+2. **Beta Function ($\beta(m, n)$):** For $m, n > 0$, the Beta function is defined as:
+\[
+\beta(m, n) = \int_{0}^{1} x^{m-1} (1-x)^{n-1} \, dx
+\]
+
+Step 2: Express $\Gamma(m)$ and $\Gamma(n)$ in a substituted double-integral format.
+Using the substitution $x = u^2 \implies dx = 2u \, du$:
+\[
+\Gamma(m) = 2 \int_{0}^{\infty} u^{2m-1} e^{-u^2} \, du \quad \text{--- (1)}
+\]
+Similarly, for $\Gamma(n)$ using $y = v^2$:
+\[
+\Gamma(n) = 2 \int_{0}^{\infty} v^{2n-1} e^{-v^2} \, dv \quad \text{--- (2)}
+\]
+
+Step 3: Multiply equations (1) and (2) and switch to polar coordinates.
+\[
+\Gamma(m)\Gamma(n) = 4 \int_{0}^{\infty} \int_{0}^{\infty} u^{2m-1} v^{2n-1} e^{-(u^2 + v^2)} \, du \, dv
+\]
+Let $u = r \cos \theta$, $v = r \sin \theta$. The area element becomes $du \, dv = r \, dr \, d\theta$, and boundaries are $r \in [0, \infty)$, $\theta \in [0, \frac{\pi}{2}]$:
+\[
+\Gamma(m)\Gamma(n) = 4 \int_{0}^{\frac{\pi}{2}} \int_{0}^{\infty} (r \cos \theta)^{2m-1} (r \sin \theta)^{2n-1} e^{-r^2} r \, dr \, d\theta
+\]
+\[
+= 2 \left( 2 \int_{0}^{\frac{\pi}{2}} \cos^{2m-1}\theta \sin^{2n-1}\theta \, d\theta \right) \left( \int_{0}^{\infty} r^{2(m+n)-1} e^{-r^2} \, dr \right)
+\]
+
+Step 4: Connect the expressions back to the functions.
+Recall the trigonometric form of the Beta function:
+\[
+\beta(m, n) = 2 \int_{0}^{\frac{\pi}{2}} \sin^{2n-1}\theta \cos^{2m-1}\theta \, d\theta
+\]
+Also, let $t = r^2 \implies dt = 2r \, dr$ in the radial integral:
+\[
+\int_{0}^{\infty} r^{2(m+n)-1} e^{-r^2} \, dr = \frac{1}{2} \int_{0}^{\infty} t^{(m+n)-1} e^{-t} \, dt = \frac{1}{2} \Gamma(m+n)
+\]
+Substitute these into our product formula:
+\[
+\Gamma(m)\Gamma(n) = 2 \left[ \beta(m, n) \right] \left[ \frac{1}{2} \Gamma(m+n) \right] = \beta(m, n) \Gamma(m+n)
+\]
+Thus:
+\[
+\beta(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)} \quad \text{(Proved)}
+\]
+
+Final Answer:
+\[
+\boxed{\beta(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q7b
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q7(b)}
+
+Question:
+Evaluate $\int_{0}^{1} x^4 (1 - \sqrt{x})^5 \, dx$ by using gamma-beta function. [Marks: 03]
+
+Solution:
+Step 1: Simplify the integral using substitution.
+Let $u = \sqrt{x} \implies x = u^2$.
+Differentiating:
+\[
+dx = 2u \, du
+\]
+The integration boundaries remain $0$ and $1$:
+\begin{itemize}
+    \item When $x = 0 \implies u = 0$.
+    \item When $x = 1 \implies u = 1$.
+\end{itemize}
+
+Step 2: Substitute into the integral.
+\[
+I = \int_{0}^{1} x^4 (1 - \sqrt{x})^5 \, dx = \int_{0}^{1} (u^2)^4 (1 - u)^5 (2u \, du)
+\]
+\[
+= 2 \int_{0}^{1} u^8 (1 - u)^5 u \, du = 2 \int_{0}^{1} u^9 (1 - u)^5 \, du
+\]
+
+Step 3: Relate to the Beta function definition.
+The definition of the Beta function is $\beta(p, q) = \int_{0}^{1} u^{p-1} (1-u)^{q-1} \, du$.
+Here:
+\[
+p - 1 = 9 \implies p = 10
+\]
+\[
+q - 1 = 5 \implies q = 6
+\]
+So,
+\[
+I = 2 \beta(10, 6)
+\]
+
+Step 4: Evaluate using the Beta-Gamma relation.
+\[
+I = 2 \frac{\Gamma(10)\Gamma(6)}{\Gamma(16)} = 2 \frac{9! \cdot 5!}{15!} = 2 \frac{9! \cdot 120}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9!}
+\]
+Simplifying the fractions:
+\[
+I = 2 \frac{120}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10} = \frac{240}{3603600} = \frac{1}{15015}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{1}{15015}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q7c
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7c
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Easy
+% length=Short
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q7(c)}
+
+Question:
+Determine whether the integral $\int_{1}^{\infty} \frac{dx}{x^2 + 1}$ converges or diverges. [Marks: 03]
+
+Solution:
+Step 1: Set up the limit for the improper integral.
+By the definition of an improper integral with an infinite upper bound:
+\[
+\int_{1}^{\infty} \frac{dx}{x^2 + 1} = \lim_{b \to \infty} \int_{1}^{b} \frac{dx}{x^2 + 1}
+\]
+
+Step 2: Integrate using the standard inverse tangent antiderivative.
+\[
+\lim_{b \to \infty} \left[ \tan^{-1} x \right]_{1}^{b} = \lim_{b \to \infty} \left( \tan^{-1} b - \tan^{-1} 1 \right)
+\]
+
+Step 3: Evaluate the limits.
+We know that:
+\[
+\lim_{b \to \infty} \tan^{-1} b = \frac{\pi}{2}
+\]
+\[
+\tan^{-1} 1 = \frac{\pi}{4}
+\]
+Thus:
+\[
+\int_{1}^{\infty} \frac{dx}{x^2 + 1} = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}
+\]
+Since the limit yields a finite value, the improper integral converges.
+
+Final Answer:
+\[
+\boxed{\text{The improper integral converges to } \frac{\pi}{4}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q8a
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q8(a)}
+
+Question:
+Sketch the region enclosed by the curves $y = x^2$ and $y = \sqrt{x}$, $x = \frac{1}{4}$, $x = 1$ and find its area. [Marks: 05]
+
+Solution:
+Step 1: Analyze the curve boundary relationships on the given interval.
+The curves $y = \sqrt{x}$ and $y = x^2$ intersect at $(0, 0)$ and $(1, 1)$.
+On the interval $[\frac{1}{4}, 1]$, we have:
+\[
+\sqrt{x} \ge x^2
+\]
+Thus, the upper boundary of the region is $y_{\text{top}} = \sqrt{x}$ and the lower boundary is $y_{\text{bottom}} = x^2$.
+
+Step 2: Set up the integral to find the area.
+The area $A$ of the region is:
+\[
+A = \int_{\frac{1}{4}}^{1} \left( \sqrt{x} - x^2 \right) \, dx = \int_{\frac{1}{4}}^{1} \left( x^{\frac{1}{2}} - x^2 \right) \, dx
+\]
+
+Step 3: Integrate and evaluate.
+\[
+A = \left[ \frac{2}{3} x^{\frac{3}{2}} - \frac{x^3}{3} \right]_{\frac{1}{4}}^{1}
+\]
+Evaluate at the upper limit $x = 1$:
+\[
+V(1) = \frac{2}{3}(1) - \frac{1}{3} = \frac{1}{3}
+\]
+Evaluate at the lower limit $x = \frac{1}{4}$:
+\[
+V\left(\frac{1}{4}\right) = \frac{2}{3}\left(\frac{1}{4}\right)^{\frac{3}{2}} - \frac{1}{3}\left(\frac{1}{4}\right)^3 = \frac{2}{3}\left(\frac{1}{8}\right) - \frac{1}{192} = \frac{1}{12} - \frac{1}{192} = \frac{16 - 1}{192} = \frac{15}{192} = \frac{5}{64}
+\]
+Subtract the evaluations:
+\[
+A = \frac{1}{3} - \frac{5}{64} = \frac{64 - 15}{192} = \frac{49}{192}
+\]
+
+Step 4: Sketch description.
+The region is bounded above by the curve $y = \sqrt{x}$ (which curves upward from $(1/4, 1/2)$ to $(1,1)$) and below by the parabola $y = x^2$ (which opens upward from $(1/4, 1/16)$ to $(1,1)$), enclosed on the left by the vertical line $x = 1/4$ and closed on the right at their intersection point $(1,1)$.
+
+Final Answer:
+\[
+\boxed{\frac{49}{192}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse23-final-secb-q8b
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q8(b)}
+
+Question:
+Find the volume of the solid formed by revolving about the x-axis of a loop of the curve $(x - 4a)y^2 = ax(x - 3a)$. [Marks: 05]
+
+Solution:
+Step 1: Determine the boundaries of the loop.
+Rewrite the curve's equation:
+\[
+y^2 = \frac{ax(x - 3a)}{x - 4a}
+\]
+For $y$ to have real values, we must have $y^2 \ge 0$. Assuming $a > 0$, let's analyze the sign of the expression:
+\begin{itemize}
+    \item When $x < 0 \implies y^2 = \frac{(-)(-)}{(-)} < 0$ (no curve).
+    \item When $0 \le x \le 3a \implies y^2 = \frac{(+)(-)}{(-)} \ge 0$ (curve exists, forms a loop).
+    \item When $3a < x < 4a \implies y^2 = \frac{(+)(+)}{(-)} < 0$ (no curve).
+    \item When $x > 4a \implies y^2 = \frac{(+)(+)}{(+)} > 0$ (curve exists, extends infinitely).
+\end{itemize}
+Thus, the loop of the curve is defined on the interval $x \in [0, 3a]$.
+
+Step 2: Set up the volume of revolution about the $x$-axis.
+The formula for the volume of revolution about the $x$-axis is:
+\[
+V = \pi \int_{0}^{3a} y^2 \, dx = \pi \int_{0}^{3a} \frac{ax(x-3a)}{x-4a} \, dx = \pi a \int_{0}^{3a} \frac{x^2 - 3ax}{x-4a} \, dx
+\]
+
+Step 3: Simplify the integrand using algebraic long division.
+Divide $x^2 - 3ax$ by $x - 4a$:
+\[
+x^2 - 3ax = (x - 4a)(x + a) + 4a^2
+\]
+Thus:
+\[
+\frac{x^2 - 3ax}{x - 4a} = x + a + \frac{4a^2}{x - 4a}
+\]
+
+Step 4: Integrate and evaluate.
+\[
+V = \pi a \int_{0}^{3a} \left( x + a + \frac{4a^2}{x - 4a} \right) \, dx
+\]
+Evaluate the polynomial term integration:
+\[
+\int_{0}^{3a} (x + a) \, dx = \left[ \frac{x^2}{2} + ax \right]_{0}^{3a} = \frac{9a^2}{2} + 3a^2 = \frac{15a^2}{2}
+\]
+Evaluate the rational term integration:
+\[
+\int_{0}^{3a} \frac{4a^2}{x-4a} \, dx = 4a^2 \left[ \log |x - 4a| \right]_{0}^{3a} = 4a^2 \left( \log|a| - \log|4a| \right) = 4a^2 \log\left(\frac{1}{4}\right) = -8a^2 \log 2
+\]
+Combine both parts:
+\[
+V = \pi a \left( \frac{15a^2}{2} - 8a^2 \log 2 \right) = \pi a^3 \left( \frac{15}{2} - 8\log 2 \right)
+\]
+
+Final Answer:
+\[
+\boxed{\pi a^3 \left( \frac{15}{2} - 8\log 2 \right)}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

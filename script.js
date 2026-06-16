@@ -29,8 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
     "Tangent & Normal", "Maxima & Minima", "Rolle's Theorem", 
     "Mean Value Theorem", "Curve Sketching", "Substitution", 
     "Integration by Parts", "Partial Fractions", "Trigonometric Integrals", 
-    "Reduction Formula", "Variable Separable", "Homogeneous", 
-    "Linear Differential Equations", "Euler's Theorem", "Partial Derivatives", 
+    "Reduction Formula", "Definite Integration", "Beta Function", 
+    "Gamma Function", "Beta-Gamma Function", "Variable Separable", 
+    "Homogeneous", "Linear Differential Equations", "Euler's Theorem", "Partial Derivatives", 
     "Taylor Series", "Maclaurin Series"
   ];
 
@@ -195,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
               ${renderFilterDropdown('batch', 'Batch', ['All', ...new Set(questions.map(q => q.batch))].sort().reverse())}
               ${renderFilterDropdown('topic', 'Topic', ['All', ...topicTaxonomy])}
               ${renderFilterDropdown('difficulty', 'Difficulty', ['All', 'Easy', 'Medium', 'Hard'])}
-              ${renderFilterDropdown('examType', 'Exam Type', ['All', 'CT', 'TERM'])}
+              ${renderFilterDropdown('examType', 'Exam Type', ['All', 'CT', 'Term Final'])}
               <div>
                 <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Section</label>
                 <select data-filter="section" class="filter-select w-full bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-2.5">
@@ -203,6 +204,25 @@ document.addEventListener("DOMContentLoaded", function () {
                   <option value="A" ${state.filters.section === 'A' ? 'selected' : ''}>Section A (Diff)</option>
                   <option value="B" ${state.filters.section === 'B' ? 'selected' : ''}>Section B (Int)</option>
                 </select>
+              </div>
+
+              <!-- Quick Access Section -->
+              <div class="pt-4 border-t border-slate-100">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Special Functions</h3>
+                <div class="space-y-2">
+                  <button class="quick-filter-btn w-full text-left px-3 py-2 text-xs font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all flex items-center gap-2" data-topic="Beta Function">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                    Beta Function
+                  </button>
+                  <button class="quick-filter-btn w-full text-left px-3 py-2 text-xs font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all flex items-center gap-2" data-topic="Gamma Function">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    Gamma Function
+                  </button>
+                  <button class="quick-filter-btn w-full text-left px-3 py-2 text-xs font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all flex items-center gap-2" data-topic="Beta-Gamma Function">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                    Beta-Gamma Questions
+                  </button>
+                </div>
               </div>
               
               <button id="clear-filters" class="w-full py-2 text-sm font-semibold text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
@@ -225,6 +245,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.filter-select').forEach(select => {
       select.addEventListener('change', (e) => {
         state.filters[e.target.dataset.filter] = e.target.value;
+        applyFiltersAndRender();
+      });
+    });
+
+    document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const topic = e.currentTarget.dataset.topic;
+        state.filters.topic = topic;
         applyFiltersAndRender();
       });
     });

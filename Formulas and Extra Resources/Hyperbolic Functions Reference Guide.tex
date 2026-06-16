@@ -1,0 +1,240 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[a4paper, top=2.2cm, bottom=2.2cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{booktabs}
+\usepackage[most]{tcolorbox}
+
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+\babelfont{rm}{Noto Sans}
+
+% Ensure common hyperbolic operators that are not default are defined %
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+% Designing vibrant colors matching the visual notes' style
+\definecolor{keygold}{RGB}{218, 165, 32}
+\definecolor{warnred}{RGB}{204, 51, 51}
+\definecolor{tipblue}{RGB}{41, 128, 185}
+\definecolor{derivgreen}{RGB}{39, 174, 96}
+\definecolor{darkbg}{RGB}{245, 246, 248}
+
+% Custom boxes configured with standard, fully compatible spacing parameters
+\newtcolorbox{keyconcept}[1]{
+  colback=darkbg,
+  colframe=keygold,
+  fonttitle=\bfseries\color{white},
+  title={Key Concept: #1},
+  arc=5pt,
+  boxrule=1.5pt,
+  boxsep=3pt,
+  left=8pt,
+  right=8pt,
+  top=8pt,
+  bottom=8pt
+}
+
+\newtcolorbox{warningnote}[1]{
+  colback=darkbg,
+  colframe=warnred,
+  fonttitle=\bfseries\color{white},
+  title={Warning: #1},
+  arc=5pt,
+  boxrule=1.5pt,
+  boxsep=3pt,
+  left=8pt,
+  right=8pt,
+  top=8pt,
+  bottom=8pt
+}
+
+\newtcolorbox{memtip}[1]{
+  colback=darkbg,
+  colframe=tipblue,
+  fonttitle=\bfseries\color{white},
+  title={Memorization Cue: #1},
+  arc=5pt,
+  boxrule=1.5pt,
+  boxsep=3pt,
+  left=8pt,
+  right=8pt,
+  top=8pt,
+  bottom=8pt
+}
+
+\usepackage{hyperref}
+
+\title{\textbf{Hyperbolic Functions: Complete Reference \& Memorization Guide}}
+\author{Calculus Study Notes Series}
+\date{\small Compiled with visual reference to \texttt{image\_fe6d01.png}, \texttt{image\_fe6ce5.png}, \texttt{image\_fe6cdf.png}, and \texttt{image\_f48f96.png}}
+
+\begin{document}
+
+\maketitle
+
+\hrule
+\vspace{0.4cm}
+
+\section{Foundations \& Core Identities}
+\label{sec:foundations}
+All properties of hyperbolic functions stem directly from their definitions as combinations of exponential functions. This section translates the layout of \texttt{image\_fe6d01.png}.
+
+\begin{keyconcept}{Core Definitions (Everything comes from this)}
+The two fundamental building blocks and their ratios:
+\begin{align*}
+    \sinh x &= \frac{e^x - e^{-x}}{2} \qquad\qquad \cosh x = \frac{e^x + e^{-x}}{2} \\[10pt]
+    \tanh x &= \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+\end{align*}
+The reciprocal functions are defined naturally:
+\[
+    \coth x = \frac{1}{\tanh x}, \qquad \sech x = \frac{1}{\cosh x}, \qquad \csch x = \frac{1}{\sinh x}
+\]
+\end{keyconcept}
+
+\begin{warningnote}{Fundamental Identity (MOST IMPORTANT)}
+Unlike standard trigonometry where $\sin^2 x + \cos^2 x = 1$, the fundamental hyperbolic identity uses a \textbf{subtraction} sign:
+\begin{equation*}
+    \cosh^2 x - \sinh^2 x = 1
+\end{equation*}
+\textbf{Crucial Tip:} Minus, not plus! This is the fundamental equation from which others are derived.
+\end{warningnote}
+
+\subsection{Derived Identities}
+By dividing the fundamental identity, we quickly obtain the remaining relations:
+\begin{itemize}
+    \item \textbf{Divide the main identity by $\cosh^2 x$:}
+    \[
+        1 - \tanh^2 x = \sech^2 x
+    \]
+    \item \textbf{Divide the main identity by $\sinh^2 x$:}
+    \[
+        \coth^2 x - 1 = \csch^2 x
+    \]
+\end{itemize}
+
+\begin{memtip}{Sign Rule for Derived Identities}
+Notice that when writing the derived terms with the transcendental function on the right, \textbf{all signs on the left side are negative} ($1 \mathbf{-} \tanh^2 x$ and $\coth^2 x \mathbf{-} 1$).
+\end{memtip}
+
+\newpage
+
+\section{Compound Angle Formulas}
+\label{sec:compound_angles}
+As represented in \texttt{image\_fe6ce5.png}, hyperbolic addition and subtraction formulas carry distinct patterns compared to circular trigonometric functions.
+
+\begin{keyconcept}{Addition Formulas}
+The compound sum formulas remain highly symmetrical:
+\begin{align*}
+    \sinh(a + b) &= \sinh a \cosh b + \cosh a \sinh b \\
+    \cosh(a + b) &= \cosh a \cosh b + \sinh a \sinh b \\
+    \tanh(a + b) &= \frac{\tanh a + \tanh b}{1 + \tanh a \tanh b}
+\end{align*}
+\end{keyconcept}
+
+\begin{keyconcept}{Subtraction Formulas}
+The subtraction variations preserve the corresponding signs:
+\begin{align*}
+    \sinh(a - b) &= \sinh a \cosh b - \cosh a \sinh b \\
+    \cosh(a - b) &= \cosh a \cosh b - \sinh a \sinh b \\
+    \tanh(a - b) &= \frac{\tanh a - \tanh b}{1 - \tanh a \tanh b}
+\end{align*}
+\end{keyconcept}
+
+\begin{memtip}{Addition vs. Subtraction Signs}
+\begin{itemize}
+    \item \textbf{Addition Formulas:} Notice that all signs on the right-hand sides are \textbf{positive} (\textit{all plus}). This differs from circular trig where $\cos(a+b)$ switches signs to negative!
+    \item \textbf{Subtraction Formulas:} Every operator on the right-hand sides switches to \textbf{negative} (\textit{all minus}).
+\end{itemize}
+\end{memtip}
+
+\section{Derivatives of Hyperbolic Functions}
+\label{sec:derivatives}
+This section matches the grouped system presented in \texttt{image\_fe6cdf.png}. These are often considered easier than standard trigonometric derivatives because of their clean groupings.
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{llp{7cm}}
+\toprule
+\textbf{Function} & \textbf{Derivative} & \textbf{Memorization Grouping} \\
+\midrule
+$\sinh x$ & $\dfrac{d}{dx}(\sinh x) = \cosh x$ & \textbf{Group 1: All Positive} \\
+$\cosh x$ & $\dfrac{d}{dx}(\cosh x) = \sinh x$ & No negative sign changes between the primary pair. \\
+\midrule
+$\tanh x$ & $\dfrac{d}{dx}(\tanh x) = \sech^2 x$ & \textbf{Group 2: Normal/Standard Type} \\
+$\coth x$ & $\dfrac{d}{dx}(\coth x) = -\csch^2 x$ & Directly mirrors the behavior of $\tan x$ and $\cot x$ derivatives. \\
+\midrule
+$\sech x$ & $\dfrac{d}{dx}(\sech x) = -\sech x \tanh x$ & \textbf{Group 3: All Negative} \\
+$\csch x$ & $\dfrac{d}{dx}(\csch x) = -\csch x \coth x$ & The reciprocal derivatives both yield negative outcomes. \\
+\bottomrule
+\end{tabular}
+\caption{Grouping breakdown of basic hyperbolic derivatives.}
+\end{table}
+
+\newpage
+
+\section{Derivatives of Inverse Hyperbolic Functions}
+\label{sec:inverse_derivatives}
+As visually systematized in \texttt{image\_f48f96.png}, organizing inverse derivatives in pairs makes them substantially easier to remember.
+
+\begin{keyconcept}{The Main Three (Most Important)}
+These are the highly tested derivatives that appear frequently in integration:
+\begin{align*}
+    \frac{d}{dx}\left(\sinh^{-1} x\right) &= \frac{1}{\sqrt{1 + x^2}} \\[8pt]
+    \frac{d}{dx}\left(\cosh^{-1} x\right) &= \frac{1}{\sqrt{x^2 - 1}} \qquad (x > 1) \\[8pt]
+    \frac{d}{dx}\left(\tanh^{-1} x\right) &= \frac{1}{1 - x^2} \qquad (|x| < 1)
+\end{align*}
+\end{keyconcept}
+
+\begin{keyconcept}{The Remaining Three}
+\begin{align*}
+    \frac{d}{dx}\left(\coth^{-1} x\right) &= \frac{1}{1 - x^2} \qquad (|x| > 1) \\[8pt]
+    \frac{d}{dx}\left(\sech^{-1} x\right) &= \frac{-1}{x\sqrt{1 - x^2}} \qquad (0 < x < 1) \\[8pt]
+    \frac{d}{dx}\left(\csch^{-1} x\right) &= \frac{-1}{|x|\sqrt{1 + x^2}} \qquad (x \neq 0)
+\end{align*}
+\end{keyconcept}
+
+\begin{memtip}{Inverse Derivative Patterns}
+Use these structural patterns to link the formulas in memory:
+\begin{itemize}
+    \item \textbf{Plus-Minus Difference (Primary):} For $\sinh^{-1}x$ and $\cosh^{-1}x$, the algebraic difference lies solely within the root of the denominator: $\sqrt{\mathbf{1 + x^2}}$ versus $\sqrt{\mathbf{x^2 - 1}}$.
+    \item \textbf{Identical Twin Pair:} The derivatives of $\tanh^{-1}x$ and $\coth^{-1}x$ are \textbf{algebraically identical}: both equal $\dfrac{1}{1-x^2}$. They are distinguished only by their respective domains ($|x| < 1$ for $\tanh^{-1}$ and $|x| > 1$ for $\coth^{-1}$).
+    \item \textbf{Plus-Minus Difference (Secondary):} For $\sech^{-1}x$ and $\csch^{-1}x$, both have negative numerators ($-1$), but their roots mirror the primary pair: $\sqrt{\mathbf{1 - x^2}}$ versus $\sqrt{\mathbf{1 + x^2}}$ (with an absolute value $|x|$ added to the outside of the cosecant root).
+\end{itemize}
+\end{memtip}
+
+\newpage
+
+\section{Supplemental Essentials (Added Value)}
+\label{sec:supplemental}
+To maximize the utility of this cheat sheet, here are the vital formulas missing from your raw images that link these topics together.
+
+\subsection{Logarithmic Forms of Inverse Functions}
+Since hyperbolic functions are defined in terms of $e^x$, their inverses can be expressed directly as natural logarithms:
+\begin{align*}
+    \sinh^{-1} x &= \ln\left(x + \sqrt{x^2 + 1}\right) \qquad \text{for all } x \\
+    \cosh^{-1} x &= \ln\left(x + \sqrt{x^2 - 1}\right) \qquad \text{for } x \geq 1 \\
+    \tanh^{-1} x &= \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right) \qquad \text{for } |x| < 1
+\end{align*}
+
+\subsection{Double-Angle Identities}
+Crucial for simplifying algebraic structures and reducing powers in integrals:
+\begin{align*}
+    \sinh(2x) &= 2\sinh x\cosh x \\
+    \cosh(2x) &= \cosh^2 x + \sinh^2 x = 2\cosh^2 x - 1 = 1 + 2\sinh^2 x
+\end{align}
+
+\subsection{Core Hyperbolic Integrals}
+These formulas complete the calculus loop for hyperbolic operations:
+\begin{align*}
+    \int \sinh x \, dx &= \cosh x + C \\
+    \int \cosh x \, dx &= \sinh x + C \\
+    \int \tanh x \, dx &= \ln(\cosh x) + C \\
+    \int \sech^2 x \, dx &= \tanh x + C \\
+    \int \frac{1}{\sqrt{x^2 + 1}} \, dx &= \sinh^{-1} x + C = \ln\left(x + \sqrt{x^2 + 1}\right) + C \\
+    \int \frac{1}{\sqrt{x^2 - 1}} \, dx &= \cosh^{-1} x + C = \ln\left(x + \sqrt{x^2 - 1}\right) + C
+\end{align}
+
+\end{document}

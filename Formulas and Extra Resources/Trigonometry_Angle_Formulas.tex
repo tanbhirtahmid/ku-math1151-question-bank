@@ -1,0 +1,132 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+
+\babelprovide[import, onchar=ids fonts]{english}
+
+% Set default Latin font to Sans Serif for clean, readable formulas
+\babelfont{rm}{Noto Sans}
+
+% --- ADDITIONAL PACKAGES ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+
+% Custom row height for the tables
+\renewcommand{\arraystretch}{1.6}
+
+\begin{document}
+
+% --- TITLE HEADER ---
+\begin{center}
+    {\LARGE \textbf{General Solutions to Trigonometric Equations}} \\[0.3cm]
+    {\large A Complete Reference Guide} \\[0.2cm]
+    \rule{\textwidth}{0.8pt}
+\end{center}
+
+\vspace{0.5cm}
+
+This document compiles the general formulas for solving basic trigonometric equations. In all formulas, $n$ represents an arbitrary integer, denoted by $n \in \mathbb{Z}$ (where $\mathbb{Z} = \{..., -3, -2, -1, 0, 1, 2, 3, ...\}$).
+
+\section{Definition of Principal Values ($\alpha$)}
+To find the general solution of a trigonometric equation, we first find the principal value $\alpha$ (the unique angle within a specified range that satisfies the equation):
+
+\begin{itemize}
+    \item \textbf{For $\sin\theta = a$:} $\alpha = \arcsin(a) \quad \text{where} \quad \alpha \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$
+    \item \textbf{For $\cos\theta = a$:} $\alpha = \arccos(a) \quad \text{where} \quad \alpha \in [0, \pi]$
+    \item \textbf{For $\tan\theta = a$:} $\alpha = \arctan(a) \quad \text{where} \quad \alpha \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$
+\end{itemize}
+
+\section{General Solutions for Primary Functions}
+For any real number $a$ within the appropriate domain of each function:
+
+\begin{enumerate}
+    \item \textbf{Sine Equation:}
+    $$\sin\theta = a \iff \theta = n\pi + (-1)^n \alpha, \quad n \in \mathbb{Z}$$
+    
+    \item \textbf{Cosine Equation:}
+    $$\cos\theta = a \iff \theta = 2n\pi \pm \alpha, \quad n \in \mathbb{Z}$$
+    
+    \item \textbf{Tangent Equation:}
+    $$\tan\theta = a \iff \theta = n\pi + \alpha, \quad n \in \mathbb{Z}$$
+\end{enumerate}
+
+\section{Special Cases ($0, 1, -1$)}
+When trigonometric equations equal $0$, $1$, or $-1$, their solutions simplify directly into elegant formulas without needing the $(-1)^n$ or $\pm$ terms.
+
+\begin{table}[htbp]
+\centering
+\caption{Special General Solutions for Primary Trigonometric Functions}
+\vspace{0.2cm}
+\begin{tabular}{p{4.5cm} p{10cm}}
+\toprule
+\textbf{Equation} & \textbf{General Solution} ($\theta$ for $n \in \mathbb{Z}$) \\
+\midrule
+$\boldsymbol{\sin\theta = 0}$ & $\theta = n\pi$ \\
+$\boldsymbol{\sin\theta = 1}$ & $\theta = 2n\pi + \dfrac{\pi}{2}$ \\
+$\boldsymbol{\sin\theta = -1}$ & $\theta = 2n\pi - \dfrac{\pi}{2} \quad \text{or} \quad 2n\pi + \dfrac{3\pi}{2}$ \\
+\midrule
+$\boldsymbol{\cos\theta = 0}$ & $\theta = n\pi + \dfrac{\pi}{2} \quad \text{or} \quad (2n + 1)\dfrac{\pi}{2}$ \\
+$\boldsymbol{\cos\theta = 1}$ & $\theta = 2n\pi$ \\
+$\boldsymbol{\cos\theta = -1}$ & $\theta = (2n + 1)\pi \quad \text{or} \quad 2n\pi + \pi$ \\
+\midrule
+$\boldsymbol{\tan\theta = 0}$ & $\theta = n\pi$ \\
+$\boldsymbol{\tan\theta = 1}$ & $\theta = n\pi + \dfrac{\pi}{4}$ \\
+$\boldsymbol{\tan\theta = -1}$ & $\theta = n\pi - \dfrac{\pi}{4}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\newpage
+
+\section{Reciprocal Trigonometric Functions}
+Because the reciprocal functions are directly related to the primary functions, their general solutions share the same structure under basic constraints ($a \neq 0$):
+
+\begin{enumerate}
+    \item \textbf{Cosecant Equation:}
+    $$\csc\theta = a \iff \sin\theta = \frac{1}{a} \iff \theta = n\pi + (-1)^n \arcsin\left(\frac{1}{a}\right), \quad n \in \mathbb{Z}$$
+    
+    \item \textbf{Secant Equation:}
+    $$\sec\theta = a \iff \cos\theta = \frac{1}{a} \iff \theta = 2n\pi \pm \arccos\left(\frac{1}{a}\right), \quad n \in \mathbb{Z}$$
+    
+    \item \textbf{Cotangent Equation:}
+    $$\cot\theta = a \iff \tan\theta = \frac{1}{a} \iff \theta = n\pi + \arctan\left(\frac{1}{a}\right), \quad n \in \mathbb{Z}$$
+\end{enumerate}
+
+\begin{table}[htbp]
+\centering
+\caption{Special General Solutions for Reciprocal Trigonometric Functions}
+\vspace{0.2cm}
+\begin{tabular}{p{4.5cm} p{10cm}}
+\toprule
+\textbf{Equation} & \textbf{General Solution} ($\theta$ for $n \in \mathbb{Z}$) \\
+\midrule
+$\boldsymbol{\csc\theta = 1}$ & $\theta = 2n\pi + \dfrac{\pi}{2}$ \\
+$\boldsymbol{\csc\theta = -1}$ & $\theta = 2n\pi - \dfrac{\pi}{2}$ \\
+\midrule
+$\boldsymbol{\sec\theta = 1}$ & $\theta = 2n\pi$ \\
+$\boldsymbol{\sec\theta = -1}$ & $\theta = (2n + 1)\pi$ \\
+\midrule
+$\boldsymbol{\cot\theta = 0}$ & $\theta = n\pi + \dfrac{\pi}{2}$ \\
+$\boldsymbol{\cot\theta = 1}$ & $\theta = n\pi + \dfrac{\pi}{4}$ \\
+$\boldsymbol{\cot\theta = -1}$ & $\theta = n\pi - \dfrac{\pi}{4}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Additional Power Forms}
+For equations involving squared trigonometric terms, the solution format is unified:
+
+\begin{itemize}
+    \item $\sin^2\theta = \sin^2\alpha \iff \theta = n\pi \pm \alpha$
+    \item $\cos^2\theta = \cos^2\alpha \iff \theta = n\pi \pm \alpha$
+    \item $\tan^2\theta = \tan^2\alpha \iff \theta = n\pi \pm \alpha$
+\end{itemize}
+
+\end{document}

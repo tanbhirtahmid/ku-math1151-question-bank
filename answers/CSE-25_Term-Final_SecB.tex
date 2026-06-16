@@ -1,0 +1,903 @@
+% FILE: CSE-25_TermFinal.tex
+
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+
+% Set default/Latin font to Sans Serif in the main (rm) slot
+\babelfont{rm}{Noto Sans}
+
+% --- EXTRA PACKAGES FOR MATHEMATICS AND FORMATTING ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q5a
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Easy
+% length=Short
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q5(a)}
+
+Question:
+Define integration and state the geometric interpretation of it. [L1; CLO7]
+
+Solution:
+Step 1: Define integration.
+Integration can be defined in two ways:
+1. **Indefinite Integration (Antiderivative):** It is the inverse process of differentiation. If $F'(x) = f(x)$, then the indefinite integral of $f(x)$ is:
+\[
+\int f(x) \, dx = F(x) + C
+\]
+where $C$ is an arbitrary constant of integration.
+2. **Definite Integration (Riemann Sum):** Let $f(x)$ be a continuous function defined on a closed interval $[a, b]$. The definite integral of $f(x)$ from $a$ to $b$ is the limit of a Riemann sum as the width of the subintervals approaches zero:
+\[
+\int_{a}^{b} f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*) \Delta x
+\]
+
+Step 2: State the geometric interpretation of integration.
+Geometrically, the definite integral $\int_{a}^{b} f(x) \, dx$ represents the net signed area bounded by the curve $y = f(x)$, the $x$-axis, and the vertical lines $x = a$ and $x = b$. 
+* Areas above the $x$-axis contribute positively to the integral.
+* Areas below the $x$-axis contribute negatively to the integral.
+
+Final Answer:
+\[
+\boxed{\text{Integration is the limit of a Riemann sum (or antiderivative); geometrically, it represents the net signed area under a curve.}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q5b
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5b
+% topic=Indefinite Integration
+% subtopic=Integration by Parts
+% difficulty=Medium
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q5(b)}
+
+Question:
+Evaluate the following integrals:
+i) $\int x^2 \log x \, dx$
+ii) $\int e^x(\tan x - \log\cos x) \, dx$
+iii) $\int \frac{x^2 \tan^{-1} x^3}{1+x^6} \, dx$. [L5; CLO7]
+
+Solution:
+Step 1: Evaluate (i) $\int x^2 \log x \, dx$.
+We use Integration by Parts: $\int u \, dv = uv - \int v \, du$.
+Let $u = \log x$ and $dv = x^2 \, dx$.
+Then, $du = \frac{1}{x} \, dx$ and $v = \frac{x^3}{3}$.
+Applying the formula:
+\[
+\int x^2 \log x \, dx = (\log x) \left(\frac{x^3}{3}\right) - \int \left(\frac{x^3}{3}\right) \left(\frac{1}{x}\right) \, dx
+\]
+\[
+= \frac{x^3 \log x}{3} - \frac{1}{3} \int x^2 \, dx
+\]
+\[
+= \frac{x^3 \log x}{3} - \frac{x^3}{9} + C_1
+\]
+
+Step 2: Evaluate (ii) $\int e^x(\tan x - \log\cos x) \, dx$.
+We know the standard integral form: $\int e^x [f(x) + f'(x)] \, dx = e^x f(x) + C$.
+Let $f(x) = -\log\cos x$.
+Then, its derivative is:
+\[
+f'(x) = -\frac{1}{\cos x} (-\sin x) = \frac{\sin x}{\cos x} = \tan x
+\]
+The given integral can be rewritten as:
+\[
+\int e^x [ \tan x + (-\log\cos x) ] \, dx = \int e^x [ f'(x) + f(x) ] \, dx
+\]
+Applying the standard form:
+\[
+= e^x (-\log\cos x) + C_2 = -e^x \log\cos x + C_2
+\]
+
+Step 3: Evaluate (iii) $\int \frac{x^2 \tan^{-1} x^3}{1+x^6} \, dx$.
+We use integration by substitution.
+Let $u = \tan^{-1} x^3$.
+Differentiating both sides with respect to $x$:
+\[
+du = \frac{1}{1 + (x^3)^2} \cdot \frac{d}{dx}(x^3) \, dx = \frac{3x^2}{1+x^6} \, dx \implies \frac{x^2}{1+x^6} \, dx = \frac{1}{3} \, du
+\]
+Substitute these into the integral:
+\[
+\int \frac{x^2 \tan^{-1} x^3}{1+x^6} \, dx = \int u \cdot \left(\frac{1}{3} \, du\right) = \frac{1}{3} \int u \, du
+\]
+\[
+= \frac{1}{3} \left(\frac{u^2}{2}\right) + C_3 = \frac{1}{6} (\tan^{-1} x^3)^2 + C_3
+\]
+
+Final Answer:
+\[
+\boxed{\text{i) } \frac{x^3 \log x}{3} - \frac{x^3}{9} + C_1, \text{ ii) } -e^x \log\cos x + C_2, \text{ iii) } \frac{1}{6} (\tan^{-1} x^3)^2 + C_3}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q5c
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=5c
+% topic=Indefinite Integration
+% subtopic=Trigonometric Integrals
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q5(c)}
+
+Question:
+Evaluate $\int \sin^3 x \cos^5 x \, dx$, using a power-reduction or "odd power" strategy. [L5; CLO7]
+
+Solution:
+Step 1: Apply the "odd power" strategy.
+Since the power of $\sin x$ is odd ($3$), we split off one factor of $\sin x$ to pair with $dx$ and convert the remaining $\sin^2 x$ term to $\cos x$:
+\[
+\int \sin^3 x \cos^5 x \, dx = \int \sin^2 x \cos^5 x (\sin x \, dx)
+\]
+\[
+= \int (1 - \cos^2 x) \cos^5 x (\sin x \, dx)
+\]
+
+Step 2: Use substitution.
+Let $u = \cos x$.
+Then, $du = -\sin x \, dx \implies \sin x \, dx = -du$.
+Substitute these expressions into the integral:
+\[
+\int (1 - u^2) u^5 (-du) = -\int (u^5 - u^7) \, du = \int (u^7 - u^5) \, du
+\]
+
+Step 3: Integrate and substitute back.
+\[
+\int (u^7 - u^5) \, du = \frac{u^8}{8} - \frac{u^6}{6} + C
+\]
+Substituting $u = \cos x$ back into the equation:
+\[
+= \frac{\cos^8 x}{8} - \frac{\cos^6 x}{6} + C
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\cos^8 x}{8} - \frac{\cos^6 x}{6} + C}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q6a
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q6(a)}
+
+Question:
+State and prove the fundamental theorem of calculus. [L3; CLO7]
+
+Solution:
+Step 1: State the Fundamental Theorem of Calculus (FTC).
+The Fundamental Theorem of Calculus consists of two parts:
+
+**Part 1:** If $f$ is continuous on the closed interval $[a, b]$, then the function $g$ defined by:
+\[
+g(x) = \int_{a}^{x} f(t) \, dt \quad a \le x \le b
+\]
+is continuous on $[a, b]$, differentiable on $(a, b)$, and its derivative is:
+\[
+g'(x) = f(x)
+\]
+
+**Part 2:** If $f$ is continuous on $[a, b]$, and $F$ is any antiderivative of $f$ (so that $F'(x) = f(x)$), then:
+\[
+\int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\]
+
+Step 2: Prove Part 1 of the theorem.
+By the definition of the derivative:
+\[
+g'(x) = \lim_{h \to 0} \frac{g(x+h) - g(x)}{h}
+\]
+Substituting the definition of $g(x)$:
+\[
+g(x+h) - g(x) = \int_{a}^{x+h} f(t) \, dt - \int_{a}^{x} f(t) \, dt = \int_{x}^{x+h} f(t) \, dt
+\]
+For $h \ne 0$, we have:
+\[
+\frac{g(x+h) - g(x)}{h} = \frac{1}{h} \int_{x}^{x+h} f(t) \, dt
+\]
+By the Mean Value Theorem for Integrals, if $f$ is continuous on $[x, x+h]$, there exists a number $c$ in this interval such that:
+\[
+\int_{x}^{x+h} f(t) \, dt = f(c) h
+\]
+Thus:
+\[
+\frac{g(x+h) - g(x)}{h} = \frac{1}{h} (f(c) h) = f(c)
+\]
+Taking the limit as $h \to 0$, the interval $[x, x+h]$ shrinks to the single point $x$, forcing $c \to x$. Since $f$ is continuous, we get:
+\[
+g'(x) = \lim_{h \to 0} f(c) = f(x)
+\]
+This completes the proof of Part 1.
+
+Step 3: Prove Part 2 of the theorem.
+Let $g(x) = \int_{a}^{x} f(t) \, dt$. From Part 1, we know that $g'(x) = f(x)$.
+If $F$ is any other antiderivative of $f$, then $F'(x) = f(x) = g'(x)$.
+Thus, $g(x)$ and $F(x)$ differ by a constant $C$:
+\[
+g(x) = F(x) + C \quad \text{for } a \le x \le b
+\]
+To find $C$, evaluate this equation at $x = a$:
+\[
+g(a) = F(a) + C \implies \int_{a}^{a} f(t) \, dt = F(a) + C \implies 0 = F(a) + C \implies C = -F(a)
+\]
+Substitute $C$ back into the relation:
+\[
+g(x) = F(x) - F(a)
+\]
+Now evaluate at $x = b$:
+\[
+g(b) = F(b) - F(a) \implies \int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\]
+This completes the proof of Part 2.
+
+Final Answer:
+\[
+\boxed{\text{FTC Part 1: } \frac{d}{dx}\int_a^x f(t)dt = f(x); \text{ Part 2: } \int_a^b f(x)dx = F(b)-F(a). \text{ Proved using MVT for integrals and antiderivatives.}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q6b
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q6(b)}
+
+Question:
+Evaluate $\int_{0}^{1} e^x \, dx$ as the limit of a sum. [L5; CLO7]
+
+Solution:
+Step 1: Set up the limit definition of a definite integral.
+The definition of the definite integral as the limit of a Riemann sum is:
+\[
+\int_{a}^{b} f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(a + i \Delta x) \Delta x
+\]
+where $\Delta x = \frac{b-a}{n}$.
+Here, $a = 0$, $b = 1$, and $f(x) = e^x$.
+Thus:
+\[
+\Delta x = \frac{1-0}{n} = \frac{1}{n}
+\]
+and the evaluation points are:
+\[
+x_i = 0 + i \left(\frac{1}{n}\right) = \frac{i}{n}
+\]
+
+Step 2: Express the sum.
+Substitute these values into the summation:
+\[
+S_n = \sum_{i=1}^{n} e^{i/n} \left(\frac{1}{n}\right) = \frac{1}{n} \left( e^{1/n} + e^{2/n} + e^{3/n} + \dots + e^{n/n} \right)
+\]
+The term inside the parentheses is a geometric series with:
+* First term, $a_1 = e^{1/n}$
+* Common ratio, $r = e^{1/n}$
+* Number of terms, $n$
+
+The sum of a geometric series is given by $S = a_1 \frac{r^n - 1}{r - 1}$. Therefore:
+\[
+S_n = \frac{1}{n} \left[ e^{1/n} \frac{(e^{1/n})^n - 1}{e^{1/n} - 1} \right] = \frac{1}{n} \left[ e^{1/n} \frac{e - 1}{e^{1/n} - 1} \right] = (e - 1) e^{1/n} \left[ \frac{1/n}{e^{1/n} - 1} \right]
+\]
+
+Step 3: Evaluate the limit as $n \to \infty$.
+We take the limit of $S_n$ as $n \to \infty$:
+\[
+\lim_{n \to \infty} S_n = (e - 1) \lim_{n \to \infty} e^{1/n} \cdot \lim_{n \to \infty} \frac{1/n}{e^{1/n} - 1}
+\]
+Let $h = \frac{1}{n}$. As $n \to \infty$, $h \to 0$.
+The limits become:
+\[
+\lim_{n \to \infty} e^{1/n} = e^0 = 1
+\]
+\[
+\lim_{n \to \infty} \frac{1/n}{e^{1/n} - 1} = \lim_{h \to 0} \frac{h}{e^h - 1} = \frac{1}{\lim_{h \to 0} \frac{e^h - 1}{h}} = \frac{1}{1} = 1
+\]
+Substituting these limits back:
+\[
+\lim_{n \to \infty} S_n = (e - 1) \cdot 1 \cdot 1 = e - 1
+\]
+
+Final Answer:
+\[
+\boxed{e - 1}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q6c
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=6c
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Easy
+% length=Short
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q6(c)}
+
+Question:
+Using the properties of the definite integral, evaluate: $\int_{0}^{\frac{\pi}{2}} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx$. [L5; CLO8]
+
+Solution:
+Step 1: Assign a variable to the integral and apply properties.
+Let:
+\[
+I = \int_{0}^{\frac{\pi}{2}} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx \quad \text{--- (1)}
+\]
+We use the definite integral property: $\int_{a}^{b} f(x) \, dx = \int_{a}^{b} f(a+b-x) \, dx$.
+Applying this property with $a = 0$ and $b = \frac{\pi}{2}$:
+\[
+I = \int_{0}^{\frac{\pi}{2}} \frac{\sqrt{\sin(\frac{\pi}{2} - x)}}{\sqrt{\sin(\frac{\pi}{2} - x)} + \sqrt{\cos(\frac{\pi}{2} - x)}} \, dx
+\]
+Since $\sin(\frac{\pi}{2} - x) = \cos x$ and $\cos(\frac{\pi}{2} - x) = \sin x$:
+\[
+I = \int_{0}^{\frac{\pi}{2}} \frac{\sqrt{\cos x}}{\sqrt{\cos x} + \sqrt{\sin x}} \, dx \quad \text{--- (2)}
+\]
+
+Step 2: Add equations (1) and (2).
+\[
+I + I = \int_{0}^{\frac{\pi}{2}} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx + \int_{0}^{\frac{\pi}{2}} \frac{\sqrt{\cos x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx
+\]
+\[
+2I = \int_{0}^{\frac{\pi}{2}} \frac{\sqrt{\sin x} + \sqrt{\cos x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx
+\]
+\[
+2I = \int_{0}^{\frac{\pi}{2}} 1 \, dx
+\]
+
+Step 3: Solve for $I$.
+\[
+2I = [x]_{0}^{\frac{\pi}{2}} = \frac{\pi}{2} - 0 \implies I = \frac{\pi}{4}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{4}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q7a
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q7(a)}
+
+Question:
+Find the area enclosed by one loop of the rose $r = \cos 3\theta$. [L1; CLO8]
+
+Solution:
+Step 1: Find the boundaries for one loop.
+A single loop of the rose curve is traced as $r \ge 0$ around a local maximum.
+The boundaries occur when $r = 0$:
+\[
+\cos 3\theta = 0 \implies 3\theta = -\frac{\pi}{2}, \frac{\pi}{2} \implies \theta = -\frac{\pi}{6}, \frac{\pi}{6}
+\]
+Thus, one loop of the rose lies in the interval $\theta \in [-\frac{\pi}{6}, \frac{\pi}{6}]$.
+
+Step 2: Set up the polar area integral.
+The formula for the area in polar coordinates is:
+\[
+A = \frac{1}{2} \int_{\alpha}^{\beta} r^2 \, d\theta
+\]
+Substitute the boundaries and the equation of the curve:
+\[
+A = \frac{1}{2} \int_{-\frac{\pi}{6}}^{\frac{\pi}{6}} \cos^2 3\theta \, d\theta
+\]
+Since the integrand is symmetric with respect to $\theta = 0$:
+\[
+A = \int_{0}^{\frac{\pi}{6}} \cos^2 3\theta \, d\theta
+\]
+
+Step 3: Evaluate the integral.
+Using the trigonometric identity $\cos^2 A = \frac{1 + \cos 2A}{2}$:
+\[
+A = \int_{0}^{\frac{\pi}{6}} \frac{1 + \cos 6\theta}{2} \, d\theta = \frac{1}{2} \left[ \theta + \frac{\sin 6\theta}{6} \right]_{0}^{\frac{\pi}{6}}
+\]
+Substitute the upper and lower limits:
+\[
+A = \frac{1}{2} \left[ \left(\frac{\pi}{6} + \frac{\sin \pi}{6}\right) - (0 + 0) \right] = \frac{1}{2} \left[ \frac{\pi}{6} + 0 \right] = \frac{\pi}{12}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{12}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q7b
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q7(b)}
+
+Question:
+Derive the formula for the volume of a sphere of radius $r$, by using the disk method. [L3; CLO8]
+
+Solution:
+Step 1: Set up the geometric representation.
+A solid sphere of radius $r$ can be generated by rotating the region bounded by the upper semicircle:
+\[
+x^2 + y^2 = r^2 \implies y = \sqrt{r^2 - x^2} \quad \text{for } -r \le x \le r
+\]
+about the $x$-axis.
+
+Step 2: Apply the Disk Method formula.
+The formula for the volume $V$ of a solid generated by rotating a function $y = f(x)$ about the $x$-axis from $x = a$ to $x = b$ is:
+\[
+V = \pi \int_{a}^{b} [f(x)]^2 \, dx
+\]
+Substituting $f(x) = \sqrt{r^2 - x^2}$, $a = -r$, and $b = r$:
+\[
+V = \pi \int_{-r}^{r} \left(\sqrt{r^2 - x^2}\right)^2 \, dx = \pi \int_{-r}^{r} (r^2 - x^2) \, dx
+\]
+
+Step 3: Integrate and evaluate.
+Since the integrand $(r^2 - x^2)$ is an even function, we can exploit symmetry:
+\[
+V = 2\pi \int_{0}^{r} (r^2 - x^2) \, dx
+\]
+Integrate terms individually:
+\[
+V = 2\pi \left[ r^2 x - \frac{x^3}{3} \right]_{0}^{r}
+\]
+Substitute the limits:
+\[
+V = 2\pi \left[ \left( r^2(r) - \frac{r^3}{3} \right) - 0 \right] = 2\pi \left[ r^3 - \frac{r^3}{3} \right] = 2\pi \left[ \frac{2r^3}{3} \right] = \frac{4}{3}\pi r^3
+\]
+
+Final Answer:
+\[
+\boxed{\frac{4}{3}\pi r^3}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q7c
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=7c
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q7(c)}
+
+Question:
+Prove that the circumference of a circle of radius $R$ is $2\pi R$ using the definite integral for the arc length of a curve. [L4; CLO8]
+
+Solution:
+Step 1: Set up the equation for the circle.
+The standard equation of a circle with radius $R$ centered at the origin is:
+\[
+x^2 + y^2 = R^2
+\]
+To find the arc length, we can calculate the length of the upper semicircle and multiply it by $2$.
+The equation of the upper semicircle is:
+\[
+y = \sqrt{R^2 - x^2} \quad \text{for } -R \le x \le R
+\]
+
+Step 2: Find the derivative $\frac{dy}{dx}$ and set up the arc length element.
+Differentiate $y$ with respect to $x$:
+\[
+\frac{dy}{dx} = \frac{1}{2\sqrt{R^2 - x^2}} \cdot (-2x) = -\frac{x}{\sqrt{R^2 - x^2}}
+\]
+Now evaluate $1 + \left(\frac{dy}{dx}\right)^2$:
+\[
+1 + \left(\frac{dy}{dx}\right)^2 = 1 + \left( -\frac{x}{\sqrt{R^2 - x^2}} \right)^2 = 1 + \frac{x^2}{R^2 - x^2} = \frac{(R^2 - x^2) + x^2}{R^2 - x^2} = \frac{R^2}{R^2 - x^2}
+\]
+
+Step 3: Integrate to find the circumference.
+The arc length $L$ of the upper semicircle is:
+\[
+L_{\text{semi}} = \int_{-R}^{R} \sqrt{1 + \left(\frac{dy}{dx}\right)^2} \, dx = \int_{-R}^{R} \sqrt{\frac{R^2}{R^2 - x^2}} \, dx = \int_{-R}^{R} \frac{R}{\sqrt{R^2 - x^2}} \, dx
+\]
+By symmetry:
+\[
+L_{\text{semi}} = 2R \int_{0}^{R} \frac{1}{\sqrt{R^2 - x^2}} \, dx
+\]
+Using the standard integration formula $\int \frac{1}{\sqrt{a^2 - x^2}} \, dx = \sin^{-1}(\frac{x}{a})$:
+\[
+L_{\text{semi}} = 2R \left[ \sin^{-1}\left(\frac{x}{R}\right) \right]_{0}^{R} = 2R \left[ \sin^{-1}(1) - \sin^{-1}(0) \right] = 2R \left( \frac{\pi}{2} - 0 \right) = \pi R
+\]
+The total circumference $C$ of the circle is twice the length of the upper semicircle:
+\[
+C = 2 \cdot L_{\text{semi}} = 2 \cdot (\pi R) = 2\pi R
+\]
+
+Final Answer:
+\[
+\boxed{2\pi R}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q8a
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8a
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q8(a)}
+
+Question:
+Examine the convergence of the improper integral $\int_{0}^{\infty} \frac{dx}{1+x^4}$. [L4; CLO9]
+
+Solution:
+Step 1: Decompose the improper integral.
+Split the integration interval $[0, \infty)$ into two intervals at $x=1$:
+\[
+I = \int_{0}^{\infty} \frac{dx}{1+x^4} = \int_{0}^{1} \frac{dx}{1+x^4} + \int_{1}^{\infty} \frac{dx}{1+x^4} = I_1 + I_2
+\]
+
+Step 2: Analyze the first integral $I_1$.
+The integral $I_1 = \int_{0}^{1} \frac{dx}{1+x^4}$ is a proper definite integral. The integrand $f(x) = \frac{1}{1+x^4}$ is continuous on the closed and bounded interval $[0, 1]$. Therefore, $I_1$ must converge to a finite value.
+
+Step 3: Analyze the second integral $I_2$ using the Comparison Test.
+The integral $I_2 = \int_{1}^{\infty} \frac{dx}{1+x^4}$ has an infinite upper bound.
+We compare the integrand with $g(x) = \frac{1}{x^4}$ for $x \ge 1$:
+\[
+1 + x^4 > x^4 \implies \frac{1}{1+x^4} < \frac{1}{x^4} \quad \text{for all } x \ge 1
+\]
+Now evaluate the integral of $g(x)$:
+\[
+\int_{1}^{\infty} \frac{1}{x^4} \, dx = \lim_{t \to \infty} \left[ -\frac{1}{3x^3} \right]_{1}^{t} = \lim_{t \to \infty} \left( -\frac{1}{3t^3} + \frac{1}{3} \right) = \frac{1}{3}
+\]
+Since the larger integral $\int_{1}^{\infty} \frac{1}{x^4} \, dx$ converges, by the Direct Comparison Test, the smaller integral $I_2 = \int_{1}^{\infty} \frac{dx}{1+x^4}$ also converges.
+
+Conclusion:
+Since both $I_1$ and $I_2$ converge, the entire improper integral $\int_{0}^{\infty} \frac{dx}{1+x^4}$ converges.
+
+Final Answer:
+\[
+\boxed{\text{The improper integral converges.}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q8b
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8b
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q8(b)}
+
+Question:
+Evaluate the integral $\int_{0}^{1} \frac{dx}{(1-x^8)^{1/8}}$ using Beta-Gamma functions. [L5; CLO9]
+
+Solution:
+Step 1: Simplify using substitution.
+Let $t = x^8 \implies x = t^{1/8}$.
+Differentiating $x$ with respect to $t$:
+\[
+dx = \frac{1}{8} t^{-7/8} \, dt
+\]
+Determine the new boundaries:
+* When $x = 0$, $t = 0^8 = 0$.
+* When $x = 1$, $t = 1^8 = 1$.
+
+Substitute these into the integral:
+\[
+\int_{0}^{1} \frac{dx}{(1-x^8)^{1/8}} = \int_{0}^{1} \frac{\frac{1}{8} t^{-7/8}}{(1-t)^{1/8}} \, dt = \frac{1}{8} \int_{0}^{1} t^{-7/8} (1-t)^{-1/8} \, dt
+\]
+
+Step 2: Express the integral in terms of the Beta function.
+The definition of the Beta function is:
+\[
+B(m, n) = \int_{0}^{1} t^{m-1} (1-t)^{n-1} \, dt
+\]
+Comparing this with our integral:
+\[
+m - 1 = -\frac{7}{8} \implies m = \frac{1}{8}
+\]
+\[
+n - 1 = -\frac{1}{8} \implies n = \frac{7}{8}
+\]
+Thus, the integral becomes:
+\[
+I = \frac{1}{8} B\left(\frac{1}{8}, \frac{7}{8}\right)
+\]
+
+Step 3: Relate Beta to Gamma and solve.
+Using the identity $B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}$:
+\[
+I = \frac{1}{8} \frac{\Gamma(1/8)\Gamma(7/8)}{\Gamma(1/8 + 7/8)} = \frac{1}{8} \frac{\Gamma(1/8)\Gamma(7/8)}{\Gamma(1)}
+\]
+Since $\Gamma(1) = 1$:
+\[
+I = \frac{1}{8} \Gamma\left(\frac{1}{8}\right)\Gamma\left(1 - \frac{1}{8}\right)
+\]
+Using Euler's reflection formula $\Gamma(z)\Gamma(1-z) = \frac{\pi}{\sin(\pi z)}$:
+\[
+I = \frac{1}{8} \frac{\pi}{\sin(\frac{\pi}{8})}
+\]
+
+Step 4: Evaluate $\sin(\frac{\pi}{8})$.
+Using the half-angle formula $\sin(\frac{\theta}{2}) = \sqrt{\frac{1-\cos\theta}{2}}$:
+\[
+\sin\left(\frac{\pi}{8}\right) = \sqrt{\frac{1-\cos(\pi/4)}{2}} = \sqrt{\frac{1 - \frac{1}{\sqrt{2}}}{2}} = \sqrt{\frac{\sqrt{2}-1}{2\sqrt{2}}} = \frac{\sqrt{2-\sqrt{2}}}{2}
+\]
+Thus, substitute back:
+\[
+I = \frac{\pi}{8 \left( \frac{\sqrt{2-\sqrt{2}}}{2} \right)} = \frac{\pi}{4\sqrt{2-\sqrt{2}}}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{4\sqrt{2-\sqrt{2}}}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id=cse25-final-secb-q8c
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=8c
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final - Q8(c)}
+
+Question:
+Show that $\int_{0}^{\infty} \sqrt[4]{x} e^{-\sqrt{x}} \, dx = \frac{3\sqrt{\pi}}{2}$. [L2; CLO9]
+
+Solution:
+Step 1: Simplify using substitution.
+Let $t = \sqrt{x} \implies x = t^2$.
+Differentiating $x$ with respect to $t$:
+\[
+dx = 2t \, dt
+\]
+Determine boundaries:
+* When $x = 0$, $t = 0$.
+* When $x \to \infty$, $t \to \infty$.
+
+Substitute these into the LHS of the integral:
+\[
+\int_{0}^{\infty} \sqrt[4]{x} e^{-\sqrt{x}} \, dx = \int_{0}^{\infty} (t^2)^{1/4} e^{-t} (2t \, dt)
+\]
+\[
+= \int_{0}^{\infty} t^{1/2} e^{-t} (2t) \, dt = 2 \int_{0}^{\infty} t^{3/2} e^{-t} \, dt
+\]
+
+Step 2: Relate to the Gamma function.
+The definition of the Gamma function is:
+\[
+\Gamma(n) = \int_{0}^{\infty} t^{n-1} e^{-t} \, dt
+\]
+Comparing this with our integral, we have $n - 1 = \frac{3}{2} \implies n = \frac{5}{2}$.
+Thus, the expression becomes:
+\[
+I = 2 \Gamma\left(\frac{5}{2}\right)
+\]
+
+Step 3: Evaluate the Gamma function.
+Using the recursive identity $\Gamma(n) = (n-1)\Gamma(n-1)$:
+\[
+\Gamma\left(\frac{5}{2}\right) = \frac{3}{2} \Gamma\left(\frac{3}{2}\right) = \frac{3}{2} \left( \frac{1}{2} \Gamma\left(\frac{1}{2}\right) \right)
+\]
+Since $\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}$:
+\[
+\Gamma\left(\frac{5}{2}\right) = \frac{3}{4} \sqrt{\pi}
+\]
+Substitute this back:
+\[
+I = 2 \left( \frac{3}{4} \sqrt{\pi} \right) = \frac{3\sqrt{\pi}}{2}
+\]
+LHS = RHS. (Proved)
+
+Final Answer:
+\[
+\boxed{\frac{3\sqrt{\pi}}{2}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
