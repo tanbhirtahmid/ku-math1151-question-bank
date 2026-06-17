@@ -110,18 +110,22 @@ def parse_tex_questions(filepath):
         body = re.sub(r'\\begin\{document\}', '', body)
         body = re.sub(r'\\end\{document\}', '', body)
 
+        # Normalize line endings and remove preamble artifacts
+        body = re.sub(r'\r\n?', '\n', body)
+        body = re.sub(r'\\par\s*', '\n\n', body)
+
         # Extract final answer (between "Final Answer:" and end of block)
         fa_match = re.search(r'Final Answer:\s*(.*?)(?:\\end\{document\}|$)', body, re.DOTALL)
         if fa_match:
             question['finalAnswerText'] = fa_match.group(1).strip()
 
         # Extract solution (between "Solution:" and "Final Answer:")
-        s_match = re.search(r'Solution:\s*(.*?)(?:\n\s*Final Answer:)', body, re.DOTALL)
+        s_match = re.search(r'Solution:\s*(.*?)(?:\n\s*Final Answer:|\Z)', body, re.DOTALL)
         if s_match:
             question['solutionText'] = s_match.group(1).strip()
 
         # Extract question (between "Question:" and "Solution:")
-        q_match = re.search(r'Question:\s*(.*?)(?:\n\s*Solution:)', body, re.DOTALL)
+        q_match = re.search(r'Question:\s*(.*?)(?:\n\s*Solution:|\Z)', body, re.DOTALL)
         if q_match:
             question['questionText'] = q_match.group(1).strip()
 
@@ -133,10 +137,27 @@ def parse_tex_questions(filepath):
 def tex_to_html(text):
     if not text:
         return ''
+    # Handle align, aligned, equation, gather environments
+    text = re.sub(
+        r'\\begin\{(align\*?|aligned\*?|gather\*?|equation\*?)\}\s*(.*?)\\end\{\1\}',
+        r'<div class="overflow-x-auto">$$\n\2\n$$</div>',
+        text, flags=re.DOTALL
+    )
+    # Handle cases environment
+    text = re.sub(
+        r'\\begin\{cases\}\s*(.*?)\\end\{cases\}',
+        r'\\begin{cases}\1\\end{cases}',
+        text, flags=re.DOTALL
+    )
+    # Handle \[ ... \] and $$ ... $$ display math
     text = re.sub(r'\\\[\s*(.*?)\s*\\\]', r'<div class="overflow-x-auto">$$\1$$</div>', text, flags=re.DOTALL)
+    text = re.sub(r'\$\$\s*(.*?)\s*\$\$', r'<div class="overflow-x-auto">$$\1$$</div>', text, flags=re.DOTALL)
     text = re.sub(r'\\section\*\{[^}]*\}\s*', '', text)
     text = re.sub(r'\\textbf\{([^}]*)\}', r'<strong>\1</strong>', text)
     text = re.sub(r'\\textit\{([^}]*)\}', r'<em>\1</em>', text)
+    text = re.sub(r'\\text\{([^}]*)\}', r'\1', text)
+    # Remove remaining LaTeX commands that aren't inline math
+    text = re.sub(r'\\(?:displaystyle|limits|left|right)\b', '', text)
     text = re.sub(r'\n{4,}', '\n\n\n', text)
     text = text.strip()
     return text
@@ -146,9 +167,10 @@ def format_step_headers(text):
     if not text:
         return ''
     text = re.sub(
-        r'(?:^|\n)\s*Step (\d+):\s*(.*?)(?=\n|$)',
+        r'(?:^|\n)\s*Step (\d+):\s*(.*?)(?=\n(?:Step \d+:|$)|\Z)',
         r'\n<p class="font-semibold text-slate-900">Step \1: \2</p>',
-        text
+        text,
+        flags=re.DOTALL
     )
     return text.strip()
 
