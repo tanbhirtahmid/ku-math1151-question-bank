@@ -85,6 +85,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const select = e.target.closest('.filter-select');
     if (!select || !appContainer.contains(select)) return;
     state.filters[select.dataset.filter] = select.value;
+    
+    // If examType is changed from the sidebar, reset examNumber since there is no dropdown for it
+    if (select.dataset.filter === 'examType') {
+      state.filters.examNumber = 'All';
+    }
+    
     applyFiltersAndRender();
   });
 
@@ -154,14 +160,21 @@ document.addEventListener("DOMContentLoaded", function () {
       state.filters.batch = tocItem.dataset.batch;
       state.filters.examType = tocItem.dataset.examtype;
       state.filters.examNumber = tocItem.dataset.examnumber || 'All';
+      state.filters.section = tocItem.dataset.section || 'All';
       state.filters.topic = 'All';
       state.filters.difficulty = 'All';
-      state.filters.section = 'All';
       state.searchQuery = '';
       if (globalSearchInput) globalSearchInput.value = '';
 
       const wasPapers = state.currentView === 'papers';
       window.location.hash = '#papers';
+
+      // Close mobile TOC after selection
+      const tocContainer = document.querySelector('.toc-container');
+      const mobToggle = document.getElementById('toc-mobile-toggle');
+      if (tocContainer) tocContainer.classList.remove('open');
+      if (mobToggle) mobToggle.classList.remove('open');
+
       if (wasPapers) {
         applyFiltersAndRender();
       }
@@ -469,11 +482,13 @@ document.addEventListener("DOMContentLoaded", function () {
           exams: {}
         };
       }
-      var examKey = q.examType + (q.examNumber ? '-' + q.examNumber : '');
+      // Include section in key to separate Sec A and Sec B
+      var examKey = q.examType + (q.examNumber ? '-' + q.examNumber : '') + '-' + q.section;
       if (!map[groupKey].exams[examKey]) {
         map[groupKey].exams[examKey] = {
           examType: q.examType,
           examNumber: q.examNumber || null,
+          section: q.section,
           count: 0
         };
       }
@@ -487,8 +502,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     groups.forEach(function (g) {
       g.exams = Object.values(g.exams).sort(function (a, b) {
+        // Sort by Exam Type (CT before Final)
         if (a.examType !== b.examType) return a.examType === 'CT' ? -1 : 1;
-        return (a.examNumber || 0) - (b.examNumber || 0);
+        // Sort by Exam Number
+        if (a.examNumber !== b.examNumber) return (a.examNumber || 0) - (b.examNumber || 0);
+        // Sort by Section
+        return a.section.localeCompare(b.section);
       });
     });
 
@@ -498,14 +517,16 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderTOC(tocData) {
     return tocData.map(function (group) {
       var examsHtml = group.exams.map(function (exam) {
+        var label = exam.examType + (exam.examNumber ? ' ' + exam.examNumber : '');
         return [
           '<li class="toc-exam-item"',
               ' data-discipline="' + group.discipline + '"',
               ' data-batch="' + group.batch + '"',
               ' data-examtype="' + exam.examType + '"',
               ' data-examnumber="' + (exam.examNumber || '') + '"',
+              ' data-section="' + exam.section + '"',
               ' role="button" tabindex="0">',
-            exam.examType + (exam.examNumber ? ' ' + exam.examNumber : ''),
+            label + ' (Sec ' + exam.section + ')',
             '<span class="toc-exam-count">(' + exam.count + ')</span>',
           '</li>',
         ].join('');
@@ -534,8 +555,13 @@ document.addEventListener("DOMContentLoaded", function () {
       var tMatch = state.filters.topic === 'All' || q.topics.indexOf(state.filters.topic) !== -1;
       var diffMatch = state.filters.difficulty === 'All' || q.difficulty === state.filters.difficulty;
       var etMatch = state.filters.examType === 'All' || q.examType === state.filters.examType;
+      
+      // Fix: Handle null examNumber and compare safely
       var enMatch = state.filters.examNumber === 'All' || !state.filters.examNumber ||
-        q.examNumber.toString() === state.filters.examNumber.toString();
+        (q.examNumber !== null && q.examNumber !== undefined && q.examNumber.toString() === state.filters.examNumber.toString());
+
+      // Fix: Added section matching
+      var secMatch = state.filters.section === 'All' || q.section === state.filters.section;
 
       var query = state.searchQuery.toLowerCase();
       var sMatch = !query ||
@@ -543,7 +569,7 @@ document.addEventListener("DOMContentLoaded", function () {
         q.topics.some(function (t) { return t.toLowerCase().indexOf(query) !== -1; }) ||
         q.id.toLowerCase().indexOf(query) !== -1;
 
-      return dMatch && bMatch && tMatch && diffMatch && etMatch && enMatch && sMatch;
+      return dMatch && bMatch && tMatch && diffMatch && etMatch && enMatch && secMatch && sMatch;
     });
 
     if (state.currentView === 'repeated') {
