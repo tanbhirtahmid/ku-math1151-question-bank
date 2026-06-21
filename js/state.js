@@ -38,6 +38,9 @@ let tocHtmlCache = null;
 // Batch options for filter dropdown (computed once)
 let batchOptionsCache = null;
 
+// Exam number options for filter dropdown (computed once)
+let examNumberOptionsCache = null;
+
 // Debounce Utility
 function debounce(fn, delay) {
   let timer;

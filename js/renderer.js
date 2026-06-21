@@ -142,6 +142,7 @@ function renderExplorer(filteredQuestions, title) {
             renderFilterDropdown('topic', 'Topic', ['All'].concat(topicTaxonomy)),
             renderFilterDropdown('difficulty', 'Difficulty', ['All', 'Easy', 'Medium', 'Hard']),
             renderFilterDropdown('examType', 'Exam Type', ['All', 'CT', 'Term Final']),
+            renderFilterDropdown('examNumber', 'Exam Number', getExamNumberOptions()),
             '<div>',
               '<label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Section</label>',
               '<select data-filter="section" class="filter-select w-full bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-2.5">',
@@ -245,6 +246,17 @@ function renderEmptyState() {
       '<p class="text-slate-500 max-w-xs mx-auto">Try adjusting your filters or search query to find what you\'re looking for.</p>',
     '</div>',
   ].join('');
+}
+
+function getExamNumberOptions() {
+  if (!examNumberOptionsCache) {
+    examNumberOptionsCache = ['All'].concat(
+      Array.from(new Set(questions.map(function (q) { return q.examNumber; })))
+        .filter(function (n) { return n !== null && n !== undefined; })
+        .sort(function (a, b) { return a - b; })
+    );
+  }
+  return examNumberOptionsCache;
 }
 
 function renderFilterDropdown(key, label, options) {
