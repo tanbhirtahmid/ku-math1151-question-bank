@@ -5058,10 +5058,12 @@ const questions = [
     "batch": 19,
     "year": 2019,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "1",
-    "topics": ["Applications of Derivatives"],
+    "topics": [
+      "Applications of Derivatives"
+    ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
@@ -5070,18 +5072,19 @@ const questions = [
     "questionHtml": "Locate \\& describe the Relative extrema of $f(x) = 3x^{5/3} - 15x^{2/3}$.",
     "solutionHtml": "<strong>Step 1: Find the first derivative $f'(x)$</strong>\n\n    The given function is:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = 3x^{5/3} - 15x^{2/3}$$</div></div>\n    Differentiating with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(x) = 3 \\cdot \\frac{5}{3}x^{2/3} - 15 \\cdot \\frac{2}{3}x^{-1/3}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(x) = 5x^{2/3} - 10x^{-1/3}$$</div></div>\n    Factoring out $5x^{-1/3}$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(x) = 5x^{-1/3}(x - 2) = \\frac{5(x - 2)}{x^{1/3}}$$</div></div>\n\n    <strong>Step 2: Identify the critical points</strong>\n\n    Critical points occur where $f'(x) = 0$ or where $f'(x)$ is undefined:\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li>$f'(x) = 0 \\implies 5(x - 2) = 0 \\implies x = 2$.\n        <li>$f'(x)$ is undefined at $x = 0$ (since the denominator becomes zero, though $f(0)$ is defined).\n    </ul>\n    Thus, the critical points are $x = 0$ and $x = 2$.\n\n    <strong>Step 3: Analyze intervals of increase and decrease (First Derivative Test)</strong>\n\n    We test the sign of $f'(x) = \\frac{5(x - 2)}{x^{1/3}}$ in the intervals divided by $x = 0$ and $x = 2$:\n    <ol class=\"list-decimal pl-5 space-y-1\">\n        <li><strong>Interval $(-\\infty, 0)$:</strong> \\\\\n        Choose a test point $x = -1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(-1) = \\frac{5(-1 - 2)}{(-1)^{1/3}} = \\frac{-15}{-1} = 15 > 0 \\implies f(x)  is increasing.$$</div></div>\n\n        <li><strong>Interval $(0, 2)$:</strong> \\\\\n        Choose a test point $x = 1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(1) = \\frac{5(1 - 2)}{(1)^{1/3}} = \\frac{-5}{1} = -5 < 0 \\implies f(x)  is decreasing.$$</div></div>\n\n        <li><strong>Interval $(2, \\infty)$:</strong> \\\\\n        Choose a test point $x = 3$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(3) = \\frac{5(3 - 2)}{(3)^{1/3}} = \\frac{5}{3^{1/3}} > 0 \\implies f(x)  is increasing.$$</div></div>\n    </ol>\n\n    <strong>Step 4: Describe the Relative Extrema</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>At $x = 0$:</strong> The derivative changes from positive to negative. Therefore, $f(x)$ has a <strong>relative maximum</strong> at $x = 0$. \\\\\n        The relative maximum value is:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(0) = 3(0)^{5/3} - 15(0)^{2/3} = 0$$</div></div>\n\n        <li><strong>At $x = 2$:</strong> The derivative changes from negative to positive. Therefore, $f(x)$ has a <strong>relative minimum</strong> at $x = 2$. \\\\\n        The relative minimum value is:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(2) = 3(2)^{5/3} - 15(2)^{2/3} = 3 \\cdot 2 \\cdot 2^{2/3} - 15 \\cdot 2^{2/3} = -9 \\cdot 2^{2/3}$$</div></div>\n    </ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{Relative Maximum at  (0, 0), \\quad Relative Minimum at  (2, -9\\cdot 2^{2/3})}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse19-ct2-seca-q1",
     "discipline": "CSE",
     "batch": 19,
     "year": 2019,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 2,
     "section": "A",
     "questionNumber": "1",
-    "topics": ["Differentiation"],
+    "topics": [
+      "Differentiation"
+    ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
@@ -5090,18 +5093,19 @@ const questions = [
     "questionHtml": "State Leibnitz's theorem. Find the value of the $n$-th derivative of $y = e^{m\\sin^{-1}x}$ at $x = 0$.",
     "solutionHtml": "<strong>Step 1: State Leibnitz's Theorem</strong>\n\n    If $u$ and $v$ are two functions of $x$ possessing derivatives of the $n$-th order, then the $n$-th order derivative of their product $uv$ is given by:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_n = u_n v + \\binom{n}{1} u_{n-1} v_1 + \\binom{n}{2} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n$$</div></div>\n    where subscripts represent the order of differentiation.\n\n    <strong>Step 2: Find successive derivatives of $y = e^{m\\sin^{-1}x}$</strong>\n\n    Given:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y = e^{m\\sin^{-1}x} \\implies y(0) = e^0 = 1$$</div></div>\n    Differentiating once with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = e^{m\\sin^{-1}x} \\cdot \\frac{m}{\\sqrt{1-x^2}} = \\frac{my}{\\sqrt{1-x^2}} \\implies y_1(0) = m$$</div></div>\n    Squaring both sides to remove the radical:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1^2 (1-x^2) = m^2 y^2$$</div></div>\n    Differentiating again with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$2y_1 y_2 (1-x^2) + y_1^2 (-2x) = m^2 (2y y_1)$$</div></div>\n    Dividing through by $2y_1$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(1-x^2) - xy_1 = m^2 y$$</div></div>\n    At $x = 0$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(0) - 0 = m^2 y(0) \\implies y_2(0) = m^2$$</div></div>\n\n    <strong>Step 3: Apply Leibnitz's Theorem to get a recurrence relation</strong>\n\n    Differentiating the equation $y_2(1-x^2) - xy_1 - m^2 y = 0$ $n$ times using Leibnitz's theorem:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$[ y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) ] - [ y_{n+1}x + n y_n ] - m^2 y_n = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2) y_n = 0$$</div></div>\n    At $x = 0$, this simplifies to:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_{n+2}(0) = (n^2 + m^2)y_n(0)$$</div></div>\n\n    <strong>Step 4: Find the general value of $y_n(0)$</strong>\n\n    We use the recurrence relation $y_{n+2}(0) = (n^2 + m^2)y_n(0)$ to find the pattern:\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Case 1: If $n$ is even</strong> \\\\\n        Let $n = 2k$ for $k \\ge 1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(0) = m^2$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_4(0) = (2^2 + m^2)y_2(0) = m^2(2^2 + m^2)$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_6(0) = (4^2 + m^2)y_4(0) = m^2(2^2 + m^2)(4^2 + m^2)$$</div></div>\n        In general, for even $n$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n(0) = m^2(2^2 + m^2)(4^2 + m^2) \\dots ((n-2)^2 + m^2)$$</div></div>\n\n        <li><strong>Case 2: If $n$ is odd</strong> \\\\\n        Let $n = 2k+1$ for $k \\ge 0$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1(0) = m$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_3(0) = (1^2 + m^2)y_1(0) = m(1^2 + m^2)$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_5(0) = (3^2 + m^2)y_3(0) = m(1^2 + m^2)(3^2 + m^2)$$</div></div>\n        In general, for odd $n$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n(0) = m(1^2 + m^2)(3^2 + m^2) \\dots ((n-2)^2 + m^2)$$</div></div>\n    </ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{y_n(0) = \\begin{cases}m^2(2^2 + m^2)(4^2 + m^2) \\dots ((n-2)^2 + m^2), & when  n  is even \\\\ \nm(1^2 + m^2)(3^2 + m^2) \\dots ((n-2)^2 + m^2), & when  n  is odd \n\\end{cases}}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse22-ct1-seca-q1",
     "discipline": "CSE",
     "batch": 22,
     "year": 2022,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "1",
-    "topics": ["Limits & Continuity"],
+    "topics": [
+      "Limits & Continuity"
+    ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
@@ -5110,18 +5114,19 @@ const questions = [
     "questionHtml": "Suppose that $f(x) = \\begin{cases} -x^4 + 3, & x \\le 2 \\\\ x^2 + 9, & x > 2 \\end{cases}$. Is $f$ continuous everywhere? Justify your conclusion.",
     "solutionHtml": "<strong>Step 1: Check continuity on intervals outside $x = 2$</strong>\n\n    For $x < 2$, $f(x) = -x^4 + 3$, which is a polynomial function. Since all polynomial functions are continuous everywhere on their domains, $f(x)$ is continuous for all $x \\in (-\\infty, 2)$. \\\\\n    For $x > 2$, $f(x) = x^2 + 9$, which is also a polynomial function. Hence, $f(x)$ is continuous for all $x \\in (2, \\infty)$.\n\n    <strong>Step 2: Check continuity at the boundary point $x = 2$</strong>\n\n    A function $f(x)$ is continuous at $x = 2$ if and only if:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 2^-} f(x) = \\lim_{x \\to 2^+} f(x) = f(2)$$</div></div>\n    \n    Let us evaluate each value:\n    <ol class=\"list-decimal pl-5 space-y-1\">\n        <li><strong>Value at $x = 2$:</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(2) = -(2)^4 + 3 = -16 + 3 = -13$$</div></div>\n\n        <li><strong>Left-Hand Limit (LHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 2^-} f(x) = \\lim_{x \\to 2^-} (-x^4 + 3) = -(2)^4 + 3 = -13$$</div></div>\n\n        <li><strong>Right-Hand Limit (RHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 2^+} f(x) = \\lim_{x \\to 2^+} (x^2 + 9) = 2^2 + 9 = 4 + 9 = 13$$</div></div>\n    </ol>\n\n    <strong>Step 3: Compare LHL, RHL and conclude</strong>\n\n    Since the Left-Hand Limit and Right-Hand Limit are not equal:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 2^-} f(x) \\neq \\lim_{x \\to 2^+} f(x) \\implies (-13 \\neq 13)$$</div></div>\n    The limit $\\lim_{x \\to 2} f(x)$ does not exist. Therefore, $f(x)$ has a jump discontinuity at $x = 2$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{No,  f(x)  is not continuous everywhere because it has a jump discontinuity at  x = 2.}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse22-ct1-seca-q2",
     "discipline": "CSE",
     "batch": 22,
     "year": 2022,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "2",
-    "topics": ["Functions"],
+    "topics": [
+      "Functions"
+    ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
@@ -5130,18 +5135,20 @@ const questions = [
     "questionHtml": "Find a formula for the inverse of $f(x) = \\sqrt{3x - 2}$ with $x$ as the independent variable, and state the domain of $f^{-1}$.",
     "solutionHtml": "<strong>Step 1: Set up the equation for the inverse</strong>\n\n    Let $y = f(x) = \\sqrt{3x - 2}$. Since $y$ is a principal square root, we must have $y \\ge 0$.\n    The domain of $f(x)$ requires:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$3x - 2 \\ge 0 \\implies x \\ge \\frac{2}{3}$$</div></div>\n    The range of $f(x)$ is $[0, \\infty)$, which will become the domain of the inverse function $f^{-1}$.\n\n    <strong>Step 2: Solve for $x$ in terms of $y$</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y = \\sqrt{3x - 2}$$</div></div>\n    Squaring both sides (knowing $y \\ge 0$):\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y^2 = 3x - 2$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$3x = y^2 + 2 \\implies x = \\frac{y^2 + 2}{3}$$</div></div>\n\n    <strong>Step 3: Swap variables to express with $x$ as the independent variable</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f^{-1}(x) = \\frac{x^2 + 2}{3}$$</div></div>\n    The domain of $f^{-1}$ is the range of $f(x)$, which is $x \\ge 0$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{f^{-1}(x) = \\frac{x^2 + 2}{3}, \\quad Domain of  f^{-1} = [0, \\infty)}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse22-ct1-seca-q3",
     "discipline": "CSE",
     "batch": 22,
     "year": 2022,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "3",
-    "topics": ["Functions", "Applications of Derivatives"],
+    "topics": [
+      "Functions",
+      "Applications of Derivatives"
+    ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
@@ -5150,18 +5157,19 @@ const questions = [
     "questionHtml": "Draw the graph of (i) $f(x) = \\frac{1}{x^2}$ (ii) $f(x) = \\frac{3}{x^2+1}$ (iii) $f(x) = 4 - |x - 2|$. Also find the domain and range of the functions.",
     "solutionHtml": "\n\n(i) $f(x) = \\frac{1}{x^2}$\n\n    <strong>Domain and Range:</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Domain:</strong> The denominator cannot be zero, so $x \\neq 0$. Thus, $Domain = (-\\infty, 0) \\cup (0, \\infty)$.\n        <li><strong>Range:</strong> Since $x^2 > 0$ for all $x \\neq 0$, $f(x)$ is always positive and approaches infinity as $x \\to 0$, and approaches $0$ as $x \\to \\pm\\infty$. Thus, $Range = (0, \\infty)$.\n    </ul>\n    <strong>Graph Description:</strong> \\\\\n    The curve lies entirely in the upper half-plane (Quadrants I and II). It is symmetric about the y-axis (even function). It has a vertical asymptote at $x = 0$ and a horizontal asymptote at $y = 0$.\n\n\n(ii) $f(x) = \\frac{3}{x^2+1}$\n\n    <strong>Domain and Range:</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Domain:</strong> Since $x^2 + 1 \\ge 1$ for all real $x$, the denominator is never zero. Thus, $Domain = (-\\infty, \\infty)$.\n        <li><strong>Range:</strong> Since $x^2 \\ge 0 \\implies x^2 + 1 \\ge 1 \\implies \\frac{1}{x^2 + 1} \\le 1$. Multiplying by 3, the maximum value is $3$ (achieved at $x = 0$). As $x \\to \\pm \\infty$, $f(x) \\to 0$ but never reaches $0$. Thus, $Range = (0, 3]$.\n    </ul>\n    <strong>Graph Description:</strong> \\\\\n    This is a bell-shaped curve (symmetric about the y-axis). The peak of the bell is at $(0, 3)$, and it asymptotically approaches $y = 0$ as $x$ extends to both positive and negative infinity.\n\n\n(iii) $f(x) = 4 - |x - 2|$\n\n    <strong>Domain and Range:</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Domain:</strong> The absolute value function is defined for all real numbers. Thus, $Domain = (-\\infty, \\infty)$.\n        <li><strong>Range:</strong> Since $|x - 2| \\ge 0 \\implies -|x - 2| \\le 0 \\implies 4 - |x - 2| \\le 4$. The maximum value is $4$ (at $x=2$) and decreases without bound. Thus, $Range = (-\\infty, 4]$.\n    </ul>\n    <strong>Graph Description:</strong> \\\\\n    An inverted V-shaped graph with its vertex at $(2, 4)$. To the left of $x = 2$, the graph is a straight line with slope $1$ ($y = x + 2$), and to the right of $x = 2$, the graph is a line with slope $-1$ ($y = 6 - x$).",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\n<div class=\"overflow-x-auto\">$$</div>\n&(i) Domain:  (-\\infty, 0) \\cup (0, \\infty),  Range:  (0, \\infty) \\\\\n&(ii) Domain:  (-\\infty, \\infty),  Range:  (0, 3] \\\\\n&(iii) Domain:  (-\\infty, \\infty),  Range:  (-\\infty, 4]\n\n<div class=\"overflow-x-auto\">$$</div>\n}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse22-ct1-seca-q4",
     "discipline": "CSE",
     "batch": 22,
     "year": 2022,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "4",
-    "topics": ["Differentiation"],
+    "topics": [
+      "Differentiation"
+    ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
@@ -5170,18 +5178,20 @@ const questions = [
     "questionHtml": "Find \\(\\frac{dy}{dx}\\) of $y = \\frac{(3-2x)^{4/3}}{x^2}$.",
     "solutionHtml": "<strong>Step 1: Set up the differentiation using the Quotient Rule</strong>\n\n    Let $u = (3-2x)^{4/3}$ and $v = x^2$.\n    By the quotient rule:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{u'v - uv'}{v^2}$$</div></div>\n\n    <strong>Step 2: Differentiate the components</strong>\n\n    Differentiate $u$ using the chain rule:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$u' = \\frac{4}{3}(3-2x)^{1/3} \\cdot \\frac{d}{dx}(3-2x) = \\frac{4}{3}(3-2x)^{1/3} \\cdot (-2) = -\\frac{8}{3}(3-2x)^{1/3}$$</div></div>\n    Differentiate $v$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$v' = 2x$$</div></div>\n\n    <strong>Step 3: Combine using the Quotient Rule formula</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{[-\\frac{8}{3}(3-2x)^{1/3}](x^2) - (3-2x)^{4/3}(2x)}{(x^2)^2}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{-\\frac{8}{3}x^2(3-2x)^{1/3} - 2x(3-2x)^{4/3}}{x^4}$$</div></div>\n\n    <strong>Step 4: Factor and simplify the numerator</strong>\n\n    Factor out $2x(3-2x)^{1/3}$ from the numerator:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{2x(3-2x)^{1/3} [ -\\frac{4}{3}x - (3-2x) ]}{x^4}$$</div></div>\n    Simplify the expression inside the brackets:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$-\\frac{4}{3}x - 3 + 2x = \\frac{2}{3}x - 3 = \\frac{2x - 9}{3}$$</div></div>\n    Substitute this back:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{2x(3-2x)^{1/3} [ \\frac{2x - 9}{3} ]}{x^4}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{2(3-2x)^{1/3}(2x-9)}{3x^3}$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\\frac{dy}{dx} = \\frac{2(2x - 9)(3-2x)^{1/3}}{3x^3}}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse22-ct1-seca-q5",
     "discipline": "CSE",
     "batch": 22,
     "year": 2022,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "5",
-    "topics": ["Differentiation", "Successive Differentiation"],
+    "topics": [
+      "Differentiation",
+      "Successive Differentiation"
+    ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
@@ -5190,18 +5200,19 @@ const questions = [
     "questionHtml": "Find the $n$-th derivative of $y = e^{4x}\\cos(3x + 5)$.",
     "solutionHtml": "<strong>Step 1: State the general formula for $n$-th derivative of $e^{ax}\\cos(bx+c)$</strong>\n\n    The $n$-th derivative of $y = e^{ax}\\cos(bx + c)$ is given by the formula:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n = (a^2 + b^2)^{n/2} e^{ax} \\cos(bx + c + n\\phi)$$</div></div>\n    where $\\phi = \\tan^{-1}(\\frac{b}{a})$.\n\n    <strong>Step 2: Substitute the parameters from the given function</strong>\n\n    Comparing the given function $y = e^{4x}\\cos(3x + 5)$ to the general form:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$a = 4, \\quad b = 3, \\quad c = 5$$</div></div>\n\n    <strong>Step 3: Calculate the constants</strong>\n\n    Calculate the amplitude constant:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(a^2 + b^2)^{1/2} = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$$</div></div>\n    Therefore, the term $(n^2 + m^2)^{n/2}$ becomes:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(a^2 + b^2)^{n/2} = 5^n$$</div></div>\n    \n    Calculate the phase shift angle $\\phi$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\phi = \\tan^{-1}(\\frac{3}{4})$$</div></div>\n\n    <strong>Step 4: Write the final $n$-th derivative formula</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n = 5^n e^{4x} \\cos(3x + 5 + n\\tan^{-1}(\\frac{3}{4}))$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{y_n = 5^n e^{4x} \\cos(3x + 5 + n\\tan^{-1}(\\frac{3}{4}))}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse23-ct1-seca-q1",
     "discipline": "CSE",
     "batch": 23,
     "year": 2023,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "1",
-    "topics": ["Functions"],
+    "topics": [
+      "Functions"
+    ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
@@ -5210,18 +5221,19 @@ const questions = [
     "questionHtml": "Draw the graph of the following function and find the domain and range of it:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = \\begin{cases}0, & x \\le -1 \\\\ \n\\sqrt{1-x^2}, & -1 < x < 1 \\\\ \nx, & x \\ge 1 \n\\end{cases}$$</div></div>",
     "solutionHtml": "<strong>Step 1: Determine the Domain</strong>\n\n    The function piecewise branches cover the entire real line:\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li>$x \\le -1$\n        <li>$-1 < x < 1$\n        <li>$x \\ge 1$\n    </ul>\n    Combining these intervals, the domain of the function is:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$Domain = (-\\infty, \\infty)$$</div></div>\n\n    <strong>Step 2: Determine the Range</strong>\n\n    We analyze the range of each piecewise branch:\n    <ol class=\"list-decimal pl-5 space-y-1\">\n        <li>For $x \\le -1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = 0 \\implies f(x) \\in \\{0\\}$$</div></div>\n        <li>For $-1 < x < 1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = \\sqrt{1-x^2}$$</div></div>\n        Since $0 \\le x^2 < 1$, we have $0 < 1 - x^2 \\le 1$, which gives:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$0 < \\sqrt{1-x^2} \\le 1 \\implies f(x) \\in (0, 1]$$</div></div>\n        <li>For $x \\ge 1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = x \\implies f(x) \\in [1, \\infty)$$</div></div>\n    </ol>\n    Combining the outputs from all three branches:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$Range = \\{0\\} \\cup (0, 1] \\cup [1, \\infty) = [0, \\infty)$$</div></div>\n\n    <strong>Step 3: Graph Description</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li>For $x \\in (-\\infty, -1]$, the graph is a flat horizontal line lying directly on the x-axis ($y = 0$).\n        <li>For $x \\in (-1, 1)$, the graph is the upper half of a unit circle centered at the origin, starting with an open circle at $(-1, 0)$, reaching its peak at $(0, 1)$, and ending with an open circle at $(1, 0)$.\n        <li>For $x \\in [1, \\infty)$, the graph is a straight line $y = x$ starting at the solid point $(1, 1)$ and extending upwards to infinity at a $45^\\circ$ angle.\n    </ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{Domain = (-\\infty, \\infty), \\quad Range = [0, \\infty)}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse23-ct1-seca-q2",
     "discipline": "CSE",
     "batch": 23,
     "year": 2023,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "2",
-    "topics": ["Limits & Continuity"],
+    "topics": [
+      "Limits & Continuity"
+    ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
@@ -5230,18 +5242,20 @@ const questions = [
     "questionHtml": "Discuss the continuity of the following function at $x = 0, 3/2$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = \\begin{cases}3+2x, & for  -3/2 \\le x \\le 0 \\\\ \n3-2x, & for  0 \\le x < 3/2 \\\\ \n-3-2x, & for  x \\ge 3/2 \n\\end{cases}$$</div></div>",
     "solutionHtml": "<strong>Step 1: Test continuity at $x = 0$</strong>\n\n    A function is continuous at $x = 0$ if and only if $\\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0^+} f(x) = f(0)$.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Function value:</strong> $f(0) = 3 + 2(0) = 3$ (using the first branch).\n        <li><strong>Left-Hand Limit (LHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0^-} (3 + 2x) = 3$$</div></div>\n        <li><strong>Right-Hand Limit (RHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 0^+} f(x) = \\lim_{x \\to 0^+} (3 - 2x) = 3$$</div></div>\n    </ul>\n    Since $LHL = RHL = f(0) = 3$, the function $f(x)$ is <strong>continuous</strong> at $x = 0$.\n\n    <strong>Step 2: Test continuity at $x = 2$</strong>\n\n    We check if $\\lim_{x \\to 2^-} f(x) = \\lim_{x \\to 2^+} f(x) = f(2)$.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Function value:</strong> $f(3/2) = -3 - 2(3/2) = -3 - 3 = -6$ (using the third branch).\n        <li><strong>Left-Hand Limit (LHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 3/2^-} f(x) = \\lim_{x \\to 3/2^-} (3 - 2x) = 3 - 2(\\frac{3}{2}) = 0$$</div></div>\n        <li><strong>Right-Hand Limit (RHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 3/2^+} f(x) = \\lim_{x \\to 3/2^+} (-3 - 2x) = -3 - 2(\\frac{3}{2}) = -6$$</div></div>\n    </ul>\n    Since $LHL \\neq RHL$ ($0 \\neq -6$), the limit at $x = 3/2$ does not exist. Hence, $f(x)$ has a jump discontinuity and is <strong>discontinuous</strong> at $x = 3/2$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{f(x)  is continuous at  x = 0  and discontinuous at  x = 3/2.}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse23-ct1-seca-q3",
     "discipline": "CSE",
     "batch": 23,
     "year": 2023,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "3",
-    "topics": ["Differentiation", "Implicit Differentiation"],
+    "topics": [
+      "Differentiation",
+      "Implicit Differentiation"
+    ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
@@ -5250,18 +5264,19 @@ const questions = [
     "questionHtml": "Define explicit function and implicit function. Find $dy/dx$ of:\n<ol class=\"list-decimal pl-5 space-y-1\">\n    <li>$x^y + y^x = a^b$\n    <li>$y = x^{\\tan^{-1}x} + (\\cos x)^{\\ln x}$\n    <li>$x = e^t \\sin t, \\ y = e^t \\cos t$\n</ol>",
     "solutionHtml": "<strong>Definitions:</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Explicit Function:</strong> A function in which the dependent variable $y$ is expressed directly and solely in terms of the independent variable $x$. It is written in the form $y = f(x)$. \\\\\n<em>Example:</em> $y = x^2 + 5x + 6$.\n        <li><strong>Implicit Function:</strong> A function in which the dependent variable $y$ is not expressed directly in terms of $x$, but is instead defined via an equation involving both variables. It is written in the form $F(x, y) = 0$. \\\\\n<em>Example:</em> $x^2 + y^2 - 25 = 0$.\n    </ul>\n\n\n(i) Find $\\frac{dy}{dx}$ of $x^y + y^x = a^b$\n\n<strong>Step 1: Use substitution</strong>\n\n    Let $u = x^y$ and $v = y^x$. Thus:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$u + v = a^b \\implies \\frac{du}{dx} + \\frac{dv}{dx} = 0$$</div></div>\n\n    <strong>Step 2: Differentiate $u = x^y$</strong>\n\n    Taking natural logs:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln u = y \\ln x$$</div></div>\n    Differentiating implicitly with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{u}\\frac{du}{dx} = y_1 \\ln x + \\frac{y}{x} \\implies \\frac{du}{dx} = x^y ( y_1 \\ln x + \\frac{y}{x} )$$</div></div>\n\n    <strong>Step 3: Differentiate $v = y^x$</strong>\n\n    Taking natural logs:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln v = x \\ln y$$</div></div>\n    Differentiating implicitly with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{v}\\frac{dv}{dx} = \\ln y + \\frac{x}{y} y_1 \\implies \\frac{dv}{dx} = y^x ( \\ln y + \\frac{x}{y} y_1 )$$</div></div>\n\n    <strong>Step 4: Combine and solve for $y_1$</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$x^y ( y_1 \\ln x + \\frac{y}{x} ) + y^x ( \\ln y + \\frac{x}{y} y_1 ) = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 ( x^y \\ln x + x y^{x-1} ) + y x^{y-1} + y^x \\ln y = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = -\\frac{y x^{y-1} + y^x \\ln y}{x^y \\ln x + x y^{x-1}}$$</div></div>\n\n\n(ii) Find $\\frac{dy}{dx}$ of $y = x^{\\tan^{-1}x} + (\\cos x)^{\\ln x}$\n\n    <strong>Step 1: Differentiate each term independently</strong>\n\n    Let $y = u + v$, where $u = x^{\\tan^{-1}x}$ and $v = (\\cos x)^{\\ln x}$.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>For $u = x^{\\tan^{-1}x}$:</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln u = \\tan^{-1}x \\ln x \\implies \\frac{1}{u}\\frac{du}{dx} = \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1}x}{x}$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{du}{dx} = x^{\\tan^{-1}x} ( \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1}x}{x} )$$</div></div>\n        <li><strong>For $v = (\\cos x)^{\\ln x}$:</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln v = \\ln x \\ln(\\cos x) \\implies \\frac{1}{v}\\frac{dv}{dx} = \\frac{\\ln(\\cos x)}{x} + \\ln x ( -\\frac{\\sin x}{\\cos x} )$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dv}{dx} = (\\cos x)^{\\ln x} ( \\frac{\\ln(\\cos x)}{x} - \\ln x \\tan x )$$</div></div>\n    </ul>\n    Combining these derivatives:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = x^{\\tan^{-1}x} ( \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1}x}{x} ) + (\\cos x)^{\\ln x} ( \\frac{\\ln(\\cos x)}{x} - \\ln x \\tan x )$$</div></div>\n\n\n(iii) Find $\\frac{dy}{dx}$ of $x = e^t \\sin t, \\ y = e^t \\cos t$\n\n    <strong>Step 1: Perform parametric differentiation</strong>\n\n    Differentiating $x$ with respect to $t$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dx}{dt} = e^t \\sin t + e^t \\cos t = e^t(\\sin t + \\cos t)$$</div></div>\n    Differentiating $y$ with respect to $t$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dt} = e^t \\cos t - e^t \\sin t = e^t(\\cos t - \\sin t)$$</div></div>\n    Finding $\\frac{dy}{dx}$ using the chain rule:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{e^t(\\cos t - \\sin t)}{e^t(\\sin t + \\cos t)} = \\frac{\\cos t - \\sin t}{\\sin t + \\cos t}$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\n<div class=\"overflow-x-auto\">$$</div>\n&(i)  \\frac{dy}{dx} = -\\frac{y x^{y-1} + y^x \\ln y}{x^y \\ln x + x y^{x-1}} \\\\\n&(ii)  \\frac{dy}{dx} = x^{\\tan^{-1}x} ( \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1}x}{x} ) + (\\cos x)^{\\ln x} ( \\frac{\\ln(\\cos x)}{x} - \\ln x \\tan x ) \\\\\n&(iii)  \\frac{dy}{dx} = \\frac{\\cos t - \\sin t}{\\sin t + \\cos t}\n\n<div class=\"overflow-x-auto\">$$</div>\n}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse23-ct1-seca-q4",
     "discipline": "CSE",
     "batch": 23,
     "year": 2023,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "4",
-    "topics": ["Differentiation"],
+    "topics": [
+      "Differentiation"
+    ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
@@ -5270,18 +5285,19 @@ const questions = [
     "questionHtml": "State and prove Leibnitz's theorem. If $y = (\\sin^{-1} x)^2$ then show that \n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2 y_n = 0$$</div></div>\nAlso find $(y_n)_0$.",
     "solutionHtml": "<strong>Step 1: State Leibnitz's Theorem</strong>\n\n    If $u$ and $v$ are two functions of $x$ that can be differentiated $n$ times, then the $n$-th order derivative of their product $uv$ is given by:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_n = u_n v + \\binom{n}{1} u_{n-1} v_1 + \\binom{n}{2} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n$$</div></div>\n\n    <strong>Step 2: Prove Leibnitz's Theorem</strong>\n\n    We prove the theorem using Mathematical Induction.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Base Case ($n=1$):</strong> By the standard product rule:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_1 = u_1 v + u v_1$$</div></div>\n        Since $\\binom{1}{0}=1$ and $\\binom{1}{1}=1$, the theorem holds for $n=1$.\n        <li><strong>Inductive Hypothesis:</strong> Assume the theorem is true for $n=k$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_k = u_k v + \\binom{k}{1} u_{k-1} v_1 + \\binom{k}{2} u_{k-2} v_2 + \\dots + \\binom{k}{r} u_{k-r} v_r + \\dots + u v_k$$</div></div>\n        <li><strong>Inductive Step:</strong> Differentiating both sides once more with respect to $x$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_{k+1} = \\frac{d}{dx} [ (uv)_k ]$$</div></div>\n        Using the product rule on each term:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_{k+1} = ( u_{k+1} v + u_k v_1 ) + \\binom{k}{1} ( u_k v_1 + u_{k-1} v_2 ) + \\dots + \\binom{k}{r} ( u_{k+1-r} v_r + u_{k-r} v_{r+1} ) + \\dots$$</div></div>\n        Grouping like terms together:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_{k+1} = u_{k+1} v + [ 1 + \\binom{k}{1} ] u_k v_1 + [ \\binom{k}{1} + \\binom{k}{2} ] u_{k-1} v_2 + \\dots + [ \\binom{k}{r} + \\binom{k}{r-1} ] u_{k+1-r} v_r + \\dots + u v_{k+1}$$</div></div>\n        Using Pascal's Identity $\\binom{k}{r} + \\binom{k}{r-1} = \\binom{k+1}{r}$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_{k+1} = u_{k+1} v + \\binom{k+1}{1} u_k v_1 + \\binom{k+1}{2} u_{k-1} v_2 + \\dots + u v_{k+1}$$</div></div>\n        This is the statement for $n = k+1$. Thus, by induction, the theorem is proved for all $n \\in \\mathbb{N}$.\n    </ul>\n\n    <strong>Step 3: Establish the second-order equation for $y = (\\sin^{-1}x)^2$</strong>\n\n    Given:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y = (\\sin^{-1}x)^2 \\implies y(0) = 0$$</div></div>\n    Differentiating once with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = \\frac{2\\sin^{-1}x}{\\sqrt{1-x^2}} \\implies y_1(0) = 0$$</div></div>\n    Squaring both sides:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1^2(1-x^2) = 4(\\sin^{-1}x)^2 = 4y$$</div></div>\n    Differentiating again with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$2y_1 y_2(1-x^2) - 2x y_1^2 = 4y_1$$</div></div>\n    Dividing by $2y_1$ (since $y_1 \\neq 0$):\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(1-x^2) - xy_1 = 2 \\implies y_2(0) = 2$$</div></div>\n\n    <strong>Step 4: Differentiate $n$ times using Leibnitz's Theorem</strong>\n\n    Differentiating $y_2(1-x^2) - xy_1 - 2 = 0$ $n$ times:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$[ y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) ] - [ y_{n+1}x + n y_n ] = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - x y_{n+1} - n y_n = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2 y_n = 0$$</div></div>\n\n    <strong>Step 5: Find $(y_n)_0$</strong>\n\n    Setting $x=0$ in the above recurrence relation:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_{n+2}(0) = n^2 y_n(0)$$</div></div>\n    Since $y_1(0) = 0$, all odd-order derivatives at $x=0$ are zero:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_{2k+1}(0) = 0$$</div></div>\n    For even-order derivatives, we use $y_2(0) = 2$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_4(0) = 2^2 \\cdot y_2(0) = 2^2 \\cdot 2$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_6(0) = 4^2 \\cdot y_4(0) = 4^2 \\cdot 2^2 \\cdot 2$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n(0) = 2 \\cdot 2^2 \\cdot 4^2 \\cdot \\dots \\cdot (n-2)^2 \\quad (for even  n \\ge 2)$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\ny_n(0) = \\begin{cases}2 \\cdot 2^2 \\cdot 4^2 \\dots (n-2)^2, & when  n  is even \\\\ \n0, & when  n  is odd \n\\end{cases}\n}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse23-ct1-secb-q1",
     "discipline": "CSE",
     "batch": 23,
     "year": 2023,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "B",
     "questionNumber": "1",
-    "topics": ["Definite Integration"],
+    "topics": [
+      "Definite Integration"
+    ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
@@ -5290,18 +5306,20 @@ const questions = [
     "questionHtml": "State and prove the Fundamental Theorem of Calculus.",
     "solutionHtml": "Statement\n\nThe Fundamental Theorem of Calculus (FTC) consists of two parts that connect the concept of differentiating a function with the concept of integrating it.\n\n\n    <strong>First Fundamental Theorem of Calculus (FTC 1):</strong>\n\n    If $f$ is continuous on the closed interval $[a, b]$, then the function $g$ defined by:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(x) = \\int_{a}^{x} f(t) \\, dt \\quad for  x \\in [a, b]$$</div></div>\n    is continuous on $[a, b]$, differentiable on the open interval $(a, b)$, and its derivative is:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g'(x) = f(x)$$</div></div>\n\n    <strong>Second Fundamental Theorem of Calculus (FTC 2):</strong>\n\n    If $f$ is continuous on the closed interval $[a, b]$, and $F$ is any antiderivative of $f$ on $[a, b]$ such that $F'(x) = f(x)$, then:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int_{a}^{b} f(x) \\, dx = F(b) - F(a)$$</div></div>\n\n\nProof of FTC 1\n\nLet $g(x) = \\int_{a}^{x} f(t) \\, dt$. By definition of the derivative:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{g(x+h) - g(x)}{h}$$</div></div>\nSubstituting the integral form of $g(x)$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{1}{h} [ \\int_{a}^{x+h} f(t) \\, dt - \\int_{a}^{x} f(t) \\, dt ] = \\lim_{h \\to 0} \\frac{1}{h} \\int_{x}^{x+h} f(t) \\, dt$$</div></div>\nSince $f$ is continuous on the closed interval $[x, x+h]$ (or $[x+h, x]$ if $h < 0$), by the Mean Value Theorem for Integrals, there exists a number $c$ in this interval such that:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int_{x}^{x+h} f(t) \\, dt = f(c) \\cdot h$$</div></div>\nSubstituting this back into the derivative equation:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{1}{h} [f(c) \\cdot h] = \\lim_{h \\to 0} f(c)$$</div></div>\nAs $h \\to 0$, the interval $[x, x+h]$ squeezes down to the single point $x$. Since $c$ is forced to lie within this interval, we must have $c \\to x$. Because $f$ is continuous:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{h \\to 0} f(c) = f(x)$$</div></div>\nThus, $g'(x) = f(x)$.\n\nProof of FTC 2\n\nLet $F(x)$ be any antiderivative of $f(x)$ on $[a, b]$, meaning $F'(x) = f(x)$. \nFrom FTC 1, we also know that $g(x) = \\int_{a}^{x} f(t) \\, dt$ is an antiderivative of $f(x)$ because $g'(x) = f(x)$.\n\nSince any two antiderivatives of the same function differ only by a constant $C$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(x) = F(x) + C \\quad for all  x \\in [a, b]$$</div></div>\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li>To find $C$, we evaluate the relation at $x = a$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(a) = F(a) + C$$</div></div>\n    Since $g(a) = \\int_{a}^{a} f(t) \\, dt = 0$, we have:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$0 = F(a) + C \\implies C = -F(a)$$</div></div>\n    <li>Substituting $C$ back into the relation:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(x) = F(x) - F(a)$$</div></div>\n    <li>Now evaluating at $x = b$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(b) = F(b) - F(a)$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int_{a}^{b} f(t) \\, dt = F(b) - F(a)$$</div></div>\n</ul>\nReplacing variable $t$ with $x$ yields the required result:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int_{a}^{b} f(x) \\, dx = F(b) - F(a)$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{Fundamental Theorem of Calculus proven successfully.}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse23-ct1-secb-q2",
     "discipline": "CSE",
     "batch": 23,
     "year": 2023,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "B",
     "questionNumber": "2",
-    "topics": ["Indefinite Integration", "Reduction Formula"],
+    "topics": [
+      "Indefinite Integration",
+      "Reduction Formula"
+    ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
@@ -5310,18 +5328,20 @@ const questions = [
     "questionHtml": "Obtain the reduction formula for $\\int \\sin^m x \\cos^n x \\, dx$.",
     "solutionHtml": "<strong>Step 1: Set up the integral and split the term</strong>\n\n    Let $I_{m, n} = \\int \\sin^m x \\cos^n x \\, dx$.\n    We can rewrite this by splitting one factor of $\\sin x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = \\int \\sin^{m-1} x ( \\sin x \\cos^n x ) \\, dx$$</div></div>\n\n    <strong>Step 2: Apply Integration by Parts</strong>\n\n    Let $u = \\sin^{m-1} x$ and $dv = \\sin x \\cos^n x \\, dx$.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li>Differentiating $u$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$du = (m-1) \\sin^{m-2} x \\cos x \\, dx$$</div></div>\n        <li>Integrating $dv$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$v = \\int \\sin x \\cos^n x \\, dx = -\\frac{\\cos^{n+1} x}{n+1}$$</div></div>\n    </ul>\n    Using the integration by parts formula $\\int u \\, dv = uv - \\int v \\, du$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{n+1} - \\int ( -\\frac{\\cos^{n+1} x}{n+1} ) [ (m-1) \\sin^{m-2} x \\cos x ] \\, dx$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{n+1} + \\frac{m-1}{n+1} \\int \\sin^{m-2} x \\cos^{n+2} x \\, dx$$</div></div>\n\n    <strong>Step 3: Simplify using trigonometric identity</strong>\n\n    Using $\\cos^{n+2} x = \\cos^n x \\cos^2 x = \\cos^n x (1 - \\sin^2 x)$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int \\sin^{m-2} x \\cos^{n+2} x \\, dx = \\int \\sin^{m-2} x \\cos^n x (1 - \\sin^2 x) \\, dx$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$= \\int \\sin^{m-2} x \\cos^n x \\, dx - \\int \\sin^m x \\cos^n x \\, dx$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$= I_{m-2, n} - I_{m, n}$$</div></div>\n\n    <strong>Step 4: Solve for $I_{m, n}$</strong>\n\n    Substitute this expansion back into the equation from Step 2:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{n+1} + \\frac{m-1}{n+1} ( I_{m-2, n} - I_{m, n} )$$</div></div>\n    Multiply the entire equation by $(n+1)$ to clear the fractions:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(n+1) I_{m, n} = -\\sin^{m-1} x \\cos^{n+1} x + (m-1) I_{m-2, n} - (m-1) I_{m, n}$$</div></div>\n    Group the $I_{m, n}$ terms on the left side:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(n+1) I_{m, n} + (m-1) I_{m, n} = -\\sin^{m-1} x \\cos^{n+1} x + (m-1) I_{m-2, n}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(m+n) I_{m, n} = -\\sin^{m-1} x \\cos^{n+1} x + (m-1) I_{m-2, n}$$</div></div>\n    Divide both sides by $(m+n)$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{m+n} + \\frac{m-1}{m+n} I_{m-2, n}$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\\int \\sin^m x \\cos^n x \\, dx = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{m+n} + \\frac{m-1}{m+n} \\int \\sin^{m-2} x \\cos^n x \\, dx}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse23-ct1-secb-q3",
     "discipline": "CSE",
     "batch": 23,
     "year": 2023,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "B",
     "questionNumber": "3",
-    "topics": ["Definite Integration", "Reduction Formula"],
+    "topics": [
+      "Definite Integration",
+      "Reduction Formula"
+    ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
@@ -5330,18 +5350,19 @@ const questions = [
     "questionHtml": "Evaluate the definite integral $\\int_{0}^{\\pi/2} \\sin^5 x \\cos^4 x \\, dx$ using the reduction/Wallis' formula.",
     "solutionHtml": "<strong>Step 1: Set up using Wallis' definite integral reduction relation</strong>\n\n    The definite integral version of the reduction formula over the limits $[0, \\pi/2]$ is:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = \\int_{0}^{\\pi/2} \\sin^m x \\cos^n x \\, dx$$</div></div>\n    Applying the limits to the boundary term of the indefinite reduction formula:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$[ -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{m+n} ]_{0}^{\\pi/2} = 0 - 0 = 0$$</div></div>\n    Therefore, the definite integral reduction formula simplifies directly to:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = \\frac{m-1}{m+n} I_{m-2, n}$$</div></div>\n\n    <strong>Step 2: Apply the reduction formula step-by-step</strong>\n\n    We want to evaluate $I_{5, 4}$:\n    <ol class=\"list-decimal pl-5 space-y-1\">\n        <li><strong>First reduction (reducing $m=5$):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{5, 4} = \\frac{5-1}{5+4} I_{3, 4} = \\frac{4}{9} I_{3, 4}$$</div></div>\n\n        <li><strong>Second reduction (reducing $m=3$):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{3, 4} = \\frac{3-1}{3+4} I_{1, 4} = \\frac{2}{7} I_{1, 4}$$</div></div>\n\n        <li><strong>Evaluate the base case $I_{1, 4}$:</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{1, 4} = \\int_{0}^{\\pi/2} \\sin x \\cos^4 x \\, dx$$</div></div>\n        Using substitution: let $u = \\cos x \\implies du = -\\sin x \\, dx$.\n        <ul class=\"list-disc pl-5 space-y-1\">\n            <li>At $x=0$, $u = 1$.\n            <li>At $x=\\pi/2$, $u = 0$.\n        </ul>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{1, 4} = \\int_{1}^{0} -u^4 \\, du = \\int_{0}^{1} u^4 \\, du = [ \\frac{u^5}{5} ]_{0}^{1} = \\frac{1}{5}$$</div></div>\n    </ol>\n\n    <strong>Step 3: Calculate final numerical value</strong>\n\n    Substitute the values back:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{5, 4} = \\frac{4}{9} \\cdot \\frac{2}{7} \\cdot I_{1, 4}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{5, 4} = \\frac{4}{9} \\cdot \\frac{2}{7} \\cdot \\frac{1}{5} = \\frac{8}{315}$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\\int_{0}^{\\pi/2} \\sin^5 x \\cos^4 x \\, dx = \\frac{8}{315}}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse24-ct1-seca-q1",
     "discipline": "CSE",
     "batch": 24,
     "year": 2024,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "1",
-    "topics": ["Functions"],
+    "topics": [
+      "Functions"
+    ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
@@ -5350,18 +5371,19 @@ const questions = [
     "questionHtml": "Define function, even function and odd function with examples. Draw the graph and also find the domain and range of $f(x) = |x - 4| + |x| + |x + 6|$.",
     "solutionHtml": "Definitions\n\n    <strong>Function:</strong> A relation $f$ from a set $A$ to a set $B$ is a function if every element $x \\in A$ is associated with exactly one element $y \\in B$. It is denoted as $f: A \\to B$. \\\\\n<em>Example:</em> $f(x) = x^2$.\n    <strong>Even Function:</strong> A function $f(x)$ is even if $f(-x) = f(x)$ for all $x$ in its domain. The graph of an even function is symmetric with respect to the y-axis. \\\\\n<em>Example:</em> $f(x) = \\cos x$.\n    <strong>Odd Function:</strong> A function $f(x)$ is odd if $f(-x) = -f(x)$ for all $x$ in its domain. The graph of an odd function is symmetric with respect to the origin. \\\\\n<em>Example:</em> $f(x) = \\sin x$.\n\n\nPiecewise Analysis of $f(x)$\n\nTo graph $f(x) = |x - 4| + |x| + |x + 6|$, we analyze the critical points: $x = -6$, $x = 0$, and $x = 4$.\n\n<ol class=\"list-decimal pl-5 space-y-1\">\n    <li><strong>Case 1: $x < -6$</strong> \\\\\nAll absolute terms are negative:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = -(x - 4) - x - (x + 6) = -x + 4 - x - x - 6 = -3x - 2$$</div></div>\n\n    <li><strong>Case 2: $-6 \\le x < 0$</strong> \\\\\nHere, $x + 6 \\ge 0$, while $x < 0$ and $x - 4 < 0$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = -(x - 4) - x + (x + 6) = -x + 4 - x + x + 6 = -x + 10$$</div></div>\n\n    <li><strong>Case 3: $0 \\le x < 4$</strong> \\\\\nHere, $x \\ge 0$ and $x + 6 \\ge 0$, while $x - 4 < 0$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = -(x - 4) + x + (x + 6) = -x + 1 + x + x + 1 = x + 2$$</div></div>\n\n    <li><strong>Case 4: $x \\ge 1$</strong> \\\\\nAll terms are non-negative:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = (x - 4) + (x) + (x + 2)$$</div></div>\n    <em>Note: Correction in absolute boundaries: $x - 4 \\ge 0 \\implies x \\ge 4$:</em>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = (x - 4) + x + (x + 6) = 3x + 2$$</div></div>\n</ol>\n\nThus, the piecewise representation is:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = \\begin{cases}-3x - 2, & when  x < -6 \\\\ \n-x + 10, & when  -6 \\le x < 0 \\\\ \nx + 10, & when  0 \\le x < 4 \\\\ \n3x + 2, & when  x \\ge 4 \n\\end{cases}$$</div></div>\n\nDomain and Range\n\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li><strong>Domain:</strong> The absolute value terms are defined for all real numbers. Thus:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$Domain = (-\\infty, \\infty)$$</div></div>\n    <li><strong>Range:</strong> Let's check the local minima at the critical points:\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li>At $x = -6$: $f(-6) = |-10| + |-6| + |0| = 16$\n        <li>At $x = 0$: $f(0) = |-4| + |0| + |6| = 10$\n        <li>At $x = 4$: $f(4) = |0| + |4| + |10| = 14$\n    </ul>\n    The absolute minimum value is $10$ at $x = 0$. Since the branches tend to infinity as $x \\to \\pm \\infty$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$Range = [10, \\infty)$$</div></div>\n</ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{Domain = (-\\infty, \\infty), \\quad Range = [10, \\infty)}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse24-ct1-seca-q2",
     "discipline": "CSE",
     "batch": 24,
     "year": 2024,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "2",
-    "topics": ["Limits & Continuity"],
+    "topics": [
+      "Limits & Continuity"
+    ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
@@ -5370,18 +5392,19 @@ const questions = [
     "questionHtml": "Define limit of a function. A function is defined by\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = \\begin{cases}x^2, & when  x \\le 1 \\\\ \nx, & when  1 < x \\le 2 \\\\ \n\\frac{1}{4}x^3, & when  x > 2 \n\\end{cases}$$</div></div>\nFind $\\lim_{x \\to 1} f(x)$ and discuss the continuity of $f(x)$ at $x = 1$.",
     "solutionHtml": "Definition of Limit\n\nThe limit of a function $f(x)$ as $x$ approaches a point $a$ is the value that $f(x)$ gets closer to as $x$ gets arbitrarily close to $a$. It exists and equals $L$ if and only if:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L$$</div></div>\n\nEvaluation of the Limit at $x = 1$\n\nWe evaluate the left-hand and right-hand limits at $x = 1$:\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li><strong>Left-Hand Limit (LHL):</strong>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 1^-} f(x) = \\lim_{x \\to 1^-} (x^2) = 1^2 = 1$$</div></div>\n    <li><strong>Right-Hand Limit (RHL):</strong>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 1^+} f(x) = \\lim_{x \\to 1^+} (x) = 1$$</div></div>\n</ul>\nSince $LHL = RHL = 1$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 1} f(x) = 1$$</div></div>\n\nContinuity at $x = 1$\n\nFor the function to be continuous at $x = 1$, we require:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 1} f(x) = f(1)$$</div></div>\nFrom the piecewise definition:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(1) = 1^2 = 1$$</div></div>\nSince $\\lim_{x \\to 1} f(x) = f(1) = 1$, the function $f(x)$ is continuous at $x = 1$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\\lim_{x \\to 1} f(x) = 1, \\quad The function is continuous at  x = 1.}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse24-ct1-seca-q3",
     "discipline": "CSE",
     "batch": 24,
     "year": 2024,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "3",
-    "topics": ["Differentiation"],
+    "topics": [
+      "Differentiation"
+    ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
@@ -5390,18 +5413,19 @@ const questions = [
     "questionHtml": "Find $\\frac{dy}{dx}$ of:\n<ol class=\"list-decimal pl-5 space-y-1\">\n    <li>$(\\cos x)^y = (\\sin y)^x$\n    <li>$y = (\\tan x)^{\\cot x} + (\\cot x)^{\\tan x}$\n    <li>$x = a\\cos^3 t, \\ y = a\\sin^3 t$\n</ol>",
     "solutionHtml": "\n\n(i) Find $\\frac{dy}{dx}$ of $(\\cos x)^y = (\\sin y)^x$\n\nTaking the natural logarithm on both sides:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y \\ln(\\cos x) = x \\ln(\\sin y)$$</div></div>\nDifferentiating implicitly with respect to $x$ using the product rule:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 \\ln(\\cos x) + y \\cdot \\frac{1}{\\cos x} \\cdot (-\\sin x) = 1 \\cdot \\ln(\\sin y) + x \\cdot \\frac{1}{\\sin y} \\cdot (\\cos y \\cdot y_1)$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 \\ln(\\cos x) - y \\tan x = \\ln(\\sin y) + x \\cot y \\cdot y_1$$</div></div>\nCollect terms containing $y_1$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 [ \\ln(\\cos x) - x \\cot y ] = y \\tan x + \\ln(\\sin y)$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = \\frac{y \\tan x + \\ln(\\sin y)}{\\ln(\\cos x) - x \\cot y}$$</div></div>\n\n\n(ii) Find $\\frac{dy}{dx}$ of $y = (\\tan x)^{\\cot x} + (\\cot x)^{\\tan x}$\n\nLet $y = u + v$, where $u = (\\tan x)^{\\cot x}$ and $v = (\\cot x)^{\\tan x}$.\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li><strong>Differentiating $u = (\\tan x)^{\\cot x}$:</strong>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln u = \\cot x \\ln(\\tan x)$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{u}\\frac{du}{dx} = -\\csc^2 x \\ln(\\tan x) + \\cot x \\cdot \\frac{\\sec^2 x}{\\tan x}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{u}\\frac{du}{dx} = -\\csc^2 x \\ln(\\tan x) + \\csc^2 x = \\csc^2 x (1 - \\ln(\\tan x))$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{du}{dx} = (\\tan x)^{\\cot x} \\csc^2 x (1 - \\ln(\\tan x))$$</div></div>\n\n    <li><strong>Differentiating $v = (\\cot x)^{\\tan x}$:</strong>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln v = \\tan x \\ln(\\cot x)$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{v}\\frac{dv}{dx} = \\sec^2 x \\ln(\\cot x) + \\tan x \\cdot \\frac{-\\csc^2 x}{\\cot x}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{v}\\frac{dv}{dx} = \\sec^2 x \\ln(\\cot x) - \\sec^2 x = \\sec^2 x (\\ln(\\cot x) - 1)$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dv}{dx} = (\\cot x)^{\\tan x} \\sec^2 x (\\ln(\\cot x) - 1)$$</div></div>\n</ul>\nCombining the parts:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = (\\tan x)^{\\cot x} \\csc^2 x [1 - \\ln(\\tan x)] + (\\cot x)^{\\tan x} \\sec^2 x [\\ln(\\cot x) - 1]$$</div></div>\n\n\n(iii) Find $\\frac{dy}{dx}$ of $x = a\\cos^3 t, \\ y = a\\sin^3 t$\n\nWe use parametric differentiation:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dx}{dt} = 3a\\cos^2 t \\cdot (-\\sin t) = -3a\\cos^2 t \\sin t$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dt} = 3a\\sin^2 t \\cdot (\\cos t) = 3a\\sin^2 t \\cos t$$</div></div>\nNow find $dy/dx$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{3a\\sin^2 t \\cos t}{-3a\\cos^2 t \\sin t} = -\\frac{\\sin t}{\\cos t} = -\\tan t$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\n<div class=\"overflow-x-auto\">$$</div>\n&(i)  \\frac{dy}{dx} = \\frac{y \\tan x + \\ln(\\sin y)}{\\ln(\\cos x) - x \\cot y} \\\\\n&(ii)  \\frac{dy}{dx} = (\\tan x)^{\\cot x} \\csc^2 x [1 - \\ln(\\tan x)] + (\\cot x)^{\\tan x} \\sec^2 x [\\ln(\\cot x) - 1] \\\\\n&(iii)  \\frac{dy}{dx} = -\\tan t\n\n<div class=\"overflow-x-auto\">$$</div>\n}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse24-ct1-seca-q4",
     "discipline": "CSE",
     "batch": 24,
     "year": 2024,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "4",
-    "topics": ["Differentiation"],
+    "topics": [
+      "Differentiation"
+    ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
@@ -5410,18 +5434,20 @@ const questions = [
     "questionHtml": "State Leibnitz's theorem. If $y = e^{m\\sin^{-1}x}$, then using Leibnitz's theorem show that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0$. Also find the value of $(y_n)_0$.\n\n<em>Note: The printed exam paper has a minor typographical sign error in the equation where it states $+ (n^2+m^2)y_n = 0$. The rigorous derivation below proves the mathematically correct identity, which is $- (n^2 + m^2)y_n = 0$.</em>",
     "solutionHtml": "State Leibnitz's Theorem\n\nIf $u$ and $v$ are two functions of $x$ possessing derivatives of the $n$-th order, then:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_n = u_n v + \\binom{n}{1} u_{n-1} v_1 + \\binom{n}{2} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n$$</div></div>\n\nDerivation of the Differential Equation\n\nGiven:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y = e^{m\\sin^{-1}x} \\implies y(0) = e^0 = 1$$</div></div>\nDifferentiating with respect to $x$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = e^{m\\sin^{-1}x} \\cdot \\frac{m}{\\sqrt{1-x^2}} = \\frac{my}{\\sqrt{1-x^2}} \\implies y_1(0) = m$$</div></div>\nSquaring both sides:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1^2 (1-x^2) = m^2 y^2$$</div></div>\nDifferentiating again with respect to $x$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$2y_1 y_2 (1-x^2) + y_1^2 (-2x) = m^2 (2y y_1)$$</div></div>\nDividing by $2y_1$ (since $y_1 \\neq 0$):\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(1-x^2) - xy_1 - m^2 y = 0 \\implies y_2(0) = m^2$$</div></div>\n\nApplying Leibnitz's Theorem\n\nDifferentiating the relation $y_2(1-x^2) - xy_1 - m^2 y = 0$ $n$ times with respect to $x$:\n<ol class=\"list-decimal pl-5 space-y-1\">\n    <li>For $y_2(1-x^2)$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$[y_2(1-x^2)]_n = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n$$</div></div>\n    <li>For $-xy_1$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$-[y_1 x]_n = -( y_{n+1}x + n y_n ) = -x y_{n+1} - n y_n$$</div></div>\n    <li>For $-m^2 y$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$-m^2 y_n$$</div></div>\n</ol>\nSumming these expressions:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - x y_{n+1} - n y_n - m^2 y_n = 0$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - n + n + m^2)y_n = 0$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0$$</div></div>\n\nFinding $(y_n)_0$\n\nSetting $x=0$ in the recurrence relation:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_{n+2}(0) = (n^2 + m^2)y_n(0)$$</div></div>\nUsing $y(0) = 1$ and $y_1(0) = m$:\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li><strong>Case 1: If $n$ is even</strong> \\\\\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(0) = m^2$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_4(0) = (2^2 + m^2)y_2(0) = m^2(2^2 + m^2)$$</div></div>\n    In general:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(y_n)_0 = m^2 (2^2 + m^2)(4^2 + m^2) \\dots ((n-2)^2 + m^2)$$</div></div>\n    <li><strong>Case 2: If $n$ is odd</strong> \\\\\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1(0) = m$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_3(0) = (1^2 + m^2)y_1(0) = m(1^2 + m^2)$$</div></div>\n    In general:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(y_n)_0 = m (1^2 + m^2)(3^2 + m^2) \\dots ((n-2)^2 + m^2)$$</div></div>\n</ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\n(y_n)_0 = \\begin{cases}m^2(2^2+m^2)(4^2+m^2)\\dots((n-2)^2+m^2), & when  n  is even \\\\ \nm(1^2+m^2)(3^2+m^2)\\dots((n-2)^2+m^2), & when  n  is odd \n\\end{cases}\n}$$</div></div>"
-  }
-,
+  },
   {
     "id": "cse24-ct1-seca-q5",
     "discipline": "CSE",
     "batch": 24,
     "year": 2024,
     "examType": "CT",
-    "examNumber": null,
+    "examNumber": 1,
     "section": "A",
     "questionNumber": "5",
-    "topics": ["Differentiation", "Successive Differentiation"],
+    "topics": [
+      "Differentiation",
+      "Successive Differentiation"
+    ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
