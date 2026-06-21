@@ -62,7 +62,7 @@
 
   <!-- Navigation Bar -->
   <nav class="bg-white border-b border-slate-200 sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-4">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-4 relative">
       <div class="flex gap-4 md:gap-8 overflow-x-auto no-scrollbar text-sm font-bold uppercase tracking-wide">
         <a href="#dashboard" class="nav-link py-1 border-b-2 border-transparent hover:text-blue-600 transition-colors whitespace-nowrap">Dashboard</a>
         <a href="#papers" class="nav-link py-1 border-b-2 border-transparent hover:text-blue-600 transition-colors whitespace-nowrap">Papers</a>
@@ -70,11 +70,27 @@
         <a href="#repeated" class="nav-link py-1 border-b-2 border-transparent hover:text-blue-600 transition-colors whitespace-nowrap">Repeated</a>
         <a href="#revision" class="nav-link py-1 border-b-2 border-transparent hover:text-blue-600 transition-colors whitespace-nowrap">Revision</a>
       </div>
-      <div class="hidden md:flex items-center bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+      <!-- Mobile search icon (tap to expand) -->
+      <button id="mobile-search-toggle" class="md:hidden p-2 text-slate-500 hover:text-blue-600 transition-colors" aria-label="Toggle search">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
+      <!-- Desktop/expanded search bar -->
+      <div id="global-search-wrapper" class="hidden md:flex items-center bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <input type="text" id="global-search" placeholder="Search questions..." class="bg-transparent border-none focus:ring-0 text-sm ml-2 w-48 text-slate-700">
+      </div>
+      <!-- Mobile expanded search bar (hidden by default) -->
+      <div id="global-search-mobile" class="hidden md:hidden w-full absolute left-0 top-full bg-white border-b border-slate-200 px-4 py-3 shadow-md">
+        <div class="flex items-center bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" id="global-search-mobile-input" placeholder="Search questions..." class="bg-transparent border-none focus:ring-0 text-sm ml-2 w-full text-slate-700">
+        </div>
       </div>
     </div>
   </nav>

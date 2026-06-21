@@ -1,0 +1,358 @@
+% FILE: CSE-23_CT-1.tex
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\babelfont{rm}{Noto Sans}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-ct1-seca-q1  
+% discipline=CSE  
+% year=23  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=1  
+% topic=Functions  
+% subtopic=Curve Sketching  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q1}
+
+Question:
+Draw the graph of the following function and find the domain and range of it:
+\[ 
+f(x) = \begin{cases} 
+0, & x \le -1 \\ 
+\sqrt{1-x^2}, & -1 < x < 1 \\ 
+x, & x \ge 1 
+\end{cases} 
+\]
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Determine the Domain] \ \\
+    The function piecewise branches cover the entire real line:
+    \begin{itemize}
+        \item $x \le -1$
+        \item $-1 < x < 1$
+        \item $x \ge 1$
+    \end{itemize}
+    Combining these intervals, the domain of the function is:
+    \[ \text{Domain} = (-\infty, \infty) \]
+
+    \item[Step 2: Determine the Range] \ \\
+    We analyze the range of each piecewise branch:
+    \begin{enumerate}
+        \item For $x \le -1$:
+        \[ f(x) = 0 \implies f(x) \in \{0\} \]
+        \item For $-1 < x < 1$:
+        \[ f(x) = \sqrt{1-x^2} \]
+        Since $0 \le x^2 < 1$, we have $0 < 1 - x^2 \le 1$, which gives:
+        \[ 0 < \sqrt{1-x^2} \le 1 \implies f(x) \in (0, 1] \]
+        \item For $x \ge 1$:
+        \[ f(x) = x \implies f(x) \in [1, \infty) \]
+    \end{enumerate}
+    Combining the outputs from all three branches:
+    \[ \text{Range} = \{0\} \cup (0, 1] \cup [1, \infty) = [0, \infty) \]
+
+    \item[Step 3: Graph Description] \ 
+    \begin{itemize}
+        \item For $x \in (-\infty, -1]$, the graph is a flat horizontal line lying directly on the x-axis ($y = 0$).
+        \item For $x \in (-1, 1)$, the graph is the upper half of a unit circle centered at the origin, starting with an open circle at $(-1, 0)$, reaching its peak at $(0, 1)$, and ending with an open circle at $(1, 0)$.
+        \item For $x \in [1, \infty)$, the graph is a straight line $y = x$ starting at the solid point $(1, 1)$ and extending upwards to infinity at a $45^\circ$ angle.
+    \end{itemize}
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\text{Domain} = (-\infty, \infty), \quad \text{Range} = [0, \infty)} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-ct1-seca-q2  
+% discipline=CSE  
+% year=23  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=2  
+% topic=Continuity  
+% subtopic=General  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q2}
+
+Question:
+Discuss the continuity of the following function at $x = 0, 3/2$:
+\[ 
+f(x) = \begin{cases} 
+3+2x, & \text{for } -3/2 \le x \le 0 \\ 
+3-2x, & \text{for } 0 \le x < 3/2 \\ 
+-3-2x, & \text{for } x \ge 3/2 
+\end{cases} 
+\]
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Test continuity at $x = 0$] \ \\
+    A function is continuous at $x = 0$ if and only if $\lim_{x \to 0^-} f(x) = \lim_{x \to 0^+} f(x) = f(0)$.
+    \begin{itemize}
+        \item \textbf{Function value:} $f(0) = 3 + 2(0) = 3$ (using the first branch).
+        \item \textbf{Left-Hand Limit (LHL):}
+        \[ \lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} (3 + 2x) = 3 \]
+        \item \textbf{Right-Hand Limit (RHL):}
+        \[ \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} (3 - 2x) = 3 \]
+    \end{itemize}
+    Since $\text{LHL} = \text{RHL} = f(0) = 3$, the function $f(x)$ is \textbf{continuous} at $x = 0$.
+
+    \item[Step 2: Test continuity at $x = 2$] \ \\
+    We check if $\lim_{x \to 2^-} f(x) = \lim_{x \to 2^+} f(x) = f(2)$.
+    \begin{itemize}
+        \item \textbf{Function value:} $f(3/2) = -3 - 2(3/2) = -3 - 3 = -6$ (using the third branch).
+        \item \textbf{Left-Hand Limit (LHL):}
+        \[ \lim_{x \to 3/2^-} f(x) = \lim_{x \to 3/2^-} (3 - 2x) = 3 - 2\left(\frac{3}{2}\right) = 0 \]
+        \item \textbf{Right-Hand Limit (RHL):}
+        \[ \lim_{x \to 3/2^+} f(x) = \lim_{x \to 3/2^+} (-3 - 2x) = -3 - 2\left(\frac{3}{2}\right) = -6 \]
+    \end{itemize}
+    Since $\text{LHL} \neq \text{RHL}$ ($0 \neq -6$), the limit at $x = 3/2$ does not exist. Hence, $f(x)$ has a jump discontinuity and is \textbf{discontinuous} at $x = 3/2$.
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{f(x) \text{ is continuous at } x = 0 \text{ and discontinuous at } x = 3/2.} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-ct1-seca-q3  
+% discipline=CSE  
+% year=23  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=3  
+% topic=Differentiation  
+% subtopic=Implicit Differentiation  
+% difficulty=Medium  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q3}
+
+Question:
+Define explicit function and implicit function. Find $dy/dx$ of:
+\begin{enumerate}[label=(\roman*)]
+    \item $x^y + y^x = a^b$
+    \item $y = x^{\tan^{-1}x} + (\cos x)^{\ln x}$
+    \item $x = e^t \sin t, \ y = e^t \cos t$
+\end{enumerate}
+
+Solution:
+
+\begin{description}
+    \item[Definitions:] \ 
+    \begin{itemize}
+        \item \textbf{Explicit Function:} A function in which the dependent variable $y$ is expressed directly and solely in terms of the independent variable $x$. It is written in the form $y = f(x)$. \\
+        \textit{Example:} $y = x^2 + 5x + 6$.
+        \item \textbf{Implicit Function:} A function in which the dependent variable $y$ is not expressed directly in terms of $x$, but is instead defined via an equation involving both variables. It is written in the form $F(x, y) = 0$. \\
+        \textit{Example:} $x^2 + y^2 - 25 = 0$.
+    \end{itemize}
+\end{description}
+
+\subsection*{(i) Find $\frac{dy}{dx}$ of $x^y + y^x = a^b$}
+\begin{description}
+    \item[Step 1: Use substitution] \ \\
+    Let $u = x^y$ and $v = y^x$. Thus:
+    \[ u + v = a^b \implies \frac{du}{dx} + \frac{dv}{dx} = 0 \]
+
+    \item[Step 2: Differentiate $u = x^y$] \ \\
+    Taking natural logs:
+    \[ \ln u = y \ln x \]
+    Differentiating implicitly with respect to $x$:
+    \[ \frac{1}{u}\frac{du}{dx} = y_1 \ln x + \frac{y}{x} \implies \frac{du}{dx} = x^y \left( y_1 \ln x + \frac{y}{x} \right) \]
+
+    \item[Step 3: Differentiate $v = y^x$] \ \\
+    Taking natural logs:
+    \[ \ln v = x \ln y \]
+    Differentiating implicitly with respect to $x$:
+    \[ \frac{1}{v}\frac{dv}{dx} = \ln y + \frac{x}{y} y_1 \implies \frac{dv}{dx} = y^x \left( \ln y + \frac{x}{y} y_1 \right) \]
+
+    \item[Step 4: Combine and solve for $y_1$] \ \\
+    \[ x^y \left( y_1 \ln x + \frac{y}{x} \right) + y^x \left( \ln y + \frac{x}{y} y_1 \right) = 0 \]
+    \[ y_1 \left( x^y \ln x + x y^{x-1} \right) + y x^{y-1} + y^x \ln y = 0 \]
+    \[ y_1 = -\frac{y x^{y-1} + y^x \ln y}{x^y \ln x + x y^{x-1}} \]
+\end{description}
+
+\subsection*{(ii) Find $\frac{dy}{dx}$ of $y = x^{\tan^{-1}x} + (\cos x)^{\ln x}$}
+\begin{description}
+    \item[Step 1: Differentiate each term independently] \ \\
+    Let $y = u + v$, where $u = x^{\tan^{-1}x}$ and $v = (\cos x)^{\ln x}$.
+    \begin{itemize}
+        \item \textbf{For $u = x^{\tan^{-1}x}$:}
+        \[ \ln u = \tan^{-1}x \ln x \implies \frac{1}{u}\frac{du}{dx} = \frac{\ln x}{1+x^2} + \frac{\tan^{-1}x}{x} \]
+        \[ \frac{du}{dx} = x^{\tan^{-1}x} \left( \frac{\ln x}{1+x^2} + \frac{\tan^{-1}x}{x} \right) \]
+        \item \textbf{For $v = (\cos x)^{\ln x}$:}
+        \[ \ln v = \ln x \ln(\cos x) \implies \frac{1}{v}\frac{dv}{dx} = \frac{\ln(\cos x)}{x} + \ln x \left( -\frac{\sin x}{\cos x} \right) \]
+        \[ \frac{dv}{dx} = (\cos x)^{\ln x} \left( \frac{\ln(\cos x)}{x} - \ln x \tan x \right) \]
+    \end{itemize}
+    Combining these derivatives:
+    \[ \frac{dy}{dx} = x^{\tan^{-1}x} \left( \frac{\ln x}{1+x^2} + \frac{\tan^{-1}x}{x} \right) + (\cos x)^{\ln x} \left( \frac{\ln(\cos x)}{x} - \ln x \tan x \right) \]
+\end{description}
+
+\subsection*{(iii) Find $\frac{dy}{dx}$ of $x = e^t \sin t, \ y = e^t \cos t$}
+\begin{description}
+    \item[Step 1: Perform parametric differentiation] \ \\
+    Differentiating $x$ with respect to $t$:
+    \[ \frac{dx}{dt} = e^t \sin t + e^t \cos t = e^t(\sin t + \cos t) \]
+    Differentiating $y$ with respect to $t$:
+    \[ \frac{dy}{dt} = e^t \cos t - e^t \sin t = e^t(\cos t - \sin t) \]
+    Finding $\frac{dy}{dx}$ using the chain rule:
+    \[ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{e^t(\cos t - \sin t)}{e^t(\sin t + \cos t)} = \frac{\cos t - \sin t}{\sin t + \cos t} \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{
+\begin{aligned}
+&\text{(i) } \frac{dy}{dx} = -\frac{y x^{y-1} + y^x \ln y}{x^y \ln x + x y^{x-1}} \\
+&\text{(ii) } \frac{dy}{dx} = x^{\tan^{-1}x} \left( \frac{\ln x}{1+x^2} + \frac{\tan^{-1}x}{x} \right) + (\cos x)^{\ln x} \left( \frac{\ln(\cos x)}{x} - \ln x \tan x \right) \\
+&\text{(iii) } \frac{dy}{dx} = \frac{\cos t - \sin t}{\sin t + \cos t}
+\end{aligned}
+} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-ct1-seca-q4  
+% discipline=CSE  
+% year=23  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=4  
+% topic=Differentiation  
+% subtopic=Leibnitz Rule  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q4}
+
+Question:
+State and prove Leibnitz's theorem. If $y = (\sin^{-1} x)^2$ then show that 
+\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2 y_n = 0 \]
+Also find $(y_n)_0$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: State Leibnitz's Theorem] \ \\
+    If $u$ and $v$ are two functions of $x$ that can be differentiated $n$ times, then the $n$-th order derivative of their product $uv$ is given by:
+    \[ (uv)_n = u_n v + \binom{n}{1} u_{n-1} v_1 + \binom{n}{2} u_{n-2} v_2 + \dots + \binom{n}{r} u_{n-r} v_r + \dots + u v_n \]
+
+    \item[Step 2: Prove Leibnitz's Theorem] \ \\
+    We prove the theorem using Mathematical Induction.
+    \begin{itemize}
+        \item \textbf{Base Case ($n=1$):} By the standard product rule:
+        \[ (uv)_1 = u_1 v + u v_1 \]
+        Since $\binom{1}{0}=1$ and $\binom{1}{1}=1$, the theorem holds for $n=1$.
+        \item \textbf{Inductive Hypothesis:} Assume the theorem is true for $n=k$:
+        \[ (uv)_k = u_k v + \binom{k}{1} u_{k-1} v_1 + \binom{k}{2} u_{k-2} v_2 + \dots + \binom{k}{r} u_{k-r} v_r + \dots + u v_k \]
+        \item \textbf{Inductive Step:} Differentiating both sides once more with respect to $x$:
+        \[ (uv)_{k+1} = \frac{d}{dx} [ (uv)_k ] \]
+        Using the product rule on each term:
+        \[ (uv)_{k+1} = \left( u_{k+1} v + u_k v_1 \right) + \binom{k}{1} \left( u_k v_1 + u_{k-1} v_2 \right) + \dots + \binom{k}{r} \left( u_{k+1-r} v_r + u_{k-r} v_{r+1} \right) + \dots \]
+        Grouping like terms together:
+        \[ (uv)_{k+1} = u_{k+1} v + \left[ 1 + \binom{k}{1} \right] u_k v_1 + \left[ \binom{k}{1} + \binom{k}{2} \right] u_{k-1} v_2 + \dots + \left[ \binom{k}{r} + \binom{k}{r-1} \right] u_{k+1-r} v_r + \dots + u v_{k+1} \]
+        Using Pascal's Identity $\binom{k}{r} + \binom{k}{r-1} = \binom{k+1}{r}$:
+        \[ (uv)_{k+1} = u_{k+1} v + \binom{k+1}{1} u_k v_1 + \binom{k+1}{2} u_{k-1} v_2 + \dots + u v_{k+1} \]
+        This is the statement for $n = k+1$. Thus, by induction, the theorem is proved for all $n \in \mathbb{N}$.
+    \end{itemize}
+
+    \item[Step 3: Establish the second-order equation for $y = (\sin^{-1}x)^2$] \ \\
+    Given:
+    \[ y = (\sin^{-1}x)^2 \implies y(0) = 0 \]
+    Differentiating once with respect to $x$:
+    \[ y_1 = \frac{2\sin^{-1}x}{\sqrt{1-x^2}} \implies y_1(0) = 0 \]
+    Squaring both sides:
+    \[ y_1^2(1-x^2) = 4(\sin^{-1}x)^2 = 4y \]
+    Differentiating again with respect to $x$:
+    \[ 2y_1 y_2(1-x^2) - 2x y_1^2 = 4y_1 \]
+    Dividing by $2y_1$ (since $y_1 \neq 0$):
+    \[ y_2(1-x^2) - xy_1 = 2 \implies y_2(0) = 2 \]
+
+    \item[Step 4: Differentiate $n$ times using Leibnitz's Theorem] \ \\
+    Differentiating $y_2(1-x^2) - xy_1 - 2 = 0$ $n$ times:
+    \[ \left[ y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \frac{n(n-1)}{2} y_n (-2) \right] - \left[ y_{n+1}x + n y_n \right] = 0 \]
+    \[ (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - x y_{n+1} - n y_n = 0 \]
+    \[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2 y_n = 0 \]
+
+    \item[Step 5: Find $(y_n)_0$] \ \\
+    Setting $x=0$ in the above recurrence relation:
+    \[ y_{n+2}(0) = n^2 y_n(0) \]
+    Since $y_1(0) = 0$, all odd-order derivatives at $x=0$ are zero:
+    \[ y_{2k+1}(0) = 0 \]
+    For even-order derivatives, we use $y_2(0) = 2$:
+    \[ y_4(0) = 2^2 \cdot y_2(0) = 2^2 \cdot 2 \]
+    \[ y_6(0) = 4^2 \cdot y_4(0) = 4^2 \cdot 2^2 \cdot 2 \]
+    \[ y_n(0) = 2 \cdot 2^2 \cdot 4^2 \cdot \dots \cdot (n-2)^2 \quad (\text{for even } n \ge 2) \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{
+y_n(0) = \begin{cases} 
+2 \cdot 2^2 \cdot 4^2 \dots (n-2)^2, & \text{when } n \text{ is even} \\ 
+0, & \text{when } n \text{ is odd} 
+\end{cases}
+} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

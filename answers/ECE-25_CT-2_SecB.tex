@@ -1,0 +1,215 @@
+% FILE: ECE-25_CT-1.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=ece25-ct2-secb-q1
+% discipline=ECE
+% year=2025
+% exam_type=CT
+% section=B
+% ct_number=2
+% question_number=1
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Easy
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec B) - Q1}
+Question:
+Derive the formula for the volume of a sphere of radius $r$ by using the disk method.
+
+Solution:
+Step 1: Set up the geometric model.
+Consider a circle of radius $r$ centered at the origin, represented by the equation:
+\[
+x^2 + y^2 = r^2 \implies y^2 = r^2 - x^2
+\]
+Revolving the upper semicircle $y = \sqrt{r^2 - x^2}$ from $x = -r$ to $x = r$ about the $x$-axis generates a solid sphere of radius $r$.
+
+Step 2: Use the disk method.
+The cross-sectional area of a disk of radius $y$ is $A(x) = \pi y^2$. Integrating this from $x = -r$ to $x = r$:
+\[
+V = \int_{-r}^{r} \pi y^2 \, dx = \pi \int_{-r}^{r} (r^2 - x^2) \, dx
+\]
+
+Step 3: Integrate using symmetry.
+Since the integrand is an even function of $x$:
+\[
+V = 2\pi \int_{0}^{r} (r^2 - x^2) \, dx
+\]
+\[
+V = 2\pi \left[ r^2 x - \frac{x^3}{3} \right]_{0}^{r}
+\]
+
+Step 4: Evaluate the boundaries.
+\[
+V = 2\pi \left( \left(r^3 - \frac{r^3}{3}\right) - 0 \right) = 2\pi \left( \frac{2}{3} r^3 \right) = \frac{4}{3} \pi r^3
+\]
+
+Final Answer:
+\[
+\boxed{V = \frac{4}{3}\pi r^3}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=ece25-ct2-secb-q2
+% discipline=ECE
+% year=2025
+% exam_type=CT
+% section=B
+% ct_number=2
+% question_number=2
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec B) - Q2}
+Question:
+Use cylindrical shells to find the volume of the solid generated when the region R in the first quadrant, enclosed between $y = x$, $x = y^2$, is revolved around the $y$-axis.
+
+Solution:
+Step 1: Determine the intersection points.
+The boundaries are $y = x$ and $x = y^2 \implies y = \sqrt{x}$ (for the first quadrant).
+Equating the equations to find the intersection points:
+\[
+x = \sqrt{x} \implies x^2 = x \implies x(x-1) = 0
+\]
+This gives intersection points at $x = 0$ and $x = 1$.
+Over the interval $x \in [0, 1]$, the curve $y = \sqrt{x}$ lies above the line $y = x$.
+
+Step 2: Set up the cylindrical shells formula.
+Revolving about the $y$-axis, the volume is given by:
+\[
+V = \int_{a}^{b} 2\pi x \cdot (\text{height}) \, dx
+\]
+The height of the shell at any $x \in [0, 1]$ is the vertical distance between the two curves:
+\[
+\text{height} = y_{\text{upper}} - y_{\text{lower}} = \sqrt{x} - x
+\]
+Thus, the volume integral is:
+\[
+V = 2\pi \int_{0}^{1} x (\sqrt{x} - x) \, dx = 2\pi \int_{0}^{1} (x^{3/2} - x^2) \, dx
+\]
+
+Step 3: Integrate and evaluate.
+\[
+V = 2\pi \left[ \frac{x^{5/2}}{5/2} - \frac{x^3}{3} \right]_{0}^{1} = 2\pi \left[ \frac{2}{5} x^{5/2} - \frac{x^3}{3} \right]_{0}^{1}
+\]
+Evaluate at the limits:
+\[
+V = 2\pi \left( \left(\frac{2}{5} - \frac{1}{3}\right) - 0 \right) = 2\pi \left( \frac{6 - 5}{15} \right) = \frac{2\pi}{15}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{2\pi}{15}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=ece25-ct2-secb-q3
+% discipline=ECE
+% year=2025
+% exam_type=CT
+% section=B
+% ct_number=2
+% question_number=3
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec B) - Q3}
+Question:
+Find the volume of the solid obtained by rotating the asteroid $x^{2/3} + y^{2/3} = 1$ around its axis of symmetry.
+
+Solution:
+Step 1: Set up the coordinate equations and axis of rotation.
+By the symmetry of the asteroid $x^{2/3} + y^{2/3} = 1$, rotating it about either the $x$-axis or the $y$-axis yields the identical volume of revolution. Let us rotate the asteroid about the $x$-axis.
+
+The upper boundary curve is:
+\[
+y^{2/3} = 1 - x^{2/3} \implies y^2 = (1 - x^{2/3})^3
+\]
+The curve crosses the $x$-axis at $x = -1$ and $x = 1$.
+
+Step 2: Apply the disk method formula.
+The volume $V$ is:
+\[
+V = \pi \int_{-1}^{1} y^2 \, dx = \pi \int_{-1}^{1} (1 - x^{2/3})^3 \, dx
+\]
+
+Step 3: Simplify using symmetry and algebraic expansion.
+Since the integrand is even:
+\[
+V = 2\pi \int_{0}^{1} (1 - x^{2/3})^3 \, dx
+\]
+Expanding $(1 - x^{2/3})^3$ algebraically:
+\[
+(1 - x^{2/3})^3 = 1 - 3x^{2/3} + 3x^{4/3} - x^2
+\]
+Substituting this expansion back into the integral:
+\[
+V = 2\pi \int_{0}^{1} (1 - 3x^{2/3} + 3x^{4/3} - x^2) \, dx
+\]
+
+Step 4: Integrate and evaluate.
+\[
+V = 2\pi \left[ x - \frac{9}{5} x^{5/3} + \frac{9}{7} x^{7/3} - \frac{x^3}{3} \right]_{0}^{1}
+\]
+Evaluate at the boundaries:
+\[
+V = 2\pi \left( 1 - \frac{9}{5} + \frac{9}{7} - \frac{1}{3} \right)
+\]
+Finding a common denominator of $105$ for the terms:
+\[
+1 - \frac{1}{3} = \frac{2}{3} = \frac{70}{105}
+\]
+\[
+-\frac{9}{5} = -\frac{189}{105}
+\]
+\[
+\frac{9}{7} = \frac{135}{105}
+\]
+Summing these fractions:
+\[
+\frac{70 - 189 + 135}{105} = \frac{16}{105}
+\]
+Multiply by the outside factor $2\pi$:
+\[
+V = 2\pi \left( \frac{16}{105} \right) = \frac{32\pi}{105}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{32\pi}{105}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

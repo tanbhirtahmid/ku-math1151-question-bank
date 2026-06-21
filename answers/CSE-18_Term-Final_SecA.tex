@@ -1,0 +1,480 @@
+% FILE: CSE-18_TermFinal.tex
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+\babelfont{rm}{Noto Sans}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=-}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+% id=cse18-final-q1a
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1a
+% topic=Miscellaneous
+% subtopic=Curve Sketching
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q1(a)}
+Question:
+Define function with example. Draw the graph of
+$$f(x) = \begin{cases} 
+      x^2 - 1 & \text{if } x < 0 \\
+      x & \text{if } 0 \le x < 1 \\
+      1/x & \text{if } x > 1 
+   \end{cases}$$
+Also find the domain and range of it.
+
+Solution:
+Step 1: Define a function with an example.
+A function $f$ from a set $A$ to a set $B$ is a relation that associates each element $x \in A$ with exactly one element $y \in B$.
+- *Example*: $f(x) = x^2$ maps every real number $x \in \mathbb{R}$ to its non-negative square $x^2 \in [0, \infty)$.
+
+Step 2: Find the domain of the piecewise function.
+Analyzing the given inequalities for each branch:
+1. $x < 0$
+2. $0 \le x < 1$
+3. $x > 1$
+
+Notice that $x = 1$ is not included in any of the interval definitions (neither $x < 1$ nor $x > 1$ includes $1$, and there is no $x = 1$ condition). Following the exact definition of the function on the exam paper:
+$$\text{Domain } D = \mathbb{R} \setminus \{1\} = (-\infty, 1) \cup (1, \infty)$$
+
+Step 3: Find the range of the piecewise function.
+Let us analyze the range of each branch individually:
+1. **For $x < 0$**:
+   $$y = x^2 - 1$$
+   Since $x < 0 \implies x^2 > 0 \implies x^2 - 1 > -1$.
+   The range for this interval is $(-1, \infty)$.
+2. **For $0 \le x < 1$**:
+   $$y = x$$
+   The range for this interval is $[0, 1)$.
+3. **For $x > 1$**:
+   $$y = \frac{1}{x}$$
+   Since $x > 1 \implies 0 < \frac{1}{x} < 1$.
+   The range for this interval is $(0, 1)$.
+
+Taking the union of all individual ranges:
+$$\text{Range } R = (-1, \infty) \cup [0, 1) \cup (0, 1) = (-1, \infty)$$
+
+Step 4: Describe the graph.
+- For $x < 0$, the graph is a parabola $y = x^2-1$ opening upwards, starting near $(0, -1)$ (not inclusive) and going to $\infty$.
+- For $0 \le x < 1$, the graph is a straight line $y = x$ starting at $(0,0)$ and ending with an open circle at $(1,1)$.
+- For $x > 1$, the graph is a hyperbola $y = 1/x$ starting near $(1,1)$ (not inclusive) and asymptotically approaching the positive $x$-axis ($y = 0$).
+
+Final Answer:
+$$
+\boxed{\text{Domain: } \mathbb{R} \setminus \{1\}, \quad \text{Range: } (-1, \infty)}
+$$
+
+% id=cse18-final-q1b
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1b
+% topic=Differentiation
+% subtopic=Basic Differentiation
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q1(b)}
+Question:
+Write the physical significance of differentiation. Use first principle rule to find $\frac{d}{dx}(\tan^2 x)$.
+
+Solution:
+Step 1: State the physical significance of differentiation.
+Physically, differentiation represents the instantaneous rate of change of a dependent variable with respect to an independent variable. For example, if $s(t)$ represents the displacement of a particle at time $t$, then its derivative $\frac{ds}{dt}$ represents the instantaneous velocity of the particle at that moment.
+
+Step 2: Set up the first principle of differentiation.
+By definition, the derivative of a function $f(x)$ from first principles is:
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+Here, $f(x) = \tan^2 x$.
+$$f'(x) = \lim_{h \to 0} \frac{\tan^2(x+h) - \tan^2 x}{h}$$
+
+Step 3: Factor the numerator as a difference of squares.
+$$\tan^2(x+h) - \tan^2 x = \left(\tan(x+h) - \tan x\right)\left(\tan(x+h) + \tan x\right)$$
+Thus, the limit becomes:
+$$f'(x) = \lim_{h \to 0} \left[ \frac{\tan(x+h) - \tan x}{h} \cdot \left(\tan(x+h) + \tan x\right) \right]$$
+
+Step 4: Evaluate the difference of tangents limit.
+Using the trigonometric identity $\tan A - \tan B = \frac{\sin(A-B)}{\cos A \cos B}$:
+$$\tan(x+h) - \tan x = \frac{\sin(x+h-x)}{\cos(x+h)\cos x} = \frac{\sin h}{\cos(x+h)\cos x}$$
+Substitute this back into the derivative equation:
+$$f'(x) = \lim_{h \to 0} \left[ \frac{\sin h}{h \cdot \cos(x+h)\cos x} \cdot \left(\tan(x+h) + \tan x\right) \right]$$
+
+Step 5: Apply the limits as $h \to 0$.
+Since $\lim_{h \to 0} \frac{\sin h}{h} = 1$, we get:
+$$f'(x) = 1 \cdot \frac{1}{\cos(x)\cos x} \cdot (\tan x + \tan x)$$
+$$f'(x) = \frac{2\tan x}{\cos^2 x} = 2 \tan x \sec^2 x$$
+
+Final Answer:
+$$
+\boxed{\frac{d}{dx}(\tan^2 x) = 2 \tan x \sec^2 x}
+$$
+
+% id=cse18-final-q2a
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2a
+% topic=Differentiation
+% subtopic=Basic Differentiation
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(a)}
+Question:
+Find $\frac{dy}{dx}$ of 
+(i) $y = x^{\tan^{-1} x} + (\sin x)^{\log_e x}$
+(ii) $x + y = \tan(xy)$
+(iii) $x = \frac{3at}{1+t^3}, y = \frac{3at^2}{1+t^3}$.
+
+Solution:
+Step 1: Solve part (i) $y = x^{\tan^{-1} x} + (\sin x)^{\ln x}$.
+Let $u = x^{\tan^{-1} x}$ and $v = (\sin x)^{\ln x}$. Then $y = u + v \implies \frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx}$.
+
+- For $u = x^{\tan^{-1} x}$:
+  $$\ln u = \tan^{-1} x \ln x$$
+  Differentiate both sides with respect to $x$:
+  $$\frac{1}{u} \frac{du}{dx} = \frac{1}{1+x^2} \ln x + \tan^{-1} x \cdot \frac{1}{x}$$
+  $$\frac{du}{dx} = x^{\tan^{-1} x} \left[ \frac{\ln x}{1+x^2} + \frac{\tan^{-1} x}{x} \right]$$
+
+- For $v = (\sin x)^{\ln x}$:
+  $$\ln v = \ln x \ln(\sin x)$$
+  Differentiate both sides with respect to $x$:
+  $$\frac{1}{v} \frac{dv}{dx} = \frac{1}{x} \ln(\sin x) + \ln x \cdot \frac{1}{\sin x} \cdot \cos x$$
+  $$\frac{dv}{dx} = (\sin x)^{\ln x} \left[ \frac{\ln(\sin x)}{x} + \ln x \cot x \right]$$
+
+Therefore, the derivative is:
+$$\frac{dy}{dx} = x^{\tan^{-1} x} \left[ \frac{\ln x}{1+x^2} + \frac{\tan^{-1} x}{x} \right] + (\sin x)^{\ln x} \left[ \frac{\ln(\sin x)}{x} + \ln x \cot x \right]$$
+
+Step 2: Solve part (ii) $x + y = \tan(xy)$.
+Differentiating implicitly with respect to $x$:
+$$1 + \frac{dy}{dx} = \sec^2(xy) \cdot \left( y + x\frac{dy}{dx} \right)$$
+$$1 + \frac{dy}{dx} = y \sec^2(xy) + x \sec^2(xy) \frac{dy}{dx}$$
+$$\frac{dy}{dx} \left( 1 - x \sec^2(xy) \right) = y \sec^2(xy) - 1$$
+$$\frac{dy}{dx} = \frac{y \sec^2(xy) - 1}{1 - x \sec^2(xy)}$$
+
+Step 3: Solve part (iii) $x = \frac{3at}{1+t^3}, y = \frac{3at^2}{1+t^3}$.
+Using the quotient rule to compute $\frac{dx}{dt}$ and $\frac{dy}{dt}$:
+$$\frac{dx}{dt} = 3a \cdot \frac{(1+t^3)(1) - t(3t^2)}{(1+t^3)^2} = \frac{3a(1 - 2t^3)}{(1+t^3)^2}$$
+$$\frac{dy}{dt} = 3a \cdot \frac{(1+t^3)(2t) - t^2(3t^2)}{(1+t^3)^2} = \frac{3a(2t - t^4)}{(1+t^3)^2}$$
+Using the chain rule:
+$$\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{3a(2t - t^4)}{3a(1 - 2t^3)} = \frac{2t - t^4}{1 - 2t^3}$$
+
+Final Answer:
+$$
+\boxed{\begin{aligned}
+\text{(i) } \frac{dy}{dx} &= x^{\tan^{-1} x} \left[ \frac{\ln x}{1+x^2} + \frac{\tan^{-1} x}{x} \right] + (\sin x)^{\ln x} \left[ \frac{\ln(\sin x)}{x} + \ln x \cot x \right] \\
+\text{(ii) } \frac{dy}{dx} &= \frac{y \sec^2(xy) - 1}{1 - x \sec^2(xy)} \\
+\text{(iii) } \frac{dy}{dx} &= \frac{2t - t^4}{1 - 2t^3}
+\end{aligned}}
+$$
+
+% id=cse18-final-q2b
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2b
+% topic=Differentiation
+% subtopic=Leibnitz Rule
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(b)}
+Question:
+State Leibnitz's theorem. If $\log y = a \sin^{-1} x$ then show that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0$.
+
+Solution:
+Step 1: State Leibnitz's theorem.
+If $u$ and $v$ are functions of $x$ possessing derivatives of the $n^{\text{th}}$ order, then the $n^{\text{th}}$ derivative of their product is:
+$$(uv)_n = u_n v + \binom{n}{1} u_{n-1} v_1 + \binom{n}{2} u_{n-2} v_2 + \dots + \binom{n}{r} u_{n-r} v_r + \dots + u v_n$$
+
+Step 2: Obtain the first-order differential relation.
+Given:
+$$\ln y = a \sin^{-1} x \implies y = e^{a \sin^{-1} x}$$
+Differentiating with respect to $x$:
+$$y_1 = e^{a \sin^{-1} x} \cdot \frac{a}{\sqrt{1-x^2}} = \frac{ay}{\sqrt{1-x^2}}$$
+Squaring both sides and cross-multiplying:
+$$y_1^2 (1-x^2) = a^2 y^2$$
+
+Step 3: Obtain the second-order differential relation.
+Differentiating implicitly with respect to $x$:
+$$2 y_1 y_2 (1-x^2) + y_1^2 (-2x) = a^2 (2yy_1)$$
+Since $y_1 \neq 0$, dividing the entire equation by $2y_1$ yields:
+$$(1-x^2)y_2 - x y_1 - a^2 y = 0$$
+
+Step 4: Differentiate $n$ times using Leibnitz's theorem.
+Applying the operator $D^n$ to each term:
+- For $D^n[(1-x^2)y_2]$:
+  $$D^n[y_2(1-x^2)] = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \frac{n(n-1)}{2} y_n(-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n$$
+- For $D^n[xy_1]$:
+  $$D^n[y_1 x] = y_{n+1}x + n y_n(1) = x y_{n+1} + n y_n$$
+- For $D^n[a^2 y]$:
+  $$D^n[a^2 y] = a^2 y_n$$
+
+Step 5: Combine and simplify the terms.
+$$\left[ (1-x^2)y_{n+2} - 2nxy_{n+1} - (n^2-n)y_n \right] - \left[ x y_{n+1} + n y_n \right] - a^2 y_n = 0$$
+$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - n + n + a^2)y_n = 0$$
+$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + a^2)y_n = 0$$
+
+Final Answer:
+$$
+\boxed{\text{Proven: } (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0}
+$$
+
+% id=cse18-final-q3a
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3a
+% topic=Limits
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q3(a)}
+Question:
+Evaluate $\lim_{x \to 0} (\cot^2 x)^{\sin x}$.
+
+Solution:
+Step 1: Identify the indeterminate form.
+As $x \to 0$, $\cot^2 x \to \infty$ and $\sin x \to 0$. This is an indeterminate form of the type $\infty^0$.
+
+Step 2: Apply the natural logarithm.
+Let $L = \lim_{x \to 0} (\cot^2 x)^{\sin x}$.
+Taking the natural logarithm of both sides:
+$$\ln L = \lim_{x \to 0} \ln\left[ (\cot^2 x)^{\sin x} \right] = \lim_{x \to 0} \left[ \sin x \ln(\cot^2 x) \right] = 2 \lim_{x \to 0} \left[ \sin x \ln(\cot x) \right]$$
+
+Step 3: Rewrite the limit in $\frac{\infty}{\infty}$ form.
+$$\ln L = 2 \lim_{x \to 0} \frac{\ln(\cot x)}{\csc x}$$
+
+Step 4: Apply L'H\^opital's Rule.
+$$\ln L = 2 \lim_{x \to 0} \frac{\frac{d}{dx}[\ln(\cot x)]}{\frac{d}{dx}[\csc x]} = 2 \lim_{x \to 0} \frac{\frac{1}{\cot x} (-\csc^2 x)}{-\csc x \cot x}$$
+$$\ln L = 2 \lim_{x \to 0} \frac{\csc x}{\cot^2 x} = 2 \lim_{x \to 0} \frac{\frac{1}{\sin x}}{\frac{\cos^2 x}{\sin^2 x}} = 2 \lim_{x \to 0} \frac{\sin x}{\cos^2 x}$$
+As $x \to 0$, $\sin x \to 0$ and $\cos^2 x \to 1$:
+$$\ln L = 2 \cdot \frac{0}{1} = 0$$
+
+Step 5: Solve for $L$.
+$$L = e^0 = 1$$
+
+Final Answer:
+$$
+\boxed{1}
+$$
+
+% id=cse18-final-q3b
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3b
+% topic=Partial Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q3(b)}
+Question:
+What are the differences between derivative and partial derivatives? If $u = (x^2 + y^2 + z^2)^{-\frac{1}{2}}$, then show that $x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} + z\frac{\partial u}{\partial z} = -u$.
+
+Solution:
+Step 1: State the differences.
+- **Derivative (Ordinary Derivative)**: Applies to a function of a single independent variable. It measures the total rate of change of the dependent variable with respect to the single independent variable.
+- **Partial Derivative**: Applies to functions of multiple independent variables. It measures the rate of change of the function with respect to one variable while holding all other variables constant.
+
+Step 2: Compute $\frac{\partial u}{\partial x}$ for $u = (x^2 + y^2 + z^2)^{-\frac{1}{2}}$.
+Using the chain rule:
+$$\frac{\partial u}{\partial x} = -\frac{1}{2}(x^2+y^2+z^2)^{-\frac{3}{2}} \cdot (2x) = -x(x^2+y^2+z^2)^{-\frac{3}{2}}$$
+Multiplying by $x$:
+$$x\frac{\partial u}{\partial x} = -x^2 (x^2+y^2+z^2)^{-\frac{3}{2}}$$
+
+Step 3: Compute the partial derivatives for $y$ and $z$ by symmetry.
+$$y\frac{\partial u}{\partial y} = -y^2 (x^2+y^2+z^2)^{-\frac{3}{2}}$$
+$$z\frac{\partial u}{\partial z} = -z^2 (x^2+y^2+z^2)^{-\frac{3}{2}}$$
+
+Step 4: Sum the partial derivatives.
+$$x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} + z\frac{\partial u}{\partial z} = -(x^2+y^2+z^2)(x^2+y^2+z^2)^{-\frac{3}{2}}$$
+$$= -(x^2+y^2+z^2)^{-\frac{1}{2}} = -u$$
+
+Final Answer:
+$$
+\boxed{\text{Proven: } x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} + z\frac{\partial u}{\partial z} = -u}
+$$
+
+% id=cse18-final-q3c
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3c
+% topic=Applications of Derivatives
+% subtopic=Rolle's Theorem
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q3(c)}
+Question:
+Verify Rolle's theorem for $f(x) = x^2 - 3x + 2$ in the interval $[1,2]$.
+
+Solution:
+Step 1: Check the three hypotheses of Rolle's theorem.
+1. **Continuity**: $f(x) = x^2 - 3x + 2$ is a polynomial function, so it is continuous everywhere, including on the closed interval $[1, 2]$.
+2. **Differentiability**: The derivative $f'(x) = 2x - 3$ exists for all $x \in \mathbb{R}$, so it is differentiable on the open interval $(1, 2)$.
+3. **Boundary values equality**:
+   $$f(1) = (1)^2 - 3(1) + 2 = 1 - 3 + 2 = 0$$
+   $$f(2) = (2)^2 - 3(2) + 2 = 4 - 6 + 2 = 0$$
+   Thus, $f(1) = f(2) = 0$.
+
+All hypotheses of Rolle's theorem are satisfied.
+
+Step 2: Find the value $c \in (1, 2)$ where $f'(c) = 0$.
+$$f'(c) = 2c - 3 = 0 \implies 2c = 3 \implies c = 1.5$$
+Since $1.5 \in (1, 2)$, Rolle's theorem is verified.
+
+Final Answer:
+$$
+\boxed{c = 1.5 \in (1,2)}
+$$
+
+% id=cse18-final-q4a
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4a
+% topic=Limits
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(a)}
+Question:
+Show that $\lim_{x \to 2} (2x^2 - 8)/(x - 2) = 8$; applying $(\delta, \varepsilon)$ definition, find $\delta$ if $\varepsilon = 1$.
+
+Solution:
+Step 1: Evaluate the limit algebraically.
+$$\lim_{x \to 2} \frac{2x^2 - 8}{x - 2} = \lim_{x \to 2} \frac{2(x-2)(x+2)}{x-2}$$
+For $x \neq 2$, we can cancel the common term $(x-2)$:
+$$\lim_{x \to 2} 2(x+2) = 2(2+2) = 8$$
+
+Step 2: Recall the $(\varepsilon, \delta)$ definition of a limit.
+$\lim_{x \to a} f(x) = L$ if for every $\varepsilon > 0$, there exists a $\delta > 0$ such that:
+$$0 < |x - a| < \delta \implies |f(x) - L| < \varepsilon$$
+
+Step 3: Relate $\varepsilon$ and $\delta$ for the given limit.
+We want:
+$$\left| \frac{2x^2 - 8}{x-2} - 8 \right| < \varepsilon$$
+For $x \neq 2$, this simplifies to:
+$$|2(x+2) - 8| < \varepsilon \implies |2x + 4 - 8| < \varepsilon \implies |2x - 4| < \varepsilon \implies 2|x-2| < \varepsilon \implies |x-2| < \frac{\varepsilon}{2}$$
+Thus, we can choose $\delta = \frac{\varepsilon}{2}$.
+
+Step 4: Find $\delta$ when $\varepsilon = 1$.
+$$\delta = \frac{1}{2} = 0.5$$
+
+Final Answer:
+$$
+\boxed{\delta = 0.5 \text{ for } \varepsilon = 1}
+$$
+
+% id=cse18-final-q4b
+% discipline=CSE
+% year=2018
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4b
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(b)}
+Question:
+Determine whether the following functions are continuous at $x = 0$,
+(i) $f(x) = (x^4 + x^3 + 2x^2)/\sin x$, $f(0) = 0$
+(ii) $f(x) = (x^4 + 4x^3 + 2x)/\sin x$, $f(0) = 0$
+
+Solution:
+Step 1: Check continuity of (i) at $x = 0$.
+We must check if $\lim_{x \to 0} f(x) = f(0) = 0$.
+$$\lim_{x \to 0} \frac{x^4 + x^3 + 2x^2}{\sin x} = \lim_{x \to 0} \left[ \frac{x}{\sin x} \cdot (x^3 + x^2 + 2x) \right]$$
+Since $\lim_{x \to 0} \frac{x}{\sin x} = 1$:
+$$\lim_{x \to 0} f(x) = 1 \cdot (0^3 + 0^2 + 2(0)) = 1 \cdot 0 = 0$$
+Since $\lim_{x \to 0} f(x) = f(0) = 0$, function (i) is **continuous** at $x = 0$.
+
+Step 2: Check continuity of (ii) at $x = 0$.
+We must check if $\lim_{x \to 0} f(x) = f(0) = 0$.
+$$\lim_{x \to 0} \frac{x^4 + 4x^3 + 2x}{\sin x} = \lim_{x \to 0} \left[ \frac{x}{\sin x} \cdot (x^3 + 4x^2 + 2) \right]$$
+Since $\lim_{x \to 0} \frac{x}{\sin x} = 1$:
+$$\lim_{x \to 0} f(x) = 1 \cdot (0^3 + 4(0)^2 + 2) = 1 \cdot 2 = 2$$
+Since $\lim_{x \to 0} f(x) = 2 \neq f(0) = 0$, function (ii) is **discontinuous** at $x = 0$.
+
+Final Answer:
+$$
+\boxed{\text{(i) is continuous at } x = 0, \quad \text{(ii) is discontinuous at } x = 0}
+$$
+
+\end{document}

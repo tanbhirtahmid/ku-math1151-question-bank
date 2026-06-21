@@ -10,11 +10,11 @@ function applyFiltersAndRender() {
     var diffMatch = state.filters.difficulty === 'All' || q.difficulty === state.filters.difficulty;
     var etMatch = state.filters.examType === 'All' || q.examType === state.filters.examType;
     
-    // Fix: Handle null examNumber and compare safely
+    // Handle null examNumber and compare safely
     var enMatch = state.filters.examNumber === 'All' || !state.filters.examNumber ||
       (q.examNumber !== null && q.examNumber !== undefined && q.examNumber.toString() === state.filters.examNumber.toString());
 
-    // Fix: Added section matching
+    // Section matching
     var secMatch = state.filters.section === 'All' || q.section === state.filters.section;
 
     var query = state.searchQuery.toLowerCase();

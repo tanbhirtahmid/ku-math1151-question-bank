@@ -1,0 +1,95 @@
+% FILE: CSE-19_CT-1.tex
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\babelfont{rm}{Noto Sans}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-ct1-seca-q1  
+% discipline=CSE  
+% year=19  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=1  
+% topic=Applications of Derivatives  
+% subtopic=Maxima \& Minima  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q1}
+
+Question:
+Locate \& describe the Relative extrema of $f(x) = 3x^{5/3} - 15x^{2/3}$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Find the first derivative $f'(x)$] \ \\
+    The given function is:
+    \[ f(x) = 3x^{5/3} - 15x^{2/3} \]
+    Differentiating with respect to $x$:
+    \[ f'(x) = 3 \cdot \frac{5}{3}x^{2/3} - 15 \cdot \frac{2}{3}x^{-1/3} \]
+    \[ f'(x) = 5x^{2/3} - 10x^{-1/3} \]
+    Factoring out $5x^{-1/3}$:
+    \[ f'(x) = 5x^{-1/3}(x - 2) = \frac{5(x - 2)}{x^{1/3}} \]
+
+    \item[Step 2: Identify the critical points] \ \\
+    Critical points occur where $f'(x) = 0$ or where $f'(x)$ is undefined:
+    \begin{itemize}
+        \item $f'(x) = 0 \implies 5(x - 2) = 0 \implies x = 2$.
+        \item $f'(x)$ is undefined at $x = 0$ (since the denominator becomes zero, though $f(0)$ is defined).
+    \end{itemize}
+    Thus, the critical points are $x = 0$ and $x = 2$.
+
+    \item[Step 3: Analyze intervals of increase and decrease (First Derivative Test)] \ \\
+    We test the sign of $f'(x) = \frac{5(x - 2)}{x^{1/3}}$ in the intervals divided by $x = 0$ and $x = 2$:
+    \begin{enumerate}
+        \item \textbf{Interval $(-\infty, 0)$:} \\
+        Choose a test point $x = -1$:
+        \[ f'(-1) = \frac{5(-1 - 2)}{(-1)^{1/3}} = \frac{-15}{-1} = 15 > 0 \implies f(x) \text{ is increasing.} \]
+
+        \item \textbf{Interval $(0, 2)$:} \\
+        Choose a test point $x = 1$:
+        \[ f'(1) = \frac{5(1 - 2)}{(1)^{1/3}} = \frac{-5}{1} = -5 < 0 \implies f(x) \text{ is decreasing.} \]
+
+        \item \textbf{Interval $(2, \infty)$:} \\
+        Choose a test point $x = 3$:
+        \[ f'(3) = \frac{5(3 - 2)}{(3)^{1/3}} = \frac{5}{3^{1/3}} > 0 \implies f(x) \text{ is increasing.} \]
+    \end{enumerate}
+
+    \item[Step 4: Describe the Relative Extrema] \ 
+    \begin{itemize}
+        \item \textbf{At $x = 0$:} The derivative changes from positive to negative. Therefore, $f(x)$ has a \textbf{relative maximum} at $x = 0$. \\
+        The relative maximum value is:
+        \[ f(0) = 3(0)^{5/3} - 15(0)^{2/3} = 0 \]
+        
+        \item \textbf{At $x = 2$:} The derivative changes from negative to positive. Therefore, $f(x)$ has a \textbf{relative minimum} at $x = 2$. \\
+        The relative minimum value is:
+        \[ f(2) = 3(2)^{5/3} - 15(2)^{2/3} = 3 \cdot 2 \cdot 2^{2/3} - 15 \cdot 2^{2/3} = -9 \cdot 2^{2/3} \]
+    \end{itemize}
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\text{Relative Maximum at } (0, 0), \quad \text{Relative Minimum at } (2, -9\cdot 2^{2/3})} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

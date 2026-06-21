@@ -1,0 +1,484 @@
+% FILE: CSE-22_TermFinal.tex
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+\babelfont{rm}{Noto Sans}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=-}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+% id=cse22-final-q1a
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1a
+% topic=Miscellaneous
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q1(a)}
+Question:
+What is function? Draw the graph of
+(i) $f(x) = \frac{1}{x^2}$
+(ii) $f(x) = \frac{4}{x^2+1}$
+(iii) $f(x) = 3 - |x - 4|$.
+Also find the domain and range of the functions.
+
+Solution:
+Step 1: Define a function.
+A function $f$ from a set $A$ to a set $B$ (denoted by $f: A \to B$) is a rule or relation that assigns to each element $x \in A$ exactly one element $y \in B$. The set $A$ is called the domain of the function, and the set of all assigned values in $B$ is called the range.
+
+Step 2: Find the domain, range, and describe the graph of (i) $f(x) = \frac{1}{x^2}$.
+- **Domain**: The function is defined for all real numbers except where the denominator is zero.
+  $$x^2 \neq 0 \implies x \neq 0$$
+  Therefore, Domain $D = \mathbb{R} \setminus \{0\} = (-\infty, 0) \cup (0, \infty)$.
+- **Range**: Since $x^2 > 0$ for all $x \neq 0$, we have $\frac{1}{x^2} > 0$. As $x \to 0$, $f(x) \to \infty$, and as $x \to \pm\infty$, $f(x) \to 0$.
+  Therefore, Range $R = (0, \infty)$.
+- **Graph Description**: The graph is symmetric with respect to the $y$-axis (since $f(-x) = f(x)$). It lies entirely in the first and second quadrants, with vertical asymptote $x = 0$ and horizontal asymptote $y = 0$.
+
+Step 3: Find the domain, range, and describe the graph of (ii) $f(x) = \frac{4}{x^2+1}$.
+- **Domain**: The denominator $x^2 + 1 \ge 1 > 0$ for all $x \in \mathbb{R}$. Thus, there is no division by zero.
+  Therefore, Domain $D = \mathbb{R} = (-\infty, \infty)$.
+- **Range**: Since $x^2 \ge 0$, we have $x^2 + 1 \ge 1$, which implies $0 < \frac{1}{x^2+1} \le 1$.
+  Multiplying by 4, we get $0 < \frac{4}{x^2+1} \le 4$.
+  Therefore, Range $R = (0, 4]$.
+- **Graph Description**: The graph is symmetric about the $y$-axis. The maximum value is 4 at $x = 0$. As $x \to \pm\infty$, $f(x) \to 0$, making $y = 0$ a horizontal asymptote. This is a bell-shaped curve.
+
+Step 4: Find the domain, range, and describe the graph of (iii) $f(x) = 3 - |x - 4|$.
+- **Domain**: The absolute value function is defined for all real numbers.
+  Therefore, Domain $D = \mathbb{R} = (-\infty, \infty)$.
+- **Range**: Since $|x - 4| \ge 0$, we have $-|x - 4| \le 0$.
+  Adding 3 to both sides: $3 - |x - 4| \le 3$.
+  Therefore, Range $R = (-\infty, 3]$.
+- **Graph Description**: This is a V-shaped graph pointing downwards. The vertex (or peak) of the V is at $(4, 3)$. For $x \ge 4$, $f(x) = 3 - (x - 4) = 7 - x$. For $x < 4$, $f(x) = 3 - (4 - x) = x - 1$.
+
+Final Answer:
+$$
+\boxed{\text{See step-by-step domains, ranges, and graph descriptions above.}}
+$$
+
+% id=cse22-final-q1b
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1b
+% topic=Continuity
+% subtopic=General
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q1(b)}
+Question:
+Determine whether the function $f(x) = \frac{x^2-4}{x-2}$ is continuous at $x = 2$.
+
+Solution:
+Step 1: Recall the definition of continuity at a point.
+A function $f(x)$ is continuous at $x = c$ if and only if:
+1. $f(c)$ is defined.
+2. $\lim_{x \to c} f(x)$ exists.
+3. $\lim_{x \to c} f(x) = f(c)$.
+
+Step 2: Evaluate $f(x)$ at $x = 2$.
+$$f(2) = \frac{2^2-4}{2-2} = \frac{0}{0}$$
+which is undefined.
+
+Step 3: Conclude continuity.
+Since $f(2)$ is not defined in the domain of $f(x)$, the first condition of continuity fails. Hence, $f(x)$ is discontinuous at $x = 2$.
+
+Final Answer:
+$$
+\boxed{\text{The function } f(x) \text{ is discontinuous at } x = 2.}
+$$
+
+% id=cse22-final-q1c
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1c
+% topic=Miscellaneous
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q1(c)}
+Question:
+Write a document on the state of AI.
+
+Solution:
+Step 1: Write the equation in the form $g(x) = 0$. Let $g(x) = x^3 + x^2 - 2x - 1 = 0$. We want to show that there exists some $c \in [-1, 1]$ such that $g(c) = 0$.
+
+Step 2: Check the conditions for the Intermediate Value Theorem (IVT). The function $g(x)$ is a polynomial function, so it is continuous everywhere, and while the interval $[-1, 1]$ is closed, the condition of IVT is met.
+
+Step 3: Evaluate the function at the endpoints of the interval.
+- At $x = -1$: $g(-1) = (-1)^3 + (-1)^2 - 2(-1) - 1 = -1 + 1 + 2 - 1 = 1 > 0$
+- At $x = 1$: $g(1) = (1)^3 + (1)^2 - 2(1) - 1 = 1 + 1 - 2 - 1 = -1 < 0$
+
+Step 4: Apply the Intermediate Value Theorem. Since $g(x)$ is continuous on $[-1, 1]$ and $g(-1) = 1 > 0$ while $g(1) = -1 < 0$, by the Intermediate Value Theorem, there must exist at least one real number $c$ in the open interval $(-1, 1)$ such that $g(c) = 0$. Thus, the equation $x^3 + x^2 - 2x = 1$ has at least one solution in the interval $[-1, 1]$.
+
+Final Answer:
+$$
+\boxed{\text{Proven by Intermediate Value Theorem: there exists a solution } c \in (-1, 1).}
+$$
+
+% id=cse22-final-q2a
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2a
+% topic=Differentiation
+% subtopic=Basic Differentiation
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(a)}
+Question:
+Define derivative for any function $y = f(x)$ and write the geometrical interpretation of the derivative.
+
+Solution:
+Step 1: Define the derivative of a function.
+The derivative of a function $y = f(x)$ with respect to $x$ at any point $x$ in its domain is defined as the limit of the difference quotient as the increment of the independent variable approaches zero, provided the limit exists:
+$$f'(x) = \frac{dy}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+
+Step 2: State the geometrical interpretation of the derivative.
+Geometrically, the derivative $f'(x_0)$ represents the slope of the tangent line to the curve $y = f(x)$ at the point $(x_0, f(x_0))$. It is equivalent to $\tan \theta$, where $\theta$ is the angle that the tangent line makes with the positive direction of the $x$-axis.
+
+Final Answer:
+$$
+\boxed{f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \text{ and represents the slope of the tangent line to the curve at } x.}
+$$
+
+% id=cse22-final-q2b
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2b
+% topic=Differentiation
+% subtopic=Successive Differentiation
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(b)}
+Question:
+Find the $n^{\text{th}}$ derivative of $y = \sin 3x$.
+
+Solution:
+Step 1: Perform successive differentiation to identify the pattern.
+- First derivative:
+  $$y_1 = 3 \cos 3x = 3 \sin\left(3x + \frac{\pi}{2}\right)$$
+- Second derivative:
+  $$y_2 = -3^2 \sin 3x = 3^2 \sin\left(3x + \frac{2\pi}{2}\right)$$
+- Third derivative:
+  $$y_3 = -3^3 \cos 3x = 3^3 \sin\left(3x + \frac{3\pi}{2}\right)$$
+
+Step 2: Generalize for the $n^{\text{th}}$ derivative.
+Following this pattern, the $n^{\text{th}}$ derivative $y_n$ is given by:
+$$y_n = 3^n \sin\left(3x + \frac{n\pi}{2}\right)$$
+
+Final Answer:
+$$
+\boxed{y_n = 3^n \sin\left(3x + \frac{n\pi}{2}\right)}
+$$
+
+% id=cse22-final-q2c
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2c
+% topic=Series Expansion
+% subtopic=Taylor Series
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(c)}
+Question:
+State the Taylor series for expansion of a function. Find the $n^{\text{th}}$ order Taylor's polynomial for $f(x) = \ln x$ at $x = 2$.
+
+Solution:
+Step 1: State the Taylor series.
+The Taylor series expansion of a function $f(x)$ about a point $x = a$ is given by:
+$$f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!} (x - a)^k = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \dots$$
+provided $f(x)$ is infinitely differentiable at $x = a$.
+
+Step 2: Compute successive derivatives of $f(x) = \ln x$ and evaluate them at $x = 2$.
+- $f(x) = \ln x \implies f(2) = \ln 2$
+- $f'(x) = x^{-1} \implies f'(2) = \frac{1}{2}$
+- $f''(x) = -x^{-2} \implies f''(2) = -\frac{1}{4}$
+- $f'''(x) = 2x^{-3} \implies f'''(2) = \frac{2}{2^3} = \frac{1}{4}$
+- In general, for $k \ge 1$:
+  $$f^{(k)}(x) = (-1)^{k-1} (k-1)! x^{-k}$$
+  Evaluating at $x = 2$:
+  $$f^{(k)}(2) = (-1)^{k-1} \frac{(k-1)!}{2^k}$$
+
+Step 3: Form the $n^{\text{th}}$ order Taylor polynomial.
+The $n^{\text{th}}$ order Taylor polynomial $P_n(x)$ at $x = 2$ is:
+$$P_n(x) = f(2) + \sum_{k=1}^{n} \frac{f^{(k)}(2)}{k!} (x-2)^k$$
+Substitute the derivatives:
+$$P_n(x) = \ln 2 + \sum_{k=1}^{n} \frac{(-1)^{k-1}(k-1)!}{k! \, 2^k} (x-2)^k$$
+Simplifying the factorial term $\frac{(k-1)!}{k!} = \frac{1}{k}$:
+$$P_n(x) = \ln 2 + \sum_{k=1}^{n} \frac{(-1)^{k-1}}{k \cdot 2^k} (x-2)^k$$
+
+Final Answer:
+$$
+\boxed{P_n(x) = \ln 2 + \sum_{k=1}^{n} \frac{(-1)^{k-1}}{k \cdot 2^k} (x-2)^k}
+$$
+
+% id=cse22-final-q3a
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3a
+% topic=Applications of Derivatives
+% subtopic=Tangent & Normal
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q3(a)}
+Question:
+Define tangent and normal of any curve. Find the equation of the tangent and normal to the astroid $x = a \cos^3 t$ and $y = a \sin^3 t$ at the point $t = \frac{\pi}{4}$.
+
+Solution:
+Step 1: Definitions.
+- **Tangent**: The tangent to a curve at a point $P$ is the limiting position of a secant line passing through $P$ and another point $Q$ on the curve as $Q$ approaches $P$ along the curve.
+- **Normal**: The normal to a curve at a point $P$ is the line perpendicular to the tangent line at that point.
+
+Step 2: Find coordinates of the point at $t = \frac{\pi}{4}$.
+$$x_0 = a \cos^3\left(\frac{\pi}{4}\right) = a \left(\frac{1}{\sqrt{2}}\right)^3 = \frac{a}{2\sqrt{2}}$$
+$$y_0 = a \sin^3\left(\frac{\pi}{4}\right) = a \left(\frac{1}{\sqrt{2}}\right)^3 = \frac{a}{2\sqrt{2}}$$
+
+Step 3: Find the derivative $\frac{dy}{dx}$ of the astroid.
+Using parameter $t$:
+$$\frac{dx}{dt} = 3a \cos^2 t (-\sin t) = -3a \cos^2 t \sin t$$
+$$\frac{dy}{dt} = 3a \sin^2 t (\cos t) = 3a \sin^2 t \cos t$$
+Thus,
+$$\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{3a \sin^2 t \cos t}{-3a \cos^2 t \sin t} = -\tan t$$
+
+Step 4: Find the slopes at $t = \frac{\pi}{4}$.
+- Slope of the tangent ($m$):
+  $$m = -\tan\left(\frac{\pi}{4}\right) = -1$$
+- Slope of the normal ($m'$):
+  $$m' = -\frac{1}{m} = 1$$
+
+Step 5: Find the equation of the tangent line.
+$$y - y_0 = m(x - x_0)$$
+$$y - \frac{a}{2\sqrt{2}} = -1\left(x - \frac{a}{2\sqrt{2}}\right)$$
+$$x + y = \frac{a}{\sqrt{2}}$$
+
+Step 6: Find the equation of the normal line.
+$$y - y_0 = m'(x - x_0)$$
+$$y - \frac{a}{2\sqrt{2}} = 1\left(x - \frac{a}{2\sqrt{2}}\right)$$
+$$y = x$$
+
+Final Answer:
+$$
+\boxed{\text{Tangent: } x + y = \frac{a}{\sqrt{2}}, \quad \text{Normal: } y = x}
+$$
+
+% id=cse22-final-q3b
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3b
+% topic=Differentiation
+% subtopic=Leibnitz Rule
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q3(b)}
+Question:
+Write Leibnitz's theorem. If $y = e^{a \cos^{-1} x}$ then prove that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0$.
+
+Solution:
+Step 1: Write Leibnitz's Theorem.
+Leibnitz's theorem states that if $u$ and $v$ are functions of $x$ having derivatives up to $n^{\text{th}}$ order, then the $n^{\text{th}}$ derivative of their product is:
+$$(uv)_n = u_n v + \binom{n}{1} u_{n-1} v_1 + \binom{n}{2} u_{n-2} v_2 + \dots + \binom{n}{r} u_{n-r} v_r + \dots + u v_n$$
+
+Step 2: Differentiate $y = e^{a \cos^{-1} x}$ first time.
+$$y_1 = e^{a \cos^{-1} x} \cdot \left(-\frac{a}{\sqrt{1-x^2}}\right) = -\frac{ay}{\sqrt{1-x^2}}$$
+Multiplying by $\sqrt{1-x^2}$ and squaring both sides:
+$$y_1^2 (1-x^2) = a^2 y^2$$
+
+Step 3: Differentiate again with respect to $x$.
+$$2y_1 y_2 (1-x^2) + y_1^2 (-2x) = a^2 (2y y_1)$$
+Dividing by $2y_1$ (since $y_1 \neq 0$):
+$$(1-x^2)y_2 - xy_1 - a^2y = 0$$
+
+Step 4: Differentiate $n$ times using Leibnitz's Theorem.
+Applying Leibnitz's theorem to each term:
+- For $D^n[(1-x^2)y_2]$:
+  $$D^n[y_2 (1-x^2)] = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \frac{n(n-1)}{2} y_n (-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n$$
+- For $D^n[xy_1]$:
+  $$D^n[y_1 x] = y_{n+1}x + n y_n(1) = x y_{n+1} + n y_n$$
+- For $D^n[a^2y]$:
+  $$D^n[a^2 y] = a^2 y_n$$
+
+Step 5: Substitute back and simplify.
+$$[(1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n] - [xy_{n+1} + ny_n] - a^2y_n = 0$$
+$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - [n(n-1) + n + a^2]y_n = 0$$
+$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0$$
+This completes the proof.
+
+Final Answer:
+$$
+\boxed{\text{Proven: } (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0}
+$$
+
+% id=cse22-final-q4a
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4a
+% topic=Partial Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(a)}
+Question:
+Define partial derivative. If $u = \log(x^3 + y^3 + z^3 - 3xyz)$, show that $\left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y} + \frac{\partial}{\partial z}\right)^2 u = -9(x+y+z)^{-2}$.
+
+Solution:
+Step 1: Define partial derivative.
+If $u = f(x, y, z)$ is a function of independent variables $x, y, z$, then the partial derivative of $u$ with respect to $x$ is defined as its ordinary derivative with respect to $x$ while holding $y$ and $z$ constant:
+$$\frac{\partial u}{\partial x} = \lim_{h \to 0} \frac{f(x+h, y, z) - f(x, y, z)}{h}$$
+Similar definitions hold for $\frac{\partial u}{\partial y}$ and $\frac{\partial u}{\partial z}$.
+
+Step 2: Compute $\frac{\partial u}{\partial x}$, $\frac{\partial u}{\partial y}$, and $\frac{\partial u}{\partial z}$.
+Let $V = x^3 + y^3 + z^3 - 3xyz$, so $u = \log V$.
+$$\frac{\partial u}{\partial x} = \frac{1}{V} \frac{\partial V}{\partial x} = \frac{3x^2 - 3yz}{V}$$
+Similarly, by symmetry:
+$$\frac{\partial u}{\partial y} = \frac{3y^2 - 3xz}{V}$$
+$$\frac{\partial u}{\partial z} = \frac{3z^2 - 3xy}{V}$$
+
+Step 3: Find the sum of these partial derivatives.
+$$\frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} + \frac{\partial u}{\partial z} = \frac{3(x^2 + y^2 + z^2 - xy - yz - zx)}{V}$$
+Using the algebraic identity:
+$$V = x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx)$$
+Thus,
+$$\frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} + \frac{\partial u}{\partial z} = \frac{3(x^2 + y^2 + z^2 - xy - yz - zx)}{(x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx)} = \frac{3}{x+y+z}$$
+
+Step 4: Evaluate the square of the operator applied to $u$.
+Let the operator be $D = \frac{\partial}{\partial x} + \frac{\partial}{\partial y} + \frac{\partial}{\partial z}$. We wish to find $D^2 u = D(Du)$:
+$$D(Du) = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y} + \frac{\partial}{\partial z}\right) \left(\frac{3}{x+y+z}\right)$$
+$$= \frac{\partial}{\partial x}\left(\frac{3}{x+y+z}\right) + \frac{\partial}{\partial y}\left(\frac{3}{x+y+z}\right) + \frac{\partial}{\partial z}\left(\frac{3}{x+y+z}\right)$$
+$$= -\frac{3}{(x+y+z)^2} - \frac{3}{(x+y+z)^2} - \frac{3}{(x+y+z)^2}$$
+$$= -\frac{9}{(x+y+z)^2} = -9(x+y+z)^{-2}$$
+
+Final Answer:
+$$
+\boxed{\text{Proven: } \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y} + \frac{\partial}{\partial z}\right)^2 u = -9(x+y+z)^{-2}}
+$$
+
+% id=cse22-final-q4b
+% discipline=CSE
+% year=2022
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4b
+% topic=Partial Derivatives
+% subtopic=Euler's Theorem
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(b)}
+Question:
+If $u$ be homogeneous function of degree $n$ in $x, y$ and has continuous first derivatives, prove that $x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} = nu$.
+
+Solution:
+Step 1: Write the mathematical expression for a homogeneous function of degree $n$.
+By definition, if $u(x, y)$ is a homogeneous function of degree $n$, it can be represented as:
+$$u = x^n \phi\left(\frac{y}{x}\right)$$
+
+Step 2: Find the partial derivative with respect to $x$.
+Using the product rule:
+$$\frac{\partial u}{\partial x} = n x^{n-1} \phi\left(\frac{y}{x}\right) + x^n \phi'\left(\frac{y}{x}\right) \cdot \left(-\frac{y}{x^2}\right)$$
+$$\frac{\partial u}{\partial x} = n x^{n-1} \phi\left(\frac{y}{x}\right) - y x^{n-2} \phi'\left(\frac{y}{x}\right)$$
+Multiplying by $x$:
+$$x \frac{\partial u}{\partial x} = n x^n \phi\left(\frac{y}{x}\right) - y x^{n-1} \phi'\left(\frac{y}{x}\right) \quad \text{--- (1)}$$
+
+Step 3: Find the partial derivative with respect to $y$.
+$$\frac{\partial u}{\partial y} = x^n \phi'\left(\frac{y}{x}\right) \cdot \left(\frac{1}{x}\right) = x^{n-1} \phi'\left(\frac{y}{x}\right)$$
+Multiplying by $y$:
+$$y \frac{\partial u}{\partial y} = y x^{n-1} \phi'\left(\frac{y}{x}\right) \quad \text{--- (2)}$$
+
+Step 4: Sum equations (1) and (2).
+$$x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} = n x^n \phi\left(\frac{y}{x}\right) - y x^{n-1} \phi'\left(\frac{y}{x}\right) + y x^{n-1} \phi'\left(\frac{y}{x}\right)$$
+$$x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} = n \left[ x^n \phi\left(\frac{y}{x}\right) \right] = nu$$
+
+Final Answer:
+$$
+\boxed{\text{Proven: } x \frac{\partial u}{\partial x} + y \frac{\partial u}{\partial y} = nu}
+$$
+
+\end{document}

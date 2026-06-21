@@ -1,0 +1,836 @@
+% FILE: CSE-25_TermFinal.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q1a
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1a
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q1(a)}
+Question:
+Define function, even function and odd function with examples. Draw the graph and also find the domain and range of $f(x) = |2x-3| + |x| + |2x+3|$.
+
+Solution:
+Step 1: Definitions with examples.
+- **Function:** A function $f$ from a set $D$ (domain) to a set $Y$ (codomain) is a rule that assigns to each element $x \in D$ exactly one element $y = f(x) \in Y$.
+  *Example:* $f(x) = x^2$.
+- **Even Function:** A function $f(x)$ is even if $f(-x) = f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the $y$-axis.
+  *Example:* $f(x) = \cos x$.
+- **Odd Function:** A function $f(x)$ is odd if $f(-x) = -f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the origin.
+  *Example:* $f(x) = \sin x$.
+
+Step 2: Simplify $f(x) = |2x-3| + |x| + |2x+3|$ by defining it piecewise.
+The critical points for the absolute value expressions are $x = -1.5$, $x = 0$, and $x = 1.5$.
+We evaluate the function in each of the intervals:
+- **Case 1: $x < -1.5$**
+  \[
+  f(x) = -(2x-3) - x - (2x+3) = -2x+3-x-2x-3 = -5x
+  \]
+- **Case 2: $-1.5 \le x < 0$**
+  \[
+  f(x) = -(2x-3) - x + (2x+3) = -2x+3-x+2x+3 = -x + 6
+  \]
+- **Case 3: $0 \le x < 1.5$**
+  \[
+  f(x) = -(2x-3) + x + (2x+3) = -2x+3+x+2x+3 = x + 6
+  \]
+- **Case 4: $x \ge 1.5$**
+  \[
+  f(x) = (2x-3) + x + (2x+3) = 5x
+  \]
+
+Step 3: Determine the Domain and Range.
+- **Domain:** Since $f(x)$ is defined for all real numbers, the domain is:
+  \[
+  \text{Domain} = \mathbb{R} \quad \text{or} \quad (-\infty, \infty)
+  \]
+- **Range:** Since $f(x)$ decreases for $x < 0$ and increases for $x > 0$, the global minimum value occurs at $x = 0$:
+  \[
+  f(0) = |2(0)-3| + |0| + |2(0)+3| = 3 + 0 + 3 = 6
+  \]
+  As $x \to \pm\infty$, $f(x) \to \infty$. Thus, the range is:
+  \[
+  \text{Range} = [6, \infty)
+  \]
+
+Step 4: Draw/Describe the Graph.
+The graph consists of four linear segments:
+- A steep line with slope $-5$ coming from $-\infty$ down to $(-1.5, 7.5)$.
+- A shallower line segment with slope $-1$ from $(-1.5, 7.5)$ to $(0, 6)$.
+- A shallower line segment with slope $+1$ from $(0, 6)$ to $(1.5, 7.5)$.
+- A steep line with slope $+5$ continuing from $(1.5, 7.5)$ to $\infty$.
+
+Final Answer:
+\[
+\boxed{
+\begin{aligned}
+\text{Domain: } & (-\infty, \infty) \\
+\text{Range: } & [6, \infty)
+\end{aligned}
+}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q1b
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1b
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q1(b)}
+Question:
+Define limit of a function. A function is defined by 
+\[
+f(x) = \begin{cases} 
+x^2+1, & \text{when } 0 \le x < \frac{1}{2} \\ 
+0, & \text{when } x = \frac{1}{2} \\ 
+x+3, & \text{when } \frac{1}{2} < x \le 1 
+\end{cases}
+\]
+Find $\lim_{x \to 1/2} f(x)$ and discuss the continuity of $f(x)$ at $x = \frac{1}{2}$.
+
+Solution:
+Step 1: Define the limit of a function.
+Let $f(x)$ be defined on an open interval about $c$, except possibly at $c$ itself. We say that the limit of $f(x)$ as $x$ approaches $c$ is $L$, written as $\lim_{x \to c} f(x) = L$, if for every $\epsilon > 0$ there exists a $\delta > 0$ such that:
+\[
+0 < |x - c| < \delta \implies |f(x) - L| < \epsilon
+\]
+
+Step 2: Find the left-hand limit (LHL) as $x \to \frac{1}{2}^-$.
+For $x < \frac{1}{2}$, $f(x) = x^2 + 1$:
+\[
+\text{LHL} = \lim_{x \to (1/2)^-} (x^2 + 1) = \left(\frac{1}{2}\right)^2 + 1 = \frac{1}{4} + 1 = \frac{5}{4} = 1.25
+\]
+
+Step 3: Find the right-hand limit (RHL) as $x \to \frac{1}{2}^+$.
+For $x > \frac{1}{2}$, $f(x) = x + 3$:
+\[
+\text{RHL} = \lim_{x \to (1/2)^+} (x + 3) = \frac{1}{2} + 3 = \frac{7}{2} = 3.5
+\]
+
+Step 4: Analyze the limits for existence.
+Since the left-hand limit and the right-hand limit are not equal:
+\[
+\text{LHL} \ne \text{RHL} \implies \lim_{x \to 1/2} f(x) \text{ does not exist.}
+\]
+
+Step 5: Discuss continuity at $x = \frac{1}{2}$.
+A function $f(x)$ is continuous at $x = c$ if and only if $\lim_{x \to c} f(x) = f(c)$.
+Since $\lim_{x \to 1/2} f(x)$ does not exist, the condition of continuity cannot be met. Specifically, there is a jump discontinuity at $x = \frac{1}{2}$.
+
+Final Answer:
+\[
+\boxed{\lim_{x \to 1/2} f(x) \text{ does not exist; the function is discontinuous at } x = \frac{1}{2}.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q2ai
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2ai
+% topic=Differentiation
+% subtopic=Implicit Differentiation
+% difficulty=Medium
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)(i)}
+Question:
+Find $\frac{dy}{dx}$ of $x+y = \cot(xy)$.
+
+Solution:
+Step 1: Differentiate both sides of the equation implicitly with respect to $x$.
+\[
+\frac{d}{dx}(x + y) = \frac{d}{dx}(\cot(xy))
+\]
+Using the chain rule on the right-hand side:
+\[
+1 + \frac{dy}{dx} = -\csc^2(xy) \cdot \frac{d}{dx}(xy)
+\]
+Using the product rule:
+\[
+1 + \frac{dy}{dx} = -\csc^2(xy) \left( y + x \frac{dy}{dx} \right)
+\]
+
+Step 2: Expand and rearrange terms to group $\frac{dy}{dx}$.
+\[
+1 + \frac{dy}{dx} = -y \csc^2(xy) - x \csc^2(xy) \frac{dy}{dx}
+\]
+\[
+\frac{dy}{dx} + x \csc^2(xy) \frac{dy}{dx} = -1 - y \csc^2(xy)
+\]
+\[
+\frac{dy}{dx} \left( 1 + x \csc^2(xy) \right) = -\left( 1 + y \csc^2(xy) \right)
+\]
+
+Step 3: Solve for $\frac{dy}{dx}$.
+\[
+\frac{dy}{dx} = -\frac{1 + y \csc^2(xy)}{1 + x \csc^2(xy)}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{dy}{dx} = -\frac{1 + y \csc^2(xy)}{1 + x \csc^2(xy)}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q2aii
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2aii
+% topic=Differentiation
+% subtopic=Logarithmic Differentiation
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)(ii)}
+Question:
+Find $\frac{dy}{dx}$ of $y = x^{\ln x} + (x)^{\sin^{-1} x}$.
+
+Solution:
+Step 1: Separate the function into two parts.
+Let $y = u + v$, where:
+\[
+u = x^{\ln x} \quad \text{and} \quad v = x^{\sin^{-1} x}
+\]
+Thus, the derivative is:
+\[
+\frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx}
+\]
+
+Step 2: Differentiate $u = x^{\ln x}$ using logarithmic differentiation.
+Take the natural logarithm of both sides:
+\[
+\ln u = \ln\left(x^{\ln x}\right) = (\ln x)(\ln x) = (\ln x)^2
+\]
+Differentiate both sides with respect to $x$:
+\[
+\frac{1}{u} \frac{du}{dx} = 2(\ln x) \cdot \frac{1}{x} \implies \frac{du}{dx} = x^{\ln x} \left( \frac{2\ln x}{x} \right) = 2x^{\ln x - 1} \ln x
+\]
+
+Step 3: Differentiate $v = x^{\sin^{-1} x}$ using logarithmic differentiation.
+Take the natural logarithm of both sides:
+\[
+\ln v = \ln\left(x^{\sin^{-1} x}\right) = (\sin^{-1} x)(\ln x)
+\]
+Differentiate both sides with respect to $x$ using the product rule:
+\[
+\frac{1}{v} \frac{dv}{dx} = \frac{d}{dx}(\sin^{-1} x) \ln x + \sin^{-1} x \frac{d}{dx}(\ln x)
+\]
+\[
+\frac{1}{v} \frac{dv}{dx} = \frac{\ln x}{\sqrt{1-x^2}} + \frac{\sin^{-1} x}{x}
+\]
+\[
+\frac{dv}{dx} = x^{\sin^{-1} x} \left[ \frac{\ln x}{\sqrt{1-x^2}} + \frac{\sin^{-1} x}{x} \right]
+\]
+
+Step 4: Combine the derivatives.
+\[
+\frac{dy}{dx} = 2x^{\ln x - 1} \ln x + x^{\sin^{-1} x} \left[ \frac{\ln x}{\sqrt{1-x^2}} + \frac{\sin^{-1} x}{x} \right]
+\]
+
+Final Answer:
+\[
+\boxed{\frac{dy}{dx} = 2x^{\ln x - 1} \ln x + x^{\sin^{-1} x} \left[ \frac{\ln x}{\sqrt{1-x^2}} + \frac{\sin^{-1} x}{x} \right]}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q2aiii
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2aiii
+% topic=Differentiation
+% subtopic=Basic Differentiation
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)(iii)}
+Question:
+Find $\frac{dy}{dx}$ of $x = \ln t + \cos t, y = e^{-t} + \sin t$.
+
+Solution:
+Step 1: Compute $\frac{dx}{dt}$ and $\frac{dy}{dt}$ using parametric differentiation.
+For $x(t) = \ln t + \cos t$:
+\[
+\frac{dx}{dt} = \frac{1}{t} - \sin t = \frac{1 - t\sin t}{t}
+\]
+For $y(t) = e^{-t} + \sin t$:
+\[
+\frac{dy}{dt} = -e^{-t} + \cos t
+\]
+
+Step 2: Apply the parametric derivative formula.
+\[
+\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{-e^{-t} + \cos t}{\frac{1 - t\sin t}{t}}
+\]
+
+Step 3: Simplify the expression.
+\[
+\frac{dy}{dx} = \frac{t(\cos t - e^{-t})}{1 - t\sin t}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{dy}{dx} = \frac{t(\cos t - e^{-t})}{1 - t\sin t}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q2b
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2b
+% topic=Differentiation
+% subtopic=Successive Differentiation
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(b)}
+Question:
+Find $n$-th derivatives of $y = e^{-3x} \sin(5x+2)$.
+
+Solution:
+Step 1: Set up the standard successive differentiation template.
+The general formula for the $n$-th derivative of a function of the type $e^{ax}\sin(bx+c)$ is:
+\[
+y^{(n)} = (a^2+b^2)^{n/2} e^{ax} \sin\left( bx+c + n\phi \right)
+\]
+where $\tan\phi = \frac{b}{a}$.
+
+Step 2: Assign parameters from $y = e^{-3x}\sin(5x+2)$.
+Here, $a = -3$, $b = 5$, and $c = 2$.
+Compute the coefficient term:
+\[
+(a^2 + b^2)^{1/2} = \sqrt{(-3)^2 + 5^2} = \sqrt{9 + 25} = \sqrt{34}
+\]
+Compute the phase angle $\phi$:
+\[
+\tan\phi = \frac{5}{-3} = -\frac{5}{3} \implies \phi = \pi - \tan^{-1}\left(\frac{5}{3}\right)
+\]
+(The angle is chosen in the second quadrant because $a < 0$ and $b > 0$).
+
+Step 3: Substitute parameters into the general formula.
+\[
+y^{(n)} = 34^{n/2} e^{-3x} \sin\left( 5x + 2 + n\phi \right)
+\]
+where $\phi = \pi - \tan^{-1}(5/3)$.
+
+Final Answer:
+\[
+\boxed{y^{(n)} = 34^{n/2} e^{-3x} \sin\left( 5x + 2 + n \left[\pi - \tan^{-1}\left(\frac{5}{3}\right)\right] \right)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q2c
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2c
+% topic=Series Expansion
+% subtopic=Taylor Series
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(c)}
+Question:
+Expand $\log_e x$ in powers of $(x-4)$.
+
+Solution:
+Step 1: State Taylor's theorem for series expansion.
+The Taylor series expansion of a function $f(x)$ about $x = a$ is:
+\[
+f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \dots = \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!}(x-a)^k
+\]
+Here, $f(x) = \ln x$ and $a = 4$.
+
+Step 2: Compute the function and its successive derivatives evaluated at $a = 4$.
+- $f(x) = \ln x \implies f(4) = \ln 4$
+- $f'(x) = x^{-1} \implies f'(4) = \frac{1}{4}$
+- $f''(x) = -x^{-2} \implies f''(4) = -\frac{1}{16}$
+- $f'''(x) = 2x^{-3} \implies f'''(4) = \frac{2}{64} = \frac{1}{32}$
+- $f^{(4)}(x) = -6x^{-4} \implies f^{(4)}(4) = -\frac{6}{256} = -\frac{3}{128}$
+
+In general, for $k \ge 1$:
+\[
+f^{(k)}(x) = (-1)^{k-1} (k-1)! x^{-k} \implies f^{(k)}(4) = \frac{(-1)^{k-1} (k-1)!}{4^k}
+\]
+
+Step 3: Write out the terms of the expansion.
+\[
+\frac{f^{(k)}(4)}{k!} = \frac{(-1)^{k-1} (k-1)!}{k! \cdot 4^k} = \frac{(-1)^{k-1}}{k \cdot 4^k}
+\]
+Substituting back into the series:
+\[
+\ln x = \ln 4 + \sum_{k=1}^\infty \frac{(-1)^{k-1}}{k \cdot 4^k} (x-4)^k
+\]
+Expanding the first few terms:
+\[
+\ln x = \ln 4 + \frac{1}{4}(x-4) - \frac{1}{32}(x-4)^2 + \frac{1}{96}(x-4)^3 - \dots
+\]
+
+Final Answer:
+\[
+\boxed{\ln x = \ln 4 + \sum_{k=1}^\infty \frac{(-1)^{k-1}}{k \cdot 4^k} (x-4)^k}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q3a
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3a
+% topic=Differentiation
+% subtopic=Leibnitz Rule
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q3(a)}
+Question:
+State Leibnitz's theorem. If $\ln y = \tan^{-1} x$, then using Leibnitz's theorem show that $(1+x^2)y_{n+2} + (2nx + 2x - 1)y_{n+1} + n(n+1)y_n = 0$. Also find the value of $(y_n)_0$.
+
+Solution:
+Step 1: State Leibnitz's Theorem.
+If $u(x)$ and $v(x)$ are $n$-times differentiable functions, then the $n$-th derivative of their product $uv$ is:
+\[
+(uv)_n = \sum_{r=0}^n \binom{n}{r} u_{n-r} v_r
+\]
+
+Step 2: Obtain the base differential equations.
+Given $\ln y = \tan^{-1} x$. Differentiating with respect to $x$:
+\[
+\frac{1}{y} y_1 = \frac{1}{1+x^2} \implies (1+x^2)y_1 = y
+\]
+Differentiate both sides once more:
+\[
+2x y_1 + (1+x^2)y_2 = y_1 \implies (1+x^2)y_2 + (2x - 1)y_1 = 0 \quad \text{--- (Equation 1)}
+\]
+
+Step 3: Differentiate Equation 1 $n$ times using Leibnitz's Theorem.
+- **For $D^n[(1+x^2)y_2]$:**
+  Let $u = y_2$ and $v = 1+x^2$:
+  \[
+  D^n[(1+x^2)y_2] = (1+x^2)y_{n+2} + n(2x)y_{n+1} + \frac{n(n-1)}{2}(2)y_n
+  \]
+  \[
+  = (1+x^2)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n
+  \]
+- **For $D^n[(2x-1)y_1]$:**
+  Let $u = y_1$ and $v = 2x-1$:
+  \[
+  D^n[(2x-1)y_1] = (2x-1)y_{n+1} + n(2)y_n = (2x-1)y_{n+1} + 2ny_n
+  \]
+
+Summing both parts:
+\[
+(1+x^2)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n + (2x-1)y_{n+1} + 2ny_n = 0
+\]
+Combine coefficients of $y_{n+1}$ and $y_n$:
+\[
+(1+x^2)y_{n+2} + (2nx + 2x - 1)y_{n+1} + [n(n-1) + 2n]y_n = 0
+\]
+\[
+(1+x^2)y_{n+2} + (2nx + 2x - 1)y_{n+1} + n(n+1)y_n = 0
+\]
+This proves the relation.
+
+Step 4: Find $(y_n)_0$, the value of the $n$-th derivative at $x = 0$.
+Evaluate original expressions at $x = 0$:
+- From $\ln y = \tan^{-1} x$: at $x=0$, $\ln y = 0 \implies (y)_0 = 1$.
+- From $(1+x^2)y_1 = y$: at $x=0$, $(y_1)_0 = (y)_0 = 1$.
+- From $(1+x^2)y_2 + (2x-1)y_1 = 0$: at $x=0$, $(y_2)_0 - (y_1)_0 = 0 \implies (y_2)_0 = 1$.
+
+Now, substitute $x = 0$ in the main $n$-th derivative relation:
+\[
+(1+0) (y_{n+2})_0 + (0 + 0 - 1)(y_{n+1})_0 + n(n+1)(y_n)_0 = 0
+\]
+\[
+(y_{n+2})_0 = (y_{n+1})_0 - n(n+1)(y_n)_0
+\]
+We can compute the values sequentially:
+- For $n=1$: $(y_3)_0 = (y_2)_0 - 2(y_1)_0 = 1 - 2(1) = -1$
+- For $n=2$: $(y_4)_0 = (y_3)_0 - 6(y_2)_0 = -1 - 6(1) = -7$
+- For $n=3$: $(y_5)_0 = (y_4)_0 - 12(y_3)_0 = -7 - 12(-1) = 5$
+
+Final Answer:
+\[
+\boxed{(y_{n+2})_0 = (y_{n+1})_0 - n(n+1)(y_n)_0 \quad \text{with initial terms } y_0=1, y_1=1, y_2=1}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q3b
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3b
+% topic=Applications of Derivatives
+% subtopic=Maxima \& Minima
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q3(b)}
+Question:
+What do you mean by critical points and stationary points of a function. Find the extremum values or point of inflection of $f(x) = \sin x + \cos 2x$, $0 \le x \le 2\pi$.
+
+Solution:
+Step 1: Explain the definitions.
+- **Critical Point:** A point $c$ in the domain of a function $f(x)$ is a critical point if $f'(c) = 0$ or if $f'(c)$ is undefined.
+- **Stationary Point:** A point $c$ in the domain of $f(x)$ is a stationary point if $f'(c) = 0$.
+
+Step 2: Find critical/stationary points of $f(x) = \sin x + \cos 2x$ over $[0, 2\pi]$.
+Differentiate with respect to $x$:
+\[
+f'(x) = \cos x - 2\sin 2x = \cos x - 4\sin x\cos x = \cos x(1 - 4\sin x)
+\]
+Set $f'(x) = 0$:
+1. **Case 1: $\cos x = 0 \implies x = \frac{\pi}{2}, \frac{3\pi}{2}$**
+2. **Case 2: $1 - 4\sin x = 0 \implies \sin x = \frac{1}{4} \implies x = \alpha, \pi-\alpha$**, where $\alpha = \sin^{-1}(1/4) \approx 0.2527$ rad.
+
+Step 3: Classify points to find extremum values.
+Differentiate again to get the second derivative:
+\[
+f''(x) = -\sin x - 4\cos 2x = -\sin x - 4(1 - 2\sin^2 x) = 8\sin^2 x - \sin x - 4
+\]
+- At $x = \frac{\pi}{2}$:
+  \[
+  f''\left(\frac{\pi}{2}\right) = 8(1)^2 - 1 - 4 = 3 > 0 \implies \text{Local Minimum}
+  \]
+  Value: $f(\frac{\pi}{2}) = \sin(\frac{\pi}{2}) + \cos\pi = 1 - 1 = 0$.
+- At $x = \frac{3\pi}{2}$:
+  \[
+  f''\left(\frac{3\pi}{2}\right) = 8(-1)^2 - (-1) - 4 = 5 > 0 \implies \text{Local Minimum}
+  \]
+  Value: $f(\frac{3\pi}{2}) = \sin(\frac{3\pi}{2}) + \cos(3\pi) = -1 - 1 = -2$.
+- At $\sin x = \frac{1}{4}$ (both $x=\alpha$ and $x=\pi-\alpha$):
+  \[
+  f''(x) = 8\left(\frac{1}{16}\right) - \frac{1}{4} - 4 = \frac{1}{2} - \frac{1}{4} - 4 = -3.75 < 0 \implies \text{Local Maximum}
+  \]
+  Value: $f(x) = \sin x + 1 - 2\sin^2 x = \frac{1}{4} + 1 - \frac{1}{8} = \frac{9}{8} = 1.125$.
+
+Step 4: Find the points of inflection.
+Set $f''(x) = 0 \implies 8\sin^2 x - \sin x - 4 = 0$.
+Using the quadratic formula for $\sin x$:
+\[
+\sin x = \frac{1 \pm \sqrt{1 - 4(8)(-4)}}{16} = \frac{1 \pm \sqrt{129}}{16}
+\]
+Since $\sqrt{129} \approx 11.3578$:
+- $\sin x_1 \approx 0.7724 \implies x \approx 0.882$ rad, or $x \approx \pi - 0.882$ rad.
+- $\sin x_2 \approx -0.6474 \implies x \approx \pi - (-0.704)$ rad, or $x \approx 2\pi - 0.704$ rad.
+These yield four inflection points in the interval $[0, 2\pi]$.
+
+Final Answer:
+\[
+\boxed{
+\begin{aligned}
+\text{Max value } & 1.125 \text{ at } x = \sin^{-1}(1/4) \text{ and } \pi - \sin^{-1}(1/4) \\
+\text{Min values } & 0 \text{ at } x = \pi/2, \text{ and } -2 \text{ at } x = 3\pi/2
+\end{aligned}
+}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q4a
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4a
+% topic=Applications of Derivatives
+% subtopic=Tangent \& Normal
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q4(a)}
+Question:
+Discuss the geometrical representation of tangent, subtangent, normal and subnormal of a curve $f(x) = 0$ at $x = x_0$. Find the equation of tangent and normal line to the curve $f(x) = 3x^2 + 5x - 9$ at $x = 1$.
+
+Solution:
+Step 1: Geometrical representations.
+Let $P(x_0, y_0)$ be a point on the curve $y = f(x)$. Suppose the tangent line drawn at $P$ intersects the $x$-axis at $T$, and the normal line at $P$ intersects the $x$-axis at $N$. Let $G$ be the orthogonal projection of $P$ on the $x$-axis (so $G$ has coordinates $(x_0, 0)$).
+- **Tangent Length ($PT$):** The length of the segment of the tangent line between the point of tangency $P$ and the $x$-axis:
+  \[
+  PT = \left| y_0 \sqrt{1 + \left(\frac{dx}{dy}\right)^2} \right|
+  \]
+- **Subtangent ($TG$):** The projection of the tangent segment on the $x$-axis:
+  \[
+  TG = \left| \frac{y_0}{dy/dx} \right|
+  \]
+- **Normal Length ($PN$):** The length of the segment of the normal line between the point $P$ and the $x$-axis:
+  \[
+  PN = \left| y_0 \sqrt{1 + \left(\frac{dy}{dx}\right)^2} \right|
+  \]
+- **Subnormal ($GN$):** The projection of the normal segment on the $x$-axis:
+  \[
+  GN = \left| y_0 \frac{dy}{dx} \right|
+  \]
+
+Step 2: Find the point of tangency for $f(x) = 3x^2 + 5x - 9$ at $x = 1$.
+\[
+y_0 = f(1) = 3(1)^2 + 5(1) - 9 = 3 + 5 - 9 = -1
+\]
+So the point of contact is $P(1, -1)$.
+
+Step 3: Compute the slope of the tangent.
+Differentiate $f(x)$:
+\[
+f'(x) = 6x + 5 \implies m = f'(1) = 6(1) + 5 = 11
+\]
+
+Step 4: Find the equations of the tangent and normal lines.
+- **Equation of the Tangent:**
+  \[
+  y - y_0 = m(x - x_0) \implies y - (-1) = 11(x - 1)
+  \]
+  \[
+  y + 1 = 11x - 11 \implies 11x - y - 12 = 0
+  \]
+- **Equation of the Normal:**
+  The slope of the normal line is $-\frac{1}{m} = -\frac{1}{11}$:
+  \[
+  y - y_0 = -\frac{1}{m}(x - x_0) \implies y - (-1) = -\frac{1}{11}(x - 1)
+  \]
+  \[
+  11(y + 1) = -(x - 1) \implies 11y + 11 = -x + 1 \implies x + 11y + 10 = 0
+  \]
+
+Final Answer:
+\[
+\boxed{
+\begin{aligned}
+\text{Tangent: } & 11x - y - 12 = 0 \\
+\text{Normal: } & x + 11y + 10 = 0
+\end{aligned}
+}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q4b
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4b
+% topic=Limits
+% subtopic=General
+% difficulty=Medium
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q4(b)}
+Question:
+Evaluate $\lim_{x \to 0} (\cos x)^{\csc^2 x}$.
+
+Solution:
+Step 1: Set up the limit using logarithmic properties.
+Let $L = \lim_{x \to 0} (\cos x)^{\csc^2 x}$.
+Taking the natural logarithm of both sides:
+\[
+\ln L = \lim_{x \to 0} \ln\left( (\cos x)^{\csc^2 x} \right) = \lim_{x \to 0} \csc^2 x \ln(\cos x) = \lim_{x \to 0} \frac{\ln(\cos x)}{\sin^2 x}
+\]
+
+Step 2: Evaluate the limit using L'Hopital's rule.
+Since the limit is in the indeterminate form $\frac{0}{0}$, differentiate numerator and denominator with respect to $x$:
+\[
+\ln L = \lim_{x \to 0} \frac{\frac{d}{dx}(\ln(\cos x))}{\frac{d}{dx}(\sin^2 x)} = \lim_{x \to 0} \frac{\frac{1}{\cos x}(-\sin x)}{2\sin x\cos x}
+\]
+\[
+\ln L = \lim_{x \to 0} \frac{-\tan x}{\sin 2x}
+\]
+Using L'Hopital again, or rewriting:
+\[
+\ln L = \lim_{x \to 0} \frac{-\sin x}{\cos x \cdot 2\sin x \cos x} = \lim_{x \to 0} \frac{-1}{2\cos^2 x}
+\]
+As $x \to 0$, $\cos x \to 1$:
+\[
+\ln L = \frac{-1}{2(1)^2} = -\frac{1}{2}
+\]
+
+Step 3: Solve for $L$.
+\[
+L = e^{-1/2} = \frac{1}{\sqrt{e}}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{1}{\sqrt{e}}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-final-seca-q4c
+% discipline=CSE
+% year=2025
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4c
+% topic=Partial Derivatives
+% subtopic=Total Derivatives
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q4(c)}
+Question:
+If $u = \ln(x^2 + y^2 + z^2)$ then construct the relation $x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} + z\frac{\partial u}{\partial z} = 2$.
+
+Solution:
+Step 1: Compute the partial derivative $\frac{\partial u}{\partial x}$.
+Using the chain rule:
+\[
+\frac{\partial u}{\partial x} = \frac{1}{x^2+y^2+z^2} \cdot \frac{\partial}{\partial x}(x^2+y^2+z^2) = \frac{2x}{x^2+y^2+z^2}
+\]
+
+Step 2: Compute the partial derivatives $\frac{\partial u}{\partial y}$ and $\frac{\partial u}{\partial z}$.
+Similarly, by symmetry:
+\[
+\frac{\partial u}{\partial y} = \frac{2y}{x^2+y^2+z^2} \quad \text{and} \quad \frac{\partial u}{\partial z} = \frac{2z}{x^2+y^2+z^2}
+\]
+
+Step 3: Evaluate the left side of the target relation.
+\[
+x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} + z\frac{\partial u}{\partial z} = x\left(\frac{2x}{x^2+y^2+z^2}\right) + y\left(\frac{2y}{x^2+y^2+z^2}\right) + z\left(\frac{2z}{x^2+y^2+z^2}\right)
+\]
+\[
+= \frac{2x^2 + 2y^2 + 2z^2}{x^2+y^2+z^2}
+\]
+Factor out $2$ from the numerator:
+\[
+= \frac{2(x^2+y^2+z^2)}{x^2+y^2+z^2} = 2
+\]
+This verifies and constructs the relation.
+
+Final Answer:
+\[
+\boxed{x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} + z\frac{\partial u}{\partial z} = 2}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

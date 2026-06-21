@@ -1,0 +1,478 @@
+% FILE: CSE-19_TermFinal.tex
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+\babelfont{rm}{Noto Sans}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=-}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+% id=cse19-final-q1a
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1a
+% topic=Limits
+% subtopic=General
+% difficulty=Easy
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q1(a)}
+Question:
+Define limit and continuity of a function at $x = a$. Find the limit of the following function:
+(i) $\lim_{x \to 1} \frac{x-1}{\sqrt{x}-1}$
+(ii) $\lim_{x \to 0} \frac{\sin x}{x}$
+
+Solution:
+Step 1: Define limit and continuity at $x = a$.
+- **Limit**: A function $f(x)$ is said to have a limit $L$ as $x$ approaches $a$ (written as $\lim_{x \to a} f(x) = L$) if for any given $\varepsilon > 0$, there exists a corresponding $\delta > 0$ such that $|f(x) - L| < \varepsilon$ whenever $0 < |x - a| < \delta$.
+- **Continuity**: A function $f(x)$ is continuous at a point $x = a$ if and only if:
+  1. $f(a)$ is defined.
+  2. $\lim_{x \to a} f(x)$ exists.
+  3. $\lim_{x \to a} f(x) = f(a)$.
+
+Step 2: Evaluate the limit (i) $\lim_{x \to 1} \frac{x-1}{\sqrt{x}-1}$.
+We can factor the numerator as a difference of squares:
+$$x - 1 = (\sqrt{x} - 1)(\sqrt{x} + 1)$$
+Substitute this back into the limit expression:
+$$\lim_{x \to 1} \frac{(\sqrt{x}-1)(\sqrt{x}+1)}{\sqrt{x}-1}$$
+For $x \neq 1$, we can cancel the common term $(\sqrt{x}-1)$:
+$$\lim_{x \to 1} (\sqrt{x} + 1) = \sqrt{1} + 1 = 2$$
+
+Step 3: Evaluate the limit (ii) $\lim_{x \to 0} \frac{\sin x}{x}$.
+This is an indeterminate form of type $\frac{0}{0}$. Applying L'H\^opital's Rule by differentiating the numerator and the denominator with respect to $x$:
+$$\lim_{x \to 0} \frac{\sin x}{x} = \lim_{x \to 0} \frac{\frac{d}{dx}(\sin x)}{\frac{d}{dx}(x)} = \lim_{x \to 0} \frac{\cos x}{1} = \cos(0) = 1$$
+
+Final Answer:
+$$
+\boxed{\text{(i) } 2, \quad \text{(ii) } 1}
+$$
+
+% id=cse19-final-q1b
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1b
+% topic=Differentiation
+% subtopic=Logarithmic Differentiation
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q1(b)}
+Question:
+Find the derivative of the following functions:
+(i) $y = a^{a^x}$
+(ii) $y = (\sin x)^{\cos x} + (\cos x)^{\sin x}$
+
+Solution:
+Step 1: Find the derivative of (i) $y = a^{a^x}$.
+Let $u = a^x$. Then $y = a^u$. Using the chain rule:
+$$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$$
+Since $\frac{d}{dz}(c^z) = c^z \ln c$, we compute:
+$$\frac{dy}{du} = a^u \ln a = a^{a^x} \ln a$$
+$$\frac{du}{dx} = a^x \ln a$$
+Substitute these back:
+$$\frac{dy}{dx} = \left(a^{a^x} \ln a\right) \left(a^x \ln a\right) = a^{a^x} a^x (\ln a)^2$$
+
+Step 2: Find the derivative of (ii) $y = (\sin x)^{\cos x} + (\cos x)^{\sin x}$.
+Let $u = (\sin x)^{\cos x}$ and $v = (\cos x)^{\sin x}$. Then $y = u + v$, which implies $\frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx}$.
+
+Step 3: Compute $\frac{du}{dx}$.
+Take the natural logarithm of both sides of $u = (\sin x)^{\cos x}$:
+$$\ln u = \cos x \ln(\sin x)$$
+Differentiate with respect to $x$:
+$$\frac{1}{u} \frac{du}{dx} = -\sin x \ln(\sin x) + \cos x \cdot \frac{1}{\sin x} \cdot \cos x$$
+$$\frac{du}{dx} = (\sin x)^{\cos x} \left[ \cot x \cos x - \sin x \ln(\sin x) \right]$$
+
+Step 4: Compute $\frac{dv}{dx}$.
+Take the natural logarithm of both sides of $v = (\cos x)^{\sin x}$:
+$$\ln v = \sin x \ln(\cos x)$$
+Differentiate with respect to $x$:
+$$\frac{1}{v} \frac{dv}{dx} = \cos x \ln(\cos x) + \sin x \cdot \frac{1}{\cos x} \cdot (-\sin x)$$
+$$\frac{dv}{dx} = (\cos x)^{\sin x} \left[ \cos x \ln(\cos x) - \tan x \sin x \right]$$
+
+Step 5: Combine the results.
+$$\frac{dy}{dx} = (\sin x)^{\cos x} \left[ \cot x \cos x - \sin x \ln(\sin x) \right] + (\cos x)^{\sin x} \left[ \cos x \ln(\cos x) - \tan x \sin x \right]$$
+
+Final Answer:
+$$
+\boxed{\begin{aligned}
+\text{(i) } y' &= a^{a^x} a^x (\ln a)^2 \\
+\text{(ii) } y' &= (\sin x)^{\cos x} [ \cot x \cos x - \sin x \ln(\sin x) ] + (\cos x)^{\sin x} [ \cos x \ln(\cos x) - \tan x \sin x ]
+\end{aligned}}
+$$
+
+% id=cse19-final-q2a
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2a
+% topic=Differentiation
+% subtopic=Logarithmic Differentiation
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(a)}
+Question:
+Find the differential coefficients of the following:
+(i) $y = \tan^{-1}\left(\frac{\cos x}{1+\sin x}\right)$
+(ii) $y = (\sin x)^{\ln x} + \sin^2(\cos^{-1} x)$
+
+Solution:
+Step 1: Simplify and differentiate (i) $y = \tan^{-1}\left(\frac{\cos x}{1+\sin x}\right)$.
+Express the trigonometric terms in half-angle formulas:
+$$\cos x = \sin\left(\frac{\pi}{2} - x\right) = 2 \sin\left(\frac{\pi}{4} - \frac{x}{2}\right) \cos\left(\frac{\pi}{4} - \frac{x}{2}\right)$$
+$$1 + \sin x = 1 + \cos\left(\frac{\pi}{2} - x\right) = 2 \cos^2\left(\frac{\pi}{4} - \frac{x}{2}\right)$$
+Substituting these into the argument of $\tan^{-1}$:
+$$\frac{\cos x}{1+\sin x} = \frac{2 \sin\left(\frac{\pi}{4} - \frac{x}{2}\right) \cos\left(\frac{\pi}{4} - \frac{x}{2}\right)}{2 \cos^2\left(\frac{\pi}{4} - \frac{x}{2}\right)} = \tan\left(\frac{\pi}{4} - \frac{x}{2}\right)$$
+Therefore:
+$$y = \tan^{-1}\left[\tan\left(\frac{\pi}{4} - \frac{x}{2}\right)\right] = \frac{\pi}{4} - \frac{x}{2}$$
+Differentiating with respect to $x$:
+$$\frac{dy}{dx} = -\frac{1}{2}$$
+
+Step 2: Differentiate (ii) $y = (\sin x)^{\ln x} + \sin^2(\cos^{-1} x)$.
+Let $u = (\sin x)^{\ln x}$ and $v = \sin^2(\cos^{-1} x)$.
+
+Step 3: Compute $\frac{du}{dx}$.
+$$\ln u = \ln x \ln(\sin x)$$
+Differentiate both sides:
+$$\frac{1}{u} \frac{du}{dx} = \frac{1}{x} \ln(\sin x) + \ln x \cdot \frac{1}{\sin x} \cdot \cos x$$
+$$\frac{du}{dx} = (\sin x)^{\ln x} \left[ \frac{\ln(\sin x)}{x} + \ln x \cot x \right]$$
+
+Step 4: Compute $\frac{dv}{dx}$.
+Let $\theta = \cos^{-1} x \implies \cos \theta = x$.
+$$v = \sin^2 \theta = 1 - \cos^2 \theta = 1 - x^2$$
+Differentiating with respect to $x$:
+$$\frac{dv}{dx} = -2x$$
+
+Step 5: Combine the terms.
+$$\frac{dy}{dx} = (\sin x)^{\ln x} \left[ \frac{\ln(\sin x)}{x} + \ln x \cot x \right] - 2x$$
+
+Final Answer:
+$$
+\boxed{\begin{aligned}
+\text{(i) } y' &= -\frac{1}{2} \\
+\text{(ii) } y' &= (\sin x)^{\ln x} \left[ \frac{\ln(\sin x)}{x} + \ln x \cot x \right] - 2x
+\end{aligned}}
+$$
+
+% id=cse19-final-q2b
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2b
+% topic=Differentiation
+% subtopic=Successive Differentiation
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(b)}
+Question:
+Find $y''\left(\frac{\pi}{4}\right)$ if $y(x) = \sec x$.
+
+Solution:
+Step 1: Compute the first derivative $y'(x)$.
+$$y'(x) = \frac{d}{dx}(\sec x) = \sec x \tan x$$
+
+Step 2: Compute the second derivative $y''(x)$.
+Using the product rule:
+$$y''(x) = \frac{d}{dx}(\sec x) \cdot \tan x + \sec x \cdot \frac{d}{dx}(\tan x)$$
+$$y''(x) = (\sec x \tan x) \tan x + \sec x (\sec^2 x) = \sec x \tan^2 x + \sec^3 x$$
+
+Step 3: Evaluate at $x = \frac{\pi}{4}$.
+Since $\sec\left(\frac{\pi}{4}\right) = \sqrt{2}$ and $\tan\left(\frac{\pi}{4}\right) = 1$:
+$$y''\left(\frac{\pi}{4}\right) = (\sqrt{2})(1)^2 + (\sqrt{2})^3 = \sqrt{2} + 2\sqrt{2} = 3\sqrt{2}$$
+
+Final Answer:
+$$
+\boxed{3\sqrt{2}}
+$$
+
+% id=cse19-final-q2c
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2c
+% topic=Differentiation
+% subtopic=Successive Differentiation
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(c)}
+Question:
+If $y = e^{-x} \cos x$ then prove that $y_4 + 4y = 0$.
+
+Solution:
+Step 1: Find the first derivative $y_1$.
+$$y_1 = -e^{-x} \cos x - e^{-x} \sin x = -e^{-x}(\cos x + \sin x)$$
+
+Step 2: Find the second derivative $y_2$.
+$$y_2 = e^{-x}(\cos x + \sin x) - e^{-x}(-\sin x + \cos x) = 2e^{-x} \sin x$$
+
+Step 3: Find the third derivative $y_3$.
+$$y_3 = -2e^{-x} \sin x + 2e^{-x} \cos x = 2e^{-x}(\cos x - \sin x)$$
+
+Step 4: Find the fourth derivative $y_4$.
+$$y_4 = -2e^{-x}(\cos x - \sin x) + 2e^{-x}(-\sin x - \cos x)$$
+$$y_4 = -2e^{-x}\cos x + 2e^{-x}\sin x - 2e^{-x}\sin x - 2e^{-x}\cos x = -4e^{-x}\cos x$$
+
+Step 5: Verify the relation.
+Since $y = e^{-x} \cos x$:
+$$y_4 = -4y \implies y_4 + 4y = 0$$
+
+Final Answer:
+$$
+\boxed{\text{Proven: } y_4 + 4y = 0}
+$$
+
+% id=cse19-final-q3a
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3a
+% topic=Differentiation
+% subtopic=Leibnitz Rule
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q3(a)}
+Question:
+If $\cos^{-1}\left(\frac{y}{b}\right) = \log\left(\frac{x}{n}\right)^n$ then prove that $x^2 y_{n+2} + (2n + 1)xy_{n+1} + 2n^2 y_n = 0$.
+
+Solution:
+Step 1: Rewrite the given equation.
+$$\cos^{-1}\left(\frac{y}{b}\right) = n \log\left(\frac{x}{n}\right)$$
+$$\frac{y}{b} = \cos\left(n \log\left(\frac{x}{n}\right)\right) \implies y = b \cos\left(n \log\left(\frac{x}{n}\right)\right)$$
+
+Step 2: Differentiate with respect to $x$ for the first time.
+$$y_1 = -b \sin\left(n \log\left(\frac{x}{n}\right)\right) \cdot \frac{n}{\left(\frac{x}{n}\right)} \cdot \frac{1}{n} = -\frac{nb}{x} \sin\left(n \log\left(\frac{x}{n}\right)\right)$$
+$$xy_1 = -nb \sin\left(n \log\left(\frac{x}{n}\right)\right)$$
+
+Step 3: Differentiate with respect to $x$ for the second time.
+Using the product rule on the LHS:
+$$y_1 + xy_2 = -nb \cos\left(n \log\left(\frac{x}{n}\right)\right) \cdot \frac{n}{x}$$
+Multiply both sides by $x$:
+$$xy_1 + x^2 y_2 = -n^2 b \cos\left(n \log\left(\frac{x}{n}\right)\right)$$
+Substitute $y$ back into the RHS:
+$$x^2 y_2 + xy_1 = -n^2 y \implies x^2 y_2 + xy_1 + n^2 y = 0$$
+
+Step 4: Differentiate $n$ times using Leibnitz's theorem.
+The Leibnitz formula for $D^n(uv)$ is:
+$$D^n(uv) = u_n v + n u_{n-1} v_1 + \frac{n(n-1)}{2!} u_{n-2} v_2 + \dots$$
+- For the first term $D^n(y_2 \cdot x^2)$:
+  $$D^n(y_2 \cdot x^2) = y_{n+2} x^2 + n y_{n+1} (2x) + \frac{n(n-1)}{2} y_n (2) = x^2 y_{n+2} + 2nxy_{n+1} + n(n-1)y_n$$
+- For the second term $D^n(y_1 \cdot x)$:
+  $$D^n(y_1 \cdot x) = y_{n+1} x + n y_n (1) = x y_{n+1} + n y_n$$
+- For the third term $D^n(n^2 y)$:
+  $$D^n(n^2 y) = n^2 y_n$$
+
+Step 5: Substitute and simplify.
+$$(x^2 y_{n+2} + 2nxy_{n+1} + (n^2-n)y_n) + (xy_{n+1} + ny_n) + n^2 y_n = 0$$
+$$x^2 y_{n+2} + (2n + 1)xy_{n+1} + (n^2 - n + n + n^2)y_n = 0$$
+$$x^2 y_{n+2} + (2n + 1)xy_{n+1} + 2n^2 y_n = 0$$
+
+Final Answer:
+$$
+\boxed{\text{Proven: } x^2 y_{n+2} + (2n + 1)xy_{n+1} + 2n^2 y_n = 0}
+$$
+
+% id=cse19-final-q3b
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3b
+% topic=Applications of Derivatives
+% subtopic=Rolle's Theorem
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q3(b)}
+Question:
+State Rolle's theorem. Verify the hypotheses of Rolle's theorem of the function $f(x) = x^2 - 6x + 8$ on the interval $[2,4]$ and find all values of $C$ that satisfy the theorem.
+
+Solution:
+Step 1: State Rolle's theorem.
+Let $f(x)$ be a function that satisfies the following three conditions:
+1. $f(x)$ is continuous on the closed interval $[a, b]$.
+2. $f(x)$ is differentiable on the open interval $(a, b)$.
+3. $f(a) = f(b)$.
+Then, there exists at least one number $c \in (a, b)$ such that $f'(c) = 0$.
+
+Step 2: Verify continuity and differentiability of $f(x) = x^2 - 6x + 8$ on $[2, 4]$.
+- **Continuity**: Since $f(x)$ is a polynomial function, it is continuous everywhere, including on the closed interval $[2, 4]$.
+- **Differentiability**: The derivative $f'(x) = 2x - 6$ exists for all real numbers, so $f(x)$ is differentiable on the open interval $(2, 4)$.
+
+Step 3: Check endpoint values $f(a)$ and $f(b)$.
+$$f(2) = (2)^2 - 6(2) + 8 = 4 - 12 + 8 = 0$$
+$$f(4) = (4)^2 - 6(4) + 8 = 16 - 24 + 8 = 0$$
+Since $f(2) = f(4) = 0$, the third hypothesis is satisfied. Thus, all hypotheses of Rolle's theorem are verified.
+
+Step 4: Find the value $c \in (2, 4)$ where $f'(c) = 0$.
+$$f'(c) = 2c - 6 = 0 \implies 2c = 6 \implies c = 3$$
+Since $3 \in (2, 4)$, the theorem holds, and the required value of $c$ is $3$.
+
+Final Answer:
+$$
+\boxed{c = 3}
+$$
+
+% id=cse19-final-q4a
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4a
+% topic=Applications of Derivatives
+% subtopic=Maxima & Minima
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(a)}
+Question:
+Find the maxima and minima of $f(x) = 2x^3 - 15x^2 + 36x$ on the interval $[1,5]$ and determine where the maximum and minimum occur.
+
+Solution:
+Step 1: Find the critical points of $f(x)$.
+Differentiate $f(x)$ with respect to $x$:
+$$f'(x) = 6x^2 - 30x + 36$$
+Set $f'(x) = 0$ to find the critical points:
+$$6(x^2 - 5x + 6) = 0 \implies 6(x-2)(x-3) = 0 \implies x = 2 \text{ or } x = 3$$
+Both critical points $x = 2$ and $x = 3$ lie within the interval $[1, 5]$.
+
+Step 2: Evaluate $f(x)$ at the critical points and the endpoints of the interval.
+- At endpoint $x = 1$:
+  $$f(1) = 2(1)^3 - 15(1)^2 + 36(1) = 2 - 15 + 36 = 23$$
+- At critical point $x = 2$:
+  $$f(2) = 2(2)^3 - 15(2)^2 + 36(2) = 16 - 60 + 72 = 28$$
+- At critical point $x = 3$:
+  $$f(3) = 2(3)^3 - 15(3)^2 + 36(3) = 54 - 135 + 108 = 27$$
+- At endpoint $x = 5$:
+  $$f(5) = 2(5)^3 - 15(5)^2 + 36(5) = 250 - 375 + 180 = 55$$
+
+Step 3: Identify the absolute maximum and minimum values.
+Comparing the values:
+- The absolute maximum is $55$, occurring at $x = 5$.
+- The absolute minimum is $23$, occurring at $x = 1$.
+- Locally, $f(x)$ has a local maximum of $28$ at $x = 2$ and a local minimum of $27$ at $x = 3$.
+
+Final Answer:
+$$
+\boxed{\text{Absolute Maximum: } 55 \text{ at } x = 5, \quad \text{Absolute Minimum: } 23 \text{ at } x = 1}
+$$
+
+% id=cse19-final-q4b
+% discipline=CSE
+% year=2019
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4b
+% topic=Series Expansion
+% subtopic=Taylor Series
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(b)}
+Question:
+Expand (i) $\sin x$ and (ii) $\log(1+x)$ by Taylor's theorem.
+
+Solution:
+Step 1: Expand $f(x) = \sin x$ about $x = 0$ (Maclaurin's form of Taylor's theorem).
+Find the values of $f(x)$ and its successive derivatives at $x = 0$:
+- $f(x) = \sin x \implies f(0) = 0$
+- $f'(x) = \cos x \implies f'(0) = 1$
+- $f''(x) = -\sin x \implies f''(0) = 0$
+- $f'''(x) = -\cos x \implies f'''(0) = -1$
+- $f^{(4)}(x) = \sin x \implies f^{(4)}(0) = 0$
+- $f^{(5)}(x) = \cos x \implies f^{(5)}(0) = 1$
+
+The Taylor series expansion is:
+$$f(x) = f(0) + x f'(0) + \frac{x^2}{2!} f''(0) + \frac{x^3}{3!} f'''(0) + \dots$$
+Substituting the derivatives:
+$$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots + (-1)^n \frac{x^{2n+1}}{(2n+1)!} + \dots$$
+
+Step 2: Expand $f(x) = \log(1+x)$ about $x = 0$.
+Find the values of $f(x)$ and its successive derivatives at $x = 0$:
+- $f(x) = \log(1+x) \implies f(0) = 0$
+- $f'(x) = (1+x)^{-1} \implies f'(0) = 1$
+- $f''(x) = -(1+x)^{-2} \implies f''(0) = -1$
+- $f'''(x) = 2(1+x)^{-3} \implies f'''(0) = 2$
+- $f^{(4)}(x) = -6(1+x)^{-4} \implies f^{(4)}(0) = -6$
+In general, the $n$-th derivative at $0$ is $f^{(n)}(0) = (-1)^{n-1}(n-1)!$.
+
+Substituting into the Taylor series expansion:
+$$\log(1+x) = 0 + x(1) + \frac{x^2}{2!}(-1) + \frac{x^3}{3!}(2) + \frac{x^4}{4!}(-6) + \dots$$
+$$\log(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \dots + (-1)^{n-1}\frac{x^n}{n} + \dots \quad (\text{for } -1 < x \le 1)$$
+
+Final Answer:
+$$
+\boxed{\begin{aligned}
+\text{(i) } \sin x &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots \\
+\text{(ii) } \log(1+x) &= x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \dots
+\end{aligned}}
+$$
+
+\end{document}

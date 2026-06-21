@@ -1,0 +1,786 @@
+% FILE: CSE-16_TermFinal.tex
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\babelfont{rm}{Noto Sans}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q1a  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=1a  
+% topic=Functions  
+% subtopic=Curve Sketching  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q1(a)}
+
+Question:
+Define a function. Draw the graph of $f(x) = |x - 1| + |x + 1|$. Also find the domain and range of it.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Define a Function] \ \\
+    A function $f$ from a set $A$ to a set $B$ is a relation that associates each element $x$ in $A$ with exactly one element $y$ in $B$. It is denoted as $f: A \to B$, where $A$ is the domain and $B$ is the codomain.
+
+    \item[Step 2: Rewrite the piecewise definition of $f(x)$] \ \\
+    We analyze the critical points of the absolute values, which are $x = -1$ and $x = 1$:
+    \begin{itemize}
+        \item \textbf{Case 1: $x < -1$} \\
+        Here, $x - 1 < 0$ and $x + 1 < 0$:
+        \[ f(x) = -(x - 1) - (x + 1) = -x + 1 - x - 1 = -2x \]
+        
+        \item \textbf{Case 2: $-1 \le x < 1$} \\
+        Here, $x - 1 < 0$ and $x + 1 \ge 0$:
+        \[ f(x) = -(x - 1) + (x + 1) = -x + 1 + x + 1 = 2 \]
+        
+        \item \textbf{Case 3: $x \ge 1$} \\
+        Here, $x - 1 \ge 0$ and $x + 1 \ge 0$:
+        \[ f(x) = (x - 1) + (x + 1) = 2x \]
+    \end{itemize}
+    Thus, the piecewise function is:
+    \[ 
+    f(x) = \begin{cases} 
+    -2x, & \text{when } x < -1 \\ 
+    2, & \text{when } -1 \le x < 1 \\ 
+    2x, & \text{when } x \ge 1 
+    \end{cases} 
+    \]
+
+    \item[Step 3: Find Domain and Range] \ 
+    \begin{itemize}
+        \item \textbf{Domain:} Since the absolute value functions $|x-1|$ and $|x+1|$ are defined for all real numbers, the domain of $f(x)$ is all real numbers:
+        \[ \text{Domain} = (-\infty, \infty) \]
+        \item \textbf{Range:} Looking at the piecewise definition, the minimum value of $f(x)$ is $2$ (achieved when $-1 \le x \le 1$). For $x > 1$ or $x < -1$, the function values increase towards infinity. Thus:
+        \[ \text{Range} = [2, \infty) \]
+    \end{itemize}
+
+    \item[Step 4: Describe the Graph] \ 
+    \begin{itemize}
+        \item For $x \le -1$, the graph is a straight line segment with a slope of $-2$ coming down from infinity to the point $(-1, 2)$.
+        \item For $-1 \le x \le 1$, the graph is a horizontal flat line segment at $y = 2$.
+        \item For $x \ge 1$, the graph is a straight line segment with a slope of $2$ going up from $(1, 2)$ to infinity.
+        \item This forms a symmetric, flat-bottomed U-shape (trough shape).
+    \end{itemize}
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\text{Domain} = (-\infty, \infty), \quad \text{Range} = [2, \infty)} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q1b  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=1b  
+% topic=Continuity  
+% subtopic=General  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q1(b)}
+
+Question:
+Test the continuity of $f(x)$ at $x=0$ where
+\[ 
+f(x) = \begin{cases} 
+x \cos\left(\frac{1}{x}\right), & \text{when } x \neq 0 \\ 
+0, & \text{when } x = 0 
+\end{cases} 
+\]
+Again show that $f(x)$ is not differentiable at $x = 0$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Test the Continuity of $f(x)$ at $x = 0$] \ \\
+    A function is continuous at $x = 0$ if $\lim_{x \to 0} f(x) = f(0)$.
+    We are given $f(0) = 0$.
+    We evaluate the limit:
+    \[ \lim_{x \to 0} f(x) = \lim_{x \to 0} x \cos\left(\frac{1}{x}\right) \]
+    Since $-1 \le \cos\left(\frac{1}{x}\right) \le 1$ for all $x \neq 0$, we can use the Squeeze Theorem:
+    \[ -|x| \le x \cos\left(\frac{1}{x}\right) \le |x| \]
+    Taking the limit as $x \to 0$:
+    \[ \lim_{x \to 0} (-|x|) = 0 \quad \text{and} \quad \lim_{x \to 0} |x| = 0 \]
+    Therefore, by the Squeeze Theorem:
+    \[ \lim_{x \to 0} x \cos\left(\frac{1}{x}\right) = 0 \]
+    Since $\lim_{x \to 0} f(x) = f(0) = 0$, the function is continuous at $x = 0$.
+
+    \item[Step 2: Test the Differentiability of $f(x)$ at $x = 0$] \ \\
+    By the definition of differentiability, we evaluate the limit of the difference quotient at $x=0$:
+    \[ f'(0) = \lim_{h \to 0} \frac{f(0+h) - f(0)}{h} = \lim_{h \to 0} \frac{h \cos\left(\frac{1}{h}\right) - 0}{h} \]
+    \[ f'(0) = \lim_{h \to 0} \cos\left(\frac{1}{h}\right) \]
+    As $h \to 0$, the argument $\frac{1}{h} \to \pm \infty$. The value of $\cos\left(\frac{1}{h}\right)$ oscillates infinitely many times between $-1$ and $1$.
+    Therefore, the limit $\lim_{h \to 0} \cos\left(\frac{1}{h}\right)$ does not exist.
+    
+    Since this limit does not exist, the function $f(x)$ is not differentiable at $x = 0$.
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\text{The function is continuous at } x=0 \text{ but not differentiable at } x=0.} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q2a  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=2a  
+% topic=Differentiation  
+% subtopic=Leibnitz Rule  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(a)}
+
+Question:
+State Leibnitz's theorem. If $y = e^{m\cos^{-1}x}$ then show that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0$ and find $y_n(0)$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: State Leibnitz's Theorem] \ \\
+    If $u$ and $v$ are two functions of $x$ that can be differentiated $n$ times, then:
+    \[ (uv)_n = u_n v + n u_{n-1} v_1 + \frac{n(n-1)}{2!} u_{n-2} v_2 + \dots + \binom{n}{r} u_{n-r} v_r + \dots + u v_n \]
+    where the subscript denotes the order of differentiation with respect to $x$.
+
+    \item[Step 2: Perform Successive Differentiation] \ \\
+    Given:
+    \[ y = e^{m\cos^{-1}x} \]
+    At $x=0$, $y(0) = e^{m\cos^{-1}(0)} = e^{\frac{m\pi}{2}}$.\\
+    Differentiating once with respect to $x$:
+    \[ y_1 = e^{m\cos^{-1}x} \cdot \left( -\frac{m}{\sqrt{1-x^2}} \right) = -\frac{my}{\sqrt{1-x^2}} \]
+    At $x=0$, $y_1(0) = -m e^{\frac{m\pi}{2}}$.\\
+    Squaring both sides:
+    \[ y_1^2 (1-x^2) = m^2 y^2 \]
+    Differentiating once more with respect to $x$:
+    \[ 2y_1 y_2 (1-x^2) + y_1^2 (-2x) = m^2 (2y y_1) \]
+    Dividing through by $2y_1$ (assuming $y_1 \neq 0$):
+    \[ y_2 (1-x^2) - x y_1 = m^2 y \]
+    At $x=0$:
+    \[ y_2(0) (1-0) - 0 = m^2 y(0) \implies y_2(0) = m^2 e^{\frac{m\pi}{2}} \]
+
+    \item[Step 3: Apply Leibnitz's Theorem] \ \\
+    Differentiating the relation $(1-x^2)y_2 - x y_1 - m^2 y = 0$ $n$ times:
+    \begin{enumerate}
+        \item For $(1-x^2)y_2$:
+        \[ [y_2(1-x^2)]_n = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \frac{n(n-1)}{2} y_n (-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n \]
+        \item For $-xy_1$:
+        \[ [y_1 x]_n = y_{n+1} x + n y_n(1) = x y_{n+1} + n y_n \]
+        \item For $-m^2 y$:
+        \[ [m^2 y]_n = m^2 y_n \]
+    \end{enumerate}
+    Combining these expressions:
+    \[ (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - [x y_{n+1} + n y_n] - m^2 y_n = 0 \]
+    \[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - n + n + m^2)y_n = 0 \]
+    \[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0 \]
+
+    \item[Step 4: Find $y_n(0)$] \ \\
+    Setting $x=0$ in the recurrence relation:
+    \[ y_{n+2}(0) = (n^2 + m^2)y_n(0) \]
+    Let us evaluate the pattern for $y_n(0)$:
+    \begin{itemize}
+        \item \textbf{Case 1: If $n$ is even (let $n = 2k$)}
+        \[ y_2(0) = m^2 y(0) \]
+        \[ y_4(0) = (2^2 + m^2)y_2(0) = m^2 (2^2 + m^2) e^{\frac{m\pi}{2}} \]
+        In general, for $n = 2k$:
+        \[ y_n(0) = m^2 (2^2 + m^2)(4^2 + m^2) \dots ((n-2)^2 + m^2) e^{\frac{m\pi}{2}} \]
+
+        \item \textbf{Case 2: If $n$ is odd (let $n = 2k+1$)}
+        \[ y_1(0) = -m e^{\frac{m\pi}{2}} \]
+        \[ y_3(0) = (1^2 + m^2)y_1(0) = -m(1^2 + m^2) e^{\frac{m\pi}{2}} \]
+        In general, for $n = 2k+1$:
+        \[ y_n(0) = -m (1^2 + m^2)(3^2 + m^2) \dots ((n-2)^2 + m^2) e^{\frac{m\pi}{2}} \]
+    \end{itemize}
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{y_n(0) = \begin{cases} 
+m^2 (2^2+m^2)(4^2+m^2)\dots((n-2)^2+m^2) e^{\frac{m\pi}{2}}, & \text{when } n \text{ is even} \\ 
+-m (1^2+m^2)(3^2+m^2)\dots((n-2)^2+m^2) e^{\frac{m\pi}{2}}, & \text{when } n \text{ is odd} 
+\end{cases}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q2bi  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=2b(i)  
+% topic=Differentiation  
+% subtopic=Leibnitz Rule  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(b)(i)}
+
+Question:
+If $y = \sin(m\sin^{-1}x)$ then prove that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} + (m^2 - n^2)y_n = 0$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Perform successive differentiations] \ \\
+    Given:
+    \[ y = \sin(m\sin^{-1}x) \]
+    Differentiating once with respect to $x$:
+    \[ y_1 = \cos(m\sin^{-1}x) \cdot \frac{m}{\sqrt{1-x^2}} \]
+    Squaring both sides:
+    \[ y_1^2 (1-x^2) = m^2 \cos^2(m\sin^{-1}x) \]
+    Using the identity $\cos^2\theta = 1 - \sin^2\theta$:
+    \[ y_1^2 (1-x^2) = m^2 [1 - \sin^2(m\sin^{-1}x)] = m^2 (1-y^2) \]
+    Differentiating again with respect to $x$:
+    \[ 2y_1 y_2 (1-x^2) - 2x y_1^2 = m^2 (-2y y_1) \]
+    Dividing by $2y_1$:
+    \[ y_2(1-x^2) - xy_1 + m^2 y = 0 \]
+
+    \item[Step 2: Apply Leibnitz's Theorem] \ \\
+    We differentiate the second-order differential equation $n$ times with respect to $x$:
+    \begin{enumerate}
+        \item For $y_2(1-x^2)$:
+        \[ [y_2(1-x^2)]_n = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \frac{n(n-1)}{2} y_n (-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n \]
+        \item For $-xy_1$:
+        \[ [y_1 x]_n = y_{n+1} x + n y_n \]
+        \item For $m^2 y$:
+        \[ [m^2 y]_n = m^2 y_n \]
+    \end{enumerate}
+    Substituting these expressions back into the equation:
+    \[ (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - [x y_{n+1} + n y_n] + m^2 y_n = 0 \]
+    \[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} + (m^2 - n^2) y_n = 0 \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\text{Proven}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q2bii  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=2b(ii)  
+% topic=Differentiation  
+% subtopic=Leibnitz Rule  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q2(b)(ii)}
+
+Question:
+If $y = \sin(m\sin^{-1}x)$ then prove that $(1-x^2)y_{n+1} - (2n-1)xy_n + (m^2 - n^2 + 2n - 1)y_{n-1} = 0$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Recall the standard Leibnitz relation] \ \\
+    From the previous question Q2(b)(i), we proved that:
+    \[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} + (m^2 - n^2)y_n = 0 \]
+
+    \item[Step 2: Perform variable shifting] \ \\
+    To transform this relation to the desired format, let us replace $n$ with $n-1$ in the recurrence relation:
+    \[ (1-x^2)y_{(n-1)+2} - (2(n-1)+1)xy_{(n-1)+1} + (m^2 - (n-1)^2)y_{n-1} = 0 \]
+    \[ (1-x^2)y_{n+1} - (2n-1)xy_n + (m^2 - (n^2 - 2n + 1))y_{n-1} = 0 \]
+    \[ (1-x^2)y_{n+1} - (2n-1)xy_n + (m^2 - n^2 + 2n - 1)y_{n-1} = 0 \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\text{Proven}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q3a  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=3a  
+% topic=Applications of Derivatives  
+% subtopic=Tangent \& Normal  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q3(a)}
+
+Question:
+Define tangent at a point of a curve. Find the equations of tangent and normal at the point $(2, -2)$ of the curve $y = x^3 - 3x + 2$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Define Tangent at a Point] \ \\
+    The tangent to a curve at a given point $P$ is the limiting position of the secant line passing through $P$ and another point $Q$ on the curve as $Q$ approaches $P$ along the curve. The slope of this line is equal to the derivative of the curve's equation at the point $P$.
+
+    \item[Step 2: Find the slope of the tangent $\frac{dy}{dx}$] \ \\
+    Given curve:
+    \[ y = x^3 - 3x + 2 \]
+    Differentiating with respect to $x$:
+    \[ \frac{dy}{dx} = 3x^2 - 3 \]
+    At the point $(2, -2)$, the slope of the tangent ($m$) is:
+    \[ m = \left. \frac{dy}{dx} \right|_{x=2} = 3(2)^2 - 3 = 12 - 3 = 9 \]
+
+    \item[Step 3: Find the equation of the tangent] \ \\
+    The equation of the tangent line at $(x_1, y_1) = (2, -2)$ with slope $m = 9$ is:
+    \[ y - y_1 = m(x - x_1) \implies y - (-2) = 9(x - 2) \]
+    \[ y + 2 = 9x - 18 \implies 9x - y - 20 = 0 \]
+
+    \item[Step 4: Find the equation of the normal] \ \\
+    The slope of the normal ($m'$) is:
+    \[ m' = -\frac{1}{m} = -\frac{1}{9} \]
+    The equation of the normal line at $(2, -2)$ is:
+    \[ y - (-2) = -\frac{1}{9}(x - 2) \]
+    \[ 9(y + 2) = -(x - 2) \implies 9y + 18 = -x + 2 \]
+    \[ x + 9y + 16 = 0 \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\text{Tangent: } 9x - y - 20 = 0, \quad \text{Normal: } x + 9y + 16 = 0} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q3b  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=3b  
+% topic=Applications of Derivatives  
+% subtopic=Maxima \& Minima  
+% difficulty=Medium  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q3(b)}
+
+Question:
+Find the maximum and minimum values of $f(x) = x^4 - 8x^3 + 22x^2 - 24x + 5$. Also find the coordinates of maximum and minimum points.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Find the first derivative $f'(x)$] \ \\
+    Given:
+    \[ f(x) = x^4 - 8x^3 + 22x^2 - 24x + 5 \]
+    Differentiating with respect to $x$:
+    \[ f'(x) = 4x^3 - 24x^2 + 44x - 24 \]
+
+    \item[Step 2: Solve for critical points ($f'(x) = 0$)] \ \\
+    Set $f'(x) = 0$:
+    \[ 4(x^3 - 6x^2 + 11x - 6) = 0 \implies x^3 - 6x^2 + 11x - 6 = 0 \]
+    By inspection, $x=1$ is a root because $1 - 6 + 11 - 6 = 0$.\\
+    Using synthetic division to factorize:
+    \[ (x - 1)(x^2 - 5x + 6) = 0 \implies (x - 1)(x - 2)(x - 3) = 0 \]
+    Thus, the critical points are:
+    \[ x = 1, \quad x = 2, \quad x = 3 \]
+
+    \item[Step 3: Use the second derivative test] \ \\
+    Find $f''(x)$:
+    \[ f''(x) = 12x^2 - 48x + 44 \]
+    Now we test each critical point:
+    \begin{itemize}
+        \item \textbf{At $x = 1$:}
+        \[ f''(1) = 12(1)^2 - 48(1) + 44 = 12 - 48 + 44 = 8 > 0 \]
+        Since $f''(1) > 0$, $x = 1$ is a point of local \textbf{minimum}.
+        The minimum value is:
+        \[ f(1) = 1^4 - 8(1)^3 + 22(1)^2 - 24(1) + 5 = 1 - 8 + 22 - 24 + 5 = -4 \]
+        Minimum Point: $(1, -4)$.
+
+        \item \textbf{At $x = 2$:}
+        \[ f''(2) = 12(2)^2 - 48(2) + 44 = 48 - 96 + 44 = -4 < 0 \]
+        Since $f''(2) < 0$, $x = 2$ is a point of local \textbf{maximum}.
+        The maximum value is:
+        \[ f(2) = 2^4 - 8(2)^3 + 22(2)^2 - 24(2) + 5 = 16 - 64 + 88 - 48 + 5 = -3 \]
+        Maximum Point: $(2, -3)$.
+
+        \item \textbf{At $x = 3$:}
+        \[ f''(3) = 12(3)^2 - 48(3) + 44 = 108 - 144 + 44 = 8 > 0 \]
+        Since $f''(3) > 0$, $x = 3$ is a point of local \textbf{minimum}.
+        The minimum value is:
+        \[ f(3) = 3^4 - 8(3)^3 + 22(3)^2 - 24(3) + 5 = 81 - 216 + 198 - 72 + 5 = -4 \]
+        Minimum Point: $(3, -4)$.
+    \end{itemize}
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\text{Max Point: } (2, -3) \text{ with value } -3, \quad \text{Min Points: } (1, -4) \text{ and } (3, -4) \text{ with value } -4} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q4ai  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=4a(i)  
+% topic=Differentiation  
+% subtopic=Logarithmic Differentiation  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(a)(i)}
+
+Question:
+Find the differential coefficient of $y = x^{\ln x} + x^{\cos^{-1}x}$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Split the function into two parts] \ \\
+    Let $y = u + v$, where:
+    \[ u = x^{\ln x} \quad \text{and} \quad v = x^{\cos^{-1}x} \]
+    Then, the derivative is:
+    \[ \frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx} \]
+
+    \item[Step 2: Differentiate $u = x^{\ln x}$] \ \\
+    Taking natural logarithm on both sides of $u$:
+    \[ \ln u = \ln\left(x^{\ln x}\right) = (\ln x)(\ln x) = (\ln x)^2 \]
+    Differentiating both sides with respect to $x$:
+    \[ \frac{1}{u}\frac{du}{dx} = 2(\ln x) \cdot \frac{1}{x} \]
+    \[ \frac{du}{dx} = u \left(\frac{2\ln x}{x}\right) = x^{\ln x} \cdot \left(\frac{2\ln x}{x}\right) = 2x^{\ln x - 1} \ln x \]
+
+    \item[Step 3: Differentiate $v = x^{\cos^{-1}x}$] \ \\
+    Taking natural logarithm on both sides of $v$:
+    \[ \ln v = \ln\left(x^{\cos^{-1}x}\right) = \cos^{-1}x \ln x \]
+    Differentiating both sides with respect to $x$ using the product rule:
+    \[ \frac{1}{v}\frac{dv}{dx} = \left(-\frac{1}{\sqrt{1-x^2}}\right) \ln x + \cos^{-1}x \left(\frac{1}{x}\right) \]
+    \[ \frac{dv}{dx} = v \left[ \frac{\cos^{-1}x}{x} - \frac{\ln x}{\sqrt{1-x^2}} \right] = x^{\cos^{-1}x} \left[ \frac{\cos^{-1}x}{x} - \frac{\ln x}{\sqrt{1-x^2}} \right] \]
+
+    \item[Step 4: Combine the derivatives] \ \\
+    \[ \frac{dy}{dx} = 2x^{\ln x - 1} \ln x + x^{\cos^{-1}x} \left[ \frac{\cos^{-1}x}{x} - \frac{\ln x}{\sqrt{1-x^2}} \right] \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\frac{dy}{dx} = 2x^{\ln x - 1} \ln x + x^{\cos^{-1}x} \left[ \frac{\cos^{-1}x}{x} - \frac{\ln x}{\sqrt{1-x^2}} \right]} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q4aii  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=4a(ii)  
+% topic=Differentiation  
+% subtopic=Basic Differentiation  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(a)(ii)}
+
+Question:
+Find the differential coefficient of $y$ with respect to $x$ for the implicit relation:
+\[ x = \frac{1}{y + \frac{1}{y + \frac{1}{y + \dots \infty}}} \]
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Simplify the infinite continued fraction] \ \\
+    We observe that the denominator of the first fraction contains a repeating structure of $x$. Thus, we can rewrite the equation as:
+    \[ x = \frac{1}{y + x} \]
+
+    \item[Step 2: Rearrange to express $y$ in terms of $x$] \ \\
+    Cross-multiplying:
+    \[ x(y + x) = 1 \implies xy + x^2 = 1 \]
+    \[ xy = 1 - x^2 \implies y = \frac{1 - x^2}{x} = \frac{1}{x} - x \]
+
+    \item[Step 3: Differentiate with respect to $x$] \ \\
+    Differentiating both sides with respect to $x$:
+    \[ \frac{dy}{dx} = \frac{d}{dx}\left(x^{-1} - x\right) = -x^{-2} - 1 = -\frac{1}{x^2} - 1 \]
+    Alternatively, this can be written as:
+    \[ \frac{dy}{dx} = -\frac{1+x^2}{x^2} \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\frac{dy}{dx} = -\frac{1+x^2}{x^2}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q4aiii  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=4a(iii)  
+% topic=Differentiation  
+% subtopic=Basic Differentiation  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(a)(iii)}
+
+Question:
+Find $dy/dx$ of the parametric curves:
+\[ \tan y = \frac{3t}{1-t^2}, \quad \sin x = \frac{2t}{1+t^2} \]
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Express $y$ and $x$ as functions of $t$] \ 
+    \begin{itemize}
+        \item For $y$:
+        \[ \tan y = \frac{3t}{1-t^2} \implies y = \tan^{-1}\left(\frac{3t}{1-t^2}\right) \]
+        
+        \item For $x$:
+        \[ \sin x = \frac{2t}{1+t^2} \implies x = \sin^{-1}\left(\frac{2t}{1+t^2}\right) \]
+    \end{itemize}
+
+    \item[Step 2: Differentiate $y$ with respect to $t$] \ \\
+    Let $t = \tan \theta$.
+    \[ \frac{3t}{1-t^2} = \frac{3\tan\theta}{1-\tan^2\theta} \]
+    Thus, $y = \tan^{-1}\left(\frac{3\tan\theta}{1-\tan^2\theta}\right)$. Differentiating directly using standard calculus:
+    \[ \frac{dy}{dt} = \frac{1}{1 + \left(\frac{3t}{1-t^2}\right)^2} \cdot \frac{d}{dt}\left(\frac{3t}{1-t^2}\right) \]
+    \[ \frac{dy}{dt} = \frac{(1-t^2)^2}{(1-t^2)^2 + 9t^2} \cdot \frac{3(1-t^2) - 3t(-2t)}{(1-t^2)^2} \]
+    \[ \frac{dy}{dt} = \frac{3 - 3t^2 + 6t^2}{1 - 2t^2 + t^4 + 9t^2} = \frac{3(1+t^2)}{t^4 + 7t^2 + 1} \]
+
+    \item[Step 3: Differentiate $x$ with respect to $t$] \ \\
+    Using substitution $t = \tan \theta$:
+    \[ \frac{2t}{1+t^2} = \sin(2\theta) \implies x = \sin^{-1}(\sin 2\theta) = 2\theta = 2\tan^{-1}t \]
+    Therefore:
+    \[ \frac{dx}{dt} = \frac{2}{1+t^2} \]
+
+    \item[Step 4: Find $dy/dx$ using parametric division] \ \\
+    \[ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{\frac{3(1+t^2)}{t^4 + 7t^2 + 1}}{\frac{2}{1+t^2}} = \frac{3(1+t^2)^2}{2(t^4 + 7t^2 + 1)} \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\frac{dy}{dx} = \frac{3(1+t^2)^2}{2(t^4 + 7t^2 + 1)}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q4aiv  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=4a(iv)  
+% topic=Differentiation  
+% subtopic=Implicit Differentiation  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(a)(iv)}
+
+Question:
+Find $dy/dx$ if $\log(xy) = x^2 + y^2$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Simplify the logarithmic term] \ \\
+    Using logarithmic properties:
+    \[ \ln x + \ln y = x^2 + y^2 \]
+
+    \item[Step 2: Differentiate implicitly with respect to $x$] \ \\
+    \[ \frac{d}{dx}(\ln x + \ln y) = \frac{d}{dx}(x^2 + y^2) \]
+    \[ \frac{1}{x} + \frac{1}{y} \frac{dy}{dx} = 2x + 2y \frac{dy}{dx} \]
+
+    \item[Step 3: Rearrange terms to solve for $dy/dx$] \ \\
+    Collect all terms involving $\frac{dy}{dx}$ on one side:
+    \[ \frac{1}{y} \frac{dy}{dx} - 2y \frac{dy}{dx} = 2x - \frac{1}{x} \]
+    \[ \frac{dy}{dx} \left( \frac{1 - 2y^2}{y} \right) = \frac{2x^2 - 1}{x} \]
+    \[ \frac{dy}{dx} = \frac{y(2x^2 - 1)}{x(1 - 2y^2)} \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\frac{dy}{dx} = \frac{y(2x^2 - 1)}{x(1 - 2y^2)}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse16-final-seca-q4av  
+% discipline=CSE  
+% year=16  
+% exam_type=Term Final  
+% section=A  
+% ct_number=UNKNOWN  
+% question_number=4a(v)  
+% topic=Differentiation  
+% subtopic=Basic Differentiation  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{Term Final (Sec A) - Q4(a)(v)}
+
+Question:
+Find $dy/dx$ of $y = \tan^{-1} \sqrt{\frac{1-\cos x}{1+\cos x}}$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Simplify the trigonometric argument] \ \\
+    Using half-angle identities:
+    \begin{itemize}
+        \item $1 - \cos x = 2\sin^2\left(\frac{x}{2}\right)$
+        \item $1 + \cos x = 2\cos^2\left(\frac{x}{2}\right)$
+    \end{itemize}
+    Substitute these into the radical:
+    \[ \sqrt{\frac{1-\cos x}{1+\cos x}} = \sqrt{\frac{2\sin^2(x/2)}{2\cos^2(x/2)}} = \sqrt{\tan^2\left(\frac{x}{2}\right)} = \tan\left(\frac{x}{2}\right) \]
+
+    \item[Step 2: Simplify the equation for $y$] \ \\
+    \[ y = \tan^{-1}\left(\tan\frac{x}{2}\right) = \frac{x}{2} \]
+
+    \item[Step 3: Differentiate with respect to $x$] \ \\
+    \[ \frac{dy}{dx} = \frac{d}{dx}\left(\frac{x}{2}\right) = \frac{1}{2} \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\frac{dy}{dx} = \frac{1}{2}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

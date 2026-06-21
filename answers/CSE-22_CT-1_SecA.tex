@@ -1,0 +1,322 @@
+% FILE: CSE-22_CT-1.tex
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\babelfont{rm}{Noto Sans}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-ct1-seca-q1  
+% discipline=CSE  
+% year=22  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=1  
+% topic=Continuity  
+% subtopic=General  
+% difficulty=Easy  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q1}
+
+Question:
+Suppose that $f(x) = \begin{cases} -x^4 + 3, & x \le 2 \\ x^2 + 9, & x > 2 \end{cases}$. Is $f$ continuous everywhere? Justify your conclusion.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Check continuity on intervals outside $x = 2$] \ \\
+    For $x < 2$, $f(x) = -x^4 + 3$, which is a polynomial function. Since all polynomial functions are continuous everywhere on their domains, $f(x)$ is continuous for all $x \in (-\infty, 2)$. \\
+    For $x > 2$, $f(x) = x^2 + 9$, which is also a polynomial function. Hence, $f(x)$ is continuous for all $x \in (2, \infty)$.
+
+    \item[Step 2: Check continuity at the boundary point $x = 2$] \ \\
+    A function $f(x)$ is continuous at $x = 2$ if and only if:
+    \[ \lim_{x \to 2^-} f(x) = \lim_{x \to 2^+} f(x) = f(2) \]
+    
+    Let us evaluate each value:
+    \begin{enumerate}
+        \item \textbf{Value at $x = 2$:}
+        \[ f(2) = -(2)^4 + 3 = -16 + 3 = -13 \]
+        
+        \item \textbf{Left-Hand Limit (LHL):}
+        \[ \lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} (-x^4 + 3) = -(2)^4 + 3 = -13 \]
+        
+        \item \textbf{Right-Hand Limit (RHL):}
+        \[ \lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} (x^2 + 9) = 2^2 + 9 = 4 + 9 = 13 \]
+    \end{enumerate}
+
+    \item[Step 3: Compare LHL, RHL and conclude] \ \\
+    Since the Left-Hand Limit and Right-Hand Limit are not equal:
+    \[ \lim_{x \to 2^-} f(x) \neq \lim_{x \to 2^+} f(x) \implies (-13 \neq 13) \]
+    The limit $\lim_{x \to 2} f(x)$ does not exist. Therefore, $f(x)$ has a jump discontinuity at $x = 2$.
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\text{No, } f(x) \text{ is not continuous everywhere because it has a jump discontinuity at } x = 2.} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-ct1-seca-q2  
+% discipline=CSE  
+% year=22  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=2  
+% topic=Functions  
+% subtopic=General  
+% difficulty=Easy  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q2}
+
+Question:
+Find a formula for the inverse of $f(x) = \sqrt{3x - 2}$ with $x$ as the independent variable, and state the domain of $f^{-1}$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Set up the equation for the inverse] \ \\
+    Let $y = f(x) = \sqrt{3x - 2}$. Since $y$ is a principal square root, we must have $y \ge 0$.
+    The domain of $f(x)$ requires:
+    \[ 3x - 2 \ge 0 \implies x \ge \frac{2}{3} \]
+    The range of $f(x)$ is $[0, \infty)$, which will become the domain of the inverse function $f^{-1}$.
+
+    \item[Step 2: Solve for $x$ in terms of $y$] \ \\
+    \[ y = \sqrt{3x - 2} \]
+    Squaring both sides (knowing $y \ge 0$):
+    \[ y^2 = 3x - 2 \]
+    \[ 3x = y^2 + 2 \implies x = \frac{y^2 + 2}{3} \]
+
+    \item[Step 3: Swap variables to express with $x$ as the independent variable] \ \\
+    \[ f^{-1}(x) = \frac{x^2 + 2}{3} \]
+    The domain of $f^{-1}$ is the range of $f(x)$, which is $x \ge 0$.
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{f^{-1}(x) = \frac{x^2 + 2}{3}, \quad \text{Domain of } f^{-1} = [0, \infty)} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-ct1-seca-q3  
+% discipline=CSE  
+% year=22  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=3  
+% topic=Functions  
+% subtopic=Curve Sketching  
+% difficulty=Medium  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q3}
+
+Question:
+Draw the graph of (i) $f(x) = \frac{1}{x^2}$ (ii) $f(x) = \frac{3}{x^2+1}$ (iii) $f(x) = 4 - |x - 2|$. Also find the domain and range of the functions.
+
+Solution:
+
+\subsection*{(i) $f(x) = \frac{1}{x^2}$}
+\begin{description}
+    \item[Domain and Range:] \ 
+    \begin{itemize}
+        \item \textbf{Domain:} The denominator cannot be zero, so $x \neq 0$. Thus, $\text{Domain} = (-\infty, 0) \cup (0, \infty)$.
+        \item \textbf{Range:} Since $x^2 > 0$ for all $x \neq 0$, $f(x)$ is always positive and approaches infinity as $x \to 0$, and approaches $0$ as $x \to \pm\infty$. Thus, $\text{Range} = (0, \infty)$.
+    \end{itemize}
+    \item[Graph Description:] \ \\
+    The curve lies entirely in the upper half-plane (Quadrants I and II). It is symmetric about the y-axis (even function). It has a vertical asymptote at $x = 0$ and a horizontal asymptote at $y = 0$.
+\end{description}
+
+\subsection*{(ii) $f(x) = \frac{3}{x^2+1}$}
+\begin{description}
+    \item[Domain and Range:] \ 
+    \begin{itemize}
+        \item \textbf{Domain:} Since $x^2 + 1 \ge 1$ for all real $x$, the denominator is never zero. Thus, $\text{Domain} = (-\infty, \infty)$.
+        \item \textbf{Range:} Since $x^2 \ge 0 \implies x^2 + 1 \ge 1 \implies \frac{1}{x^2 + 1} \le 1$. Multiplying by 3, the maximum value is $3$ (achieved at $x = 0$). As $x \to \pm \infty$, $f(x) \to 0$ but never reaches $0$. Thus, $\text{Range} = (0, 3]$.
+    \end{itemize}
+    \item[Graph Description:] \ \\
+    This is a bell-shaped curve (symmetric about the y-axis). The peak of the bell is at $(0, 3)$, and it asymptotically approaches $y = 0$ as $x$ extends to both positive and negative infinity.
+\end{description}
+
+\subsection*{(iii) $f(x) = 4 - |x - 2|$}
+\begin{description}
+    \item[Domain and Range:] \ 
+    \begin{itemize}
+        \item \textbf{Domain:} The absolute value function is defined for all real numbers. Thus, $\text{Domain} = (-\infty, \infty)$.
+        \item \textbf{Range:} Since $|x - 2| \ge 0 \implies -|x - 2| \le 0 \implies 4 - |x - 2| \le 4$. The maximum value is $4$ (at $x=2$) and decreases without bound. Thus, $\text{Range} = (-\infty, 4]$.
+    \end{itemize}
+    \item[Graph Description:] \ \\
+    An inverted V-shaped graph with its vertex at $(2, 4)$. To the left of $x = 2$, the graph is a straight line with slope $1$ ($y = x + 2$), and to the right of $x = 2$, the graph is a line with slope $-1$ ($y = 6 - x$).
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{
+\begin{aligned}
+&\text{(i) Domain: } (-\infty, 0) \cup (0, \infty), \text{ Range: } (0, \infty) \\
+&\text{(ii) Domain: } (-\infty, \infty), \text{ Range: } (0, 3] \\
+&\text{(iii) Domain: } (-\infty, \infty), \text{ Range: } (-\infty, 4]
+\end{aligned}
+} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-ct1-seca-q4  
+% discipline=CSE  
+% year=22  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=4  
+% topic=Differentiation  
+% subtopic=Basic Differentiation  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q4}
+
+Question:
+Find \(\frac{dy}{dx}\) of $y = \frac{(3-2x)^{4/3}}{x^2}$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Set up the differentiation using the Quotient Rule] \ \\
+    Let $u = (3-2x)^{4/3}$ and $v = x^2$.
+    By the quotient rule:
+    \[ \frac{dy}{dx} = \frac{u'v - uv'}{v^2} \]
+
+    \item[Step 2: Differentiate the components] \ \\
+    Differentiate $u$ using the chain rule:
+    \[ u' = \frac{4}{3}(3-2x)^{1/3} \cdot \frac{d}{dx}(3-2x) = \frac{4}{3}(3-2x)^{1/3} \cdot (-2) = -\frac{8}{3}(3-2x)^{1/3} \]
+    Differentiate $v$:
+    \[ v' = 2x \]
+
+    \item[Step 3: Combine using the Quotient Rule formula] \ \\
+    \[ \frac{dy}{dx} = \frac{\left[-\frac{8}{3}(3-2x)^{1/3}\right](x^2) - (3-2x)^{4/3}(2x)}{(x^2)^2} \]
+    \[ \frac{dy}{dx} = \frac{-\frac{8}{3}x^2(3-2x)^{1/3} - 2x(3-2x)^{4/3}}{x^4} \]
+
+    \item[Step 4: Factor and simplify the numerator] \ \\
+    Factor out $2x(3-2x)^{1/3}$ from the numerator:
+    \[ \frac{dy}{dx} = \frac{2x(3-2x)^{1/3} \left[ -\frac{4}{3}x - (3-2x) \right]}{x^4} \]
+    Simplify the expression inside the brackets:
+    \[ -\frac{4}{3}x - 3 + 2x = \frac{2}{3}x - 3 = \frac{2x - 9}{3} \]
+    Substitute this back:
+    \[ \frac{dy}{dx} = \frac{2x(3-2x)^{1/3} \left[ \frac{2x - 9}{3} \right]}{x^4} \]
+    \[ \frac{dy}{dx} = \frac{2(3-2x)^{1/3}(2x-9)}{3x^3} \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\frac{dy}{dx} = \frac{2(2x - 9)(3-2x)^{1/3}}{3x^3}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse22-ct1-seca-q5  
+% discipline=CSE  
+% year=22  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=5  
+% topic=Differentiation  
+% subtopic=Successive Differentiation  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q5}
+
+Question:
+Find the $n$-th derivative of $y = e^{4x}\cos(3x + 5)$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: State the general formula for $n$-th derivative of $e^{ax}\cos(bx+c)$] \ \\
+    The $n$-th derivative of $y = e^{ax}\cos(bx + c)$ is given by the formula:
+    \[ y_n = (a^2 + b^2)^{n/2} e^{ax} \cos(bx + c + n\phi) \]
+    where $\phi = \tan^{-1}\left(\frac{b}{a}\right)$.
+
+    \item[Step 2: Substitute the parameters from the given function] \ \\
+    Comparing the given function $y = e^{4x}\cos(3x + 5)$ to the general form:
+    \[ a = 4, \quad b = 3, \quad c = 5 \]
+
+    \item[Step 3: Calculate the constants] \ \\
+    Calculate the amplitude constant:
+    \[ (a^2 + b^2)^{1/2} = \sqrt{4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = 5 \]
+    Therefore, the term $(n^2 + m^2)^{n/2}$ becomes:
+    \[ (a^2 + b^2)^{n/2} = 5^n \]
+    
+    Calculate the phase shift angle $\phi$:
+    \[ \phi = \tan^{-1}\left(\frac{3}{4}\right) \]
+
+    \item[Step 4: Write the final $n$-th derivative formula] \ \\
+    \[ y_n = 5^n e^{4x} \cos\left(3x + 5 + n\tan^{-1}\left(\frac{3}{4}\right)\right) \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{y_n = 5^n e^{4x} \cos\left(3x + 5 + n\tan^{-1}\left(\frac{3}{4}\right)\right)} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

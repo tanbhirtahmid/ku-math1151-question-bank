@@ -1,5 +1,5 @@
 const questions = [
-  {
+    {
     "id": "cse25-ct1-q1",
     "discipline": "CSE",
     "batch": 25,
@@ -9,19 +9,19 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Limits & Continuity",
-      "Curve Sketching"
+        "Limits & Continuity",
+        "Curve Sketching"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Draw the graph of the following function and find the domain and range of it.\r\n              $$f(x) = \\begin{cases} 0, & x \\le -1 \\\\ \\sqrt{1-x^2}, & -1 < x < 1 \\\\ x, & x \\ge 1 \\end{cases}$$",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Analyze the piecewise components</p>\r\n              <p><strong>Interval 1 ($x \\le -1$):</strong> $f(x) = 0$. This is a horizontal line along the x-axis from $-\\infty$ up to and including $x = -1$.</p>\r\n              <p><strong>Interval 2 ($-1 < x < 1$):</strong> $f(x) = \\sqrt{1-x^2}$. Squaring gives $y^2 = 1 - x^2 \\implies x^2 + y^2 = 1$. Since $y \\ge 0$, this is the upper semi-circle of radius $1$ centered at the origin, excluding $x = \\pm 1$.</p>\r\n              <p><strong>Interval 3 ($x \\ge 1$):</strong> $f(x) = x$. This is the line $y = x$ starting at $(1, 1)$ to $+\\infty$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Domain</p>\r\n              <p>The function is defined for $x \\le -1$, $-1 < x < 1$, and $x \\ge 1$. The union covers all real numbers.</p>\r\n              <div class=\"overflow-x-auto\">$$\\text{Domain} = \\mathbb{R} \\quad (-\\infty, \\infty)$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Range</p>\r\n              <ul class=\"list-disc pl-5 space-y-1\">\r\n                <li>$x \\le -1$: $y = 0$.</li>\r\n                <li>$-1 < x < 1$: $y = \\sqrt{1-x^2} \\in (0, 1]$.</li>\r\n                <li>$x \\ge 1$: $y = x \\in [1, \\infty)$.</li>\r\n              </ul>\r\n              <div class=\"overflow-x-auto\">$$\\text{Range} = \\{0\\} \\cup (0, 1] \\cup [1, \\infty) = [0, \\infty)$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 4: Graph Description</p>\r\n              <ul class=\"list-disc pl-5 space-y-1\">\r\n                <li>$(-\\infty, -1]$: Horizontal line $y = 0$, solid dot at $(-1, 0)$.</li>\r\n                <li>$(-1, 1)$: Upper semicircle of $x^2 + y^2 = 1$, open at $(\\pm 1, 0)$.</li>\r\n                <li>$[1, \\infty)$: Ray $y = x$, solid dot at $(1, 1)$.</li>\r\n              </ul>\r\n              <p>Jump discontinuity at $x = 1$: left limit $0$, right value $1$.</p>",
     "finalAnswerHtml": ""
   },
-  {
+    {
     "id": "cse25-ct1-q2",
     "discipline": "CSE",
     "batch": 25,
@@ -31,18 +31,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Write the conditions of continuity. Discuss the continuity of $f(x) = \\begin{cases} x \\cos \\frac{1}{x}, & x \\neq 0 \\\\ 0, & x = 0 \\end{cases}$ at $x = 0$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Conditions of Continuity</p>\r\n              <p>A function $f(x)$ is continuous at $x = a$ if:</p>\r\n              <ol class=\"list-decimal pl-5 space-y-1\">\r\n                <li>$f(a)$ is defined.</li>\r\n                <li>$\\displaystyle\\lim_{x \\to a} f(x)$ exists.</li>\r\n                <li>$\\displaystyle\\lim_{x \\to a} f(x) = f(a)$.</li>\r\n              </ol>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Check $f(0)$</p>\r\n              <p>From definition, $f(0) = 0$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Evaluate $\\displaystyle\\lim_{x \\to 0} f(x)$</p>\r\n              <p>We need $\\displaystyle\\lim_{x \\to 0} x \\cos \\frac{1}{x}$. Using the Squeeze Theorem: since $-1 \\le \\cos \\frac{1}{x} \\le 1$,</p>\r\n              <div class=\"overflow-x-auto\">$$-|x| \\le x \\cos \\frac{1}{x} \\le |x|$$</div>\r\n              <p>As $x \\to 0$, both $-|x|$ and $|x|$ approach $0$, so by the Squeeze Theorem:</p>\r\n              <div class=\"overflow-x-auto\">$$\\lim_{x \\to 0} x \\cos \\frac{1}{x} = 0$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 4: Compare limit and function value</p>\r\n              <div class=\"overflow-x-auto\">$$\\lim_{x \\to 0} f(x) = 0 = f(0)$$</div>\r\n              <p>All three conditions are satisfied. Hence $f(x)$ is continuous at $x = 0$.</p>",
     "finalAnswerHtml": ""
   },
-  {
+    {
     "id": "cse25-ct1-q3i",
     "discipline": "CSE",
     "batch": 25,
@@ -52,18 +52,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3(i)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\dfrac{dy}{dx}$ of $y = \\sin^{-1}\\left(e^{\\tan^{-1} x}\\right)$.",
     "solutionHtml": "<p>Let $u = e^{\\tan^{-1} x}$. Then $y = \\sin^{-1}(u)$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{1}{\\sqrt{1-u^2}} \\cdot \\frac{du}{dx}$$</div>\r\n              <p>Now $\\frac{du}{dx} = e^{\\tan^{-1} x} \\cdot \\frac{1}{1+x^2}$. Substituting back:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{1}{\\sqrt{1 - e^{2\\tan^{-1} x}}} \\cdot \\frac{e^{\\tan^{-1} x}}{1+x^2}$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{e^{\\tan^{-1} x}}{(1+x^2)\\sqrt{1 - e^{2\\tan^{-1} x}}}$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{e^{\\tan^{-1} x}}{(1+x^2)\\sqrt{1 - e^{2\\tan^{-1} x}}}$$</div>"
   },
-  {
+    {
     "id": "cse25-ct1-q3ii",
     "discipline": "CSE",
     "batch": 25,
@@ -73,19 +73,19 @@ const questions = [
     "section": "A",
     "questionNumber": "3(ii)",
     "topics": [
-      "Differentiation",
-      "Logarithmic Differentiation"
+        "Differentiation",
+        "Logarithmic Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\dfrac{dy}{dx}$ of $y = (\\tan x)^{\\cot x} + (\\cot x)^{\\tan x}$.",
     "solutionHtml": "<p>Let $y = u + v$ where $u = (\\tan x)^{\\cot x}$ and $v = (\\cot x)^{\\tan x}$.</p>\r\n              <p class=\"font-semibold text-slate-900\">For $u = (\\tan x)^{\\cot x}$:</p>\r\n              <p>Take $\\ln u = \\cot x \\ln(\\tan x)$. Differentiate:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{1}{u}\\frac{du}{dx} = -\\csc^2 x \\ln(\\tan x) + \\cot x \\cdot \\frac{1}{\\tan x} \\cdot \\sec^2 x$$</div>\r\n              <p>Since $\\cot x \\cdot \\frac{1}{\\tan x} \\cdot \\sec^2 x = \\csc^2 x$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{du}{dx} = (\\tan x)^{\\cot x} \\csc^2 x (1 - \\ln(\\tan x))$$</div>\r\n              <p class=\"font-semibold text-slate-900\">For $v = (\\cot x)^{\\tan x}$:</p>\r\n              <p>Take $\\ln v = \\tan x \\ln(\\cot x)$. Differentiate:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{1}{v}\\frac{dv}{dx} = \\sec^2 x \\ln(\\cot x) + \\tan x \\cdot \\frac{1}{\\cot x} \\cdot (-\\csc^2 x)$$</div>\r\n              <p>Since $\\tan x \\cdot \\frac{1}{\\cot x} \\cdot (-\\csc^2 x) = -\\sec^2 x$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dv}{dx} = (\\cot x)^{\\tan x} \\sec^2 x (\\ln(\\cot x) - 1)$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Combining:</p>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = (\\tan x)^{\\cot x} \\csc^2 x (1 - \\ln(\\tan x)) + (\\cot x)^{\\tan x} \\sec^2 x (\\ln(\\cot x) - 1)$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = (\\tan x)^{\\cot x} \\csc^2 x (1 - \\ln(\\tan x)) + (\\cot x)^{\\tan x} \\sec^2 x (\\ln(\\cot x) - 1)$$</div>"
   },
-  {
+    {
     "id": "cse25-ct1-q3iii",
     "discipline": "CSE",
     "batch": 25,
@@ -95,19 +95,19 @@ const questions = [
     "section": "A",
     "questionNumber": "3(iii)",
     "topics": [
-      "Differentiation",
-      "Logarithmic Differentiation"
+        "Differentiation",
+        "Logarithmic Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\dfrac{dy}{dx}$ of $x^y = e^{x-y}$.",
     "solutionHtml": "<p>Taking natural log of both sides:</p>\r\n              <div class=\"overflow-x-auto\">$$\\ln(x^y) = \\ln(e^{x-y}) \\implies y \\ln x = x - y$$</div>\r\n              <p>Solving for $y$:</p>\r\n              <div class=\"overflow-x-auto\">$$y(\\ln x + 1) = x \\implies y = \\frac{x}{1 + \\ln x}$$</div>\r\n              <p>Differentiate using the quotient rule:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{(1)(1 + \\ln x) - x \\cdot \\frac{1}{x}}{(1 + \\ln x)^2} = \\frac{1 + \\ln x - 1}{(1 + \\ln x)^2}$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{\\ln x}{(1 + \\ln x)^2}$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{\\ln x}{(1 + \\ln x)^2}$$</div>"
   },
-  {
+    {
     "id": "cse25-ct1-q4",
     "discipline": "CSE",
     "batch": 25,
@@ -117,8 +117,8 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Successive Differentiation",
-      "Leibnitz Rule"
+        "Successive Differentiation",
+        "Leibnitz Rule"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -129,7 +129,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Leibnitz's Theorem:</p>\r\n              <p>If $u(x)$ and $v(x)$ possess $n$-th order derivatives, then:</p>\r\n              <div class=\"overflow-x-auto\">$$(uv)_n = \\sum_{r=0}^{n} \\binom{n}{r} u_{n-r} v_r$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 1: Establish the base equation</p>\r\n              <p>Given $y = \\sin(a \\sin^{-1} x)$. Differentiating:</p>\r\n              <div class=\"overflow-x-auto\">$$y_1 = \\cos(a \\sin^{-1} x) \\cdot \\frac{a}{\\sqrt{1-x^2}}$$</div>\r\n              <p>Squaring and using $\\cos^2\\theta = 1 - \\sin^2\\theta$:</p>\r\n              <div class=\"overflow-x-auto\">$$(1-x^2)y_1^2 = a^2(1-y^2)$$</div>\r\n              <p>Differentiating both sides and dividing by $2y_1$:</p>\r\n              <div class=\"overflow-x-auto\">$$(1-x^2)y_2 - xy_1 + a^2y = 0 \\tag{1}$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Apply Leibnitz's Theorem $n$ times</p>\r\n              <p>Differentiating (1) $n$ times using Leibnitz's theorem:</p>\r\n              <div class=\"overflow-x-auto\">$$D^n[(1-x^2)y_2] - D^n[x y_1] + a^2 y_n = 0$$</div>\r\n              <p>For $(1-x^2)y_2$: let $u = y_2$, $v = 1-x^2$ ($v_1 = -2x$, $v_2 = -2$, $v_r = 0$ for $r \\ge 3$):</p>\r\n              <div class=\"overflow-x-auto\">$$D^n[(1-x^2)y_2] = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n$$</div>\r\n              <p>For $x y_1$: let $u = y_1$, $v = x$ ($v_1 = 1$, $v_r = 0$ for $r \\ge 2$):</p>\r\n              <div class=\"overflow-x-auto\">$$D^n[x y_1] = x y_{n+1} + n y_n$$</div>\r\n              <p>Substituting:</p>\r\n              <div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - x y_{n+1} - n y_n + a^2 y_n = 0$$</div>\r\n              <div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} + (a^2 - n^2)y_n = 0$$</div>\r\n              <p>This is equivalent to $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - a^2)y_n = 0$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Find $(y_n)_0$</p>\r\n              <p>At $x = 0$: $y(0) = 0$, $y_1(0) = a$, $y_2(0) = 0$.</p>\r\n              <p>Substituting $x = 0$ into the relation:</p>\r\n              <div class=\"overflow-x-auto\">$$(y_{n+2})_0 = (n^2 - a^2)(y_n)_0$$</div>\r\n              <p>For even $n = 2k$: $(y_n)_0 = 0$.</p>\r\n              <p>For odd $n = 2k+1$:</p>\r\n              <div class=\"overflow-x-auto\">$$(y_n)_0 = a(1^2 - a^2)(3^2 - a^2)\\cdots((n-2)^2 - a^2)$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$(y_n)_0 = \\begin{cases} 0, & n \\text{ even} \\\\ a(1^2 - a^2)(3^2 - a^2)\\cdots((n-2)^2 - a^2), & n \\text{ odd} \\end{cases}$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$(y_n)_0 = \\begin{cases} 0, & n \\text{ even} \\\\ a(1^2 - a^2)(3^2 - a^2)\\cdots((n-2)^2 - a^2), & n \\text{ odd} \\end{cases}$$</div>"
   },
-  {
+    {
     "id": "cse25-ct1-q5",
     "discipline": "CSE",
     "batch": 25,
@@ -139,7 +139,7 @@ const questions = [
     "section": "A",
     "questionNumber": "5",
     "topics": [
-      "Successive Differentiation"
+        "Successive Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -150,7 +150,7 @@ const questions = [
     "solutionHtml": "<p>Given $y = e^{ax} \\sin(bx+c)$. Differentiating:</p>\r\n              <div class=\"overflow-x-auto\">$$y_1 = e^{ax}[a \\sin(bx+c) + b \\cos(bx+c)]$$</div>\r\n              <p>Let $a = r \\cos\\phi$, $b = r \\sin\\phi$, so $r = \\sqrt{a^2+b^2}$ and $\\phi = \\tan^{-1}(b/a)$. Then:</p>\r\n              <div class=\"overflow-x-auto\">$$y_1 = r e^{ax} \\sin(bx+c+\\phi)$$</div>\r\n              <p>By induction:</p>\r\n              <div class=\"overflow-x-auto\">$$y_n = r^n e^{ax} \\sin(bx+c+n\\phi)$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$y_n = (a^2+b^2)^{n/2} e^{ax} \\sin\\left(bx+c+n\\tan^{-1}\\frac{b}{a}\\right)$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$y_n = (a^2+b^2)^{n/2} e^{ax} \\sin\\left(bx+c+n\\tan^{-1}\\frac{b}{a}\\right)$$</div>"
   },
-  {
+    {
     "id": "cse25-ct2-q1",
     "discipline": "CSE",
     "batch": 25,
@@ -160,19 +160,19 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Differentiation",
-      "Taylor Series"
+        "Differentiation",
+        "Taylor Series"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Expand $f(x) = \\dfrac{1}{x+1}$ in Taylor series in power of $x - 3$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Taylor series definition</p>\r\n              <p>The Taylor series expansion about $x = a$ is:</p>\r\n              <div class=\"overflow-x-auto\">$$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!} (x-a)^n$$</div>\r\n              <p>Here $a = 3$ and $f(x) = (x+1)^{-1}$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Find the $n$-th derivative</p>\r\n              <div class=\"overflow-x-auto\">$$f^{(n)}(x) = (-1)^n n! (x+1)^{-(n+1)}$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Evaluate at $x = 3$</p>\r\n              <div class=\"overflow-x-auto\">$$f^{(n)}(3) = \\frac{(-1)^n n!}{4^{n+1}}$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 4: Substitute into the series</p>\r\n              <div class=\"overflow-x-auto\">$$f(x) = \\sum_{n=0}^{\\infty} \\frac{(-1)^n}{4^{n+1}} (x-3)^n$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$f(x) = \\frac{1}{4} - \\frac{1}{16}(x-3) + \\frac{1}{64}(x-3)^2 - \\frac{1}{256}(x-3)^3 + \\dots$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$f(x) = \\frac{1}{4} - \\frac{1}{16}(x-3) + \\frac{1}{64}(x-3)^2 - \\frac{1}{256}(x-3)^3 + \\dots$$</div>"
   },
-  {
+    {
     "id": "cse25-ct2-q2",
     "discipline": "CSE",
     "batch": 25,
@@ -182,7 +182,7 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Rolle's Theorem"
+        "Rolle's Theorem"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -193,7 +193,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Conditions of Rolle's Theorem</p>\r\n              <p>If $f$ is continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a)=f(b)$, then $\\exists c \\in (a,b)$ with $f'(c)=0$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Verify conditions</p>\r\n              <p>$f(x)=x^2-3x+2$ is a polynomial, hence continuous on $[1,2]$ and differentiable on $(1,2)$.</p>\r\n              <p>$f(1)=1-3+2=0$, $f(2)=4-6+2=0$, so $f(1)=f(2)$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Find $c$</p>\r\n              <p>$f'(x) = 2x-3$. Set $f'(c)=0$:</p>\r\n              <div class=\"overflow-x-auto\">$$2c-3=0 \\implies c = \\frac{3}{2} \\in (1,2)$$</div>\r\n              <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\"><strong>Final Result:</strong> Rolle's theorem is verified with $c = \\frac{3}{2}$.</div>",
     "finalAnswerHtml": "<strong>Final Result:</strong> Rolle's theorem is verified with $c = \\frac{3}{2}$."
   },
-  {
+    {
     "id": "cse25-ct2-q3",
     "discipline": "CSE",
     "batch": 25,
@@ -203,7 +203,7 @@ const questions = [
     "section": "A",
     "questionNumber": "3",
     "topics": [
-      "Maclaurin Series"
+        "Maclaurin Series"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -214,7 +214,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Combine into a single fraction</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x \\to 0} \\frac{\\sin^2 x - x^2}{x^2 \\sin^2 x}$$</div>\r\n              <p>This is $\\frac{0}{0}$ indeterminate form. Using $\\sin^2 x \\sim x^2$ as $x\\to0$, replace $x^2\\sin^2 x$ with $x^4$:</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x \\to 0} \\frac{\\sin^2 x - x^2}{x^4}$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Use Maclaurin series for $\\sin x$</p>\r\n              <div class=\"overflow-x-auto\">$$\\sin x = x - \\frac{x^3}{6} + \\frac{x^5}{120} - \\dots$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\sin^2 x = x^2 - \\frac{x^4}{3} + \\mathcal{O}(x^6)$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Substitute and evaluate</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x \\to 0} \\frac{-\\frac{x^4}{3} + \\mathcal{O}(x^6)}{x^4} = -\\frac{1}{3}$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\boxed{-\\frac{1}{3}}$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\boxed{-\\frac{1}{3}}$$</div>"
   },
-  {
+    {
     "id": "cse25-ct2-q4",
     "discipline": "CSE",
     "batch": 25,
@@ -224,9 +224,9 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Homogeneous",
-      "Euler's Theorem",
-      "Partial Derivatives"
+        "Homogeneous",
+        "Euler's Theorem",
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -237,7 +237,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Rewrite and check homogeneity</p>\r\n              <p>Let $z = \\tan u = \\dfrac{x^3+y^3}{x+y}$. Then:</p>\r\n              <div class=\"overflow-x-auto\">$$z(tx, ty) = \\frac{t^3(x^3+y^3)}{t(x+y)} = t^2 z(x,y)$$</div>\r\n              <p>So $z$ is homogeneous of degree $n=2$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Apply Euler's Theorem</p>\r\n              <div class=\"overflow-x-auto\">$$x \\frac{\\partial z}{\\partial x} + y \\frac{\\partial z}{\\partial y} = 2z$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Express in terms of $u$</p>\r\n              <p>Since $z = \\tan u$: $\\frac{\\partial z}{\\partial x} = \\sec^2 u \\cdot u_x$, $\\frac{\\partial z}{\\partial y} = \\sec^2 u \\cdot u_y$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\sec^2 u (x u_x + y u_y) = 2 \\tan u$$</div>\r\n              <div class=\"overflow-x-auto\">$$x u_x + y u_y = 2 \\sin u \\cos u = \\sin 2u$$</div>\r\n              <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\"><strong>Final Result:</strong> $x u_x + y u_y = \\sin 2u$ (proved).</div>",
     "finalAnswerHtml": "<strong>Final Result:</strong> $x u_x + y u_y = \\sin 2u$ (proved)."
   },
-  {
+    {
     "id": "cse25-ct2-q5",
     "discipline": "CSE",
     "batch": 25,
@@ -247,19 +247,19 @@ const questions = [
     "section": "A",
     "questionNumber": "5",
     "topics": [
-      "Differentiation",
-      "Maxima & Minima"
+        "Differentiation",
+        "Maxima & Minima"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Determine the extremum value and extremum points of $f(x) = \\sin x + \\cos 2x$, $0 &lt; x &lt; 2\\pi$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Find critical points</p>\r\n              <div class=\"overflow-x-auto\">$$f'(x) = \\cos x - 2\\sin 2x = \\cos x(1 - 4\\sin x) = 0$$</div>\r\n              <p>$\\cos x = 0 \\implies x = \\frac{\\pi}{2}, \\frac{3\\pi}{2}$.</p>\r\n              <p>$\\sin x = \\frac{1}{4} \\implies x = \\sin^{-1}\\!\\left(\\frac{1}{4}\\right),\\; \\pi - \\sin^{-1}\\!\\left(\\frac{1}{4}\\right)$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Second derivative test</p>\r\n              <div class=\"overflow-x-auto\">$$f''(x) = -\\sin x - 4\\cos 2x$$</div>\r\n              <p>At $x=\\frac{\\pi}{2}$: $f''=3>0$ (min). $f(\\frac{\\pi}{2})=0$.</p>\r\n              <p>At $x=\\frac{3\\pi}{2}$: $f''=5>0$ (min). $f(\\frac{3\\pi}{2})=-2$.</p>\r\n              <p>Where $\\sin x = \\frac{1}{4}$: $f''=-\\frac{15}{4}<0$ (max). $f(x)=\\frac{9}{8}$.</p>\r\n              <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\"><strong>Final Result:</strong> Minima at $(\\frac{\\pi}{2},0)$ and $(\\frac{3\\pi}{2},-2)$; maxima at $x=\\sin^{-1}(\\frac{1}{4}),\\pi-\\sin^{-1}(\\frac{1}{4})$ with value $\\frac{9}{8}$.</div>",
     "finalAnswerHtml": "<strong>Final Result:</strong> Minima at $(\\frac{\\pi}{2},0)$ and $(\\frac{3\\pi}{2},-2)$; maxima at $x=\\sin^{-1}(\\frac{1}{4}),\\pi-\\sin^{-1}(\\frac{1}{4})$ with value $\\frac{9}{8}$."
   },
-  {
+    {
     "id": "cse25-ece-ct1-q1",
     "discipline": "ECE",
     "batch": 25,
@@ -269,8 +269,8 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Maxima & Minima",
-      "Curve Sketching"
+        "Maxima & Minima",
+        "Curve Sketching"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -281,7 +281,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">One-One (Injective) Function:</p>\r\n              <p>$f: A \\to B$ is one-one if $f(x_1) = f(x_2) \\implies x_1 = x_2$. Example: $f(x) = 2x+3$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Onto (Surjective) Function:</p>\r\n              <p>$f: A \\to B$ is onto if $\\text{Range}(f) = B$. Example: $f(x) = x^3$ for $f: \\mathbb{R} \\to \\mathbb{R}$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Analysis of $f(x) = |x-4| + |x| + |x+4|$:</p>\r\n              <p>Critical points at $x = -4, 0, 4$. Piecewise expansion:</p>\r\n              <div class=\"overflow-x-auto\">$$f(x) = \\begin{cases} -3x, & x < -4 \\\\ -x+8, & -4 \\le x < 0 \\\\ x+8, & 0 \\le x < 4 \\\\ 3x, & x \\ge 4 \\end{cases}$$</div>\r\n              <p><strong>Domain:</strong> $\\mathbb{R}$ (all real numbers).</p>\r\n              <p><strong>Range:</strong> Minimum value is $f(0) = 8$. Function goes to $\\infty$ at both ends.</p>\r\n              <div class=\"overflow-x-auto\">$$\\text{Range} = [8, \\infty)$$</div>\r\n              <p><strong>Graph:</strong> Symmetric about the y-axis. Line with slope $-3$ from $(-\\infty, -4)$, then slope $-1$ to $(0, 8)$, then slope $+1$ to $(4, 12)$, then slope $+3$ to $\\infty$. Vertices at $(-4, 12)$, $(0, 8)$, $(4, 12)$.</p>",
     "finalAnswerHtml": ""
   },
-  {
+    {
     "id": "cse25-ece-ct1-q2",
     "discipline": "ECE",
     "batch": 25,
@@ -291,18 +291,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define limit of a function. Test the continuity of $f(x) = \\begin{cases} \\dfrac{\\sin^2 ax}{x^2}, & x \\neq 0 \\\\ 1, & x = 0 \\end{cases}$ at $x = 0$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Limit Definition:</p>\r\n              <p>$\\displaystyle\\lim_{x \\to c} f(x) = L$ if for every $\\epsilon > 0$, there exists $\\delta > 0$ such that $0 < |x-c| < \\delta \\implies |f(x) - L| < \\epsilon$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Continuity Test at $x = 0$:</p>\r\n              <p>$f(0) = 1$ (given). For $x \\neq 0$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\lim_{x \\to 0} f(x) = \\lim_{x \\to 0} \\frac{\\sin^2 ax}{x^2} = \\lim_{x \\to 0} \\left(a \\cdot \\frac{\\sin ax}{ax}\\right)^2 = a^2$$</div>\r\n              <p>For continuity, $\\lim_{x \\to 0} f(x) = f(0) \\implies a^2 = 1 \\implies a = \\pm 1$.</p>\r\n              <p>If $a = \\pm 1$, the function is continuous at $x = 0$. If $a \\neq \\pm 1$, it has a removable discontinuity at $x = 0$.</p>",
     "finalAnswerHtml": ""
   },
-  {
+    {
     "id": "cse25-ece-ct1-q3i",
     "discipline": "ECE",
     "batch": 25,
@@ -312,18 +312,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3(i)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\dfrac{dy}{dx}$ of $y = \\sin\\left(2\\tan^{-1}\\sqrt{\\dfrac{1-x}{1+x}}\\right)$.",
     "solutionHtml": "<p>Let $x = \\cos\\theta$. Using half-angle identities:</p>\r\n              <div class=\"overflow-x-auto\">$$\\sqrt{\\frac{1-x}{1+x}} = \\sqrt{\\frac{1-\\cos\\theta}{1+\\cos\\theta}} = \\sqrt{\\frac{2\\sin^2\\frac{\\theta}{2}}{2\\cos^2\\frac{\\theta}{2}}} = \\tan\\frac{\\theta}{2}$$</div>\r\n              <p>Then:</p>\r\n              <div class=\"overflow-x-auto\">$$y = \\sin\\left(2\\tan^{-1}\\left(\\tan\\frac{\\theta}{2}\\right)\\right) = \\sin\\theta = \\sqrt{1-x^2}$$</div>\r\n              <p>Differentiating:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{d}{dx}\\sqrt{1-x^2} = \\frac{-2x}{2\\sqrt{1-x^2}} = -\\frac{x}{\\sqrt{1-x^2}}$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = -\\frac{x}{\\sqrt{1-x^2}}$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = -\\frac{x}{\\sqrt{1-x^2}}$$</div>"
   },
-  {
+    {
     "id": "cse25-ece-ct1-q3ii",
     "discipline": "ECE",
     "batch": 25,
@@ -333,19 +333,19 @@ const questions = [
     "section": "A",
     "questionNumber": "3(ii)",
     "topics": [
-      "Differentiation",
-      "Logarithmic Differentiation"
+        "Differentiation",
+        "Logarithmic Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\dfrac{dy}{dx}$ of $y = (\\tan x)^{\\sec x} + (\\cot x)^{\\csc x}$.",
     "solutionHtml": "<p>Let $y = u + v$ where $u = (\\tan x)^{\\sec x}$ and $v = (\\cot x)^{\\csc x}$.</p>\r\n              <p class=\"font-semibold text-slate-900\">For $u$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\ln u = \\sec x \\ln(\\tan x)$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\frac{1}{u}\\frac{du}{dx} = \\sec x \\tan x \\ln(\\tan x) + \\sec x \\cdot \\frac{1}{\\tan x} \\cdot \\sec^2 x$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\frac{du}{dx} = (\\tan x)^{\\sec x} [\\sec x \\tan x \\ln(\\tan x) + \\csc x \\sec^2 x]$$</div>\r\n              <p class=\"font-semibold text-slate-900\">For $v$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\ln v = \\csc x \\ln(\\cot x)$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\frac{1}{v}\\frac{dv}{dx} = -\\csc x \\cot x \\ln(\\cot x) + \\csc x \\cdot \\frac{1}{\\cot x} \\cdot (-\\csc^2 x)$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dv}{dx} = -(\\cot x)^{\\csc x} [\\csc x \\cot x \\ln(\\cot x) + \\sec x \\csc^2 x]$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Combining:</p>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\r\n                  \\begin{aligned}\r\n                    \\frac{dy}{dx} = & \\, (\\tan x)^{\\sec x} \\left[ \\sec x \\tan x \\ln(\\tan x) + \\csc x \\sec^2 x \\right] \\\\\r\n                    & - (\\cot x)^{\\csc x} \\left[ \\csc x \\cot x \\ln(\\cot x) + \\sec x \\csc^2 x \\right]\r\n                  \\end{aligned}\r\n                $$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\r\n                  \\begin{aligned}\r\n                    \\frac{dy}{dx} = & \\, (\\tan x)^{\\sec x} \\left[ \\sec x \\tan x \\ln(\\tan x) + \\csc x \\sec^2 x \\right] \\\\\r\n                    & - (\\cot x)^{\\csc x} \\left[ \\csc x \\cot x \\ln(\\cot x) + \\sec x \\csc^2 x \\right]\r\n                  \\end{aligned}\r\n                $$</div>"
   },
-  {
+    {
     "id": "cse25-ece-ct1-q3iii",
     "discipline": "ECE",
     "batch": 25,
@@ -355,20 +355,20 @@ const questions = [
     "section": "A",
     "questionNumber": "3(iii)",
     "topics": [
-      "Differentiation",
-      "Implicit Differentiation",
-      "Logarithmic Differentiation"
+        "Differentiation",
+        "Implicit Differentiation",
+        "Logarithmic Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\dfrac{dy}{dx}$ of $x = y^{y^{y^{\\dots}}}$ (infinite tower).",
     "solutionHtml": "<p>Since the tower is infinite, the exponent of $y$ equals the tower itself, which is $x$:</p>\r\n              <div class=\"overflow-x-auto\">$$x = y^x$$</div>\r\n              <p>Taking natural log:</p>\r\n              <div class=\"overflow-x-auto\">$$\\ln x = x \\ln y$$</div>\r\n              <p>Differentiate implicitly:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{1}{x} = \\ln y + \\frac{x}{y}\\frac{dy}{dx}$$</div>\r\n              <p>Solving for $\\frac{dy}{dx}$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{y(1 - x \\ln y)}{x^2}$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{y(1 - x \\ln y)}{x^2}$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{y(1 - x \\ln y)}{x^2}$$</div>"
   },
-  {
+    {
     "id": "cse25-ece-ct1-q4",
     "discipline": "ECE",
     "batch": 25,
@@ -378,8 +378,8 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Successive Differentiation",
-      "Leibnitz Rule"
+        "Successive Differentiation",
+        "Leibnitz Rule"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -390,7 +390,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Leibnitz's Theorem:</p>\r\n              <div class=\"overflow-x-auto\">$$(uv)_n = \\sum_{r=0}^{n} \\binom{n}{r} u_{n-r} v_r$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 1: Establish the base equation</p>\r\n              <p>Given $y = \\cosh(m \\cosh^{-1} x)$. Differentiating:</p>\r\n              <div class=\"overflow-x-auto\">$$y_1 = \\sinh(m \\cosh^{-1} x) \\cdot \\frac{m}{\\sqrt{x^2-1}}$$</div>\r\n              <p>Squaring and using $\\sinh^2\\theta = \\cosh^2\\theta - 1$:</p>\r\n              <div class=\"overflow-x-auto\">$$(x^2-1)y_1^2 = m^2(y^2-1)$$</div>\r\n              <p>Differentiating and dividing by $2y_1$:</p>\r\n              <div class=\"overflow-x-auto\">$$(x^2-1)y_2 + xy_1 - m^2 y = 0 \\tag{1}$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Apply Leibnitz's Theorem $n$ times</p>\r\n              <p>Differentiating (1) $n$ times:</p>\r\n              <div class=\"overflow-x-auto\">$$D^n[(x^2-1)y_2] + D^n[x y_1] - m^2 y_n = 0$$</div>\r\n              <p>For $(x^2-1)y_2$: $v = x^2-1$, $v_1 = 2x$, $v_2 = 2$:</p>\r\n              <div class=\"overflow-x-auto\">$$D^n[(x^2-1)y_2] = (x^2-1)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n$$</div>\r\n              <p>For $x y_1$:</p>\r\n              <div class=\"overflow-x-auto\">$$D^n[x y_1] = x y_{n+1} + n y_n$$</div>\r\n              <p>Substituting:</p>\r\n              <div class=\"overflow-x-auto\">$$(x^2-1)y_{n+2} + 2nxy_{n+1} + n(n-1)y_n + xy_{n+1} + ny_n - m^2 y_n = 0$$</div>\r\n              <div class=\"overflow-x-auto\">$$(x^2-1)y_{n+2} + (2n+1)xy_{n+1} + (n^2 - m^2)y_n = 0$$</div>",
     "finalAnswerHtml": ""
   },
-  {
+    {
     "id": "cse25-ece-ct1-q5",
     "discipline": "ECE",
     "batch": 25,
@@ -400,7 +400,7 @@ const questions = [
     "section": "A",
     "questionNumber": "5",
     "topics": [
-      "Successive Differentiation"
+        "Successive Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -411,7 +411,7 @@ const questions = [
     "solutionHtml": "<p>Given $y = e^{ax} \\cos(bx+c)$. Differentiating:</p>\r\n              <div class=\"overflow-x-auto\">$$y_1 = e^{ax}[a \\cos(bx+c) - b \\sin(bx+c)]$$</div>\r\n              <p>Let $a = r \\cos\\phi$, $b = r \\sin\\phi$, so $r = \\sqrt{a^2+b^2}$ and $\\phi = \\tan^{-1}(b/a)$. Then:</p>\r\n              <div class=\"overflow-x-auto\">$$y_1 = r e^{ax} \\cos(bx+c+\\phi)$$</div>\r\n              <p>By induction:</p>\r\n              <div class=\"overflow-x-auto\">$$y_n = r^n e^{ax} \\cos(bx+c+n\\phi)$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$y_n = (a^2+b^2)^{n/2} e^{ax} \\cos\\left(bx+c+n\\tan^{-1}\\frac{b}{a}\\right)$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$y_n = (a^2+b^2)^{n/2} e^{ax} \\cos\\left(bx+c+n\\tan^{-1}\\frac{b}{a}\\right)$$</div>"
   },
-  {
+    {
     "id": "cse25-ece-ct2-q1",
     "discipline": "ECE",
     "batch": 25,
@@ -421,19 +421,19 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Differentiation",
-      "Taylor Series"
+        "Differentiation",
+        "Taylor Series"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Expand $f(x) = \\sin x$ in Taylor series in power of $x - \\dfrac{\\pi}{2}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Taylor series about $a = \\frac{\\pi}{2}$</p>\r\n              <div class=\"overflow-x-auto\">$$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(\\frac{\\pi}{2})}{n!} \\left(x-\\frac{\\pi}{2}\\right)^n$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Derivatives of $\\sin x$ at $\\frac{\\pi}{2}$</p>\r\n              <p>$f(\\frac{\\pi}{2})=1$, $f'(\\frac{\\pi}{2})=0$, $f''(\\frac{\\pi}{2})=-1$, $f'''(\\frac{\\pi}{2})=0$, $f^{(4)}(\\frac{\\pi}{2})=1$, ...</p>\r\n              <p>Odd derivatives vanish; even ones alternate: $f^{(2k)}(\\frac{\\pi}{2}) = (-1)^k$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Construct the series</p>\r\n              <div class=\"overflow-x-auto\">$$\\sin x = \\sum_{n=0}^{\\infty} \\frac{(-1)^n}{(2n)!} \\left(x-\\frac{\\pi}{2}\\right)^{2n}$$</div>\r\n              <div class=\"final-answer-box\">\r\n                <h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\sin x = 1 - \\frac{1}{2!}\\left(x-\\frac{\\pi}{2}\\right)^2 + \\frac{1}{4!}\\left(x-\\frac{\\pi}{2}\\right)^4 - \\dots$$</div>\r\n              </div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n                <div class=\"overflow-x-auto\">$$\\sin x = 1 - \\frac{1}{2!}\\left(x-\\frac{\\pi}{2}\\right)^2 + \\frac{1}{4!}\\left(x-\\frac{\\pi}{2}\\right)^4 - \\dots$$</div>"
   },
-  {
+    {
     "id": "cse25-ece-ct2-q2",
     "discipline": "ECE",
     "batch": 25,
@@ -443,7 +443,7 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Mean Value Theorem"
+        "Mean Value Theorem"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -454,7 +454,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Conditions of MVT</p>\r\n              <p>$f$ is a polynomial, hence continuous on $[0,1]$ and differentiable on $(0,1)$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Apply the theorem</p>\r\n              <p>There exists $c \\in (0,1)$ such that $f'(c) = \\frac{f(1)-f(0)}{1-0}$.</p>\r\n              <p>$f(0)=3$, $f(1)=4$.</p>\r\n              <div class=\"overflow-x-auto\">$$f'(c) = \\frac{4-3}{1} = 1$$</div>\r\n              <p>$f'(x) = 2-2x$, so $2-2c=1 \\implies c = \\frac{1}{2}$.</p>\r\n              <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\"><strong>Final Result:</strong> MVT is verified with $c = \\frac{1}{2} \\in (0,1)$.</div>",
     "finalAnswerHtml": "<strong>Final Result:</strong> MVT is verified with $c = \\frac{1}{2} \\in (0,1)$."
   },
-  {
+    {
     "id": "cse25-ece-ct2-q3",
     "discipline": "ECE",
     "batch": 25,
@@ -464,7 +464,7 @@ const questions = [
     "section": "A",
     "questionNumber": "3",
     "topics": [
-      "Maclaurin Series"
+        "Maclaurin Series"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -475,7 +475,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Combine into a single fraction</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x \\to 0} \\frac{x - \\log(1+x)}{x^2}$$</div>\r\n              <p>This is $\\frac{0}{0}$ indeterminate form.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Use Maclaurin series for $\\log(1+x)$</p>\r\n              <div class=\"overflow-x-auto\">$$\\log(1+x) = x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\dots$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Substitute and evaluate</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x \\to 0} \\frac{x - \\left(x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\dots\\right)}{x^2} = \\lim_{x \\to 0} \\left(\\frac{1}{2} - \\frac{x}{3} + \\dots\\right) = \\frac{1}{2}$$</div>\r\n              <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\"><strong>Final Result:</strong> $\\boxed{\\dfrac{1}{2}}$</div>",
     "finalAnswerHtml": "<strong>Final Result:</strong> $\\boxed{\\dfrac{1}{2}}$"
   },
-  {
+    {
     "id": "cse25-ece-ct2-q4",
     "discipline": "ECE",
     "batch": 25,
@@ -485,9 +485,9 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Homogeneous",
-      "Euler's Theorem",
-      "Partial Derivatives"
+        "Homogeneous",
+        "Euler's Theorem",
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -498,7 +498,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Rewrite and check homogeneity</p>\r\n              <p>Let $z = \\sin u = \\dfrac{x^2+y^2}{x+y}$. Then:</p>\r\n              <div class=\"overflow-x-auto\">$$z(tx, ty) = \\frac{t^2(x^2+y^2)}{t(x+y)} = t^1 z(x,y)$$</div>\r\n              <p>So $z$ is homogeneous of degree $n=1$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Apply Euler's Theorem</p>\r\n              <div class=\"overflow-x-auto\">$$x \\frac{\\partial z}{\\partial x} + y \\frac{\\partial z}{\\partial y} = z$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Express in terms of $u$</p>\r\n              <p>Since $z = \\sin u$: $\\frac{\\partial z}{\\partial x} = \\cos u \\cdot u_x$, $\\frac{\\partial z}{\\partial y} = \\cos u \\cdot u_y$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\cos u (x u_x + y u_y) = \\sin u$$</div>\r\n              <div class=\"overflow-x-auto\">$$x u_x + y u_y = \\tan u$$</div>\r\n              <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\"><strong>Final Result:</strong> $x u_x + y u_y = \\tan u$ (proved).</div>",
     "finalAnswerHtml": "<strong>Final Result:</strong> $x u_x + y u_y = \\tan u$ (proved)."
   },
-  {
+    {
     "id": "cse25-ece-ct2-q5",
     "discipline": "ECE",
     "batch": 25,
@@ -508,19 +508,19 @@ const questions = [
     "section": "A",
     "questionNumber": "5",
     "topics": [
-      "Differentiation",
-      "Maxima & Minima"
+        "Differentiation",
+        "Maxima & Minima"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Determine the extremum values and extremum points of $f(x) = x + \\sin 2x$, $0 &lt; x &lt; 2\\pi$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Find critical points</p>\r\n              <div class=\"overflow-x-auto\">$$f'(x) = 1 + 2\\cos 2x = 0 \\implies \\cos 2x = -\\frac{1}{2}$$</div>\r\n              <p>In $0&lt;x&lt;2\\pi$: $2x = \\frac{2\\pi}{3}, \\frac{4\\pi}{3}, \\frac{8\\pi}{3}, \\frac{10\\pi}{3}$.</p>\r\n              <div class=\"overflow-x-auto\">$$x = \\frac{\\pi}{3},\\; \\frac{2\\pi}{3},\\; \\frac{4\\pi}{3},\\; \\frac{5\\pi}{3}$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Second derivative test</p>\r\n              <div class=\"overflow-x-auto\">$$f''(x) = -4\\sin 2x$$</div>\r\n              <p>At $x=\\frac{\\pi}{3}$: $f''=-2\\sqrt{3}&lt;0$ (max). Value: $\\frac{\\pi}{3}+\\frac{\\sqrt{3}}{2}$.</p>\r\n              <p>At $x=\\frac{2\\pi}{3}$: $f''=2\\sqrt{3}&gt;0$ (min). Value: $\\frac{2\\pi}{3}-\\frac{\\sqrt{3}}{2}$.</p>\r\n              <p>At $x=\\frac{4\\pi}{3}$: $f''=-2\\sqrt{3}&lt;0$ (max). Value: $\\frac{4\\pi}{3}+\\frac{\\sqrt{3}}{2}$.</p>\r\n              <p>At $x=\\frac{5\\pi}{3}$: $f''=2\\sqrt{3}&gt;0$ (min). Value: $\\frac{5\\pi}{3}-\\frac{\\sqrt{3}}{2}$.</p>\r\n              <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\"><strong>Final Result:</strong> Maxima at $\\frac{\\pi}{3},\\frac{4\\pi}{3}$; minima at $\\frac{2\\pi}{3},\\frac{5\\pi}{3}$.</div>",
     "finalAnswerHtml": "<strong>Final Result:</strong> Maxima at $\\frac{\\pi}{3},\\frac{4\\pi}{3}$; minima at $\\frac{2\\pi}{3},\\frac{5\\pi}{3}$."
   },
-  {
+    {
     "id": "cse24-ct2-q1",
     "discipline": "CSE",
     "batch": 24,
@@ -530,21 +530,21 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Differentiation",
-      "Taylor Series"
+        "Differentiation",
+        "Taylor Series"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 2,
     "appearances": [
-      "cse24-final-seca-q2c"
+        "cse24-final-seca-q2c"
     ],
-    "tags": [],
+    "tags": ["essential","repeated"],
     "questionHtml": "Expand $\\cos x$ in powers of $x - \\frac{\\pi}{4}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Taylor series expansion about $a = \\frac{\\pi}{4}$</p>\r\n              <div class=\"overflow-x-auto\">$$f(x) = f(a) + (x - a)f'(a) + \\frac{(x - a)^2}{2!}f''(a) + \\frac{(x - a)^3}{3!}f'''(a) + \\dots$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Compute derivatives of $f(x) = \\cos x$ at $a = \\frac{\\pi}{4}$</p>\r\n              <p>$f(\\frac{\\pi}{4}) = \\frac{1}{\\sqrt{2}}$, $f'(\\frac{\\pi}{4}) = -\\frac{1}{\\sqrt{2}}$, $f''(\\frac{\\pi}{4}) = -\\frac{1}{\\sqrt{2}}$, $f'''(\\frac{\\pi}{4}) = \\frac{1}{\\sqrt{2}}$, $f^{(4)}(\\frac{\\pi}{4}) = \\frac{1}{\\sqrt{2}}$.</p>\r\n              <p>The values follow a repeating pattern: $\\frac{1}{\\sqrt{2}}, -\\frac{1}{\\sqrt{2}}, -\\frac{1}{\\sqrt{2}}, \\frac{1}{\\sqrt{2}}, \\dots$</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Substitute into the series</p>\r\n              <div class=\"overflow-x-auto\">$$\\cos x = \\frac{1}{\\sqrt{2}} - \\frac{1}{\\sqrt{2}}\\left(x - \\frac{\\pi}{4}\\right) - \\frac{1}{2!\\sqrt{2}}\\left(x - \\frac{\\pi}{4}\\right)^2 + \\frac{1}{3!\\sqrt{2}}\\left(x - \\frac{\\pi}{4}\\right)^3 + \\frac{1}{4!\\sqrt{2}}\\left(x - \\frac{\\pi}{4}\\right)^4 - \\dots$$</div>\r\n              <p>Factoring out $\\frac{1}{\\sqrt{2}}$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\cos x = \\frac{1}{\\sqrt{2}} \\left[ 1 - \\left(x - \\frac{\\pi}{4}\\right) - \\frac{1}{2!}\\left(x - \\frac{\\pi}{4}\\right)^2 + \\frac{1}{3!}\\left(x - \\frac{\\pi}{4}\\right)^3 + \\frac{1}{4!}\\left(x - \\frac{\\pi}{4}\\right)^4 - \\dots \\right]$$</div>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\cos x = \\frac{1}{\\sqrt{2}} \\left[ 1 - \\left(x - \\frac{\\pi}{4}\\right) - \\frac{1}{2!}\\left(x - \\frac{\\pi}{4}\\right)^2 + \\frac{1}{3!}\\left(x - \\frac{\\pi}{4}\\right)^3 + \\frac{1}{4!}\\left(x - \\frac{\\pi}{4}\\right)^4 - \\dots \\right]}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\cos x = \\frac{1}{\\sqrt{2}} \\left[ 1 - \\left(x - \\frac{\\pi}{4}\\right) - \\frac{1}{2!}\\left(x - \\frac{\\pi}{4}\\right)^2 + \\frac{1}{3!}\\left(x - \\frac{\\pi}{4}\\right)^3 + \\frac{1}{4!}\\left(x - \\frac{\\pi}{4}\\right)^4 - \\dots \\right]}$$"
   },
-  {
+    {
     "id": "cse24-ct2-q2",
     "discipline": "CSE",
     "batch": 24,
@@ -554,21 +554,21 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Differentiation",
-      "Maxima & Minima"
+        "Differentiation",
+        "Maxima & Minima"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 2,
     "appearances": [
-      "cse24-final-seca-q3b"
+        "cse24-final-seca-q3b"
     ],
-    "tags": [],
+    "tags": ["essential","repeated"],
     "questionHtml": "Distinguish between critical points and points of inflection of a function. Find the extremum values of $f(x) = e^x + 2\\cos x + e^{-x}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Part 1: Critical Points vs Points of Inflection</p>\r\n              <p><strong>Critical Point:</strong> A point $x = c$ where $f'(c) = 0$ or $f'(c)$ is undefined. Candidates for local extrema.</p>\r\n              <p><strong>Point of Inflection:</strong> A point where the concavity changes. $f''(c) = 0$ or undefined, and $f''(x)$ changes sign through $x = c$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Part 2: Extremum values of $f(x) = e^x + 2\\cos x + e^{-x}$</p>\r\n              <p>Rewrite: $f(x) = e^x + e^{-x} + 2\\cos x = 2\\cosh x + 2\\cos x$.</p>\r\n              <p>First derivative: $f'(x) = e^x - 2\\sin x - e^{-x} = 2\\sinh x - 2\\sin x$.</p>\r\n              <p>Set $f'(x) = 0$: $\\sinh x = \\sin x$. The only real solution is $x = 0$.</p>\r\n              <p>Second derivative: $f''(x) = e^x + e^{-x} - 2\\cos x = 2\\cosh x - 2\\cos x$, $f''(0) = 0$ (inconclusive).</p>\r\n              <p>Third derivative: $f'''(x) = e^x - e^{-x} + 2\\sin x = 2\\sinh x + 2\\sin x$, $f'''(0) = 0$.</p>\r\n              <p>Fourth derivative: $f^{(4)}(x) = e^x + e^{-x} + 2\\cos x = 2\\cosh x + 2\\cos x$, $f^{(4)}(0) = 4 > 0$.</p>\r\n              <p>Since the first non-vanishing derivative is $f^{(4)}(0) > 0$ (even order), $f(x)$ has a local minimum at $x = 0$.</p>\r\n              <p>Minimum value: $f(0) = e^0 + 2\\cos 0 + e^{-0} = 1 + 2 + 1 = 4$.</p>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\text{Minimum value is } 4 \\text{ at } x = 0}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\text{Minimum value is } 4 \\text{ at } x = 0}$$"
   },
-  {
+    {
     "id": "cse24-ct2-q3",
     "discipline": "CSE",
     "batch": 24,
@@ -578,19 +578,19 @@ const questions = [
     "section": "A",
     "questionNumber": "3",
     "topics": [
-      "Differentiation",
-      "Tangent & Normal"
+        "Differentiation",
+        "Tangent & Normal"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define tangent, subtangent, normal and subnormal of a curve $f(x) = 0$ at $x = x_0$. Find the equation of tangent and normal line to the curve $x = e^{-t}\\cos t$, $y = e^{t}\\sin t$ at $t = \\pi$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Part 1: Definitions</p>\r\n              <p><strong>Tangent:</strong> Line through $P(x_0, y_0)$ with slope $m = \\left(\\frac{dy}{dx}\\right)_{x_0}$: $y - y_0 = m(x - x_0)$.</p>\r\n              <p><strong>Normal:</strong> Line through $P$ perpendicular to the tangent: $y - y_0 = -\\frac{1}{m}(x - x_0)$.</p>\r\n              <p><strong>Subtangent:</strong> Projection of the tangent segment on the $x$-axis: $\\left| \\frac{y_0}{m} \\right|$.</p>\r\n              <p><strong>Subnormal:</strong> Projection of the normal segment on the $x$-axis: $|y_0 \\cdot m|$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Part 2: Tangent and Normal to the Parametric Curve</p>\r\n              <p>Coordinates at $t = \\pi$: $x_0 = e^{-\\pi}\\cos\\pi = -e^{-\\pi}$, $y_0 = e^{\\pi}\\sin\\pi = 0$.</p>\r\n              <p>Parametric derivatives:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dx}{dt} = -e^{-t}(\\cos t + \\sin t), \\quad \\frac{dy}{dt} = e^{t}(\\sin t + \\cos t)$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{e^{t}(\\sin t + \\cos t)}{-e^{-t}(\\cos t + \\sin t)} = -e^{2t}$$</div>\r\n              <p>At $t = \\pi$: $m = -e^{2\\pi}$.</p>\r\n              <p><strong>Tangent equation:</strong> $y - 0 = -e^{2\\pi}(x + e^{-\\pi}) \\implies e^{2\\pi}x + y + e^{\\pi} = 0$.</p>\r\n              <p><strong>Normal equation:</strong> Slope $= e^{-2\\pi}$. $y = e^{-2\\pi}(x + e^{-\\pi}) \\implies e^{\\pi}x - e^{3\\pi}y + 1 = 0$.</p>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\text{Tangent: } \\boxed{e^{2\\pi}x + y + e^{\\pi} = 0}$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\text{Normal: } \\boxed{e^{\\pi}x - e^{3\\pi}y + 1 = 0}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\text{Tangent: } \\boxed{e^{2\\pi}x + y + e^{\\pi} = 0}$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\text{Normal: } \\boxed{e^{\\pi}x - e^{3\\pi}y + 1 = 0}$$"
   },
-  {
+    {
     "id": "cse24-ct2-q4",
     "discipline": "CSE",
     "batch": 24,
@@ -600,19 +600,19 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Limits & Continuity",
-      "Taylor Series"
+        "Limits & Continuity",
+        "Taylor Series"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\displaystyle\\lim_{x\\to 0} \\frac{e^x - e^{\\sin x}}{x - \\sin x}$.",
     "solutionHtml": "<p>This is a $\\frac{0}{0}$ indeterminate form.</p>\r\n              <p class=\"font-semibold text-slate-900\">Method 1: Factorization</p>\r\n              <p>Factor $e^{\\sin x}$ from the numerator:</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x\\to 0} \\frac{e^{\\sin x}(e^{x - \\sin x} - 1)}{x - \\sin x} = \\left(\\lim_{x\\to 0} e^{\\sin x}\\right) \\cdot \\left(\\lim_{x\\to 0} \\frac{e^{x - \\sin x} - 1}{x - \\sin x}\\right)$$</div>\r\n              <p>First limit: $\\lim_{x\\to 0} e^{\\sin x} = e^0 = 1$.</p>\r\n              <p>Second limit: let $u = x - \\sin x$. As $x \\to 0$, $u \\to 0$, so $\\lim_{u\\to 0} \\frac{e^u - 1}{u} = 1$.</p>\r\n              <p>Thus $L = 1 \\cdot 1 = 1$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Method 2: Taylor Series</p>\r\n              <p>$e^x = 1 + x + \\frac{x^2}{2} + \\frac{x^3}{6} + O(x^4)$, $\\sin x = x - \\frac{x^3}{6} + O(x^5)$.</p>\r\n              <p>$e^{\\sin x} = 1 + x + \\frac{x^2}{2} + O(x^4)$, so $e^x - e^{\\sin x} = \\frac{x^3}{6} + O(x^4)$.</p>\r\n              <p>$x - \\sin x = \\frac{x^3}{6} + O(x^5)$.</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x\\to 0} \\frac{\\frac{x^3}{6} + O(x^4)}{\\frac{x^3}{6} + O(x^5)} = 1$$</div>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{1}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{1}$$"
   },
-  {
+    {
     "id": "cse24-ct2-q5",
     "discipline": "CSE",
     "batch": 24,
@@ -622,9 +622,9 @@ const questions = [
     "section": "A",
     "questionNumber": "5",
     "topics": [
-      "Homogeneous",
-      "Euler's Theorem",
-      "Partial Derivatives"
+        "Homogeneous",
+        "Euler's Theorem",
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -635,7 +635,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Rewrite and check homogeneity</p>\r\n              <p>Let $V = \\tan u = \\dfrac{x^3 + y^3}{x + y}$. Then:</p>\r\n              <div class=\"overflow-x-auto\">$$V(tx, ty) = \\frac{t^3(x^3 + y^3)}{t(x + y)} = t^2 V(x, y)$$</div>\r\n              <p>So $V$ is homogeneous of degree $n = 2$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Apply Euler's Theorem</p>\r\n              <div class=\"overflow-x-auto\">$$x\\frac{\\partial V}{\\partial x} + y\\frac{\\partial V}{\\partial y} = 2V$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Express in terms of $u$</p>\r\n              <p>Since $V = \\tan u$: $\\frac{\\partial V}{\\partial x} = \\sec^2 u \\frac{\\partial u}{\\partial x}$, $\\frac{\\partial V}{\\partial y} = \\sec^2 u \\frac{\\partial u}{\\partial y}$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\sec^2 u \\left(x\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y}\\right) = 2\\tan u$$</div>\r\n              <div class=\"overflow-x-auto\">$$x\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y} = \\frac{2\\tan u}{\\sec^2 u} = 2\\sin u \\cos u = \\sin 2u$$</div>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{x\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y} = \\sin 2u}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{x\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y} = \\sin 2u}$$"
   },
-  {
+    {
     "id": "cse23-ct2-q1",
     "discipline": "CSE",
     "batch": 23,
@@ -645,20 +645,20 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Differentiation",
-      "Maxima & Minima",
-      "Curve Sketching"
+        "Differentiation",
+        "Maxima & Minima",
+        "Curve Sketching"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Distinguish between extremum points and inflection points of $f(x)=0$. Find the extremum values of $y = x + \\sin x$ for $0 &lt; x &lt; 2\\pi$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Part 1: Distinction between Extremum Points and Inflection Points</p>\r\n              <p><strong>Extremum Points (Local Maxima/Minima):</strong> A point $x = c$ is an extremum point of a continuous function $y = f(x)$ if $f(c)$ is either a local maximum or a local minimum value of the function in an open interval containing $c$.</p>\r\n              <p><strong>First Derivative Test:</strong> At an extremum point, the first derivative $f'(c) = 0$ (or is undefined), and $f'(x)$ changes sign as $x$ passes through $c$. If $f'(x)$ changes from positive to negative, $c$ is a local maximum. If $f'(x)$ changes from negative to positive, $c$ is a local minimum.</p>\r\n              <p><strong>Inflection Points:</strong> A point $x = c$ is an inflection point of a curve $y = f(x)$ if the graph of the function changes its concavity at $c$ (from concave upward to concave downward, or vice versa).</p>\r\n              <p><strong>Second Derivative Test:</strong> At an inflection point, the second derivative $f''(c) = 0$ (or is undefined), and $f''(x)$ changes sign as $x$ passes through $c$. The first derivative $f'(x)$ does not need to change sign at this point, meaning an inflection point is not necessarily an extremum.</p>\r\n              <p class=\"font-semibold text-slate-900\">Part 2: Extremum values of $y = x + \\sin x$ for $0 &lt; x &lt; 2\\pi$</p>\r\n              <p><strong>Step 1:</strong> Find the first derivative.</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = 1 + \\cos x$$</div>\r\n              <p><strong>Step 2:</strong> Find critical points by setting $\\frac{dy}{dx} = 0$.</p>\r\n              <div class=\"overflow-x-auto\">$$1 + \\cos x = 0 \\implies \\cos x = -1$$</div>\r\n              <p>Within $0 &lt; x &lt; 2\\pi$, the only solution is $x = \\pi$.</p>\r\n              <p><strong>Step 3:</strong> Analyze the nature of $x = \\pi$ using the Second Derivative Test.</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{d^2y}{dx^2} = -\\sin x \\implies \\left. \\frac{d^2y}{dx^2} \\right|_{x=\\pi} = -\\sin(\\pi) = 0$$</div>\r\n              <p>Since the second derivative is zero, use the First Derivative Test:</p>\r\n              <p>For $x &lt; \\pi$ in $(0, \\pi)$: $\\cos x &gt; -1 \\implies \\frac{dy}{dx} &gt; 0$.</p>\r\n              <p>For $x &gt; \\pi$ in $(\\pi, 2\\pi)$: $\\cos x &gt; -1 \\implies \\frac{dy}{dx} &gt; 0$.</p>\r\n              <p>Since $\\frac{dy}{dx}$ is positive on both sides of $x = \\pi$, the sign does not change. Therefore, $x = \\pi$ is a point of inflection, not an extremum.</p>\r\n              <p>Since there are no other critical points, the function has no local extremum values in the open interval.</p>\r\n            </div>\r\n            <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\">\r\n              <p class=\"text-slate-700\">There are <strong>no extremum values</strong> for the curve $y = x + \\sin x$ in the open interval $0 &lt; x &lt; 2\\pi$.</p>",
     "finalAnswerHtml": "<p class=\"text-slate-700\">There are <strong>no extremum values</strong> for the curve $y = x + \\sin x$ in the open interval $0 &lt; x &lt; 2\\pi$.</p>"
   },
-  {
+    {
     "id": "cse23-ct2-q2",
     "discipline": "CSE",
     "batch": 23,
@@ -668,19 +668,19 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Limits & Continuity",
-      "Logarithmic Differentiation"
+        "Limits & Continuity",
+        "Logarithmic Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Write the singular (indeterminate) forms. Evaluate $\\displaystyle\\lim_{x\\to 0} \\frac{a^x - 1 - x\\log_e a}{x^2}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Part 1: Indeterminate (Singular) Forms of Limits</p>\r\n              <p>The 7 standard indeterminate forms are: $\\frac{0}{0}$, $\\frac{\\infty}{\\infty}$, $0 \\cdot \\infty$, $\\infty - \\infty$, $0^0$, $1^{\\infty}$, $\\infty^0$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Part 2: Evaluate the limit</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x\\to 0} \\frac{a^x - 1 - x\\ln a}{x^2}$$</div>\r\n              <p><strong>Step 1:</strong> As $x \\to 0$, numerator $\\to 0$ and denominator $\\to 0$, so it is the $\\frac{0}{0}$ indeterminate form.</p>\r\n              <p><strong>Step 2:</strong> Apply L'Hôpital's Rule.</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x\\to 0} \\frac{a^x \\ln a - \\ln a}{2x} = \\lim_{x\\to 0} \\frac{\\ln a \\cdot (a^x - 1)}{2x}$$</div>\r\n              <p><strong>Step 3:</strong> Still $\\frac{0}{0}$. Apply L'Hôpital's Rule again.</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{x\\to 0} \\frac{(\\ln a)^2 a^x}{2} = \\frac{(\\ln a)^2}{2}$$</div>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\frac{(\\ln a)^2}{2}}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\frac{(\\ln a)^2}{2}}$$"
   },
-  {
+    {
     "id": "cse23-ct2-q3",
     "discipline": "CSE",
     "batch": 23,
@@ -690,20 +690,20 @@ const questions = [
     "section": "A",
     "questionNumber": "3",
     "topics": [
-      "Differentiation",
-      "Implicit Differentiation",
-      "Tangent & Normal"
+        "Differentiation",
+        "Implicit Differentiation",
+        "Tangent & Normal"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define subtangent and subnormal. Find the equation of tangent line and normal line at $(2, 2)$ of the curve $xy^2 = 4(4-x)$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Part 1: Definitions</p>\r\n              <p>Let $P(x_1, y_1)$ be a point on a curve $y = f(x)$. Let the tangent and normal lines at $P$ intersect the $x$-axis at $T$ and $N$ respectively, and $M$ be the foot of the ordinate.</p>\r\n              <p><strong>Subtangent:</strong> The projection of the tangent segment $PT$ onto the $x$-axis, i.e. $TM$. Length: $\\left| \\dfrac{y_1}{\\frac{dy}{dx}} \\right|$.</p>\r\n              <p><strong>Subnormal:</strong> The projection of the normal segment $PN$ onto the $x$-axis, i.e. $MN$. Length: $\\left| y_1 \\frac{dy}{dx} \\right|$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Part 2: Equations of Tangent and Normal lines</p>\r\n              <p><strong>Step 1:</strong> Verify $(2, 2)$ lies on the curve: $2(2)^2 = 8$ and $4(4-2) = 8$. LHS = RHS, so it lies on the curve.</p>\r\n              <p><strong>Step 2:</strong> Differentiate implicitly:</p>\r\n              <div class=\"overflow-x-auto\">$$x y^2 = 16 - 4x \\implies y^2 + 2xy \\frac{dy}{dx} = -4 \\implies \\frac{dy}{dx} = \\frac{-4 - y^2}{2xy}$$</div>\r\n              <p><strong>Step 3:</strong> Slope at $(2, 2)$: $m = \\dfrac{-4 - 4}{8} = -1$.</p>\r\n              <p><strong>Step 4:</strong> Tangent equation: $y - 2 = -1(x - 2) \\implies x + y - 4 = 0$.</p>\r\n              <p><strong>Step 5:</strong> Normal slope: $m_n = 1$. Normal equation: $y - 2 = 1(x - 2) \\implies x - y = 0$.</p>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\text{Tangent: } \\boxed{x + y - 4 = 0}$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\text{Normal: } \\boxed{x - y = 0}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\text{Tangent: } \\boxed{x + y - 4 = 0}$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\text{Normal: } \\boxed{x - y = 0}$$"
   },
-  {
+    {
     "id": "cse23-ct2-q4",
     "discipline": "CSE",
     "batch": 23,
@@ -713,8 +713,8 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Homogeneous",
-      "Partial Derivatives"
+        "Homogeneous",
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -725,7 +725,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Part 1: Definition of Homogeneous Function</p>\r\n              <p>A function $f(x, y)$ of two variables is called a homogeneous function of degree $n$ if for any real $t$, $f(tx, ty) = t^n f(x, y)$.</p>\r\n              <p><strong>Example:</strong> $f(x, y) = x^3 + 3x^2y$. Then $f(tx, ty) = t^3(x^3 + 3x^2 y) = t^3 f(x, y)$, so it is homogeneous of degree $3$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Part 2: Proof of the PDE</p>\r\n              <p>Given $u = x\\phi(z) + y\\psi(z)$ where $z = x + y$, with $\\frac{\\partial z}{\\partial x} = \\frac{\\partial z}{\\partial y} = 1$.</p>\r\n              <p><strong>Step 1:</strong> First-order partial derivatives:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{\\partial u}{\\partial x} = \\phi(z) + x\\phi'(z) + y\\psi'(z)$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\frac{\\partial u}{\\partial y} = x\\phi'(z) + \\psi(z) + y\\psi'(z)$$</div>\r\n              <p><strong>Step 2:</strong> Second-order partial derivatives:</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{\\partial^2 u}{\\partial x^2} = 2\\phi'(z) + x\\phi''(z) + y\\psi''(z)$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\frac{\\partial^2 u}{\\partial y^2} = 2\\psi'(z) + x\\phi''(z) + y\\psi''(z)$$</div>\r\n              <div class=\"overflow-x-auto\">$$\\frac{\\partial^2 u}{\\partial x \\partial y} = \\phi'(z) + \\psi'(z) + x\\phi''(z) + y\\psi''(z)$$</div>\r\n              <p><strong>Step 3:</strong> Substitute into the LHS:</p>\r\n              <div class=\"overflow-x-auto\">$$\\text{LHS} = \\left[2\\phi'(z) + x\\phi''(z) + y\\psi''(z)\\right] - 2\\left[\\phi'(z) + \\psi'(z) + x\\phi''(z) + y\\psi''(z)\\right] + \\left[2\\psi'(z) + x\\phi''(z) + y\\psi''(z)\\right]$$</div>\r\n              <p>Simplify: $\\phi'(z)$ terms cancel, $\\psi'(z)$ terms cancel, $x\\phi''(z)$ terms cancel, $y\\psi''(z)$ terms cancel.</p>\r\n              <div class=\"overflow-x-auto\">$$\\text{LHS} = 0 = \\text{RHS}$$</div>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\frac{\\partial^2 u}{\\partial x^2} - 2\\frac{\\partial^2 u}{\\partial x \\partial y} + \\frac{\\partial^2 u}{\\partial y^2} = 0}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\frac{\\partial^2 u}{\\partial x^2} - 2\\frac{\\partial^2 u}{\\partial x \\partial y} + \\frac{\\partial^2 u}{\\partial y^2} = 0}$$"
   },
-  {
+    {
     "id": "cse22-ct2-q1",
     "discipline": "CSE",
     "batch": 22,
@@ -735,18 +735,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\displaystyle\\lim_{x \\to \\pi/2} \\frac{\\log(x - \\pi/2)}{\\tan x}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Solution</p>\r\n              <p><strong>Step 1:</strong> Substitute $t = x - \\frac{\\pi}{2}$. As $x \\to \\frac{\\pi}{2}^+$, $t \\to 0^+$. Then $\\tan x = \\tan(t + \\frac{\\pi}{2}) = -\\cot t$.</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{t \\to 0^+} \\frac{\\log t}{-\\cot t} = -\\lim_{t \\to 0^+} \\frac{\\log t}{\\cot t}$$</div>\r\n              <p><strong>Step 2:</strong> This is the $\\frac{\\infty}{\\infty}$ indeterminate form. Apply L'Hôpital's Rule:</p>\r\n              <div class=\"overflow-x-auto\">$$L = -\\lim_{t \\to 0^+} \\frac{1/t}{-\\csc^2 t} = \\lim_{t \\to 0^+} \\frac{\\sin^2 t}{t}$$</div>\r\n              <p><strong>Step 3:</strong> Evaluate:</p>\r\n              <div class=\"overflow-x-auto\">$$L = \\lim_{t \\to 0^+} \\left( \\frac{\\sin t}{t} \\cdot \\sin t \\right) = 1 \\cdot 0 = 0$$</div>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{0}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{0}$$"
   },
-  {
+    {
     "id": "cse22-ct2-q2",
     "discipline": "CSE",
     "batch": 22,
@@ -756,9 +756,9 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Homogeneous",
-      "Euler's Theorem",
-      "Partial Derivatives"
+        "Homogeneous",
+        "Euler's Theorem",
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -769,7 +769,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Solution</p>\r\n              <p><strong>Step 1:</strong> Let $V(x, y) = \\tan u = \\dfrac{x^3 + y^3}{x + y}$. Check homogeneity:</p>\r\n              <div class=\"overflow-x-auto\">$$V(tx, ty) = \\frac{t^3(x^3 + y^3)}{t(x + y)} = t^2 V(x, y)$$</div>\r\n              <p>Thus $V$ is homogeneous of degree $n = 2$.</p>\r\n              <p><strong>Step 2:</strong> By Euler's Theorem: $x \\dfrac{\\partial V}{\\partial x} + y \\dfrac{\\partial V}{\\partial y} = 2V$.</p>\r\n              <p><strong>Step 3:</strong> Since $V = \\tan u$, $\\dfrac{\\partial V}{\\partial x} = \\sec^2 u \\dfrac{\\partial u}{\\partial x}$, $\\dfrac{\\partial V}{\\partial y} = \\sec^2 u \\dfrac{\\partial u}{\\partial y}$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\sec^2 u \\left( x \\frac{\\partial u}{\\partial x} + y \\frac{\\partial u}{\\partial y} \\right) = 2 \\tan u$$</div>\r\n              <div class=\"overflow-x-auto\">$$x \\frac{\\partial u}{\\partial x} + y \\frac{\\partial u}{\\partial y} = \\frac{2 \\tan u}{\\sec^2 u} = 2 \\sin u \\cos u = \\sin 2u$$</div>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{x \\frac{\\partial u}{\\partial x} + y \\frac{\\partial u}{\\partial y} = \\sin 2u}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{x \\frac{\\partial u}{\\partial x} + y \\frac{\\partial u}{\\partial y} = \\sin 2u}$$"
   },
-  {
+    {
     "id": "cse22-ct2-q3",
     "discipline": "CSE",
     "batch": 22,
@@ -779,19 +779,19 @@ const questions = [
     "section": "A",
     "questionNumber": "3",
     "topics": [
-      "Differentiation",
-      "Maxima & Minima"
+        "Differentiation",
+        "Maxima & Minima"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find the extrema of $f(x) = x^4 - 8x^3 + 22x^2 - 24x + 5$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Solution</p>\r\n              <p><strong>Step 1:</strong> First derivative: $f'(x) = 4x^3 - 24x^2 + 44x - 24$.</p>\r\n              <p><strong>Step 2:</strong> Set $f'(x) = 0$:</p>\r\n              <div class=\"overflow-x-auto\">$$4(x^3 - 6x^2 + 11x - 6) = 0$$</div>\r\n              <p>$x = 1$ is a root. Factor: $(x-1)(x-2)(x-3) = 0$. Critical points: $x = 1, 2, 3$.</p>\r\n              <p><strong>Step 3:</strong> Second derivative: $f''(x) = 12x^2 - 48x + 44$.</p>\r\n              <p><strong>Step 4:</strong> Second derivative test:</p>\r\n              <ul class=\"list-disc pl-6 space-y-2\">\r\n                <li>At $x = 1$: $f''(1) = 8 &gt; 0$, so local minimum. $f(1) = -4$.</li>\r\n                <li>At $x = 2$: $f''(2) = -4 &lt; 0$, so local maximum. $f(2) = -3$.</li>\r\n                <li>At $x = 3$: $f''(3) = 8 &gt; 0$, so local minimum. $f(3) = -4$.</li>\r\n              </ul>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\text{Local minimum of } -4 \\text{ at } x = 1 \\text{ and } x = 3;\\ \\text{Local maximum of } -3 \\text{ at } x = 2}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{\\text{Local minimum of } -4 \\text{ at } x = 1 \\text{ and } x = 3;\\ \\text{Local maximum of } -3 \\text{ at } x = 2}$$"
   },
-  {
+    {
     "id": "cse22-ct2-q4",
     "discipline": "CSE",
     "batch": 22,
@@ -801,7 +801,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Mean Value Theorem"
+        "Mean Value Theorem"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -812,7 +812,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Part 1: Statement of Lagrange's Mean Value Theorem (MVT)</p>\r\n              <p>If a function $f(x)$ is:</p>\r\n              <ol class=\"list-decimal pl-6 space-y-1\">\r\n                <li>Continuous in $[a, b]$, and</li>\r\n                <li>Differentiable in $(a, b)$,</li>\r\n              </ol>\r\n              <p>then there exists at least one $c \\in (a, b)$ such that $f'(c) = \\dfrac{f(b) - f(a)}{b - a}$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Part 2: Verification for $f(x) = 3 + 2x - x^2$ on $[0, 1]$</p>\r\n              <p><strong>Step 1:</strong> $f$ is a polynomial, hence continuous on $[0, 1]$ and differentiable on $(0, 1)$.</p>\r\n              <p><strong>Step 2:</strong> $f(0) = 3$, $f(1) = 4$. Mean slope: $\\dfrac{4 - 3}{1 - 0} = 1$.</p>\r\n              <p><strong>Step 3:</strong> $f'(x) = 2 - 2x$. Set $f'(c) = 1$:</p>\r\n              <div class=\"overflow-x-auto\">$$2 - 2c = 1 \\implies c = \\frac{1}{2}$$</div>\r\n              <p>Since $c = \\frac{1}{2} \\in (0, 1)$, MVT is verified.</p>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{c = \\frac{1}{2} \\in (0, 1)}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{c = \\frac{1}{2} \\in (0, 1)}$$"
   },
-  {
+    {
     "id": "cse22-ct2-q5",
     "discipline": "CSE",
     "batch": 22,
@@ -822,9 +822,9 @@ const questions = [
     "section": "A",
     "questionNumber": "5",
     "topics": [
-      "Successive Differentiation",
-      "Leibnitz Rule",
-      "Implicit Differentiation"
+        "Successive Differentiation",
+        "Leibnitz Rule",
+        "Implicit Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -835,7 +835,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Part 1: Statement of Leibnitz Theorem</p>\r\n              <p>If $u(x)$ and $v(x)$ are $n$-times differentiable, then:</p>\r\n              <div class=\"overflow-x-auto\">$$(u \\cdot v)_n = u_n v + n u_{n-1} v_1 + \\frac{n(n-1)}{2} u_{n-2} v_2 + \\dots$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Part 2: Proving the recurrence relation</p>\r\n              <p><strong>Step 1:</strong> $y = e^{a\\cos^{-1}x}$.</p>\r\n              <div class=\"overflow-x-auto\">$$y_1 = e^{a\\cos^{-1}x} \\cdot \\left( \\frac{-a}{\\sqrt{1 - x^2}} \\right) = -\\frac{ay}{\\sqrt{1 - x^2}}$$</div>\r\n              <p><strong>Step 2:</strong> Square and rearrange:</p>\r\n              <div class=\"overflow-x-auto\">$$(1 - x^2) y_1^2 = a^2 y^2$$</div>\r\n              <p><strong>Step 3:</strong> Differentiate implicitly:</p>\r\n              <div class=\"overflow-x-auto\">$$(1 - x^2) y_2 - x y_1 - a^2 y = 0$$</div>\r\n              <p><strong>Step 4:</strong> Differentiate $n$ times using Leibnitz Theorem:</p>\r\n              <div class=\"overflow-x-auto\">$$\\left[ (1 - x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n \\right] - \\left[ xy_{n+1} + ny_n \\right] - a^2 y_n = 0$$</div>\r\n              <div class=\"overflow-x-auto\">$$(1 - x^2)y_{n+2} - (2n + 1)xy_{n+1} - (n^2 + a^2)y_n = 0$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Part 3: Finding $(y_n)_0$</p>\r\n              <p>At $x = 0$: $(y_{n+2})_0 = (n^2 + a^2)(y_n)_0$.</p>\r\n              <p>Base values: $(y)_0 = e^{a\\pi/2}$, $(y_1)_0 = -a e^{a\\pi/2}$, $(y_2)_0 = a^2 e^{a\\pi/2}$.</p>\r\n              <div class=\"overflow-x-auto\">$$(y_n)_0 = \\begin{cases} a^2(2^2 + a^2)(4^2 + a^2) \\dots ((n-2)^2 + a^2) e^{a\\pi/2}, & n \\text{ even} \\\\ -a(1^2 + a^2)(3^2 + a^2) \\dots ((n-2)^2 + a^2) e^{a\\pi/2}, & n \\text{ odd} \\end{cases}$$</div>\r\n            </div>\r\n            <div class=\"final-answer-box\">\r\n              <h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{(y_n)_0 = \\begin{cases} a^2(2^2 + a^2)(4^2 + a^2) \\dots ((n-2)^2 + a^2) e^{a\\pi/2}, & n \\text{ even} \\\\ -a(1^2 + a^2)(3^2 + a^2) \\dots ((n-2)^2 + a^2) e^{a\\pi/2}, & n \\text{ odd} \\end{cases}}$$</div>",
     "finalAnswerHtml": "<h4><strong>Final Result:</strong></h4>\r\n              <div class=\"overflow-x-auto\">$$\\boxed{(y_n)_0 = \\begin{cases} a^2(2^2 + a^2)(4^2 + a^2) \\dots ((n-2)^2 + a^2) e^{a\\pi/2}, & n \\text{ even} \\\\ -a(1^2 + a^2)(3^2 + a^2) \\dots ((n-2)^2 + a^2) e^{a\\pi/2}, & n \\text{ odd} \\end{cases}}$$"
   },
-  {
+    {
     "id": "cse25-final-secb-q5a",
     "discipline": "CSE",
     "batch": 25,
@@ -845,18 +845,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5(a)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Define integration and state the geometric interpretation of it.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Define integration</p>\r\n              <p>Integration can be defined in two ways:</p>\r\n              <ol class=\"list-decimal pl-5 space-y-1\">\r\n                <li><strong>Indefinite Integration (Antiderivative):</strong> It is the inverse process of differentiation. If $F'(x) = f(x)$, then the indefinite integral of $f(x)$ is:\r\n                  <div class=\"overflow-x-auto\">$$\\int f(x) \\, dx = F(x) + C$$</div>\r\n                  where $C$ is an arbitrary constant of integration.\r\n                </li>\r\n                <li><strong>Definite Integration (Riemann Sum):</strong> Let $f(x)$ be a continuous function defined on a closed interval $[a, b]$. The definite integral of $f(x)$ from $a$ to $b$ is the limit of a Riemann sum as the width of the subintervals approaches zero:\r\n                  <div class=\"overflow-x-auto\">$$\\int_{a}^{b} f(x) \\, dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i^*) \\Delta x$$</div>\r\n                </li>\r\n              </ol>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: State the geometric interpretation of integration</p>\r\n              <p>Geometrically, the definite integral $\\int_{a}^{b} f(x) \\, dx$ represents the net signed area bounded by the curve $y = f(x)$, the $x$-axis, and the vertical lines $x = a$ and $x = b$.</p>\r\n              <ul class=\"list-disc pl-5 space-y-1\">\r\n                <li>Areas above the $x$-axis contribute positively to the integral.</li>\r\n                <li>Areas below the $x$-axis contribute negatively to the integral.</li>\r\n              </ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{Integration is the limit of a Riemann sum (or antiderivative); geometrically, it represents the net signed area under a curve.}$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q5b",
     "discipline": "CSE",
     "batch": 25,
@@ -866,19 +866,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5(b)",
     "topics": [
-      "Indefinite Integration",
-      "Integration by Parts"
+        "Indefinite Integration",
+        "Integration by Parts"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Evaluate the following integrals:\r\n              <ol class=\"list-decimal pl-5 space-y-1\">\r\n                <li>$\\int x^2 \\log x \\, dx$</li>\r\n                <li>$\\int e^x(\\tan x - \\log\\cos x) \\, dx$</li>\r\n                <li>$\\int \\frac{x^2 \\tan^{-1} x^3}{1+x^6} \\, dx$</li>\r\n              </ol>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Evaluate (i) $\\int x^2 \\log x \\, dx$</p>\r\n              <p>We use Integration by Parts: $\\int u \\, dv = uv - \\int v \\, du$. Let $u = \\log x$ and $dv = x^2 \\, dx$. Then, $du = \\frac{1}{x} \\, dx$ and $v = \\frac{x^3}{3}$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\int x^2 \\log x \\, dx = (\\log x) \\left(\\frac{x^3}{3}\\right) - \\int \\left(\\frac{x^3}{3}\\right) \\left(\frac{1}{x}\\right) \\, dx = \\frac{x^3 \\log x}{3} - \\frac{x^3}{9} + C_1$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Evaluate (ii) $\\int e^x(\\tan x - \\log\\cos x) \\, dx$</p>\r\n              <p>We use the form: $\\int e^x [f(x) + f'(x)] \\, dx = e^x f(x) + C$. Let $f(x) = -\\log\\cos x$. Then $f'(x) = -\\frac{1}{\\cos x} (-\\sin x) = \\tan x$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\int e^x [ \\tan x + (-\\log\\cos x) ] \\, dx = -e^x \\log\\cos x + C_2$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Evaluate (iii) $\\int \\frac{x^2 \\tan^{-1} x^3}{1+x^6} \\, dx$</p>\r\n              <p>Let $u = \\tan^{-1} x^3$. Then $du = \\frac{3x^2}{1+x^6} \\, dx$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\int \\frac{x^2 \\tan^{-1} x^3}{1+x^6} \\, dx = \\frac{1}{3} \\int u \\, du = \\frac{1}{6} (\\tan^{-1} x^3)^2 + C_3$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{i) } \\frac{x^3 \\log x}{3} - \\frac{x^3}{9} + C_1, \\text{ ii) } -e^x \\log\\cos x + C_2, \\text{ iii) } \\frac{1}{6} (\\tan^{-1} x^3)^2 + C_3$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q5c",
     "discipline": "CSE",
     "batch": 25,
@@ -888,19 +888,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5(c)",
     "topics": [
-      "Indefinite Integration",
-      "Trigonometric Integrals"
+        "Indefinite Integration",
+        "Trigonometric Integrals"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\int \\sin^3 x \\cos^5 x \\, dx$, using a power-reduction or \"odd power\" strategy.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Apply the \"odd power\" strategy</p>\r\n              <p>Split off one factor of $\\sin x$ and convert $\\sin^2 x$ to $\\cos x$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\int \\sin^3 x \\cos^5 x \\, dx = \\int (1 - \\cos^2 x) \\cos^5 x (\\sin x \\, dx)$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Use substitution</p>\r\n              <p>Let $u = \\cos x$, so $du = -\\sin x \\, dx$.</p>\r\n              <div class=\"overflow-x-auto\">$$-\\int (1 - u^2) u^5 \\, du = \\int (u^7 - u^5) \\, du$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Integrate and substitute back</p>\r\n              <div class=\"overflow-x-auto\">$$\\frac{u^8}{8} - \\frac{u^6}{6} + C = \\frac{\\cos^8 x}{8} - \\frac{\\cos^6 x}{6} + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{\\cos^8 x}{8} - \\frac{\\cos^6 x}{6} + C$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q6a",
     "discipline": "CSE",
     "batch": 25,
@@ -910,20 +910,20 @@ const questions = [
     "section": "B",
     "questionNumber": "6(a)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 2,
     "appearances": [
-      "cse23-final-secb-q6a"
+        "cse23-final-secb-q6a"
     ],
-    "tags": [],
+    "tags": ["essential","repeated","difficult"],
     "questionHtml": "State and prove the fundamental theorem of calculus.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: State the Fundamental Theorem of Calculus (FTC)</p>\r\n              <p><strong>Part 1:</strong> If $f$ is continuous on $[a, b]$, then the function $g(x) = \\int_{a}^{x} f(t) \\, dt$ is differentiable on $(a, b)$ and $g'(x) = f(x)$.</p>\r\n              <p><strong>Part 2:</strong> If $F$ is any antiderivative of $f$ (i.e., $F'(x) = f(x)$), then $\\int_{a}^{b} f(x) \\, dx = F(b) - F(a)$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Prove Part 1</p>\r\n              <p>By definition of the derivative:</p>\r\n              <div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{g(x+h) - g(x)}{h} = \\lim_{h \\to 0} \\frac{1}{h} \\left[ \\int_{a}^{x+h} f(t) \\, dt - \\int_{a}^{x} f(t) \\, dt \\right]$$</div>\r\n              <div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{1}{h} \\int_{x}^{x+h} f(t) \\, dt$$</div>\r\n              <p>By the Mean Value Theorem for integrals, there exists $c_h \\in [x, x+h]$ such that:</p>\r\n              <div class=\"overflow-x-auto\">$$\\int_{x}^{x+h} f(t) \\, dt = f(c_h) \\cdot h$$</div>\r\n              <p>Therefore:</p>\r\n              <div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{1}{h} \\cdot f(c_h) \\cdot h = \\lim_{h \\to 0} f(c_h)$$</div>\r\n              <p>Since $c_h \\to x$ as $h \\to 0$ and $f$ is continuous:</p>\r\n              <div class=\"overflow-x-auto\">$$g'(x) = f(x)$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Prove Part 2</p>\r\n              <p>Let $F$ be any antiderivative of $f$, so $F'(x) = f(x)$. Since $g'(x) = f(x) = F'(x)$, we have $g(x) = F(x) + C$ for some constant $C$.</p>\r\n              <p>At $x = a$: $g(a) = \\int_{a}^{a} f(t) \\, dt = 0 = F(a) + C \\implies C = -F(a)$.</p>\r\n              <p>Therefore $g(x) = F(x) - F(a)$. At $x = b$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\int_{a}^{b} f(x) \\, dx = g(b) = F(b) - F(a)$$</div>\r\n              <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\"><strong>Final Result:</strong> The Fundamental Theorem of Calculus is proved.</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{FTC Part 1: } \\frac{d}{dx}\\int_a^x f(t)dt = f(x); \\text{ Part 2: } \\int_a^b f(x)dx = F(b)-F(a)$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q6b",
     "discipline": "CSE",
     "batch": 25,
@@ -933,18 +933,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6(b)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\int_{0}^{1} e^x \\, dx$ as the limit of a sum.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the limit definition</p>\r\n              <p>With $\\Delta x = 1/n$ and $x_i = i/n$:</p>\r\n              <div class=\"overflow-x-auto\">$$S_n = \\sum_{i=1}^{n} e^{i/n} \\frac{1}{n} = \\frac{1}{n} \\frac{e^{1/n}(e - 1)}{e^{1/n} - 1}$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Evaluate the limit</p>\r\n              <div class=\"overflow-x-auto\">$$\\lim_{n \\to \\infty} S_n = (e - 1) \\lim_{h \\to 0} \\frac{h e^h}{e^h - 1} = e - 1$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$e - 1$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q6c",
     "discipline": "CSE",
     "batch": 25,
@@ -954,18 +954,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6(c)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Using the properties of the definite integral, evaluate: $\\int_{0}^{\\frac{\\pi}{2}} \\frac{\\sqrt{\\sin x}}{\\sqrt{\\sin x} + \\sqrt{\\cos x}} \\, dx$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Apply properties</p>\r\n              <p>Let $I = \\int_{0}^{\\frac{\\pi}{2}} \\frac{\\sqrt{\\sin x}}{\\sqrt{\\sin x} + \\sqrt{\\cos x}} \\, dx$. Using $\\int_0^a f(x) dx = \\int_0^a f(a-x) dx$:</p>\r\n              <div class=\"overflow-x-auto\">$$I = \\int_{0}^{\\frac{\\pi}{2}} \\frac{\\sqrt{\\cos x}}{\\sqrt{\\cos x} + \\sqrt{\\sin x}} \\, dx$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Sum the integrals</p>\r\n              <div class=\"overflow-x-auto\">$$2I = \\int_{0}^{\\frac{\\pi}{2}} 1 \\, dx = \\frac{\\pi}{2} \\implies I = \\frac{\\pi}{4}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{\\pi}{4}$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q7a",
     "discipline": "CSE",
     "batch": 25,
@@ -975,18 +975,18 @@ const questions = [
     "section": "B",
     "questionNumber": "7(a)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find the area enclosed by one loop of the rose $r = \\cos 3\\theta$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Find boundaries</p>\r\n              <p>$r=0 \\implies 3\\theta = \\pm \\pi/2 \\implies \\theta = \\pm \\pi/6$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Set up and evaluate integral</p>\r\n              <div class=\"overflow-x-auto\">$$A = \\frac{1}{2} \\int_{-\\pi/6}^{\\pi/6} \\cos^2 3\\theta \\, d\\theta = \\int_{0}^{\\pi/6} \\frac{1 + \\cos 6\\theta}{2} \\, d\\theta = \\frac{\\pi}{12}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{\\pi}{12}$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q7b",
     "discipline": "CSE",
     "batch": 25,
@@ -996,18 +996,18 @@ const questions = [
     "section": "B",
     "questionNumber": "7(b)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Derive the formula for the volume of a sphere of radius $r$, by using the disk method.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Disk Method setup</p>\r\n              <p>Rotate $y = \\sqrt{r^2 - x^2}$ about the x-axis from $-r$ to $r$.</p>\r\n              <div class=\"overflow-x-auto\">$$V = \\pi \\int_{-r}^{r} (r^2 - x^2) \\, dx = 2\\pi \\left[ r^2x - \\frac{x^3}{3} \\right]_0^r = \\frac{4}{3}\\pi r^3$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{4}{3}\\pi r^3$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q7c",
     "discipline": "CSE",
     "batch": 25,
@@ -1017,18 +1017,18 @@ const questions = [
     "section": "B",
     "questionNumber": "7(c)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Prove that the circumference of a circle of radius $R$ is $2\\pi R$ using the definite integral for the arc length of a curve.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Arc length setup</p>\r\n              <p>Upper semicircle $y = \\sqrt{R^2 - x^2}$. $\\frac{dy}{dx} = -\\frac{x}{\\sqrt{R^2 - x^2}}$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\text{Length} = 2 \\int_{-R}^{R} \\sqrt{1 + \\frac{x^2}{R^2-x^2}} \\, dx = 2R \\int_{-R}^{R} \\frac{1}{\\sqrt{R^2-x^2}} \\, dx = 2R [\\sin^{-1}(x/R)]_{-R}^R = 2\\pi R$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$2\\pi R$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q8a",
     "discipline": "CSE",
     "batch": 25,
@@ -1038,18 +1038,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8(a)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Examine the convergence of the improper integral $\\int_{0}^{\\infty} \\frac{dx}{1+x^4}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Comparison Test</p>\r\n              <p>For $x \\ge 1$, $\\frac{1}{1+x^4} < \\frac{1}{x^4}$. Since $\\int_1^{\\infty} \\frac{1}{x^4} dx$ converges, the tail converges.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Local continuity</p>\r\n              <p>The integrand is continuous on $[0, 1]$. Thus the entire integral converges.</p>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{The improper integral converges.}$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q8b",
     "discipline": "CSE",
     "batch": 25,
@@ -1059,19 +1059,19 @@ const questions = [
     "section": "B",
     "questionNumber": "8(b)",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Evaluate the integral $\\int_{0}^{1} \\frac{dx}{(1-x^8)^{1/8}}$ using Beta-Gamma functions.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Substitution</p>\r\n              <p>Let $t = x^8$, so $dx = \\frac{1}{8} t^{-7/8} dt$.</p>\r\n              <div class=\"overflow-x-auto\">$$I = \\frac{1}{8} \\int_0^1 t^{-7/8} (1-t)^{-1/8} dt = \\frac{1}{8} B(1/8, 7/8)$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Gamma relation</p>\r\n              <div class=\"overflow-x-auto\">$$I = \\frac{1}{8} \\frac{\\Gamma(1/8)\\Gamma(7/8)}{\\Gamma(1)} = \\frac{1}{8} \\frac{\\pi}{\\sin(\\pi/8)} = \\frac{\\pi}{4\\sqrt{2-\\sqrt{2}}}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{\\pi}{4\\sqrt{2-\\sqrt{2}}}$$</div>"
   },
-  {
+    {
     "id": "cse25-final-secb-q8c",
     "discipline": "CSE",
     "batch": 25,
@@ -1081,19 +1081,19 @@ const questions = [
     "section": "B",
     "questionNumber": "8(c)",
     "topics": [
-      "Definite Integration",
-      "Gamma Function"
+        "Definite Integration",
+        "Gamma Function"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Show that $\\int_{0}^{\\infty} \\sqrt[4]{x} e^{-\\sqrt{x}} \\, dx = \\frac{3\\sqrt{\\pi}}{2}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Substitution</p>\r\n              <p>Let $t = \\sqrt{x}$, so $dx = 2t dt$.</p>\r\n              <div class=\"overflow-x-auto\">$$I = 2 \\int_0^{\\infty} t^{3/2} e^{-t} dt = 2 \\Gamma(5/2)$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Gamma evaluation</p>\r\n              <div class=\"overflow-x-auto\">$$2 \\cdot \\frac{3}{2} \\cdot \\frac{1}{2} \\sqrt{\\pi} = \\frac{3\\sqrt{\\pi}}{2}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{3\\sqrt{\\pi}}{2}$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q5ai",
     "discipline": "CSE",
     "batch": 24,
@@ -1103,18 +1103,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5(a)(i)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Evaluate $\\int_{0}^{\\frac{\\pi}{2}} x \\log(\\sin x) \\, dx$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Fourier Series substitution</p>\r\n              <p>Using $\\log(\\sin x) = -\\log 2 - \\sum_{k=1}^{\\infty} \\frac{\\cos(2kx)}{k}$:</p>\r\n              <div class=\"overflow-x-auto\">$$I = -\\frac{\\pi^2}{8} \\log 2 - \\sum_{k=1}^{\\infty} \\frac{1}{k} \\frac{(-1)^k - 1}{4k^2} = -\\frac{\\pi^2}{8} \\log 2 + \\frac{1}{2} \\frac{7}{8} \\zeta(3)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{7}{16} \\zeta(3) - \\frac{\\pi^2}{8} \\log 2$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q5aii",
     "discipline": "CSE",
     "batch": 24,
@@ -1124,19 +1124,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5(a)(ii)",
     "topics": [
-      "Definite Integration",
-      "Substitution"
+        "Definite Integration",
+        "Substitution"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\int_{0}^{\\frac{\\pi}{2}} \\frac{\\sin 2\\theta}{\\sin^4 \\theta + \\cos^4 \\theta} \\, d\\theta$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Simplify and substitute</p>\r\n              <p>Divide by $\\cos^4 \\theta$ and let $u = \\tan^2 \\theta$, so $du = 2 \\tan \\theta \\sec^2 \\theta d\\theta$.</p>\r\n              <div class=\"overflow-x-auto\">$$J = \\int_0^{\\infty} \\frac{du}{1 + u^2} = [\\tan^{-1} u]_0^{\\infty} = \\frac{\\pi}{2}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{\\pi}{2}$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q5b",
     "discipline": "CSE",
     "batch": 24,
@@ -1146,19 +1146,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5(b)",
     "topics": [
-      "Indefinite Integration",
-      "Reduction Formula"
+        "Indefinite Integration",
+        "Reduction Formula"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Obtain a reduction formula for $\\int_{0}^{\\frac{\\pi}{2}} \\sin^m x \\cos^n x \\, dx$ and apply it to evaluate $\\int_{0}^{\\frac{\\pi}{2}} \\sin^8 x \\cos^6 x \\, dx$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Reduction Formula</p>\r\n              <div class=\"overflow-x-auto\">$$I_{m, n} = \\frac{m-1}{m+n} I_{m-2, n}$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Evaluation</p>\r\n              <div class=\"overflow-x-auto\">$$I_{8, 6} = \\frac{7}{14} \\cdot \\frac{5}{12} \\cdot \\frac{3}{10} \\cdot \\frac{1}{8} \\cdot I_{0, 6} = \\frac{5\\pi}{4096}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{5\\pi}{4096}$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q6a",
     "discipline": "CSE",
     "batch": 24,
@@ -1168,19 +1168,19 @@ const questions = [
     "section": "B",
     "questionNumber": "6(a)",
     "topics": [
-      "Differentiation",
-      "Basic Differentiation"
+        "Differentiation",
+        "Basic Differentiation"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Find the antiderivative $F(x)$ of $f(x) = \\sqrt[3]{x}$ that satisfies $F(1) = 2$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Integrate</p>\r\n              <div class=\"overflow-x-auto\">$$F(x) = \\int x^{1/3} dx = \\frac{3}{4}x^{4/3} + C$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Apply condition</p>\r\n              <p>$F(1) = 3/4 + C = 2 \\implies C = 5/4$.</p>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$F(x) = \\frac{3}{4}x^{4/3} + \\frac{5}{4}$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q6b",
     "discipline": "CSE",
     "batch": 24,
@@ -1190,18 +1190,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6(b)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\lim_{n \\to \\infty} \\left[ \\frac{n}{n^2 + 1^2} + \\frac{n}{n^2 + 2^2} + \\dots + \\frac{n}{n^2 + n^2} \\right]$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Riemann sum setup</p>\r\n              <div class=\"overflow-x-auto\">$$\\lim_{n \\to \\infty} \\sum_{r=1}^n \\frac{1}{n} \\frac{1}{1 + (r/n)^2} = \\int_0^1 \\frac{dx}{1 + x^2} = \\frac{\\pi}{4}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{\\pi}{4}$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q6c",
     "discipline": "CSE",
     "batch": 24,
@@ -1211,18 +1211,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6(c)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Examine the convergence of the improper integral $\\int_{0}^{\\infty} \\frac{dx}{x^2 - 1}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Singularities</p>\r\n              <p>Singularity at $x=1$. Near $x=1$, $1/(x^2-1) \\approx 1/(2(x-1))$. Since $\\int \\frac{1}{x-1} dx$ diverges at $1$, the integral diverges.</p>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{The improper integral diverges.}$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q7a",
     "discipline": "CSE",
     "batch": 24,
@@ -1232,19 +1232,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7(a)",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Derive a relation between beta function and gamma function.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Write Gamma functions using polar-coordinate substitution.</p>\nRecall the definition of the Gamma function:\n<div class=\"overflow-x-auto\">$$\\Gamma(m) = \\int_0^\\infty e^{-t} t^{m-1} \\, dt$$</div>\nLetting $t = x^2 \\implies dt = 2x \\, dx$:\n<div class=\"overflow-x-auto\">$$\\Gamma(m) = 2 \\int_0^\\infty e^{-x^2} x^{2m-1} \\, dx$$</div>\nSimilarly:\n<div class=\"overflow-x-auto\">$$\\Gamma(n) = 2 \\int_0^\\infty e^{-y^2} y^{2n-1} \\, dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Multiply the two Gamma functions together.</p>\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = 4 \\int_0^\\infty \\int_0^\\infty e^{-(x^2+y^2)} x^{2m-1} y^{2n-1} \\, dx \\, dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Convert the double integral into polar coordinates.</p>\nLet $x = r\\cos\\theta$ and $y = r\\sin\\theta$. The Jacobian is $dx \\, dy = r \\, dr \\, d\\theta$.\nThe boundaries for the first quadrant are $r \\in [0, \\infty)$ and $\\theta \\in [0, \\pi/2]$:\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} (r\\cos\\theta)^{2m-1} (r\\sin\\theta)^{2n-1} r \\, dr \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$= 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\cos^{2m-1}\\theta \\sin^{2n-1}\\theta \\, dr \\, d\\theta$$</div>\nSeparate the terms:\n<div class=\"overflow-x-auto\">$$= 2 \\left( \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\, dr \\right) \\cdot 2 \\left( \\int_0^{\\pi/2} \\sin^{2n-1}\\theta \\cos^{2m-1}\\theta \\, d\\theta \\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Relate the components back to Gamma and Beta definitions.</p>\n- The first part is: $\\Gamma(m+n)$\n- The second part is the trigonometric form of the Beta function: $B(n, m) = B(m, n)$\nTherefore:\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = \\Gamma(m+n) B(m, n)$$</div>\n<div class=\"overflow-x-auto\">$$\\boxed{B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q7b",
     "discipline": "CSE",
     "batch": 24,
@@ -1254,19 +1254,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7(b)",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Integrate $\\int_{0}^{1} x^4 (1 - \\sqrt{x})^5 \\, dx$ by using gamma-beta function.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Apply substitution to express the integral in terms of a single variable.</p>\nLet $u = \\sqrt{x} \\implies x = u^2$. Differentiating both sides:\n<div class=\"overflow-x-auto\">$$dx = 2u \\, du$$</div>\nWhen $x = 0$, $u = 0$; when $x = 1$, $u = 1$.\n<p class=\"font-semibold text-slate-900\">Step 2: Substitute into the original integral.</p>\n<div class=\"overflow-x-auto\">$$I = \\int_0^1 x^4 (1 - \\sqrt{x})^5 \\, dx = \\int_0^1 (u^2)^4 (1 - u)^5 \\cdot 2u \\, du$$</div>\n<div class=\"overflow-x-auto\">$$I = 2 \\int_0^1 u^9 (1 - u)^5 \\, du$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Match with the standard Beta function definition.</p>\nRecall the Beta function: $B(m, n) = \\int_0^1 u^{m-1} (1-u)^{n-1} \\, du$.\nComparing this with our integral, we identify:\n<div class=\"overflow-x-auto\">$$m - 1 = 9 \\implies m = 10, \\quad n - 1 = 5 \\implies n = 6$$</div>\nThus:\n<div class=\"overflow-x-auto\">$$I = 2 \\, B(10, 6)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Evaluate using Gamma function identities.</p>\nUsing $B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$:\n<div class=\"overflow-x-auto\">$$I = 2 \\cdot \\frac{\\Gamma(10)\\Gamma(6)}{\\Gamma(16)} = 2 \\cdot \\frac{9! \\cdot 5!}{15!}$$</div>\n<div class=\"overflow-x-auto\">$$I = 2 \\cdot \\frac{9! \\cdot 120}{15 \\cdot 14 \\cdot 13 \\cdot 12 \\cdot 11 \\cdot 10 \\cdot 9!}$$</div>\n<div class=\"overflow-x-auto\">$$I = 2 \\cdot \\frac{120}{15 \\cdot 14 \\cdot 13 \\cdot 12 \\cdot 11 \\cdot 10} = \\frac{1}{15015}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{1}{15015}$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q8a",
     "discipline": "CSE",
     "batch": 24,
@@ -1276,18 +1276,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8(a)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate the whole length of the asteroid $x^{\\frac{2}{3}} + y^{\\frac{2}{3}} = a^{\\frac{2}{3}}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Parametric setup</p>\r\n              <p>$x = a\\cos^3 t, y = a\\sin^3 t$.</p>\r\n              <div class=\"overflow-x-auto\">$$\\text{Length} = 4 \\int_0^{\\pi/2} 3a\\sin t\\cos t dt = 6a [\\sin^2 t]_0^{\\pi/2} = 6a$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$6a$$</div>"
   },
-  {
+    {
     "id": "cse24-final-secb-q8b",
     "discipline": "CSE",
     "batch": 24,
@@ -1297,18 +1297,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8(b)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Show that the volume obtained by revolving $\\frac{x^2}{25} + \\frac{y^2}{16} = 1$ about the y-axis is $\\frac{400\\pi}{3}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Integration</p>\r\n              <div class=\"overflow-x-auto\">$$V = \\pi \\int_{-4}^4 25(1 - y^2/16) dy = 50\\pi [y - y^3/48]_0^4 = \\frac{400\\pi}{3}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{400\\pi}{3}$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q5a",
     "discipline": "CSE",
     "batch": 23,
@@ -1318,18 +1318,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5(a)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "What is anti-derivative? Find a function $f(x)$ such that $f''(x) = x + \\cos x$ where $f(0) = 1$ and $f'(0) = 2$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Integrate twice</p>\r\n              <div class=\"overflow-x-auto\">$$f'(x) = \\frac{x^2}{2} + \\sin x + 2$$</div>\r\n              <div class=\"overflow-x-auto\">$$f(x) = \\frac{x^3}{6} - \\cos x + 2x + 2$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$f(x) = \\frac{x^3}{6} - \\cos x + 2x + 2$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q5b",
     "discipline": "CSE",
     "batch": 23,
@@ -1339,19 +1339,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5(b)",
     "topics": [
-      "Indefinite Integration",
-      "Reduction Formula"
+        "Indefinite Integration",
+        "Reduction Formula"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Obtain the reduction formula for $\\int \\cos^n x \\, dx$ and hence deduce $\\int_{0}^{\\frac{\\pi}{2}} \\cos^9 x \\, dx$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Reduction Formula</p>\r\n              <div class=\"overflow-x-auto\">$$J_n = \\frac{\\cos^{n-1}x \\sin x}{n} + \\frac{n-1}{n} J_{n-2}$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Deduction</p>\r\n              <div class=\"overflow-x-auto\">$$I_9 = \\frac{8}{9} \\cdot \\frac{6}{7} \\cdot \\frac{4}{5} \\cdot \\frac{2}{3} \\cdot 1 = \\frac{128}{315}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{128}{315}$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q6a",
     "discipline": "CSE",
     "batch": 23,
@@ -1361,20 +1361,20 @@ const questions = [
     "section": "B",
     "questionNumber": "6(a)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 2,
     "appearances": [
-      "cse25-final-secb-q6a"
+        "cse25-final-secb-q6a"
     ],
-    "tags": [],
+    "tags": ["essential","repeated","difficult"],
     "questionHtml": "State and prove the fundamental theorem of calculus.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: State the Fundamental Theorem of Calculus (FTC)</p>\r\n              <p><strong>Part 1:</strong> If $f$ is continuous on $[a, b]$, then the function $g(x) = \\int_{a}^{x} f(t) \\, dt$ is differentiable on $(a, b)$ and $g'(x) = f(x)$.</p>\r\n              <p><strong>Part 2:</strong> If $F$ is any antiderivative of $f$ (i.e., $F'(x) = f(x)$), then $\\int_{a}^{b} f(x) \\, dx = F(b) - F(a)$.</p>\r\n              <p class=\"font-semibold text-slate-900\">Step 2: Prove Part 1</p>\r\n              <p>By definition of the derivative:</p>\r\n              <div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{g(x+h) - g(x)}{h} = \\lim_{h \\to 0} \\frac{1}{h} \\left[ \\int_{a}^{x+h} f(t) \\, dt - \\int_{a}^{x} f(t) \\, dt \\right]$$</div>\r\n              <div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{1}{h} \\int_{x}^{x+h} f(t) \\, dt$$</div>\r\n              <p>By the Mean Value Theorem for integrals, there exists $c_h \\in [x, x+h]$ such that:</p>\r\n              <div class=\"overflow-x-auto\">$$\\int_{x}^{x+h} f(t) \\, dt = f(c_h) \\cdot h$$</div>\r\n              <p>Therefore:</p>\r\n              <div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{1}{h} \\cdot f(c_h) \\cdot h = \\lim_{h \\to 0} f(c_h)$$</div>\r\n              <p>Since $c_h \\to x$ as $h \\to 0$ and $f$ is continuous:</p>\r\n              <div class=\"overflow-x-auto\">$$g'(x) = f(x)$$</div>\r\n              <p class=\"font-semibold text-slate-900\">Step 3: Prove Part 2</p>\r\n              <p>Let $F$ be any antiderivative of $f$, so $F'(x) = f(x)$. Since $g'(x) = f(x) = F'(x)$, we have $g(x) = F(x) + C$ for some constant $C$.</p>\r\n              <p>At $x = a$: $g(a) = \\int_{a}^{a} f(t) \\, dt = 0 = F(a) + C \\implies C = -F(a)$.</p>\r\n              <p>Therefore $g(x) = F(x) - F(a)$. At $x = b$:</p>\r\n              <div class=\"overflow-x-auto\">$$\\int_{a}^{b} f(x) \\, dx = g(b) = F(b) - F(a)$$</div>\r\n              <div class=\"bg-emerald-50 p-4 rounded-xl border border-emerald-100\"><strong>Final Result:</strong> The Fundamental Theorem of Calculus is proved.</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{FTC Part 1: } g'(x) = f(x); \\text{ Part 2: } \\int_a^b f(x)dx = F(b)-F(a)$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q6b",
     "discipline": "CSE",
     "batch": 23,
@@ -1384,18 +1384,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6(b)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\int_{2}^{3} x^2 \\, dx$ as the limit of a sum.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Limit setup</p>\r\n              <div class=\"overflow-x-auto\">$$S_n = \\sum (2+i/n)^2 (1/n) = 4 + 2 + 1/3 = 19/3$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{19}{3}$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q6c",
     "discipline": "CSE",
     "batch": 23,
@@ -1405,18 +1405,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6(c)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Prove that $\\int_{0}^{\\pi} \\frac{x \\, dx}{1 + \\sin x} = \\pi$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Property application</p>\r\n              <div class=\"overflow-x-auto\">$$2I = \\pi \\int_0^{\\pi} \\frac{dx}{1+\\sin x} = 2\\pi \\implies I = \\pi$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\pi$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q7a",
     "discipline": "CSE",
     "batch": 23,
@@ -1426,19 +1426,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7(a)",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define Beta and Gamma functions. Prove $\\beta(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Write Gamma functions using polar-coordinate substitution.</p>\nRecall the definition of the Gamma function:\n<div class=\"overflow-x-auto\">$$\\Gamma(m) = \\int_0^\\infty e^{-t} t^{m-1} \\, dt$$</div>\nLetting $t = x^2 \\implies dt = 2x \\, dx$:\n<div class=\"overflow-x-auto\">$$\\Gamma(m) = 2 \\int_0^\\infty e^{-x^2} x^{2m-1} \\, dx$$</div>\nSimilarly:\n<div class=\"overflow-x-auto\">$$\\Gamma(n) = 2 \\int_0^\\infty e^{-y^2} y^{2n-1} \\, dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Multiply the two Gamma functions together.</p>\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = 4 \\int_0^\\infty \\int_0^\\infty e^{-(x^2+y^2)} x^{2m-1} y^{2n-1} \\, dx \\, dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Convert the double integral into polar coordinates.</p>\nLet $x = r\\cos\\theta$ and $y = r\\sin\\theta$. The Jacobian is $dx \\, dy = r \\, dr \\, d\\theta$.\nThe boundaries for the first quadrant are $r \\in [0, \\infty)$ and $\\theta \\in [0, \\pi/2]$:\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} (r\\cos\\theta)^{2m-1} (r\\sin\\theta)^{2n-1} r \\, dr \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$= 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\cos^{2m-1}\\theta \\sin^{2n-1}\\theta \\, dr \\, d\\theta$$</div>\nSeparate the terms:\n<div class=\"overflow-x-auto\">$$= 2 \\left( \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\, dr \\right) \\cdot 2 \\left( \\int_0^{\\pi/2} \\sin^{2n-1}\\theta \\cos^{2m-1}\\theta \\, d\\theta \\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Relate the components back to Gamma and Beta definitions.</p>\n- The first part is: $\\Gamma(m+n)$\n- The second part is the trigonometric form of the Beta function: $B(n, m) = B(m, n)$\nTherefore:\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = \\Gamma(m+n) B(m, n)$$</div>\n<div class=\"overflow-x-auto\">$$\\boxed{B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\beta(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q7b",
     "discipline": "CSE",
     "batch": 23,
@@ -1448,19 +1448,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7(b)",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\int_{0}^{1} x^4 (1 - \\sqrt{x})^5 \\, dx$ by using gamma-beta function.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Apply substitution to express the integral in terms of a single variable.</p>\nLet $u = \\sqrt{x} \\implies x = u^2$. Differentiating both sides:\n<div class=\"overflow-x-auto\">$$dx = 2u \\, du$$</div>\nWhen $x = 0$, $u = 0$; when $x = 1$, $u = 1$.\n<p class=\"font-semibold text-slate-900\">Step 2: Substitute into the original integral.</p>\n<div class=\"overflow-x-auto\">$$I = \\int_0^1 x^4 (1 - \\sqrt{x})^5 \\, dx = \\int_0^1 (u^2)^4 (1 - u)^5 \\cdot 2u \\, du$$</div>\n<div class=\"overflow-x-auto\">$$I = 2 \\int_0^1 u^9 (1 - u)^5 \\, du$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Match with the standard Beta function definition.</p>\nRecall the Beta function: $B(m, n) = \\int_0^1 u^{m-1} (1-u)^{n-1} \\, du$.\nComparing this with our integral, we identify:\n<div class=\"overflow-x-auto\">$$m - 1 = 9 \\implies m = 10, \\quad n - 1 = 5 \\implies n = 6$$</div>\nThus:\n<div class=\"overflow-x-auto\">$$I = 2 \\, B(10, 6)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Evaluate using Gamma function identities.</p>\nUsing $B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$:\n<div class=\"overflow-x-auto\">$$I = 2 \\cdot \\frac{\\Gamma(10)\\Gamma(6)}{\\Gamma(16)} = 2 \\cdot \\frac{9! \\cdot 5!}{15!}$$</div>\n<div class=\"overflow-x-auto\">$$I = 2 \\cdot \\frac{9! \\cdot 120}{15 \\cdot 14 \\cdot 13 \\cdot 12 \\cdot 11 \\cdot 10 \\cdot 9!}$$</div>\n<div class=\"overflow-x-auto\">$$I = 2 \\cdot \\frac{120}{15 \\cdot 14 \\cdot 13 \\cdot 12 \\cdot 11 \\cdot 10} = \\frac{1}{15015}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{1}{15015}$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q7c",
     "discipline": "CSE",
     "batch": 23,
@@ -1470,18 +1470,18 @@ const questions = [
     "section": "B",
     "questionNumber": "7(c)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Determine whether $\\int_{1}^{\\infty} \\frac{dx}{x^2 + 1}$ converges or diverges.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Integration</p>\r\n              <div class=\"overflow-x-auto\">$$\\int_1^{\\infty} \\frac{dx}{x^2+1} = [\\tan^{-1} x]_1^{\\infty} = \\pi/2 - \\pi/4 = \\pi/4$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{The improper integral converges to } \\pi/4$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q8a",
     "discipline": "CSE",
     "batch": 23,
@@ -1491,18 +1491,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8(a)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Sketch the region enclosed by $y = x^2$ and $y = \\sqrt{x}$, $x = 1/4$, $x = 1$ and find its area.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Area calculation</p>\r\n              <div class=\"overflow-x-auto\">$$A = \\int_{1/4}^1 (\\sqrt{x} - x^2) dx = [2/3 x^{3/2} - x^3/3]_{1/4}^1 = 49/192$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$49/192$$</div>"
   },
-  {
+    {
     "id": "cse23-final-secb-q8b",
     "discipline": "CSE",
     "batch": 23,
@@ -1512,18 +1512,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8(b)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Find the volume formed by revolving about the x-axis of a loop of $(x - 4a)y^2 = ax(x - 3a)$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Volume setup</p>\r\n              <div class=\"overflow-x-auto\">$$V = \\pi a \\int_0^{3a} (x+a + \\frac{4a^2}{x-4a}) dx = \\pi a^3 (15/2 - 8\\log 2)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\pi a^3 \\left( \\frac{15}{2} - 8\\log 2 \\right)$$</div>"
   },
-  {
+    {
     "id": "cse23-ct2-secb-q1",
     "discipline": "CSE",
     "batch": 23,
@@ -1533,19 +1533,19 @@ const questions = [
     "section": "B",
     "questionNumber": "1",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State and derive the relation between the beta and gamma functions.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Write Gamma functions using polar-coordinate substitution.</p>\nRecall the definition of the Gamma function:\n<div class=\"overflow-x-auto\">$$\\Gamma(m) = \\int_0^\\infty e^{-t} t^{m-1} \\, dt$$</div>\nLetting $t = x^2 \\implies dt = 2x \\, dx$:\n<div class=\"overflow-x-auto\">$$\\Gamma(m) = 2 \\int_0^\\infty e^{-x^2} x^{2m-1} \\, dx$$</div>\nSimilarly:\n<div class=\"overflow-x-auto\">$$\\Gamma(n) = 2 \\int_0^\\infty e^{-y^2} y^{2n-1} \\, dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Multiply the two Gamma functions together.</p>\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = 4 \\int_0^\\infty \\int_0^\\infty e^{-(x^2+y^2)} x^{2m-1} y^{2n-1} \\, dx \\, dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Convert the double integral into polar coordinates.</p>\nLet $x = r\\cos\\theta$ and $y = r\\sin\\theta$. The Jacobian is $dx \\, dy = r \\, dr \\, d\\theta$.\nThe boundaries for the first quadrant are $r \\in [0, \\infty)$ and $\\theta \\in [0, \\pi/2]$:\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} (r\\cos\\theta)^{2m-1} (r\\sin\\theta)^{2n-1} r \\, dr \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$= 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\cos^{2m-1}\\theta \\sin^{2n-1}\\theta \\, dr \\, d\\theta$$</div>\nSeparate the terms:\n<div class=\"overflow-x-auto\">$$= 2 \\left( \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\, dr \\right) \\cdot 2 \\left( \\int_0^{\\pi/2} \\sin^{2n-1}\\theta \\cos^{2m-1}\\theta \\, d\\theta \\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Relate the components back to Gamma and Beta definitions.</p>\n- The first part is: $\\Gamma(m+n)$\n- The second part is the trigonometric form of the Beta function: $B(n, m) = B(m, n)$\nTherefore:\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = \\Gamma(m+n) B(m, n)$$</div>\n<div class=\"overflow-x-auto\">$$\\boxed{B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$ B(m, n) = \\frac{\\Gamma(m) \\Gamma(n)}{\\Gamma(m+n)} $$</div>"
   },
-  {
+    {
     "id": "cse22-final-q5i",
     "discipline": "CSE",
     "batch": 22,
@@ -1555,18 +1555,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5(i)",
     "topics": [
-      "Indefinite Integration"
+        "Indefinite Integration"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Integrate the following: <div class=\"overflow-x-auto\">$$\\int \\frac{dx}{1+\\cos x}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Simplify the integrand using trigonometric half-angle identities.</p> Recall that $1 + \\cos x = 2 \\cos^2\\left(\\frac{x}{2}\\right)$. Substituting this into the integral: <div class=\"overflow-x-auto\">$$\\int \\frac{dx}{1+\\cos x} = \\int \\frac{dx}{2 \\cos^2\\left(\\frac{x}{2}\\right)}$$</div> <p class=\"font-semibold text-slate-900\">Step 2: Rewrite in terms of secant and integrate.</p> <div class=\"overflow-x-auto\">$$\\frac{1}{2} \\int \\sec^2\\left(\\frac{x}{2}\\right) \\, dx$$</div> Using the standard integration formula $\\int \\sec^2(u) \\, du = \\tan(u) + C$: <div class=\"overflow-x-auto\">$$\\frac{1}{2} \\cdot \\left( \\frac{\\tan\\left(\\frac{x}{2}\\right)}{\\frac{1}{2}} \\right) + C = \\tan\\left(\\frac{x}{2}\\right) + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\tan\\left(\\frac{x}{2}\right) + C$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q5ii",
     "discipline": "CSE",
     "batch": 22,
@@ -1576,19 +1576,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5(ii)",
     "topics": [
-      "Indefinite Integration",
-      "Substitution"
+        "Indefinite Integration",
+        "Substitution"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Integrate the following: <div class=\"overflow-x-auto\">$$\\int \\frac{e^{2x}}{e^x+1} \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Apply substitution.</p> Let $u = e^x$. Then $du = e^x \\, dx$. We can rewrite the numerator as $e^{2x} = e^x \\cdot e^x$. The integral becomes: <div class=\"overflow-x-auto\">$$\\int \\frac{e^x}{e^x+1} (e^x \\, dx) = \\int \\frac{u}{u+1} \\, du$$</div> <p class=\"font-semibold text-slate-900\">Step 2: Perform algebraic manipulation on the integrand.</p> <div class=\"overflow-x-auto\">$$\\int \\frac{u+1-1}{u+1} \\, du = \\int \\left( 1 - \\frac{1}{u+1} \\right) du$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Integrate and substitute back $u = e^x$.</p> <div class=\"overflow-x-auto\">$$u - \\ln|u+1| + C = e^x - \\ln(e^x+1) + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$e^x - \\ln(e^x+1) + C$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q5iii",
     "discipline": "CSE",
     "batch": 22,
@@ -1598,19 +1598,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5(iii)",
     "topics": [
-      "Indefinite Integration",
-      "Integration by Parts"
+        "Indefinite Integration",
+        "Integration by Parts"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Integrate the following: <div class=\"overflow-x-auto\">$$\\int e^{2x} \\sin 4x \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Use the standard formula for integrals of the type $\\int e^{ax} \\sin bx \\, dx$.</p> Recall the formula: <div class=\"overflow-x-auto\">$$\\int e^{ax} \\sin bx \\, dx = \\frac{e^{ax}}{a^2+b^2} (a \\sin bx - b \\cos bx) + C$$</div> <p class=\"font-semibold text-slate-900\">Step 2: Substitute the parameters $a=2$ and $b=4$ into the formula.</p> <div class=\"overflow-x-auto\">$$\\int e^{2x} \\sin 4x \\, dx = \\frac{e^{2x}}{2^2+4^2} (2 \\sin 4x - 4 \\cos 4x) + C$$</div> <div class=\"overflow-x-auto\">$$= \\frac{e^{2x}}{20} (2 \\sin 4x - 4 \\cos 4x) + C$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Simplify the expression.</p> <div class=\"overflow-x-auto\">$$= \\frac{e^{2x}}{10} (\\sin 4x - 2 \\cos 4x) + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{e^{2x}}{10} (\\sin 4x - 2 \\cos 4x) + C$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q5iv",
     "discipline": "CSE",
     "batch": 22,
@@ -1620,19 +1620,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5(iv)",
     "topics": [
-      "Indefinite Integration",
-      "Partial Fractions"
+        "Indefinite Integration",
+        "Partial Fractions"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Integrate the following: <div class=\"overflow-x-auto\">$$\\int \\frac{x \\, dx}{x^2-12x+35}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Factor the denominator.</p> The quadratic expression $x^2-12x+35$ can be factored as: <div class=\"overflow-x-auto\">$$x^2-12x+35 = (x-5)(x-7)$$</div> <p class=\"font-semibold text-slate-900\">Step 2: Apply partial fraction decomposition.</p> <div class=\"overflow-x-auto\">$$\\frac{x}{(x-5)(x-7)} = \\frac{A}{x-5} + \\frac{B}{x-7}$$</div> Multiply both sides by $(x-5)(x-7)$: <div class=\"overflow-x-auto\">$$x = A(x-7) + B(x-5)$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Solve for constants $A$ and $B$.</p> For $x = 5$: <div class=\"overflow-x-auto\">$$5 = A(5-7) \\implies 5 = -2A \\implies A = -\\frac{5}{2}$$</div> For $x = 7$: <div class=\"overflow-x-auto\">$$7 = B(7-5) \\implies 7 = 2B \\implies B = \\frac{7}{2}$$</div> <p class=\"font-semibold text-slate-900\">Step 4: Integrate the decomposed terms.</p> <div class=\"overflow-x-auto\">$$\\int \\frac{x \\, dx}{x^2-12x+35} = -\\frac{5}{2} \\int \\frac{dx}{x-5} + \\frac{7}{2} \\int \\frac{dx}{x-7}$$</div> <div class=\"overflow-x-auto\">$$= -\\frac{5}{2} \\ln|x-5| + \\frac{7}{2} \\ln|x-7| + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{7}{2} \\ln|x-7| - \\frac{5}{2} \\ln|x-5| + C$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q6a",
     "discipline": "CSE",
     "batch": 22,
@@ -1642,18 +1642,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6(a)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define definite integral. Find <div class=\"overflow-x-auto\">$$\\int_1^2 x \\, dx$$</div> as the limit of sum.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: State the definition of a definite integral.</p> Let $f(x)$ be a continuous function defined on a closed interval $[a, b]$. The definite integral of $f(x)$ from $a$ to $b$ is defined as the limit of Riemann sums as the width of the subintervals approaches zero: <div class=\"overflow-x-auto\">$$\\int_a^b f(x) \\, dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i) \\Delta x$$</div> where $\\Delta x = \\frac{b-a}{n}$ and $x_i = a + i\\Delta x$. <p class=\"font-semibold text-slate-900\">Step 2: Set up the limit of sum for $\\int_1^2 x \\, dx$.</p> Here, $f(x) = x$, $a = 1$, and $b = 2$. <div class=\"overflow-x-auto\">$$\\Delta x = \\frac{2-1}{n} = \\frac{1}{n}$$</div> <div class=\"overflow-x-auto\">$$x_i = 1 + i\\Delta x = 1 + \\frac{i}{n}$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Substitute the variables into the summation formula.</p> <div class=\"overflow-x-auto\">$$\\int_1^2 x \\, dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\left(1 + \\frac{i}{n}\\right) \\frac{1}{n}$$</div> <div class=\"overflow-x-auto\">$$= \\lim_{n \\to \\infty} \\frac{1}{n} \\left[ \\sum_{i=1}^{n} 1 + \\frac{1}{n} \\sum_{i=1}^{n} i \\right]$$</div> <p class=\"font-semibold text-slate-900\">Step 4: Evaluate the summations.</p> Recall that $\\sum_{i=1}^{n} 1 = n$ and $\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}$. <div class=\"overflow-x-auto\">$$\\int_1^2 x \\, dx = \\lim_{n \\to \\infty} \\frac{1}{n} \\left[ n + \\frac{n(n+1)}{2n} \\right]$$</div> <div class=\"overflow-x-auto\">$$= \\lim_{n \\to \\infty} \\left[ 1 + \\frac{n+1}{2n} \\right]$$</div> <div class=\"overflow-x-auto\">$$= \\lim_{n \\to \\infty} \\left[ 1 + \\frac{1}{2} + \\frac{1}{2n} \\right] = 1 + \\frac{1}{2} = \\frac{3}{2}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{3}{2}$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q6b",
     "discipline": "CSE",
     "batch": 22,
@@ -1663,18 +1663,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6(b)",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Evaluate <div class=\"overflow-x-auto\">$$\\lim_{n \\to \\infty} \\left[\\frac{1}{n+m} + \\frac{1}{n+2m} + \\frac{1}{n+3m} + \\dots + \\frac{1}{n+nm}\\right]$$</div>.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Express the sequence as a summation.</p> The given expression can be written as: <div class=\"overflow-x-auto\">$$S_n = \\sum_{r=1}^{n} \\frac{1}{n+rm}$$</div> <p class=\"font-semibold text-slate-900\">Step 2: Convert the summation into a Riemann sum form.</p> Factor out $n$ from the denominator: <div class=\"overflow-x-auto\">$$S_n = \\sum_{r=1}^{n} \\frac{1}{n\\left(1 + m\\frac{r}{n}\\right)} = \\frac{1}{n} \\sum_{r=1}^{n} \\frac{1}{1 + m\\left(\\frac{r}{n}\\right)}$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Convert the limit of the Riemann sum into a definite integral.</p> As $n \\to \\infty$, let $\\frac{r}{n} \\to x$ and $\\frac{1}{n} \\to dx$. The limits of integration run from $x = 0$ (for $r=1$) to $x = 1$ (for $r=n$). <div class=\"overflow-x-auto\">$$\\lim_{n \\to \\infty} S_n = \\int_0^1 \\frac{1}{1+mx} \\, dx$$</div> <p class=\"font-semibold text-slate-900\">Step 4: Integrate and evaluate the expression.</p> Using the substitution method or standard integration rule: <div class=\"overflow-x-auto\">$$\\int_0^1 \\frac{1}{1+mx} \\, dx = \\left[ \\frac{\\ln(1+mx)}{m} \\right]_0^1$$</div> <div class=\"overflow-x-auto\">$$= \\frac{\\ln(1+m)}{m} - \\frac{\\ln(1)}{m} = \\frac{\\ln(1+m)}{m}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{\\ln(1+m)}{m}$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q7a",
     "discipline": "CSE",
     "batch": 22,
@@ -1684,19 +1684,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7(a)",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "What are beta function and gamma function? Write the relation between them.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Define the Beta Function.</p> The Beta Function, denoted by $B(m, n)$, is a first-kind Eulerian integral defined for $m > 0, n > 0$ as: <div class=\"overflow-x-auto\">$$B(m, n) = \\int_0^1 x^{m-1} (1-x)^{n-1} \\, dx$$</div> <p class=\"font-semibold text-slate-900\">Step 2: Define the Gamma Function.</p> The Gamma Function, denoted by $\\Gamma(n)$, is a second-kind Eulerian integral extension of the factorial function to real and complex numbers, defined for $n > 0$ as: <div class=\"overflow-x-auto\">$$\\Gamma(n) = \\int_0^\\infty e^{-x} x^{n-1} \\, dx$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Write the relationship between them.</p> The relationship connecting the Beta and Gamma functions is given by: <div class=\"overflow-x-auto\">$$B(m, n) = \\frac{\\Gamma(m) \\Gamma(n)}{\\Gamma(m+n)}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$B(m, n) = \\frac{\\Gamma(m) \\Gamma(n)}{\\Gamma(m+n)}$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q7b",
     "discipline": "CSE",
     "batch": 22,
@@ -1706,19 +1706,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7(b)",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Evaluate <div class=\"overflow-x-auto\">$$\\int_0^1 \\frac{dx}{(1-x^6)^{1/6}}$$</div> by Beta-Gamma function.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up substitution to match the Beta function form.</p> Let $x^6 = y \\implies x = y^{1/6}$. Differentiating both sides: <div class=\"overflow-x-auto\">$$dx = \\frac{1}{6} y^{-5/6} \\, dy$$</div> When $x=0, y=0$, and when $x=1, y=1$. <p class=\"font-semibold text-slate-900\">Step 2: Express the integral in terms of $y$.</p> <div class=\"overflow-x-auto\">$$\\int_0^1 \\frac{dx}{(1-x^6)^{1/6}} = \\int_0^1 \\frac{\\frac{1}{6} y^{-5/6}}{(1-y)^{1/6}} \\, dy$$</div> <div class=\"overflow-x-auto\">$$= \\frac{1}{6} \\int_0^1 y^{-5/6} (1-y)^{-1/6} \\, dy$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Match with the standard Beta function definition.</p> Recall the definition: $B(p, q) = \\int_0^1 y^{p-1} (1-y)^{q-1} \\, dy$. Comparing the powers: <div class=\"overflow-x-auto\">$$p - 1 = -\\frac{5}{6} \\implies p = \\frac{1}{6}$$</div> <div class=\"overflow-x-auto\">$$q - 1 = -\\frac{1}{6} \\implies q = \\frac{5}{6}$$</div> Thus, the integral is: <div class=\"overflow-x-auto\">$$\\frac{1}{6} B\\left(\\frac{1}{6}, \\frac{5}{6}\\right) = \\frac{1}{6} \\frac{\\Gamma(1/6)\\Gamma(5/6)}{\\Gamma(1/6+5/6)} = \\frac{1}{6} \\frac{\\Gamma(1/6)\\Gamma(5/6)}{\\Gamma(1)}$$</div> <p class=\"font-semibold text-slate-900\">Step 4: Use Euler's reflection formula to evaluate the Gamma product.</p> Recall Euler's reflection formula: $\\Gamma(z)\\Gamma(1-z) = \\frac{\\pi}{\\sin(\\pi z)}$. Here, $z = 1/6$: <div class=\"overflow-x-auto\">$$\\Gamma(1/6)\\Gamma(5/6) = \\frac{\\pi}{\\sin(\\pi/6)} = \\frac{\\pi}{1/2} = 2\\pi$$</div> Since $\\Gamma(1) = 1$, the integral evaluates to: <div class=\"overflow-x-auto\">$$\\frac{1}{6} \\cdot 2\\pi = \\frac{\\pi}{3}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{\\pi}{3}$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q7c",
     "discipline": "CSE",
     "batch": 22,
@@ -1728,7 +1728,7 @@ const questions = [
     "section": "B",
     "questionNumber": "7(c)",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -1739,7 +1739,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the definite integral for the area.</p> The area $A$ between two curves $y_{top} = f(x)$ and $y_{bottom} = g(x)$ on the interval $[a, b]$ is given by: <div class=\"overflow-x-auto\">$$A = \\int_a^b [f(x) - g(x)] \\, dx$$</div> Substituting the given equations and boundaries: <div class=\"overflow-x-auto\">$$A = \\int_0^2 [(x + b) - x^2] \\, dx$$</div> <p class=\"font-semibold text-slate-900\">Step 2: Integrate the term with respect to $x$.</p> <div class=\"overflow-x-auto\">$$A = \\left[ \\frac{x^2}{2} + bx - \\frac{x^3}{3} \\right]_0^2$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Evaluate the expression at the boundaries.</p> <div class=\"overflow-x-auto\">$$A = \\left( \\frac{2^2}{2} + b(2) - \\frac{2^3}{3} \\right) - (0)$$</div> <div class=\"overflow-x-auto\">$$A = 2 + 2b - \\frac{8}{3}$$</div> <div class=\"overflow-x-auto\">$$A = 2b - \\frac{2}{3}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$2b - \\frac{2}{3}$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q8a",
     "discipline": "CSE",
     "batch": 22,
@@ -1749,18 +1749,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8(a)",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["last-minute"],
     "questionHtml": "Derive the formula for the volume of a sphere of radius $r$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the geometric model.</p> Consider a circle with its center at the origin and radius $r$, given by the equation: <div class=\"overflow-x-auto\">$$x^2 + y^2 = r^2 \\implies y^2 = r^2 - x^2$$</div> If we rotate the upper semi-circle $y = \\sqrt{r^2 - x^2}$ about the $x$-axis, it generates a solid sphere of radius $r$. <p class=\"font-semibold text-slate-900\">Step 2: Formulate the volume using the disc method.</p> The volume of a representative disc of thickness $dx$ and radius $y$ is $dV = \\pi y^2 \\, dx$. Integrating this from $x = -r$ to $x = r$: <div class=\"overflow-x-auto\">$$V = \\int_{-r}^{r} \\pi y^2 \\, dx = \\pi \\int_{-r}^{r} (r^2 - x^2) \\, dx$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Use symmetry and integrate.</p> Since the integrand is an even function, we can multiply by 2 and integrate from $0$ to $r$: <div class=\"overflow-x-auto\">$$V = 2\\pi \\int_0^r (r^2 - x^2) \\, dx$$</div> <div class=\"overflow-x-auto\">$$V = 2\\pi \\left[ r^2 x - \\frac{x^3}{3} \\right]_0^r$$</div> <p class=\"font-semibold text-slate-900\">Step 4: Evaluate the integrated expression.</p> <div class=\"overflow-x-auto\">$$V = 2\\pi \\left( r^3 - \\frac{r^3}{3} \\right)$$</div> <div class=\"overflow-x-auto\">$$V = 2\\pi \\left( \\frac{2r^3}{3} \\right) = \\frac{4}{3}\\pi r^3$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{4}{3}\\pi r^3$$</div>"
   },
-  {
+    {
     "id": "cse22-final-q8b",
     "discipline": "CSE",
     "batch": 22,
@@ -1770,20 +1770,20 @@ const questions = [
     "section": "B",
     "questionNumber": "8(b)",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 2,
     "appearances": [
-      "cse19-final-q6b"
+        "cse19-final-q6b"
     ],
-    "tags": [],
+    "tags": ["repeated"],
     "questionHtml": "Find the area of the surface that is generated by revolving the portion of the curve $y = x^3$ between $x = 0$ and $x = 1$ about the $x$-axis.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: State the formula for the surface area of revolution.</p> The surface area $S$ of a solid generated by rotating a curve $y = f(x)$ on the interval $[a, b]$ about the $x$-axis is given by: <div class=\"overflow-x-auto\">$$S = 2\\pi \\int_a^b y \\sqrt{1 + \\left(\\frac{dy}{dx}\\right)^2} \\, dx$$</div> <p class=\"font-semibold text-slate-900\">Step 2: Compute the derivative of the given function.</p> Here, $y = x^3 \\implies \\frac{dy}{dx} = 3x^2$. Now, compute $1 + \\left(\\frac{dy}{dx}\\right)^2$: <div class=\"overflow-x-auto\">$$1 + (3x^2)^2 = 1 + 9x^4$$</div> <p class=\"font-semibold text-slate-900\">Step 3: Set up the integration.</p> Substitute these values into the surface area formula: <div class=\"overflow-x-auto\">$$S = 2\\pi \\int_0^1 x^3 \\sqrt{1 + 9x^4} \\, dx$$</div> <p class=\"font-semibold text-slate-900\">Step 4: Solve the integral using $u$-substitution.</p> Let $u = 1 + 9x^4$. Then $du = 36x^3 \\, dx \\implies x^3 \\, dx = \\frac{du}{36}$. Change the limits of integration: When $x = 0 \\implies u = 1$. When $x = 1 \\implies u = 10$. Substituting these into the integral: <div class=\"overflow-x-auto\">$$S = 2\\pi \\int_1^{10} \\sqrt{u} \\frac{du}{36} = \\frac{\\pi}{18} \\int_1^{10} u^{1/2} \\, du$$</div> <div class=\"overflow-x-auto\">$$= \\frac{\\pi}{18} \\left[ \\frac{2}{3} u^{3/2} \\right]_1^{10}$$</div> <div class=\"overflow-x-auto\">$$= \\frac{\\pi}{27} (10\\sqrt{10} - 1) = \\frac{\\pi}{27} (10\\sqrt{10} - 1)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\frac{\\pi}{27} (10\\sqrt{10} - 1)$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q1a",
     "discipline": "CSE",
     "batch": 20,
@@ -1793,18 +1793,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define uniform continuity. Find the limit of\n<div class=\"overflow-x-auto\">$$\\lim_{x \\to -\\infty} \\frac{4x^2 - x}{2x^3 - 5}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Define uniform continuity.</p>\nA real-valued function $f(x)$ is said to be uniformly continuous on an interval $I$ if for every $\\epsilon > 0$, there exists a $\\delta > 0$ (depending only on $\\epsilon$ and not on any particular point in $I$) such that for all $x_1, x_2 \\in I$:\n<div class=\"overflow-x-auto\">$$|x_1 - x_2| < \\delta \\implies |f(x_1) - f(x_2)| < \\epsilon$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Find the given limit.</p>\nLet \\( L = \\lim_{x \\to -\\infty} \\frac{4x^2 - x}{2x^3 - 5} \\).\nDivide both the numerator and denominator by the highest power of $x$ in the denominator, which is $x^3$:\n<div class=\"overflow-x-auto\">$$L = \\lim_{x \\to -\\infty} \\frac{\\frac{4x^2}{x^3} - \\frac{x}{x^3}}{\\frac{2x^3}{x^3} - \\frac{5}{x^3}}$$</div>\n<div class=\"overflow-x-auto\">$$L = \\lim_{x \\to -\\infty} \\frac{\\frac{4}{x} - \\frac{1}{x^2}}{2 - \\frac{5}{x^3}}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the limits of individual terms as $x \\to -\\infty$.</p>\nAs $x \\to -\\infty$, the terms $\\frac{4}{x} \\to 0$, $\\frac{1}{x^2} \\to 0$, and $\\frac{5}{x^3} \\to 0$.\nSubstituting these values:\n<div class=\"overflow-x-auto\">$$L = \\frac{0 - 0}{2 - 0} = 0$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{0}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q1b",
     "discipline": "CSE",
     "batch": 20,
@@ -1814,18 +1814,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "For what values of $x$ is there a discontinuity in the graph of $y = \\frac{x^2 - 9}{x^2 - 5x + 6}$?",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the condition for discontinuity.</p>\nA rational function is discontinuous at values of $x$ where its denominator evaluates to zero.\nTherefore, we set the denominator equal to zero:\n<div class=\"overflow-x-auto\">$$x^2 - 5x + 6 = 0$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Solve the quadratic equation.</p>\nFactor the quadratic expression:\n<div class=\"overflow-x-auto\">$$(x - 2)(x - 3) = 0$$</div>\nThis gives:\n<div class=\"overflow-x-auto\">$$x = 2 \\quad \\text{or} \\quad x = 3$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Discuss the types of discontinuity (optional but comprehensive).</p>\n- At $x = 3$, the numerator $x^2 - 9 = (3)^2 - 9 = 0$. Since both numerator and denominator are zero, $x = 3$ represents a removable discontinuity.\n- At $x = 2$, the numerator is $(2)^2 - 9 = -5 \\ne 0$. Thus, $x = 2$ represents an infinite discontinuity.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{x = 2, 3}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q2ai",
     "discipline": "CSE",
     "batch": 20,
@@ -1835,18 +1835,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2ai",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Find the derivative of the following:\n<div class=\"overflow-x-auto\">$$y = (1 + x^5 \\cot x)^{-8}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Use the chain rule for differentiation.</p>\nLet $u = 1 + x^5 \\cot x$, so $y = u^{-8}$.\nThe derivative is:\n<div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = -8u^{-9} \\cdot \\frac{du}{dx}$$</div>\n<div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = -8(1 + x^5 \\cot x)^{-9} \\cdot \\frac{d}{dx}(1 + x^5 \\cot x)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Differentiate the inner expression using the product rule.</p>\nUsing the product rule on $x^5 \\cot x$:\n<div class=\"overflow-x-auto\">$$\\frac{d}{dx}(1 + x^5 \\cot x) = \\frac{d}{dx}(x^5) \\cot x + x^5 \\frac{d}{dx}(\\cot x)$$</div>\nSince $\\frac{d}{dx}(x^5) = 5x^4$ and $\\frac{d}{dx}(\\cot x) = -\\csc^2 x$:\n<div class=\"overflow-x-auto\">$$\\frac{d}{dx}(1 + x^5 \\cot x) = 5x^4 \\cot x - x^5 \\csc^2 x$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Combine the results.</p>\n<div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = -8(1 + x^5 \\cot x)^{-9} (5x^4 \\cot x - x^5 \\csc^2 x)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{-8(1 + x^5 \\cot x)^{-9} (5x^4 \\cot x - x^5 \\csc^2 x)}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q2aii",
     "discipline": "CSE",
     "batch": 20,
@@ -1856,19 +1856,19 @@ const questions = [
     "section": "A",
     "questionNumber": "2aii",
     "topics": [
-      "Differentiation",
-      "Implicit Differentiation"
+        "Differentiation",
+        "Implicit Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Find the derivative of the following:\n<div class=\"overflow-x-auto\">$$\\frac{xy^3}{1+\\sec y} = 1 + y^4$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Rewrite the equation to avoid quotient rule.</p>\nMultiply both sides of the equation by $(1 + \\sec y)$:\n<div class=\"overflow-x-auto\">$$xy^3 = (1 + y^4)(1 + \\sec y)$$</div>\nExpanding the right-hand side:\n<div class=\"overflow-x-auto\">$$xy^3 = 1 + \\sec y + y^4 + y^4 \\sec y$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Differentiate both sides implicitly with respect to $x$.</p>\nApplying the product rule on the left-hand side ($xy^3$):\n<div class=\"overflow-x-auto\">$$\\frac{d}{dx}(xy^3) = y^3 + 3xy^2 \\frac{dy}{dx}$$</div>\nApplying differentiation rules on the right-hand side, keeping in mind that $y$ is a function of $x$:\n<div class=\"overflow-x-auto\">$$\\frac{d}{dx}(1 + \\sec y + y^4 + y^4 \\sec y) = \\sec y \\tan y \\frac{dy}{dx} + 4y^3 \\frac{dy}{dx} + \\left(4y^3 \\sec y \\frac{dy}{dx} + y^4 \\sec y \\tan y \\frac{dy}{dx}\\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Group the terms involving $\\frac{dy}{dx}$.</p>\n<div class=\"overflow-x-auto\">$$y^3 + 3xy^2 \\frac{dy}{dx} = \\left[ \\sec y \\tan y + 4y^3 + 4y^3 \\sec y + y^4 \\sec y \\tan y \\right] \\frac{dy}{dx}$$</div>\nRearrange terms to isolate $\\frac{dy}{dx}$:\n<div class=\"overflow-x-auto\">$$y^3 = \\left[ \\sec y \\tan y (1 + y^4) + 4y^3 (1 + \\sec y) - 3xy^2 \\right] \\frac{dy}{dx}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Solve for $\\frac{dy}{dx}$.</p>\n<div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{y^3}{\\sec y \\tan y (1 + y^4) + 4y^3 (1 + \\sec y) - 3xy^2}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{dy}{dx} = \\frac{y^3}{\\sec y \\tan y (1 + y^4) + 4y^3 (1 + \\sec y) - 3xy^2}}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q2aiii",
     "discipline": "CSE",
     "batch": 20,
@@ -1878,19 +1878,19 @@ const questions = [
     "section": "A",
     "questionNumber": "2aiii",
     "topics": [
-      "Differentiation",
-      "Logarithmic Differentiation"
+        "Differentiation",
+        "Logarithmic Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Find the derivative of the following:\n<div class=\"overflow-x-auto\">$$y = \\log\\left(\\frac{x^2 \\sin x}{\\sqrt{1+x}}\\right)$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Simplify the logarithmic expression using log properties.</p>\nRecall that $\\log\\left(\\frac{ab}{c}\\right) = \\log a + \\log b - \\log c$ and $\\log(a^k) = k \\log a$:\n<div class=\"overflow-x-auto\">$$y = \\log(x^2 \\sin x) - \\log(\\sqrt{1+x})$$</div>\n<div class=\"overflow-x-auto\">$$y = 2\\log x + \\log(\\sin x) - \\frac{1}{2} \\log(1+x)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Differentiate term by term with respect to $x$.</p>\n- For $2\\log x$:\n  <div class=\"overflow-x-auto\">$$\\frac{d}{dx}(2\\log x) = \\frac{2}{x}$$</div>\n- For $\\log(\\sin x)$ (using the chain rule):\n  <div class=\"overflow-x-auto\">$$\\frac{d}{dx}(\\log(\\sin x)) = \\frac{1}{\\sin x} \\cdot \\cos x = \\cot x$$</div>\n- For $-\\frac{1}{2}\\log(1+x)$:\n  <div class=\"overflow-x-auto\">$$\\frac{d}{dx}\\left(-\\frac{1}{2}\\log(1+x)\\right) = -\\frac{1}{2(1+x)}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Combine all terms to get the final derivative.</p>\n<div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{2}{x} + \\cot x - \\frac{1}{2(1+x)}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{2}{x} + \\cot x - \\frac{1}{2(1+x)}}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q3a",
     "discipline": "CSE",
     "batch": 20,
@@ -1900,18 +1900,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find the equation for the tangent line to the Folium of Descartes $x^3 + y^3 = 3xy$ at the point $\\left(\\frac{3}{2}, \\frac{3}{2}\\right)$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Differentiate the given equation implicitly with respect to $x$.</p>\n<div class=\"overflow-x-auto\">$$\\frac{d}{dx}(x^3 + y^3) = \\frac{d}{dx}(3xy)$$</div>\n<div class=\"overflow-x-auto\">$$3x^2 + 3y^2 \\frac{dy}{dx} = 3y + 3x \\frac{dy}{dx}$$</div>\nDivide the entire equation by 3:\n<div class=\"overflow-x-auto\">$$x^2 + y^2 \\frac{dy}{dx} = y + x \\frac{dy}{dx}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Isolate the derivative $\\frac{dy}{dx}$.</p>\n<div class=\"overflow-x-auto\">$$\\left(y^2 - x\\right) \\frac{dy}{dx} = y - x^2$$</div>\n<div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{y - x^2}{y^2 - x}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the slope of the tangent line ($m$) at the point $\\left(\\frac{3}{2}, \\frac{3}{2}\\right)$.</p>\n<div class=\"overflow-x-auto\">$$m = \\left. \\frac{dy}{dx} \\right|_{\\left(\\frac{3}{2}, \\frac{3}{2}\\right)} = \\frac{\\frac{3}{2} - \\left(\\frac{3}{2}\\right)^2}{\\left(\\frac{3}{2}\\right)^2 - \\frac{3}{2}}$$</div>\n<div class=\"overflow-x-auto\">$$m = \\frac{\\frac{3}{2} - \\frac{9}{4}}{\\frac{9}{4} - \\frac{3}{2}} = \\frac{-\\frac{3}{4}}{\\frac{3}{4}} = -1$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Write the equation of the tangent line.</p>\nUsing the point-slope form $y - y_1 = m(x - x_1)$ with point $\\left(\\frac{3}{2}, \\frac{3}{2}\\right)$ and slope $m = -1$:\n<div class=\"overflow-x-auto\">$$y - \\frac{3}{2} = -1 \\left(x - \\frac{3}{2}\\right)$$</div>\n<div class=\"overflow-x-auto\">$$y - \\frac{3}{2} = -x + \\frac{3}{2}$$</div>\n<div class=\"overflow-x-auto\">$$x + y = 3$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{x + y = 3}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q3b",
     "discipline": "CSE",
     "batch": 20,
@@ -1921,21 +1921,21 @@ const questions = [
     "section": "A",
     "questionNumber": "3b",
     "topics": [
-      "Differentiation",
-      "Successive Differentiation"
+        "Differentiation",
+        "Successive Differentiation"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 2,
     "appearances": [
-      "cse19-final-q2b"
+        "cse19-final-q2b"
     ],
-    "tags": [],
+    "tags": ["essential","last-minute","repeated"],
     "questionHtml": "Find $y''\\left(\\frac{\\pi}{4}\\right)$ if $y(x) = \\sec x$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Compute the first derivative.</p>\n<div class=\"overflow-x-auto\">$$y'(x) = \\sec x \\tan x$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Compute the second derivative using the product rule.</p>\n<div class=\"overflow-x-auto\">$$y''(x) = \\frac{d}{dx}(\\sec x) \\tan x + \\sec x \\frac{d}{dx}(\\tan x)$$</div>\nSince $\\frac{d}{dx}(\\sec x) = \\sec x \\tan x$ and $\\frac{d}{dx}(\\tan x) = \\sec^2 x$:\n<div class=\"overflow-x-auto\">$$y''(x) = (\\sec x \\tan x) \\tan x + \\sec x (\\sec^2 x)$$</div>\n<div class=\"overflow-x-auto\">$$y''(x) = \\sec x \\tan^2 x + \\sec^3 x$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate $y''(x)$ at $x = \\frac{\\pi}{4}$.</p>\nRecall that $\\sec\\left(\\frac{\\pi}{4}\\right) = \\sqrt{2}$ and $\\tan\\left(\\frac{\\pi}{4}\\right) = 1$.\n<div class=\"overflow-x-auto\">$$y''\\left(\\frac{\\pi}{4}\\right) = \\sqrt{2} (1)^2 + (\\sqrt{2})^3$$</div>\n<div class=\"overflow-x-auto\">$$y''\\left(\\frac{\\pi}{4}\\right) = \\sqrt{2} + 2\\sqrt{2} = 3\\sqrt{2}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{3\\sqrt{2}}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q4a",
     "discipline": "CSE",
     "batch": 20,
@@ -1945,7 +1945,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -1956,7 +1956,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Find the critical points of $f(x)$.</p>\nDifferentiate $f(x)$ with respect to $x$:\n<div class=\"overflow-x-auto\">$$f'(x) = 6x^2 - 30x + 36$$</div>\nSet the derivative to zero to find the critical points:\n<div class=\"overflow-x-auto\">$$6(x^2 - 5x + 6) = 0 \\implies 6(x-2)(x-3) = 0$$</div>\nThis yields:\n<div class=\"overflow-x-auto\">$$x = 2 \\quad \\text{and} \\quad x = 3$$</div>\nSince both $x = 2$ and $x = 3$ lie within the interval $[1, 5]$, they are valid critical points.\n<p class=\"font-semibold text-slate-900\">Step 2: Evaluate the function at the critical points and the boundary endpoints of the interval.</p>\nEvaluate $f(x)$ at $x = 1, 2, 3, 5$:\n- At $x = 1$:\n  <div class=\"overflow-x-auto\">$$f(1) = 2(1)^3 - 15(1)^2 + 36(1) = 2 - 15 + 36 = 23$$</div>\n- At $x = 2$:\n  <div class=\"overflow-x-auto\">$$f(2) = 2(2)^3 - 15(2)^2 + 36(2) = 16 - 60 + 72 = 28$$</div>\n- At $x = 3$:\n  <div class=\"overflow-x-auto\">$$f(3) = 2(3)^3 - 15(3)^2 + 36(3) = 54 - 135 + 108 = 27$$</div>\n- At $x = 5$:\n  <div class=\"overflow-x-auto\">$$f(5) = 2(5)^3 - 15(5)^2 + 36(5) = 250 - 375 + 180 = 55$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Identify absolute and relative extrema.</p>\nComparing all the calculated values:\n- The absolute maximum value is $55$ and it occurs at the endpoint $x = 5$.\n- The absolute minimum value is $23$ and it occurs at the endpoint $x = 1$.\n- There is a local maximum at $x = 2$ with value $28$.\n- There is a local minimum at $x = 3$ with value $27$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\text{Absolute Maximum is 55 at } x = 5, \\text{ Absolute Minimum is 23 at } x = 1}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q5i",
     "discipline": "CSE",
     "batch": 20,
@@ -1966,19 +1966,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5i",
     "topics": [
-      "Indefinite Integration",
-      "Trigonometric Integrals"
+        "Indefinite Integration",
+        "Trigonometric Integrals"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Evaluate the following integral:\n<div class=\"overflow-x-auto\">$$\\int \\sin^3 x \\cos^2 x \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Rewrite the integrand to prepare for substitution.</p>\nSeparate one power of $\\sin x$:\n<div class=\"overflow-x-auto\">$$\\sin^3 x \\cos^2 x = \\sin^2 x \\cos^2 x \\sin x = (1 - \\cos^2 x) \\cos^2 x \\sin x$$</div>\nThe integral becomes:\n<div class=\"overflow-x-auto\">$$\\int (1 - \\cos^2 x) \\cos^2 x \\sin x \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Apply u-substitution.</p>\nLet $u = \\cos x$. Then $du = -\\sin x \\, dx \\implies \\sin x \\, dx = -du$.\nSubstitute these into the integral:\n<div class=\"overflow-x-auto\">$$\\int (1 - u^2) u^2 (-du) = \\int (u^4 - u^2) \\, du$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Integrate and substitute back.</p>\n<div class=\"overflow-x-auto\">$$\\int (u^4 - u^2) \\, du = \\frac{u^5}{5} - \\frac{u^3}{3} + C$$</div>\nSubstituting back $u = \\cos x$:\n<div class=\"overflow-x-auto\">$$\\frac{\\cos^5 x}{5} - \\frac{\\cos^3 x}{3} + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{\\cos^5 x}{5} - \\frac{\\cos^3 x}{3} + C}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q5ii",
     "discipline": "CSE",
     "batch": 20,
@@ -1988,19 +1988,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5ii",
     "topics": [
-      "Indefinite Integration",
-      "Substitution"
+        "Indefinite Integration",
+        "Substitution"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Evaluate the following integral:\n<div class=\"overflow-x-auto\">$$\\int \\frac{4e^x + 6e^{-x}}{9e^x - 4e^{-x}} \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Express the numerator in terms of the denominator and its derivative.</p>\nLet the numerator equal $A \\cdot (\\text{Denominator}) + B \\cdot (\\text{Derivative of Denominator})$:\n<div class=\"overflow-x-auto\">$$4e^x + 6e^{-x} = A(9e^x - 4e^{-x}) + B \\frac{d}{dx}(9e^x - 4e^{-x})$$</div>\nSince $\\frac{d}{dx}(9e^x - 4e^{-x}) = 9e^x + 4e^{-x}$:\n<div class=\"overflow-x-auto\">$$4e^x + 6e^{-x} = A(9e^x - 4e^{-x}) + B(9e^x + 4e^{-x})$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Solve for coefficients $A$ and $B$.</p>\nGroup coefficients of $e^x$ and $e^{-x}$:\n<div class=\"overflow-x-auto\">$$4 = 9A + 9B \\implies A + B = \\frac{4}{9} \\quad \\text{--- (Equation 1)}$$</div>\n<div class=\"overflow-x-auto\">$$6 = -4A + 4B \\implies -A + B = \\frac{6}{4} = \\frac{3}{2} \\quad \\text{--- (Equation 2)}$$</div>\nAdding Equations 1 and 2:\n<div class=\"overflow-x-auto\">$$2B = \\frac{4}{9} + \\frac{3}{2} = \\frac{8 + 27}{18} = \\frac{35}{18} \\implies B = \\frac{35}{36}$$</div>\nSubtracting Equation 2 from Equation 1:\n<div class=\"overflow-x-auto\">$$2A = \\frac{4}{9} - \\frac{3}{2} = \\frac{8 - 27}{18} = -\\frac{19}{18} \\implies A = -\\frac{19}{36}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Integrate using the decomposed terms.</p>\nWe rewrite the integral as:\n<div class=\"overflow-x-auto\">$$\\int \\frac{4e^x + 6e^{-x}}{9e^x - 4e^{-x}} \\, dx = \\int \\left( A + B \\frac{9e^x + 4e^{-x}}{9e^x - 4e^{-x}} \\right) dx$$</div>\n<div class=\"overflow-x-auto\">$$= A \\int dx + B \\int \\frac{9e^x + 4e^{-x}}{9e^x - 4e^{-x}} \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$= Ax + B \\ln|9e^x - 4e^{-x}| + C$$</div>\nSubstituting the values of $A$ and $B$:\n<div class=\"overflow-x-auto\">$$= -\\frac{19}{36}x + \\frac{35}{36}\\ln|9e^x - 4e^{-x}| + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{-\\frac{19}{36}x + \\frac{35}{36}\\ln|9e^x - 4e^{-x}| + C}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q6",
     "discipline": "CSE",
     "batch": 20,
@@ -2010,18 +2010,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Prove that, $\\int_0^{\\pi/2} \\log(\\sin x) \\, dx = \\int_0^{\\pi/2} \\log(\\cos x) \\, dx = \\frac{\\pi}{2} \\log\\left(\\frac{1}{2}\\right)$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the equality between the sin and cos integrals.</p>\nLet $I = \\int_0^{\\pi/2} \\log(\\sin x) \\, dx$.\nUsing the property $\\int_a^b f(x) \\, dx = \\int_a^b f(a+b-x) \\, dx$:\n<div class=\"overflow-x-auto\">$$I = \\int_0^{\\pi/2} \\log\\left(\\sin\\left(\\frac{\\pi}{2} - x\\right)\\right) \\, dx = \\int_0^{\\pi/2} \\log(\\cos x) \\, dx$$</div>\nThus, the first equality is proven.\n<p class=\"font-semibold text-slate-900\">Step 2: Sum the two expressions of $I$.</p>\nAdding both forms of $I$:\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\log(\\sin x) \\, dx + \\int_0^{\\pi/2} \\log(\\cos x) \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\left[ \\log(\\sin x) + \\log(\\cos x) \\right] \\, dx = \\int_0^{\\pi/2} \\log(\\sin x \\cos x) \\, dx$$</div>\nUsing the double-angle identity $\\sin x \\cos x = \\frac{\\sin 2x}{2}$:\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\log\\left(\\frac{\\sin 2x}{2}\\right) \\, dx = \\int_0^{\\pi/2} \\log(\\sin 2x) \\, dx - \\int_0^{\\pi/2} \\log 2 \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the simple component integral.</p>\n<div class=\"overflow-x-auto\">$$\\int_0^{\\pi/2} \\log 2 \\, dx = \\log 2 \\cdot [x]_0^{\\pi/2} = \\frac{\\pi}{2} \\log 2$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Formulate and transform the remaining integral.</p>\nLet $J = \\int_0^{\\pi/2} \\log(\\sin 2x) \\, dx$.\nApply substitution $t = 2x \\implies dt = 2dx \\implies dx = \\frac{dt}{2}$.\n- When $x = 0$, $t = 0$.\n- When $x = \\frac{\\pi}{2}$, $t = \\pi$.\n<div class=\"overflow-x-auto\">$$J = \\frac{1}{2} \\int_0^{\\pi} \\log(\\sin t) \\, dt$$</div>\nUsing the symmetry property $\\int_0^{2a} f(t) \\, dt = 2\\int_0^a f(t) \\, dt$ if $f(2a-t) = f(t)$, since $\\sin(\\pi - t) = \\sin t$:\n<div class=\"overflow-x-auto\">$$J = \\frac{1}{2} \\left( 2 \\int_0^{\\pi/2} \\log(\\sin t) \\, dt \\right) = \\int_0^{\\pi/2} \\log(\\sin t) \\, dt = I$$</div>\n<p class=\"font-semibold text-slate-900\">Step 5: Equate and solve for $I$.</p>\nSubstitute $J = I$ and the result of Step 3 back into Step 2:\n<div class=\"overflow-x-auto\">$$2I = I - \\frac{\\pi}{2} \\log 2$$</div>\n<div class=\"overflow-x-auto\">$$I = -\\frac{\\pi}{2} \\log 2 = \\frac{\\pi}{2} \\log\\left(2^{-1}\\right) = \\frac{\\pi}{2} \\log\\left(\\frac{1}{2}\\right)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{Hence, } \\int_0^{\\pi/2} \\log(\\sin x) \\, dx = \\int_0^{\\pi/2} \\log(\\cos x) \\, dx = \\frac{\\pi}{2} \\log\\left(\\frac{1}{2}\\right) \\text{ is proved.}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q7",
     "discipline": "CSE",
     "batch": 20,
@@ -2031,19 +2031,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Define gamma and beta functions. Evaluate $\\int_0^1 \\frac{dx}{(1-x^8)^{1/8}}$ by using gamma-beta function.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Define Gamma and Beta functions.</p>\n- The Beta function, denoted as $B(m, n)$, is defined as:\n  <div class=\"overflow-x-auto\">$$B(m, n) = \\int_0^1 x^{m-1} (1-x)^{n-1} \\, dx \\quad (m > 0, n > 0)$$</div>\n- The Gamma function, denoted as $\\Gamma(n)$, is defined as:\n  <div class=\"overflow-x-auto\">$$\\Gamma(n) = \\int_0^\\infty e^{-x} x^{n-1} \\, dx \\quad (n > 0)$$</div>\nThe relationship between them is expressed as:\n  <div class=\"overflow-x-auto\">$$B(m, n) = \\frac{\\Gamma(m) \\Gamma(n)}{\\Gamma(m+n)}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Set up substitution for the given integral.</p>\nLet $I = \\int_0^1 \\frac{dx}{(1-x^8)^{1/8}}$.\nSubstitute $x^8 = y \\implies x = y^{1/8}$.\nDifferentiating both sides:\n<div class=\"overflow-x-auto\">$$dx = \\frac{1}{8} y^{-7/8} \\, dy$$</div>\nThe boundaries of integration stay unchanged: when $x=0, y=0$ and when $x=1, y=1$.\n<p class=\"font-semibold text-slate-900\">Step 3: Convert the integral to Beta function form.</p>\n<div class=\"overflow-x-auto\">$$I = \\int_0^1 \\frac{\\frac{1}{8} y^{-7/8}}{(1-y)^{1/8}} \\, dy = \\frac{1}{8} \\int_0^1 y^{-7/8} (1-y)^{-1/8} \\, dy$$</div>\nMatch with $B(m, n) = \\int_0^1 y^{m-1} (1-y)^{n-1} \\, dy$:\n<div class=\"overflow-x-auto\">$$m - 1 = -\\frac{7}{8} \\implies m = \\frac{1}{8}$$</div>\n<div class=\"overflow-x-auto\">$$n - 1 = -\\frac{1}{8} \\implies n = \\frac{7}{8}$$</div>\nThus, the integral is:\n<div class=\"overflow-x-auto\">$$I = \\frac{1}{8} B\\left(\\frac{1}{8}, \\frac{7}{8}\\right) = \\frac{1}{8} \\frac{\\Gamma\\left(\\frac{1}{8}\\right) \\Gamma\\left(\\frac{7}{8}\\right)}{\\Gamma\\left(\\frac{1}{8} + \\frac{7}{8}\\right)} = \\frac{1}{8} \\frac{\\Gamma\\left(\\frac{1}{8}\\right) \\Gamma\\left(\\frac{7}{8}\\right)}{\\Gamma(1)}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Evaluate the product of Gamma functions using Euler's reflection formula.</p>\nEuler's reflection formula states:\n<div class=\"overflow-x-auto\">$$\\Gamma(z) \\Gamma(1-z) = \\frac{\\pi}{\\sin(\\pi z)}$$</div>\nSubstituting $z = \\frac{1}{8}$ (and noting $\\Gamma(1) = 1$):\n<div class=\"overflow-x-auto\">$$\\Gamma\\left(\\frac{1}{8}\\right) \\Gamma\\left(\\frac{7}{8}\\right) = \\frac{\\pi}{\\sin\\left(\\frac{\\pi}{8}\\right)}$$</div>\nSo the integral evaluates to:\n<div class=\"overflow-x-auto\">$$I = \\frac{\\pi}{8 \\sin\\left(\\frac{\\pi}{8}\\right)}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{\\pi}{8 \\sin\\left(\\frac{\\pi}{8}\\right)}}$$</div>"
   },
-  {
+    {
     "id": "cse20-final-q8",
     "discipline": "CSE",
     "batch": 20,
@@ -2053,19 +2053,19 @@ const questions = [
     "section": "B",
     "questionNumber": "8",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find the volume of the solid obtained by revolving the cardioid $r = a(1 - \\cos \\theta)$ about the initial line.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the volume formula in polar coordinates.</p>\nThe volume $V$ of a solid generated by revolving a polar curve $r = f(\\theta)$ about the initial line ($x$-axis) is given by:\n<div class=\"overflow-x-auto\">$$V = \\frac{2}{3} \\pi \\int_{\\alpha}^{\\beta} r^3 \\sin \\theta \\, d\\theta$$</div>\nFor a cardioid symmetric with respect to the initial line, the upper boundary runs from $\\theta = 0$ to $\\theta = \\pi$.\n<p class=\"font-semibold text-slate-900\">Step 2: Substitute $r = a(1 - \\cos \\theta)$ into the volume formula.</p>\n<div class=\"overflow-x-auto\">$$V = \\frac{2}{3} \\pi \\int_0^\\pi \\left[ a(1 - \\cos \\theta) \\right]^3 \\sin \\theta \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$V = \\frac{2}{3} \\pi a^3 \\int_0^\\pi (1 - \\cos \\theta)^3 \\sin \\theta \\, d\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Solve the integral using substitution.</p>\nLet $u = 1 - \\cos \\theta \\implies du = \\sin \\theta \\, d\\theta$.\nChange the limits of integration:\n- When $\\theta = 0$, $u = 1 - \\cos(0) = 0$.\n- When $\\theta = \\pi$, $u = 1 - \\cos(\\pi) = 2$.\nSubstituting these values:\n<div class=\"overflow-x-auto\">$$V = \\frac{2}{3} \\pi a^3 \\int_0^2 u^3 \\, du$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Integrate and evaluate.</p>\n<div class=\"overflow-x-auto\">$$V = \\frac{2}{3} \\pi a^3 \\left[ \\frac{u^4}{4} \\right]_0^2 = \\frac{2}{3} \\pi a^3 \\left( \\frac{16}{4} - 0 \\right)$$</div>\n<div class=\"overflow-x-auto\">$$V = \\frac{2}{3} \\pi a^3 (4) = \\frac{8}{3} \\pi a^3$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{8}{3} \\pi a^3}$$</div>"
   },
-  {
+    {
     "id": "cse19-final-q5a",
     "discipline": "CSE",
     "batch": 19,
@@ -2075,19 +2075,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5a",
     "topics": [
-      "Definite Integration",
-      "Reduction Formula"
+        "Definite Integration",
+        "Reduction Formula"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\int_0^{\\pi/2} \\sin^n x \\, dx$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the reduction formula.</p>\nLet $I_n = \\int_0^{\\pi/2} \\sin^n x \\, dx$. We can write this as:\n<div class=\"overflow-x-auto\">$$I_n = \\int_0^{\\pi/2} \\sin^{n-1} x \\sin x \\, dx$$</div>\nUsing integration by parts:\nLet $u = \\sin^{n-1} x \\implies du = (n-1)\\sin^{n-2} x \\cos x \\, dx$.\nLet $dv = \\sin x \\, dx \\implies v = -\\cos x$.\n\nApplying the integration by parts formula $\\int u \\, dv = uv - \\int v \\, du$:\n<div class=\"overflow-x-auto\">$$I_n = \\left[ -\\sin^{n-1} x \\cos x \\right]_0^{\\pi/2} + \\int_0^{\\pi/2} (n-1)\\sin^{n-2} x \\cos^2 x \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Evaluate boundaries and simplify.</p>\nSince $\\cos(\\pi/2) = 0$ and $\\sin(0) = 0$, the boundary term is zero.\n<div class=\"overflow-x-auto\">$$I_n = (n-1) \\int_0^{\\pi/2} \\sin^{n-2} x (1 - \\sin^2 x) \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$I_n = (n-1) \\int_0^{\\pi/2} \\sin^{n-2} x \\, dx - (n-1) \\int_0^{\\pi/2} \\sin^n x \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$I_n = (n-1) I_{n-2} - (n-1) I_n$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Solve for $I_n$.</p>\n<div class=\"overflow-x-auto\">$$I_n + (n-1) I_n = (n-1) I_{n-2}$$</div>\n<div class=\"overflow-x-auto\">$$n I_n = (n-1) I_{n-2} \\implies I_n = \\frac{n-1}{n} I_{n-2}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Analyze cases for $n$.</p>\n- **Case 1: $n$ is an odd positive integer.**\n  Applying the reduction formula successively down to $I_1$:\n  <div class=\"overflow-x-auto\">$$I_1 = \\int_0^{\\pi/2} \\sin x \\, dx = [-\\cos x]_0^{\\pi/2} = 1$$</div>\n  Thus:\n  <div class=\"overflow-x-auto\">$$I_n = \\frac{n-1}{n} \\cdot \\frac{n-3}{n-2} \\cdot \\frac{n-5}{n-4} \\cdots \\frac{2}{3} \\cdot 1$$</div>\n\n- **Case 2: $n$ is an even positive integer.**\n  Applying the reduction formula successively down to $I_0$:\n  <div class=\"overflow-x-auto\">$$I_0 = \\int_0^{\\pi/2} 1 \\, dx = \\frac{\\pi}{2}$$</div>\n  Thus:\n  <div class=\"overflow-x-auto\">$$I_n = \\frac{n-1}{n} \\cdot \\frac{n-3}{n-2} \\cdot \\frac{n-5}{n-4} \\cdots \\frac{1}{2} \\cdot \\frac{\\pi}{2}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{I_n = \n\\begin{cases} \n\\frac{n-1}{n} \\cdot \\frac{n-3}{n-2} \\cdots \\frac{2}{3} & \\text{if } n \\text{ is odd} \\\\ \n\\frac{n-1}{n} \\cdot \\frac{n-3}{n-2} \\cdots \\frac{1}{2} \\cdot \\frac{\\pi}{2} & \\text{if } n \\text{ is even} \n\\end{cases}}$$</div>"
   },
-  {
+    {
     "id": "cse19-final-q5bi",
     "discipline": "CSE",
     "batch": 19,
@@ -2097,19 +2097,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5bi",
     "topics": [
-      "Indefinite Integration",
-      "Trigonometric Integrals"
+        "Indefinite Integration",
+        "Trigonometric Integrals"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Evaluate the following integral:\n<div class=\"overflow-x-auto\">$$\\int \\frac{1-\\tan^2 x}{1+\\tan^2 x} \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Simplify the integrand using trigonometric identities.</p>\nRecall that $1 + \\tan^2 x = \\sec^2 x$.\nSubstituting this in:\n<div class=\"overflow-x-auto\">$$\\frac{1-\\tan^2 x}{1+\\tan^2 x} = \\frac{1-\\tan^2 x}{\\sec^2 x}$$</div>\nRewrite in terms of sine and cosine:\n<div class=\"overflow-x-auto\">$$= \\left(1 - \\frac{\\sin^2 x}{\\cos^2 x}\\right) \\cos^2 x = \\cos^2 x - \\sin^2 x$$</div>\nUsing the double-angle identity:\n<div class=\"overflow-x-auto\">$$\\cos^2 x - \\sin^2 x = \\cos 2x$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Integrate the simplified term.</p>\n<div class=\"overflow-x-auto\">$$\\int \\cos 2x \\, dx = \\frac{1}{2} \\sin 2x + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{1}{2} \\sin 2x + C}$$</div>"
   },
-  {
+    {
     "id": "cse19-final-q5bii",
     "discipline": "CSE",
     "batch": 19,
@@ -2119,19 +2119,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5bii",
     "topics": [
-      "Indefinite Integration",
-      "Trigonometric Integrals"
+        "Indefinite Integration",
+        "Trigonometric Integrals"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Evaluate the following integral:\n<div class=\"overflow-x-auto\">$$\\int \\frac{dx}{\\sin^2 x \\cos^2 x}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Rewrite the numerator using trigonometric identities.</p>\nRecall that $1 = \\sin^2 x + \\cos^2 x$.\nSubstituting this into the numerator of the integrand:\n<div class=\"overflow-x-auto\">$$\\int \\frac{\\sin^2 x + \\cos^2 x}{\\sin^2 x \\cos^2 x} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Split the fraction into separate terms.</p>\n<div class=\"overflow-x-auto\">$$= \\int \\left( \\frac{\\sin^2 x}{\\sin^2 x \\cos^2 x} + \\frac{\\cos^2 x}{\\sin^2 x \\cos^2 x} \\right) dx$$</div>\n<div class=\"overflow-x-auto\">$$= \\int \\left( \\frac{1}{\\cos^2 x} + \\frac{1}{\\sin^2 x} \\right) dx$$</div>\n<div class=\"overflow-x-auto\">$$= \\int \\left( \\sec^2 x + \\csc^2 x \\right) dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Perform the integration.</p>\nUsing standard integration formulas $\\int \\sec^2 x \\, dx = \\tan x$ and $\\int \\csc^2 x \\, dx = -\\cot x$:\n<div class=\"overflow-x-auto\">$$= \\tan x - \\cot x + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\tan x - \\cot x + C}$$</div>"
   },
-  {
+    {
     "id": "cse19-final-q6a",
     "discipline": "CSE",
     "batch": 19,
@@ -2141,7 +2141,7 @@ const questions = [
     "section": "B",
     "questionNumber": "6a",
     "topics": [
-      "Multiple Integrals"
+        "Multiple Integrals"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -2152,7 +2152,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Use the polar area formula.</p>\nThe area $A$ in polar coordinates bounded by $r = f(\\theta)$ is given by:\n<div class=\"overflow-x-auto\">$$A = \\frac{1}{2} \\int_{0}^{2\\pi} r^2 \\, d\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Substitute $r = 1 - \\cos \\theta$ into the formula.</p>\n<div class=\"overflow-x-auto\">$$A = \\frac{1}{2} \\int_{0}^{2\\pi} (1 - \\cos \\theta)^2 \\, d\\theta$$</div>\nExpand the integrand:\n<div class=\"overflow-x-auto\">$$(1 - \\cos \\theta)^2 = 1 - 2\\cos \\theta + \\cos^2 \\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Simplify using the double-angle identity.</p>\nRecall $\\cos^2 \\theta = \\frac{1 + \\cos 2\\theta}{2}$.\nSubstituting this in:\n<div class=\"overflow-x-auto\">$$(1 - \\cos \\theta)^2 = 1 - 2\\cos \\theta + \\frac{1}{2} + \\frac{1}{2}\\cos 2\\theta = \\frac{3}{2} - 2\\cos \\theta + \\frac{1}{2}\\cos 2\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Integrate term by term over the interval $[0, 2\\pi]$.</p>\n<div class=\"overflow-x-auto\">$$A = \\frac{1}{2} \\int_{0}^{2\\pi} \\left( \\frac{3}{2} - 2\\cos \\theta + \\frac{1}{2}\\cos 2\\theta \\right) d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$A = \\frac{1}{2} \\left[ \\frac{3}{2}\\theta - 2\\sin \\theta + \\frac{1}{4}\\sin 2\\theta \\right]_0^{2\\pi}$$</div>\nEvaluate at the limits:\n<div class=\"overflow-x-auto\">$$A = \\frac{1}{2} \\left[ \\left( \\frac{3}{2}(2\\pi) - 2(0) + \\frac{1}{4}(0) \\right) - (0) \\right]$$</div>\n<div class=\"overflow-x-auto\">$$A = \\frac{1}{2} \\cdot 3\\pi = \\frac{3\\pi}{2}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{3\\pi}{2}}$$</div>"
   },
-  {
+    {
     "id": "cse19-final-q6b",
     "discipline": "CSE",
     "batch": 19,
@@ -2162,20 +2162,20 @@ const questions = [
     "section": "B",
     "questionNumber": "6b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 2,
     "appearances": [
-      "cse22-final-q8b"
+        "cse22-final-q8b"
     ],
-    "tags": [],
+    "tags": ["repeated"],
     "questionHtml": "Find the area of the surface that is generated by revolving the portion of the curve $y = x^3$ between $x = 0$ and $x = 1$ about the $x$-axis.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: State the formula for the surface area of revolution.</p>\nThe surface area $S$ generated by rotating a curve $y = f(x)$ on the interval $[a, b]$ about the $x$-axis is:\n<div class=\"overflow-x-auto\">$$S = 2\\pi \\int_a^b y \\sqrt{1 + \\left(\\frac{dy}{dx}\\right)^2} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Find the derivative of the given curve.</p>\nHere, $y = x^3 \\implies \\frac{dy}{dx} = 3x^2$.\nCompute the radical part:\n<div class=\"overflow-x-auto\">$$1 + \\left(\\frac{dy}{dx}\\right)^2 = 1 + (3x^2)^2 = 1 + 9x^4$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Setup the integration.</p>\nSubstitute these values into the formula:\n<div class=\"overflow-x-auto\">$$S = 2\\pi \\int_0^1 x^3 \\sqrt{1 + 9x^4} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Solve using substitution.</p>\nLet $u = 1 + 9x^4 \\implies du = 36x^3 \\, dx \\implies x^3 \\, dx = \\frac{du}{36}$.\nUpdate boundaries:\n- When $x = 0 \\implies u = 1$.\n- When $x = 1 \\implies u = 10$.\n\nSubstitute variables into the integral:\n<div class=\"overflow-x-auto\">$$S = 2\\pi \\int_1^{10} \\sqrt{u} \\, \\frac{du}{36} = \\frac{\\pi}{18} \\int_1^{10} u^{1/2} \\, du$$</div>\n<div class=\"overflow-x-auto\">$$S = \\frac{\\pi}{18} \\left[ \\frac{2}{3}u^{3/2} \\right]_1^{10} = \\frac{\\pi}{27} (10^{3/2} - 1^{3/2}) = \\frac{\\pi}{27}(10\\sqrt{10} - 1)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{\\pi}{27}(10\\sqrt{10} - 1)}$$</div>"
   },
-  {
+    {
     "id": "cse19-final-q7a",
     "discipline": "CSE",
     "batch": 19,
@@ -2185,18 +2185,18 @@ const questions = [
     "section": "B",
     "questionNumber": "7a",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "What is antiderivative? Find the area of the curve $y = x^2$ and $[0,1]$ by rectangle method dividing 10 and 15 intervals.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Define antiderivative.</p>\nAn antiderivative of a continuous function $f(x)$ is a differentiable function $F(x)$ whose derivative is equal to the original function, i.e., $F'(x) = f(x)$ for all $x$ in the domain.\n<p class=\"font-semibold text-slate-900\">Step 2: Set up the rectangle (Riemann sum) method for $y = x^2$ on $[0,1]$.</p>\nLet $[a, b] = [0, 1]$. The width of each of the $n$ subintervals is:\n<div class=\"overflow-x-auto\">$$\\Delta x = \\frac{1-0}{n} = \\frac{1}{n}$$</div>\nThe evaluation points for a right-endpoint approximation are $x_i = a + i\\Delta x = \\frac{i}{n}$ for $i=1, 2, \\dots, n$.\nThe right Riemann sum approximation is:\n<div class=\"overflow-x-auto\">$$R_n = \\sum_{i=1}^n f(x_i) \\Delta x = \\sum_{i=1}^n \\left(\\frac{i}{n}\\right)^2 \\frac{1}{n} = \\frac{1}{n^3} \\sum_{i=1}^n i^2$$</div>\nRecall that $\\sum_{i=1}^n i^2 = \\frac{n(n+1)(2n+1)}{6}$.\n<div class=\"overflow-x-auto\">$$R_n = \\frac{n(n+1)(2n+1)}{6n^3} = \\frac{(n+1)(2n+1)}{6n^2}$$</div>\n\nAlternatively, using the left-endpoint approximation (lower sum) where $x_{i-1} = \\frac{i-1}{n}$:\n<div class=\"overflow-x-auto\">$$L_n = \\sum_{i=1}^n f(x_{i-1}) \\Delta x = \\frac{1}{n^3} \\sum_{i=0}^{n-1} i^2 = \\frac{(n-1)(n)(2n-1)}{6n^3} = \\frac{(n-1)(2n-1)}{6n^2}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Compute approximations for $n = 10$.</p>\n- **Right Endpoint sum ($R_{10}$):**\n  <div class=\"overflow-x-auto\">$$R_{10} = \\frac{(10+1)(20+1)}{6(10)^2} = \\frac{11 \\times 21}{600} = \\frac{231}{600} = 0.385$$</div>\n- **Left Endpoint sum ($L_{10}$):**\n  <div class=\"overflow-x-auto\">$$L_{10} = \\frac{(10-1)(20-1)}{6(10)^2} = \\frac{9 \\times 19}{600} = \\frac{171}{600} = 0.285$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Compute approximations for $n = 15$.</p>\n- **Right Endpoint sum ($R_{15}$):**\n  <div class=\"overflow-x-auto\">$$R_{15} = \\frac{(15+1)(30+1)}{6(15)^2} = \\frac{16 \\times 31}{6 \\times 225} = \\frac{496}{1350} \\approx 0.3674$$</div>\n- **Left Endpoint sum ($L_{15}$):**\n  <div class=\"overflow-x-auto\">$$L_{15} = \\frac{(15-1)(30-1)}{6(15)^2} = \\frac{14 \\times 29}{1350} = \\frac{406}{1350} \\approx 0.3007$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\n\\begin{aligned}\n\\text{For } n=10: & \\quad \\text{Right sum} = 0.385, \\quad \\text{Left sum} = 0.285 \\\\\n\\text{For } n=15: & \\quad \\text{Right sum} \\approx 0.3674, \\quad \\text{Left sum} \\approx 0.3007\n\\end{aligned}\n}$$</div>"
   },
-  {
+    {
     "id": "cse19-final-q7b",
     "discipline": "CSE",
     "batch": 19,
@@ -2206,18 +2206,18 @@ const questions = [
     "section": "B",
     "questionNumber": "7b",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Explain the integration graphically:\n(i) $\\int_0^{\\pi/2} \\sin x \\, dx$ \n(ii) $\\int_0^{\\pi} \\sin x \\, dx$ \n(iii) $\\int_0^{3\\pi/2} \\sin x \\, dx$",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: State the graphical interpretation of definite integration.</p>\nThe definite integral $\\int_a^b f(x) \\, dx$ represents the \"net signed area\" between the curve $y = f(x)$ and the $x$-axis from $x=a$ to $x=b$. Areas above the $x$-axis are counted as positive, and areas below the $x$-axis are counted as negative.\n<p class=\"font-semibold text-slate-900\">Step 2: Analyze part (i) graphically.</p>\nFor $\\int_0^{\\pi/2} \\sin x \\, dx$:\n- Over $[0, \\pi/2]$, the function $y = \\sin x$ is completely positive (above the $x$-axis).\n- Graphically, this is the area under the first half of the sine curve arch.\n- Mathematically:\n  <div class=\"overflow-x-auto\">$$\\int_0^{\\pi/2} \\sin x \\, dx = [-\\cos x]_0^{\\pi/2} = 0 - (-1) = 1$$</div>\n  Thus, the graph encloses a positive area of $1$.\n<p class=\"font-semibold text-slate-900\">Step 3: Analyze part (ii) graphically.</p>\nFor $\\int_0^{\\pi} \\sin x \\, dx$:\n- Over $[0, \\pi]$, the function $y = \\sin x$ is non-negative and represents the entire positive arch of the sine curve.\n- Graphically, this is the complete area under the sine curve arch.\n- Mathematically:\n  <div class=\"overflow-x-auto\">$$\\int_0^{\\pi} \\sin x \\, dx = [-\\cos x]_0^{\\pi} = -(-1) - (-1) = 2$$</div>\n  Thus, the graph encloses a total positive area of $2$.\n<p class=\"font-semibold text-slate-900\">Step 4: Analyze part (iii) graphically.</p>\nFor $\\int_0^{3\\pi/2} \\sin x \\, dx$:\n- Over $[0, \\pi]$, the function $y = \\sin x$ is positive, enclosing an area of $+2$.\n- Over $[\\pi, 3\\pi/2]$, the function $y = \\sin x$ is negative (below the $x$-axis), enclosing a signed area of $-1$.\n- Graphically, the total integral represents the net area where the negative region cancels out a part of the positive region.\n- Mathematically:\n  <div class=\"overflow-x-auto\">$$\\int_0^{3\\pi/2} \\sin x \\, dx = [-\\cos x]_0^{3\\pi/2} = 0 - (-1) = 1$$</div>\n  This equals $\\text{Area}_{[0, \\pi]} - \\text{Area}_{[\\pi, 3\\pi/2]} = 2 - 1 = 1$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\n\\begin{aligned}\n\\text{(i) represents a positive area of } 1 \\text{ under the half-arch of the sine wave.} \\\\\n\\text{(ii) represents a positive area of } 2 \\text{ under the full positive arch of the sine wave.} \\\\\n\\text{(iii) represents a net signed area of } 1 \\text{ where } +2 \\text{ is partially canceled by } -1.\n\\end{aligned}\n}$$</div>"
   },
-  {
+    {
     "id": "cse19-final-q8a",
     "discipline": "CSE",
     "batch": 19,
@@ -2227,18 +2227,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8a",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Prove that $\\int_0^{\\pi/2} \\log \\sin x \\, dx = \\int_0^{\\pi/2} \\log \\cos x \\, dx = \\frac{\\pi}{2} \\log \\frac{1}{2}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the initial integrals and properties.</p>\nLet $I = \\int_0^{\\pi/2} \\log(\\sin x) \\, dx$.\nApplying the identity $\\int_a^b f(x) \\, dx = \\int_a^b f(a+b-x) \\, dx$:\n<div class=\"overflow-x-auto\">$$I = \\int_0^{\\pi/2} \\log\\left(\\sin\\left(\\frac{\\pi}{2} - x\\right)\\right) \\, dx = \\int_0^{\\pi/2} \\log(\\cos x) \\, dx$$</div>\nThis proves the first equality.\n<p class=\"font-semibold text-slate-900\">Step 2: Add the two equations for $I$.</p>\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\log(\\sin x) \\, dx + \\int_0^{\\pi/2} \\log(\\cos x) \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\log(\\sin x \\cos x) \\, dx$$</div>\nUse identity $\\sin x \\cos x = \\frac{\\sin 2x}{2}$:\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\log\\left(\\frac{\\sin 2x}{2}\\right) \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\log(\\sin 2x) \\, dx - \\int_0^{\\pi/2} \\log 2 \\, dx \\quad \\text{--- (Equation 1)}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the simple constant integral.</p>\n<div class=\"overflow-x-auto\">$$\\int_0^{\\pi/2} \\log 2 \\, dx = \\log 2 [x]_0^{\\pi/2} = \\frac{\\pi}{2} \\log 2$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Solve the remaining integral $J = \\int_0^{\\pi/2} \\log(\\sin 2x) \\, dx$.</p>\nLet $t = 2x \\implies dt = 2dx \\implies dx = \\frac{dt}{2}$.\n- When $x = 0 \\implies t = 0$.\n- When $x = \\frac{\\pi}{2} \\implies t = \\pi$.\n<div class=\"overflow-x-auto\">$$J = \\frac{1}{2} \\int_0^{\\pi} \\log(\\sin t) \\, dt$$</div>\nUsing the symmetry property $\\int_0^{2a} f(t) \\, dt = 2\\int_0^a f(t) \\, dt$ since $\\sin(\\pi - t) = \\sin t$:\n<div class=\"overflow-x-auto\">$$J = \\frac{1}{2} \\left( 2 \\int_0^{\\pi/2} \\log(\\sin t) \\, dt \\right) = \\int_0^{\\pi/2} \\log(\\sin t) \\, dt = I$$</div>\n<p class=\"font-semibold text-slate-900\">Step 5: Substitute findings back into Equation 1.</p>\n<div class=\"overflow-x-auto\">$$2I = I - \\frac{\\pi}{2} \\log 2$$</div>\n<div class=\"overflow-x-auto\">$$I = -\\frac{\\pi}{2} \\log 2 = \\frac{\\pi}{2} \\log\\left(2^{-1}\\right) = \\frac{\\pi}{2} \\log\\left(\\frac{1}{2}\\right)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{Hence, } \\int_0^{\\pi/2} \\log \\sin x \\, dx = \\int_0^{\\pi/2} \\log \\cos x \\, dx = \\frac{\\pi}{2} \\log \\frac{1}{2} \\text{ is proved.}$$</div>"
   },
-  {
+    {
     "id": "cse19-final-q8b",
     "discipline": "CSE",
     "batch": 19,
@@ -2248,18 +2248,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["difficult"],
     "questionHtml": "Find the length of one loop of the curve $8y^2 = x^2(1-x^2)$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Determine the limits of the loop.</p>\nFor real values of $y$, the right side must be non-negative:\n<div class=\"overflow-x-auto\">$$x^2(1-x^2) \\ge 0 \\implies 1-x^2 \\ge 0 \\implies -1 \\le x \\le 1$$</div>\nThe loop is symmetric about both axes. One loop exists in the region $x \\in [0, 1]$ (or $x \\in [-1, 0]$). We will compute the arc length of the loop for $x \\in [0, 1]$.\n<p class=\"font-semibold text-slate-900\">Step 2: Express $y$ and its derivative in terms of $x$.</p>\nFor $x \\ge 0$, the upper half of the loop is:\n<div class=\"overflow-x-auto\">$$y = \\frac{x\\sqrt{1-x^2}}{\\sqrt{8}} = \\frac{x\\sqrt{1-x^2}}{2\\sqrt{2}}$$</div>\nDifferentiating with respect to $x$ using the product rule:\n<div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{1}{2\\sqrt{2}} \\left[ \\sqrt{1-x^2} + x \\cdot \\left(\\frac{-x}{\\sqrt{1-x^2}}\\right) \\right] = \\frac{1}{2\\sqrt{2}} \\left[ \\frac{1-x^2-x^2}{\\sqrt{1-x^2}} \\right] = \\frac{1-2x^2}{2\\sqrt{2}\\sqrt{1-x^2}}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Set up the arc length element $\\sqrt{1 + (y')^2}$.</p>\n<div class=\"overflow-x-auto\">$$1 + \\left(\\frac{dy}{dx}\\right)^2 = 1 + \\frac{(1-2x^2)^2}{8(1-x^2)} = \\frac{8(1-x^2) + (1 - 4x^2 + 4x^4)}{8(1-x^2)}$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{8 - 8x^2 + 1 - 4x^2 + 4x^4}{8(1-x^2)} = \\frac{9 - 12x^2 + 4x^4}{8(1-x^2)} = \\frac{(3-2x^2)^2}{8(1-x^2)}$$</div>\nTaking the square root:\n<div class=\"overflow-x-auto\">$$\\sqrt{1 + \\left(\\frac{dy}{dx}\\right)^2} = \\frac{3-2x^2}{2\\sqrt{2}\\sqrt{1-x^2}}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Compute the total loop length.</p>\nThe loop consists of a symmetric upper half and a lower half. Thus, the total length of one loop is:\n<div class=\"overflow-x-auto\">$$L = 2 \\int_{0}^{1} \\sqrt{1 + \\left(\\frac{dy}{dx}\\right)^2} \\, dx = 2 \\int_{0}^{1} \\frac{3-2x^2}{2\\sqrt{2}\\sqrt{1-x^2}} \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$L = \\frac{1}{\\sqrt{2}} \\int_{0}^{1} \\frac{3-2x^2}{\\sqrt{1-x^2}} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 5: Integrate using algebraic split.</p>\nRewrite the numerator: $3-2x^2 = 1 + 2(1-x^2)$.\n<div class=\"overflow-x-auto\">$$L = \\frac{1}{\\sqrt{2}} \\int_{0}^{1} \\left( \\frac{1}{\\sqrt{1-x^2}} + 2\\frac{1-x^2}{\\sqrt{1-x^2}} \\right) dx$$</div>\n<div class=\"overflow-x-auto\">$$L = \\frac{1}{\\sqrt{2}} \\int_{0}^{1} \\left( \\frac{1}{\\sqrt{1-x^2}} + 2\\sqrt{1-x^2} \\right) dx$$</div>\nUsing standard integrals:\n- $\\int_0^1 \\frac{dx}{\\sqrt{1-x^2}} = [\\sin^{-1} x]_0^1 = \\frac{\\pi}{2}$\n- $\\int_0^1 2\\sqrt{1-x^2} \\, dx = 2\\left[\\frac{x}{2}\\sqrt{1-x^2} + \\frac{1}{2}\\sin^{-1} x\\right]_0^1 = 2\\left(0 + \\frac{1}{2}\\left(\\frac{\\pi}{2}\\right)\\right) = \\frac{\\pi}{2}$\n\nSumming the integral evaluations:\n<div class=\"overflow-x-auto\">$$\\int_{0}^{1} \\left( \\frac{1}{\\sqrt{1-x^2}} + 2\\sqrt{1-x^2} \\right) dx = \\frac{\\pi}{2} + \\frac{\\pi}{2} = \\pi$$</div>\nMultiply by the scalar factor:\n<div class=\"overflow-x-auto\">$$L = \\frac{\\pi}{\\sqrt{2}}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{\\pi}{\\sqrt{2}}}$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q5ai",
     "discipline": "CSE",
     "batch": 18,
@@ -2269,19 +2269,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5ai",
     "topics": [
-      "Indefinite Integration",
-      "Trigonometric Integrals"
+        "Indefinite Integration",
+        "Trigonometric Integrals"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Integrate the following:\n<div class=\"overflow-x-auto\">$$\\int \\frac{\\sin x + \\csc x}{\\tan x} \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Simplify the integrand using trigonometric identities.</p>\nRewrite the terms in terms of sine and cosine:\n<div class=\"overflow-x-auto\">$$\\frac{\\sin x + \\csc x}{\\tan x} = \\frac{\\sin x + \\frac{1}{\\sin x}}{\\frac{\\sin x}{\\cos x}}$$</div>\nMultiply both terms in the numerator by the reciprocal of the denominator, \\(\\frac{\\cos x}{\\sin x}\\):\n<div class=\"overflow-x-auto\">$$= \\left( \\sin x + \\frac{1}{\\sin x} \\right) \\frac{\\cos x}{\\sin x}$$</div>\n<div class=\"overflow-x-auto\">$$= \\cos x + \\frac{\\cos x}{\\sin^2 x}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Split the integral and integrate term by term.</p>\n<div class=\"overflow-x-auto\">$$\\int \\left( \\cos x + \\frac{\\cos x}{\\sin^2 x} \\right) dx = \\int \\cos x \\, dx + \\int \\csc x \\cot x \\, dx$$</div>\nUsing the standard integration formulas \\(\\int \\cos x \\, dx = \\sin x\\) and \\(\\int \\csc x \\cot x \\, dx = -\\csc x\\):\n<div class=\"overflow-x-auto\">$$= \\sin x - \\csc x + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\sin x - \\csc x + C}$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q5aii",
     "discipline": "CSE",
     "batch": 18,
@@ -2291,19 +2291,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5aii",
     "topics": [
-      "Indefinite Integration",
-      "Substitution"
+        "Indefinite Integration",
+        "Substitution"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Integrate the following:\n<div class=\"overflow-x-auto\">$$\\int \\frac{4x+3}{3x^2+3x+1} \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Relate the numerator to the derivative of the quadratic denominator.</p>\nLet \\(f(x) = 3x^2 + 3x + 1\\). Its derivative is:\n<div class=\"overflow-x-auto\">$$f'(x) = 6x + 3$$</div>\nWe express the numerator \\(4x + 3\\) as a linear combination of \\(f'(x)\\) and a constant:\n<div class=\"overflow-x-auto\">$$4x + 3 = A(6x + 3) + B$$</div>\nEquating coefficients of \\(x\\):\n<div class=\"overflow-x-auto\">$$4 = 6A \\implies A = \\frac{2}{3}$$</div>\nEquating constant terms:\n<div class=\"overflow-x-auto\">$$3 = 3A + B \\implies 3 = 3\\left(\\frac{2}{3}\\right) + B \\implies B = 1$$</div>\nThus, we can rewrite the integral as:\n<div class=\"overflow-x-auto\">$$\\int \\frac{4x+3}{3x^2+3x+1} \\, dx = \\frac{2}{3} \\int \\frac{6x+3}{3x^2+3x+1} \\, dx + \\int \\frac{1}{3x^2+3x+1} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Solve the first integral.</p>\nUsing substitution \\(u = 3x^2 + 3x + 1 \\implies du = (6x+3)dx\\):\n<div class=\"overflow-x-auto\">$$\\frac{2}{3} \\int \\frac{du}{u} = \\frac{2}{3} \\ln|3x^2 + 3x + 1|$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Solve the second integral by completing the square.</p>\n<div class=\"overflow-x-auto\">$$\\int \\frac{dx}{3(x^2 + x + 1/3)} = \\frac{1}{3} \\int \\frac{dx}{\\left(x + \\frac{1}{2}\\right)^2 - \\frac{1}{4} + \\frac{1}{3}}$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{1}{3} \\int \\frac{dx}{\\left(x + \\frac{1}{2}\\right)^2 + \\frac{1}{12}}$$</div>\nUse the integration formula \\(\\int \\frac{dw}{w^2 + a^2} = \\frac{1}{a} \\tan^{-1}\\left(\\frac{w}{a}\\right)\\) with \\(w = x + 1/2\\) and \\(a = \\frac{1}{\\sqrt{12}}\\):\n<div class=\"overflow-x-auto\">$$= \\frac{1}{3} \\cdot \\sqrt{12} \\tan^{-1}\\left( \\sqrt{12} \\left(x + \\frac{1}{2}\\right) \\right)$$</div>\nSince \\(\\sqrt{12} = 2\\sqrt{3}\\) and \\(\\frac{2\\sqrt{3}}{3} = \\frac{2}{\\sqrt{3}}\\):\n<div class=\"overflow-x-auto\">$$= \\frac{2}{\\sqrt{3}} \\tan^{-1}\\left( \\sqrt{3}(2x + 1) \\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Combine the results.</p>\n<div class=\"overflow-x-auto\">$$\\int \\frac{4x+3}{3x^2+3x+1} \\, dx = \\frac{2}{3} \\ln|3x^2+3x+1| + \\frac{2}{\\sqrt{3}} \\tan^{-1}\\left(\\sqrt{3}(2x+1)\\right) + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{2}{3} \\ln|3x^2+3x+1| + \\frac{2}{\\sqrt{3}} \\tan^{-1}\\left(\\sqrt{3}(2x+1)\\right) + C}$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q5aiii",
     "discipline": "CSE",
     "batch": 18,
@@ -2313,19 +2313,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5aiii",
     "topics": [
-      "Indefinite Integration",
-      "Integration by Parts"
+        "Indefinite Integration",
+        "Integration by Parts"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Integrate the following:\n<div class=\"overflow-x-auto\">$$\\int \\frac{\\cos^3 x}{e^{3x}} \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Simplify the integrand using a trigonometric identity.</p>\nRecall the triple-angle identity for cosine:\n<div class=\"overflow-x-auto\">$$\\cos 3x = 4\\cos^3 x - 3\\cos x \\implies \\cos^3 x = \\frac{1}{4}(\\cos 3x + 3\\cos x)$$</div>\nSubstituting this back into the integral:\n<div class=\"overflow-x-auto\">$$\\int e^{-3x} \\cos^3 x \\, dx = \\frac{1}{4} \\int e^{-3x} \\cos 3x \\, dx + \\frac{3}{4} \\int e^{-3x} \\cos x \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Apply the standard integration formula for exponential-trigonometric integrals.</p>\nRecall the general integration formula:\n<div class=\"overflow-x-auto\">$$\\int e^{ax} \\cos bx \\, dx = \\frac{e^{ax}}{a^2 + b^2} (a \\cos bx + b \\sin bx)$$</div>\n\n- For \\(I_1 = \\int e^{-3x} \\cos 3x \\, dx\\), we have \\(a = -3\\) and \\(b = 3\\):\n  <div class=\"overflow-x-auto\">$$I_1 = \\frac{e^{-3x}}{(-3)^2 + 3^2} (-3 \\cos 3x + 3 \\sin 3x) = \\frac{e^{-3x}}{18} (-3 \\cos 3x + 3 \\sin 3x) = \\frac{e^{-3x}}{6} (\\sin 3x - \\cos 3x)$$</div>\n\n- For \\(I_2 = \\int e^{-3x} \\cos x \\, dx\\), we have \\(a = -3\\) and \\(b = 1\\):\n  <div class=\"overflow-x-auto\">$$I_2 = \\frac{e^{-3x}}{(-3)^2 + 1^2} (-3 \\cos x + \\sin x) = \\frac{e^{-3x}}{10} (\\sin x - 3 \\cos x)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Sum the evaluated integrals.</p>\n<div class=\"overflow-x-auto\">$$\\int e^{-3x} \\cos^3 x \\, dx = \\frac{1}{4} \\left[ \\frac{e^{-3x}}{6} (\\sin 3x - \\cos 3x) \\right] + \\frac{3}{4} \\left[ \\frac{e^{-3x}}{10} (\\sin x - 3 \\cos x) \\right] + C$$</div>\n<div class=\"overflow-x-auto\">$$= e^{-3x} \\left[ \\frac{1}{24}(\\sin 3x - \\cos 3x) + \\frac{3}{40}(\\sin x - 3 \\cos x) \\right] + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{e^{-3x} \\left[ \\frac{1}{24}(\\sin 3x - \\cos 3x) + \\frac{3}{40}(\\sin x - 3 \\cos x) \\right] + C}$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q5aiv",
     "discipline": "CSE",
     "batch": 18,
@@ -2335,19 +2335,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5aiv",
     "topics": [
-      "Indefinite Integration",
-      "Partial Fractions"
+        "Indefinite Integration",
+        "Partial Fractions"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Integrate the following:\n<div class=\"overflow-x-auto\">$$\\int \\frac{x \\, dx}{(x-1)(x^2+4)}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the partial fraction decomposition.</p>\n<div class=\"overflow-x-auto\">$$\\frac{x}{(x-1)(x^2+4)} = \\frac{A}{x-1} + \\frac{Bx+C}{x^2+4}$$</div>\nMultiply both sides by \\((x-1)(x^2+4)\\):\n<div class=\"overflow-x-auto\">$$x = A(x^2+4) + (Bx+C)(x-1)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Solve for the constants \\(A\\), \\(B\\), and \\(C\\).</p>\n- Set \\(x = 1\\):\n  <div class=\"overflow-x-auto\">$$1 = A(1^2+4) \\implies 1 = 5A \\implies A = \\frac{1}{5}$$</div>\n- Set \\(x = 0\\):\n  <div class=\"overflow-x-auto\">$$0 = 4A - C \\implies C = 4A \\implies C = \\frac{4}{5}$$</div>\n- Equate coefficients of \\(x^2\\):\n  <div class=\"overflow-x-auto\">$$0 = A + B \\implies B = -A \\implies B = -\\frac{1}{5}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Integrate the decomposed expression.</p>\n<div class=\"overflow-x-auto\">$$\\int \\frac{x \\, dx}{(x-1)(x^2+4)} = \\frac{1}{5} \\int \\frac{dx}{x-1} - \\frac{1}{5} \\int \\frac{x-4}{x^2+4} \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{1}{5} \\int \\frac{dx}{x-1} - \\frac{1}{10} \\int \\frac{2x}{x^2+4} \\, dx + \\frac{4}{5} \\int \\frac{dx}{x^2+4}$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{1}{5} \\ln|x-1| - \\frac{1}{10} \\ln(x^2+4) + \\frac{2}{5} \\tan^{-1}\\left(\\frac{x}{2}\\right) + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{1}{5} \\ln|x-1| - \\frac{1}{10} \\ln(x^2+4) + \\frac{2}{5} \\tan^{-1}\\left(\\frac{x}{2}\\right) + C}$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q6a",
     "discipline": "CSE",
     "batch": 18,
@@ -2357,18 +2357,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6a",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "If \\(f(2a-x) = -f(x)\\) then show that \\(\\int_0^{2a} f(x) \\, dx = 0\\).",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Split the integral into two equal subintervals.</p>\nUsing integration properties, split the integral at \\(x = a\\):\n<div class=\"overflow-x-auto\">$$\\int_0^{2a} f(x) \\, dx = \\int_0^a f(x) \\, dx + \\int_a^{2a} f(x) \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Apply variable substitution to the second integral.</p>\nLet \\(u = 2a - x \\implies dx = -du\\).\nEvaluate the new boundaries of integration:\n- When \\(x = a \\implies u = a\\).\n- When \\(x = 2a \\implies u = 0\\).\nSubstituting these into the second integral:\n<div class=\"overflow-x-auto\">$$\\int_a^{2a} f(x) \\, dx = \\int_a^0 f(2a-u) (-du) = \\int_0^a f(2a-u) \\, du$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Apply the given condition \\(f(2a-u) = -f(u)\\).</p>\n<div class=\"overflow-x-auto\">$$\\int_0^a f(2a-u) \\, du = \\int_0^a -f(u) \\, du = -\\int_0^a f(x) \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Combine the two integrals together.</p>\n<div class=\"overflow-x-auto\">$$\\int_0^{2a} f(x) \\, dx = \\int_0^a f(x) \\, dx - \\int_0^a f(x) \\, dx = 0$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{Hence proved that } \\boxed{\\int_0^{2a} f(x) \\, dx = 0} \\text{ if } f(2a-x) = -f(x).$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q6b",
     "discipline": "CSE",
     "batch": 18,
@@ -2378,18 +2378,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6b",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Show that \\(\\int_0^{\\pi/2} \\log(\\sin x) \\, dx = \\frac{\\pi}{2} \\log \\frac{1}{2}\\).",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Declare the integral and apply definite integration properties.</p>\nLet \\(I = \\int_0^{\\pi/2} \\log(\\sin x) \\, dx\\).\nUsing the property \\(\\int_a^b f(x) \\, dx = \\int_a^b f(a+b-x) \\, dx\\):\n<div class=\"overflow-x-auto\">$$I = \\int_0^{\\pi/2} \\log\\left(\\sin\\left(\\frac{\\pi}{2} - x\\right)\\right) \\, dx = \\int_0^{\\pi/2} \\log(\\cos x) \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Sum both equations for \\(I\\).</p>\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\log(\\sin x) \\, dx + \\int_0^{\\pi/2} \\log(\\cos x) \\, dx = \\int_0^{\\pi/2} \\log(\\sin x \\cos x) \\, dx$$</div>\nSubstitute \\(\\sin x \\cos x = \\frac{\\sin 2x}{2}\\):\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\log\\left(\\frac{\\sin 2x}{2}\\right) \\, dx = \\int_0^{\\pi/2} \\log(\\sin 2x) \\, dx - \\int_0^{\\pi/2} \\log 2 \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Compute the simple integral component.</p>\n<div class=\"overflow-x-auto\">$$\\int_0^{\\pi/2} \\log 2 \\, dx = \\log 2 \\cdot [x]_0^{\\pi/2} = \\frac{\\pi}{2} \\log 2$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Solve the remaining integral using variable substitution.</p>\nLet \\(J = \\int_0^{\\pi/2} \\log(\\sin 2x) \\, dx\\).\nSubstitute \\(t = 2x \\implies dx = \\frac{dt}{2}\\).\nEvaluate boundaries: when \\(x = 0 \\implies t = 0\\), and when \\(x = \\pi/2 \\implies t = \\pi\\).\n<div class=\"overflow-x-auto\">$$J = \\frac{1}{2} \\int_0^{\\pi} \\log(\\sin t) \\, dt$$</div>\nUsing symmetry properties, since \\(\\sin(\\pi - t) = \\sin t\\):\n<div class=\"overflow-x-auto\">$$J = \\frac{1}{2} \\left( 2 \\int_0^{\\pi/2} \\log(\\sin t) \\, dt \\right) = \\int_0^{\\pi/2} \\log(\\sin t) \\, dt = I$$</div>\n<p class=\"font-semibold text-slate-900\">Step 5: Combine findings to find \\(I\\).</p>\n<div class=\"overflow-x-auto\">$$2I = I - \\frac{\\pi}{2} \\log 2 \\implies I = -\\frac{\\pi}{2} \\log 2 = \\frac{\\pi}{2} \\log\\left(\\frac{1}{2}\\right)$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{Hence proved that } \\boxed{\\int_0^{\\pi/2} \\log(\\sin x) \\, dx = \\frac{\\pi}{2} \\log \\frac{1}{2}}$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q7a",
     "discipline": "CSE",
     "batch": 18,
@@ -2399,19 +2399,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7a",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Prove that \\(\\Gamma(m) \\Gamma\\left(m + \\frac{1}{2}\\right) = \\frac{\\sqrt{\\pi}}{2^{2m-1}} \\Gamma(2m)\\).",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the Beta function definition and its relation to Gamma.</p>\nRecall the definition of the Beta function in terms of Gamma functions:\n<div class=\"overflow-x-auto\">$$B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$$</div>\nThe trigonometric form of the Beta function is:\n<div class=\"overflow-x-auto\">$$B(m, n) = 2 \\int_0^{\\pi/2} \\sin^{2m-1} \\theta \\cos^{2n-1} \\theta \\, d\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Let \\(n = m\\) and simplify the integral.</p>\n<div class=\"overflow-x-auto\">$$B(m, m) = 2 \\int_0^{\\pi/2} \\sin^{2m-1} \\theta \\cos^{2m-1} \\theta \\, d\\theta = 2 \\int_0^{\\pi/2} \\left( \\frac{\\sin 2\\theta}{2} \\right)^{2m-1} \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$B(m, m) = \\frac{2}{2^{2m-1}} \\int_0^{\\pi/2} \\sin^{2m-1} (2\\theta) \\, d\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Perform variable substitution on the integral.</p>\nLet \\(\\phi = 2\\theta \\implies d\\theta = \\frac{d\\phi}{2}\\).\n- When \\(\\theta = 0 \\implies \\phi = 0\\).\n- When \\(\\theta = \\pi/2 \\implies \\phi = \\pi\\).\n<div class=\"overflow-x-auto\">$$B(m, m) = \\frac{2}{2^{2m-1}} \\int_0^\\pi \\sin^{2m-1} \\phi \\frac{d\\phi}{2} = \\frac{1}{2^{2m-1}} \\int_0^\\pi \\sin^{2m-1} \\phi \\, d\\phi$$</div>\nUsing symmetry properties:\n<div class=\"overflow-x-auto\">$$\\int_0^\\pi \\sin^{2m-1} \\phi \\, d\\phi = 2 \\int_0^{\\pi/2} \\sin^{2m-1} \\phi \\, d\\phi = B\\left(m, \\frac{1}{2}\\right)$$</div>\nThus:\n<div class=\"overflow-x-auto\">$$B(m, m) = \\frac{1}{2^{2m-1}} B\\left(m, \\frac{1}{2}\\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Substitute Gamma definitions back into the identity.</p>\n<div class=\"overflow-x-auto\">$$\\frac{\\Gamma(m)\\Gamma(m)}{\\Gamma(2m)} = \\frac{1}{2^{2m-1}} \\frac{\\Gamma(m)\\Gamma\\left(\\frac{1}{2}\\right)}{\\Gamma\\left(m + \\frac{1}{2}\\right)}$$</div>\nSince \\(\\Gamma\\left(\\frac{1}{2}\\right) = \\sqrt{\\pi}\\), we can divide both sides by \\(\\Gamma(m)\\):\n<div class=\"overflow-x-auto\">$$\\frac{\\Gamma(m)}{\\Gamma(2m)} = \\frac{\\sqrt{\\pi}}{2^{2m-1} \\Gamma\\left(m + \\frac{1}{2}\\right)}$$</div>\nRearranging terms yields:\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma\\left(m + \\frac{1}{2}\\right) = \\frac{\\sqrt{\\pi}}{2^{2m-1}} \\Gamma(2m)$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\text{Hence proved Legendre's Duplication Formula: } \\boxed{\\Gamma(m)\\Gamma\\left(m + \\frac{1}{2}\\right) = \\frac{\\sqrt{\\pi}}{2^{2m-1}} \\Gamma(2m)}$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q7b",
     "discipline": "CSE",
     "batch": 18,
@@ -2421,19 +2421,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7b",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Express \\(\\int_0^1 x^m (1 - x^n)^p \\, dx\\) in terms of the beta function and hence evaluate \\(\\int_0^1 x^5 (1 - x^3)^{10} \\, dx\\).",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up substitution to express the general integral in terms of Beta.</p>\nLet \\(I = \\int_0^1 x^m (1 - x^n)^p \\, dx\\).\nSubstitute \\(y = x^n \\implies x = y^{1/n}\\).\nDifferentiating:\n<div class=\"overflow-x-auto\">$$dx = \\frac{1}{n} y^{\\frac{1}{n} - 1} \\, dy$$</div>\nThe limits of integration remain \\(0\\) to \\(1\\). Substituting these values into \\(I\\):\n<div class=\"overflow-x-auto\">$$I = \\int_0^1 \\left(y^{1/n}\\right)^m (1-y)^p \\left(\\frac{1}{n} y^{\\frac{1}{n}-1}\\right) dy$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{1}{n} \\int_0^1 y^{\\frac{m}{n}} y^{\\frac{1}{n}-1} (1-y)^p \\, dy$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{1}{n} \\int_0^1 y^{\\frac{m+1}{n}-1} (1-y)^{(p+1)-1} \\, dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Relate to the standard definition of the Beta function.</p>\nUsing \\(B(a, b) = \\int_0^1 y^{a-1}(1-y)^{b-1} \\, dy\\):\n<div class=\"overflow-x-auto\">$$I = \\frac{1}{n} B\\left(\\frac{m+1}{n}, p+1\\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the given definite integral \\(\\int_0^1 x^5 (1 - x^3)^{10} \\, dx\\).</p>\nHere, we have \\(m = 5\\), \\(n = 3\\), and \\(p = 10\\).\nUsing our derived formula:\n<div class=\"overflow-x-auto\">$$\\int_0^1 x^5 (1 - x^3)^{10} \\, dx = \\frac{1}{3} B\\left(\\frac{5+1}{3}, 10+1\\right) = \\frac{1}{3} B(2, 11)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Compute the value using Gamma identities.</p>\n<div class=\"overflow-x-auto\">$$B(2, 11) = \\frac{\\Gamma(2)\\Gamma(11)}{\\Gamma(13)} = \\frac{1! \\cdot 10!}{12!} = \\frac{10!}{12 \\cdot 11 \\cdot 10!} = \\frac{1}{132}$$</div>\nSo:\n<div class=\"overflow-x-auto\">$$I = \\frac{1}{3} \\cdot \\frac{1}{132} = \\frac{1}{396}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{1}{n} B\\left(\\frac{m+1}{n}, p+1\\right) = \\frac{1}{396}}$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q8a",
     "discipline": "CSE",
     "batch": 18,
@@ -2443,18 +2443,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8a",
     "topics": [
-      "Multiple Integrals"
+        "Multiple Integrals"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["difficult"],
     "questionHtml": "Find the area common to the circles \\(r = a\\sqrt{2}\\) and \\(r = 2a \\cos \\theta\\).",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Find the points of intersection.</p>\nSet the two circle expressions equal to each other:\n<div class=\"overflow-x-auto\">$$a\\sqrt{2} = 2a \\cos \\theta \\implies \\cos \\theta = \\frac{\\sqrt{2}}{2} \\implies \\theta = \\pm \\frac{\\pi}{4}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Understand the layout of both curves.</p>\n- \\(r = a\\sqrt{2}\\) is a circle centered at the origin with radius \\(a\\sqrt{2}\\).\n- \\(r = 2a\\cos\\theta\\) is a circle centered at \\((a, 0)\\) with radius \\(a\\).\nDue to symmetry with respect to the initial line (\\(\\theta=0\\)), the total area \\(A\\) is twice the area of the upper half:\n<div class=\"overflow-x-auto\">$$A = 2 \\left[ \\frac{1}{2} \\int_0^{\\pi/4} \\left(a\\sqrt{2}\\right)^2 \\, d\\theta + \\frac{1}{2} \\int_{\\pi/4}^{\\pi/2} (2a\\cos\\theta)^2 \\, d\\theta \\right]$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Integrate both portions.</p>\n<div class=\"overflow-x-auto\">$$A = \\int_0^{\\pi/4} 2a^2 \\, d\\theta + \\int_{\\pi/4}^{\\pi/2} 4a^2 \\cos^2 \\theta \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$= 2a^2 [\\theta]_0^{\\pi/4} + 2a^2 \\int_{\\pi/4}^{\\pi/2} (1 + \\cos 2\\theta) \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$= 2a^2 \\left(\\frac{\\pi}{4}\\right) + 2a^2 \\left[ \\theta + \\frac{\\sin 2\\theta}{2} \\right]_{\\pi/4}^{\\pi/2}$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{\\pi a^2}{2} + 2a^2 \\left[ \\left(\\frac{\\pi}{2} + 0\\right) - \\left(\\frac{\\pi}{4} + \\frac{1}{2}\\right) \\right]$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{\\pi a^2}{2} + 2a^2 \\left( \\frac{\\pi}{4} - \\frac{1}{2} \\right) = \\frac{\\pi a^2}{2} + \\frac{\\pi a^2}{2} - a^2 = a^2(\\pi - 1)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{a^2(\\pi - 1)}$$</div>"
   },
-  {
+    {
     "id": "cse18-final-q8b",
     "discipline": "CSE",
     "batch": 18,
@@ -2464,18 +2464,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["difficult"],
     "questionHtml": "Find the length of the curve \\(x^2 = a^2(1 - e^{y/a})\\) measured from \\((0,0)\\) to \\((x,y)\\).",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Check boundaries and express terms.</p>\nFrom the equation \\(x^2 = a^2(1 - e^{y/a})\\), since \\(x^2 \\ge 0\\), we must have:\n<div class=\"overflow-x-auto\">$$1 - e^{y/a} \\ge 0 \\implies e^{y/a} \\le 1 \\implies \\frac{y}{a} \\le 0 \\implies y \\le 0 \\quad (\\text{for } a > 0)$$</div>\nWe integrate with respect to \\(y\\) from \\(y\\) to \\(0\\) (the positive direction).\nDifferentiating both sides with respect to \\(y\\):\n<div class=\"overflow-x-auto\">$$2x \\frac{dx}{dy} = a^2 \\left( -e^{y/a} \\cdot \\frac{1}{a} \\right) \\implies 2x \\frac{dx}{dy} = -a e^{y/a} \\implies \\frac{dx}{dy} = \\frac{-a e^{y/a}}{2x}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Formulate the arc length differential element \\(ds = \\sqrt{1 + \\left(\\frac{dx}{dy}\\right)^2} \\, dy\\).</p>\n<div class=\"overflow-x-auto\">$$\\left(\\frac{dx}{dy}\\right)^2 = \\frac{a^2 e^{2y/a}}{4x^2} = \\frac{a^2 e^{2y/a}}{4a^2(1-e^{y/a})} = \\frac{e^{2y/a}}{4(1-e^{y/a})}$$</div>\nAdding 1:\n<div class=\"overflow-x-auto\">$$1 + \\left(\\frac{dx}{dy}\\right)^2 = 1 + \\frac{e^{2y/a}}{4(1-e^{y/a})} = \\frac{4 - 4e^{y/a} + e^{2y/a}}{4(1-e^{y/a})} = \\frac{(2-e^{y/a})^2}{4(1-e^{y/a})}$$</div>\nTaking the square root (since \\(e^{y/a} \\le 1\\), we have \\(2-e^{y/a} > 0\\)):\n<div class=\"overflow-x-auto\">$$\\sqrt{1 + \\left(\\frac{dx}{dy}\\right)^2} = \\frac{2-e^{y/a}}{2\\sqrt{1-e^{y/a}}}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Solve the integral using variable substitution.</p>\n<div class=\"overflow-x-auto\">$$L = \\int_{y}^0 \\frac{2-e^{y/a}}{2\\sqrt{1-e^{y/a}}} \\, dy$$</div>\nLet \\(u = \\sqrt{1-e^{y/a}} \\implies u^2 = 1-e^{y/a} \\implies e^{y/a} = 1-u^2\\).\nDifferentiating:\n<div class=\"overflow-x-auto\">$$\\frac{1}{a} e^{y/a} \\, dy = -2u \\, du \\implies dy = \\frac{-2au \\, du}{1-u^2}$$</div>\nSubstitute limits of integration:\n- When \\(y = 0 \\implies u = 0\\).\n- When \\(y = y \\implies u = \\sqrt{1-e^{y/a}}\\).\nReplacing variables in the integral:\n<div class=\"overflow-x-auto\">$$L = \\int_{\\sqrt{1-e^{y/a}}}^0 \\left( \\frac{1+u^2}{2u} \\right) \\left( \\frac{-2au \\, du}{1-u^2} \\right) = a \\int_0^{\\sqrt{1-e^{y/a}}} \\frac{1+u^2}{1-u^2} \\, du$$</div>\n<div class=\"overflow-x-auto\">$$= a \\int_0^{\\sqrt{1-e^{y/a}}} \\left( -1 + \\frac{2}{1-u^2} \\right) du = a \\left[ -u + \\ln\\left| \\frac{1+u}{1-u} \\right| \\right]_0^{\\sqrt{1-e^{y/a}}}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Evaluate the result.</p>\nLet \\(u_0 = \\sqrt{1-e^{y/a}}\\):\n<div class=\"overflow-x-auto\">$$L = a \\left[ \\ln\\left( \\frac{1+u_0}{1-u_0} \\right) - u_0 \\right]$$</div>\nSubstitute \\(u_0\\) back in:\n<div class=\"overflow-x-auto\">$$L = a \\ln\\left( \\frac{1+\\sqrt{1-e^{y/a}}}{1-\\sqrt{1-e^{y/a}}} \\right) - a\\sqrt{1-e^{y/a}}$$</div>\nSimplifying the logarithmic term using algebraic rationalization:\n<div class=\"overflow-x-auto\">$$\\ln\\left( \\frac{1+\\sqrt{1-e^{y/a}}}{1-\\sqrt{1-e^{y/a}}} \\right) = \\ln\\left( \\frac{\\left(1+\\sqrt{1-e^{y/a}}\\right)^2}{e^{y/a}} \\right) = 2\\ln\\left(1+\\sqrt{1-e^{y/a}}\\right) - \\frac{y}{a}$$</div>\nSubstituting back:\n<div class=\"overflow-x-auto\">$$L = 2a\\ln\\left(1+\\sqrt{1-e^{y/a}}\\right) - y - a\\sqrt{1-e^{y/a}}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{2a\\ln\\left(1+\\sqrt{1-e^{y/a}}\\right) - y - a\\sqrt{1-e^{y/a}}}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q5ai",
     "discipline": "CSE",
     "batch": 17,
@@ -2485,18 +2485,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5ai",
     "topics": [
-      "Indefinite Integration"
+        "Indefinite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Integrate the following:\n<div class=\"overflow-x-auto\">$$\\int \\frac{x^2+1}{x^4+1} \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Divide the numerator and the denominator by $x^2$.</p>\n<div class=\"overflow-x-auto\">$$\\int \\frac{x^2+1}{x^4+1} \\, dx = \\int \\frac{1 + \\frac{1}{x^2}}{x^2 + \\frac{1}{x^2}} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Apply a algebraic transformation to the denominator.</p>\nRecall that $x^2 + \\frac{1}{x^2} = \\left(x - \\frac{1}{x}\\right)^2 + 2$.\nSubstituting this into the integral yields:\n<div class=\"overflow-x-auto\">$$\\int \\frac{1 + \\frac{1}{x^2}}{\\left(x - \\frac{1}{x}\\right)^2 + 2} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Solve the integral using substitution.</p>\nLet $u = x - \\frac{1}{x}$. Differentiating both sides:\n<div class=\"overflow-x-auto\">$$du = \\left(1 + \\frac{1}{x^2}\\right) dx$$</div>\nSubstituting these values back into the integral:\n<div class=\"overflow-x-auto\">$$\\int \\frac{du}{u^2 + 2}$$</div>\nUsing the standard integration formula $\\int \\frac{dw}{w^2+a^2} = \\frac{1}{a} \\tan^{-1}\\left(\\frac{w}{a}\\right) + c$:\n<div class=\"overflow-x-auto\">$$= \\frac{1}{\\sqrt{2}} \\tan^{-1}\\left(\\frac{u}{\\sqrt{2}}\\right) + c$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Substitute back $u = x - \\frac{1}{x}$.</p>\n<div class=\"overflow-x-auto\">$$= \\frac{1}{\\sqrt{2}} \\tan^{-1}\\left(\\frac{x - \\frac{1}{x}}{\\sqrt{2}}\\right) + c = \\frac{1}{\\sqrt{2}} \\tan^{-1}\\left(\\frac{x^2-1}{\\sqrt{2}x}\\right) + c$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{1}{\\sqrt{2}} \\tan^{-1}\\left(\\frac{x^2-1}{\\sqrt{2}x}\\right) + c}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q5aii",
     "discipline": "CSE",
     "batch": 17,
@@ -2506,19 +2506,19 @@ const questions = [
     "section": "B",
     "questionNumber": "5aii",
     "topics": [
-      "Indefinite Integration",
-      "Trigonometric Integrals"
+        "Indefinite Integration",
+        "Trigonometric Integrals"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Integrate the following:\n<div class=\"overflow-x-auto\">$$\\int \\frac{dx}{\\sec x + \\csc x}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Simplify the integrand in terms of sine and cosine.</p>\n<div class=\"overflow-x-auto\">$$\\int \\frac{dx}{\\frac{1}{\\cos x} + \\frac{1}{\\sin x}} = \\int \\frac{\\sin x \\cos x}{\\sin x + \\cos x} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Represent the numerator in terms of the denominator.</p>\nRecall that $(\\sin x + \\cos x)^2 = \\sin^2 x + \\cos^2 x + 2\\sin x \\cos x = 1 + 2\\sin x \\cos x$.\nThus, we can write:\n<div class=\"overflow-x-auto\">$$\\sin x \\cos x = \\frac{(\\sin x + \\cos x)^2 - 1}{2}$$</div>\nSubstituting this identity back into the integral:\n<div class=\"overflow-x-auto\">$$\\int \\frac{\\frac{1}{2}\\left[(\\sin x + \\cos x)^2 - 1\\right]}{\\sin x + \\cos x} \\, dx = \\frac{1}{2} \\int \\left( \\sin x + \\cos x - \\frac{1}{\\sin x + \\cos x} \\right) dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Integrate the terms.</p>\n- For the first portion:\n  <div class=\"overflow-x-auto\">$$\\frac{1}{2} \\int (\\sin x + \\cos x) \\, dx = \\frac{1}{2} (\\sin x - \\cos x)$$</div>\n- For the second portion, simplify $\\sin x + \\cos x$ using trigonometric identities:\n  <div class=\"overflow-x-auto\">$$\\sin x + \\cos x = \\sqrt{2} \\left( \\frac{1}{\\sqrt{2}}\\sin x + \\frac{1}{\\sqrt{2}}\\cos x \\right) = \\sqrt{2} \\sin\\left(x + \\frac{\\pi}{4}\\right)$$</div>\n  Thus:\n  <div class=\"overflow-x-auto\">$$\\frac{1}{2} \\int \\frac{dx}{\\sin x + \\cos x} = \\frac{1}{2\\sqrt{2}} \\int \\csc\\left(x + \\frac{\\pi}{4}\\right) \\, dx$$</div>\n  Using the standard formula $\\int \\csc w \\, dw = \\ln|\\csc w - \\cot w| = \\ln\\left|\\tan\\left(\\frac{w}{2}\\right)\\right|$:\n  <div class=\"overflow-x-auto\">$$= \\frac{1}{2\\sqrt{2}} \\ln\\left| \\tan\\left( \\frac{x}{2} + \\frac{\\pi}{8} \\right) \\right|$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Combine the portions.</p>\n<div class=\"overflow-x-auto\">$$= \\frac{1}{2}(\\sin x - \\cos x) - \\frac{1}{2\\sqrt{2}} \\ln\\left| \\tan\\left( \\frac{x}{2} + \\frac{\\pi}{8} \\right) \\right| + c$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{1}{2}(\\sin x - \\cos x) - \\frac{1}{2\\sqrt{2}} \\ln\\left| \\tan\\left( \\frac{x}{2} + \\frac{\\pi}{8} \\right) \\right| + c}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q5aiii",
     "discipline": "CSE",
     "batch": 17,
@@ -2528,18 +2528,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5aiii",
     "topics": [
-      "Indefinite Integration"
+        "Indefinite Integration"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Integrate the following:\n<div class=\"overflow-x-auto\">$$\\int \\frac{dx}{\\sqrt{x^2 - 4x + 3}}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Complete the square for the quadratic expression inside the radical.</p>\n<div class=\"overflow-x-auto\">$$x^2 - 4x + 3 = (x-2)^2 - 4 + 3 = (x-2)^2 - 1$$</div>\nSubstituting this back into the integral:\n<div class=\"overflow-x-auto\">$$\\int \\frac{dx}{\\sqrt{(x-2)^2 - 1}}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Solve using the standard integration formula.</p>\nRecall the standard integration formula:\n<div class=\"overflow-x-auto\">$$\\int \\frac{du}{\\sqrt{u^2 - a^2}} = \\ln\\left| u + \\sqrt{u^2 - a^2} \\right| + c$$</div>\nApplying this with $u = x-2$ and $a = 1$:\n<div class=\"overflow-x-auto\">$$= \\ln\\left| x - 2 + \\sqrt{(x-2)^2 - 1} \\right| + c$$</div>\nSimplify the expression inside the radical:\n<div class=\"overflow-x-auto\">$$= \\ln\\left| x - 2 + \\sqrt{x^2 - 4x + 3} \\right| + c$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\ln\\left| x - 2 + \\sqrt{x^2 - 4x + 3} \\right| + c}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q5bi",
     "discipline": "CSE",
     "batch": 17,
@@ -2549,18 +2549,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5bi",
     "topics": [
-      "Indefinite Integration"
+        "Indefinite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Show that:\n<div class=\"overflow-x-auto\">$$\\int \\frac{x+\\sin x}{1+\\cos x} \\, dx = x \\tan \\frac{x}{2} + c$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Substitute trigonometric half-angle identities.</p>\nRecall that $1 + \\cos x = 2\\cos^2\\left(\\frac{x}{2}\\right)$ and $\\sin x = 2\\sin\\left(\\frac{x}{2}\\right)\\cos\\left(\\frac{x}{2}\\right)$.\nSubstitute these into the integral:\n<div class=\"overflow-x-auto\">$$\\int \\frac{x+\\sin x}{1+\\cos x} \\, dx = \\int \\frac{x + 2\\sin\\left(\\frac{x}{2}\\right)\\cos\\left(\\frac{x}{2}\\right)}{2\\cos^2\\left(\\frac{x}{2}\\right)} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Separate the integrand into two terms.</p>\n<div class=\"overflow-x-auto\">$$= \\int \\frac{x}{2\\cos^2\\left(\\frac{x}{2}\\right)} \\, dx + \\int \\frac{2\\sin\\left(\\frac{x}{2}\\right)\\cos\\left(\\frac{x}{2}\\right)}{2\\cos^2\\left(\\frac{x}{2}\\right)} \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{1}{2} \\int x \\sec^2\\left(\\frac{x}{2}\\right) \\, dx + \\int \\tan\\left(\\frac{x}{2}\\right) \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Integrate the first term using integration by parts.</p>\nFor $\\int x \\sec^2\\left(\\frac{x}{2}\\right) \\, dx$, let:\n- $u = x \\implies du = dx$\n- $dv = \\sec^2\\left(\\frac{x}{2}\\right) dx \\implies v = 2\\tan\\left(\\frac{x}{2}\\right)$\n\nApplying the integration by parts formula $\\int u \\, dv = uv - \\int v \\, du$:\n<div class=\"overflow-x-auto\">$$\\int x \\sec^2\\left(\\frac{x}{2}\\right) \\, dx = 2x \\tan\\left(\\frac{x}{2}\\right) - \\int 2\\tan\\left(\\frac{x}{2}\\right) \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Combine the results back into the equation.</p>\n<div class=\"overflow-x-auto\">$$\\int \\frac{x+\\sin x}{1+\\cos x} \\, dx = \\frac{1}{2} \\left[ 2x\\tan\\left(\\frac{x}{2}\\right) - 2 \\int \\tan\\left(\\frac{x}{2}\\right) \\, dx \\right] + \\int \\tan\\left(\\frac{x}{2}\\right) \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$= x \\tan\\left(\\frac{x}{2}\\right) - \\int \\tan\\left(\\frac{x}{2}\\right) \\, dx + \\int \\tan\\left(\\frac{x}{2}\\right) \\, dx = x\\tan\\left(\\frac{x}{2}\\right) + c$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{x \\tan \\frac{x}{2} + c}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q5bii",
     "discipline": "CSE",
     "batch": 17,
@@ -2570,18 +2570,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5bii",
     "topics": [
-      "Indefinite Integration"
+        "Indefinite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Show that:\n<div class=\"overflow-x-auto\">$$\\int \\frac{x^2+1}{(x+1)^2} e^x \\, dx = e^x \\left(\\frac{x-1}{x+1}\\right) + c$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Simplify the algebraic fraction.</p>\n<div class=\"overflow-x-auto\">$$\\frac{x^2+1}{(x+1)^2} = \\frac{x^2 - 1 + 2}{(x+1)^2} = \\frac{(x-1)(x+1) + 2}{(x+1)^2} = \\frac{x-1}{x+1} + \\frac{2}{(x+1)^2}$$</div>\nSubstituting this back into the integral:\n<div class=\"overflow-x-auto\">$$\\int e^x \\left[ \\frac{x-1}{x+1} + \\frac{2}{(x+1)^2} \\right] dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Identify the pattern of the integrand.</p>\nRecall the standard integration rule:\n<div class=\"overflow-x-auto\">$$\\int e^x [f(x) + f'(x)] \\, dx = e^x f(x) + c$$</div>\nLet $f(x) = \\frac{x-1}{x+1}$. Differentiating this using the quotient rule:\n<div class=\"overflow-x-auto\">$$f'(x) = \\frac{1(x+1) - (x-1)(1)}{(x+1)^2} = \\frac{2}{(x+1)^2}$$</div>\nThis perfectly matches our simplified expression.\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the integral.</p>\n<div class=\"overflow-x-auto\">$$\\int e^x [f(x) + f'(x)] \\, dx = e^x \\left(\\frac{x-1}{x+1}\\right) + c$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{e^x \\left(\\frac{x-1}{x+1}\\right) + c}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q6a",
     "discipline": "CSE",
     "batch": 17,
@@ -2591,18 +2591,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6a",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Evaluate:\n<div class=\"overflow-x-auto\">$$\\int_0^{\\pi/2} \\frac{\\sin^2 x}{\\sin x + \\cos x} \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Use the definite integration property to find an alternative form.</p>\nLet $I = \\int_0^{\\pi/2} \\frac{\\sin^2 x}{\\sin x + \\cos x} \\, dx$.\nRecall the property $\\int_0^a f(x) \\, dx = \\int_0^a f(a-x) \\, dx$:\n<div class=\"overflow-x-auto\">$$I = \\int_0^{\\pi/2} \\frac{\\sin^2\\left(\\frac{\\pi}{2}-x\\right)}{\\sin\\left(\\frac{\\pi}{2}-x\\right) + \\cos\\left(\\frac{\\pi}{2}-x\\right)} \\, dx = \\int_0^{\\pi/2} \\frac{\\cos^2 x}{\\cos x + \\sin x} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Add both equations of $I$ together.</p>\n<div class=\"overflow-x-auto\">$$2I = \\int_0^{\\pi/2} \\frac{\\sin^2 x + \\cos^2 x}{\\sin x + \\cos x} \\, dx = \\int_0^{\\pi/2} \\frac{dx}{\\sin x + \\cos x}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the combined integral.</p>\nRecall the trigonometric simplification $\\sin x + \\cos x = \\sqrt{2} \\sin\\left(x + \\frac{\\pi}{4}\\right)$:\n<div class=\"overflow-x-auto\">$$2I = \\frac{1}{\\sqrt{2}} \\int_0^{\\pi/2} \\csc\\left(x + \\frac{\\pi}{4}\\right) \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$2I = \\frac{1}{\\sqrt{2}} \\left[ \\ln\\left| \\tan\\left( \\frac{x}{2} + \\frac{\\pi}{8} \\right) \\right| \\right]_0^{\\pi/2}$$</div>\nEvaluate at the limits:\n- At $x = \\pi/2$: $\\tan\\left(\\frac{\\pi}{4} + \\frac{\\pi}{8}\\right) = \\tan\\left(\\frac{3\\pi}{8}\\right) = \\sqrt{2} + 1$\n- At $x = 0$: $\\tan\\left(\\frac{\\pi}{8}\\right) = \\sqrt{2} - 1$\n<div class=\"overflow-x-auto\">$$2I = \\frac{1}{\\sqrt{2}} \\left[ \\ln(\\sqrt{2} + 1) - \\ln(\\sqrt{2} - 1) \\right]$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Simplify the logarithmic term.</p>\nSince $(\\sqrt{2}-1)(\\sqrt{2}+1) = 1 \\implies \\sqrt{2}-1 = \\frac{1}{\\sqrt{2}+1}$:\n<div class=\"overflow-x-auto\">$$\\ln(\\sqrt{2}+1) - \\ln(\\sqrt{2}-1) = \\ln(\\sqrt{2}+1) - \\ln\\left(\\frac{1}{\\sqrt{2}+1}\\right) = 2\\ln(\\sqrt{2}+1)$$</div>\nSubstitute this back:\n<div class=\"overflow-x-auto\">$$2I = \\frac{1}{\\sqrt{2}} \\cdot 2\\ln(\\sqrt{2} + 1) \\implies I = \\frac{1}{\\sqrt{2}}\\ln(\\sqrt{2}+1)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{1}{\\sqrt{2}}\\ln(\\sqrt{2}+1)}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q6b",
     "discipline": "CSE",
     "batch": 17,
@@ -2612,18 +2612,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6b",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Show that:\n<div class=\"overflow-x-auto\">$$\\int_0^{\\pi/4} \\log(1 + \\tan\\theta) \\, d\\theta = \\frac{\\pi}{8} \\log 2$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the integral with the definite integral property.</p>\nLet $I = \\int_0^{\\pi/4} \\log(1 + \\tan\\theta) \\, d\\theta$.\nUsing the property $\\int_0^a f(x) \\, dx = \\int_0^a f(a-x) \\, dx$:\n<div class=\"overflow-x-auto\">$$I = \\int_0^{\\pi/4} \\log\\left( 1 + \\tan\\left( \\frac{\\pi}{4} - \\theta \\right) \\right) d\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Simplify the tangent component.</p>\nRecall the subtraction formula: $\\tan\\left(\\frac{\\pi}{4} - \\theta\\right) = \\frac{1-\\tan\\theta}{1+\\tan\\theta}$.\n<div class=\"overflow-x-auto\">$$1 + \\tan\\left(\\frac{\\pi}{4} - \\theta\\right) = 1 + \\frac{1-\\tan\\theta}{1+\\tan\\theta} = \\frac{1+\\tan\\theta + 1-\\tan\\theta}{1+\\tan\\theta} = \\frac{2}{1+\\tan\\theta}$$</div>\nSubstitute this back:\n<div class=\"overflow-x-auto\">$$I = \\int_0^{\\pi/4} \\log\\left( \\frac{2}{1+\\tan\\theta} \\right) d\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Separate the logarithmic term.</p>\n<div class=\"overflow-x-auto\">$$I = \\int_0^{\\pi/4} \\left[ \\log 2 - \\log(1+\\tan\\theta) \\right] d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$I = \\int_0^{\\pi/4} \\log 2 \\, d\\theta - I$$</div>\n<div class=\"overflow-x-auto\">$$2I = \\log 2 \\cdot [\\theta]_0^{\\pi/4} = \\frac{\\pi}{4} \\log 2$$</div>\n<div class=\"overflow-x-auto\">$$I = \\frac{\\pi}{8} \\log 2$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{\\pi}{8} \\log 2}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q7a",
     "discipline": "CSE",
     "batch": 17,
@@ -2633,19 +2633,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7a",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Prove that:\n<div class=\"overflow-x-auto\">$$\\beta(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Write Gamma functions using polar-coordinate substitution.</p>\nRecall the definition of the Gamma function:\n<div class=\"overflow-x-auto\">$$\\Gamma(m) = \\int_0^\\infty e^{-t} t^{m-1} \\, dt$$</div>\nLetting $t = x^2 \\implies dt = 2x \\, dx$:\n<div class=\"overflow-x-auto\">$$\\Gamma(m) = 2 \\int_0^\\infty e^{-x^2} x^{2m-1} \\, dx$$</div>\nSimilarly:\n<div class=\"overflow-x-auto\">$$\\Gamma(n) = 2 \\int_0^\\infty e^{-y^2} y^{2n-1} \\, dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Multiply the two Gamma functions together.</p>\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = 4 \\int_0^\\infty \\int_0^\\infty e^{-(x^2+y^2)} x^{2m-1} y^{2n-1} \\, dx \\, dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Convert the double integral into polar coordinates.</p>\nLet $x = r\\cos\\theta$ and $y = r\\sin\\theta$. The Jacobian is $dx \\, dy = r \\, dr \\, d\\theta$.\nThe boundaries for the first quadrant are $r \\in [0, \\infty)$ and $\\theta \\in [0, \\pi/2]$:\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} (r\\cos\\theta)^{2m-1} (r\\sin\\theta)^{2n-1} r \\, dr \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$= 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\cos^{2m-1}\\theta \\sin^{2n-1}\\theta \\, dr \\, d\\theta$$</div>\nSeparate the terms:\n<div class=\"overflow-x-auto\">$$= 2 \\left( \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\, dr \\right) \\cdot 2 \\left( \\int_0^{\\pi/2} \\sin^{2n-1}\\theta \\cos^{2m-1}\\theta \\, d\\theta \\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Relate the components back to Gamma and Beta definitions.</p>\n- The first part is: $\\Gamma(m+n)$\n- The second part is the trigonometric form of the Beta function: $B(n, m) = B(m, n)$\nTherefore:\n<div class=\"overflow-x-auto\">$$\\Gamma(m)\\Gamma(n) = \\Gamma(m+n) B(m, n)$$</div>\n<div class=\"overflow-x-auto\">$$B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q7b",
     "discipline": "CSE",
     "batch": 17,
@@ -2655,18 +2655,18 @@ const questions = [
     "section": "B",
     "questionNumber": "7b",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "If $U_n = \\int_0^1 x^n \\tan^{-1} x \\, dx$, then prove that:\n<div class=\"overflow-x-auto\">$$(n+1)U_n + (n-1)U_{n-2} = \\frac{\\pi}{2} - \\frac{1}{n}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Integrate $U_n$ by parts.</p>\nFor $U_n = \\int_0^1 x^n \\tan^{-1} x \\, dx$, let:\n- $u = \\tan^{-1} x \\implies du = \\frac{dx}{1+x^2}$\n- $dv = x^n \\, dx \\implies v = \\frac{x^{n+1}}{n+1}$\n\nApplying integration by parts:\n<div class=\"overflow-x-auto\">$$U_n = \\left[ \\frac{x^{n+1}}{n+1} \\tan^{-1} x \\right]_0^1 - \\int_0^1 \\frac{x^{n+1}}{(n+1)(1+x^2)} \\, dx$$</div>\nMultiply both sides by $(n+1)$:\n<div class=\"overflow-x-auto\">$$(n+1)U_n = \\tan^{-1}(1) - \\int_0^1 \\frac{x^{n+1}}{1+x^2} \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$(n+1)U_n = \\frac{\\pi}{4} - \\int_0^1 \\frac{x^{n+1}}{1+x^2} \\, dx \\quad \\text{--- (Equation 1)}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Express $(n-1)U_{n-2}$ using a similar form.</p>\nBy substituting $n$ with $n-2$ in Equation 1:\n<div class=\"overflow-x-auto\">$$(n-1)U_{n-2} = \\frac{\\pi}{4} - \\int_0^1 \\frac{x^{n-1}}{1+x^2} \\, dx \\quad \\text{--- (Equation 2)}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Sum Equation 1 and Equation 2.</p>\n<div class=\"overflow-x-auto\">$$(n+1)U_n + (n-1)U_{n-2} = \\frac{\\pi}{2} - \\int_0^1 \\frac{x^{n+1} + x^{n-1}}{1+x^2} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Evaluate the remaining integral.</p>\nSimplify the integrand:\n<div class=\"overflow-x-auto\">$$\\frac{x^{n+1} + x^{n-1}}{1+x^2} = \\frac{x^{n-1}(x^2+1)}{1+x^2} = x^{n-1}$$</div>\nThus:\n<div class=\"overflow-x-auto\">$$\\int_0^1 x^{n-1} \\, dx = \\left[ \\frac{x^n}{n} \\right]_0^1 = \\frac{1}{n}$$</div>\nSubstituting this back yields:\n<div class=\"overflow-x-auto\">$$(n+1)U_n + (n-1)U_{n-2} = \\frac{\\pi}{2} - \\frac{1}{n}$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{(n+1)U_n + (n-1)U_{n-2} = \\frac{\\pi}{2} - \\frac{1}{n}}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q8a",
     "discipline": "CSE",
     "batch": 17,
@@ -2676,7 +2676,7 @@ const questions = [
     "section": "B",
     "questionNumber": "8a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -2687,7 +2687,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Find the points of intersection.</p>\nFrom the linear equation:\n<div class=\"overflow-x-auto\">$$x = \\frac{y+1}{4}$$</div>\nSubstitute this into the parabola equation $y^2 = 2x$:\n<div class=\"overflow-x-auto\">$$y^2 = 2\\left(\\frac{y+1}{4}\\right) \\implies y^2 = \\frac{y+1}{2} \\implies 2y^2 - y - 1 = 0$$</div>\nFactoring the quadratic equation:\n<div class=\"overflow-x-auto\">$$(2y + 1)(y - 1) = 0 \\implies y = -\\frac{1}{2} \\quad \\text{or} \\quad y = 1$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Set up the area integration with respect to $y$.</p>\nFor the interval $y \\in [-1/2, 1]$, the line is bounded to the right of the parabola ($x_{line} \\ge x_{parabola}$).\nThe area $A$ is:\n<div class=\"overflow-x-auto\">$$A = \\int_{-1/2}^1 \\left( x_{line} - x_{parabola} \\right) dy = \\int_{-1/2}^1 \\left( \\frac{y+1}{4} - \\frac{y^2}{2} \\right) dy$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the definite integral.</p>\n<div class=\"overflow-x-auto\">$$A = \\left[ \\frac{y^2}{8} + \\frac{y}{4} - \\frac{y^3}{6} \\right]_{-1/2}^1$$</div>\n- At $y = 1$:\n  <div class=\"overflow-x-auto\">$$\\frac{1}{8} + \\frac{1}{4} - \\frac{1}{6} = \\frac{3 + 6 - 4}{24} = \\frac{5}{24}$$</div>\n- At $y = -1/2$:\n  <div class=\"overflow-x-auto\">$$\\frac{1}{32} - \\frac{1}{8} + \\frac{1}{48} = \\frac{3 - 12 + 2}{96} = -\\frac{7}{96}$$</div>\nSubtracting the lower boundary evaluation:\n<div class=\"overflow-x-auto\">$$A = \\frac{5}{24} - \\left(-\\frac{7}{96}\\right) = \\frac{20}{96} + \\frac{7}{96} = \\frac{27}{96} = \\frac{9}{32}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{9}{32}}$$</div>"
   },
-  {
+    {
     "id": "cse17-final-q8b",
     "discipline": "CSE",
     "batch": 17,
@@ -2697,7 +2697,7 @@ const questions = [
     "section": "B",
     "questionNumber": "8b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -2708,7 +2708,7 @@ const questions = [
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set the limits of integration.</p>\nOne complete arc of a cycloid is generated as the parameter $\\theta$ runs from $0$ to $2\\pi$.\n<p class=\"font-semibold text-slate-900\">Step 2: Find the derivatives of $x$ and $y$ with respect to $\\theta$.</p>\n<div class=\"overflow-x-auto\">$$\\frac{dx}{d\\theta} = a(1 - \\cos\\theta)$$</div>\n<div class=\"overflow-x-auto\">$$\\frac{dy}{d\\theta} = a\\sin\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Setup the arc length differential element.</p>\n<div class=\"overflow-x-auto\">$$ds = \\sqrt{ \\left(\\frac{dx}{d\\theta}\\right)^2 + \\left(\\frac{dy}{d\\theta}\\right)^2 } \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$ds = \\sqrt{ a^2(1 - \\cos\\theta)^2 + a^2\\sin^2\\theta } \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$ds = a \\sqrt{ 1 - 2\\cos\\theta + \\cos^2\\theta + \\sin^2\\theta } \\, d\\theta = a\\sqrt{2 - 2\\cos\\theta} \\, d\\theta$$</div>\nUsing the half-angle identity $2 - 2\\cos\\theta = 4\\sin^2\\left(\\frac{\\theta}{2}\\right)$:\n<div class=\"overflow-x-auto\">$$ds = a \\sqrt{4\\sin^2\\left(\\frac{\\theta}{2}\\right)} \\, d\\theta = 2a\\sin\\left(\\frac{\\theta}{2}\\right) d\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Integrate from $0$ to $2\\pi$.</p>\n<div class=\"overflow-x-auto\">$$L = \\int_0^{2\\pi} 2a \\sin\\left(\\frac{\\theta}{2}\\right) d\\theta = \\left[ -4a \\cos\\left(\\frac{\\theta}{2}\\right) \\right]_0^{2\\pi}$$</div>\n<div class=\"overflow-x-auto\">$$= -4a [\\cos\\pi - \\cos 0] = -4a [-1 - 1] = 8a$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{8a}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q5a",
     "discipline": "CSE",
     "batch": 16,
@@ -2718,18 +2718,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Define integrand, integral and integration. Why does a constant need to be added after integration?",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Define Integrand.</p>\nThe integrand is the function $f(x)$ that is being integrated. In the mathematical notation $\\int f(x) \\, dx$, the function $f(x)$ is the integrand.\n<p class=\"font-semibold text-slate-900\">Step 2: Define Integral.</p>\nAn integral is the mathematical object resulting from the process of integration. It can be a definite integral (representing a signed area) or an indefinite integral (representing a family of antiderivatives).\n<p class=\"font-semibold text-slate-900\">Step 3: Define Integration.</p>\nIntegration is the mathematical operation of calculating an integral. It acts as the inverse process of differentiation.\n<p class=\"font-semibold text-slate-900\">Step 4: Explain why a constant of integration $C$ must be added.</p>\nLet $F(x)$ be an antiderivative of $f(x)$, such that $F'(x) = f(x)$. For any arbitrary constant $C$, the derivative of a constant is zero:\n<div class=\"overflow-x-auto\">$$\\frac{d}{dx} [F(x) + C] = F'(x) + 0 = f(x)$$</div>\nBecause differentiation removes constant terms, the reverse process (indefinite integration) cannot uniquely determine the original constant without additional initial conditions. Thus, to represent the most general family of antiderivatives, we add an arbitrary constant $C$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\text{Constant } C \\text{ represents the lost constant term during differentiation.}}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q5b",
     "discipline": "CSE",
     "batch": 16,
@@ -2739,18 +2739,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5b",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Describe the rectangle method for finding area. By using this method find the area of the curve $y = x^2$ over the interval $[0, 1]$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Describe the rectangle method (Riemann Sums).</p>\nTo estimate the area under a continuous curve $y = f(x)$ over an interval $[a, b]$:\n1. Divide $[a, b]$ into $n$ equal subintervals of width $\\Delta x = \\frac{b-a}{n}$.\n2. The division points are $x_i = a + i\\Delta x$ for $i = 0, 1, \\dots, n$.\n3. Approximate the area of each subinterval as a rectangle of width $\\Delta x$ and height $f(x_i)$.\n4. The total area is estimated by the Riemann sum:\n   <div class=\"overflow-x-auto\">$$A \\approx \\sum_{i=1}^n f(x_i) \\Delta x$$</div>\n5. The exact area is obtained by taking the limit as $n \\to \\infty$:\n   <div class=\"overflow-x-auto\">$$A = \\lim_{n \\to \\infty} \\sum_{i=1}^n f(x_i) \\Delta x$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Set up the sum for $y = x^2$ over $[0, 1]$.</p>\nHere, $f(x) = x^2$, $a = 0$, and $b = 1$.\n<div class=\"overflow-x-auto\">$$\\Delta x = \\frac{1-0}{n} = \\frac{1}{n}$$</div>\nUsing right endpoints, the evaluation points are $x_i = 0 + i \\Delta x = \\frac{i}{n}$.\nSubstituting these into the area limit formula:\n<div class=\"overflow-x-auto\">$$A = \\lim_{n \\to \\infty} \\sum_{i=1}^n \\left(\\frac{i}{n}\\right)^2 \\left(\\frac{1}{n}\\right) = \\lim_{n \\to \\infty} \\frac{1}{n^3} \\sum_{i=1}^n i^2$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the sum using the sum of squares formula.</p>\nRecall that $\\sum_{i=1}^n i^2 = \\frac{n(n+1)(2n+1)}{6}$.\n<div class=\"overflow-x-auto\">$$A = \\lim_{n \\to \\infty} \\frac{n(n+1)(2n+1)}{6n^3}$$</div>\n<div class=\"overflow-x-auto\">$$A = \\lim_{n \\to \\infty} \\frac{2n^3 + 3n^2 + n}{6n^3} = \\lim_{n \\to \\infty} \\left( \\frac{2}{6} + \\frac{3}{6n} + \\frac{1}{6n^2} \\right) = \\frac{1}{3}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{1}{3}}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q5c",
     "discipline": "CSE",
     "batch": 16,
@@ -2760,18 +2760,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5c",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Easy",
     "length": "Short",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "What do you mean by antiderivative and antiderivative method?",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Define Antiderivative.</p>\nA function $F(x)$ is called an antiderivative of a function $f(x)$ on an interval $I$ if the derivative of $F(x)$ is equal to $f(x)$ for all $x \\in I$:\n<div class=\"overflow-x-auto\">$$F'(x) = f(x)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Define the Antiderivative Method.</p>\nThe antiderivative method (also known as the Fundamental Theorem of Calculus, Part 2) is an analytical technique to evaluate definite integrals. Instead of computing Riemann sums directly, we find any antiderivative $F(x)$ of $f(x)$ and evaluate:\n<div class=\"overflow-x-auto\">$$\\int_a^b f(x) \\, dx = F(b) - F(a)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\int_a^b f(x) \\, dx = F(b) - F(a)}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q6a",
     "discipline": "CSE",
     "batch": 16,
@@ -2781,18 +2781,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6a",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "If $f(x)$ is integrable in $(a, b)$, $a < b$ and if there exists a function $F'(x) = f(x)$ in $(a, b)$, then show that $\\int_a^b f(x) \\, dx = F(b) - F(a)$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up a partition of $[a, b]$.</p>\nLet $P = \\{a = x_0, x_1, x_2, \\dots, x_n = b\\}$ be any partition of the interval $[a, b]$ with subinterval widths $\\Delta x_i = x_i - x_{i-1}$.\n<p class=\"font-semibold text-slate-900\">Step 2: Apply the Mean Value Theorem to $F(x)$.</p>\nSince $F(x)$ is differentiable on $(a, b)$ and continuous on $[a, b]$, the Mean Value Theorem applies to $F(x)$ on each subinterval $[x_{i-1}, x_i]$. Thus, there exists some $c_i \\in (x_{i-1}, x_i)$ such that:\n<div class=\"overflow-x-auto\">$$F(x_i) - F(x_{i-1}) = F'(c_i)(x_i - x_{i-1})$$</div>\nSince $F'(x) = f(x)$:\n<div class=\"overflow-x-auto\">$$F(x_i) - F(x_{i-1}) = f(c_i) \\Delta x_i$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Sum over all subintervals.</p>\nSumming this relation from $i = 1$ to $n$:\n<div class=\"overflow-x-auto\">$$\\sum_{i=1}^n [F(x_i) - F(x_{i-1})] = \\sum_{i=1}^n f(c_i) \\Delta x_i$$</div>\nThe left side is a telescoping sum:\n<div class=\"overflow-x-auto\">$$[F(x_1) - F(x_0)] + [F(x_2) - F(x_1)] + \\dots + [F(x_n) - F(x_{n-1})] = F(x_n) - F(x_0) = F(b) - F(a)$$</div>\nTherefore, we have:\n<div class=\"overflow-x-auto\">$$F(b) - F(a) = \\sum_{i=1}^n f(c_i) \\Delta x_i$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Take the limit as the norm of partition approaches 0.</p>\nSince $f(x)$ is integrable, the Riemann sum on the right converges to the definite integral as $n \\to \\infty$:\n<div class=\"overflow-x-auto\">$$F(b) - F(a) = \\lim_{\\|P\\| \\to 0} \\sum_{i=1}^n f(c_i) \\Delta x_i = \\int_a^b f(x) \\, dx$$</div>\nThus, we obtain:\n<div class=\"overflow-x-auto\">$$\\int_a^b f(x) \\, dx = F(b) - F(a)$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\int_a^b f(x) \\, dx = F(b) - F(a)}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q6b",
     "discipline": "CSE",
     "batch": 16,
@@ -2802,18 +2802,18 @@ const questions = [
     "section": "B",
     "questionNumber": "6b",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Find the limit when $n \\to \\infty$ of the product $\\left(1 + \\frac{1}{n}\\right)\\left(1 + \\frac{2}{n}\\right)^{\\frac{1}{2}}\\left(1 + \\frac{3}{n}\\right)^{\\frac{1}{3}} \\dots \\left(1 + \\frac{n}{n}\\right)^{\\frac{1}{n}}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up the limit of the product.</p>\nLet the limit of the product be $P$:\n<div class=\"overflow-x-auto\">$$P = \\lim_{n \\to \\infty} \\prod_{r=1}^n \\left(1 + \\frac{r}{n}\\right)^{\\frac{1}{r}}$$</div>\nTake the natural logarithm of both sides:\n<div class=\"overflow-x-auto\">$$\\ln P = \\lim_{n \\to \\infty} \\ln \\left[ \\prod_{r=1}^n \\left(1 + \\frac{r}{n}\\right)^{\\frac{1}{r}} \\right] = \\lim_{n \\to \\infty} \\sum_{r=1}^n \\frac{1}{r} \\ln \\left(1 + \\frac{r}{n}\\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Convert the sum to a Riemann sum format.</p>\nMultiply and divide the summand by $n$:\n<div class=\"overflow-x-auto\">$$\\ln P = \\lim_{n \\to \\infty} \\sum_{r=1}^n \\left( \\frac{n}{r} \\right) \\ln \\left(1 + \\frac{r}{n}\\right) \\frac{1}{n} = \\lim_{n \\to \\infty} \\sum_{r=1}^n \\frac{\\ln\\left(1 + \\frac{r}{n}\\right)}{\\frac{r}{n}} \\frac{1}{n}$$</div>\nThis represents a Riemann sum for the continuous function $g(x) = \\frac{\\ln(1+x)}{x}$ over $[0, 1]$.\n<p class=\"font-semibold text-slate-900\">Step 3: Convert the limit of sum to a definite integral.</p>\n<div class=\"overflow-x-auto\">$$\\ln P = \\int_0^1 \\frac{\\ln(1+x)}{x} \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Evaluate the definite integral using power series expansion.</p>\nRecall the Taylor series expansion of $\\ln(1+x)$:\n<div class=\"overflow-x-auto\">$$\\ln(1+x) = \\sum_{k=1}^\\infty (-1)^{k-1} \\frac{x^k}{k} \\implies \\frac{\\ln(1+x)}{x} = \\sum_{k=1}^\\infty (-1)^{k-1} \\frac{x^{k-1}}{k}$$</div>\nIntegrating term-by-term:\n<div class=\"overflow-x-auto\">$$\\int_0^1 \\frac{\\ln(1+x)}{x} \\, dx = \\sum_{k=1}^\\infty \\frac{(-1)^{k-1}}{k} \\left[ \\frac{x^k}{k} \\right]_0^1 = \\sum_{k=1}^\\infty \\frac{(-1)^{k-1}}{k^2}$$</div>\nThis alternating series evaluates to:\n<div class=\"overflow-x-auto\">$$\\sum_{k=1}^\\infty \\frac{(-1)^{k-1}}{k^2} = \\frac{\\pi^2}{12}$$</div>\nThus:\n<div class=\"overflow-x-auto\">$$\\ln P = \\frac{\\pi^2}{12} \\implies P = e^{\\frac{\\pi^2}{12}}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{e^{\\frac{\\pi^2}{12}}}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q7a",
     "discipline": "CSE",
     "batch": 16,
@@ -2823,19 +2823,19 @@ const questions = [
     "section": "B",
     "questionNumber": "7a",
     "topics": [
-      "Definite Integration",
-      "Beta-Gamma Function"
+        "Definite Integration",
+        "Beta-Gamma Function"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Define Beta and Gamma function. Show that $\\int_0^{\\pi/2} \\sin^m \\theta \\cos^n \\theta \\, d\\theta = \\frac{\\Gamma\\left(\\frac{m+1}{2}\\right) \\Gamma\\left(\\frac{n+1}{2}\\right)}{2 \\Gamma\\left(\\frac{m+n+2}{2}\\right)}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Define the Beta and Gamma functions.</p>\n- The Gamma function $\\Gamma(z)$ is defined as:\n  <div class=\"overflow-x-auto\">$$\\Gamma(z) = \\int_0^\\infty e^{-t} t^{z-1} \\, dt \\quad (z > 0)$$</div>\n- The Beta function $B(a, b)$ is defined as:\n  <div class=\"overflow-x-auto\">$$B(a, b) = \\int_0^1 x^{a-1} (1-x)^{b-1} \\, dx \\quad (a, b > 0)$$</div>\n- The relation between them is:\n  <div class=\"overflow-x-auto\">$$B(a, b) = \\frac{\\Gamma(a)\\Gamma(b)}{\\Gamma(a+b)}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Express Beta function in trigonometric form.</p>\nLet $x = \\sin^2\\theta \\implies dx = 2\\sin\\theta\\cos\\theta \\, d\\theta$.\nThe limits change as follows: when $x=0 \\implies \\theta=0$; when $x=1 \\implies \\theta=\\pi/2$.\nSubstitute these into the Beta definition:\n<div class=\"overflow-x-auto\">$$B(a, b) = \\int_0^{\\pi/2} (\\sin^2\\theta)^{a-1} (1-\\sin^2\\theta)^{b-1} \\cdot 2\\sin\\theta\\cos\\theta \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$B(a, b) = 2 \\int_0^{\\pi/2} \\sin^{2a-1}\\theta \\cos^{2b-1}\\theta \\, d\\theta$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Relate exponents to $m$ and $n$.</p>\nLet $2a-1 = m \\implies a = \\frac{m+1}{2}$.\nLet $2b-1 = n \\implies b = \\frac{n+1}{2}$.\nSubstituting these parameter transformations:\n<div class=\"overflow-x-auto\">$$B\\left(\\frac{m+1}{2}, \\frac{n+1}{2}\\right) = 2 \\int_0^{\\pi/2} \\sin^m\\theta \\cos^n\\theta \\, d\\theta$$</div>\n<div class=\"overflow-x-auto\">$$\\int_0^{\\pi/2} \\sin^m\\theta \\cos^n\\theta \\, d\\theta = \\frac{1}{2} B\\left(\\frac{m+1}{2}, \\frac{n+1}{2}\\right)$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Substitute the Gamma function identity.</p>\nUsing $B(a, b) = \\frac{\\Gamma(a)\\Gamma(b)}{\\Gamma(a+b)}$:\n<div class=\"overflow-x-auto\">$$\\int_0^{\\pi/2} \\sin^m\\theta \\cos^n\\theta \\, d\\theta = \\frac{\\Gamma\\left(\\frac{m+1}{2}\\right)\\Gamma\\left(\\frac{n+1}{2}\\right)}{2\\Gamma\\left(\\frac{m+1}{2} + \\frac{n+1}{2}\\right)} = \\frac{\\Gamma\\left(\\frac{m+1}{2}\\right)\\Gamma\\left(\\frac{n+1}{2}\\right)}{2\\Gamma\\left(\\frac{m+n+2}{2}\\right)}$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\int_0^{\\pi/2} \\sin^m\\theta \\cos^n\\theta \\, d\\theta = \\frac{\\Gamma\\left(\\frac{m+1}{2}\\right)\\Gamma\\left(\\frac{n+1}{2}\\right)}{2\\Gamma\\left(\\frac{m+n+2}{2}\\right)}}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q7b",
     "discipline": "CSE",
     "batch": 16,
@@ -2845,18 +2845,18 @@ const questions = [
     "section": "B",
     "questionNumber": "7b",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Show that $\\int_0^\\infty \\frac{x \\, dx}{(x+1)(1+x^2)} = \\frac{\\pi}{4}$.",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Perform partial fraction decomposition.</p>\n<div class=\"overflow-x-auto\">$$\\frac{x}{(x+1)(1+x^2)} = \\frac{A}{x+1} + \\frac{Bx+C}{1+x^2}$$</div>\nMultiply both sides by $(x+1)(1+x^2)$:\n<div class=\"overflow-x-auto\">$$x = A(1+x^2) + (Bx+C)(x+1)$$</div>\n<div class=\"overflow-x-auto\">$$x = (A+B)x^2 + (B+C)x + (A+C)$$</div>\nEquating coefficients:\n- $A+B = 0 \\implies B = -A$\n- $B+C = 1 \\implies -A+C = 1$\n- $A+C = 0 \\implies C = -A$\n\nSubstituting $C = -A$ into the second equation:\n<div class=\"overflow-x-auto\">$$-A - A = 1 \\implies -2A = 1 \\implies A = -\\frac{1}{2}$$</div>\nThis gives $B = \\frac{1}{2}$ and $C = \\frac{1}{2}$.\n<p class=\"font-semibold text-slate-900\">Step 2: Express the integral with the partial fractions.</p>\n<div class=\"overflow-x-auto\">$$\\int \\frac{x \\, dx}{(x+1)(1+x^2)} = -\\frac{1}{2} \\int \\frac{dx}{x+1} + \\frac{1}{2} \\int \\frac{x+1}{1+x^2} \\, dx$$</div>\n<div class=\"overflow-x-auto\">$$= -\\frac{1}{2} \\int \\frac{dx}{x+1} + \\frac{1}{4} \\int \\frac{2x}{1+x^2} \\, dx + \\frac{1}{2} \\int \\frac{dx}{1+x^2}$$</div>\n<div class=\"overflow-x-auto\">$$= -\\frac{1}{2}\\ln|x+1| + \\frac{1}{4}\\ln(1+x^2) + \\frac{1}{2}\\tan^{-1} x + C$$</div>\nCombine the logarithmic terms:\n<div class=\"overflow-x-auto\">$$= \\frac{1}{4}\\ln\\left( \\frac{1+x^2}{(x+1)^2} \\right) + \\frac{1}{2}\\tan^{-1} x + C$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate limits from $0$ to $\\infty$.</p>\n- For the lower limit $x = 0$:\n  <div class=\"overflow-x-auto\">$$\\frac{1}{4}\\ln(1) + \\frac{1}{2}\\tan^{-1}(0) = 0$$</div>\n- For the upper limit as $x \\to \\infty$:\n  <div class=\"overflow-x-auto\">$$\\lim_{x \\to \\infty} \\frac{1+x^2}{(x+1)^2} = \\lim_{x \\to \\infty} \\frac{1+x^2}{x^2+2x+1} = 1 \\implies \\ln(1) = 0$$</div>\n  <div class=\"overflow-x-auto\">$$\\lim_{x \\to \\infty} \\frac{1}{2}\\tan^{-1} x = \\frac{1}{2}\\left(\\frac{\\pi}{2}\\right) = \\frac{\\pi}{4}$$</div>\nSubtracting the evaluations:\n<div class=\"overflow-x-auto\">$$\\left[ \\frac{1}{4}\\ln\\left(\\frac{1+x^2}{(x+1)^2}\\right) + \\frac{1}{2}\\tan^{-1} x \\right]_0^\\infty = \\frac{\\pi}{4} - 0 = \\frac{\\pi}{4}$$</div>\nHence proved.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{\\pi}{4}}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q8ai",
     "discipline": "CSE",
     "batch": 16,
@@ -2866,19 +2866,19 @@ const questions = [
     "section": "B",
     "questionNumber": "8ai",
     "topics": [
-      "Indefinite Integration",
-      "Integration by Parts"
+        "Indefinite Integration",
+        "Integration by Parts"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate:\n<div class=\"overflow-x-auto\">$$\\int e^{ax} \\sin bx \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up integration by parts.</p>\nLet $I = \\int e^{ax} \\sin bx \\, dx$.\nApplying integration by parts with:\n- $u = \\sin bx \\implies du = b\\cos bx \\, dx$\n- $dv = e^{ax} dx \\implies v = \\frac{1}{a} e^{ax}$\n\n<div class=\"overflow-x-auto\">$$I = \\frac{1}{a} e^{ax} \\sin bx - \\frac{b}{a} \\int e^{ax} \\cos bx \\, dx$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Apply integration by parts a second time.</p>\nFor the integral $\\int e^{ax} \\cos bx \\, dx$, let:\n- $u_2 = \\cos bx \\implies du_2 = -b\\sin bx \\, dx$\n- $dv_2 = e^{ax} dx \\implies v_2 = \\frac{1}{a} e^{ax}$\n\n<div class=\"overflow-x-auto\">$$\\int e^{ax} \\cos bx \\, dx = \\frac{1}{a} e^{ax} \\cos bx + \\frac{b}{a} \\int e^{ax} \\sin bx \\, dx$$</div>\nSubstituting this back into the expression for $I$:\n<div class=\"overflow-x-auto\">$$I = \\frac{1}{a} e^{ax} \\sin bx - \\frac{b}{a} \\left[ \\frac{1}{a} e^{ax} \\cos bx + \\frac{b}{a} I \\right]$$</div>\n<div class=\"overflow-x-auto\">$$I = \\frac{1}{a} e^{ax} \\sin bx - \\frac{b}{a^2} e^{ax} \\cos bx - \\frac{b^2}{a^2} I$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Solve for $I$.</p>\n<div class=\"overflow-x-auto\">$$I \\left( 1 + \\frac{b^2}{a^2} \\right) = \\frac{e^{ax}}{a^2} (a\\sin bx - b\\cos bx)$$</div>\n<div class=\"overflow-x-auto\">$$I \\left( \\frac{a^2+b^2}{a^2} \\right) = \\frac{e^{ax}}{a^2} (a\\sin bx - b\\cos bx)$$</div>\n<div class=\"overflow-x-auto\">$$I = \\frac{e^{ax}}{a^2+b^2} (a\\sin bx - b\\cos bx) + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{e^{ax}}{a^2+b^2} (a\\sin bx - b\\cos bx) + C}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q8aii",
     "discipline": "CSE",
     "batch": 16,
@@ -2888,19 +2888,19 @@ const questions = [
     "section": "B",
     "questionNumber": "8aii",
     "topics": [
-      "Indefinite Integration",
-      "Substitution"
+        "Indefinite Integration",
+        "Substitution"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate:\n<div class=\"overflow-x-auto\">$$\\int \\frac{x^{1/2}}{1+x^{3/4}} \\, dx$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up fractional exponent substitution.</p>\nLet $x = u^4 \\implies dx = 4u^3 \\, du$.\nThen $x^{1/2} = (u^4)^{1/2} = u^2$ and $x^{3/4} = (u^4)^{3/4} = u^3$.\nSubstitute these into the integral:\n<div class=\"overflow-x-auto\">$$\\int \\frac{u^2}{1+u^3} (4u^3 \\, du) = 4 \\int \\frac{u^5}{1+u^3} \\, du$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Perform polynomial long division.</p>\n<div class=\"overflow-x-auto\">$$\\frac{u^5}{u^3+1} = u^2 - \\frac{u^2}{u^3+1}$$</div>\nThus, the integral becomes:\n<div class=\"overflow-x-auto\">$$4 \\int \\left( u^2 - \\frac{u^2}{u^3+1} \\right) du = 4 \\left[ \\frac{u^3}{3} - \\frac{1}{3}\\ln|u^3+1| \\right] + C$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{4}{3} u^3 - \\frac{4}{3} \\ln|u^3+1| + C$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Substitute back $u = x^{1/4} \\implies u^3 = x^{3/4}$.</p>\n<div class=\"overflow-x-auto\">$$= \\frac{4}{3} x^{3/4} - \\frac{4}{3} \\ln(1+x^{3/4}) + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{4}{3} x^{3/4} - \\frac{4}{3} \\ln(1+x^{3/4}) + C}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q8aiii",
     "discipline": "CSE",
     "batch": 16,
@@ -2910,18 +2910,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8aiiii",
     "topics": [
-      "Indefinite Integration"
+        "Indefinite Integration"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Evaluate:\n<div class=\"overflow-x-auto\">$$\\int \\frac{dx}{(x-a)\\sqrt{(x-a)(b-x)}}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up fractional substitution.</p>\nLet $x-a = \\frac{1}{u} \\implies dx = -\\frac{1}{u^2} \\, du$.\nAlso, rewrite the expression inside the radical:\n<div class=\"overflow-x-auto\">$$b-x = b - \\left(a + \\frac{1}{u}\\right) = (b-a) - \\frac{1}{u}$$</div>\nSubstituting these into the radical term:\n<div class=\"overflow-x-auto\">$$\\sqrt{(x-a)(b-x)} = \\sqrt{\\frac{1}{u} \\left( (b-a) - \\frac{1}{u} \\right)} = \\frac{1}{u}\\sqrt{(b-a)u - 1}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Perform the full algebraic substitution.</p>\n<div class=\"overflow-x-auto\">$$\\int \\frac{-\\frac{1}{u^2} \\, du}{\\frac{1}{u} \\cdot \\frac{1}{u}\\sqrt{(b-a)u - 1}} = -\\int \\frac{du}{\\sqrt{(b-a)u - 1}}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Integrate the simplified expression.</p>\nLet $w = (b-a)u - 1 \\implies dw = (b-a) \\, du$.\n<div class=\"overflow-x-auto\">$$-\\frac{1}{b-a} \\int w^{-1/2} \\, dw = -\\frac{2}{b-a} w^{1/2} + C = -\\frac{2}{b-a}\\sqrt{(b-a)u - 1} + C$$</div>\n<p class=\"font-semibold text-slate-900\">Step 4: Substitute back $u = \\frac{1}{x-a}$.</p>\n<div class=\"overflow-x-auto\">$$= -\\frac{2}{b-a}\\sqrt{ \\frac{b-a}{x-a} - 1 } + C$$</div>\n<div class=\"overflow-x-auto\">$$= -\\frac{2}{b-a}\\sqrt{ \\frac{b-a - x + a}{x-a} } + C = -\\frac{2}{b-a}\\sqrt{\\frac{b-x}{x-a}} + C$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{-\\frac{2}{b-a}\\sqrt{\\frac{b-x}{x-a}} + C}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q8aiv",
     "discipline": "CSE",
     "batch": 16,
@@ -2931,18 +2931,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8aiv",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate:\n<div class=\"overflow-x-auto\">$$\\int_0^{\\pi/2} \\frac{dx}{3+5\\cos x}$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Apply Weierstrass half-angle substitution.</p>\nLet $t = \\tan\\left(\\frac{x}{2}\\right) \\implies dx = \\frac{2\\,dt}{1+t^2}$ and $\\cos x = \\frac{1-t^2}{1+t^2}$.\nEvaluate the boundaries: when $x=0 \\implies t=0$; when $x=\\pi/2 \\implies t=1$.\n<p class=\"font-semibold text-slate-900\">Step 2: Rewrite the integral.</p>\n<div class=\"overflow-x-auto\">$$\\int_0^1 \\frac{\\frac{2\\,dt}{1+t^2}}{3 + 5\\left(\\frac{1-t^2}{1+t^2}\\right)} = \\int_0^1 \\frac{2\\,dt}{3(1+t^2) + 5(1-t^2)}$$</div>\n<div class=\"overflow-x-auto\">$$= \\int_0^1 \\frac{2\\,dt}{8 - 2t^2} = \\int_0^1 \\frac{dt}{4 - t^2}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 3: Integrate using standard log formula.</p>\nRecall the standard integration identity:\n<div class=\"overflow-x-auto\">$$\\int \\frac{dt}{a^2-t^2} = \\frac{1}{2a}\\ln\\left|\\frac{a+t}{a-t}\\right|$$</div>\nHere, $a = 2$:\n<div class=\"overflow-x-auto\">$$\\left[ \\frac{1}{4}\\ln\\left|\\frac{2+t}{2-t}\\right| \\right]_0^1 = \\frac{1}{4}\\ln(3) - \\frac{1}{4}\\ln(1) = \\frac{1}{4}\\ln(3)$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{1}{4}\\ln 3}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-q8av",
     "discipline": "CSE",
     "batch": 16,
@@ -2952,18 +2952,18 @@ const questions = [
     "section": "B",
     "questionNumber": "8av",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate:\n<div class=\"overflow-x-auto\">$$\\int_0^{\\pi/2} \\sin\\phi \\cos\\phi \\sqrt{a^2 \\sin^2\\phi + b^2 \\cos^2\\phi} \\, d\\phi$$</div>",
     "solutionHtml": "<p class=\"font-semibold text-slate-900\">Step 1: Set up u-substitution.</p>\nLet $u = a^2 \\sin^2\\phi + b^2 \\cos^2\\phi$.\nDifferentiating with respect to $\\phi$:\n<div class=\"overflow-x-auto\">$$du = \\left(2a^2 \\sin\\phi\\cos\\phi - 2b^2 \\sin\\phi\\cos\\phi\\right) d\\phi = 2(a^2-b^2)\\sin\\phi\\cos\\phi \\, d\\phi$$</div>\n<div class=\"overflow-x-auto\">$$\\sin\\phi\\cos\\phi \\, d\\phi = \\frac{du}{2(a^2-b^2)}$$</div>\n<p class=\"font-semibold text-slate-900\">Step 2: Update limits of integration.</p>\n- When $\\phi = 0 \\implies u = b^2$.\n- When $\\phi = \\pi/2 \\implies u = a^2$.\n<p class=\"font-semibold text-slate-900\">Step 3: Evaluate the integration.</p>\n<div class=\"overflow-x-auto\">$$\\int_{b^2}^{a^2} \\sqrt{u} \\frac{du}{2(a^2-b^2)} = \\frac{1}{2(a^2-b^2)} \\left[ \\frac{2}{3}u^{3/2} \\right]_{b^2}^{a^2}$$</div>\n<div class=\"overflow-x-auto\">$$= \\frac{1}{3(a^2-b^2)} \\left( (a^2)^{3/2} - (b^2)^{3/2} \\right) = \\frac{a^3 - b^3}{3(a^2-b^2)}$$</div>\nFactor the numerator and the denominator:\n<div class=\"overflow-x-auto\">$$= \\frac{(a-b)(a^2+ab+b^2)}{3(a-b)(a+b)} = \\frac{a^2+ab+b^2}{3(a+b)}$$</div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\">$$\\boxed{\\frac{a^2+ab+b^2}{3(a+b)}}$$</div>"
   },
-  {
+    {
     "id": "cse16-final-seca-q1a",
     "discipline": "CSE",
     "batch": 16,
@@ -2973,18 +2973,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define a function. Draw the graph of $f(x) = |x - 1| + |x + 1|$. Also find the domain and range of it.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Define a Function] \\ \\\\\n    A function $f$ from a set $A$ to a set $B$ is a relation that associates each element $x$ in $A$ with exactly one element $y$ in $B$. It is denoted as $f: A \\to B$, where $A$ is the domain and $B$ is the codomain.\n\n    \\item[Step 2: Rewrite the piecewise definition of $f(x)$] \\ \\\\\n    We analyze the critical points of the absolute values, which are $x = -1$ and $x = 1$:\n    \\begin{itemize}\n        \\item \\textbf{Case 1: $x < -1$} \\\\\n        Here, $x - 1 < 0$ and $x + 1 < 0$:\n        \\[ f(x) = -(x - 1) - (x + 1) = -x + 1 - x - 1 = -2x \\]\n        \n        \\item \\textbf{Case 2: $-1 \\le x < 1$} \\\\\n        Here, $x - 1 < 0$ and $x + 1 \\ge 0$:\n        \\[ f(x) = -(x - 1) + (x + 1) = -x + 1 + x + 1 = 2 \\]\n        \n        \\item \\textbf{Case 3: $x \\ge 1$} \\\\\n        Here, $x - 1 \\ge 0$ and $x + 1 \\ge 0$:\n        \\[ f(x) = (x - 1) + (x + 1) = 2x \\]\n    \\end{itemize}\n    Thus, the piecewise function is:\n    \\[ \n    f(x) = \\begin{cases} \n    -2x, & \\text{when } x < -1 \\\\ \n    2, & \\text{when } -1 \\le x < 1 \\\\ \n    2x, & \\text{when } x \\ge 1 \n    \\end{cases} \n    \\]\n\n    \\item[Step 3: Find Domain and Range] \\ \n    \\begin{itemize}\n        \\item \\textbf{Domain:} Since the absolute value functions $|x-1|$ and $|x+1|$ are defined for all real numbers, the domain of $f(x)$ is all real numbers:\n        \\[ \\text{Domain} = (-\\infty, \\infty) \\]\n        \\item \\textbf{Range:} Looking at the piecewise definition, the minimum value of $f(x)$ is $2$ (achieved when $-1 \\le x \\le 1$). For $x > 1$ or $x < -1$, the function values increase towards infinity. Thus:\n        \\[ \\text{Range} = [2, \\infty) \\]\n    \\end{itemize}\n\n    \\item[Step 4: Describe the Graph] \\ \n    \\begin{itemize}\n        \\item For $x \\le -1$, the graph is a straight line segment with a slope of $-2$ coming down from infinity to the point $(-1, 2)$.\n        \\item For $-1 \\le x \\le 1$, the graph is a horizontal flat line segment at $y = 2$.\n        \\item For $x \\ge 1$, the graph is a straight line segment with a slope of $2$ going up from $(1, 2)$ to infinity.\n        \\item This forms a symmetric, flat-bottomed U-shape (trough shape).\n    \\end{itemize}\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{Domain} = (-\\infty, \\infty), \\quad \\text{Range} = [2, \\infty)} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q1b",
     "discipline": "CSE",
     "batch": 16,
@@ -2994,18 +2994,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Test the continuity of $f(x)$ at $x=0$ where\n\\[ \nf(x) = \\begin{cases} \nx \\cos\\left(\\frac{1}{x}\\right), & \\text{when } x \\neq 0 \\\\ \n0, & \\text{when } x = 0 \n\\end{cases} \n\\]\nAgain show that $f(x)$ is not differentiable at $x = 0$.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Test the Continuity of $f(x)$ at $x = 0$] \\ \\\\\n    A function is continuous at $x = 0$ if $\\lim_{x \\to 0} f(x) = f(0)$.\n    We are given $f(0) = 0$.\n    We evaluate the limit:\n    \\[ \\lim_{x \\to 0} f(x) = \\lim_{x \\to 0} x \\cos\\left(\\frac{1}{x}\\right) \\]\n    Since $-1 \\le \\cos\\left(\\frac{1}{x}\\right) \\le 1$ for all $x \\neq 0$, we can use the Squeeze Theorem:\n    \\[ -|x| \\le x \\cos\\left(\\frac{1}{x}\\right) \\le |x| \\]\n    Taking the limit as $x \\to 0$:\n    \\[ \\lim_{x \\to 0} (-|x|) = 0 \\quad \\text{and} \\quad \\lim_{x \\to 0} |x| = 0 \\]\n    Therefore, by the Squeeze Theorem:\n    \\[ \\lim_{x \\to 0} x \\cos\\left(\\frac{1}{x}\\right) = 0 \\]\n    Since $\\lim_{x \\to 0} f(x) = f(0) = 0$, the function is continuous at $x = 0$.\n\n    \\item[Step 2: Test the Differentiability of $f(x)$ at $x = 0$] \\ \\\\\n    By the definition of differentiability, we evaluate the limit of the difference quotient at $x=0$:\n    \\[ f'(0) = \\lim_{h \\to 0} \\frac{f(0+h) - f(0)}{h} = \\lim_{h \\to 0} \\frac{h \\cos\\left(\\frac{1}{h}\\right) - 0}{h} \\]\n    \\[ f'(0) = \\lim_{h \\to 0} \\cos\\left(\\frac{1}{h}\\right) \\]\n    As $h \\to 0$, the argument $\\frac{1}{h} \\to \\pm \\infty$. The value of $\\cos\\left(\\frac{1}{h}\\right)$ oscillates infinitely many times between $-1$ and $1$.\n    Therefore, the limit $\\lim_{h \\to 0} \\cos\\left(\\frac{1}{h}\\right)$ does not exist.\n    \n    Since this limit does not exist, the function $f(x)$ is not differentiable at $x = 0$.\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{The function is continuous at } x=0 \\text{ but not differentiable at } x=0.} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q2a",
     "discipline": "CSE",
     "batch": 16,
@@ -3015,18 +3015,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State Leibnitz's theorem. If $y = e^{m\\cos^{-1}x}$ then show that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0$ and find $y_n(0)$.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: State Leibnitz's Theorem] \\ \\\\\n    If $u$ and $v$ are two functions of $x$ that can be differentiated $n$ times, then:\n    \\[ (uv)_n = u_n v + n u_{n-1} v_1 + \\frac{n(n-1)}{2!} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n \\]\n    where the subscript denotes the order of differentiation with respect to $x$.\n\n    \\item[Step 2: Perform Successive Differentiation] \\ \\\\\n    Given:\n    \\[ y = e^{m\\cos^{-1}x} \\]\n    At $x=0$, $y(0) = e^{m\\cos^{-1}(0)} = e^{\\frac{m\\pi}{2}}$.\\\\\n    Differentiating once with respect to $x$:\n    \\[ y_1 = e^{m\\cos^{-1}x} \\cdot \\left( -\\frac{m}{\\sqrt{1-x^2}} \\right) = -\\frac{my}{\\sqrt{1-x^2}} \\]\n    At $x=0$, $y_1(0) = -m e^{\\frac{m\\pi}{2}}$.\\\\\n    Squaring both sides:\n    \\[ y_1^2 (1-x^2) = m^2 y^2 \\]\n    Differentiating once more with respect to $x$:\n    \\[ 2y_1 y_2 (1-x^2) + y_1^2 (-2x) = m^2 (2y y_1) \\]\n    Dividing through by $2y_1$ (assuming $y_1 \\neq 0$):\n    \\[ y_2 (1-x^2) - x y_1 = m^2 y \\]\n    At $x=0$:\n    \\[ y_2(0) (1-0) - 0 = m^2 y(0) \\implies y_2(0) = m^2 e^{\\frac{m\\pi}{2}} \\]\n\n    \\item[Step 3: Apply Leibnitz's Theorem] \\ \\\\\n    Differentiating the relation $(1-x^2)y_2 - x y_1 - m^2 y = 0$ $n$ times:\n    \\begin{enumerate}\n        \\item For $(1-x^2)y_2$:\n        \\[ [y_2(1-x^2)]_n = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n \\]\n        \\item For $-xy_1$:\n        \\[ [y_1 x]_n = y_{n+1} x + n y_n(1) = x y_{n+1} + n y_n \\]\n        \\item For $-m^2 y$:\n        \\[ [m^2 y]_n = m^2 y_n \\]\n    \\end{enumerate}\n    Combining these expressions:\n    \\[ (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - [x y_{n+1} + n y_n] - m^2 y_n = 0 \\]\n    \\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - n + n + m^2)y_n = 0 \\]\n    \\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0 \\]\n\n    \\item[Step 4: Find $y_n(0)$] \\ \\\\\n    Setting $x=0$ in the recurrence relation:\n    \\[ y_{n+2}(0) = (n^2 + m^2)y_n(0) \\]\n    Let us evaluate the pattern for $y_n(0)$:\n    \\begin{itemize}\n        \\item \\textbf{Case 1: If $n$ is even (let $n = 2k$)}\n        \\[ y_2(0) = m^2 y(0) \\]\n        \\[ y_4(0) = (2^2 + m^2)y_2(0) = m^2 (2^2 + m^2) e^{\\frac{m\\pi}{2}} \\]\n        In general, for $n = 2k$:\n        \\[ y_n(0) = m^2 (2^2 + m^2)(4^2 + m^2) \\dots ((n-2)^2 + m^2) e^{\\frac{m\\pi}{2}} \\]\n\n        \\item \\textbf{Case 2: If $n$ is odd (let $n = 2k+1$)}\n        \\[ y_1(0) = -m e^{\\frac{m\\pi}{2}} \\]\n        \\[ y_3(0) = (1^2 + m^2)y_1(0) = -m(1^2 + m^2) e^{\\frac{m\\pi}{2}} \\]\n        In general, for $n = 2k+1$:\n        \\[ y_n(0) = -m (1^2 + m^2)(3^2 + m^2) \\dots ((n-2)^2 + m^2) e^{\\frac{m\\pi}{2}} \\]\n    \\end{itemize}\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{y_n(0) = \\begin{cases} \nm^2 (2^2+m^2)(4^2+m^2)\\dots((n-2)^2+m^2) e^{\\frac{m\\pi}{2}}, & \\text{when } n \\text{ is even} \\\\ \n-m (1^2+m^2)(3^2+m^2)\\dots((n-2)^2+m^2) e^{\\frac{m\\pi}{2}}, & \\text{when } n \\text{ is odd} \n\\end{cases}} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q2bi",
     "discipline": "CSE",
     "batch": 16,
@@ -3036,18 +3036,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b(i)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "If $y = \\sin(m\\sin^{-1}x)$ then prove that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} + (m^2 - n^2)y_n = 0$.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Perform successive differentiations] \\ \\\\\n    Given:\n    \\[ y = \\sin(m\\sin^{-1}x) \\]\n    Differentiating once with respect to $x$:\n    \\[ y_1 = \\cos(m\\sin^{-1}x) \\cdot \\frac{m}{\\sqrt{1-x^2}} \\]\n    Squaring both sides:\n    \\[ y_1^2 (1-x^2) = m^2 \\cos^2(m\\sin^{-1}x) \\]\n    Using the identity $\\cos^2\\theta = 1 - \\sin^2\\theta$:\n    \\[ y_1^2 (1-x^2) = m^2 [1 - \\sin^2(m\\sin^{-1}x)] = m^2 (1-y^2) \\]\n    Differentiating again with respect to $x$:\n    \\[ 2y_1 y_2 (1-x^2) - 2x y_1^2 = m^2 (-2y y_1) \\]\n    Dividing by $2y_1$:\n    \\[ y_2(1-x^2) - xy_1 + m^2 y = 0 \\]\n\n    \\item[Step 2: Apply Leibnitz's Theorem] \\ \\\\\n    We differentiate the second-order differential equation $n$ times with respect to $x$:\n    \\begin{enumerate}\n        \\item For $y_2(1-x^2)$:\n        \\[ [y_2(1-x^2)]_n = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n \\]\n        \\item For $-xy_1$:\n        \\[ [y_1 x]_n = y_{n+1} x + n y_n \\]\n        \\item For $m^2 y$:\n        \\[ [m^2 y]_n = m^2 y_n \\]\n    \\end{enumerate}\n    Substituting these expressions back into the equation:\n    \\[ (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - [x y_{n+1} + n y_n] + m^2 y_n = 0 \\]\n    \\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} + (m^2 - n^2) y_n = 0 \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{Proven}} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q2bii",
     "discipline": "CSE",
     "batch": 16,
@@ -3057,18 +3057,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b(ii)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "If $y = \\sin(m\\sin^{-1}x)$ then prove that $(1-x^2)y_{n+1} - (2n-1)xy_n + (m^2 - n^2 + 2n - 1)y_{n-1} = 0$.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Recall the standard Leibnitz relation] \\ \\\\\n    From the previous question Q2(b)(i), we proved that:\n    \\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} + (m^2 - n^2)y_n = 0 \\]\n\n    \\item[Step 2: Perform variable shifting] \\ \\\\\n    To transform this relation to the desired format, let us replace $n$ with $n-1$ in the recurrence relation:\n    \\[ (1-x^2)y_{(n-1)+2} - (2(n-1)+1)xy_{(n-1)+1} + (m^2 - (n-1)^2)y_{n-1} = 0 \\]\n    \\[ (1-x^2)y_{n+1} - (2n-1)xy_n + (m^2 - (n^2 - 2n + 1))y_{n-1} = 0 \\]\n    \\[ (1-x^2)y_{n+1} - (2n-1)xy_n + (m^2 - n^2 + 2n - 1)y_{n-1} = 0 \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{Proven}} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q3a",
     "discipline": "CSE",
     "batch": 16,
@@ -3078,7 +3078,7 @@ const questions = [
     "section": "A",
     "questionNumber": "3a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3089,7 +3089,7 @@ const questions = [
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Define Tangent at a Point] \\ \\\\\n    The tangent to a curve at a given point $P$ is the limiting position of the secant line passing through $P$ and another point $Q$ on the curve as $Q$ approaches $P$ along the curve. The slope of this line is equal to the derivative of the curve's equation at the point $P$.\n\n    \\item[Step 2: Find the slope of the tangent $\\frac{dy}{dx}$] \\ \\\\\n    Given curve:\n    \\[ y = x^3 - 3x + 2 \\]\n    Differentiating with respect to $x$:\n    \\[ \\frac{dy}{dx} = 3x^2 - 3 \\]\n    At the point $(2, -2)$, the slope of the tangent ($m$) is:\n    \\[ m = \\left. \\frac{dy}{dx} \\right|_{x=2} = 3(2)^2 - 3 = 12 - 3 = 9 \\]\n\n    \\item[Step 3: Find the equation of the tangent] \\ \\\\\n    The equation of the tangent line at $(x_1, y_1) = (2, -2)$ with slope $m = 9$ is:\n    \\[ y - y_1 = m(x - x_1) \\implies y - (-2) = 9(x - 2) \\]\n    \\[ y + 2 = 9x - 18 \\implies 9x - y - 20 = 0 \\]\n\n    \\item[Step 4: Find the equation of the normal] \\ \\\\\n    The slope of the normal ($m'$) is:\n    \\[ m' = -\\frac{1}{m} = -\\frac{1}{9} \\]\n    The equation of the normal line at $(2, -2)$ is:\n    \\[ y - (-2) = -\\frac{1}{9}(x - 2) \\]\n    \\[ 9(y + 2) = -(x - 2) \\implies 9y + 18 = -x + 2 \\]\n    \\[ x + 9y + 16 = 0 \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{Tangent: } 9x - y - 20 = 0, \\quad \\text{Normal: } x + 9y + 16 = 0} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q3b",
     "discipline": "CSE",
     "batch": 16,
@@ -3099,7 +3099,7 @@ const questions = [
     "section": "A",
     "questionNumber": "3b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3110,7 +3110,7 @@ const questions = [
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Find the first derivative $f'(x)$] \\ \\\\\n    Given:\n    \\[ f(x) = x^4 - 8x^3 + 22x^2 - 24x + 5 \\]\n    Differentiating with respect to $x$:\n    \\[ f'(x) = 4x^3 - 24x^2 + 44x - 24 \\]\n\n    \\item[Step 2: Solve for critical points ($f'(x) = 0$)] \\ \\\\\n    Set $f'(x) = 0$:\n    \\[ 4(x^3 - 6x^2 + 11x - 6) = 0 \\implies x^3 - 6x^2 + 11x - 6 = 0 \\]\n    By inspection, $x=1$ is a root because $1 - 6 + 11 - 6 = 0$.\\\\\n    Using synthetic division to factorize:\n    \\[ (x - 1)(x^2 - 5x + 6) = 0 \\implies (x - 1)(x - 2)(x - 3) = 0 \\]\n    Thus, the critical points are:\n    \\[ x = 1, \\quad x = 2, \\quad x = 3 \\]\n\n    \\item[Step 3: Use the second derivative test] \\ \\\\\n    Find $f''(x)$:\n    \\[ f''(x) = 12x^2 - 48x + 44 \\]\n    Now we test each critical point:\n    \\begin{itemize}\n        \\item \\textbf{At $x = 1$:}\n        \\[ f''(1) = 12(1)^2 - 48(1) + 44 = 12 - 48 + 44 = 8 > 0 \\]\n        Since $f''(1) > 0$, $x = 1$ is a point of local \\textbf{minimum}.\n        The minimum value is:\n        \\[ f(1) = 1^4 - 8(1)^3 + 22(1)^2 - 24(1) + 5 = 1 - 8 + 22 - 24 + 5 = -4 \\]\n        Minimum Point: $(1, -4)$.\n\n        \\item \\textbf{At $x = 2$:}\n        \\[ f''(2) = 12(2)^2 - 48(2) + 44 = 48 - 96 + 44 = -4 < 0 \\]\n        Since $f''(2) < 0$, $x = 2$ is a point of local \\textbf{maximum}.\n        The maximum value is:\n        \\[ f(2) = 2^4 - 8(2)^3 + 22(2)^2 - 24(2) + 5 = 16 - 64 + 88 - 48 + 5 = -3 \\]\n        Maximum Point: $(2, -3)$.\n\n        \\item \\textbf{At $x = 3$:}\n        \\[ f''(3) = 12(3)^2 - 48(3) + 44 = 108 - 144 + 44 = 8 > 0 \\]\n        Since $f''(3) > 0$, $x = 3$ is a point of local \\textbf{minimum}.\n        The minimum value is:\n        \\[ f(3) = 3^4 - 8(3)^3 + 22(3)^2 - 24(3) + 5 = 81 - 216 + 198 - 72 + 5 = -4 \\]\n        Minimum Point: $(3, -4)$.\n    \\end{itemize}\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{Max Point: } (2, -3) \\text{ with value } -3, \\quad \\text{Min Points: } (1, -4) \\text{ and } (3, -4) \\text{ with value } -4} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q4ai",
     "discipline": "CSE",
     "batch": 16,
@@ -3120,18 +3120,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4a(i)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find the differential coefficient of $y = x^{\\ln x} + x^{\\cos^{-1}x}$.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Split the function into two parts] \\ \\\\\n    Let $y = u + v$, where:\n    \\[ u = x^{\\ln x} \\quad \\text{and} \\quad v = x^{\\cos^{-1}x} \\]\n    Then, the derivative is:\n    \\[ \\frac{dy}{dx} = \\frac{du}{dx} + \\frac{dv}{dx} \\]\n\n    \\item[Step 2: Differentiate $u = x^{\\ln x}$] \\ \\\\\n    Taking natural logarithm on both sides of $u$:\n    \\[ \\ln u = \\ln\\left(x^{\\ln x}\\right) = (\\ln x)(\\ln x) = (\\ln x)^2 \\]\n    Differentiating both sides with respect to $x$:\n    \\[ \\frac{1}{u}\\frac{du}{dx} = 2(\\ln x) \\cdot \\frac{1}{x} \\]\n    \\[ \\frac{du}{dx} = u \\left(\\frac{2\\ln x}{x}\\right) = x^{\\ln x} \\cdot \\left(\\frac{2\\ln x}{x}\\right) = 2x^{\\ln x - 1} \\ln x \\]\n\n    \\item[Step 3: Differentiate $v = x^{\\cos^{-1}x}$] \\ \\\\\n    Taking natural logarithm on both sides of $v$:\n    \\[ \\ln v = \\ln\\left(x^{\\cos^{-1}x}\\right) = \\cos^{-1}x \\ln x \\]\n    Differentiating both sides with respect to $x$ using the product rule:\n    \\[ \\frac{1}{v}\\frac{dv}{dx} = \\left(-\\frac{1}{\\sqrt{1-x^2}}\\right) \\ln x + \\cos^{-1}x \\left(\\frac{1}{x}\\right) \\]\n    \\[ \\frac{dv}{dx} = v \\left[ \\frac{\\cos^{-1}x}{x} - \\frac{\\ln x}{\\sqrt{1-x^2}} \\right] = x^{\\cos^{-1}x} \\left[ \\frac{\\cos^{-1}x}{x} - \\frac{\\ln x}{\\sqrt{1-x^2}} \\right] \\]\n\n    \\item[Step 4: Combine the derivatives] \\ \\\\\n    \\[ \\frac{dy}{dx} = 2x^{\\ln x - 1} \\ln x + x^{\\cos^{-1}x} \\left[ \\frac{\\cos^{-1}x}{x} - \\frac{\\ln x}{\\sqrt{1-x^2}} \\right] \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\frac{dy}{dx} = 2x^{\\ln x - 1} \\ln x + x^{\\cos^{-1}x} \\left[ \\frac{\\cos^{-1}x}{x} - \\frac{\\ln x}{\\sqrt{1-x^2}} \\right]} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q4aii",
     "discipline": "CSE",
     "batch": 16,
@@ -3141,18 +3141,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4a(ii)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Find the differential coefficient of $y$ with respect to $x$ for the implicit relation:\n\\[ x = \\frac{1}{y + \\frac{1}{y + \\frac{1}{y + \\dots \\infty}}} \\]",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Simplify the infinite continued fraction] \\ \\\\\n    We observe that the denominator of the first fraction contains a repeating structure of $x$. Thus, we can rewrite the equation as:\n    \\[ x = \\frac{1}{y + x} \\]\n\n    \\item[Step 2: Rearrange to express $y$ in terms of $x$] \\ \\\\\n    Cross-multiplying:\n    \\[ x(y + x) = 1 \\implies xy + x^2 = 1 \\]\n    \\[ xy = 1 - x^2 \\implies y = \\frac{1 - x^2}{x} = \\frac{1}{x} - x \\]\n\n    \\item[Step 3: Differentiate with respect to $x$] \\ \\\\\n    Differentiating both sides with respect to $x$:\n    \\[ \\frac{dy}{dx} = \\frac{d}{dx}\\left(x^{-1} - x\\right) = -x^{-2} - 1 = -\\frac{1}{x^2} - 1 \\]\n    Alternatively, this can be written as:\n    \\[ \\frac{dy}{dx} = -\\frac{1+x^2}{x^2} \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\frac{dy}{dx} = -\\frac{1+x^2}{x^2}} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q4aiii",
     "discipline": "CSE",
     "batch": 16,
@@ -3162,18 +3162,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4a(iii)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $dy/dx$ of the parametric curves:\n\\[ \\tan y = \\frac{3t}{1-t^2}, \\quad \\sin x = \\frac{2t}{1+t^2} \\]",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Express $y$ and $x$ as functions of $t$] \\ \n    \\begin{itemize}\n        \\item For $y$:\n        \\[ \\tan y = \\frac{3t}{1-t^2} \\implies y = \\tan^{-1}\\left(\\frac{3t}{1-t^2}\\right) \\]\n        \n        \\item For $x$:\n        \\[ \\sin x = \\frac{2t}{1+t^2} \\implies x = \\sin^{-1}\\left(\\frac{2t}{1+t^2}\\right) \\]\n    \\end{itemize}\n\n    \\item[Step 2: Differentiate $y$ with respect to $t$] \\ \\\\\n    Let $t = \\tan \\theta$.\n    \\[ \\frac{3t}{1-t^2} = \\frac{3\\tan\\theta}{1-\\tan^2\\theta} \\]\n    Thus, $y = \\tan^{-1}\\left(\\frac{3\\tan\\theta}{1-\\tan^2\\theta}\\right)$. Differentiating directly using standard calculus:\n    \\[ \\frac{dy}{dt} = \\frac{1}{1 + \\left(\\frac{3t}{1-t^2}\\right)^2} \\cdot \\frac{d}{dt}\\left(\\frac{3t}{1-t^2}\\right) \\]\n    \\[ \\frac{dy}{dt} = \\frac{(1-t^2)^2}{(1-t^2)^2 + 9t^2} \\cdot \\frac{3(1-t^2) - 3t(-2t)}{(1-t^2)^2} \\]\n    \\[ \\frac{dy}{dt} = \\frac{3 - 3t^2 + 6t^2}{1 - 2t^2 + t^4 + 9t^2} = \\frac{3(1+t^2)}{t^4 + 7t^2 + 1} \\]\n\n    \\item[Step 3: Differentiate $x$ with respect to $t$] \\ \\\\\n    Using substitution $t = \\tan \\theta$:\n    \\[ \\frac{2t}{1+t^2} = \\sin(2\\theta) \\implies x = \\sin^{-1}(\\sin 2\\theta) = 2\\theta = 2\\tan^{-1}t \\]\n    Therefore:\n    \\[ \\frac{dx}{dt} = \\frac{2}{1+t^2} \\]\n\n    \\item[Step 4: Find $dy/dx$ using parametric division] \\ \\\\\n    \\[ \\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{\\frac{3(1+t^2)}{t^4 + 7t^2 + 1}}{\\frac{2}{1+t^2}} = \\frac{3(1+t^2)^2}{2(t^4 + 7t^2 + 1)} \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\frac{dy}{dx} = \\frac{3(1+t^2)^2}{2(t^4 + 7t^2 + 1)}} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q4aiv",
     "discipline": "CSE",
     "batch": 16,
@@ -3183,18 +3183,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4a(iv)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $dy/dx$ if $\\log(xy) = x^2 + y^2$.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Simplify the logarithmic term] \\ \\\\\n    Using logarithmic properties:\n    \\[ \\ln x + \\ln y = x^2 + y^2 \\]\n\n    \\item[Step 2: Differentiate implicitly with respect to $x$] \\ \\\\\n    \\[ \\frac{d}{dx}(\\ln x + \\ln y) = \\frac{d}{dx}(x^2 + y^2) \\]\n    \\[ \\frac{1}{x} + \\frac{1}{y} \\frac{dy}{dx} = 2x + 2y \\frac{dy}{dx} \\]\n\n    \\item[Step 3: Rearrange terms to solve for $dy/dx$] \\ \\\\\n    Collect all terms involving $\\frac{dy}{dx}$ on one side:\n    \\[ \\frac{1}{y} \\frac{dy}{dx} - 2y \\frac{dy}{dx} = 2x - \\frac{1}{x} \\]\n    \\[ \\frac{dy}{dx} \\left( \\frac{1 - 2y^2}{y} \\right) = \\frac{2x^2 - 1}{x} \\]\n    \\[ \\frac{dy}{dx} = \\frac{y(2x^2 - 1)}{x(1 - 2y^2)} \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\frac{dy}{dx} = \\frac{y(2x^2 - 1)}{x(1 - 2y^2)}} \n\\]"
   },
-  {
+    {
     "id": "cse16-final-seca-q4av",
     "discipline": "CSE",
     "batch": 16,
@@ -3204,18 +3204,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4a(v)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $dy/dx$ of $y = \\tan^{-1} \\sqrt{\\frac{1-\\cos x}{1+\\cos x}}$.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Simplify the trigonometric argument] \\ \\\\\n    Using half-angle identities:\n    \\begin{itemize}\n        \\item $1 - \\cos x = 2\\sin^2\\left(\\frac{x}{2}\\right)$\n        \\item $1 + \\cos x = 2\\cos^2\\left(\\frac{x}{2}\\right)$\n    \\end{itemize}\n    Substitute these into the radical:\n    \\[ \\sqrt{\\frac{1-\\cos x}{1+\\cos x}} = \\sqrt{\\frac{2\\sin^2(x/2)}{2\\cos^2(x/2)}} = \\sqrt{\\tan^2\\left(\\frac{x}{2}\\right)} = \\tan\\left(\\frac{x}{2}\\right) \\]\n\n    \\item[Step 2: Simplify the equation for $y$] \\ \\\\\n    \\[ y = \\tan^{-1}\\left(\\tan\\frac{x}{2}\\right) = \\frac{x}{2} \\]\n\n    \\item[Step 3: Differentiate with respect to $x$] \\ \\\\\n    \\[ \\frac{dy}{dx} = \\frac{d}{dx}\\left(\\frac{x}{2}\\right) = \\frac{1}{2} \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\frac{dy}{dx} = \\frac{1}{2}} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q1a",
     "discipline": "CSE",
     "batch": 17,
@@ -3225,18 +3225,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define even function and odd function with examples. Draw the graph and find the domain and range of \n\\[ \nf(x) = \\begin{cases} \nx, & \\text{when } 0 \\le x < \\frac{1}{2} \\\\ \n1, & \\text{when } x = \\frac{1}{2} \\\\ \n1-x, & \\text{when } \\frac{1}{2} < x < 1 \n\\end{cases} \n\\]",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Define Even and Odd Functions] \\ \n    \\begin{itemize}\n        \\item \\textbf{Even Function:} A function $f(x)$ is said to be even if $f(-x) = f(x)$ for all $x$ in the domain of $f$. Its graph is symmetric with respect to the y-axis. \\\\\n        \\textit{Example:} $f(x) = x^2$, $f(x) = \\cos x$.\n        \\item \\textbf{Odd Function:} A function $f(x)$ is said to be odd if $f(-x) = -f(x)$ for all $x$ in the domain of $f$. Its graph is symmetric with respect to the origin. \\\\\n        \\textit{Example:} $f(x) = x^3$, $f(x) = \\sin x$.\n    \\end{itemize}\n\n    \\item[Step 2: Find the Domain of the given function $f(x)$] \\ \\\\\n    The function is defined for:\n    \\begin{itemize}\n        \\item $0 \\le x < \\frac{1}{2}$\n        \\item $x = \\frac{1}{2}$\n        \\item $\\frac{1}{2} < x < 1$\n    \\end{itemize}\n    Combining these intervals, the domain of $f(x)$ is:\n    \\[ \\text{Domain} = [0, 1) \\]\n\n    \\item[Step 3: Find the Range of the given function $f(x)$] \\ \\\\\n    Let's analyze the output $f(x)$ over each interval:\n    \\begin{enumerate}\n        \\item For $0 \\le x < \\frac{1}{2}$: $f(x) = x \\implies f(x) \\in [0, \\frac{1}{2})$\n        \\item For $x = \\frac{1}{2}$: $f(x) = 1 \\implies f(x) \\in \\{1\\}$\n        \\item For $\\frac{1}{2} < x < 1$: $f(x) = 1 - x$. As $x$ varies from $\\frac{1}{2}$ to $1$, $1-x$ varies from $\\frac{1}{2}$ to $0$. Hence, $f(x) \\in (0, \\frac{1}{2})$.\n    \\end{enumerate}\n    Combining all possible output values, the range is:\n    \\[ \\text{Range} = [0, \\frac{1}{2}) \\cup \\{1\\} \\]\n\n    \\item[Step 4: Description of the Graph] \\ \n    \\begin{itemize}\n        \\item From $x = 0$ to $x \\to \\frac{1}{2}$, the graph is a straight line segment starting at $(0,0)$ and ending with an open circle at $(\\frac{1}{2}, \\frac{1}{2})$.\n        \\item At $x = \\frac{1}{2}$, there is an isolated solid point at $(\\frac{1}{2}, 1)$.\n        \\item From $x \\to \\frac{1}{2}$ to $x \\to 1$, the graph is a straight line segment with negative slope starting with an open circle at $(\\frac{1}{2}, \\frac{1}{2})$ and ending with an open circle at $(1, 0)$.\n    \\end{itemize}\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{Domain} = [0, 1), \\quad \\text{Range} = [0, \\frac{1}{2}) \\cup \\{1\\}} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q1b",
     "discipline": "CSE",
     "batch": 17,
@@ -3246,18 +3246,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find the conditions for a function having limit at $x=a$. Test the continuity of $f(x)$ at $x=0$ where \n\\[ \nf(x) = \\begin{cases} \n(1+2x)^{\\frac{1}{x}}, & \\text{when } x \\neq 0 \\\\ \ne^2, & \\text{when } x = 0 \n\\end{cases} \n\\]",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Conditions for a function having a limit at $x=a$] \\ \\\\\n    A function $f(x)$ has a limit $L$ as $x \\to a$ if and only if both the Left-Hand Limit (LHL) and the Right-Hand Limit (RHL) exist, are finite, and are equal to each other:\n    \\[ \\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L \\]\n\n    \\item[Step 2: Evaluate the limit of $f(x)$ as $x \\to 0$] \\ \\\\\n    We evaluate:\n    \\[ L = \\lim_{x \\to 0} (1+2x)^{\\frac{1}{x}} \\]\n    This is of the indeterminate form $1^{\\infty}$. Let $y = (1+2x)^{\\frac{1}{x}}$.\n    Taking the natural logarithm on both sides:\n    \\[ \\ln y = \\frac{1}{x} \\ln(1+2x) \\]\n    Now, take the limit as $x \\to 0$:\n    \\[ \\lim_{x \\to 0} \\ln y = \\lim_{x \\to 0} \\frac{\\ln(1+2x)}{x} \\]\n    Applying L'Hopital's Rule (since it is a $\\frac{0}{0}$ form):\n    \\[ \\lim_{x \\to 0} \\frac{\\frac{2}{1+2x}}{1} = 2 \\]\n    Therefore, taking the exponential of both sides:\n    \\[ \\lim_{x \\to 0} f(x) = e^2 \\]\n\n    \\item[Step 3: Test the continuity of $f(x)$ at $x=0$] \\ \\\\\n    A function is continuous at $x=0$ if:\n    \\[ \\lim_{x \\to 0} f(x) = f(0) \\]\n    We are given:\n    \\[ f(0) = e^2 \\]\n    Since the limit $\\lim_{x \\to 0} f(x) = e^2 = f(0)$, the function is continuous at $x=0$.\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{The function is continuous at } x=0.} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q2a",
     "discipline": "CSE",
     "batch": 17,
@@ -3267,18 +3267,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Differentiate $\\sin x^2$ from the first principle rule with respect to $x$.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Set up the first principle definition] \\ \\\\\n    Let $f(x) = \\sin x^2$.\n    By the first principle of differentiation:\n    \\[ f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\]\n    \\[ f'(x) = \\lim_{h \\to 0} \\frac{\\sin (x+h)^2 - \\sin x^2}{h} \\]\n\n    \\item[Step 2: Apply trigonometric identity] \\ \\\\\n    Using the sum-to-product formula $\\sin A - \\sin B = 2 \\sin\\left(\\frac{A-B}{2}\\right) \\cos\\left(\\frac{A+B}{2}\\right)$:\\\\\n    Let $A = (x+h)^2 = x^2 + 2xh + h^2$ and $B = x^2$.\n    \\begin{itemize}\n        \\item $\\frac{A-B}{2} = \\frac{2xh + h^2}{2} = \\frac{h(2x+h)}{2}$\n        \\item $\\frac{A+B}{2} = \\frac{2x^2 + 2xh + h^2}{2}$\n    \\end{itemize}\n    Substituting these back:\n    \\[ f'(x) = \\lim_{h \\to 0} \\frac{2 \\sin\\left(\\frac{h(2x+h)}{2}\\right) \\cos\\left(\\frac{2x^2 + 2xh + h^2}{2}\\right)}{h} \\]\n\n    \\item[Step 3: Evaluate the limit] \\ \\\\\n    Rearranging terms to use the standard limit $\\lim_{\\theta \\to 0} \\frac{\\sin \\theta}{\\theta} = 1$:\\\\\n    Let $\\theta = \\frac{h(2x+h)}{2}$. As $h \\to 0$, $\\theta \\to 0$.\n    Multiply the denominator by $\\frac{2x+h}{2}$ and multiply the entire expression by $\\frac{2x+h}{2}$ to balance:\n    \\[ f'(x) = \\lim_{h \\to 0} \\left[ \\frac{\\sin\\left(\\frac{h(2x+h)}{2}\\right)}{\\frac{h(2x+h)}{2}} \\cdot \\left(\\frac{2x+h}{2}\\right) \\cdot 2 \\cos\\left(\\frac{2x^2 + 2xh + h^2}{2}\\right) \\right] \\]\n    \\[ f'(x) = \\lim_{h \\to 0} \\left[ \\frac{\\sin\\left(\\frac{h(2x+h)}{2}\\right)}{\\frac{h(2x+h)}{2}} \\cdot (2x+h) \\cdot \\cos\\left(\\frac{2x^2 + 2xh + h^2}{2}\\right) \\right] \\]\n    Evaluating the limit as $h \\to 0$:\n    \\[ f'(x) = 1 \\cdot (2x) \\cdot \\cos\\left(\\frac{2x^2}{2}\\right) = 2x \\cos x^2 \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{2x \\cos x^2} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q2bi",
     "discipline": "CSE",
     "batch": 17,
@@ -3288,18 +3288,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b(i)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $dy/dx$ of \n\\[ y = \\sin\\left\\{ 2\\tan^{-1} \\sqrt{\\frac{1-x}{1+x}} \\right\\} \\]",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Simplify using substitution] \\ \\\\\n    Let $x = \\cos \\theta \\implies \\theta = \\cos^{-1} x$.\\\\\n    The inner radical expression becomes:\n    \\[ \\sqrt{\\frac{1-x}{1+x}} = \\sqrt{\\frac{1-\\cos\\theta}{1+\\cos\\theta}} = \\sqrt{\\frac{2\\sin^2(\\theta/2)}{2\\cos^2(\\theta/2)}} = \\tan\\left(\\frac{\\theta}{2}\\right) \\]\n\n    \\item[Step 2: Substitute back into the expression for $y$] \\ \\\\\n    \\[ \\tan^{-1} \\sqrt{\\frac{1-x}{1+x}} = \\tan^{-1}\\left(\\tan\\frac{\\theta}{2}\\right) = \\frac{\\theta}{2} \\]\n    Then:\n    \\[ y = \\sin\\left\\{ 2 \\cdot \\frac{\\theta}{2} \\right\\} = \\sin \\theta \\]\n\n    \\item[Step 3: Convert back to variable $x$] \\ \\\\\n    Since $\\cos\\theta = x$, we have:\n    \\[ \\sin\\theta = \\sqrt{1 - \\cos^2\\theta} = \\sqrt{1 - x^2} \\]\n    Thus, $y = \\sqrt{1 - x^2}$.\n\n    \\item[Step 4: Differentiate with respect to $x$] \\ \\\\\n    \\[ \\frac{dy}{dx} = \\frac{d}{dx}\\left(\\sqrt{1 - x^2}\\right) = \\frac{1}{2\\sqrt{1-x^2}} \\cdot (-2x) = -\\frac{x}{\\sqrt{1-x^2}} \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{-\\frac{x}{\\sqrt{1-x^2}}} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q2bii",
     "discipline": "CSE",
     "batch": 17,
@@ -3309,18 +3309,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b(ii)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $dy/dx$ of \n\\[ x = 3\\tan^{-1} \\frac{2t}{1-t^2}, \\quad y = 2\\sin^{-1} \\frac{2t}{1+t^2} \\]",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Simplify $x$ and $y$ using substitution] \\ \\\\\n    Let $t = \\tan \\theta \\implies \\theta = \\tan^{-1} t$.\n    \\begin{itemize}\n        \\item For $x$:\n        \\[ \\frac{2t}{1-t^2} = \\frac{2\\tan\\theta}{1-\\tan^2\\theta} = \\tan(2\\theta) \\]\n        \\[ x = 3\\tan^{-1}(\\tan 2\\theta) = 3(2\\theta) = 6\\theta = 6\\tan^{-1} t \\]\n\n        \\item For $y$:\n        \\[ \\frac{2t}{1+t^2} = \\frac{2\\tan\\theta}{1+\\tan^2\\theta} = \\sin(2\\theta) \\]\n        \\[ y = 2\\sin^{-1}(\\sin 2\\theta) = 2(2\\theta) = 4\\theta = 4\\tan^{-1} t \\]\n    \\end{itemize}\n\n    \\item[Step 2: Differentiate $x$ and $y$ with respect to $t$] \\ \\\\\n    \\[ \\frac{dx}{dt} = \\frac{6}{1+t^2} \\]\n    \\[ \\frac{dy}{dt} = \\frac{4}{1+t^2} \\]\n\n    \\item[Step 3: Apply the chain rule to find $dy/dx$] \\ \\\\\n    \\[ \\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{\\frac{4}{1+t^2}}{\\frac{6}{1+t^2}} = \\frac{4}{6} = \\frac{2}{3} \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\frac{2}{3}} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q2biii",
     "discipline": "CSE",
     "batch": 17,
@@ -3330,18 +3330,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b(iii)",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $dy/dx$ of \n\\[ x^2 + y^2 = \\sin(xy) \\]",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Differentiate both sides implicitly with respect to $x$] \\ \\\\\n    \\[ \\frac{d}{dx}(x^2 + y^2) = \\frac{d}{dx}(\\sin(xy)) \\]\n    \\[ 2x + 2y \\frac{dy}{dx} = \\cos(xy) \\cdot \\frac{d}{dx}(xy) \\]\n\n    \\item[Step 2: Use the product rule on the right-hand side] \\ \\\\\n    \\[ 2x + 2y \\frac{dy}{dx} = \\cos(xy) \\cdot \\left( y + x \\frac{dy}{dx} \\right) \\]\n    \\[ 2x + 2y \\frac{dy}{dx} = y\\cos(xy) + x\\cos(xy) \\frac{dy}{dx} \\]\n\n    \\item[Step 3: Collect terms with $\\frac{dy}{dx}$ on one side] \\ \\\\\n    \\[ 2y \\frac{dy}{dx} - x\\cos(xy) \\frac{dy}{dx} = y\\cos(xy) - 2x \\]\n    \\[ \\frac{dy}{dx} (2y - x\\cos(xy)) = y\\cos(xy) - 2x \\]\n\n    \\item[Step 4: Solve for $\\frac{dy}{dx}$] \\ \\\\\n    \\[ \\frac{dy}{dx} = \\frac{y\\cos(xy) - 2x}{2y - x\\cos(xy)} \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\frac{y\\cos(xy) - 2x}{2y - x\\cos(xy)}} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q3a",
     "discipline": "CSE",
     "batch": 17,
@@ -3351,18 +3351,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State Leibnitz's theorem. If $y = (\\cos^{-1} x)^2$ then show that \n\\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2 y_n = 0 \\]",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: State Leibnitz's Theorem] \\ \\\\\n    If $u$ and $v$ are two functions of $x$ possessing derivatives of the $n$-th order, then the $n$-th order derivative of their product $uv$ is given by:\n    \\[ (uv)_n = u_n v + \\binom{n}{1} u_{n-1} v_1 + \\binom{n}{2} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n \\]\n    where subscripts represent the order of differentiation.\n\n    \\item[Step 2: Obtain successive derivatives of the given function] \\ \\\\\n    Given:\n    \\[ y = (\\cos^{-1} x)^2 \\]\n    Differentiating once with respect to $x$:\n    \\[ y_1 = 2(\\cos^{-1} x) \\cdot \\left(-\\frac{1}{\\sqrt{1-x^2}}\\right) \\]\n    \\[ y_1 \\sqrt{1-x^2} = -2\\cos^{-1} x \\]\n    Squaring both sides to remove the radical:\n    \\[ y_1^2 (1-x^2) = 4(\\cos^{-1} x)^2 \\]\n    Substituting $y = (\\cos^{-1} x)^2$:\n    \\[ y_1^2 (1-x^2) = 4y \\]\n\n    \\item[Step 3: Differentiate once more to obtain the relation in $y_2$] \\ \\\\\n    Differentiating both sides with respect to $x$:\n    \\[ 2y_1 y_2 (1-x^2) + y_1^2 (-2x) = 4y_1 \\]\n    Dividing through by $2y_1$ (since $y_1 \\neq 0$):\n    \\[ y_2 (1-x^2) - x y_1 = 2 \\]\n\n    \\item[Step 4: Differentiate $n$ times using Leibnitz's Theorem] \\ \\\\\n    We differentiate each term $n$ times:\n    \\begin{enumerate}\n        \\item For $y_2(1-x^2)$, let $u = y_2$ and $v = 1-x^2$:\n        \\[ \\left(y_2 (1-x^2)\\right)_n = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) \\]\n        \\[ = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n \\]\n\n        \\item For $-xy_1$, let $u = y_1$ and $v = x$:\n        \\[ \\left(x y_1\\right)_n = y_{n+1} x + n y_n (1) = x y_{n+1} + n y_n \\]\n\n        \\item For the constant 2:\n        \\[ (2)_n = 0 \\]\n    \\end{enumerate}\n    Substituting these parts back into the equation:\n    \\[ \\left[(1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n\\right] - \\left[x y_{n+1} + n y_n\\right] = 0 \\]\n    \\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - n + n) y_n = 0 \\]\n    \\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2 y_n = 0 \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{Proven}} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q3b",
     "discipline": "CSE",
     "batch": 17,
@@ -3372,7 +3372,7 @@ const questions = [
     "section": "A",
     "questionNumber": "3b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3383,7 +3383,7 @@ const questions = [
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Express the equation of the curve] \\ \\\\\n    Given curve:\n    \\[ \\left(\\frac{x}{a}\\right)^3 + \\left(\\frac{y}{b}\\right)^3 = 2 \\]\n\n    \\item[Step 2: Find the slope of the tangent $\\frac{dy}{dx}$] \\ \\\\\n    Differentiating implicitly with respect to $x$:\n    \\[ 3\\left(\\frac{x}{a}\\right)^2 \\cdot \\frac{1}{a} + 3\\left(\\frac{y}{b}\\right)^2 \\cdot \\frac{1}{b} \\frac{dy}{dx} = 0 \\]\n    \\[ \\frac{3x^2}{a^3} + \\frac{3y^2}{b^3} \\frac{dy}{dx} = 0 \\]\n    \\[ \\frac{dy}{dx} = -\\frac{3x^2 / a^3}{3y^2 / b^3} = -\\frac{b^3 x^2}{a^3 y^2} \\]\n\n    \\item[Step 3: Evaluate the slope at the given point $(a, b)$] \\ \\\\\n    \\[ m = \\left. \\frac{dy}{dx} \\right|_{(a,b)} = -\\frac{b^3 a^2}{a^3 b^2} = -\\frac{b}{a} \\]\n\n    \\item[Step 4: Find the equation of the tangent] \\ \\\\\n    The equation of a straight line through $(a, b)$ with slope $m = -\\frac{b}{a}$ is:\n    \\[ y - b = -\\frac{b}{a}(x - a) \\]\n    Multiplying both sides by $a$:\n    \\[ a(y - b) = -b(x - a) \\]\n    \\[ ay - ab = -bx + ab \\]\n    Rearranging terms:\n    \\[ bx + ay = 2ab \\]\n    Dividing both sides by $ab$:\n    \\[ \\frac{x}{a} + \\frac{y}{b} = 2 \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{Proven}} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q4a",
     "discipline": "CSE",
     "batch": 17,
@@ -3393,7 +3393,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3404,7 +3404,7 @@ const questions = [
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Define Stationary Point and Point of Inflection] \\ \n    \\begin{itemize}\n        \\item \\textbf{Stationary Point:} A point on a curve $y = f(x)$ where the derivative is zero (i.e., $f'(x) = 0$). At this point, the tangent line to the curve is horizontal.\n        \\item \\textbf{Point of Inflection:} A point on a curve where the concavity changes from upward to downward or vice versa. At this point, the second derivative $f''(x)$ is either zero or undefined and changes sign.\n    \\end{itemize}\n\n    \\item[Step 2: Find the derivative of $f(x)$] \\ \\\\\n    Given:\n    \\[ f(x) = \\frac{4}{x} + \\frac{36}{2-x} \\]\n    Differentiating with respect to $x$:\n    \\[ f'(x) = -\\frac{4}{x^2} - \\frac{36}{(2-x)^2} \\cdot (-1) = -\\frac{4}{x^2} + \\frac{36}{(2-x)^2} \\]\n\n    \\item[Step 3: Solve for stationary points ($f'(x) = 0$)] \\ \\\\\n    \\[ \\frac{36}{(2-x)^2} = \\frac{4}{x^2} \\implies \\frac{9}{(2-x)^2} = \\frac{1}{x^2} \\]\n    Taking the square root of both sides:\n    \\[ \\frac{3}{2-x} = \\pm \\frac{1}{x} \\]\n    \\begin{itemize}\n        \\item \\textbf{Case 1:} $\\frac{3}{2-x} = \\frac{1}{x} \\implies 3x = 2-x \\implies 4x = 2 \\implies x = \\frac{1}{2}$\n        \\item \\textbf{Case 2:} $\\frac{3}{2-x} = -\\frac{1}{x} \\implies 3x = -(2-x) \\implies 3x = x - 2 \\implies 2x = -2 \\implies x = -1$\n    \\end{itemize}\n\n    \\item[Step 4: Test the stationary points using the second derivative] \\ \\\\\n    Find $f''(x)$:\n    \\[ f''(x) = \\frac{d}{dx} \\left( -4x^{-2} + 36(2-x)^{-2} \\right) = \\frac{8}{x^3} - 72(2-x)^{-3} \\cdot (-1) = \\frac{8}{x^3} + \\frac{72}{(2-x)^3} \\]\n    \\begin{itemize}\n        \\item \\textbf{Test $x = \\frac{1}{2}$:}\n        \\[ f''\\left(\\frac{1}{2}\\right) = \\frac{8}{(1/2)^3} + \\frac{72}{(2-1/2)^3} = 64 + \\frac{72}{(3/2)^3} = 64 + \\frac{72 \\times 8}{27} = 64 + \\frac{64}{3} > 0 \\]\n        Since $f''(\\frac{1}{2}) > 0$, $x = \\frac{1}{2}$ is a point of \\textbf{minimum}.\\\\\n        Minimum value is:\n        \\[ f\\left(\\frac{1}{2}\\right) = \\frac{4}{1/2} + \\frac{36}{2 - 1/2} = 8 + \\frac{36}{3/2} = 8 + 24 = 32 \\]\n\n        \\item \\textbf{Test $x = -1$:}\n        \\[ f''(-1) = \\frac{8}{(-1)^3} + \\frac{72}{(2 - (-1))^3} = -8 + \\frac{72}{27} = -8 + \\frac{8}{3} = -\\frac{16}{3} < 0 \\]\n        Since $f''(-1) < 0$, $x = -1$ is a point of \\textbf{maximum}.\\\\\n        Maximum value is:\n        \\[ f(-1) = \\frac{4}{-1} + \\frac{36}{2 - (-1)} = -4 + \\frac{36}{3} = -4 + 12 = 8 \\]\n    \\end{itemize}\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{\\text{Maximum value is } 8 \\text{ at } x = -1, \\quad \\text{Minimum value is } 32 \\text{ at } x = \\frac{1}{2}} \n\\]"
   },
-  {
+    {
     "id": "cse17-final-seca-q4b",
     "discipline": "CSE",
     "batch": 17,
@@ -3414,18 +3414,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4b",
     "topics": [
-      "Series Expansion"
+        "Series Expansion"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["difficult"],
     "questionHtml": "Expand $(\\sin^{-1} x)^2$ in a series of ascending powers of $x$.",
     "solutionHtml": "\\begin{description}\n    \\item[Step 1: Set up successive derivatives] \\ \\\\\n    Let $y = (\\sin^{-1} x)^2$.\\\\\n    At $x = 0$: $y(0) = 0$.\\\\\n    Differentiating once:\n    \\[ y_1 = \\frac{2\\sin^{-1}x}{\\sqrt{1-x^2}} \\implies y_1 \\sqrt{1-x^2} = 2\\sin^{-1}x \\]\n    At $x = 0$: $y_1(0) = 0$.\\\\\n    Squaring both sides:\n    \\[ y_1^2 (1-x^2) = 4(\\sin^{-1}x)^2 = 4y \\]\n    Differentiating again:\n    \\[ 2y_1 y_2 (1-x^2) - 2x y_1^2 = 4y_1 \\]\n    Dividing through by $2y_1$:\n    \\[ y_2(1-x^2) - xy_1 = 2 \\]\n    At $x = 0$: $y_2(0) = 2$.\n\n    \\item[Step 2: Use Leibnitz's theorem to differentiate $n$ times] \\ \\\\\n    Differentiating the relation $y_2(1-x^2) - xy_1 = 2$ $n$ times:\n    \\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2 y_n = 0 \\]\n    At $x = 0$, this simplifies to:\n    \\[ y_{n+2}(0) = n^2 y_n(0) \\]\n\n    \\item[Step 3: Determine the coefficients at $x=0$] \\ \\\\\n    Since $y_1(0) = 0$, all odd-ordered derivatives at $x = 0$ are zero:\n    \\[ y_3(0) = y_5(0) = \\dots = 0 \\]\n    For even-ordered derivatives:\n    \\begin{itemize}\n        \\item $y_2(0) = 2$\n        \\item $y_4(0) = 2^2 \\cdot y_2(0) = 2^2 \\cdot 2 = 8$\n        \\item $y_6(0) = 4^2 \\cdot y_4(0) = 16 \\cdot 8 = 128$\n        \\item $y_8(0) = 6^2 \\cdot y_6(0) = 36 \\cdot 128 = 4608$\n    \\end{itemize}\n\n    \\item[Step 4: Write down the Maclaurin series expansion] \\ \\\\\n    The Maclaurin series is:\n    \\[ y(x) = y(0) + x y_1(0) + \\frac{x^2}{2!} y_2(0) + \\frac{x^3}{3!} y_3(0) + \\frac{x^4}{4!} y_4(0) + \\frac{x^5}{5!} y_5(0) + \\frac{x^6}{6!} y_6(0) + \\dots \\]\n    Substitute the values:\n    \\[ y(x) = 0 + 0 + \\frac{2}{2}x^2 + 0 + \\frac{8}{24}x^4 + 0 + \\frac{128}{720}x^6 + 0 + \\frac{4608}{40320}x^8 + \\dots \\]\n    \\[ y(x) = x^2 + \\frac{1}{3}x^4 + \\frac{8}{45}x^6 + \\frac{4}{35}x^8 + \\dots \\]\n\\end{description}",
     "finalAnswerHtml": "\\[ \n\\boxed{(\\sin^{-1} x)^2 = x^2 + \\frac{1}{3}x^4 + \\frac{8}{45}x^6 + \\frac{4}{35}x^8 + \\dots} \n\\]"
   },
-  {
+    {
     "id": "cse18-final-q1a",
     "discipline": "CSE",
     "batch": 18,
@@ -3435,7 +3435,7 @@ const questions = [
     "section": "A",
     "questionNumber": "1a",
     "topics": [
-      "Miscellaneous"
+        "Miscellaneous"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3446,7 +3446,7 @@ const questions = [
     "solutionHtml": "Step 1: Define a function with an example.\nA function $f$ from a set $A$ to a set $B$ is a relation that associates each element $x \\in A$ with exactly one element $y \\in B$.\n- *Example*: $f(x) = x^2$ maps every real number $x \\in \\mathbb{R}$ to its non-negative square $x^2 \\in [0, \\infty)$.\n\nStep 2: Find the domain of the piecewise function.\nAnalyzing the given inequalities for each branch:\n1. $x < 0$\n2. $0 \\le x < 1$\n3. $x > 1$\n\nNotice that $x = 1$ is not included in any of the interval definitions (neither $x < 1$ nor $x > 1$ includes $1$, and there is no $x = 1$ condition). Following the exact definition of the function on the exam paper:\n$$\\text{Domain } D = \\mathbb{R} \\setminus \\{1\\} = (-\\infty, 1) \\cup (1, \\infty)$$\n\nStep 3: Find the range of the piecewise function.\nLet us analyze the range of each branch individually:\n1. **For $x < 0$**:\n   $$y = x^2 - 1$$\n   Since $x < 0 \\implies x^2 > 0 \\implies x^2 - 1 > -1$.\n   The range for this interval is $(-1, \\infty)$.\n2. **For $0 \\le x < 1$**:\n   $$y = x$$\n   The range for this interval is $[0, 1)$.\n3. **For $x > 1$**:\n   $$y = \\frac{1}{x}$$\n   Since $x > 1 \\implies 0 < \\frac{1}{x} < 1$.\n   The range for this interval is $(0, 1)$.\n\nTaking the union of all individual ranges:\n$$\\text{Range } R = (-1, \\infty) \\cup [0, 1) \\cup (0, 1) = (-1, \\infty)$$\n\nStep 4: Describe the graph.\n- For $x < 0$, the graph is a parabola $y = x^2-1$ opening upwards, starting near $(0, -1)$ (not inclusive) and going to $\\infty$.\n- For $0 \\le x < 1$, the graph is a straight line $y = x$ starting at $(0,0)$ and ending with an open circle at $(1,1)$.\n- For $x > 1$, the graph is a hyperbola $y = 1/x$ starting near $(1,1)$ (not inclusive) and asymptotically approaching the positive $x$-axis ($y = 0$).",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Domain: } \\mathbb{R} \\setminus \\{1\\}, \\quad \\text{Range: } (-1, \\infty)}\n$$"
   },
-  {
+    {
     "id": "cse18-final-q1b",
     "discipline": "CSE",
     "batch": 18,
@@ -3456,18 +3456,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1b",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Write the physical significance of differentiation. Use first principle rule to find $\\frac{d}{dx}(\\tan^2 x)$.",
     "solutionHtml": "Step 1: State the physical significance of differentiation.\nPhysically, differentiation represents the instantaneous rate of change of a dependent variable with respect to an independent variable. For example, if $s(t)$ represents the displacement of a particle at time $t$, then its derivative $\\frac{ds}{dt}$ represents the instantaneous velocity of the particle at that moment.\n\nStep 2: Set up the first principle of differentiation.\nBy definition, the derivative of a function $f(x)$ from first principles is:\n$$f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$$\nHere, $f(x) = \\tan^2 x$.\n$$f'(x) = \\lim_{h \\to 0} \\frac{\\tan^2(x+h) - \\tan^2 x}{h}$$\n\nStep 3: Factor the numerator as a difference of squares.\n$$\\tan^2(x+h) - \\tan^2 x = \\left(\\tan(x+h) - \\tan x\\right)\\left(\\tan(x+h) + \\tan x\\right)$$\nThus, the limit becomes:\n$$f'(x) = \\lim_{h \\to 0} \\left[ \\frac{\\tan(x+h) - \\tan x}{h} \\cdot \\left(\\tan(x+h) + \\tan x\\right) \\right]$$\n\nStep 4: Evaluate the difference of tangents limit.\nUsing the trigonometric identity $\\tan A - \\tan B = \\frac{\\sin(A-B)}{\\cos A \\cos B}$:\n$$\\tan(x+h) - \\tan x = \\frac{\\sin(x+h-x)}{\\cos(x+h)\\cos x} = \\frac{\\sin h}{\\cos(x+h)\\cos x}$$\nSubstitute this back into the derivative equation:\n$$f'(x) = \\lim_{h \\to 0} \\left[ \\frac{\\sin h}{h \\cdot \\cos(x+h)\\cos x} \\cdot \\left(\\tan(x+h) + \\tan x\\right) \\right]$$\n\nStep 5: Apply the limits as $h \\to 0$.\nSince $\\lim_{h \\to 0} \\frac{\\sin h}{h} = 1$, we get:\n$$f'(x) = 1 \\cdot \\frac{1}{\\cos(x)\\cos x} \\cdot (\\tan x + \\tan x)$$\n$$f'(x) = \\frac{2\\tan x}{\\cos^2 x} = 2 \\tan x \\sec^2 x$$",
     "finalAnswerHtml": "$$\n\\boxed{\\frac{d}{dx}(\\tan^2 x) = 2 \\tan x \\sec^2 x}\n$$"
   },
-  {
+    {
     "id": "cse18-final-q2a",
     "discipline": "CSE",
     "batch": 18,
@@ -3477,18 +3477,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\frac{dy}{dx}$ of \n(i) $y = x^{\\tan^{-1} x} + (\\sin x)^{\\log_e x}$\n(ii) $x + y = \\tan(xy)$\n(iii) $x = \\frac{3at}{1+t^3}, y = \\frac{3at^2}{1+t^3}$.",
     "solutionHtml": "Step 1: Solve part (i) $y = x^{\\tan^{-1} x} + (\\sin x)^{\\ln x}$.\nLet $u = x^{\\tan^{-1} x}$ and $v = (\\sin x)^{\\ln x}$. Then $y = u + v \\implies \\frac{dy}{dx} = \\frac{du}{dx} + \\frac{dv}{dx}$.\n\n- For $u = x^{\\tan^{-1} x}$:\n  $$\\ln u = \\tan^{-1} x \\ln x$$\n  Differentiate both sides with respect to $x$:\n  $$\\frac{1}{u} \\frac{du}{dx} = \\frac{1}{1+x^2} \\ln x + \\tan^{-1} x \\cdot \\frac{1}{x}$$\n  $$\\frac{du}{dx} = x^{\\tan^{-1} x} \\left[ \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1} x}{x} \\right]$$\n\n- For $v = (\\sin x)^{\\ln x}$:\n  $$\\ln v = \\ln x \\ln(\\sin x)$$\n  Differentiate both sides with respect to $x$:\n  $$\\frac{1}{v} \\frac{dv}{dx} = \\frac{1}{x} \\ln(\\sin x) + \\ln x \\cdot \\frac{1}{\\sin x} \\cdot \\cos x$$\n  $$\\frac{dv}{dx} = (\\sin x)^{\\ln x} \\left[ \\frac{\\ln(\\sin x)}{x} + \\ln x \\cot x \\right]$$\n\nTherefore, the derivative is:\n$$\\frac{dy}{dx} = x^{\\tan^{-1} x} \\left[ \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1} x}{x} \\right] + (\\sin x)^{\\ln x} \\left[ \\frac{\\ln(\\sin x)}{x} + \\ln x \\cot x \\right]$$\n\nStep 2: Solve part (ii) $x + y = \\tan(xy)$.\nDifferentiating implicitly with respect to $x$:\n$$1 + \\frac{dy}{dx} = \\sec^2(xy) \\cdot \\left( y + x\\frac{dy}{dx} \\right)$$\n$$1 + \\frac{dy}{dx} = y \\sec^2(xy) + x \\sec^2(xy) \\frac{dy}{dx}$$\n$$\\frac{dy}{dx} \\left( 1 - x \\sec^2(xy) \\right) = y \\sec^2(xy) - 1$$\n$$\\frac{dy}{dx} = \\frac{y \\sec^2(xy) - 1}{1 - x \\sec^2(xy)}$$\n\nStep 3: Solve part (iii) $x = \\frac{3at}{1+t^3}, y = \\frac{3at^2}{1+t^3}$.\nUsing the quotient rule to compute $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$:\n$$\\frac{dx}{dt} = 3a \\cdot \\frac{(1+t^3)(1) - t(3t^2)}{(1+t^3)^2} = \\frac{3a(1 - 2t^3)}{(1+t^3)^2}$$\n$$\\frac{dy}{dt} = 3a \\cdot \\frac{(1+t^3)(2t) - t^2(3t^2)}{(1+t^3)^2} = \\frac{3a(2t - t^4)}{(1+t^3)^2}$$\nUsing the chain rule:\n$$\\frac{dy}{dx} = \\frac{\\frac{dy}{dt}}{\\frac{dx}{dt}} = \\frac{3a(2t - t^4)}{3a(1 - 2t^3)} = \\frac{2t - t^4}{1 - 2t^3}$$",
     "finalAnswerHtml": "$$\n\\boxed{\\begin{aligned}\n\\text{(i) } \\frac{dy}{dx} &= x^{\\tan^{-1} x} \\left[ \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1} x}{x} \\right] + (\\sin x)^{\\ln x} \\left[ \\frac{\\ln(\\sin x)}{x} + \\ln x \\cot x \\right] \\\\\n\\text{(ii) } \\frac{dy}{dx} &= \\frac{y \\sec^2(xy) - 1}{1 - x \\sec^2(xy)} \\\\\n\\text{(iii) } \\frac{dy}{dx} &= \\frac{2t - t^4}{1 - 2t^3}\n\\end{aligned}}\n$$"
   },
-  {
+    {
     "id": "cse18-final-q2b",
     "discipline": "CSE",
     "batch": 18,
@@ -3498,18 +3498,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State Leibnitz's theorem. If $\\log y = a \\sin^{-1} x$ then show that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0$.",
     "solutionHtml": "Step 1: State Leibnitz's theorem.\nIf $u$ and $v$ are functions of $x$ possessing derivatives of the $n^{\\text{th}}$ order, then the $n^{\\text{th}}$ derivative of their product is:\n$$(uv)_n = u_n v + \\binom{n}{1} u_{n-1} v_1 + \\binom{n}{2} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n$$\n\nStep 2: Obtain the first-order differential relation.\nGiven:\n$$\\ln y = a \\sin^{-1} x \\implies y = e^{a \\sin^{-1} x}$$\nDifferentiating with respect to $x$:\n$$y_1 = e^{a \\sin^{-1} x} \\cdot \\frac{a}{\\sqrt{1-x^2}} = \\frac{ay}{\\sqrt{1-x^2}}$$\nSquaring both sides and cross-multiplying:\n$$y_1^2 (1-x^2) = a^2 y^2$$\n\nStep 3: Obtain the second-order differential relation.\nDifferentiating implicitly with respect to $x$:\n$$2 y_1 y_2 (1-x^2) + y_1^2 (-2x) = a^2 (2yy_1)$$\nSince $y_1 \\neq 0$, dividing the entire equation by $2y_1$ yields:\n$$(1-x^2)y_2 - x y_1 - a^2 y = 0$$\n\nStep 4: Differentiate $n$ times using Leibnitz's theorem.\nApplying the operator $D^n$ to each term:\n- For $D^n[(1-x^2)y_2]$:\n  $$D^n[y_2(1-x^2)] = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n(-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n$$\n- For $D^n[xy_1]$:\n  $$D^n[y_1 x] = y_{n+1}x + n y_n(1) = x y_{n+1} + n y_n$$\n- For $D^n[a^2 y]$:\n  $$D^n[a^2 y] = a^2 y_n$$\n\nStep 5: Combine and simplify the terms.\n$$\\left[ (1-x^2)y_{n+2} - 2nxy_{n+1} - (n^2-n)y_n \\right] - \\left[ x y_{n+1} + n y_n \\right] - a^2 y_n = 0$$\n$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - n + n + a^2)y_n = 0$$\n$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + a^2)y_n = 0$$",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Proven: } (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0}\n$$"
   },
-  {
+    {
     "id": "cse18-final-q3a",
     "discipline": "CSE",
     "batch": 18,
@@ -3519,18 +3519,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\lim_{x \\to 0} (\\cot^2 x)^{\\sin x}$.",
     "solutionHtml": "Step 1: Identify the indeterminate form.\nAs $x \\to 0$, $\\cot^2 x \\to \\infty$ and $\\sin x \\to 0$. This is an indeterminate form of the type $\\infty^0$.\n\nStep 2: Apply the natural logarithm.\nLet $L = \\lim_{x \\to 0} (\\cot^2 x)^{\\sin x}$.\nTaking the natural logarithm of both sides:\n$$\\ln L = \\lim_{x \\to 0} \\ln\\left[ (\\cot^2 x)^{\\sin x} \\right] = \\lim_{x \\to 0} \\left[ \\sin x \\ln(\\cot^2 x) \\right] = 2 \\lim_{x \\to 0} \\left[ \\sin x \\ln(\\cot x) \\right]$$\n\nStep 3: Rewrite the limit in $\\frac{\\infty}{\\infty}$ form.\n$$\\ln L = 2 \\lim_{x \\to 0} \\frac{\\ln(\\cot x)}{\\csc x}$$\n\nStep 4: Apply L'H\\^opital's Rule.\n$$\\ln L = 2 \\lim_{x \\to 0} \\frac{\\frac{d}{dx}[\\ln(\\cot x)]}{\\frac{d}{dx}[\\csc x]} = 2 \\lim_{x \\to 0} \\frac{\\frac{1}{\\cot x} (-\\csc^2 x)}{-\\csc x \\cot x}$$\n$$\\ln L = 2 \\lim_{x \\to 0} \\frac{\\csc x}{\\cot^2 x} = 2 \\lim_{x \\to 0} \\frac{\\frac{1}{\\sin x}}{\\frac{\\cos^2 x}{\\sin^2 x}} = 2 \\lim_{x \\to 0} \\frac{\\sin x}{\\cos^2 x}$$\nAs $x \\to 0$, $\\sin x \\to 0$ and $\\cos^2 x \\to 1$:\n$$\\ln L = 2 \\cdot \\frac{0}{1} = 0$$\n\nStep 5: Solve for $L$.\n$$L = e^0 = 1$$",
     "finalAnswerHtml": "$$\n\\boxed{1}\n$$"
   },
-  {
+    {
     "id": "cse18-final-q3b",
     "discipline": "CSE",
     "batch": 18,
@@ -3540,7 +3540,7 @@ const questions = [
     "section": "A",
     "questionNumber": "3b",
     "topics": [
-      "Partial Derivatives"
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3551,7 +3551,7 @@ const questions = [
     "solutionHtml": "Step 1: State the differences.\n- **Derivative (Ordinary Derivative)**: Applies to a function of a single independent variable. It measures the total rate of change of the dependent variable with respect to the single independent variable.\n- **Partial Derivative**: Applies to functions of multiple independent variables. It measures the rate of change of the function with respect to one variable while holding all other variables constant.\n\nStep 2: Compute $\\frac{\\partial u}{\\partial x}$ for $u = (x^2 + y^2 + z^2)^{-\\frac{1}{2}}$.\nUsing the chain rule:\n$$\\frac{\\partial u}{\\partial x} = -\\frac{1}{2}(x^2+y^2+z^2)^{-\\frac{3}{2}} \\cdot (2x) = -x(x^2+y^2+z^2)^{-\\frac{3}{2}}$$\nMultiplying by $x$:\n$$x\\frac{\\partial u}{\\partial x} = -x^2 (x^2+y^2+z^2)^{-\\frac{3}{2}}$$\n\nStep 3: Compute the partial derivatives for $y$ and $z$ by symmetry.\n$$y\\frac{\\partial u}{\\partial y} = -y^2 (x^2+y^2+z^2)^{-\\frac{3}{2}}$$\n$$z\\frac{\\partial u}{\\partial z} = -z^2 (x^2+y^2+z^2)^{-\\frac{3}{2}}$$\n\nStep 4: Sum the partial derivatives.\n$$x\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y} + z\\frac{\\partial u}{\\partial z} = -(x^2+y^2+z^2)(x^2+y^2+z^2)^{-\\frac{3}{2}}$$\n$$= -(x^2+y^2+z^2)^{-\\frac{1}{2}} = -u$$",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Proven: } x\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y} + z\\frac{\\partial u}{\\partial z} = -u}\n$$"
   },
-  {
+    {
     "id": "cse18-final-q3c",
     "discipline": "CSE",
     "batch": 18,
@@ -3561,18 +3561,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3c",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["last-minute"],
     "questionHtml": "Verify Rolle's theorem for $f(x) = x^2 - 3x + 2$ in the interval $[1,2]$.",
     "solutionHtml": "Step 1: Check the three hypotheses of Rolle's theorem.\n1. **Continuity**: $f(x) = x^2 - 3x + 2$ is a polynomial function, so it is continuous everywhere, including on the closed interval $[1, 2]$.\n2. **Differentiability**: The derivative $f'(x) = 2x - 3$ exists for all $x \\in \\mathbb{R}$, so it is differentiable on the open interval $(1, 2)$.\n3. **Boundary values equality**:\n   $$f(1) = (1)^2 - 3(1) + 2 = 1 - 3 + 2 = 0$$\n   $$f(2) = (2)^2 - 3(2) + 2 = 4 - 6 + 2 = 0$$\n   Thus, $f(1) = f(2) = 0$.\n\nAll hypotheses of Rolle's theorem are satisfied.\n\nStep 2: Find the value $c \\in (1, 2)$ where $f'(c) = 0$.\n$$f'(c) = 2c - 3 = 0 \\implies 2c = 3 \\implies c = 1.5$$\nSince $1.5 \\in (1, 2)$, Rolle's theorem is verified.",
     "finalAnswerHtml": "$$\n\\boxed{c = 1.5 \\in (1,2)}\n$$"
   },
-  {
+    {
     "id": "cse18-final-q4a",
     "discipline": "CSE",
     "batch": 18,
@@ -3582,18 +3582,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Show that $\\lim_{x \\to 2} (2x^2 - 8)/(x - 2) = 8$; applying $(\\delta, \\varepsilon)$ definition, find $\\delta$ if $\\varepsilon = 1$.",
     "solutionHtml": "Step 1: Evaluate the limit algebraically.\n$$\\lim_{x \\to 2} \\frac{2x^2 - 8}{x - 2} = \\lim_{x \\to 2} \\frac{2(x-2)(x+2)}{x-2}$$\nFor $x \\neq 2$, we can cancel the common term $(x-2)$:\n$$\\lim_{x \\to 2} 2(x+2) = 2(2+2) = 8$$\n\nStep 2: Recall the $(\\varepsilon, \\delta)$ definition of a limit.\n$\\lim_{x \\to a} f(x) = L$ if for every $\\varepsilon > 0$, there exists a $\\delta > 0$ such that:\n$$0 < |x - a| < \\delta \\implies |f(x) - L| < \\varepsilon$$\n\nStep 3: Relate $\\varepsilon$ and $\\delta$ for the given limit.\nWe want:\n$$\\left| \\frac{2x^2 - 8}{x-2} - 8 \\right| < \\varepsilon$$\nFor $x \\neq 2$, this simplifies to:\n$$|2(x+2) - 8| < \\varepsilon \\implies |2x + 4 - 8| < \\varepsilon \\implies |2x - 4| < \\varepsilon \\implies 2|x-2| < \\varepsilon \\implies |x-2| < \\frac{\\varepsilon}{2}$$\nThus, we can choose $\\delta = \\frac{\\varepsilon}{2}$.\n\nStep 4: Find $\\delta$ when $\\varepsilon = 1$.\n$$\\delta = \\frac{1}{2} = 0.5$$",
     "finalAnswerHtml": "$$\n\\boxed{\\delta = 0.5 \\text{ for } \\varepsilon = 1}\n$$"
   },
-  {
+    {
     "id": "cse18-final-q4b",
     "discipline": "CSE",
     "batch": 18,
@@ -3603,18 +3603,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Determine whether the following functions are continuous at $x = 0$,\n(i) $f(x) = (x^4 + x^3 + 2x^2)/\\sin x$, $f(0) = 0$\n(ii) $f(x) = (x^4 + 4x^3 + 2x)/\\sin x$, $f(0) = 0$",
     "solutionHtml": "Step 1: Check continuity of (i) at $x = 0$.\nWe must check if $\\lim_{x \\to 0} f(x) = f(0) = 0$.\n$$\\lim_{x \\to 0} \\frac{x^4 + x^3 + 2x^2}{\\sin x} = \\lim_{x \\to 0} \\left[ \\frac{x}{\\sin x} \\cdot (x^3 + x^2 + 2x) \\right]$$\nSince $\\lim_{x \\to 0} \\frac{x}{\\sin x} = 1$:\n$$\\lim_{x \\to 0} f(x) = 1 \\cdot (0^3 + 0^2 + 2(0)) = 1 \\cdot 0 = 0$$\nSince $\\lim_{x \\to 0} f(x) = f(0) = 0$, function (i) is **continuous** at $x = 0$.\n\nStep 2: Check continuity of (ii) at $x = 0$.\nWe must check if $\\lim_{x \\to 0} f(x) = f(0) = 0$.\n$$\\lim_{x \\to 0} \\frac{x^4 + 4x^3 + 2x}{\\sin x} = \\lim_{x \\to 0} \\left[ \\frac{x}{\\sin x} \\cdot (x^3 + 4x^2 + 2) \\right]$$\nSince $\\lim_{x \\to 0} \\frac{x}{\\sin x} = 1$:\n$$\\lim_{x \\to 0} f(x) = 1 \\cdot (0^3 + 4(0)^2 + 2) = 1 \\cdot 2 = 2$$\nSince $\\lim_{x \\to 0} f(x) = 2 \\neq f(0) = 0$, function (ii) is **discontinuous** at $x = 0$.",
     "finalAnswerHtml": "$$\n\\boxed{\\text{(i) is continuous at } x = 0, \\quad \\text{(ii) is discontinuous at } x = 0}\n$$"
   },
-  {
+    {
     "id": "cse19-final-q1a",
     "discipline": "CSE",
     "batch": 19,
@@ -3624,18 +3624,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Define limit and continuity of a function at $x = a$. Find the limit of the following function:\n(i) $\\lim_{x \\to 1} \\frac{x-1}{\\sqrt{x}-1}$\n(ii) $\\lim_{x \\to 0} \\frac{\\sin x}{x}$",
     "solutionHtml": "Step 1: Define limit and continuity at $x = a$.\n- **Limit**: A function $f(x)$ is said to have a limit $L$ as $x$ approaches $a$ (written as $\\lim_{x \\to a} f(x) = L$) if for any given $\\varepsilon > 0$, there exists a corresponding $\\delta > 0$ such that $|f(x) - L| < \\varepsilon$ whenever $0 < |x - a| < \\delta$.\n- **Continuity**: A function $f(x)$ is continuous at a point $x = a$ if and only if:\n  1. $f(a)$ is defined.\n  2. $\\lim_{x \\to a} f(x)$ exists.\n  3. $\\lim_{x \\to a} f(x) = f(a)$.\n\nStep 2: Evaluate the limit (i) $\\lim_{x \\to 1} \\frac{x-1}{\\sqrt{x}-1}$.\nWe can factor the numerator as a difference of squares:\n$$x - 1 = (\\sqrt{x} - 1)(\\sqrt{x} + 1)$$\nSubstitute this back into the limit expression:\n$$\\lim_{x \\to 1} \\frac{(\\sqrt{x}-1)(\\sqrt{x}+1)}{\\sqrt{x}-1}$$\nFor $x \\neq 1$, we can cancel the common term $(\\sqrt{x}-1)$:\n$$\\lim_{x \\to 1} (\\sqrt{x} + 1) = \\sqrt{1} + 1 = 2$$\n\nStep 3: Evaluate the limit (ii) $\\lim_{x \\to 0} \\frac{\\sin x}{x}$.\nThis is an indeterminate form of type $\\frac{0}{0}$. Applying L'H\\^opital's Rule by differentiating the numerator and the denominator with respect to $x$:\n$$\\lim_{x \\to 0} \\frac{\\sin x}{x} = \\lim_{x \\to 0} \\frac{\\frac{d}{dx}(\\sin x)}{\\frac{d}{dx}(x)} = \\lim_{x \\to 0} \\frac{\\cos x}{1} = \\cos(0) = 1$$",
     "finalAnswerHtml": "$$\n\\boxed{\\text{(i) } 2, \\quad \\text{(ii) } 1}\n$$"
   },
-  {
+    {
     "id": "cse19-final-q1b",
     "discipline": "CSE",
     "batch": 19,
@@ -3645,18 +3645,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1b",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find the derivative of the following functions:\n(i) $y = a^{a^x}$\n(ii) $y = (\\sin x)^{\\cos x} + (\\cos x)^{\\sin x}$",
     "solutionHtml": "Step 1: Find the derivative of (i) $y = a^{a^x}$.\nLet $u = a^x$. Then $y = a^u$. Using the chain rule:\n$$\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$$\nSince $\\frac{d}{dz}(c^z) = c^z \\ln c$, we compute:\n$$\\frac{dy}{du} = a^u \\ln a = a^{a^x} \\ln a$$\n$$\\frac{du}{dx} = a^x \\ln a$$\nSubstitute these back:\n$$\\frac{dy}{dx} = \\left(a^{a^x} \\ln a\\right) \\left(a^x \\ln a\\right) = a^{a^x} a^x (\\ln a)^2$$\n\nStep 2: Find the derivative of (ii) $y = (\\sin x)^{\\cos x} + (\\cos x)^{\\sin x}$.\nLet $u = (\\sin x)^{\\cos x}$ and $v = (\\cos x)^{\\sin x}$. Then $y = u + v$, which implies $\\frac{dy}{dx} = \\frac{du}{dx} + \\frac{dv}{dx}$.\n\nStep 3: Compute $\\frac{du}{dx}$.\nTake the natural logarithm of both sides of $u = (\\sin x)^{\\cos x}$:\n$$\\ln u = \\cos x \\ln(\\sin x)$$\nDifferentiate with respect to $x$:\n$$\\frac{1}{u} \\frac{du}{dx} = -\\sin x \\ln(\\sin x) + \\cos x \\cdot \\frac{1}{\\sin x} \\cdot \\cos x$$\n$$\\frac{du}{dx} = (\\sin x)^{\\cos x} \\left[ \\cot x \\cos x - \\sin x \\ln(\\sin x) \\right]$$\n\nStep 4: Compute $\\frac{dv}{dx}$.\nTake the natural logarithm of both sides of $v = (\\cos x)^{\\sin x}$:\n$$\\ln v = \\sin x \\ln(\\cos x)$$\nDifferentiate with respect to $x$:\n$$\\frac{1}{v} \\frac{dv}{dx} = \\cos x \\ln(\\cos x) + \\sin x \\cdot \\frac{1}{\\cos x} \\cdot (-\\sin x)$$\n$$\\frac{dv}{dx} = (\\cos x)^{\\sin x} \\left[ \\cos x \\ln(\\cos x) - \\tan x \\sin x \\right]$$\n\nStep 5: Combine the results.\n$$\\frac{dy}{dx} = (\\sin x)^{\\cos x} \\left[ \\cot x \\cos x - \\sin x \\ln(\\sin x) \\right] + (\\cos x)^{\\sin x} \\left[ \\cos x \\ln(\\cos x) - \\tan x \\sin x \\right]$$",
     "finalAnswerHtml": "$$\n\\boxed{\\begin{aligned}\n\\text{(i) } y' &= a^{a^x} a^x (\\ln a)^2 \\\\\n\\text{(ii) } y' &= (\\sin x)^{\\cos x} [ \\cot x \\cos x - \\sin x \\ln(\\sin x) ] + (\\cos x)^{\\sin x} [ \\cos x \\ln(\\cos x) - \\tan x \\sin x ]\n\\end{aligned}}\n$$"
   },
-  {
+    {
     "id": "cse19-final-q2a",
     "discipline": "CSE",
     "batch": 19,
@@ -3666,18 +3666,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find the differential coefficients of the following:\n(i) $y = \\tan^{-1}\\left(\\frac{\\cos x}{1+\\sin x}\\right)$\n(ii) $y = (\\sin x)^{\\ln x} + \\sin^2(\\cos^{-1} x)$",
     "solutionHtml": "Step 1: Simplify and differentiate (i) $y = \\tan^{-1}\\left(\\frac{\\cos x}{1+\\sin x}\\right)$.\nExpress the trigonometric terms in half-angle formulas:\n$$\\cos x = \\sin\\left(\\frac{\\pi}{2} - x\\right) = 2 \\sin\\left(\\frac{\\pi}{4} - \\frac{x}{2}\\right) \\cos\\left(\\frac{\\pi}{4} - \\frac{x}{2}\\right)$$\n$$1 + \\sin x = 1 + \\cos\\left(\\frac{\\pi}{2} - x\\right) = 2 \\cos^2\\left(\\frac{\\pi}{4} - \\frac{x}{2}\\right)$$\nSubstituting these into the argument of $\\tan^{-1}$:\n$$\\frac{\\cos x}{1+\\sin x} = \\frac{2 \\sin\\left(\\frac{\\pi}{4} - \\frac{x}{2}\\right) \\cos\\left(\\frac{\\pi}{4} - \\frac{x}{2}\\right)}{2 \\cos^2\\left(\\frac{\\pi}{4} - \\frac{x}{2}\\right)} = \\tan\\left(\\frac{\\pi}{4} - \\frac{x}{2}\\right)$$\nTherefore:\n$$y = \\tan^{-1}\\left[\\tan\\left(\\frac{\\pi}{4} - \\frac{x}{2}\\right)\\right] = \\frac{\\pi}{4} - \\frac{x}{2}$$\nDifferentiating with respect to $x$:\n$$\\frac{dy}{dx} = -\\frac{1}{2}$$\n\nStep 2: Differentiate (ii) $y = (\\sin x)^{\\ln x} + \\sin^2(\\cos^{-1} x)$.\nLet $u = (\\sin x)^{\\ln x}$ and $v = \\sin^2(\\cos^{-1} x)$.\n\nStep 3: Compute $\\frac{du}{dx}$.\n$$\\ln u = \\ln x \\ln(\\sin x)$$\nDifferentiate both sides:\n$$\\frac{1}{u} \\frac{du}{dx} = \\frac{1}{x} \\ln(\\sin x) + \\ln x \\cdot \\frac{1}{\\sin x} \\cdot \\cos x$$\n$$\\frac{du}{dx} = (\\sin x)^{\\ln x} \\left[ \\frac{\\ln(\\sin x)}{x} + \\ln x \\cot x \\right]$$\n\nStep 4: Compute $\\frac{dv}{dx}$.\nLet $\\theta = \\cos^{-1} x \\implies \\cos \\theta = x$.\n$$v = \\sin^2 \\theta = 1 - \\cos^2 \\theta = 1 - x^2$$\nDifferentiating with respect to $x$:\n$$\\frac{dv}{dx} = -2x$$\n\nStep 5: Combine the terms.\n$$\\frac{dy}{dx} = (\\sin x)^{\\ln x} \\left[ \\frac{\\ln(\\sin x)}{x} + \\ln x \\cot x \\right] - 2x$$",
     "finalAnswerHtml": "$$\n\\boxed{\\begin{aligned}\n\\text{(i) } y' &= -\\frac{1}{2} \\\\\n\\text{(ii) } y' &= (\\sin x)^{\\ln x} \\left[ \\frac{\\ln(\\sin x)}{x} + \\ln x \\cot x \\right] - 2x\n\\end{aligned}}\n$$"
   },
-  {
+    {
     "id": "cse19-final-q2b",
     "discipline": "CSE",
     "batch": 19,
@@ -3687,20 +3687,20 @@ const questions = [
     "section": "A",
     "questionNumber": "2b",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 2,
     "appearances": [
-      "cse20-final-q3b"
+        "cse20-final-q3b"
     ],
-    "tags": [],
+    "tags": ["essential","last-minute","repeated"],
     "questionHtml": "Find $y''\\left(\\frac{\\pi}{4}\\right)$ if $y(x) = \\sec x$.",
     "solutionHtml": "Step 1: Compute the first derivative $y'(x)$.\n$$y'(x) = \\frac{d}{dx}(\\sec x) = \\sec x \\tan x$$\n\nStep 2: Compute the second derivative $y''(x)$.\nUsing the product rule:\n$$y''(x) = \\frac{d}{dx}(\\sec x) \\cdot \\tan x + \\sec x \\cdot \\frac{d}{dx}(\\tan x)$$\n$$y''(x) = (\\sec x \\tan x) \\tan x + \\sec x (\\sec^2 x) = \\sec x \\tan^2 x + \\sec^3 x$$\n\nStep 3: Evaluate at $x = \\frac{\\pi}{4}$.\nSince $\\sec\\left(\\frac{\\pi}{4}\\right) = \\sqrt{2}$ and $\\tan\\left(\\frac{\\pi}{4}\\right) = 1$:\n$$y''\\left(\\frac{\\pi}{4}\\right) = (\\sqrt{2})(1)^2 + (\\sqrt{2})^3 = \\sqrt{2} + 2\\sqrt{2} = 3\\sqrt{2}$$",
     "finalAnswerHtml": "$$\n\\boxed{3\\sqrt{2}}\n$$"
   },
-  {
+    {
     "id": "cse19-final-q2c",
     "discipline": "CSE",
     "batch": 19,
@@ -3710,18 +3710,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2c",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "If $y = e^{-x} \\cos x$ then prove that $y_4 + 4y = 0$.",
     "solutionHtml": "Step 1: Find the first derivative $y_1$.\n$$y_1 = -e^{-x} \\cos x - e^{-x} \\sin x = -e^{-x}(\\cos x + \\sin x)$$\n\nStep 2: Find the second derivative $y_2$.\n$$y_2 = e^{-x}(\\cos x + \\sin x) - e^{-x}(-\\sin x + \\cos x) = 2e^{-x} \\sin x$$\n\nStep 3: Find the third derivative $y_3$.\n$$y_3 = -2e^{-x} \\sin x + 2e^{-x} \\cos x = 2e^{-x}(\\cos x - \\sin x)$$\n\nStep 4: Find the fourth derivative $y_4$.\n$$y_4 = -2e^{-x}(\\cos x - \\sin x) + 2e^{-x}(-\\sin x - \\cos x)$$\n$$y_4 = -2e^{-x}\\cos x + 2e^{-x}\\sin x - 2e^{-x}\\sin x - 2e^{-x}\\cos x = -4e^{-x}\\cos x$$\n\nStep 5: Verify the relation.\nSince $y = e^{-x} \\cos x$:\n$$y_4 = -4y \\implies y_4 + 4y = 0$$",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Proven: } y_4 + 4y = 0}\n$$"
   },
-  {
+    {
     "id": "cse19-final-q3a",
     "discipline": "CSE",
     "batch": 19,
@@ -3731,18 +3731,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "If $\\cos^{-1}\\left(\\frac{y}{b}\\right) = \\log\\left(\\frac{x}{n}\\right)^n$ then prove that $x^2 y_{n+2} + (2n + 1)xy_{n+1} + 2n^2 y_n = 0$.",
     "solutionHtml": "Step 1: Rewrite the given equation.\n$$\\cos^{-1}\\left(\\frac{y}{b}\\right) = n \\log\\left(\\frac{x}{n}\\right)$$\n$$\\frac{y}{b} = \\cos\\left(n \\log\\left(\\frac{x}{n}\\right)\\right) \\implies y = b \\cos\\left(n \\log\\left(\\frac{x}{n}\\right)\\right)$$\n\nStep 2: Differentiate with respect to $x$ for the first time.\n$$y_1 = -b \\sin\\left(n \\log\\left(\\frac{x}{n}\\right)\\right) \\cdot \\frac{n}{\\left(\\frac{x}{n}\\right)} \\cdot \\frac{1}{n} = -\\frac{nb}{x} \\sin\\left(n \\log\\left(\\frac{x}{n}\\right)\\right)$$\n$$xy_1 = -nb \\sin\\left(n \\log\\left(\\frac{x}{n}\\right)\\right)$$\n\nStep 3: Differentiate with respect to $x$ for the second time.\nUsing the product rule on the LHS:\n$$y_1 + xy_2 = -nb \\cos\\left(n \\log\\left(\\frac{x}{n}\\right)\\right) \\cdot \\frac{n}{x}$$\nMultiply both sides by $x$:\n$$xy_1 + x^2 y_2 = -n^2 b \\cos\\left(n \\log\\left(\\frac{x}{n}\\right)\\right)$$\nSubstitute $y$ back into the RHS:\n$$x^2 y_2 + xy_1 = -n^2 y \\implies x^2 y_2 + xy_1 + n^2 y = 0$$\n\nStep 4: Differentiate $n$ times using Leibnitz's theorem.\nThe Leibnitz formula for $D^n(uv)$ is:\n$$D^n(uv) = u_n v + n u_{n-1} v_1 + \\frac{n(n-1)}{2!} u_{n-2} v_2 + \\dots$$\n- For the first term $D^n(y_2 \\cdot x^2)$:\n  $$D^n(y_2 \\cdot x^2) = y_{n+2} x^2 + n y_{n+1} (2x) + \\frac{n(n-1)}{2} y_n (2) = x^2 y_{n+2} + 2nxy_{n+1} + n(n-1)y_n$$\n- For the second term $D^n(y_1 \\cdot x)$:\n  $$D^n(y_1 \\cdot x) = y_{n+1} x + n y_n (1) = x y_{n+1} + n y_n$$\n- For the third term $D^n(n^2 y)$:\n  $$D^n(n^2 y) = n^2 y_n$$\n\nStep 5: Substitute and simplify.\n$$(x^2 y_{n+2} + 2nxy_{n+1} + (n^2-n)y_n) + (xy_{n+1} + ny_n) + n^2 y_n = 0$$\n$$x^2 y_{n+2} + (2n + 1)xy_{n+1} + (n^2 - n + n + n^2)y_n = 0$$\n$$x^2 y_{n+2} + (2n + 1)xy_{n+1} + 2n^2 y_n = 0$$",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Proven: } x^2 y_{n+2} + (2n + 1)xy_{n+1} + 2n^2 y_n = 0}\n$$"
   },
-  {
+    {
     "id": "cse19-final-q3b",
     "discipline": "CSE",
     "batch": 19,
@@ -3752,7 +3752,7 @@ const questions = [
     "section": "A",
     "questionNumber": "3b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3763,7 +3763,7 @@ const questions = [
     "solutionHtml": "Step 1: State Rolle's theorem.\nLet $f(x)$ be a function that satisfies the following three conditions:\n1. $f(x)$ is continuous on the closed interval $[a, b]$.\n2. $f(x)$ is differentiable on the open interval $(a, b)$.\n3. $f(a) = f(b)$.\nThen, there exists at least one number $c \\in (a, b)$ such that $f'(c) = 0$.\n\nStep 2: Verify continuity and differentiability of $f(x) = x^2 - 6x + 8$ on $[2, 4]$.\n- **Continuity**: Since $f(x)$ is a polynomial function, it is continuous everywhere, including on the closed interval $[2, 4]$.\n- **Differentiability**: The derivative $f'(x) = 2x - 6$ exists for all real numbers, so $f(x)$ is differentiable on the open interval $(2, 4)$.\n\nStep 3: Check endpoint values $f(a)$ and $f(b)$.\n$$f(2) = (2)^2 - 6(2) + 8 = 4 - 12 + 8 = 0$$\n$$f(4) = (4)^2 - 6(4) + 8 = 16 - 24 + 8 = 0$$\nSince $f(2) = f(4) = 0$, the third hypothesis is satisfied. Thus, all hypotheses of Rolle's theorem are verified.\n\nStep 4: Find the value $c \\in (2, 4)$ where $f'(c) = 0$.\n$$f'(c) = 2c - 6 = 0 \\implies 2c = 6 \\implies c = 3$$\nSince $3 \\in (2, 4)$, the theorem holds, and the required value of $c$ is $3$.",
     "finalAnswerHtml": "$$\n\\boxed{c = 3}\n$$"
   },
-  {
+    {
     "id": "cse19-final-q4a",
     "discipline": "CSE",
     "batch": 19,
@@ -3773,7 +3773,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3784,7 +3784,7 @@ const questions = [
     "solutionHtml": "Step 1: Find the critical points of $f(x)$.\nDifferentiate $f(x)$ with respect to $x$:\n$$f'(x) = 6x^2 - 30x + 36$$\nSet $f'(x) = 0$ to find the critical points:\n$$6(x^2 - 5x + 6) = 0 \\implies 6(x-2)(x-3) = 0 \\implies x = 2 \\text{ or } x = 3$$\nBoth critical points $x = 2$ and $x = 3$ lie within the interval $[1, 5]$.\n\nStep 2: Evaluate $f(x)$ at the critical points and the endpoints of the interval.\n- At endpoint $x = 1$:\n  $$f(1) = 2(1)^3 - 15(1)^2 + 36(1) = 2 - 15 + 36 = 23$$\n- At critical point $x = 2$:\n  $$f(2) = 2(2)^3 - 15(2)^2 + 36(2) = 16 - 60 + 72 = 28$$\n- At critical point $x = 3$:\n  $$f(3) = 2(3)^3 - 15(3)^2 + 36(3) = 54 - 135 + 108 = 27$$\n- At endpoint $x = 5$:\n  $$f(5) = 2(5)^3 - 15(5)^2 + 36(5) = 250 - 375 + 180 = 55$$\n\nStep 3: Identify the absolute maximum and minimum values.\nComparing the values:\n- The absolute maximum is $55$, occurring at $x = 5$.\n- The absolute minimum is $23$, occurring at $x = 1$.\n- Locally, $f(x)$ has a local maximum of $28$ at $x = 2$ and a local minimum of $27$ at $x = 3$.",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Absolute Maximum: } 55 \\text{ at } x = 5, \\quad \\text{Absolute Minimum: } 23 \\text{ at } x = 1}\n$$"
   },
-  {
+    {
     "id": "cse19-final-q4b",
     "discipline": "CSE",
     "batch": 19,
@@ -3794,7 +3794,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4b",
     "topics": [
-      "Series Expansion"
+        "Series Expansion"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3805,7 +3805,7 @@ const questions = [
     "solutionHtml": "Step 1: Expand $f(x) = \\sin x$ about $x = 0$ (Maclaurin's form of Taylor's theorem).\nFind the values of $f(x)$ and its successive derivatives at $x = 0$:\n- $f(x) = \\sin x \\implies f(0) = 0$\n- $f'(x) = \\cos x \\implies f'(0) = 1$\n- $f''(x) = -\\sin x \\implies f''(0) = 0$\n- $f'''(x) = -\\cos x \\implies f'''(0) = -1$\n- $f^{(4)}(x) = \\sin x \\implies f^{(4)}(0) = 0$\n- $f^{(5)}(x) = \\cos x \\implies f^{(5)}(0) = 1$\n\nThe Taylor series expansion is:\n$$f(x) = f(0) + x f'(0) + \\frac{x^2}{2!} f''(0) + \\frac{x^3}{3!} f'''(0) + \\dots$$\nSubstituting the derivatives:\n$$\\sin x = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\frac{x^7}{7!} + \\dots + (-1)^n \\frac{x^{2n+1}}{(2n+1)!} + \\dots$$\n\nStep 2: Expand $f(x) = \\log(1+x)$ about $x = 0$.\nFind the values of $f(x)$ and its successive derivatives at $x = 0$:\n- $f(x) = \\log(1+x) \\implies f(0) = 0$\n- $f'(x) = (1+x)^{-1} \\implies f'(0) = 1$\n- $f''(x) = -(1+x)^{-2} \\implies f''(0) = -1$\n- $f'''(x) = 2(1+x)^{-3} \\implies f'''(0) = 2$\n- $f^{(4)}(x) = -6(1+x)^{-4} \\implies f^{(4)}(0) = -6$\nIn general, the $n$-th derivative at $0$ is $f^{(n)}(0) = (-1)^{n-1}(n-1)!$.\n\nSubstituting into the Taylor series expansion:\n$$\\log(1+x) = 0 + x(1) + \\frac{x^2}{2!}(-1) + \\frac{x^3}{3!}(2) + \\frac{x^4}{4!}(-6) + \\dots$$\n$$\\log(1+x) = x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\frac{x^4}{4} + \\dots + (-1)^{n-1}\\frac{x^n}{n} + \\dots \\quad (\\text{for } -1 < x \\le 1)$$",
     "finalAnswerHtml": "$$\n\\boxed{\\begin{aligned}\n\\text{(i) } \\sin x &= x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\frac{x^7}{7!} + \\dots \\\\\n\\text{(ii) } \\log(1+x) &= x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\frac{x^4}{4} + \\dots\n\\end{aligned}}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q1a",
     "discipline": "CSE",
     "batch": 22,
@@ -3815,7 +3815,7 @@ const questions = [
     "section": "A",
     "questionNumber": "1a",
     "topics": [
-      "Miscellaneous"
+        "Miscellaneous"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3826,7 +3826,7 @@ const questions = [
     "solutionHtml": "Step 1: Define a function.\nA function $f$ from a set $A$ to a set $B$ (denoted by $f: A \\to B$) is a rule or relation that assigns to each element $x \\in A$ exactly one element $y \\in B$. The set $A$ is called the domain of the function, and the set of all assigned values in $B$ is called the range.\n\nStep 2: Find the domain, range, and describe the graph of (i) $f(x) = \\frac{1}{x^2}$.\n- **Domain**: The function is defined for all real numbers except where the denominator is zero.\n  $$x^2 \\neq 0 \\implies x \\neq 0$$\n  Therefore, Domain $D = \\mathbb{R} \\setminus \\{0\\} = (-\\infty, 0) \\cup (0, \\infty)$.\n- **Range**: Since $x^2 > 0$ for all $x \\neq 0$, we have $\\frac{1}{x^2} > 0$. As $x \\to 0$, $f(x) \\to \\infty$, and as $x \\to \\pm\\infty$, $f(x) \\to 0$.\n  Therefore, Range $R = (0, \\infty)$.\n- **Graph Description**: The graph is symmetric with respect to the $y$-axis (since $f(-x) = f(x)$). It lies entirely in the first and second quadrants, with vertical asymptote $x = 0$ and horizontal asymptote $y = 0$.\n\nStep 3: Find the domain, range, and describe the graph of (ii) $f(x) = \\frac{4}{x^2+1}$.\n- **Domain**: The denominator $x^2 + 1 \\ge 1 > 0$ for all $x \\in \\mathbb{R}$. Thus, there is no division by zero.\n  Therefore, Domain $D = \\mathbb{R} = (-\\infty, \\infty)$.\n- **Range**: Since $x^2 \\ge 0$, we have $x^2 + 1 \\ge 1$, which implies $0 < \\frac{1}{x^2+1} \\le 1$.\n  Multiplying by 4, we get $0 < \\frac{4}{x^2+1} \\le 4$.\n  Therefore, Range $R = (0, 4]$.\n- **Graph Description**: The graph is symmetric about the $y$-axis. The maximum value is 4 at $x = 0$. As $x \\to \\pm\\infty$, $f(x) \\to 0$, making $y = 0$ a horizontal asymptote. This is a bell-shaped curve.\n\nStep 4: Find the domain, range, and describe the graph of (iii) $f(x) = 3 - |x - 4|$.\n- **Domain**: The absolute value function is defined for all real numbers.\n  Therefore, Domain $D = \\mathbb{R} = (-\\infty, \\infty)$.\n- **Range**: Since $|x - 4| \\ge 0$, we have $-|x - 4| \\le 0$.\n  Adding 3 to both sides: $3 - |x - 4| \\le 3$.\n  Therefore, Range $R = (-\\infty, 3]$.\n- **Graph Description**: This is a V-shaped graph pointing downwards. The vertex (or peak) of the V is at $(4, 3)$. For $x \\ge 4$, $f(x) = 3 - (x - 4) = 7 - x$. For $x < 4$, $f(x) = 3 - (4 - x) = x - 1$.",
     "finalAnswerHtml": "$$\n\\boxed{\\text{See step-by-step domains, ranges, and graph descriptions above.}}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q1b",
     "discipline": "CSE",
     "batch": 22,
@@ -3836,18 +3836,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Determine whether the function $f(x) = \\frac{x^2-4}{x-2}$ is continuous at $x = 2$.",
     "solutionHtml": "Step 1: Recall the definition of continuity at a point.\nA function $f(x)$ is continuous at $x = c$ if and only if:\n1. $f(c)$ is defined.\n2. $\\lim_{x \\to c} f(x)$ exists.\n3. $\\lim_{x \\to c} f(x) = f(c)$.\n\nStep 2: Evaluate $f(x)$ at $x = 2$.\n$$f(2) = \\frac{2^2-4}{2-2} = \\frac{0}{0}$$\nwhich is undefined.\n\nStep 3: Conclude continuity.\nSince $f(2)$ is not defined in the domain of $f(x)$, the first condition of continuity fails. Hence, $f(x)$ is discontinuous at $x = 2$.",
     "finalAnswerHtml": "$$\n\\boxed{\\text{The function } f(x) \\text{ is discontinuous at } x = 2.}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q1c",
     "discipline": "CSE",
     "batch": 22,
@@ -3857,7 +3857,7 @@ const questions = [
     "section": "A",
     "questionNumber": "1c",
     "topics": [
-      "Miscellaneous"
+        "Miscellaneous"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3868,7 +3868,7 @@ const questions = [
     "solutionHtml": "Step 1: Write the equation in the form $g(x) = 0$. Let $g(x) = x^3 + x^2 - 2x - 1 = 0$. We want to show that there exists some $c \\in [-1, 1]$ such that $g(c) = 0$.\n\nStep 2: Check the conditions for the Intermediate Value Theorem (IVT). The function $g(x)$ is a polynomial function, so it is continuous everywhere, and while the interval $[-1, 1]$ is closed, the condition of IVT is met.\n\nStep 3: Evaluate the function at the endpoints of the interval.\n- At $x = -1$: $g(-1) = (-1)^3 + (-1)^2 - 2(-1) - 1 = -1 + 1 + 2 - 1 = 1 > 0$\n- At $x = 1$: $g(1) = (1)^3 + (1)^2 - 2(1) - 1 = 1 + 1 - 2 - 1 = -1 < 0$\n\nStep 4: Apply the Intermediate Value Theorem. Since $g(x)$ is continuous on $[-1, 1]$ and $g(-1) = 1 > 0$ while $g(1) = -1 < 0$, by the Intermediate Value Theorem, there must exist at least one real number $c$ in the open interval $(-1, 1)$ such that $g(c) = 0$. Thus, the equation $x^3 + x^2 - 2x = 1$ has at least one solution in the interval $[-1, 1]$.",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Proven by Intermediate Value Theorem: there exists a solution } c \\in (-1, 1).}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q2a",
     "discipline": "CSE",
     "batch": 22,
@@ -3878,18 +3878,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Define derivative for any function $y = f(x)$ and write the geometrical interpretation of the derivative.",
     "solutionHtml": "Step 1: Define the derivative of a function.\nThe derivative of a function $y = f(x)$ with respect to $x$ at any point $x$ in its domain is defined as the limit of the difference quotient as the increment of the independent variable approaches zero, provided the limit exists:\n$$f'(x) = \\frac{dy}{dx} = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$$\n\nStep 2: State the geometrical interpretation of the derivative.\nGeometrically, the derivative $f'(x_0)$ represents the slope of the tangent line to the curve $y = f(x)$ at the point $(x_0, f(x_0))$. It is equivalent to $\\tan \\theta$, where $\\theta$ is the angle that the tangent line makes with the positive direction of the $x$-axis.",
     "finalAnswerHtml": "$$\n\\boxed{f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\text{ and represents the slope of the tangent line to the curve at } x.}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q2b",
     "discipline": "CSE",
     "batch": 22,
@@ -3899,18 +3899,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Find the $n^{\\text{th}}$ derivative of $y = \\sin 3x$.",
     "solutionHtml": "Step 1: Perform successive differentiation to identify the pattern.\n- First derivative:\n  $$y_1 = 3 \\cos 3x = 3 \\sin\\left(3x + \\frac{\\pi}{2}\\right)$$\n- Second derivative:\n  $$y_2 = -3^2 \\sin 3x = 3^2 \\sin\\left(3x + \\frac{2\\pi}{2}\\right)$$\n- Third derivative:\n  $$y_3 = -3^3 \\cos 3x = 3^3 \\sin\\left(3x + \\frac{3\\pi}{2}\\right)$$\n\nStep 2: Generalize for the $n^{\\text{th}}$ derivative.\nFollowing this pattern, the $n^{\\text{th}}$ derivative $y_n$ is given by:\n$$y_n = 3^n \\sin\\left(3x + \\frac{n\\pi}{2}\\right)$$",
     "finalAnswerHtml": "$$\n\\boxed{y_n = 3^n \\sin\\left(3x + \\frac{n\\pi}{2}\\right)}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q2c",
     "discipline": "CSE",
     "batch": 22,
@@ -3920,7 +3920,7 @@ const questions = [
     "section": "A",
     "questionNumber": "2c",
     "topics": [
-      "Series Expansion"
+        "Series Expansion"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3931,7 +3931,7 @@ const questions = [
     "solutionHtml": "Step 1: State the Taylor series.\nThe Taylor series expansion of a function $f(x)$ about a point $x = a$ is given by:\n$$f(x) = \\sum_{k=0}^{\\infty} \\frac{f^{(k)}(a)}{k!} (x - a)^k = f(a) + f'(a)(x-a) + \\frac{f''(a)}{2!}(x-a)^2 + \\dots$$\nprovided $f(x)$ is infinitely differentiable at $x = a$.\n\nStep 2: Compute successive derivatives of $f(x) = \\ln x$ and evaluate them at $x = 2$.\n- $f(x) = \\ln x \\implies f(2) = \\ln 2$\n- $f'(x) = x^{-1} \\implies f'(2) = \\frac{1}{2}$\n- $f''(x) = -x^{-2} \\implies f''(2) = -\\frac{1}{4}$\n- $f'''(x) = 2x^{-3} \\implies f'''(2) = \\frac{2}{2^3} = \\frac{1}{4}$\n- In general, for $k \\ge 1$:\n  $$f^{(k)}(x) = (-1)^{k-1} (k-1)! x^{-k}$$\n  Evaluating at $x = 2$:\n  $$f^{(k)}(2) = (-1)^{k-1} \\frac{(k-1)!}{2^k}$$\n\nStep 3: Form the $n^{\\text{th}}$ order Taylor polynomial.\nThe $n^{\\text{th}}$ order Taylor polynomial $P_n(x)$ at $x = 2$ is:\n$$P_n(x) = f(2) + \\sum_{k=1}^{n} \\frac{f^{(k)}(2)}{k!} (x-2)^k$$\nSubstitute the derivatives:\n$$P_n(x) = \\ln 2 + \\sum_{k=1}^{n} \\frac{(-1)^{k-1}(k-1)!}{k! \\, 2^k} (x-2)^k$$\nSimplifying the factorial term $\\frac{(k-1)!}{k!} = \\frac{1}{k}$:\n$$P_n(x) = \\ln 2 + \\sum_{k=1}^{n} \\frac{(-1)^{k-1}}{k \\cdot 2^k} (x-2)^k$$",
     "finalAnswerHtml": "$$\n\\boxed{P_n(x) = \\ln 2 + \\sum_{k=1}^{n} \\frac{(-1)^{k-1}}{k \\cdot 2^k} (x-2)^k}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q3a",
     "discipline": "CSE",
     "batch": 22,
@@ -3941,7 +3941,7 @@ const questions = [
     "section": "A",
     "questionNumber": "3a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3952,7 +3952,7 @@ const questions = [
     "solutionHtml": "Step 1: Definitions.\n- **Tangent**: The tangent to a curve at a point $P$ is the limiting position of a secant line passing through $P$ and another point $Q$ on the curve as $Q$ approaches $P$ along the curve.\n- **Normal**: The normal to a curve at a point $P$ is the line perpendicular to the tangent line at that point.\n\nStep 2: Find coordinates of the point at $t = \\frac{\\pi}{4}$.\n$$x_0 = a \\cos^3\\left(\\frac{\\pi}{4}\\right) = a \\left(\\frac{1}{\\sqrt{2}}\\right)^3 = \\frac{a}{2\\sqrt{2}}$$\n$$y_0 = a \\sin^3\\left(\\frac{\\pi}{4}\\right) = a \\left(\\frac{1}{\\sqrt{2}}\\right)^3 = \\frac{a}{2\\sqrt{2}}$$\n\nStep 3: Find the derivative $\\frac{dy}{dx}$ of the astroid.\nUsing parameter $t$:\n$$\\frac{dx}{dt} = 3a \\cos^2 t (-\\sin t) = -3a \\cos^2 t \\sin t$$\n$$\\frac{dy}{dt} = 3a \\sin^2 t (\\cos t) = 3a \\sin^2 t \\cos t$$\nThus,\n$$\\frac{dy}{dx} = \\frac{\\frac{dy}{dt}}{\\frac{dx}{dt}} = \\frac{3a \\sin^2 t \\cos t}{-3a \\cos^2 t \\sin t} = -\\tan t$$\n\nStep 4: Find the slopes at $t = \\frac{\\pi}{4}$.\n- Slope of the tangent ($m$):\n  $$m = -\\tan\\left(\\frac{\\pi}{4}\\right) = -1$$\n- Slope of the normal ($m'$):\n  $$m' = -\\frac{1}{m} = 1$$\n\nStep 5: Find the equation of the tangent line.\n$$y - y_0 = m(x - x_0)$$\n$$y - \\frac{a}{2\\sqrt{2}} = -1\\left(x - \\frac{a}{2\\sqrt{2}}\\right)$$\n$$x + y = \\frac{a}{\\sqrt{2}}$$\n\nStep 6: Find the equation of the normal line.\n$$y - y_0 = m'(x - x_0)$$\n$$y - \\frac{a}{2\\sqrt{2}} = 1\\left(x - \\frac{a}{2\\sqrt{2}}\\right)$$\n$$y = x$$",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Tangent: } x + y = \\frac{a}{\\sqrt{2}}, \\quad \\text{Normal: } y = x}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q3b",
     "discipline": "CSE",
     "batch": 22,
@@ -3962,18 +3962,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3b",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Write Leibnitz's theorem. If $y = e^{a \\cos^{-1} x}$ then prove that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0$.",
     "solutionHtml": "Step 1: Write Leibnitz's Theorem.\nLeibnitz's theorem states that if $u$ and $v$ are functions of $x$ having derivatives up to $n^{\\text{th}}$ order, then the $n^{\\text{th}}$ derivative of their product is:\n$$(uv)_n = u_n v + \\binom{n}{1} u_{n-1} v_1 + \\binom{n}{2} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n$$\n\nStep 2: Differentiate $y = e^{a \\cos^{-1} x}$ first time.\n$$y_1 = e^{a \\cos^{-1} x} \\cdot \\left(-\\frac{a}{\\sqrt{1-x^2}}\\right) = -\\frac{ay}{\\sqrt{1-x^2}}$$\nMultiplying by $\\sqrt{1-x^2}$ and squaring both sides:\n$$y_1^2 (1-x^2) = a^2 y^2$$\n\nStep 3: Differentiate again with respect to $x$.\n$$2y_1 y_2 (1-x^2) + y_1^2 (-2x) = a^2 (2y y_1)$$\nDividing by $2y_1$ (since $y_1 \\neq 0$):\n$$(1-x^2)y_2 - xy_1 - a^2y = 0$$\n\nStep 4: Differentiate $n$ times using Leibnitz's Theorem.\nApplying Leibnitz's theorem to each term:\n- For $D^n[(1-x^2)y_2]$:\n  $$D^n[y_2 (1-x^2)] = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n$$\n- For $D^n[xy_1]$:\n  $$D^n[y_1 x] = y_{n+1}x + n y_n(1) = x y_{n+1} + n y_n$$\n- For $D^n[a^2y]$:\n  $$D^n[a^2 y] = a^2 y_n$$\n\nStep 5: Substitute back and simplify.\n$$[(1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n] - [xy_{n+1} + ny_n] - a^2y_n = 0$$\n$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - [n(n-1) + n + a^2]y_n = 0$$\n$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0$$\nThis completes the proof.",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Proven: } (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2+a^2)y_n = 0}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q4a",
     "discipline": "CSE",
     "batch": 22,
@@ -3983,7 +3983,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4a",
     "topics": [
-      "Partial Derivatives"
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -3994,7 +3994,7 @@ const questions = [
     "solutionHtml": "Step 1: Define partial derivative.\nIf $u = f(x, y, z)$ is a function of independent variables $x, y, z$, then the partial derivative of $u$ with respect to $x$ is defined as its ordinary derivative with respect to $x$ while holding $y$ and $z$ constant:\n$$\\frac{\\partial u}{\\partial x} = \\lim_{h \\to 0} \\frac{f(x+h, y, z) - f(x, y, z)}{h}$$\nSimilar definitions hold for $\\frac{\\partial u}{\\partial y}$ and $\\frac{\\partial u}{\\partial z}$.\n\nStep 2: Compute $\\frac{\\partial u}{\\partial x}$, $\\frac{\\partial u}{\\partial y}$, and $\\frac{\\partial u}{\\partial z}$.\nLet $V = x^3 + y^3 + z^3 - 3xyz$, so $u = \\log V$.\n$$\\frac{\\partial u}{\\partial x} = \\frac{1}{V} \\frac{\\partial V}{\\partial x} = \\frac{3x^2 - 3yz}{V}$$\nSimilarly, by symmetry:\n$$\\frac{\\partial u}{\\partial y} = \\frac{3y^2 - 3xz}{V}$$\n$$\\frac{\\partial u}{\\partial z} = \\frac{3z^2 - 3xy}{V}$$\n\nStep 3: Find the sum of these partial derivatives.\n$$\\frac{\\partial u}{\\partial x} + \\frac{\\partial u}{\\partial y} + \\frac{\\partial u}{\\partial z} = \\frac{3(x^2 + y^2 + z^2 - xy - yz - zx)}{V}$$\nUsing the algebraic identity:\n$$V = x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx)$$\nThus,\n$$\\frac{\\partial u}{\\partial x} + \\frac{\\partial u}{\\partial y} + \\frac{\\partial u}{\\partial z} = \\frac{3(x^2 + y^2 + z^2 - xy - yz - zx)}{(x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx)} = \\frac{3}{x+y+z}$$\n\nStep 4: Evaluate the square of the operator applied to $u$.\nLet the operator be $D = \\frac{\\partial}{\\partial x} + \\frac{\\partial}{\\partial y} + \\frac{\\partial}{\\partial z}$. We wish to find $D^2 u = D(Du)$:\n$$D(Du) = \\left(\\frac{\\partial}{\\partial x} + \\frac{\\partial}{\\partial y} + \\frac{\\partial}{\\partial z}\\right) \\left(\\frac{3}{x+y+z}\\right)$$\n$$= \\frac{\\partial}{\\partial x}\\left(\\frac{3}{x+y+z}\\right) + \\frac{\\partial}{\\partial y}\\left(\\frac{3}{x+y+z}\\right) + \\frac{\\partial}{\\partial z}\\left(\\frac{3}{x+y+z}\\right)$$\n$$= -\\frac{3}{(x+y+z)^2} - \\frac{3}{(x+y+z)^2} - \\frac{3}{(x+y+z)^2}$$\n$$= -\\frac{9}{(x+y+z)^2} = -9(x+y+z)^{-2}$$",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Proven: } \\left(\\frac{\\partial}{\\partial x} + \\frac{\\partial}{\\partial y} + \\frac{\\partial}{\\partial z}\\right)^2 u = -9(x+y+z)^{-2}}\n$$"
   },
-  {
+    {
     "id": "cse22-final-q4b",
     "discipline": "CSE",
     "batch": 22,
@@ -4004,7 +4004,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4b",
     "topics": [
-      "Partial Derivatives"
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -4015,7 +4015,7 @@ const questions = [
     "solutionHtml": "Step 1: Write the mathematical expression for a homogeneous function of degree $n$.\nBy definition, if $u(x, y)$ is a homogeneous function of degree $n$, it can be represented as:\n$$u = x^n \\phi\\left(\\frac{y}{x}\\right)$$\n\nStep 2: Find the partial derivative with respect to $x$.\nUsing the product rule:\n$$\\frac{\\partial u}{\\partial x} = n x^{n-1} \\phi\\left(\\frac{y}{x}\\right) + x^n \\phi'\\left(\\frac{y}{x}\\right) \\cdot \\left(-\\frac{y}{x^2}\\right)$$\n$$\\frac{\\partial u}{\\partial x} = n x^{n-1} \\phi\\left(\\frac{y}{x}\\right) - y x^{n-2} \\phi'\\left(\\frac{y}{x}\\right)$$\nMultiplying by $x$:\n$$x \\frac{\\partial u}{\\partial x} = n x^n \\phi\\left(\\frac{y}{x}\\right) - y x^{n-1} \\phi'\\left(\\frac{y}{x}\\right) \\quad \\text{--- (1)}$$\n\nStep 3: Find the partial derivative with respect to $y$.\n$$\\frac{\\partial u}{\\partial y} = x^n \\phi'\\left(\\frac{y}{x}\\right) \\cdot \\left(\\frac{1}{x}\\right) = x^{n-1} \\phi'\\left(\\frac{y}{x}\\right)$$\nMultiplying by $y$:\n$$y \\frac{\\partial u}{\\partial y} = y x^{n-1} \\phi'\\left(\\frac{y}{x}\\right) \\quad \\text{--- (2)}$$\n\nStep 4: Sum equations (1) and (2).\n$$x \\frac{\\partial u}{\\partial x} + y \\frac{\\partial u}{\\partial y} = n x^n \\phi\\left(\\frac{y}{x}\\right) - y x^{n-1} \\phi'\\left(\\frac{y}{x}\\right) + y x^{n-1} \\phi'\\left(\\frac{y}{x}\\right)$$\n$$x \\frac{\\partial u}{\\partial x} + y \\frac{\\partial u}{\\partial y} = n \\left[ x^n \\phi\\left(\\frac{y}{x}\\right) \\right] = nu$$",
     "finalAnswerHtml": "$$\n\\boxed{\\text{Proven: } x \\frac{\\partial u}{\\partial x} + y \\frac{\\partial u}{\\partial y} = nu}\n$$"
   },
-  {
+    {
     "id": "cse23-final-seca-q1a",
     "discipline": "CSE",
     "batch": 23,
@@ -4025,18 +4025,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Draw the graph of the following function and find the domain and range of it:\n\\[\nf(x) = \\begin{cases}\n0, & x \\le -1 \\\\\n\\sqrt{1-x^2}, & -1 < x < 1 \\\\\nx, & x \\ge 1\n\\end{cases}\n\\]",
     "solutionHtml": "Step 1: Determine the Domain of $f(x)$.\nThe piecewise definition partitions the real number line into three intervals: $x \\le -1$, $-1 < x < 1$, and $x \\ge 1$. Since every real number $x$ belongs to exactly one of these intervals, the function is defined everywhere.\n\\[\n\\text{Domain} = (-\\infty, \\infty) \\quad \\text{or} \\quad \\mathbb{R}\n\\]\n\nStep 2: Determine the Range of $f(x)$.\nWe evaluate the output values of $f(x)$ on each subinterval:\n\\begin{itemize}\n    \\item For $x \\le -1$: $f(x) = 0$.\n    \\item For $-1 < x < 1$: $f(x) = \\sqrt{1-x^2}$. Since $x^2 \\in [0, 1)$, the value under the square root ranges between $0$ (exclusive, as $x \\to \\pm 1$) and $1$ (inclusive, at $x = 0$). This gives the interval $(0, 1]$.\n    \\item For $x \\ge 1$: $f(x) = x$, which yields $[1, \\infty)$.\n\\end{itemize}\nCombining the outputs of all three cases:\n\\[\n\\text{Range} = \\{0\\} \\cup (0, 1] \\cup [1, \\infty) = [0, \\infty)\n\\]\n\nStep 3: Analyze continuity and critical coordinates for the Graph.\n- At $x = -1$: \n  \\[\n  \\lim_{x \\to -1^-} f(x) = 0, \\quad \\lim_{x \\to -1^+} f(x) = \\sqrt{1 - (-1)^2} = 0, \\quad f(-1) = 0\n  \\]\n  Thus, $f(x)$ is continuous at $x = -1$.\n- At $x = 1$:\n  \\[\n  \\lim_{x \\to 1^-} f(x) = \\sqrt{1 - 1^2} = 0, \\quad \\lim_{x \\to 1^+} f(x) = 1, \\quad f(1) = 1\n  \\]\n  Thus, there is a jump discontinuity at $x = 1$.\n\nStep 4: Draw the Graph.\nThe graph consists of a flat line at $y = 0$ for $x \\le -1$, an upper semicircle of radius 1 centered at $(0,0)$ for $x \\in (-1, 1)$ reaching a peak at $(0,1)$, and a straight line starting at $(1,1)$ with slope 1 extending to infinity.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.5]\n  \\draw[->] (-3,0) -- (3,0) node[right] {$x$};\n  \\draw[->] (0,-0.5) -- (0,3) node[above] {$y$};\n  \\draw[very thick, blue] (-2.5,0) -- (-1,0);\n  \\draw[very thick, blue, domain=-1:1, samples=100] plot (\\x, {sqrt(1-\\x*\\x)});\n  \\draw[very thick, blue] (1,1) -- (2.5,2.5);\n  \\fill[blue] (-1,0) circle (1.5pt);\n  \\fill[blue] (1,1) circle (1.5pt);\n  \\draw[blue, fill=white] (1,0) circle (1.5pt);\n  \\node[below left] at (0,0) {$0$};\n  \\node[below] at (-1,0) {$-1$};\n  \\node[below] at (1,0) {$1$};\n  \\node[left] at (0,1) {$1$};\n\\end{tikzpicture}\n\\end{center}",
     "finalAnswerHtml": "\\[\n\\boxed{\\text{Domain} = (-\\infty, \\infty), \\quad \\text{Range} = [0, \\infty)}\n\\]"
   },
-  {
+    {
     "id": "cse23-final-seca-q1b",
     "discipline": "CSE",
     "batch": 23,
@@ -4046,18 +4046,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Discuss the continuity of the following function at $x = 0, 3/2$:\n\\[\nf(x) = \\begin{cases}\n3 + 2x, & \\text{for } -\\frac{3}{2} \\le x < 0 \\\\\n3 - 2x, & \\text{for } 0 \\le x < \\frac{3}{2} \\\\\n-3 - 2x, & \\text{for } x \\ge \\frac{3}{2}\n\\end{cases}\n\\]",
     "solutionHtml": "Step 1: Discuss continuity at $x = 0$.\nWe evaluate the left-hand limit (LHL), right-hand limit (RHL), and functional value at $x = 0$:\n- **LHL**:\n  \\[\n  \\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0^-} (3 + 2x) = 3 + 2(0) = 3\n  \\]\n- **RHL**:\n  \\[\n  \\lim_{x \\to 0^+} f(x) = \\lim_{x \\to 0^+} (3 - 2x) = 3 - 2(0) = 3\n  \\]\n- **Functional Value**:\n  \\[\n  f(0) = 3 - 2(0) = 3\n  \\]\nSince $\\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0^+} f(x) = f(0) = 3$, the function $f(x)$ is **continuous** at $x = 0$.\n\nStep 2: Discuss continuity at $x = \\frac{3}{2}$.\nWe evaluate the LHL, RHL, and functional value at $x = \\frac{3}{2}$:\n- **LHL**:\n  \\[\n  \\lim_{x \\to (3/2)^-} f(x) = \\lim_{x \\to (3/2)^-} (3 - 2x) = 3 - 2\\left(\\frac{3}{2}\\right) = 3 - 3 = 0\n  \\]\n- **RHL**:\n  \\[\n  \\lim_{x \\to (3/2)^+} f(x) = \\lim_{x \\to (3/2)^+} (-3 - 2x) = -3 - 2\\left(\\frac{3}{2}\\right) = -3 - 3 = -6\n  \\]\n- **Functional Value**:\n  \\[\n  f\\left(\\frac{3}{2}\\right) = -3 - 2\\left(\\frac{3}{2}\\right) = -6\n  \\]\nSince $\\lim_{x \\to (3/2)^-} f(x) = 0 \\ne \\lim_{x \\to (3/2)^+} f(x) = -6$, the limit does not exist at $x = \\frac{3}{2}$. Therefore, the function is **discontinuous** (possessing a jump discontinuity) at $x = \\frac{3}{2}$.",
     "finalAnswerHtml": "\\[\n\\boxed{f(x) \\text{ is continuous at } x = 0 \\text{ and discontinuous at } x = \\frac{3}{2}.}\n\\]"
   },
-  {
+    {
     "id": "cse23-final-seca-q2a",
     "discipline": "CSE",
     "batch": 23,
@@ -4067,18 +4067,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define explicit function and implicit function. Find $\\frac{dy}{dx}$ of:\n\\begin{enumerate}\n    \\item[(i)] $x^n + y^n = a^n$\n    \\item[(ii)] $y = x^{\\tan^{-1} x} + (\\cos x)^{\\ln x}$\n    \\item[(iii)] $x = e^t \\sin t, \\, y = e^t \\cos t$\n\\end{enumerate}",
     "solutionHtml": "Step 1: Define Explicit and Implicit Functions.\n- **Explicit Function**: A function where the dependent variable is expressed directly and solely in terms of the independent variable, typically in the form $y = f(x)$. Example: $y = x^2 + 5x + 6$.\n- **Implicit Function**: A function where the dependent variable is not isolated on one side of the equation, and the relation is expressed in the form $F(x, y) = 0$. Example: $x^2 + y^2 - 25 = 0$.\n\nStep 2: Solve part (i) $x^n + y^n = a^n$.\nDifferentiating both sides with respect to $x$:\n\\[\n\\frac{d}{dx}(x^n + y^n) = \\frac{d}{dx}(a^n) \\implies n x^{n-1} + n y^{n-1} \\frac{dy}{dx} = 0\n\\]\nIsolating $\\frac{dy}{dx}$:\n\\[\nn y^{n-1} \\frac{dy}{dx} = -n x^{n-1} \\implies \\frac{dy}{dx} = -\\frac{x^{n-1}}{y^{n-1}} = -\\left(\\frac{x}{y}\\right)^{n-1}\n\\]\n\nStep 3: Solve part (ii) $y = x^{\\tan^{-1} x} + (\\cos x)^{\\ln x}$.\nLet $y = u + v$, where $u = x^{\\tan^{-1} x}$ and $v = (\\cos x)^{\\ln x}$. We find $\\frac{du}{dx}$ and $\\frac{dv}{dx}$ using logarithmic differentiation.\n- For $u = x^{\\tan^{-1} x}$:\n  \\[\n  \\ln u = \\tan^{-1} x \\ln x \\implies \\frac{1}{u} \\frac{du}{dx} = \\frac{1}{1+x^2} \\ln x + \\tan^{-1} x \\cdot \\frac{1}{x}\n  \\]\n  \\[\n  \\frac{du}{dx} = x^{\\tan^{-1} x} \\left[ \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1} x}{x} \\right]\n  \\]\n- For $v = (\\cos x)^{\\ln x}$:\n  \\[\n  \\ln v = \\ln x \\ln(\\cos x) \\implies \\frac{1}{v} \\frac{dv}{dx} = \\frac{1}{x} \\ln(\\cos x) + \\ln x \\left( \\frac{1}{\\cos x} (-\\sin x) \\right)\n  \\]\n  \\[\n  \\frac{dv}{dx} = (\\cos x)^{\\ln x} \\left[ \\frac{\\ln(\\cos x)}{x} - \\ln x \\tan x \\right]\n  \\]\nCombining the derivatives:\n\\[\n\\frac{dy}{dx} = x^{\\tan^{-1} x} \\left[ \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1} x}{x} \\right] + (\\cos x)^{\\ln x} \\left[ \\frac{\\ln(\\cos x)}{x} - \\ln x \\tan x \\right]\n\\]\n\nStep 4: Solve part (iii) $x = e^t \\sin t$, $y = e^t \\cos t$.\nFirst, find $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$ using the product rule:\n\\[\n\\frac{dx}{dt} = e^t \\sin t + e^t \\cos t = e^t(\\sin t + \\cos t)\n\\]\n\\[\n\\frac{dy}{dt} = e^t \\cos t - e^t \\sin t = e^t(\\cos t - \\sin t)\n\\]\nNow, compute $\\frac{dy}{dx}$ using parametric differentiation:\n\\[\n\\frac{dy}{dx} = \\frac{\\frac{dy}{dt}}{\\frac{dx}{dt}} = \\frac{e^t(\\cos t - \\sin t)}{e^t(\\sin t + \\cos t)} = \\frac{\\cos t - \\sin t}{\\sin t + \\cos t}\n\\]",
     "finalAnswerHtml": "\\begin{align*}\n    \\text{(i) } \\frac{dy}{dx} &= -\\left(\\frac{x}{y}\\right)^{n-1} \\\\\n    \\text{(ii) } \\frac{dy}{dx} &= x^{\\tan^{-1} x} \\left[ \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1} x}{x} \\right] + (\\cos x)^{\\ln x} \\left[ \\frac{\\ln(\\cos x)}{x} - \\ln x \\tan x \\right] \\\\\n    \\text{(iii) } \\frac{dy}{dx} &= \\frac{\\cos t - \\sin t}{\\sin t + \\cos t}\n\\end{align*}"
   },
-  {
+    {
     "id": "cse23-final-seca-q2b",
     "discipline": "CSE",
     "batch": 23,
@@ -4088,18 +4088,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State the Leibnitz's theorem. If $y = (\\sinh^{-1} x)^2$ then show that\n\\[\n(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + n^2 y_n = 0\n\\]\nalso find $(y_n)_0$.",
     "solutionHtml": "Step 1: State Leibnitz's Theorem.\nLeibnitz's theorem states that if $u(x)$ and $v(x)$ are two functions of $x$ possessing derivatives up to $n$-th order, then the $n$-th derivative of their product $uv$ is given by:\n\\[\n(uv)_n = \\sum_{r=0}^n \\binom{n}{r} u_{n-r} v_r = u_n v + n u_{n-1} v_1 + \\frac{n(n-1)}{2!} u_{n-2} v_2 + \\dots + u v_n\n\\]\n\nStep 2: Differentiate $y = (\\sinh^{-1} x)^2$ to find the second derivative relation.\nDifferentiating once with respect to $x$:\n\\[\ny_1 = 2(\\sinh^{-1} x) \\cdot \\frac{1}{\\sqrt{1+x^2}}\n\\]\nMultiplying both sides by $\\sqrt{1+x^2}$ and squaring:\n\\[\n(1+x^2) y_1^2 = 4(\\sinh^{-1} x)^2 \\implies (1+x^2) y_1^2 = 4y\n\\]\nDifferentiating again with respect to $x$:\n\\[\n2x \\cdot y_1^2 + (1+x^2) \\cdot 2 y_1 y_2 = 4 y_1\n\\]\nDividing both sides by $2y_1$ (since $y_1 \\ne 0$):\n\\[\n(1+x^2)y_2 + x y_1 = 2 \\quad \\text{--- (Equation 1)}\n\\]\n\nStep 3: Differentiate Equation 1 $n$ times using Leibnitz's Theorem.\nDifferentiating both terms of Equation 1 $n$ times:\n\\[\nD^n\\left[(1+x^2)y_2\\right] + D^n[x y_1] = 0\n\\]\nUsing Leibnitz's theorem on each term:\n\\begin{align*}\n    D^n\\left[(1+x^2)y_2\\right] &= y_{n+2} (1+x^2) + n y_{n+1} (2x) + \\frac{n(n-1)}{2} y_n (2) \\\\\n    &= (1+x^2)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n\n\\end{align*}\nAnd:\n\\[\nD^n[x y_1] = y_{n+1} x + n y_n (1) = x y_{n+1} + n y_n\n\\]\nSumming the results:\n\\[\n(1+x^2)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n + x y_{n+1} + n y_n = 0\n\\]\n\\[\n(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + [n(n-1)+n]y_n = 0\n\\]\n\\[\n(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + n^2 y_n = 0\n\\]\nThis proves the first part of the question.\n\nStep 4: Find the value of $(y_n)_0$.\nEvaluate $y$, $y_1$, and Equation 1 at $x = 0$:\n\\begin{align*}\n    (y)_0 &= (\\sinh^{-1} 0)^2 = 0 \\\\\n    (y_1)_0 &= \\frac{2\\sinh^{-1} 0}{\\sqrt{1+0}} = 0 \\\\\n    (1+0)(y_2)_0 + 0 \\cdot (y_1)_0 &= 2 \\implies (y_2)_0 = 2\n\\end{align*}\nNow, substitute $x = 0$ into our general $n$-th derivative relation:\n\\[\n(1+0)(y_{n+2})_0 + (2n+1)(0)(y_{n+1})_0 + n^2(y_n)_0 = 0 \\implies (y_{n+2})_0 = -n^2 (y_n)_0\n\\]\nAnalyzing this recurrence relation:\n- **If $n$ is odd**:\n  Since $(y_1)_0 = 0$, all subsequent odd-order derivatives evaluated at $x = 0$ are zero:\n  \\[\n  (y_n)_0 = 0 \\quad (\\text{for odd } n)\n  \\]\n- **If $n$ is even** (let $n = 2k$ for $k \\ge 1$):\n  \\begin{align*}\n      (y_{2k})_0 &= -(2k-2)^2 (y_{2k-2})_0 \\\\\n      &= (-1)^2 (2k-2)^2 (2k-4)^2 (y_{2k-4})_0 \\\\\n      &= (-1)^{k-1} \\left[ (2k-2)(2k-4)\\dots 2 \\right]^2 (y_2)_0 \\\\\n      &= (-1)^{k-1} \\left[ 2^{k-1} (k-1)! \\right]^2 \\cdot 2 \\\\\n      &= (-1)^{k-1} 2^{2k-1} \\left[ (k-1)! \\right]^2\n  \\end{align*}\n  Replacing $2k$ with $n$ (so $k = n/2$):\n  \\[\n  (y_n)_0 = (-1)^{\\frac{n}{2}-1} 2^{n-1} \\left[ \\left(\\frac{n}{2}-1\\right)! \\right]^2\n  \\]",
     "finalAnswerHtml": "\\[\n\\boxed{\n(y_n)_0 = \\begin{cases} \n0, & \\text{if } n \\text{ is odd} \\\\ \n(-1)^{\\frac{n}{2}-1} 2^{n-1} \\left[ \\left(\\frac{n}{2}-1\\right)! \\right]^2, & \\text{if } n \\text{ is even (where } n \\ge 2)\n\\end{cases}\n}\n\\]"
   },
-  {
+    {
     "id": "cse23-final-seca-q3a",
     "discipline": "CSE",
     "batch": 23,
@@ -4109,7 +4109,7 @@ const questions = [
     "section": "A",
     "questionNumber": "3a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -4120,7 +4120,7 @@ const questions = [
     "solutionHtml": "Step 1: Distinguish between Critical and Stationary Points.\n- **Critical Point**: A point $c$ in the domain of a function $f(x)$ is a critical point if $f'(c) = 0$ or if $f'(c)$ is undefined.\n- **Stationary Point**: A point $c$ in the domain of a function $f(x)$ is a stationary point if $f'(c) = 0$. This represents a specific subclass of critical points where the derivative exists and the tangent line is horizontal.\n\nStep 2: Find the stationary/critical points of $y = f(x) = x + \\sin x$ on $(0, 2\\pi)$.\nDifferentiating with respect to $x$:\n\\[\nf'(x) = 1 + \\cos x\n\\]\nSetting $f'(x) = 0$:\n\\[\n1 + \\cos x = 0 \\implies \\cos x = -1\n\\]\nFor $x \\in (0, 2\\pi)$, the only solution is:\n\\[\nx = \\pi\n\\]\n\nStep 3: Analyze the nature of the point $x = \\pi$.\nWe compute the higher-order derivatives of $f(x)$ at $x = \\pi$:\n\\[\nf''(x) = -\\sin x \\implies f''(\\pi) = -\\sin(\\pi) = 0\n\\]\nSince the second derivative is zero, we examine the third derivative:\n\\[\nf'''(x) = -\\cos x \\implies f'''(\\pi) = -\\cos(\\pi) = 1 \\ne 0\n\\]\nSince the first non-zero derivative at the stationary point is of odd order (3rd), $x = \\pi$ is a **point of inflection** (saddle point) and is not a local extremum.\n\nStep 4: Conclude on extremum values.\nSince the only critical point in $(0, 2\\pi)$ is a point of inflection, the function has no local maximum or minimum values on this interval.",
     "finalAnswerHtml": "\\[\n\\boxed{\\text{There are no local extremum values for } y = x + \\sin x \\text{ on the interval } 0 < x < 2\\pi.}\n\\]"
   },
-  {
+    {
     "id": "cse23-final-seca-q3b",
     "discipline": "CSE",
     "batch": 23,
@@ -4130,18 +4130,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Evaluate $\\lim_{x \\to 0} \\frac{a^x - 1 - x \\log_e a}{x^2}$.",
     "solutionHtml": "Step 1: Check the form of the limit.\nAs $x \\to 0$, we substitute $x = 0$ into the expression:\n\\[\n\\frac{a^0 - 1 - 0 \\cdot \\log_e a}{0^2} = \\frac{1 - 1 - 0}{0} = \\frac{0}{0}\n\\]\nSince the limit has an indeterminate form of $\\frac{0}{0}$, we can apply L'Hospital's Rule.\n\nStep 2: Differentiate the numerator and denominator with respect to $x$.\nRecall that $\\frac{d}{dx}(a^x) = a^x \\ln a$.\n\\[\n\\lim_{x \\to 0} \\frac{\\frac{d}{dx}\\left( a^x - 1 - x \\ln a \\right)}{\\frac{d}{dx}(x^2)} = \\lim_{x \\to 0} \\frac{a^x \\ln a - \\ln a}{2x}\n\\]\n\nStep 3: Evaluate the new limit.\nSubstituting $x = 0$:\n\\[\n\\frac{a^0 \\ln a - \\ln a}{2(0)} = \\frac{\\ln a - \\ln a}{0} = \\frac{0}{0}\n\\]\nApplying L'Hospital's Rule a second time:\n\\[\n\\lim_{x \\to 0} \\frac{\\frac{d}{dx}\\left( a^x \\ln a - \\ln a \\right)}{\\frac{d}{dx}(2x)} = \\lim_{x \\to 0} \\frac{a^x (\\ln a)^2}{2}\n\\]\n\nStep 4: Evaluate the limit at $x = 0$.\n\\[\n\\lim_{x \\to 0} \\frac{a^x (\\ln a)^2}{2} = \\frac{a^0 (\\ln a)^2}{2} = \\frac{(\\ln a)^2}{2}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{(\\log_e a)^2}{2}}\n\\]"
   },
-  {
+    {
     "id": "cse23-final-seca-q3c",
     "discipline": "CSE",
     "batch": 23,
@@ -4151,18 +4151,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3c",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["last-minute"],
     "questionHtml": "Verify mean value theorem for $f(x) = 2x - x^2$ in the interval $[0,1]$.",
     "solutionHtml": "Step 1: Verify the hypotheses of Lagrange's Mean Value Theorem (LMVT).\n- **Continuity**: $f(x) = 2x - x^2$ is a polynomial function, so it is continuous on $[0, 1]$.\n- **Differentiability**: The derivative is $f'(x) = 2 - 2x$, which exists for all real numbers. Thus, $f(x)$ is differentiable on the open interval $(0, 1)$.\nBoth conditions of LMVT are satisfied.\n\nStep 2: Set up the MVT equation.\nLMVT states that there exists some $c \\in (0, 1)$ such that:\n\\[\nf'(c) = \\frac{f(b) - f(a)}{b - a}\n\\]\nHere, $a = 0$ and $b = 1$.\n\nStep 3: Evaluate $f(0)$, $f(1)$, and the slope fraction.\n\\begin{align*}\n    f(0) &= 2(0) - 0^2 = 0 \\\\\n    f(1) &= 2(1) - 1^2 = 1 \\\\\n    \\frac{f(1) - f(0)}{1 - 0} &= \\frac{1 - 0}{1} = 1\n\\end{align*}\n\nStep 4: Solve for $c$.\nEquating $f'(c) = 1$:\n\\[\n2 - 2c = 1 \\implies 2c = 1 \\implies c = \\frac{1}{2}\n\\]\nSince $c = \\frac{1}{2}$ lies within the open interval $(0, 1)$, Lagrange's Mean Value Theorem is verified.",
     "finalAnswerHtml": "\\[\n\\boxed{c = \\frac{1}{2} \\in (0, 1) \\text{ verifies the Mean Value Theorem.}}\n\\]"
   },
-  {
+    {
     "id": "cse23-final-seca-q4a",
     "discipline": "CSE",
     "batch": 23,
@@ -4172,7 +4172,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -4183,7 +4183,7 @@ const questions = [
     "solutionHtml": "Step 1: Definitions.\n- **Increasing Function**: A function $f(x)$ is strictly increasing on an interval if for any two points $x_1, x_2$ in the interval:\n  \\[\n  x_1 < x_2 \\implies f(x_1) \\le f(x_2) \\quad (\\text{or } f'(x) \\ge 0)\n  \\]\n- **Decreasing Function**: A function $f(x)$ is strictly decreasing on an interval if for any two points $x_1, x_2$ in the interval:\n  \\[\n  x_1 < x_2 \\implies f(x_1) \\ge f(x_2) \\quad (\\text{or } f'(x) \\le 0)\n  \\]\n- **Concavity**: Concavity refers to the direction of curvature of a function's graph. If $f''(x) > 0$ on an interval, the curve is concave upward (convex). If $f''(x) < 0$ on an interval, the curve is concave downward (concave).\n\nStep 2: Find the derivative of $f(x) = x^2 - 4x + 3$.\n\\[\nf'(x) = 2x - 4\n\\]\n\nStep 3: Determine the intervals of increasing and decreasing behavior.\n- **Increasing**: The function is increasing where $f'(x) \\ge 0$:\n  \\[\n  2x - 4 \\ge 0 \\implies 2x \\ge 4 \\implies x \\ge 2\n  \\]\n  Thus, $f(x)$ is increasing on the interval $[2, \\infty)$ (or $(2, \\infty)$).\n- **Decreasing**: The function is decreasing where $f'(x) \\le 0$:\n  \\[\n  2x - 4 \\le 0 \\implies 2x \\le 4 \\implies x \\le 2\n  \\]\n  Thus, $f(x)$ is decreasing on the interval $(-\\infty, 2]$ (or $(-\\infty, 2)$).",
     "finalAnswerHtml": "\\[\n\\boxed{\\text{Increasing on } [2, \\infty) \\text{ and Decreasing on } (-\\infty, 2]}\n\\]"
   },
-  {
+    {
     "id": "cse23-final-seca-q4b",
     "discipline": "CSE",
     "batch": 23,
@@ -4193,18 +4193,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["difficult"],
     "questionHtml": "Find the absolute extreme of $f(x) = 6x^{4/3} - 3x^{1/3}$ on the interval $[-1,1]$ and determine where these values occur.",
     "solutionHtml": "Step 1: Differentiate $f(x) = 6x^{4/3} - 3x^{1/3}$ to find the critical points.\n\\[\nf'(x) = 6 \\cdot \\frac{4}{3} x^{1/3} - 3 \\cdot \\frac{1}{3} x^{-2/3} = 8x^{1/3} - \\frac{1}{x^{2/3}}\n\\]\nExpress the derivative over a single denominator:\n\\[\nf'(x) = \\frac{8x - 1}{x^{2/3}}\n\\]\n\nStep 2: Identify critical points.\nCritical points occur where $f'(x) = 0$ or where $f'(x)$ is undefined:\n- **Derivative is zero**:\n  \\[\n  8x - 1 = 0 \\implies x = \\frac{1}{8}\n  \\]\n- **Derivative is undefined**:\n  At $x = 0$, the denominator $x^{2/3}$ is zero, meaning $f'(x)$ is undefined.\nSince both $x = \\frac{1}{8}$ and $x = 0$ lie in the interval $[-1, 1]$, they are valid critical points.\n\nStep 3: Evaluate $f(x)$ at critical points and interval boundary endpoints.\n- At $x = -1$ (Endpoint):\n  \\[\n  f(-1) = 6(-1)^{4/3} - 3(-1)^{1/3} = 6(1) - 3(-1) = 6 + 3 = 9\n  \\]\n- At $x = 0$ (Critical Point):\n  \\[\n  f(0) = 6(0) - 3(0) = 0\n  \\]\n- At $x = \\frac{1}{8}$ (Critical Point):\n  \\[\n  f\\left(\\frac{1}{8}\\right) = 6\\left(\\frac{1}{8}\\right)^{4/3} - 3\\left(\\frac{1}{8}\\right)^{1/3} = 6 \\left(\\frac{1}{16}\\right) - 3 \\left(\\frac{1}{2}\\right) = \\frac{3}{8} - \\frac{12}{8} = -\\frac{9}{8} = -1.125\n  \\]\n- At $x = 1$ (Endpoint):\n  \\[\n  f(1) = 6(1)^{4/3} - 3(1)^{1/3} = 6(1) - 3(1) = 3\n  \\]\n\nStep 4: Compare values to find absolute extrema.\n- The highest value is $9$, which occurs at $x = -1$.\n- The lowest value is $-\\frac{9}{8}$, which occurs at $x = \\frac{1}{8}$.",
     "finalAnswerHtml": "\\[\n\\boxed{\\text{Absolute Maximum value of } 9 \\text{ occurs at } x = -1, \\text{ and Absolute Minimum value of } -\\frac{9}{8} \\text{ occurs at } x = \\frac{1}{8}.}\n\\]"
   },
-  {
+    {
     "id": "cse24-ct1-secb-q1",
     "discipline": "CSE",
     "batch": 24,
@@ -4214,18 +4214,18 @@ const questions = [
     "section": "B",
     "questionNumber": "1",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Using the properties of definite integral, evaluate $\\int_0^{\\pi/2} \\frac{\\sqrt{\\sin x}}{\\sqrt{\\sin x} + \\sqrt{\\cos x}} \\, dx$.",
     "solutionHtml": "Step 1: Define the integral.\nLet $I$ be the given definite integral:\n\\[\nI = \\int_0^{\\pi/2} \\frac{\\sqrt{\\sin x}}{\\sqrt{\\sin x} + \\sqrt{\\cos x}} \\, dx\n\\]\n\nStep 2: Apply the definite integral property.\nRecall the integration property:\n\\[\n\\int_0^a f(x) \\, dx = \\int_0^a f(a - x) \\, dx\n\\]\nApplying this property with $a = \\frac{\\pi}{2}$:\n\\[\nI = \\int_0^{\\pi/2} \\frac{\\sqrt{\\sin\\left(\\frac{\\pi}{2} - x\\right)}}{\\sqrt{\\sin\\left(\\frac{\\pi}{2} - x\\right)} + \\sqrt{\\cos\\left(\\frac{\\pi}{2} - x\\right)}} \\, dx\n\\]\nUsing the trigonometric cofunction identities $\\sin\\left(\\frac{\\pi}{2} - x\\right) = \\cos x$ and $\\cos\\left(\\frac{\\pi}{2} - x\\right) = \\sin x$:\n\\[\nI = \\int_0^{\\pi/2} \\frac{\\sqrt{\\cos x}}{\\sqrt{\\cos x} + \\sqrt{\\sin x}} \\, dx\n\\]\n\nStep 3: Add both forms of the integral.\nSumming the two expressions for $I$:\n\\[\n2I = \\int_0^{\\pi/2} \\frac{\\sqrt{\\sin x}}{\\sqrt{\\sin x} + \\sqrt{\\cos x}} \\, dx + \\int_0^{\\pi/2} \\frac{\\sqrt{\\cos x}}{\\sqrt{\\cos x} + \\sqrt{\\sin x}} \\, dx\n\\]\nCombining the integrands:\n\\[\n2I = \\int_0^{\\pi/2} \\frac{\\sqrt{\\sin x} + \\sqrt{\\cos x}}{\\sqrt{\\sin x} + \\sqrt{\\cos x}} \\, dx\n\\]\n\\[\n2I = \\int_0^{\\pi/2} 1 \\, dx\n\\]\n\nStep 4: Integrate and solve for $I$.\n\\[\n2I = [x]_0^{\\pi/2} = \\frac{\\pi}{2} - 0 = \\frac{\\pi}{2}\n\\]\nDividing by $2$:\n\\[\nI = \\frac{\\pi}{4}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{I = \\frac{\\pi}{4}}\n\\]"
   },
-  {
+    {
     "id": "cse24-ct1-secb-q2",
     "discipline": "CSE",
     "batch": 24,
@@ -4235,18 +4235,18 @@ const questions = [
     "section": "B",
     "questionNumber": "2",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Derive the relation of Beta and Gamma functions.",
     "solutionHtml": "Step 1: Write Gamma functions using polar coordinate substitutions.\nRecall the definition of the Gamma function:\n\\[\n\\Gamma(m) = \\int_0^\\infty e^{-t} t^{m-1} \\, dt\n\\]\nLetting $t = x^2 \\implies dt = 2x \\, dx$:\n\\[\n\\Gamma(m) = 2 \\int_0^\\infty e^{-x^2} x^{2m-1} \\, dx\n\\]\nSimilarly, we can write the Gamma function of $n$ using a different dummy variable $y$:\n\\[\n\\Gamma(n) = 2 \\int_0^\\infty e^{-y^2} y^{2n-1} \\, dy\n\\]\n\nStep 2: Multiply the two Gamma functions together.\n\\[\n\\Gamma(m)\\Gamma(n) = \\left( 2 \\int_0^\\infty e^{-x^2} x^{2m-1} \\, dx \\right) \\left( 2 \\int_0^\\infty e^{-y^2} y^{2n-1} \\, dy \\right)\n\\]\nCombining this into a double integral over the first quadrant of the $xy$ plane:\n\\[\n\\Gamma(m)\\Gamma(n) = 4 \\int_0^\\infty \\int_0^\\infty e^{-(x^2+y^2)} x^{2m-1} y^{2n-1} \\, dx \\, dy\n\\]\n\nStep 3: Convert the double integral into polar coordinates.\nLet $x = r\\cos\\theta$ and $y = r\\sin\\theta$. The Jacobian of the transformation is $dx \\, dy = r \\, dr \\, d\\theta$.\nThe boundaries for the first quadrant are $r$ running from $0$ to $\\infty$ and $\\theta$ running from $0$ to $\\frac{\\pi}{2}$:\n\\[\n\\Gamma(m)\\Gamma(n) = 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} (r\\cos\\theta)^{2m-1} (r\\sin\\theta)^{2n-1} r \\, dr \\, d\\theta\n\\]\n\\[\n= 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} r^{2m-1} \\cos^{2m-1}\\theta \\cdot r^{2n-1} \\sin^{2n-1}\\theta \\cdot r \\, dr \\, d\\theta\n\\]\n\\[\n= 4 \\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\sin^{2n-1}\\theta \\cos^{2m-1}\\theta \\, dr \\, d\\theta\n\\]\n\nStep 4: Separate the integral components.\nSince the limits of integration are independent constants, we can factor the integrals:\n\\[\n\\Gamma(m)\\Gamma(n) = 2 \\left( \\int_0^\\infty e^{-r^2} r^{2(m+n)-1} \\, dr \\right) \\cdot 2 \\left( \\int_0^{\\pi/2} \\sin^{2n-1}\\theta \\cos^{2m-1}\\theta \\, d\\theta \\right)\n\\]\n\nStep 5: Relate the components back to the Gamma and Beta definitions.\n- The first part is equal to: $\\Gamma(m+n)$\n- The second part is the trigonometric form of the Beta function: $B(n, m)$ which is equal to $B(m, n)$ by symmetry.\nTherefore:\n\\[\n\\Gamma(m)\\Gamma(n) = \\Gamma(m+n) B(m, n)\n\\]\nDividing both sides by $\\Gamma(m+n)$:\n\\[\nB(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{B(m, n) = \\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}}\n\\]"
   },
-  {
+    {
     "id": "cse24-ct1-secb-q3",
     "discipline": "CSE",
     "batch": 24,
@@ -4256,18 +4256,18 @@ const questions = [
     "section": "B",
     "questionNumber": "3",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Integrate $\\int_0^1 x^3 (1-x^2)^{3/2} \\, dx$ by using gamma-beta function.",
     "solutionHtml": "Step 1: Apply substitution to match the Beta function form.\nLet $I = \\int_0^1 x^3 (1 - x^2)^{3/2} \\, dx$.\nSubstitute $y = x^2 \\implies dy = 2x \\, dx \\implies x \\, dx = \\frac{dy}{2}$.\nWe can rewrite $x^3 \\, dx$ as $x^2(x \\, dx)$.\nThe limits remain the same: when $x = 0$, $y = 0$; when $x = 1$, $y = 1$.\nSubstituting these into the integral:\n\\[\nI = \\int_0^1 y (1-y)^{3/2} \\frac{dy}{2}\n\\]\n\\[\nI = \\frac{1}{2} \\int_0^1 y^1 (1-y)^{3/2} \\, dy\n\\]\n\nStep 2: Express the integral in terms of the Beta function.\nThe standard Beta function definition is:\n\\[\nB(p, q) = \\int_0^1 y^{p-1} (1-y)^{q-1} \\, dy\n\\]\nComparing exponents:\n- $p - 1 = 1 \\implies p = 2$\n- $q - 1 = \\frac{3}{2} \\implies q = \\frac{5}{2}$\nThus, the integral is:\n\\[\nI = \\frac{1}{2} B\\left(2, \\frac{5}{2}\\right)\n\\]\n\nStep 3: Evaluate using the relation to Gamma functions.\nRecall that:\n\\[\nB\\left(2, \\frac{5}{2}\\right) = \\frac{\\Gamma(2)\\Gamma(5/2)}{\\Gamma(2+5/2)} = \\frac{\\Gamma(2)\\Gamma(5/2)}{\\Gamma(9/2)}\n\\]\nCompute the Gamma values:\n- $\\Gamma(2) = 1! = 1$\n- $\\Gamma\\left(\\frac{5}{2}\\right) = \\frac{3}{2} \\cdot \\frac{1}{2} \\sqrt{\\pi} = \\frac{3}{4}\\sqrt{\\pi}$\n- $\\Gamma\\left(\\frac{9}{2}\\right) = \\frac{7}{2} \\cdot \\frac{5}{2} \\cdot \\frac{3}{2} \\cdot \\frac{1}{2} \\sqrt{\\pi} = \\frac{105}{16}\\sqrt{\\pi}$\n\nSubstitute these values back:\n\\[\nB\\left(2, \\frac{5}{2}\\right) = \\frac{1 \\cdot \\frac{3}{4}\\sqrt{\\pi}}{\\frac{105}{16}\\sqrt{\\pi}} = \\frac{3}{4} \\cdot \\frac{16}{105} = \\frac{12}{105} = \\frac{4}{35}\n\\]\n\nStep 4: Compute the final value of the integral $I$.\n\\[\nI = \\frac{1}{2} B\\left(2, \\frac{5}{2}\\right) = \\frac{1}{2} \\cdot \\frac{4}{35} = \\frac{2}{35}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{I = \\frac{2}{35}}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q1a",
     "discipline": "CSE",
     "batch": 24,
@@ -4277,18 +4277,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define function, even function and odd function with examples. Draw the graph and also find the domain and range of $f(x) = |x-4| + |x| + |x+6|$.",
     "solutionHtml": "Step 1: Define Function, Even Function, and Odd Function.\n\\begin{itemize}\n    \\item \\textbf{Function}: A relation $f$ from a set $A$ (domain) to a set $B$ (codomain) is a function if every element $x \\in A$ is associated with exactly one element $y = f(x) \\in B$.\n    \\\\ \\textit{Example}: $f(x) = x^2$.\n    \\item \\textbf{Even Function}: A function $f(x)$ is even if $f(-x) = f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the $y$-axis.\n    \\\\ \\textit{Example}: $f(x) = \\cos x$.\n    \\item \\textbf{Odd Function}: A function $f(x)$ is odd if $f(-x) = -f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the origin.\n    \\\\ \\textit{Example}: $f(x) = \\sin x$.\n\\end{itemize}\n\nStep 2: Determine the Domain of $f(x) = |x-4| + |x| + |x+6|$.\nSince $f(x)$ is a sum of absolute value functions, which are defined for all real numbers:\n\\[\n\\text{Domain} = (-\\infty, \\infty) \\quad \\text{or} \\quad \\mathbb{R}\n\\]\n\nStep 3: Define $f(x)$ piecewise to find the Range and graph behavior.\nThe critical points of the absolute values are $x = -6$, $x = 0$, and $x = 4$.\n\\begin{itemize}\n    \\item \\textbf{Case 1: $x < -6$}\n    \\[\n    f(x) = -(x-4) - x - (x+6) = -x+4-x-x-6 = -3x - 2\n    \\]\n    \\item \\textbf{Case 2: $-6 \\le x < 0$}\n    \\[\n    f(x) = -(x-4) - x + (x+6) = -x+4-x+x+6 = -x + 10\n    \\]\n    \\item \\textbf{Case 3: $0 \\le x < 4$}\n    \\[\n    f(x) = -(x-4) + x + (x+6) = -x+4+x+x+6 = x + 10\n    \\]\n    \\item \\textbf{Case 4: $x \\ge 4$}\n    \\[\n    f(x) = (x-4) + x + (x+6) = 3x + 2\n    \\]\n\\end{itemize}\n\nStep 4: Find the Range.\nEvaluate the function at the critical points:\n\\begin{align*}\n    f(-6) &= |-6-4| + |-6| + |-6+6| = 10 + 6 + 0 = 16 \\\\\n    f(0) &= |0-4| + |0| + |0+6| = 4 + 0 + 6 = 10 \\\\\n    f(4) &= |4-4| + |4| + |4+6| = 0 + 4 + 10 = 14\n\\end{align*}\nThe global minimum of the function occurs at $x = 0$ with value $10$. As $x \\to \\pm\\infty$, $f(x) \\to \\infty$. Thus:\n\\[\n\\text{Range} = [10, \\infty)\n\\]\n\nStep 5: Describe the Graph.\nThe graph is a continuous, piecewise linear curve consisting of four segments:\n\\begin{itemize}\n    \\item A line with slope $-3$ for $x \\in (-\\infty, -6)$ ending at $(-6, 16)$.\n    \\item A line with slope $-1$ for $x \\in [-6, 0)$ connecting $(-6, 16)$ to $(0, 10)$.\n    \\item A line with slope $+1$ for $x \\in [0, 4)$ connecting $(0, 10)$ to $(4, 14)$.\n    \\item A line with slope $+3$ for $x \\in [4, \\infty)$ originating from $(4, 14)$.\n\\end{itemize}",
     "finalAnswerHtml": "\\[\n\\boxed{\\text{Domain} = (-\\infty, \\infty), \\quad \\text{Range} = [10, \\infty)}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q1b",
     "discipline": "CSE",
     "batch": 24,
@@ -4298,18 +4298,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define limit of a function. A function is defined by\n\\[\nf(x) = \\begin{cases} \nx^2, & \\text{when } x \\le 1 \\\\ \nx, & \\text{when } 1 < x \\le 2 \\\\ \n\\frac{1}{4}x^3, & \\text{when } x > 2 \n\\end{cases}\n\\]\nFind $\\lim_{x \\to 1} f(x)$ and discuss the continuity of $f(x)$ at $x = 1$.",
     "solutionHtml": "Step 1: Define the limit of a function.\nLet $f(x)$ be defined on an open interval containing $c$, except possibly at $c$ itself. We say that the limit of $f(x)$ as $x$ approaches $c$ is $L$, written as:\n\\[\n\\lim_{x \\to c} f(x) = L\n\\]\nif for every $\\epsilon > 0$ there exists a $\\delta > 0$ such that $0 < |x - c| < \\delta \\implies |f(x) - L| < \\epsilon$.\n\nStep 2: Find the left-hand limit (LHL) at $x = 1$.\nFor $x \\le 1$, $f(x) = x^2$:\n\\[\n\\text{LHL} = \\lim_{x \\to 1^-} f(x) = \\lim_{x \\to 1^-} x^2 = 1^2 = 1\n\\]\n\nStep 3: Find the right-hand limit (RHL) at $x = 1$.\nFor $1 < x \\le 2$, $f(x) = x$:\n\\[\n\\text{RHL} = \\lim_{x \\to 1^+} f(x) = \\lim_{x \\to 1^+} x = 1\n\\]\n\nStep 4: Determine the existence of the limit.\nSince $\\text{LHL} = \\text{RHL} = 1$:\n\\[\n\\lim_{x \\to 1} f(x) = 1\n\\]\n\nStep 5: Discuss continuity at $x = 1$.\nA function is continuous at $x = c$ if:\n\\[\n\\lim_{x \\to c} f(x) = f(c)\n\\]\nHere, the functional value at $x = 1$ is:\n\\[\nf(1) = 1^2 = 1\n\\]\nSince $\\lim_{x \\to 1} f(x) = 1 = f(1)$, the function $f(x)$ is continuous at $x = 1$.",
     "finalAnswerHtml": "\\[\n\\boxed{\\lim_{x \\to 1} f(x) = 1, \\quad \\text{and the function is continuous at } x = 1.}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q2ai",
     "discipline": "CSE",
     "batch": 24,
@@ -4319,18 +4319,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2ai",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\frac{dy}{dx}$ of $(\\cos x)^y = (\\sin y)^x$.",
     "solutionHtml": "Step 1: Take the natural logarithm of both sides.\n\\[\n\\ln\\left( (\\cos x)^y \\right) = \\ln\\left( (\\sin y)^x \\right) \\implies y \\ln(\\cos x) = x \\ln(\\sin y)\n\\]\n\nStep 2: Differentiate both sides implicitly with respect to $x$ using the product rule.\n\\[\n\\frac{d}{dx} [y \\ln(\\cos x)] = \\frac{d}{dx} [x \\ln(\\sin y)]\n\\]\n\\[\n\\frac{dy}{dx} \\ln(\\cos x) + y \\cdot \\frac{1}{\\cos x}(-\\sin x) = 1 \\cdot \\ln(\\sin y) + x \\cdot \\frac{1}{\\sin y}(\\cos y) \\frac{dy}{dx}\n\\]\n\\[\n\\frac{dy}{dx} \\ln(\\cos x) - y \\tan x = \\ln(\\sin y) + x \\cot y \\frac{dy}{dx}\n\\]\n\nStep 3: Group the terms involving $\\frac{dy}{dx}$.\n\\[\n\\frac{dy}{dx} \\ln(\\cos x) - x \\cot y \\frac{dy}{dx} = \\ln(\\sin y) + y \\tan x\n\\]\n\\[\n\\frac{dy}{dx} \\left[ \\ln(\\cos x) - x \\cot y \\right] = \\ln(\\sin y) + y \\tan x\n\\]\n\nStep 4: Solve for $\\frac{dy}{dx}$.\n\\[\n\\frac{dy}{dx} = \\frac{\\ln(\\sin y) + y \\tan x}{\\ln(\\cos x) - x \\cot y}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{dy}{dx} = \\frac{\\ln(\\sin y) + y \\tan x}{\\ln(\\cos x) - x \\cot y}}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q2aii",
     "discipline": "CSE",
     "batch": 24,
@@ -4340,18 +4340,18 @@ const questions = [
     "section": "B",
     "questionNumber": "2aii",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Find $\\frac{dy}{dx}$ of $y = (\\tan x)^{\\cot x} + (\\cot x)^{\\tan x}$.",
     "solutionHtml": "Step 1: Express the terms separately.\nLet $y = u + v$, where $u = (\\tan x)^{\\cot x}$ and $v = (\\cot x)^{\\tan x}$. Then $\\frac{dy}{dx} = \\frac{du}{dx} + \\frac{dv}{dx}$.\n\nStep 2: Find the derivative of $u = (\\tan x)^{\\cot x}$ using logarithmic differentiation.\n\\[\n\\ln u = \\cot x \\ln(\\tan x)\n\\]\nDifferentiate with respect to $x$:\n\\[\n\\frac{1}{u} \\frac{du}{dx} = -\\csc^2 x \\ln(\\tan x) + \\cot x \\cdot \\frac{1}{\\tan x} \\sec^2 x\n\\]\nSimplify the second term:\n\\[\n\\cot x \\cdot \\cot x \\cdot \\sec^2 x = \\frac{\\cos^2 x}{\\sin^2 x} \\cdot \\frac{1}{\\cos^2 x} = \\frac{1}{\\sin^2 x} = \\csc^2 x\n\\]\nSo:\n\\[\n\\frac{1}{u} \\frac{du}{dx} = -\\csc^2 x \\ln(\\tan x) + \\csc^2 x = \\csc^2 x [1 - \\ln(\\tan x)]\n\\]\n\\[\n\\frac{du}{dx} = (\\tan x)^{\\cot x} \\csc^2 x [1 - \\ln(\\tan x)]\n\\]\n\nStep 3: Find the derivative of $v = (\\cot x)^{\\tan x}$ using logarithmic differentiation.\n\\[\n\\ln v = \\tan x \\ln(\\cot x)\n\\]\nDifferentiate with respect to $x$:\n\\[\n\\frac{1}{v} \\frac{dv}{dx} = \\sec^2 x \\ln(\\cot x) + \\tan x \\cdot \\frac{1}{\\cot x} (-\\csc^2 x)\n\\]\nSimplify the second term:\n\\[\n\\tan x \\cdot \\tan x \\cdot (-\\csc^2 x) = -\\frac{\\sin^2 x}{\\cos^2 x} \\cdot \\frac{1}{\\sin^2 x} = -\\sec^2 x\n\\]\nSo:\n\\[\n\\frac{1}{v} \\frac{dv}{dx} = \\sec^2 x \\ln(\\cot x) - \\sec^2 x = \\sec^2 x [\\ln(\\cot x) - 1]\n\\]\n\\[\n\\frac{dv}{dx} = (\\cot x)^{\\tan x} \\sec^2 x [\\ln(\\cot x) - 1]\n\\]\n\nStep 4: Combine the derivatives.\n\\[\n\\frac{dy}{dx} = (\\tan x)^{\\cot x} \\csc^2 x [1 - \\ln(\\tan x)] + (\\cot x)^{\\tan x} \\sec^2 x [\\ln(\\cot x) - 1]\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{dy}{dx} = (\\tan x)^{\\cot x} \\csc^2 x [1 - \\ln(\\tan x)] + (\\cot x)^{\\tan x} \\sec^2 x [\\ln(\\cot x) - 1]}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q2aiii",
     "discipline": "CSE",
     "batch": 24,
@@ -4361,18 +4361,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2aiii",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Find $\\frac{dy}{dx}$ of $x = a \\cos^3 t, y = a \\sin^3 t$.",
     "solutionHtml": "Step 1: Find the parametric derivatives $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$.\n\\[\n\\frac{dx}{dt} = \\frac{d}{dt} (a \\cos^3 t) = -3a \\cos^2 t \\sin t\n\\]\n\\[\n\\frac{dy}{dt} = \\frac{d}{dt} (a \\sin^3 t) = 3a \\sin^2 t \\cos t\n\\]\n\nStep 2: Compute $\\frac{dy}{dx}$ using the chain rule.\n\\[\n\\frac{dy}{dx} = \\frac{\\frac{dy}{dt}}{\\frac{dx}{dt}} = \\frac{3a \\sin^2 t \\cos t}{-3a \\cos^2 t \\sin t}\n\\]\nCancel out common factors:\n\\[\n\\frac{dy}{dx} = -\\frac{\\sin t}{\\cos t} = -\\tan t\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{dy}{dx} = -\\tan t}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q2b",
     "discipline": "CSE",
     "batch": 24,
@@ -4382,18 +4382,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $n$-th derivatives of $y = e^{2x} \\sin(4x+3)$.",
     "solutionHtml": "Step 1: State the general formula for the $n$-th derivative.\nFor a function of the form $u(x) = e^{ax} \\sin(bx+c)$, the $n$-th derivative is:\n\\[\nD^n [e^{ax} \\sin(bx+c)] = (a^2+b^2)^{n/2} e^{ax} \\sin\\left( bx+c + n\\phi \\right)\n\\]\nwhere $\\tan\\phi = \\frac{b}{a}$.\n\nStep 2: Identify parameters.\nHere, $a = 2$, $b = 4$, and $c = 2$.\nCompute the amplitude factor:\n\\[\n\\sqrt{a^2 + b^2} = \\sqrt{2^2 + 4^2} = \\sqrt{4 + 16} = \\sqrt{20} = 2\\sqrt{5}\n\\]\nCompute the phase angle $\\phi$:\n\\[\n\\tan\\phi = \\frac{4}{2} = 2 \\implies \\phi = \\tan^{-1}(2)\n\\]\n\nStep 3: Formulate the $n$-th derivative.\n\\[\ny_n = (20)^{n/2} e^{2x} \\sin\\left( 4x+3 + n\\tan^{-1}(2) \\right)\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{y_n = 20^{n/2} e^{2x} \\sin\\left( 4x+3 + n\\tan^{-1}(2) \\right)}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q2c",
     "discipline": "CSE",
     "batch": 24,
@@ -4403,20 +4403,20 @@ const questions = [
     "section": "A",
     "questionNumber": "2c",
     "topics": [
-      "Series Expansion"
+        "Series Expansion"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 2,
     "appearances": [
-      "cse24-ct2-q1"
+        "cse24-ct2-q1"
     ],
-    "tags": [],
+    "tags": ["repeated"],
     "questionHtml": "Expand $\\cos x$ in powers of $x - \\frac{\\pi}{4}$.",
     "solutionHtml": "Step 1: State the Taylor series formula.\nThe Taylor series expansion of $f(x)$ about $x = a$ is:\n\\[\nf(x) = f(a) + f'(a)(x-a) + \\frac{f''(a)}{2!}(x-a)^2 + \\frac{f'''(a)}{3!}(x-a)^3 + \\dots = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x-a)^n\n\\]\nHere, $f(x) = \\cos x$ and $a = \\frac{\\pi}{4}$.\n\nStep 2: Evaluate $f(x)$ and its derivatives at $a = \\frac{\\pi}{4}$.\n\\begin{align*}\n    f(x) &= \\cos x \\implies f\\left(\\frac{\\pi}{4}\\right) = \\frac{1}{\\sqrt{2}} \\\\\n    f'(x) &= -\\sin x \\implies f'\\left(\\frac{\\pi}{4}\\right) = -\\frac{1}{\\sqrt{2}} \\\\\n    f''(x) &= -\\cos x \\implies f''\\left(\\frac{\\pi}{4}\\right) = -\\frac{1}{\\sqrt{2}} \\\\\n    f'''(x) &= \\sin x \\implies f'''\\left(\\frac{\\pi}{4}\\right) = \\frac{1}{\\sqrt{2}} \\\\\n    f^{(4)}(x) &= \\cos x \\implies f^{(4)}\\left(\\frac{\\pi}{4}\\right) = \\frac{1}{\\sqrt{2}}\n\\end{align*}\n\nStep 3: Construct the expansion.\n\\[\n\\cos x = \\frac{1}{\\sqrt{2}} - \\frac{1}{\\sqrt{2}}\\left(x-\\frac{\\pi}{4}\\right) - \\frac{1}{2!\\sqrt{2}}\\left(x-\\frac{\\pi}{4}\\right)^2 + \\frac{1}{3!\\sqrt{2}}\\left(x-\\frac{\\pi}{4}\\right)^3 + \\frac{1}{4!\\sqrt{2}}\\left(x-\\frac{\\pi}{4}\\right)^4 - \\dots\n\\]\nFactoring out $\\frac{1}{\\sqrt{2}}$:\n\\[\n\\cos x = \\frac{1}{\\sqrt{2}} \\left[ 1 - \\left(x-\\frac{\\pi}{4}\\right) - \\frac{1}{2!}\\left(x-\\frac{\\pi}{4}\\right)^2 + \\frac{1}{3!}\\left(x-\\frac{\\pi}{4}\\right)^3 + \\frac{1}{4!}\\left(x-\\frac{\\pi}{4}\\right)^4 - \\dots \\right]\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\cos x = \\frac{1}{\\sqrt{2}} \\left[ 1 - \\left(x-\\frac{\\pi}{4}\\right) - \\frac{1}{2!}\\left(x-\\frac{\\pi}{4}\\right)^2 + \\frac{1}{3!}\\left(x-\\frac{\\pi}{4}\\right)^3 + \\frac{1}{4!}\\left(x-\\frac{\\pi}{4}\\right)^4 - \\dots \\right]}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q3a",
     "discipline": "CSE",
     "batch": 24,
@@ -4426,18 +4426,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "If $y = (\\sinh^{-1} x)^2$, then show that $(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + n^2 y_n = 0$, also find $(y_n)_0$.",
     "solutionHtml": "Step 1: Compute first and second derivatives.\nGiven $y = (\\sinh^{-1} x)^2$. Differentiating once with respect to $x$:\n\\[\ny_1 = 2(\\sinh^{-1} x) \\cdot \\frac{1}{\\sqrt{1+x^2}}\n\\]\nMultiply both sides by $\\sqrt{1+x^2}$ and square:\n\\[\n(1+x^2)y_1^2 = 4(\\sinh^{-1} x)^2 \\implies (1+x^2)y_1^2 = 4y\n\\]\nDifferentiate both sides again:\n\\[\n2x y_1^2 + (1+x^2)\\cdot 2y_1y_2 = 4y_1\n\\]\nDivide by $2y_1$ (since $y_1 \\ne 0$):\n\\[\n(1+x^2)y_2 + x y_1 = 2 \\quad \\text{--- (Equation 1)}\n\\]\n\nStep 2: Differentiate Equation 1 $n$ times using Leibnitz's theorem.\n\\[\nD^n\\left[ (1+x^2)y_2 \\right] + D^n[x y_1] = 0\n\\]\n- For $D^n\\left[(1+x^2)y_2\\right]$:\n  \\[\n  (1+x^2)y_{n+2} + n(2x)y_{n+1} + \\frac{n(n-1)}{2}(2)y_n = (1+x^2)y_{n+2} + 2n x y_{n+1} + n(n-1)y_n\n  \\]\n- For $D^n[x y_1]$:\n  \\[\n  x y_{n+1} + n(1)y_n = x y_{n+1} + n y_n\n  \\]\nSumming both components:\n\\[\n(1+x^2)y_{n+2} + (2n x + x)y_{n+1} + [n(n-1) + n]y_n = 0\n\\]\n\\[\n(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + n^2 y_n = 0\n\\]\nThis proves the first required equation.\n\nStep 3: Evaluate derivatives at $x = 0$.\n- At $x = 0$:\n  \\[\n  y(0) = (\\sinh^{-1} 0)^2 = 0\n  \\]\n  \\[\n  y_1(0) = 0\n  \\]\n  From Equation 1:\n  \\[\n  (1+0)y_2(0) + 0 \\cdot y_1(0) = 2 \\implies y_2(0) = 2\n  \\]\n  From the general recurrence relation at $x = 0$:\n  \\[\n  (y_{n+2})_0 = -n^2 (y_n)_0\n  \\]\n\nStep 4: Resolve the sequence $(y_n)_0$ based on odd/even values of $n$.\n- \\textbf{If $n$ is odd}:\n  Since $y_1(0) = 0$, all odd-ordered derivatives evaluated at $0$ are zero:\n  \\[\n  (y_n)_0 = 0 \\quad (\\text{for odd } n)\n  \\]\n- \\textbf{If $n$ is even} (let $n = 2k$):\n  \\[\n  (y_{2k})_0 = -(2k-2)^2 (y_{2k-2})_0 = (-1)^2 (2k-2)^2 (2k-4)^2 (y_{2k-4})_0 = \\dots\n  \\]\n  \\[\n  (y_{2k})_0 = (-1)^{k-1} [ (2k-2)(2k-4)\\dots 2 ]^2 (y_2)_0 = (-1)^{k-1} \\left[ 2^{k-1}(k-1)! \\right]^2 \\cdot 2 = (-1)^{k-1} 2^{2k-1} \\left[ (k-1)! \\right]^2\n  \\]",
     "finalAnswerHtml": "\\[\n\\boxed{\n(y_n)_0 = \\begin{cases} \n0, & \\text{if } n \\text{ is odd} \\\\ \n(-1)^{\\frac{n}{2}-1} 2^{n-1} \\left[ \\left(\\frac{n}{2}-1\\right)! \\right]^2, & \\text{if } n \\text{ is even (where } n \\ge 2)\n\\end{cases}\n}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q3b",
     "discipline": "CSE",
     "batch": 24,
@@ -4447,20 +4447,20 @@ const questions = [
     "section": "A",
     "questionNumber": "3b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 2,
     "appearances": [
-      "cse24-ct2-q2"
+        "cse24-ct2-q2"
     ],
-    "tags": [],
+    "tags": ["repeated","difficult"],
     "questionHtml": "Distinguish between critical points and points of inflection of a function. Find the extremum values of $f(x) = e^x + 2\\cos x + e^{-x}$.",
     "solutionHtml": "Step 1: Distinguish between critical points and points of inflection.\n\\begin{itemize}\n    \\item \\textbf{Critical Points}: Points $c$ in the domain of $f(x)$ where $f'(c) = 0$ or $f'(c)$ is undefined. These represent potential locations for local extrema (maxima/minima).\n    \\item \\textbf{Points of Inflection}: Points on a curve where the concavity changes. At these points, $f''(x) = 0$ (or is undefined) and $f''(x)$ changes its sign.\n\\end{itemize}\n\nStep 2: Find critical points of $f(x) = e^x + 2\\cos x + e^{-x}$.\nWe can rewrite $f(x) = 2\\cosh x + 2\\cos x$.\nDifferentiate with respect to $x$:\n\\[\nf'(x) = e^x - 2\\sin x - e^{-x} = 2\\sinh x - 2\\sin x\n\\]\nSet $f'(x) = 0 \\implies \\sinh x = \\sin x$.\nSince $\\sinh x > x > \\sin x$ for $x > 0$ and $\\sinh x < x < \\sin x$ for $x < 0$, the only real solution to $\\sinh x = \\sin x$ is:\n\\[\nx = 0\n\\]\n\nStep 3: Analyze the nature of the critical point $x = 0$ using higher-order derivatives.\nCompute successive derivatives at $x = 0$:\n\\begin{align*}\n    f''(x) &= e^x - 2\\cos x + e^{-x} \\implies f''(0) = 1 - 2 + 1 = 0 \\\\\n    f'''(x) &= e^x + 2\\sin x - e^{-x} = 2\\sinh x + 2\\sin x \\implies f'''(0) = 0 \\\\\n    f^{(4)}(x) &= e^x + 2\\cos x + e^{-x} \\implies f^{(4)}(0) = 1 + 2 + 1 = 4 > 0\n\\end{align*}\nSince the first non-zero derivative at the stationary point is of even order (4th) and is positive ($4 > 0$), $x = 0$ is a point of local minimum.\n\nStep 4: Compute the extremum (minimum) value.\n\\[\nf(0) = e^0 + 2\\cos 0 + e^{-0} = 1 + 2 + 1 = 4\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\text{The function has a minimum value of } 4 \\text{ at } x = 0.}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q4a",
     "discipline": "CSE",
     "batch": 24,
@@ -4470,18 +4470,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["difficult"],
     "questionHtml": "Define tangent, subtangent, normal and subnormal of a curve $f(x)=0$ at $x=x_0$. Find the equation of tangent and normal line to the curve $x=e^{-t}\\cos t, y=e^t\\sin t$ at $t=\\pi$.",
     "solutionHtml": "Step 1: Geometrical Definitions.\nLet $P(x_0, y_0)$ be a point on a curve. Draw a tangent and normal at $P$ that intersect the $x$-axis at $T$ and $N$ respectively. Let $G(x_0, 0)$ be the foot of the perpendicular from $P$ to the $x$-axis.\n\\begin{itemize}\n    \\item \\textbf{Tangent Length}: The length of the segment $PT$ on the tangent line.\n    \\item \\textbf{Subtangent}: The length of the projection segment $TG$ on the $x$-axis.\n    \\item \\textbf{Normal Length}: The length of the segment $PN$ on the normal line.\n    \\item \\textbf{Subnormal}: The length of the projection segment $GN$ on the $x$-axis.\n\\end{itemize}\n\nStep 2: Find the coordinates of the point at $t = \\pi$.\n\\[\nx_0 = e^{-\\pi} \\cos\\pi = -e^{-\\pi}\n\\]\n\\[\ny_0 = e^\\pi \\sin\\pi = 0\n\\]\nSo, the point of contact is $P\\left(-e^{-\\pi}, 0\\right)$.\n\nStep 3: Find the derivative $\\frac{dy}{dx}$ at $t = \\pi$.\nDifferentiate the parametric equations:\n\\[\n\\frac{dx}{dt} = -e^{-t}\\cos t - e^{-t}\\sin t = -e^{-t}(\\cos t + \\sin t)\n\\]\n\\[\n\\frac{dy}{dt} = e^t\\sin t + e^t\\cos t = e^t(\\sin t + \\cos t)\n\\]\nUsing the chain rule:\n\\[\n\\frac{dy}{dx} = \\frac{\\frac{dy}{dt}}{\\frac{dx}{dt}} = \\frac{e^t(\\sin t + \\cos t)}{-e^{-t}(\\cos t + \\sin t)} = -e^{2t}\n\\]\nAt $t = \\pi$:\n\\[\nm = \\left.\\frac{dy}{dx}\\right|_{t=\\pi} = -e^{2\\pi}\n\\]\n\nStep 4: Find the equations of the tangent and normal.\n\\begin{itemize}\n    \\item \\textbf{Tangent Line}:\n    \\[\n    y - y_0 = m(x - x_0) \\implies y - 0 = -e^{2\\pi}\\left(x - \\left(-e^{-\\pi}\\right)\\right)\n    \\]\n    \\[\n    y = -e^{2\\pi} x - e^{\\pi} \\implies e^{2\\pi}x + y + e^\\pi = 0\n    \\]\n    \\item \\textbf{Normal Line}:\n    The slope of the normal is $-\\frac{1}{m} = e^{-2\\pi}$:\n    \\[\n    y - y_0 = -\\frac{1}{m}(x - x_0) \\implies y - 0 = e^{-2\\pi}\\left(x - \\left(-e^{-\\pi}\\right)\\right)\n    \\]\n    \\[\n    y = e^{-2\\pi} x + e^{-3\\pi} \\implies e^{-2\\pi}x - y + e^{-3\\pi} = 0 \\quad (\\text{or } e^\\pi x - e^{3\\pi} y + 1 = 0)\n    \\]\n\\end{itemize}",
     "finalAnswerHtml": "\\[\n\\boxed{\n\\begin{aligned}\n\\text{Tangent: } & e^{2\\pi}x + y + e^\\pi = 0 \\\\\n\\text{Normal: } & e^\\pi x - e^{3\\pi}y + 1 = 0\n\\end{aligned}\n}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q4b",
     "discipline": "CSE",
     "batch": 24,
@@ -4491,18 +4491,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Describe the indeterminate forms of limits. Evaluate the following using L'Hospital rule:\n(i) $\\lim_{x \\to 0} \\frac{3 \\tan x - 3x - x^3}{x^5}$ \\quad\n(ii) $\\lim_{x \\to 0} (\\sin x)^x$",
     "solutionHtml": "Step 1: Describe the Indeterminate Forms.\nIn calculus, an indeterminate form is an algebraic expression obtained when evaluating limits whose limit cannot be determined solely from the limits of the individual parts. The seven classic indeterminate forms are:\n\\[\n\\frac{0}{0}, \\quad \\frac{\\infty}{\\infty}, \\quad 0 \\cdot \\infty, \\quad \\infty - \\infty, \\quad 0^0, \\quad 1^\\infty, \\quad \\infty^0\n\\]\n\nStep 2: Evaluate (i) $\\lim_{x \\to 0} \\frac{3 \\tan x - 3x - x^3}{x^5}$.\nThe limit initially presents the indeterminate form $\\frac{0}{0}$. Differentiating repeatedly using L'Hospital's rule:\n\\[\nL_1 = \\lim_{x \\to 0} \\frac{3\\sec^2 x - 3 - 3x^2}{5x^4} \\quad \\left[\\frac{0}{0}\\right]\n\\]\nDifferentiate again:\n\\[\nL_1 = \\lim_{x \\to 0} \\frac{6\\sec^2 x \\tan x - 6x}{20x^3} \\quad \\left[\\frac{0}{0}\\right]\n\\]\nDifferentiate again:\n\\[\nL_1 = \\lim_{x \\to 0} \\frac{6\\left(\\sec^4 x + 2\\sec^2 x \\tan^2 x\\right) - 6}{60x^2} \\quad \\left[\\frac{0}{0}\\right]\n\\]\nSubstitute $\\sec^2 x = 1 + \\tan^2 x$ to simplify:\n\\[\n\\sec^4 x + 2\\sec^2 x \\tan^2 x - 1 = (1 + \\tan^2 x)^2 + 2(1 + \\tan^2 x)\\tan^2 x - 1 = 4\\tan^2 x + 3\\tan^4 x\n\\]\nThus:\n\\[\nL_1 = \\lim_{x \\to 0} \\frac{6\\left(4\\tan^2 x + 3\\tan^4 x\\right)}{60x^2} = \\lim_{x \\to 0} \\frac{24\\tan^2 x + 18\\tan^4 x}{60x^2}\n\\]\nSince $\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1$:\n\\[\nL_1 = \\lim_{x \\to 0} \\left[ \\frac{24}{60} \\left(\\frac{\\tan x}{x}\\right)^2 + \\frac{18}{60} \\frac{\\tan^4 x}{x^2} \\right] = \\frac{24}{60} + 0 = \\frac{2}{5}\n\\]\n\nStep 3: Evaluate (ii) $\\lim_{x \\to 0} (\\sin x)^x$.\nThis presents the indeterminate form $0^0$. Let $L_2 = \\lim_{x \\to 0} (\\sin x)^x$, then:\n\\[\n\\ln L_2 = \\lim_{x \\to 0} x \\ln(\\sin x) = \\lim_{x \\to 0} \\frac{\\ln(\\sin x)}{\\frac{1}{x}} \\quad \\left[\\frac{-\\infty}{\\infty}\\right]\n\\]\nApplying L'Hospital's rule:\n\\[\n\\ln L_2 = \\lim_{x \\to 0} \\frac{\\cot x}{-\\frac{1}{x^2}} = \\lim_{x \\to 0} \\frac{-x^2}{\\tan x} = \\lim_{x \\to 0} (-x) \\cdot \\left(\\frac{x}{\\tan x}\\right) = 0 \\cdot 1 = 0\n\\]\nThus, $L_2 = e^0 = 1$.",
     "finalAnswerHtml": "\\[\n\\boxed{\\text{(i) } \\frac{2}{5}, \\quad \\text{(ii) } 1}\n\\]"
   },
-  {
+    {
     "id": "cse24-final-seca-q4c",
     "discipline": "CSE",
     "batch": 24,
@@ -4512,7 +4512,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4c",
     "topics": [
-      "Partial Derivatives"
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -4523,7 +4523,7 @@ const questions = [
     "solutionHtml": "Step 1: Find the partial derivatives with respect to $x$, $y$, and $z$.\nUsing the chain rule:\n\\[\n\\frac{\\partial u}{\\partial x} = \\frac{1}{x^2+y^2+z^2} \\cdot \\frac{\\partial}{\\partial x}(x^2+y^2+z^2) = \\frac{2x}{x^2+y^2+z^2}\n\\]\nSimilarly, by symmetry:\n\\[\n\\frac{\\partial u}{\\partial y} = \\frac{2y}{x^2+y^2+z^2}\n\\]\n\\[\n\\frac{\\partial u}{\\partial z} = \\frac{2z}{x^2+y^2+z^2}\n\\]\n\nStep 2: Substitute these partial derivatives into the target expression.\n\\[\nx\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y} + z\\frac{\\partial u}{\\partial z} = x\\left(\\frac{2x}{x^2+y^2+z^2}\\right) + y\\left(\\frac{2y}{x^2+y^2+z^2}\\right) + z\\left(\\frac{2z}{x^2+y^2+z^2}\\right)\n\\]\n\\[\n= \\frac{2x^2 + 2y^2 + 2z^2}{x^2+y^2+z^2}\n\\]\nFactor out $2$ from the numerator:\n\\[\n= \\frac{2(x^2+y^2+z^2)}{x^2+y^2+z^2} = 2\n\\]\nThis successfully establishes and constructs the required relation.",
     "finalAnswerHtml": "\\[\n\\boxed{x\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y} + z\\frac{\\partial u}{\\partial z} = 2}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct1-secb-q1i",
     "discipline": "CSE",
     "batch": 25,
@@ -4533,18 +4533,18 @@ const questions = [
     "section": "B",
     "questionNumber": "1i",
     "topics": [
-      "Indefinite Integration"
+        "Indefinite Integration"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Evaluate the integral:\n\\[\n\\int \\sin^{-1} \\sqrt{\\frac{x}{x+a}} \\, dx\n\\]",
     "solutionHtml": "Step 1: Simplify the integrand using substitution.\nLet \\(\\theta = \\sin^{-1} \\sqrt{\\frac{x}{x+a}}\\). This implies:\n\\[\n\\sin\\theta = \\sqrt{\\frac{x}{x+a}} \\implies \\sin^2\\theta = \\frac{x}{x+a}\n\\]\n\\[\n(x+a)\\sin^2\\theta = x \\implies a\\sin^2\\theta = x(1-\\sin^2\\theta) = x\\cos^2\\theta\n\\]\n\\[\nx = a\\tan^2\\theta\n\\]\n\nStep 2: Differentiate to find \\(dx\\).\n\\[\ndx = 2a\\tan\\theta\\sec^2\\theta \\, d\\theta\n\\]\n\nStep 3: Substitute these into the integral and integrate by parts.\n\\[\n\\int \\sin^{-1} \\sqrt{\\frac{x}{x+a}} \\, dx = \\int \\theta \\left(2a\\tan\\theta\\sec^2\\theta\\right) d\\theta = 2a \\int \\theta \\left(\\tan\\theta\\sec^2\\theta\\right) d\\theta\n\\]\nUsing integration by parts, let:\n- \\(u = \\theta \\implies du = d\\theta\\)\n- \\(dv = \\tan\\theta\\sec^2\\theta \\, d\\theta \\implies v = \\frac{1}{2}\\tan^2\\theta\\)\n\nApplying the formula \\(\\int u \\, dv = uv - \\int v \\, du\\):\n\\[\n\\int \\theta \\left(\\tan\\theta\\sec^2\\theta\\right) d\\theta = \\frac{1}{2}\\theta\\tan^2\\theta - \\frac{1}{2}\\int \\tan^2\\theta \\, d\\theta\n\\]\nSince \\(\\int \\tan^2\\theta \\, d\\theta = \\int (\\sec^2\\theta - 1) \\, d\\theta = \\tan\\theta - \\theta\\):\n\\[\n\\int \\theta \\left(\\tan\\theta\\sec^2\\theta\\right) d\\theta = \\frac{1}{2}\\theta\\tan^2\\theta - \\frac{1}{2}(\\tan\\theta - \\theta)\n\\]\n\nStep 4: Combine the constants and substitute back to \\(x\\).\nMultiplying by \\(2a\\):\n\\[\n2a \\left[ \\frac{1}{2}\\theta\\tan^2\\theta - \\frac{1}{2}(\\tan\\theta - \\theta) \\right] = a\\theta\\tan^2\\theta - a\\tan\\theta + a\\theta = a\\theta(1+\\tan^2\\theta) - a\\tan\\theta\n\\]\nRecall that \\(\\tan^2\\theta = \\frac{x}{a}\\), \\(\\tan\\theta = \\sqrt{\\frac{x}{a}}\\), and \\(\\theta = \\tan^{-1}\\sqrt{\\frac{x}{a}}\\):\n\\[\n= a\\left(\\tan^{-1}\\sqrt{\\frac{x}{a}}\\right)\\left(1+\\frac{x}{a}\\right) - a\\sqrt{\\frac{x}{a}}\n\\]\n\\[\n= (x+a)\\tan^{-1}\\sqrt{\\frac{x}{a}} - \\sqrt{ax} + C\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{(x+a)\\tan^{-1}\\sqrt{\\frac{x}{a}} - \\sqrt{ax} + C}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct1-secb-q1ii",
     "discipline": "CSE",
     "batch": 25,
@@ -4554,18 +4554,18 @@ const questions = [
     "section": "B",
     "questionNumber": "1ii",
     "topics": [
-      "Indefinite Integration"
+        "Indefinite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate the integral:\n\\[\n\\int \\frac{4e^x+6e^{-x}}{9e^x-4e^{-x}} \\, dx\n\\]",
     "solutionHtml": "Step 1: Express the numerator in terms of the denominator and its derivative.\nLet the numerator equal \\(A \\cdot (\\text{Denominator}) + B \\cdot (\\text{Derivative of Denominator})\\):\n\\[\n4e^x + 6e^{-x} = A(9e^x - 4e^{-x}) + B \\frac{d}{dx}(9e^x - 4e^{-x})\n\\]\nSince \\(\\frac{d}{dx}(9e^x - 4e^{-x}) = 9e^x + 4e^{-x}\\):\n\\[\n4e^x + 6e^{-x} = A(9e^x - 4e^{-x}) + B(9e^x + 4e^{-x})\n\\]\n\nStep 2: Equate coefficients to solve for \\(A\\) and \\(B\\).\nFor the coefficients of \\(e^x\\):\n\\[\n4 = 9A + 9B \\implies A + B = \\frac{4}{9} \\quad \\text{--- (Equation 1)}\n\\]\nFor the coefficients of \\(e^{-x}\\):\n\\[\n6 = -4A + 4B \\implies -A + B = \\frac{3}{2} \\quad \\text{--- (Equation 2)}\n\\]\nAdding Equations 1 and 2:\n\\[\n2B = \\frac{4}{9} + \\frac{3}{2} = \\frac{8+27}{18} = \\frac{35}{18} \\implies B = \\frac{35}{36}\n\\]\nSubtracting Equation 2 from Equation 1:\n\\[\n2A = \\frac{4}{9} - \\frac{3}{2} = \\frac{8-27}{18} = -\\frac{19}{18} \\implies A = -\\frac{19}{36}\n\\]\n\nStep 3: Integrate using the decomposed terms.\nWe can rewrite the integral as:\n\\[\n\\int \\frac{4e^x + 6e^{-x}}{9e^x - 4e^{-x}} \\, dx = \\int \\left( A + B \\frac{9e^x + 4e^{-x}}{9e^x - 4e^{-x}} \\right) dx\n\\]\n\\[\n= Ax + B \\ln|9e^x - 4e^{-x}| + C\n\\]\nSubstituting the values of \\(A\\) and \\(B\\):\n\\[\n= -\\frac{19}{36}x + \\frac{35}{36}\\ln|9e^x - 4e^{-x}| + C\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{-\\frac{19}{36}x + \\frac{35}{36}\\ln|9e^x - 4e^{-x}| + C}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct1-secb-q2",
     "discipline": "CSE",
     "batch": 25,
@@ -4575,18 +4575,18 @@ const questions = [
     "section": "B",
     "questionNumber": "2",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Obtain a reduction formula for \\(\\int \\sin^m x \\, dx\\) and apply it to evaluate \\(\\int_0^{\\pi/2} \\sin^9 x \\, dx\\).",
     "solutionHtml": "Step 1: Set up the reduction formula for the indefinite integral.\nLet \\(I_m = \\int \\sin^m x \\, dx = \\int \\sin^{m-1} x \\sin x \\, dx\\).\nApplying integration by parts:\n- Let \\(u = \\sin^{m-1} x \\implies du = (m-1)\\sin^{m-2} x \\cos x \\, dx\\)\n- Let \\(dv = \\sin x \\, dx \\implies v = -\\cos x\\)\n\n\\[\nI_m = -\\sin^{m-1} x \\cos x + (m-1) \\int \\sin^{m-2} x \\cos^2 x \\, dx\n\\]\nSubstitute \\(\\cos^2 x = 1 - \\sin^2 x\\):\n\\[\nI_m = -\\sin^{m-1} x \\cos x + (m-1) \\int \\sin^{m-2} x (1 - \\sin^2 x) \\, dx\n\\]\n\\[\nI_m = -\\sin^{m-1} x \\cos x + (m-1) I_{m-2} - (m-1) I_m\n\\]\n\\[\nm I_m = -\\sin^{m-1} x \\cos x + (m-1) I_{m-2}\n\\]\nThus, the reduction formula is:\n\\[\nI_m = -\\frac{\\sin^{m-1} x \\cos x}{m} + \\frac{m-1}{m} I_{m-2}\n\\]\n\nStep 2: Apply the reduction formula to the definite integral.\nLet \\(J_m = \\int_0^{\\pi/2} \\sin^m x \\, dx\\). The boundary term evaluated at \\(0\\) and \\(\\pi/2\\) is \\(0\\). Thus, we get:\n\\[\nJ_m = \\frac{m-1}{m} J_{m-2}\n\\]\n\nStep 3: Evaluate \\(J_9\\).\n\\[\nJ_9 = \\frac{8}{9} J_7 = \\frac{8}{9} \\cdot \\frac{6}{7} J_5 = \\frac{8}{9} \\cdot \\frac{6}{7} \\cdot \\frac{4}{5} J_3 = \\frac{8}{9} \\cdot \\frac{6}{7} \\cdot \\frac{4}{5} \\cdot \\frac{2}{3} J_1\n\\]\nSince \\(J_1 = \\int_0^{\\pi/2} \\sin x \\, dx = [-\\cos x]_0^{\\pi/2} = 1\\):\n\\[\nJ_9 = \\frac{8 \\cdot 6 \\cdot 4 \\cdot 2}{9 \\cdot 7 \\cdot 5 \\cdot 3} = \\frac{384}{945} = \\frac{128}{315}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{128}{315}}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct1-secb-q3",
     "discipline": "CSE",
     "batch": 25,
@@ -4596,18 +4596,18 @@ const questions = [
     "section": "B",
     "questionNumber": "3",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Applying the definition of definite integral, prove that the limit of the sum of the series \\(\\frac{1}{n} + \\frac{1}{n+1} + \\frac{1}{n+2} + \\dots + \\frac{1}{3n} = \\log 3\\).",
     "solutionHtml": "Step 1: Write the sum in summation notation.\nLet \\(S_n\\) be the given series. Note that \\(\\frac{1}{3n} = \\frac{1}{n+2n}\\).\n\\[\nS_n = \\sum_{r=0}^{2n} \\frac{1}{n+r}\n\\]\n\nStep 2: Convert the sum to a Riemann sum format.\nFactor out \\(1/n\\) from each term:\n\\[\nS_n = \\frac{1}{n} \\sum_{r=0}^{2n} \\frac{1}{1 + \\frac{r}{n}}\n\\]\n\nStep 3: Convert the limit of sum to a definite integral.\nBy definition, as \\(n \\to \\infty\\), let \\(\\frac{r}{n} \\to x\\) and \\(\\frac{1}{n} \\to dx\\).\nThe limits of integration are:\n- For \\(r = 0 \\implies x = 0\\)\n- For \\(r = 2n \\implies x = 2\\)\nThus:\n\\[\n\\lim_{n \\to \\infty} S_n = \\int_0^2 \\frac{1}{1+x} \\, dx\n\\]\n\nStep 4: Integrate to prove the limit value.\n\\[\n\\int_0^2 \\frac{1}{1+x} \\, dx = \\left[ \\log(1+x) \\right]_0^2 = \\log 3 - \\log 1 = \\log 3\n\\]\nHence proved.",
     "finalAnswerHtml": "\\[\n\\boxed{\\log 3}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct1-secb-q4",
     "discipline": "CSE",
     "batch": 25,
@@ -4617,18 +4617,18 @@ const questions = [
     "section": "B",
     "questionNumber": "4",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "State the key properties of definite integrals. Using these properties, evaluate \\(\\int_0^{\\pi/2} \\frac{\\sqrt{\\tan x}}{1 + \\sqrt{\\tan x}} \\, dx\\).",
     "solutionHtml": "Step 1: State key properties of definite integrals.\n1. \\(\\int_a^b f(x) \\, dx = \\int_a^b f(t) \\, dt\\)\n2. \\(\\int_a^b f(x) \\, dx = -\\int_b^a f(x) \\, dx\\)\n3. \\(\\int_a^b [f(x) \\pm g(x)] \\, dx = \\int_a^b f(x) \\, dx \\pm \\int_a^b g(x) \\, dx\\)\n4. \\(\\int_a^b f(x) \\, dx = \\int_a^c f(x) \\, dx + \\int_c^b f(x) \\, dx\\)\n5. \\(\\int_a^b f(x) \\, dx = \\int_a^b f(a+b-x) \\, dx\\)\n6. \\(\\int_{-a}^a f(x) \\, dx = 2\\int_0^a f(x) \\, dx\\) (if \\(f\\) is even), or \\(0\\) (if \\(f\\) is odd).\n\nStep 2: Simplify the integrand using sine and cosine.\nLet \\(I = \\int_0^{\\pi/2} \\frac{\\sqrt{\\tan x}}{1 + \\sqrt{\\tan x}} \\, dx\\).\nSubstitute \\(\\tan x = \\frac{\\sin x}{\\cos x}\\):\n\\[\nI = \\int_0^{\\pi/2} \\frac{\\sqrt{\\sin x}}{\\sqrt{\\cos x} + \\sqrt{\\sin x}} \\, dx \\quad \\text{--- (Equation 1)}\n\\]\n\nStep 3: Apply the property \\(\\int_0^a f(x) \\, dx = \\int_0^a f(a-x) \\, dx\\).\n\\[\nI = \\int_0^{\\pi/2} \\frac{\\sqrt{\\sin\\left(\\frac{\\pi}{2}-x\\right)}}{\\sqrt{\\cos\\left(\\frac{\\pi}{2}-x\\right)} + \\sqrt{\\sin\\left(\\frac{\\pi}{2}-x\\right)}} \\, dx\n\\]\n\\[\nI = \\int_0^{\\pi/2} \\frac{\\sqrt{\\cos x}}{\\sqrt{\\sin x} + \\sqrt{\\cos x}} \\, dx \\quad \\text{--- (Equation 2)}\n\\]\n\nStep 4: Sum Equation 1 and Equation 2.\n\\[\n2I = \\int_0^{\\pi/2} \\frac{\\sqrt{\\sin x} + \\sqrt{\\cos x}}{\\sqrt{\\sin x} + \\sqrt{\\cos x}} \\, dx\n\\]\n\\[\n2I = \\int_0^{\\pi/2} 1 \\, dx = \\left[ x \\right]_0^{\\pi/2} = \\frac{\\pi}{2}\n\\]\n\\[\nI = \\frac{\\pi}{4}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{\\pi}{4}}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct1-secb-q5i",
     "discipline": "CSE",
     "batch": 25,
@@ -4638,18 +4638,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5i",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Using the properties of the definite integral, integrate:\n\\[\n\\int_0^{\\pi/2} \\log(\\sin x) \\, dx\n\\]",
     "solutionHtml": "Step 1: Set up the integral with the definite property.\nLet \\(I = \\int_0^{\\pi/2} \\log(\\sin x) \\, dx\\).\nUsing \\(\\int_0^a f(x) \\, dx = \\int_0^a f(a-x) \\, dx\\):\n\\[\nI = \\int_0^{\\pi/2} \\log\\left(\\sin\\left(\\frac{\\pi}{2}-x\\right)\\right) \\, dx = \\int_0^{\\pi/2} \\log(\\cos x) \\, dx\n\\]\n\nStep 2: Add both expressions for \\(I\\).\n\\[\n2I = \\int_0^{\\pi/2} \\log(\\sin x) \\, dx + \\int_0^{\\pi/2} \\log(\\cos x) \\, dx = \\int_0^{\\pi/2} \\log(\\sin x \\cos x) \\, dx\n\\]\nSubstitute \\(\\sin x \\cos x = \\frac{\\sin 2x}{2}\\):\n\\[\n2I = \\int_0^{\\pi/2} \\log\\left(\\frac{\\sin 2x}{2}\\right) \\, dx = \\int_0^{\\pi/2} \\log(\\sin 2x) \\, dx - \\int_0^{\\pi/2} \\log 2 \\, dx\n\\]\n\\[\n2I = \\int_0^{\\pi/2} \\log(\\sin 2x) \\, dx - \\frac{\\pi}{2}\\log 2 \\quad \\text{--- (Equation 1)}\n\\]\n\nStep 3: Use substitution to simplify the remaining integral.\nLet \\(J = \\int_0^{\\pi/2} \\log(\\sin 2x) \\, dx\\).\nSubstitute \\(t = 2x \\implies dx = \\frac{dt}{2}\\).\n- When \\(x = 0 \\implies t = 0\\)\n- When \\(x = \\pi/2 \\implies t = \\pi\\)\n\\[\nJ = \\frac{1}{2} \\int_0^{\\pi} \\log(\\sin t) \\, dt\n\\]\nUsing the symmetry property \\(\\int_0^{2a} f(t) \\, dt = 2\\int_0^a f(t) \\, dt\\) because \\(\\sin(\\pi-t) = \\sin t\\):\n\\[\nJ = \\frac{1}{2} \\left( 2 \\int_0^{\\pi/2} \\log(\\sin t) \\, dt \\right) = \\int_0^{\\pi/2} \\log(\\sin t) \\, dt = I\n\\]\n\nStep 4: Substitute back into Equation 1 and solve for \\(I\\).\n\\[\n2I = I - \\frac{\\pi}{2}\\log 2 \\implies I = -\\frac{\\pi}{2}\\log 2 = \\frac{\\pi}{2}\\log\\left(\\frac{1}{2}\\right)\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{\\pi}{2}\\log\\left(\\frac{1}{2}\\right)}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct1-secb-q5ii",
     "discipline": "CSE",
     "batch": 25,
@@ -4659,18 +4659,18 @@ const questions = [
     "section": "B",
     "questionNumber": "5ii",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Using the properties of the definite integral, integrate:\n\\[\n\\int_{-3}^3 |x - 1| \\, dx\n\\]",
     "solutionHtml": "Step 1: Identify the transition point of the absolute value.\nThe absolute value term changes behavior at \\(x - 1 = 0 \\implies x = 1\\).\n- For \\(x \\in [-3, 1]\\), \\(|x - 1| = -(x - 1) = 1 - x\\).\n- For \\(x \\in [-3, 1]\\), \\(|x - 1| = -(x - 1) = 1 - x\\).\nWait, there is a typo in my thoughts. Over the interval $[-3, 1]$, $|x-1| = -(x-1) = 1-x$.\nFor $x \\in [1, 3]$, $|x-1| = x-1$.\nThe split is correct.\n\nStep 2: Split the integral over the subintervals.\n\\[\n\\int_{-3}^3 |x - 1| \\, dx = \\int_{-3}^1 (1 - x) \\, dx + \\int_1^3 (x - 1) \\, dx\n\\]\n\nStep 3: Integrate and evaluate both parts.\n- First part:\n  \\[\n  \\int_{-3}^1 (1 - x) \\, dx = \\left[ x - \\frac{x^2}{2} \\right]_{-3}^1 = \\left(1 - \\frac{1}{2}\\right) - \\left(-3 - \\frac{9}{2}\\right) = \\frac{1}{2} - \\left(-\\frac{15}{2}\\right) = 8\n  \\]\n- Second part:\n  \\[\n  \\int_1^3 (x - 1) \\, dx = \\left[ \\frac{x^2}{2} - x \\right]_1^3 = \\left(\\frac{9}{2} - 3\\right) - \\left(\\frac{1}{2} - 1\\right) = \\frac{3}{2} - \\left(-\\frac{1}{2}\\right) = 2\n  \\]\n\nStep 4: Sum both evaluated values.\n\\[\n\\int_{-3}^3 |x - 1| \\, dx = 8 + 2 = 10\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{10}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct2-secb-q1",
     "discipline": "CSE",
     "batch": 25,
@@ -4680,18 +4680,18 @@ const questions = [
     "section": "B",
     "questionNumber": "1",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Derive the formula for the right pyramid whose altitude is $h$ and the base is square with sides of length $a$.",
     "solutionHtml": "Step 1: Set up the coordinate system and cross-sectional area.\nLet the vertex of the pyramid be placed at the origin $O(0,0,0)$ and its altitude lie along the $x$-axis from $x = 0$ to $x = h$. The base of the pyramid lies at the plane $x = h$.\n\nAt any point $x$ along the altitude ($0 \\le x \\le h$), the cross-section of the pyramid is a square of side length $s(x)$.\n\nStep 2: Relate the side length $s(x)$ of the cross-section to the base side $a$.\nBy the property of similar triangles (proportionality of linear dimensions of similar cross-sections to their distance from the vertex):\n\\[\n\\frac{s(x)}{a} = \\frac{x}{h} \\implies s(x) = \\frac{a}{h}x\n\\]\n\nStep 3: Determine the cross-sectional area function $A(x)$.\nThe area of the square cross-section at a distance $x$ from the vertex is:\n\\[\nA(x) = [s(x)]^2 = \\left(\\frac{a}{h}x\\right)^2 = \\frac{a^2}{h^2} x^2\n\\]\n\nStep 4: Integrate the cross-sectional area along the altitude to find the volume.\nThe total volume $V$ of the pyramid is obtained by integrating $A(x)$ from $x = 0$ to $x = h$:\n\\[\nV = \\int_{0}^{h} A(x) \\, dx = \\int_{0}^{h} \\frac{a^2}{h^2} x^2 \\, dx\n\\]\n\\[\nV = \\frac{a^2}{h^2} \\left[ \\frac{x^3}{3} \\right]_{0}^{h} = \\frac{a^2}{h^2} \\left( \\frac{h^3}{3} - 0 \\right) = \\frac{1}{3} a^2 h\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{V = \\frac{1}{3}a^2h}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct2-secb-q2",
     "discipline": "CSE",
     "batch": 25,
@@ -4701,18 +4701,18 @@ const questions = [
     "section": "B",
     "questionNumber": "2",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Use cylindrical shells to find the volume of the solid generated when the region enclosed between $y = \\sqrt{x}$, $x = 1$, $x = 4$, and the $x$-axis is revolved about the $y$-axis.",
     "solutionHtml": "Step 1: Set up the cylindrical shells formula.\nWhen a region bounded by $y = f(x)$, $x = a$, and $x = b$ (with $f(x) \\ge 0$) is revolved about the $y$-axis, the volume $V$ of the generated solid of revolution is given by:\n\\[\nV = \\int_{a}^{b} 2\\pi x \\cdot (\\text{height}) \\, dx = 2\\pi \\int_{a}^{b} x \\cdot f(x) \\, dx\n\\]\n\nStep 2: Substitute the given boundary conditions.\nHere, the bounding curve is $f(x) = \\sqrt{x}$, and the integration limits are $x = 1$ to $x = 4$.\n\\[\nV = 2\\pi \\int_{1}^{4} x \\cdot \\sqrt{x} \\, dx = 2\\pi \\int_{1}^{4} x^{3/2} \\, dx\n\\]\n\nStep 3: Integrate and evaluate.\n\\[\nV = 2\\pi \\left[ \\frac{x^{5/2}}{5/2} \\right]_{1}^{4} = 2\\pi \\left[ \\frac{2}{5} x^{5/2} \\right]_{1}^{4} = \\frac{4\\pi}{5} \\left[ x^{5/2} \\right]_{1}^{4}\n\\]\nEvaluate at the upper and lower limits:\n- Upper limit: $4^{5/2} = (\\sqrt{4})^5 = 2^5 = 32$\n- Lower limit: $1^{5/2} = 1$\n\\[\nV = \\frac{4\\pi}{5} (32 - 1) = \\frac{4\\pi}{5} (31) = \\frac{124\\pi}{5}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{124\\pi}{5}}\n\\]"
   },
-  {
+    {
     "id": "cse25-ct2-secb-q3",
     "discipline": "CSE",
     "batch": 25,
@@ -4722,20 +4722,20 @@ const questions = [
     "section": "B",
     "questionNumber": "3",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 2,
     "appearances": [
-      "ece25-ct2-secb-q3"
+        "ece25-ct2-secb-q3"
     ],
-    "tags": [],
+    "tags": ["essential","repeated","difficult"],
     "questionHtml": "Find the volume of the solid obtained by rotating the asteroid $x^{2/3} + y^{2/3} = 1$ around its axis of symmetry.",
     "solutionHtml": "Step 1: Set up the coordinates and choose the axis of rotation.\nBy the symmetry of the asteroid $x^{2/3} + y^{2/3} = 1$, rotating it about either the $x$-axis or the $y$-axis yields the same volume. Let us rotate the asteroid about the $x$-axis.\n\nThe upper half of the curve is defined by:\n\\[\ny^{2/3} = 1 - x^{2/3} \\implies y^2 = (1 - x^{2/3})^3\n\\]\nThe curve intersects the $x$-axis at $x = -1$ and $x = 1$.\n\nStep 2: Set up the volume formula using the disk method.\nThe volume $V$ of a solid generated by rotating the region under $y^2 = f(x)$ from $x = a$ to $x = b$ about the $x$-axis is given by:\n\\[\nV = \\int_{a}^{b} \\pi y^2 \\, dx = \\pi \\int_{-1}^{1} (1 - x^{2/3})^3 \\, dx\n\\]\n\nStep 3: Simplify using symmetry and expand the integrand.\nSince the integrand is an even function of $x$:\n\\[\nV = 2\\pi \\int_{0}^{1} (1 - x^{2/3})^3 \\, dx\n\\]\nUsing the algebraic expansion $(1-u)^3 = 1 - 3u + 3u^2 - u^3$ where $u = x^{2/3}$:\n\\[\n(1 - x^{2/3})^3 = 1 - 3x^{2/3} + 3x^{4/3} - x^2\n\\]\nSubstituting this expansion back into the integral:\n\\[\nV = 2\\pi \\int_{0}^{1} (1 - 3x^{2/3} + 3x^{4/3} - x^2) \\, dx\n\\]\n\nStep 4: Integrate term by term.\n\\[\nV = 2\\pi \\left[ x - 3\\left(\\frac{x^{5/3}}{5/3}\\right) + 3\\left(\\frac{x^{7/3}}{7/3}\\right) - \\frac{x^3}{3} \\right]_{0}^{1}\n\\]\n\\[\nV = 2\\pi \\left[ x - \\frac{9}{5} x^{5/3} + \\frac{9}{7} x^{7/3} - \\frac{x^3}{3} \\right]_{0}^{1}\n\\]\nEvaluating at the boundaries:\n\\[\nV = 2\\pi \\left( 1 - \\frac{9}{5} + \\frac{9}{7} - \\frac{1}{3} \\right)\n\\]\n\nStep 5: Compute the numerical sum.\nFind a common denominator for the terms inside the parentheses (which is $105$):\n\\[\n1 - \\frac{1}{3} = \\frac{2}{3} = \\frac{70}{105}\n\\]\n\\[\n-\\frac{9}{5} = -\\frac{189}{105}\n\\]\n\\[\n\\frac{9}{7} = \\frac{135}{105}\n\\]\nSumming these fractions:\n\\[\n\\frac{2}{3} - \\frac{9}{5} + \\frac{9}{7} = \\frac{70 - 189 + 135}{105} = \\frac{16}{105}\n\\]\nMultiply by the outside factor $2\\pi$:\n\\[\nV = 2\\pi \\left( \\frac{16}{105} \\right) = \\frac{32\\pi}{105}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{32\\pi}{105}}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q1a",
     "discipline": "CSE",
     "batch": 25,
@@ -4745,18 +4745,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1a",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define function, even function and odd function with examples. Draw the graph and also find the domain and range of $f(x) = |2x-3| + |x| + |2x+3|$.",
     "solutionHtml": "Step 1: Definitions with examples.\n- **Function:** A function $f$ from a set $D$ (domain) to a set $Y$ (codomain) is a rule that assigns to each element $x \\in D$ exactly one element $y = f(x) \\in Y$.\n  *Example:* $f(x) = x^2$.\n- **Even Function:** A function $f(x)$ is even if $f(-x) = f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the $y$-axis.\n  *Example:* $f(x) = \\cos x$.\n- **Odd Function:** A function $f(x)$ is odd if $f(-x) = -f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the origin.\n  *Example:* $f(x) = \\sin x$.\n\nStep 2: Simplify $f(x) = |2x-3| + |x| + |2x+3|$ by defining it piecewise.\nThe critical points for the absolute value expressions are $x = -1.5$, $x = 0$, and $x = 1.5$.\nWe evaluate the function in each of the intervals:\n- **Case 1: $x < -1.5$**\n  \\[\n  f(x) = -(2x-3) - x - (2x+3) = -2x+3-x-2x-3 = -5x\n  \\]\n- **Case 2: $-1.5 \\le x < 0$**\n  \\[\n  f(x) = -(2x-3) - x + (2x+3) = -2x+3-x+2x+3 = -x + 6\n  \\]\n- **Case 3: $0 \\le x < 1.5$**\n  \\[\n  f(x) = -(2x-3) + x + (2x+3) = -2x+3+x+2x+3 = x + 6\n  \\]\n- **Case 4: $x \\ge 1.5$**\n  \\[\n  f(x) = (2x-3) + x + (2x+3) = 5x\n  \\]\n\nStep 3: Determine the Domain and Range.\n- **Domain:** Since $f(x)$ is defined for all real numbers, the domain is:\n  \\[\n  \\text{Domain} = \\mathbb{R} \\quad \\text{or} \\quad (-\\infty, \\infty)\n  \\]\n- **Range:** Since $f(x)$ decreases for $x < 0$ and increases for $x > 0$, the global minimum value occurs at $x = 0$:\n  \\[\n  f(0) = |2(0)-3| + |0| + |2(0)+3| = 3 + 0 + 3 = 6\n  \\]\n  As $x \\to \\pm\\infty$, $f(x) \\to \\infty$. Thus, the range is:\n  \\[\n  \\text{Range} = [6, \\infty)\n  \\]\n\nStep 4: Draw/Describe the Graph.\nThe graph consists of four linear segments:\n- A steep line with slope $-5$ coming from $-\\infty$ down to $(-1.5, 7.5)$.\n- A shallower line segment with slope $-1$ from $(-1.5, 7.5)$ to $(0, 6)$.\n- A shallower line segment with slope $+1$ from $(0, 6)$ to $(1.5, 7.5)$.\n- A steep line with slope $+5$ continuing from $(1.5, 7.5)$ to $\\infty$.",
     "finalAnswerHtml": "\\[\n\\boxed{\n\\begin{aligned}\n\\text{Domain: } & (-\\infty, \\infty) \\\\\n\\text{Range: } & [6, \\infty)\n\\end{aligned}\n}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q1b",
     "discipline": "CSE",
     "batch": 25,
@@ -4766,18 +4766,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define limit of a function. A function is defined by \n\\[\nf(x) = \\begin{cases} \nx^2+1, & \\text{when } 0 \\le x < \\frac{1}{2} \\\\ \n0, & \\text{when } x = \\frac{1}{2} \\\\ \nx+3, & \\text{when } \\frac{1}{2} < x \\le 1 \n\\end{cases}\n\\]\nFind $\\lim_{x \\to 1/2} f(x)$ and discuss the continuity of $f(x)$ at $x = \\frac{1}{2}$.",
     "solutionHtml": "Step 1: Define the limit of a function.\nLet $f(x)$ be defined on an open interval about $c$, except possibly at $c$ itself. We say that the limit of $f(x)$ as $x$ approaches $c$ is $L$, written as $\\lim_{x \\to c} f(x) = L$, if for every $\\epsilon > 0$ there exists a $\\delta > 0$ such that:\n\\[\n0 < |x - c| < \\delta \\implies |f(x) - L| < \\epsilon\n\\]\n\nStep 2: Find the left-hand limit (LHL) as $x \\to \\frac{1}{2}^-$.\nFor $x < \\frac{1}{2}$, $f(x) = x^2 + 1$:\n\\[\n\\text{LHL} = \\lim_{x \\to (1/2)^-} (x^2 + 1) = \\left(\\frac{1}{2}\\right)^2 + 1 = \\frac{1}{4} + 1 = \\frac{5}{4} = 1.25\n\\]\n\nStep 3: Find the right-hand limit (RHL) as $x \\to \\frac{1}{2}^+$.\nFor $x > \\frac{1}{2}$, $f(x) = x + 3$:\n\\[\n\\text{RHL} = \\lim_{x \\to (1/2)^+} (x + 3) = \\frac{1}{2} + 3 = \\frac{7}{2} = 3.5\n\\]\n\nStep 4: Analyze the limits for existence.\nSince the left-hand limit and the right-hand limit are not equal:\n\\[\n\\text{LHL} \\ne \\text{RHL} \\implies \\lim_{x \\to 1/2} f(x) \\text{ does not exist.}\n\\]\n\nStep 5: Discuss continuity at $x = \\frac{1}{2}$.\nA function $f(x)$ is continuous at $x = c$ if and only if $\\lim_{x \\to c} f(x) = f(c)$.\nSince $\\lim_{x \\to 1/2} f(x)$ does not exist, the condition of continuity cannot be met. Specifically, there is a jump discontinuity at $x = \\frac{1}{2}$.",
     "finalAnswerHtml": "\\[\n\\boxed{\\lim_{x \\to 1/2} f(x) \\text{ does not exist; the function is discontinuous at } x = \\frac{1}{2}.}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q2ai",
     "discipline": "CSE",
     "batch": 25,
@@ -4787,18 +4787,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2ai",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\frac{dy}{dx}$ of $x+y = \\cot(xy)$.",
     "solutionHtml": "Step 1: Differentiate both sides of the equation implicitly with respect to $x$.\n\\[\n\\frac{d}{dx}(x + y) = \\frac{d}{dx}(\\cot(xy))\n\\]\nUsing the chain rule on the right-hand side:\n\\[\n1 + \\frac{dy}{dx} = -\\csc^2(xy) \\cdot \\frac{d}{dx}(xy)\n\\]\nUsing the product rule:\n\\[\n1 + \\frac{dy}{dx} = -\\csc^2(xy) \\left( y + x \\frac{dy}{dx} \\right)\n\\]\n\nStep 2: Expand and rearrange terms to group $\\frac{dy}{dx}$.\n\\[\n1 + \\frac{dy}{dx} = -y \\csc^2(xy) - x \\csc^2(xy) \\frac{dy}{dx}\n\\]\n\\[\n\\frac{dy}{dx} + x \\csc^2(xy) \\frac{dy}{dx} = -1 - y \\csc^2(xy)\n\\]\n\\[\n\\frac{dy}{dx} \\left( 1 + x \\csc^2(xy) \\right) = -\\left( 1 + y \\csc^2(xy) \\right)\n\\]\n\nStep 3: Solve for $\\frac{dy}{dx}$.\n\\[\n\\frac{dy}{dx} = -\\frac{1 + y \\csc^2(xy)}{1 + x \\csc^2(xy)}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{dy}{dx} = -\\frac{1 + y \\csc^2(xy)}{1 + x \\csc^2(xy)}}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q2aii",
     "discipline": "CSE",
     "batch": 25,
@@ -4808,18 +4808,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2aii",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\frac{dy}{dx}$ of $y = x^{\\ln x} + (x)^{\\sin^{-1} x}$.",
     "solutionHtml": "Step 1: Separate the function into two parts.\nLet $y = u + v$, where:\n\\[\nu = x^{\\ln x} \\quad \\text{and} \\quad v = x^{\\sin^{-1} x}\n\\]\nThus, the derivative is:\n\\[\n\\frac{dy}{dx} = \\frac{du}{dx} + \\frac{dv}{dx}\n\\]\n\nStep 2: Differentiate $u = x^{\\ln x}$ using logarithmic differentiation.\nTake the natural logarithm of both sides:\n\\[\n\\ln u = \\ln\\left(x^{\\ln x}\\right) = (\\ln x)(\\ln x) = (\\ln x)^2\n\\]\nDifferentiate both sides with respect to $x$:\n\\[\n\\frac{1}{u} \\frac{du}{dx} = 2(\\ln x) \\cdot \\frac{1}{x} \\implies \\frac{du}{dx} = x^{\\ln x} \\left( \\frac{2\\ln x}{x} \\right) = 2x^{\\ln x - 1} \\ln x\n\\]\n\nStep 3: Differentiate $v = x^{\\sin^{-1} x}$ using logarithmic differentiation.\nTake the natural logarithm of both sides:\n\\[\n\\ln v = \\ln\\left(x^{\\sin^{-1} x}\\right) = (\\sin^{-1} x)(\\ln x)\n\\]\nDifferentiate both sides with respect to $x$ using the product rule:\n\\[\n\\frac{1}{v} \\frac{dv}{dx} = \\frac{d}{dx}(\\sin^{-1} x) \\ln x + \\sin^{-1} x \\frac{d}{dx}(\\ln x)\n\\]\n\\[\n\\frac{1}{v} \\frac{dv}{dx} = \\frac{\\ln x}{\\sqrt{1-x^2}} + \\frac{\\sin^{-1} x}{x}\n\\]\n\\[\n\\frac{dv}{dx} = x^{\\sin^{-1} x} \\left[ \\frac{\\ln x}{\\sqrt{1-x^2}} + \\frac{\\sin^{-1} x}{x} \\right]\n\\]\n\nStep 4: Combine the derivatives.\n\\[\n\\frac{dy}{dx} = 2x^{\\ln x - 1} \\ln x + x^{\\sin^{-1} x} \\left[ \\frac{\\ln x}{\\sqrt{1-x^2}} + \\frac{\\sin^{-1} x}{x} \\right]\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{dy}{dx} = 2x^{\\ln x - 1} \\ln x + x^{\\sin^{-1} x} \\left[ \\frac{\\ln x}{\\sqrt{1-x^2}} + \\frac{\\sin^{-1} x}{x} \\right]}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q2aiii",
     "discipline": "CSE",
     "batch": 25,
@@ -4829,18 +4829,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2aiii",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $\\frac{dy}{dx}$ of $x = \\ln t + \\cos t, y = e^{-t} + \\sin t$.",
     "solutionHtml": "Step 1: Compute $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$ using parametric differentiation.\nFor $x(t) = \\ln t + \\cos t$:\n\\[\n\\frac{dx}{dt} = \\frac{1}{t} - \\sin t = \\frac{1 - t\\sin t}{t}\n\\]\nFor $y(t) = e^{-t} + \\sin t$:\n\\[\n\\frac{dy}{dt} = -e^{-t} + \\cos t\n\\]\n\nStep 2: Apply the parametric derivative formula.\n\\[\n\\frac{dy}{dx} = \\frac{\\frac{dy}{dt}}{\\frac{dx}{dt}} = \\frac{-e^{-t} + \\cos t}{\\frac{1 - t\\sin t}{t}}\n\\]\n\nStep 3: Simplify the expression.\n\\[\n\\frac{dy}{dx} = \\frac{t(\\cos t - e^{-t})}{1 - t\\sin t}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{dy}{dx} = \\frac{t(\\cos t - e^{-t})}{1 - t\\sin t}}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q2b",
     "discipline": "CSE",
     "batch": 25,
@@ -4850,18 +4850,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2b",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Find $n$-th derivatives of $y = e^{-3x} \\sin(5x+2)$.",
     "solutionHtml": "Step 1: Set up the standard successive differentiation template.\nThe general formula for the $n$-th derivative of a function of the type $e^{ax}\\sin(bx+c)$ is:\n\\[\ny^{(n)} = (a^2+b^2)^{n/2} e^{ax} \\sin\\left( bx+c + n\\phi \\right)\n\\]\nwhere $\\tan\\phi = \\frac{b}{a}$.\n\nStep 2: Assign parameters from $y = e^{-3x}\\sin(5x+2)$.\nHere, $a = -3$, $b = 5$, and $c = 2$.\nCompute the coefficient term:\n\\[\n(a^2 + b^2)^{1/2} = \\sqrt{(-3)^2 + 5^2} = \\sqrt{9 + 25} = \\sqrt{34}\n\\]\nCompute the phase angle $\\phi$:\n\\[\n\\tan\\phi = \\frac{5}{-3} = -\\frac{5}{3} \\implies \\phi = \\pi - \\tan^{-1}\\left(\\frac{5}{3}\\right)\n\\]\n(The angle is chosen in the second quadrant because $a < 0$ and $b > 0$).\n\nStep 3: Substitute parameters into the general formula.\n\\[\ny^{(n)} = 34^{n/2} e^{-3x} \\sin\\left( 5x + 2 + n\\phi \\right)\n\\]\nwhere $\\phi = \\pi - \\tan^{-1}(5/3)$.",
     "finalAnswerHtml": "\\[\n\\boxed{y^{(n)} = 34^{n/2} e^{-3x} \\sin\\left( 5x + 2 + n \\left[\\pi - \\tan^{-1}\\left(\\frac{5}{3}\\right)\\right] \\right)}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q2c",
     "discipline": "CSE",
     "batch": 25,
@@ -4871,7 +4871,7 @@ const questions = [
     "section": "A",
     "questionNumber": "2c",
     "topics": [
-      "Series Expansion"
+        "Series Expansion"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -4882,7 +4882,7 @@ const questions = [
     "solutionHtml": "Step 1: State Taylor's theorem for series expansion.\nThe Taylor series expansion of a function $f(x)$ about $x = a$ is:\n\\[\nf(x) = f(a) + f'(a)(x-a) + \\frac{f''(a)}{2!}(x-a)^2 + \\frac{f'''(a)}{3!}(x-a)^3 + \\dots = \\sum_{k=0}^\\infty \\frac{f^{(k)}(a)}{k!}(x-a)^k\n\\]\nHere, $f(x) = \\ln x$ and $a = 4$.\n\nStep 2: Compute the function and its successive derivatives evaluated at $a = 4$.\n- $f(x) = \\ln x \\implies f(4) = \\ln 4$\n- $f'(x) = x^{-1} \\implies f'(4) = \\frac{1}{4}$\n- $f''(x) = -x^{-2} \\implies f''(4) = -\\frac{1}{16}$\n- $f'''(x) = 2x^{-3} \\implies f'''(4) = \\frac{2}{64} = \\frac{1}{32}$\n- $f^{(4)}(x) = -6x^{-4} \\implies f^{(4)}(4) = -\\frac{6}{256} = -\\frac{3}{128}$\n\nIn general, for $k \\ge 1$:\n\\[\nf^{(k)}(x) = (-1)^{k-1} (k-1)! x^{-k} \\implies f^{(k)}(4) = \\frac{(-1)^{k-1} (k-1)!}{4^k}\n\\]\n\nStep 3: Write out the terms of the expansion.\n\\[\n\\frac{f^{(k)}(4)}{k!} = \\frac{(-1)^{k-1} (k-1)!}{k! \\cdot 4^k} = \\frac{(-1)^{k-1}}{k \\cdot 4^k}\n\\]\nSubstituting back into the series:\n\\[\n\\ln x = \\ln 4 + \\sum_{k=1}^\\infty \\frac{(-1)^{k-1}}{k \\cdot 4^k} (x-4)^k\n\\]\nExpanding the first few terms:\n\\[\n\\ln x = \\ln 4 + \\frac{1}{4}(x-4) - \\frac{1}{32}(x-4)^2 + \\frac{1}{96}(x-4)^3 - \\dots\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\ln x = \\ln 4 + \\sum_{k=1}^\\infty \\frac{(-1)^{k-1}}{k \\cdot 4^k} (x-4)^k}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q3a",
     "discipline": "CSE",
     "batch": 25,
@@ -4892,18 +4892,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3a",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State Leibnitz's theorem. If $\\ln y = \\tan^{-1} x$, then using Leibnitz's theorem show that $(1+x^2)y_{n+2} + (2nx + 2x - 1)y_{n+1} + n(n+1)y_n = 0$. Also find the value of $(y_n)_0$.",
     "solutionHtml": "Step 1: State Leibnitz's Theorem.\nIf $u(x)$ and $v(x)$ are $n$-times differentiable functions, then the $n$-th derivative of their product $uv$ is:\n\\[\n(uv)_n = \\sum_{r=0}^n \\binom{n}{r} u_{n-r} v_r\n\\]\n\nStep 2: Obtain the base differential equations.\nGiven $\\ln y = \\tan^{-1} x$. Differentiating with respect to $x$:\n\\[\n\\frac{1}{y} y_1 = \\frac{1}{1+x^2} \\implies (1+x^2)y_1 = y\n\\]\nDifferentiate both sides once more:\n\\[\n2x y_1 + (1+x^2)y_2 = y_1 \\implies (1+x^2)y_2 + (2x - 1)y_1 = 0 \\quad \\text{--- (Equation 1)}\n\\]\n\nStep 3: Differentiate Equation 1 $n$ times using Leibnitz's Theorem.\n- **For $D^n[(1+x^2)y_2]$:**\n  Let $u = y_2$ and $v = 1+x^2$:\n  \\[\n  D^n[(1+x^2)y_2] = (1+x^2)y_{n+2} + n(2x)y_{n+1} + \\frac{n(n-1)}{2}(2)y_n\n  \\]\n  \\[\n  = (1+x^2)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n\n  \\]\n- **For $D^n[(2x-1)y_1]$:**\n  Let $u = y_1$ and $v = 2x-1$:\n  \\[\n  D^n[(2x-1)y_1] = (2x-1)y_{n+1} + n(2)y_n = (2x-1)y_{n+1} + 2ny_n\n  \\]\n\nSumming both parts:\n\\[\n(1+x^2)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n + (2x-1)y_{n+1} + 2ny_n = 0\n\\]\nCombine coefficients of $y_{n+1}$ and $y_n$:\n\\[\n(1+x^2)y_{n+2} + (2nx + 2x - 1)y_{n+1} + [n(n-1) + 2n]y_n = 0\n\\]\n\\[\n(1+x^2)y_{n+2} + (2nx + 2x - 1)y_{n+1} + n(n+1)y_n = 0\n\\]\nThis proves the relation.\n\nStep 4: Find $(y_n)_0$, the value of the $n$-th derivative at $x = 0$.\nEvaluate original expressions at $x = 0$:\n- From $\\ln y = \\tan^{-1} x$: at $x=0$, $\\ln y = 0 \\implies (y)_0 = 1$.\n- From $(1+x^2)y_1 = y$: at $x=0$, $(y_1)_0 = (y)_0 = 1$.\n- From $(1+x^2)y_2 + (2x-1)y_1 = 0$: at $x=0$, $(y_2)_0 - (y_1)_0 = 0 \\implies (y_2)_0 = 1$.\n\nNow, substitute $x = 0$ in the main $n$-th derivative relation:\n\\[\n(1+0) (y_{n+2})_0 + (0 + 0 - 1)(y_{n+1})_0 + n(n+1)(y_n)_0 = 0\n\\]\n\\[\n(y_{n+2})_0 = (y_{n+1})_0 - n(n+1)(y_n)_0\n\\]\nWe can compute the values sequentially:\n- For $n=1$: $(y_3)_0 = (y_2)_0 - 2(y_1)_0 = 1 - 2(1) = -1$\n- For $n=2$: $(y_4)_0 = (y_3)_0 - 6(y_2)_0 = -1 - 6(1) = -7$\n- For $n=3$: $(y_5)_0 = (y_4)_0 - 12(y_3)_0 = -7 - 12(-1) = 5$",
     "finalAnswerHtml": "\\[\n\\boxed{(y_{n+2})_0 = (y_{n+1})_0 - n(n+1)(y_n)_0 \\quad \\text{with initial terms } y_0=1, y_1=1, y_2=1}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q3b",
     "discipline": "CSE",
     "batch": 25,
@@ -4913,18 +4913,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3b",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["difficult"],
     "questionHtml": "What do you mean by critical points and stationary points of a function. Find the extremum values or point of inflection of $f(x) = \\sin x + \\cos 2x$, $0 \\le x \\le 2\\pi$.",
     "solutionHtml": "Step 1: Explain the definitions.\n- **Critical Point:** A point $c$ in the domain of a function $f(x)$ is a critical point if $f'(c) = 0$ or if $f'(c)$ is undefined.\n- **Stationary Point:** A point $c$ in the domain of $f(x)$ is a stationary point if $f'(c) = 0$.\n\nStep 2: Find critical/stationary points of $f(x) = \\sin x + \\cos 2x$ over $[0, 2\\pi]$.\nDifferentiate with respect to $x$:\n\\[\nf'(x) = \\cos x - 2\\sin 2x = \\cos x - 4\\sin x\\cos x = \\cos x(1 - 4\\sin x)\n\\]\nSet $f'(x) = 0$:\n1. **Case 1: $\\cos x = 0 \\implies x = \\frac{\\pi}{2}, \\frac{3\\pi}{2}$**\n2. **Case 2: $1 - 4\\sin x = 0 \\implies \\sin x = \\frac{1}{4} \\implies x = \\alpha, \\pi-\\alpha$**, where $\\alpha = \\sin^{-1}(1/4) \\approx 0.2527$ rad.\n\nStep 3: Classify points to find extremum values.\nDifferentiate again to get the second derivative:\n\\[\nf''(x) = -\\sin x - 4\\cos 2x = -\\sin x - 4(1 - 2\\sin^2 x) = 8\\sin^2 x - \\sin x - 4\n\\]\n- At $x = \\frac{\\pi}{2}$:\n  \\[\n  f''\\left(\\frac{\\pi}{2}\\right) = 8(1)^2 - 1 - 4 = 3 > 0 \\implies \\text{Local Minimum}\n  \\]\n  Value: $f(\\frac{\\pi}{2}) = \\sin(\\frac{\\pi}{2}) + \\cos\\pi = 1 - 1 = 0$.\n- At $x = \\frac{3\\pi}{2}$:\n  \\[\n  f''\\left(\\frac{3\\pi}{2}\\right) = 8(-1)^2 - (-1) - 4 = 5 > 0 \\implies \\text{Local Minimum}\n  \\]\n  Value: $f(\\frac{3\\pi}{2}) = \\sin(\\frac{3\\pi}{2}) + \\cos(3\\pi) = -1 - 1 = -2$.\n- At $\\sin x = \\frac{1}{4}$ (both $x=\\alpha$ and $x=\\pi-\\alpha$):\n  \\[\n  f''(x) = 8\\left(\\frac{1}{16}\\right) - \\frac{1}{4} - 4 = \\frac{1}{2} - \\frac{1}{4} - 4 = -3.75 < 0 \\implies \\text{Local Maximum}\n  \\]\n  Value: $f(x) = \\sin x + 1 - 2\\sin^2 x = \\frac{1}{4} + 1 - \\frac{1}{8} = \\frac{9}{8} = 1.125$.\n\nStep 4: Find the points of inflection.\nSet $f''(x) = 0 \\implies 8\\sin^2 x - \\sin x - 4 = 0$.\nUsing the quadratic formula for $\\sin x$:\n\\[\n\\sin x = \\frac{1 \\pm \\sqrt{1 - 4(8)(-4)}}{16} = \\frac{1 \\pm \\sqrt{129}}{16}\n\\]\nSince $\\sqrt{129} \\approx 11.3578$:\n- $\\sin x_1 \\approx 0.7724 \\implies x \\approx 0.882$ rad, or $x \\approx \\pi - 0.882$ rad.\n- $\\sin x_2 \\approx -0.6474 \\implies x \\approx \\pi - (-0.704)$ rad, or $x \\approx 2\\pi - 0.704$ rad.\nThese yield four inflection points in the interval $[0, 2\\pi]$.",
     "finalAnswerHtml": "\\[\n\\boxed{\n\\begin{aligned}\n\\text{Max value } & 1.125 \\text{ at } x = \\sin^{-1}(1/4) \\text{ and } \\pi - \\sin^{-1}(1/4) \\\\\n\\text{Min values } & 0 \\text{ at } x = \\pi/2, \\text{ and } -2 \\text{ at } x = 3\\pi/2\n\\end{aligned}\n}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q4a",
     "discipline": "CSE",
     "batch": 25,
@@ -4934,7 +4934,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4a",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -4945,7 +4945,7 @@ const questions = [
     "solutionHtml": "Step 1: Geometrical representations.\nLet $P(x_0, y_0)$ be a point on the curve $y = f(x)$. Suppose the tangent line drawn at $P$ intersects the $x$-axis at $T$, and the normal line at $P$ intersects the $x$-axis at $N$. Let $G$ be the orthogonal projection of $P$ on the $x$-axis (so $G$ has coordinates $(x_0, 0)$).\n- **Tangent Length ($PT$):** The length of the segment of the tangent line between the point of tangency $P$ and the $x$-axis:\n  \\[\n  PT = \\left| y_0 \\sqrt{1 + \\left(\\frac{dx}{dy}\\right)^2} \\right|\n  \\]\n- **Subtangent ($TG$):** The projection of the tangent segment on the $x$-axis:\n  \\[\n  TG = \\left| \\frac{y_0}{dy/dx} \\right|\n  \\]\n- **Normal Length ($PN$):** The length of the segment of the normal line between the point $P$ and the $x$-axis:\n  \\[\n  PN = \\left| y_0 \\sqrt{1 + \\left(\\frac{dy}{dx}\\right)^2} \\right|\n  \\]\n- **Subnormal ($GN$):** The projection of the normal segment on the $x$-axis:\n  \\[\n  GN = \\left| y_0 \\frac{dy}{dx} \\right|\n  \\]\n\nStep 2: Find the point of tangency for $f(x) = 3x^2 + 5x - 9$ at $x = 1$.\n\\[\ny_0 = f(1) = 3(1)^2 + 5(1) - 9 = 3 + 5 - 9 = -1\n\\]\nSo the point of contact is $P(1, -1)$.\n\nStep 3: Compute the slope of the tangent.\nDifferentiate $f(x)$:\n\\[\nf'(x) = 6x + 5 \\implies m = f'(1) = 6(1) + 5 = 11\n\\]\n\nStep 4: Find the equations of the tangent and normal lines.\n- **Equation of the Tangent:**\n  \\[\n  y - y_0 = m(x - x_0) \\implies y - (-1) = 11(x - 1)\n  \\]\n  \\[\n  y + 1 = 11x - 11 \\implies 11x - y - 12 = 0\n  \\]\n- **Equation of the Normal:**\n  The slope of the normal line is $-\\frac{1}{m} = -\\frac{1}{11}$:\n  \\[\n  y - y_0 = -\\frac{1}{m}(x - x_0) \\implies y - (-1) = -\\frac{1}{11}(x - 1)\n  \\]\n  \\[\n  11(y + 1) = -(x - 1) \\implies 11y + 11 = -x + 1 \\implies x + 11y + 10 = 0\n  \\]",
     "finalAnswerHtml": "\\[\n\\boxed{\n\\begin{aligned}\n\\text{Tangent: } & 11x - y - 12 = 0 \\\\\n\\text{Normal: } & x + 11y + 10 = 0\n\\end{aligned}\n}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q4b",
     "discipline": "CSE",
     "batch": 25,
@@ -4955,18 +4955,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4b",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate $\\lim_{x \\to 0} (\\cos x)^{\\csc^2 x}$.",
     "solutionHtml": "Step 1: Set up the limit using logarithmic properties.\nLet $L = \\lim_{x \\to 0} (\\cos x)^{\\csc^2 x}$.\nTaking the natural logarithm of both sides:\n\\[\n\\ln L = \\lim_{x \\to 0} \\ln\\left( (\\cos x)^{\\csc^2 x} \\right) = \\lim_{x \\to 0} \\csc^2 x \\ln(\\cos x) = \\lim_{x \\to 0} \\frac{\\ln(\\cos x)}{\\sin^2 x}\n\\]\n\nStep 2: Evaluate the limit using L'Hopital's rule.\nSince the limit is in the indeterminate form $\\frac{0}{0}$, differentiate numerator and denominator with respect to $x$:\n\\[\n\\ln L = \\lim_{x \\to 0} \\frac{\\frac{d}{dx}(\\ln(\\cos x))}{\\frac{d}{dx}(\\sin^2 x)} = \\lim_{x \\to 0} \\frac{\\frac{1}{\\cos x}(-\\sin x)}{2\\sin x\\cos x}\n\\]\n\\[\n\\ln L = \\lim_{x \\to 0} \\frac{-\\tan x}{\\sin 2x}\n\\]\nUsing L'Hopital again, or rewriting:\n\\[\n\\ln L = \\lim_{x \\to 0} \\frac{-\\sin x}{\\cos x \\cdot 2\\sin x \\cos x} = \\lim_{x \\to 0} \\frac{-1}{2\\cos^2 x}\n\\]\nAs $x \\to 0$, $\\cos x \\to 1$:\n\\[\n\\ln L = \\frac{-1}{2(1)^2} = -\\frac{1}{2}\n\\]\n\nStep 3: Solve for $L$.\n\\[\nL = e^{-1/2} = \\frac{1}{\\sqrt{e}}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{1}{\\sqrt{e}}}\n\\]"
   },
-  {
+    {
     "id": "cse25-final-seca-q4c",
     "discipline": "CSE",
     "batch": 25,
@@ -4976,7 +4976,7 @@ const questions = [
     "section": "A",
     "questionNumber": "4c",
     "topics": [
-      "Partial Derivatives"
+        "Partial Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -4987,7 +4987,7 @@ const questions = [
     "solutionHtml": "Step 1: Compute the partial derivative $\\frac{\\partial u}{\\partial x}$.\nUsing the chain rule:\n\\[\n\\frac{\\partial u}{\\partial x} = \\frac{1}{x^2+y^2+z^2} \\cdot \\frac{\\partial}{\\partial x}(x^2+y^2+z^2) = \\frac{2x}{x^2+y^2+z^2}\n\\]\n\nStep 2: Compute the partial derivatives $\\frac{\\partial u}{\\partial y}$ and $\\frac{\\partial u}{\\partial z}$.\nSimilarly, by symmetry:\n\\[\n\\frac{\\partial u}{\\partial y} = \\frac{2y}{x^2+y^2+z^2} \\quad \\text{and} \\quad \\frac{\\partial u}{\\partial z} = \\frac{2z}{x^2+y^2+z^2}\n\\]\n\nStep 3: Evaluate the left side of the target relation.\n\\[\nx\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y} + z\\frac{\\partial u}{\\partial z} = x\\left(\\frac{2x}{x^2+y^2+z^2}\\right) + y\\left(\\frac{2y}{x^2+y^2+z^2}\\right) + z\\left(\\frac{2z}{x^2+y^2+z^2}\\right)\n\\]\n\\[\n= \\frac{2x^2 + 2y^2 + 2z^2}{x^2+y^2+z^2}\n\\]\nFactor out $2$ from the numerator:\n\\[\n= \\frac{2(x^2+y^2+z^2)}{x^2+y^2+z^2} = 2\n\\]\nThis verifies and constructs the relation.",
     "finalAnswerHtml": "\\[\n\\boxed{x\\frac{\\partial u}{\\partial x} + y\\frac{\\partial u}{\\partial y} + z\\frac{\\partial u}{\\partial z} = 2}\n\\]"
   },
-  {
+    {
     "id": "ece25-ct2-secb-q1",
     "discipline": "ECE",
     "batch": 25,
@@ -4997,18 +4997,18 @@ const questions = [
     "section": "B",
     "questionNumber": "1",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Derive the formula for the volume of a sphere of radius $r$ by using the disk method.",
     "solutionHtml": "Step 1: Set up the geometric model.\nConsider a circle of radius $r$ centered at the origin, represented by the equation:\n\\[\nx^2 + y^2 = r^2 \\implies y^2 = r^2 - x^2\n\\]\nRevolving the upper semicircle $y = \\sqrt{r^2 - x^2}$ from $x = -r$ to $x = r$ about the $x$-axis generates a solid sphere of radius $r$.\n\nStep 2: Use the disk method.\nThe cross-sectional area of a disk of radius $y$ is $A(x) = \\pi y^2$. Integrating this from $x = -r$ to $x = r$:\n\\[\nV = \\int_{-r}^{r} \\pi y^2 \\, dx = \\pi \\int_{-r}^{r} (r^2 - x^2) \\, dx\n\\]\n\nStep 3: Integrate using symmetry.\nSince the integrand is an even function of $x$:\n\\[\nV = 2\\pi \\int_{0}^{r} (r^2 - x^2) \\, dx\n\\]\n\\[\nV = 2\\pi \\left[ r^2 x - \\frac{x^3}{3} \\right]_{0}^{r}\n\\]\n\nStep 4: Evaluate the boundaries.\n\\[\nV = 2\\pi \\left( \\left(r^3 - \\frac{r^3}{3}\\right) - 0 \\right) = 2\\pi \\left( \\frac{2}{3} r^3 \\right) = \\frac{4}{3} \\pi r^3\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{V = \\frac{4}{3}\\pi r^3}\n\\]"
   },
-  {
+    {
     "id": "ece25-ct2-secb-q2",
     "discipline": "ECE",
     "batch": 25,
@@ -5018,18 +5018,18 @@ const questions = [
     "section": "B",
     "questionNumber": "2",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Use cylindrical shells to find the volume of the solid generated when the region R in the first quadrant, enclosed between $y = x$, $x = y^2$, is revolved around the $y$-axis.",
     "solutionHtml": "Step 1: Determine the intersection points.\nThe boundaries are $y = x$ and $x = y^2 \\implies y = \\sqrt{x}$ (for the first quadrant).\nEquating the equations to find the intersection points:\n\\[\nx = \\sqrt{x} \\implies x^2 = x \\implies x(x-1) = 0\n\\]\nThis gives intersection points at $x = 0$ and $x = 1$.\nOver the interval $x \\in [0, 1]$, the curve $y = \\sqrt{x}$ lies above the line $y = x$.\n\nStep 2: Set up the cylindrical shells formula.\nRevolving about the $y$-axis, the volume is given by:\n\\[\nV = \\int_{a}^{b} 2\\pi x \\cdot (\\text{height}) \\, dx\n\\]\nThe height of the shell at any $x \\in [0, 1]$ is the vertical distance between the two curves:\n\\[\n\\text{height} = y_{\\text{upper}} - y_{\\text{lower}} = \\sqrt{x} - x\n\\]\nThus, the volume integral is:\n\\[\nV = 2\\pi \\int_{0}^{1} x (\\sqrt{x} - x) \\, dx = 2\\pi \\int_{0}^{1} (x^{3/2} - x^2) \\, dx\n\\]\n\nStep 3: Integrate and evaluate.\n\\[\nV = 2\\pi \\left[ \\frac{x^{5/2}}{5/2} - \\frac{x^3}{3} \\right]_{0}^{1} = 2\\pi \\left[ \\frac{2}{5} x^{5/2} - \\frac{x^3}{3} \\right]_{0}^{1}\n\\]\nEvaluate at the limits:\n\\[\nV = 2\\pi \\left( \\left(\\frac{2}{5} - \\frac{1}{3}\\right) - 0 \\right) = 2\\pi \\left( \\frac{6 - 5}{15} \\right) = \\frac{2\\pi}{15}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{2\\pi}{15}}\n\\]"
   },
-  {
+    {
     "id": "ece25-ct2-secb-q3",
     "discipline": "ECE",
     "batch": 25,
@@ -5039,20 +5039,20 @@ const questions = [
     "section": "B",
     "questionNumber": "3",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Hard",
     "length": "Medium",
     "frequency": 2,
     "appearances": [
-      "cse25-ct2-secb-q3"
+        "cse25-ct2-secb-q3"
     ],
-    "tags": [],
+    "tags": ["essential","repeated","difficult"],
     "questionHtml": "Find the volume of the solid obtained by rotating the asteroid $x^{2/3} + y^{2/3} = 1$ around its axis of symmetry.",
     "solutionHtml": "Step 1: Set up the coordinate equations and axis of rotation.\nBy the symmetry of the asteroid $x^{2/3} + y^{2/3} = 1$, rotating it about either the $x$-axis or the $y$-axis yields the identical volume of revolution. Let us rotate the asteroid about the $x$-axis.\n\nThe upper boundary curve is:\n\\[\ny^{2/3} = 1 - x^{2/3} \\implies y^2 = (1 - x^{2/3})^3\n\\]\nThe curve crosses the $x$-axis at $x = -1$ and $x = 1$.\n\nStep 2: Apply the disk method formula.\nThe volume $V$ is:\n\\[\nV = \\pi \\int_{-1}^{1} y^2 \\, dx = \\pi \\int_{-1}^{1} (1 - x^{2/3})^3 \\, dx\n\\]\n\nStep 3: Simplify using symmetry and algebraic expansion.\nSince the integrand is even:\n\\[\nV = 2\\pi \\int_{0}^{1} (1 - x^{2/3})^3 \\, dx\n\\]\nExpanding $(1 - x^{2/3})^3$ algebraically:\n\\[\n(1 - x^{2/3})^3 = 1 - 3x^{2/3} + 3x^{4/3} - x^2\n\\]\nSubstituting this expansion back into the integral:\n\\[\nV = 2\\pi \\int_{0}^{1} (1 - 3x^{2/3} + 3x^{4/3} - x^2) \\, dx\n\\]\n\nStep 4: Integrate and evaluate.\n\\[\nV = 2\\pi \\left[ x - \\frac{9}{5} x^{5/3} + \\frac{9}{7} x^{7/3} - \\frac{x^3}{3} \\right]_{0}^{1}\n\\]\nEvaluate at the boundaries:\n\\[\nV = 2\\pi \\left( 1 - \\frac{9}{5} + \\frac{9}{7} - \\frac{1}{3} \\right)\n\\]\nFinding a common denominator of $105$ for the terms:\n\\[\n1 - \\frac{1}{3} = \\frac{2}{3} = \\frac{70}{105}\n\\]\n\\[\n-\\frac{9}{5} = -\\frac{189}{105}\n\\]\n\\[\n\\frac{9}{7} = \\frac{135}{105}\n\\]\nSumming these fractions:\n\\[\n\\frac{70 - 189 + 135}{105} = \\frac{16}{105}\n\\]\nMultiply by the outside factor $2\\pi$:\n\\[\nV = 2\\pi \\left( \\frac{16}{105} \\right) = \\frac{32\\pi}{105}\n\\]",
     "finalAnswerHtml": "\\[\n\\boxed{\\frac{32\\pi}{105}}\n\\]"
   },
-  {
+    {
     "id": "cse19-ct1-seca-q1",
     "discipline": "CSE",
     "batch": 19,
@@ -5062,7 +5062,7 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Applications of Derivatives"
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -5073,7 +5073,7 @@ const questions = [
     "solutionHtml": "<strong>Step 1: Find the first derivative $f'(x)$</strong>\n\n    The given function is:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = 3x^{5/3} - 15x^{2/3}$$</div></div>\n    Differentiating with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(x) = 3 \\cdot \\frac{5}{3}x^{2/3} - 15 \\cdot \\frac{2}{3}x^{-1/3}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(x) = 5x^{2/3} - 10x^{-1/3}$$</div></div>\n    Factoring out $5x^{-1/3}$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(x) = 5x^{-1/3}(x - 2) = \\frac{5(x - 2)}{x^{1/3}}$$</div></div>\n\n    <strong>Step 2: Identify the critical points</strong>\n\n    Critical points occur where $f'(x) = 0$ or where $f'(x)$ is undefined:\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li>$f'(x) = 0 \\implies 5(x - 2) = 0 \\implies x = 2$.\n        <li>$f'(x)$ is undefined at $x = 0$ (since the denominator becomes zero, though $f(0)$ is defined).\n    </ul>\n    Thus, the critical points are $x = 0$ and $x = 2$.\n\n    <strong>Step 3: Analyze intervals of increase and decrease (First Derivative Test)</strong>\n\n    We test the sign of $f'(x) = \\frac{5(x - 2)}{x^{1/3}}$ in the intervals divided by $x = 0$ and $x = 2$:\n    <ol class=\"list-decimal pl-5 space-y-1\">\n        <li><strong>Interval $(-\\infty, 0)$:</strong> \\\\\n        Choose a test point $x = -1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(-1) = \\frac{5(-1 - 2)}{(-1)^{1/3}} = \\frac{-15}{-1} = 15 > 0 \\implies f(x)  is increasing.$$</div></div>\n\n        <li><strong>Interval $(0, 2)$:</strong> \\\\\n        Choose a test point $x = 1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(1) = \\frac{5(1 - 2)}{(1)^{1/3}} = \\frac{-5}{1} = -5 < 0 \\implies f(x)  is decreasing.$$</div></div>\n\n        <li><strong>Interval $(2, \\infty)$:</strong> \\\\\n        Choose a test point $x = 3$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f'(3) = \\frac{5(3 - 2)}{(3)^{1/3}} = \\frac{5}{3^{1/3}} > 0 \\implies f(x)  is increasing.$$</div></div>\n    </ol>\n\n    <strong>Step 4: Describe the Relative Extrema</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>At $x = 0$:</strong> The derivative changes from positive to negative. Therefore, $f(x)$ has a <strong>relative maximum</strong> at $x = 0$. \\\\\n        The relative maximum value is:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(0) = 3(0)^{5/3} - 15(0)^{2/3} = 0$$</div></div>\n\n        <li><strong>At $x = 2$:</strong> The derivative changes from negative to positive. Therefore, $f(x)$ has a <strong>relative minimum</strong> at $x = 2$. \\\\\n        The relative minimum value is:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(2) = 3(2)^{5/3} - 15(2)^{2/3} = 3 \\cdot 2 \\cdot 2^{2/3} - 15 \\cdot 2^{2/3} = -9 \\cdot 2^{2/3}$$</div></div>\n    </ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{Relative Maximum at  (0, 0), \\quad Relative Minimum at  (2, -9\\cdot 2^{2/3})}$$</div></div>"
   },
-  {
+    {
     "id": "cse19-ct2-seca-q1",
     "discipline": "CSE",
     "batch": 19,
@@ -5083,18 +5083,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State Leibnitz's theorem. Find the value of the $n$-th derivative of $y = e^{m\\sin^{-1}x}$ at $x = 0$.",
     "solutionHtml": "<strong>Step 1: State Leibnitz's Theorem</strong>\n\n    If $u$ and $v$ are two functions of $x$ possessing derivatives of the $n$-th order, then the $n$-th order derivative of their product $uv$ is given by:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_n = u_n v + \\binom{n}{1} u_{n-1} v_1 + \\binom{n}{2} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n$$</div></div>\n    where subscripts represent the order of differentiation.\n\n    <strong>Step 2: Find successive derivatives of $y = e^{m\\sin^{-1}x}$</strong>\n\n    Given:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y = e^{m\\sin^{-1}x} \\implies y(0) = e^0 = 1$$</div></div>\n    Differentiating once with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = e^{m\\sin^{-1}x} \\cdot \\frac{m}{\\sqrt{1-x^2}} = \\frac{my}{\\sqrt{1-x^2}} \\implies y_1(0) = m$$</div></div>\n    Squaring both sides to remove the radical:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1^2 (1-x^2) = m^2 y^2$$</div></div>\n    Differentiating again with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$2y_1 y_2 (1-x^2) + y_1^2 (-2x) = m^2 (2y y_1)$$</div></div>\n    Dividing through by $2y_1$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(1-x^2) - xy_1 = m^2 y$$</div></div>\n    At $x = 0$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(0) - 0 = m^2 y(0) \\implies y_2(0) = m^2$$</div></div>\n\n    <strong>Step 3: Apply Leibnitz's Theorem to get a recurrence relation</strong>\n\n    Differentiating the equation $y_2(1-x^2) - xy_1 - m^2 y = 0$ $n$ times using Leibnitz's theorem:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$[ y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) ] - [ y_{n+1}x + n y_n ] - m^2 y_n = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2) y_n = 0$$</div></div>\n    At $x = 0$, this simplifies to:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_{n+2}(0) = (n^2 + m^2)y_n(0)$$</div></div>\n\n    <strong>Step 4: Find the general value of $y_n(0)$</strong>\n\n    We use the recurrence relation $y_{n+2}(0) = (n^2 + m^2)y_n(0)$ to find the pattern:\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Case 1: If $n$ is even</strong> \\\\\n        Let $n = 2k$ for $k \\ge 1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(0) = m^2$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_4(0) = (2^2 + m^2)y_2(0) = m^2(2^2 + m^2)$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_6(0) = (4^2 + m^2)y_4(0) = m^2(2^2 + m^2)(4^2 + m^2)$$</div></div>\n        In general, for even $n$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n(0) = m^2(2^2 + m^2)(4^2 + m^2) \\dots ((n-2)^2 + m^2)$$</div></div>\n\n        <li><strong>Case 2: If $n$ is odd</strong> \\\\\n        Let $n = 2k+1$ for $k \\ge 0$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1(0) = m$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_3(0) = (1^2 + m^2)y_1(0) = m(1^2 + m^2)$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_5(0) = (3^2 + m^2)y_3(0) = m(1^2 + m^2)(3^2 + m^2)$$</div></div>\n        In general, for odd $n$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n(0) = m(1^2 + m^2)(3^2 + m^2) \\dots ((n-2)^2 + m^2)$$</div></div>\n    </ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{y_n(0) = \\begin{cases}m^2(2^2 + m^2)(4^2 + m^2) \\dots ((n-2)^2 + m^2), & when  n  is even \\\\ \nm(1^2 + m^2)(3^2 + m^2) \\dots ((n-2)^2 + m^2), & when  n  is odd \n\\end{cases}}$$</div></div>"
   },
-  {
+    {
     "id": "cse22-ct1-seca-q1",
     "discipline": "CSE",
     "batch": 22,
@@ -5104,18 +5104,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","last-minute"],
     "questionHtml": "Suppose that $f(x) = \\begin{cases} -x^4 + 3, & x \\le 2 \\\\ x^2 + 9, & x > 2 \\end{cases}$. Is $f$ continuous everywhere? Justify your conclusion.",
     "solutionHtml": "<strong>Step 1: Check continuity on intervals outside $x = 2$</strong>\n\n    For $x < 2$, $f(x) = -x^4 + 3$, which is a polynomial function. Since all polynomial functions are continuous everywhere on their domains, $f(x)$ is continuous for all $x \\in (-\\infty, 2)$. \\\\\n    For $x > 2$, $f(x) = x^2 + 9$, which is also a polynomial function. Hence, $f(x)$ is continuous for all $x \\in (2, \\infty)$.\n\n    <strong>Step 2: Check continuity at the boundary point $x = 2$</strong>\n\n    A function $f(x)$ is continuous at $x = 2$ if and only if:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 2^-} f(x) = \\lim_{x \\to 2^+} f(x) = f(2)$$</div></div>\n    \n    Let us evaluate each value:\n    <ol class=\"list-decimal pl-5 space-y-1\">\n        <li><strong>Value at $x = 2$:</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(2) = -(2)^4 + 3 = -16 + 3 = -13$$</div></div>\n\n        <li><strong>Left-Hand Limit (LHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 2^-} f(x) = \\lim_{x \\to 2^-} (-x^4 + 3) = -(2)^4 + 3 = -13$$</div></div>\n\n        <li><strong>Right-Hand Limit (RHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 2^+} f(x) = \\lim_{x \\to 2^+} (x^2 + 9) = 2^2 + 9 = 4 + 9 = 13$$</div></div>\n    </ol>\n\n    <strong>Step 3: Compare LHL, RHL and conclude</strong>\n\n    Since the Left-Hand Limit and Right-Hand Limit are not equal:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 2^-} f(x) \\neq \\lim_{x \\to 2^+} f(x) \\implies (-13 \\neq 13)$$</div></div>\n    The limit $\\lim_{x \\to 2} f(x)$ does not exist. Therefore, $f(x)$ has a jump discontinuity at $x = 2$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{No,  f(x)  is not continuous everywhere because it has a jump discontinuity at  x = 2.}$$</div></div>"
   },
-  {
+    {
     "id": "cse22-ct1-seca-q2",
     "discipline": "CSE",
     "batch": 22,
@@ -5125,18 +5125,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Functions"
+        "Functions"
     ],
     "difficulty": "Easy",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["last-minute"],
     "questionHtml": "Find a formula for the inverse of $f(x) = \\sqrt{3x - 2}$ with $x$ as the independent variable, and state the domain of $f^{-1}$.",
     "solutionHtml": "<strong>Step 1: Set up the equation for the inverse</strong>\n\n    Let $y = f(x) = \\sqrt{3x - 2}$. Since $y$ is a principal square root, we must have $y \\ge 0$.\n    The domain of $f(x)$ requires:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$3x - 2 \\ge 0 \\implies x \\ge \\frac{2}{3}$$</div></div>\n    The range of $f(x)$ is $[0, \\infty)$, which will become the domain of the inverse function $f^{-1}$.\n\n    <strong>Step 2: Solve for $x$ in terms of $y$</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y = \\sqrt{3x - 2}$$</div></div>\n    Squaring both sides (knowing $y \\ge 0$):\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y^2 = 3x - 2$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$3x = y^2 + 2 \\implies x = \\frac{y^2 + 2}{3}$$</div></div>\n\n    <strong>Step 3: Swap variables to express with $x$ as the independent variable</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f^{-1}(x) = \\frac{x^2 + 2}{3}$$</div></div>\n    The domain of $f^{-1}$ is the range of $f(x)$, which is $x \\ge 0$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{f^{-1}(x) = \\frac{x^2 + 2}{3}, \\quad Domain of  f^{-1} = [0, \\infty)}$$</div></div>"
   },
-  {
+    {
     "id": "cse22-ct1-seca-q3",
     "discipline": "CSE",
     "batch": 22,
@@ -5146,19 +5146,19 @@ const questions = [
     "section": "A",
     "questionNumber": "3",
     "topics": [
-      "Functions",
-      "Applications of Derivatives"
+        "Functions",
+        "Applications of Derivatives"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["difficult"],
     "questionHtml": "Draw the graph of (i) $f(x) = \\frac{1}{x^2}$ (ii) $f(x) = \\frac{3}{x^2+1}$ (iii) $f(x) = 4 - |x - 2|$. Also find the domain and range of the functions.",
     "solutionHtml": "\n\n(i) $f(x) = \\frac{1}{x^2}$\n\n    <strong>Domain and Range:</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Domain:</strong> The denominator cannot be zero, so $x \\neq 0$. Thus, $Domain = (-\\infty, 0) \\cup (0, \\infty)$.\n        <li><strong>Range:</strong> Since $x^2 > 0$ for all $x \\neq 0$, $f(x)$ is always positive and approaches infinity as $x \\to 0$, and approaches $0$ as $x \\to \\pm\\infty$. Thus, $Range = (0, \\infty)$.\n    </ul>\n    <strong>Graph Description:</strong> \\\\\n    The curve lies entirely in the upper half-plane (Quadrants I and II). It is symmetric about the y-axis (even function). It has a vertical asymptote at $x = 0$ and a horizontal asymptote at $y = 0$.\n\n\n(ii) $f(x) = \\frac{3}{x^2+1}$\n\n    <strong>Domain and Range:</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Domain:</strong> Since $x^2 + 1 \\ge 1$ for all real $x$, the denominator is never zero. Thus, $Domain = (-\\infty, \\infty)$.\n        <li><strong>Range:</strong> Since $x^2 \\ge 0 \\implies x^2 + 1 \\ge 1 \\implies \\frac{1}{x^2 + 1} \\le 1$. Multiplying by 3, the maximum value is $3$ (achieved at $x = 0$). As $x \\to \\pm \\infty$, $f(x) \\to 0$ but never reaches $0$. Thus, $Range = (0, 3]$.\n    </ul>\n    <strong>Graph Description:</strong> \\\\\n    This is a bell-shaped curve (symmetric about the y-axis). The peak of the bell is at $(0, 3)$, and it asymptotically approaches $y = 0$ as $x$ extends to both positive and negative infinity.\n\n\n(iii) $f(x) = 4 - |x - 2|$\n\n    <strong>Domain and Range:</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Domain:</strong> The absolute value function is defined for all real numbers. Thus, $Domain = (-\\infty, \\infty)$.\n        <li><strong>Range:</strong> Since $|x - 2| \\ge 0 \\implies -|x - 2| \\le 0 \\implies 4 - |x - 2| \\le 4$. The maximum value is $4$ (at $x=2$) and decreases without bound. Thus, $Range = (-\\infty, 4]$.\n    </ul>\n    <strong>Graph Description:</strong> \\\\\n    An inverted V-shaped graph with its vertex at $(2, 4)$. To the left of $x = 2$, the graph is a straight line with slope $1$ ($y = x + 2$), and to the right of $x = 2$, the graph is a line with slope $-1$ ($y = 6 - x$).",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\n<div class=\"overflow-x-auto\">$$</div>\n&(i) Domain:  (-\\infty, 0) \\cup (0, \\infty),  Range:  (0, \\infty) \\\\\n&(ii) Domain:  (-\\infty, \\infty),  Range:  (0, 3] \\\\\n&(iii) Domain:  (-\\infty, \\infty),  Range:  (-\\infty, 4]\n\n<div class=\"overflow-x-auto\">$$</div>\n}$$</div></div>"
   },
-  {
+    {
     "id": "cse22-ct1-seca-q4",
     "discipline": "CSE",
     "batch": 22,
@@ -5168,18 +5168,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find \\(\\frac{dy}{dx}\\) of $y = \\frac{(3-2x)^{4/3}}{x^2}$.",
     "solutionHtml": "<strong>Step 1: Set up the differentiation using the Quotient Rule</strong>\n\n    Let $u = (3-2x)^{4/3}$ and $v = x^2$.\n    By the quotient rule:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{u'v - uv'}{v^2}$$</div></div>\n\n    <strong>Step 2: Differentiate the components</strong>\n\n    Differentiate $u$ using the chain rule:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$u' = \\frac{4}{3}(3-2x)^{1/3} \\cdot \\frac{d}{dx}(3-2x) = \\frac{4}{3}(3-2x)^{1/3} \\cdot (-2) = -\\frac{8}{3}(3-2x)^{1/3}$$</div></div>\n    Differentiate $v$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$v' = 2x$$</div></div>\n\n    <strong>Step 3: Combine using the Quotient Rule formula</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{[-\\frac{8}{3}(3-2x)^{1/3}](x^2) - (3-2x)^{4/3}(2x)}{(x^2)^2}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{-\\frac{8}{3}x^2(3-2x)^{1/3} - 2x(3-2x)^{4/3}}{x^4}$$</div></div>\n\n    <strong>Step 4: Factor and simplify the numerator</strong>\n\n    Factor out $2x(3-2x)^{1/3}$ from the numerator:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{2x(3-2x)^{1/3} [ -\\frac{4}{3}x - (3-2x) ]}{x^4}$$</div></div>\n    Simplify the expression inside the brackets:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$-\\frac{4}{3}x - 3 + 2x = \\frac{2}{3}x - 3 = \\frac{2x - 9}{3}$$</div></div>\n    Substitute this back:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{2x(3-2x)^{1/3} [ \\frac{2x - 9}{3} ]}{x^4}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{2(3-2x)^{1/3}(2x-9)}{3x^3}$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\\frac{dy}{dx} = \\frac{2(2x - 9)(3-2x)^{1/3}}{3x^3}}$$</div></div>"
   },
-  {
+    {
     "id": "cse22-ct1-seca-q5",
     "discipline": "CSE",
     "batch": 22,
@@ -5189,19 +5189,19 @@ const questions = [
     "section": "A",
     "questionNumber": "5",
     "topics": [
-      "Differentiation",
-      "Successive Differentiation"
+        "Differentiation",
+        "Successive Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Find the $n$-th derivative of $y = e^{4x}\\cos(3x + 5)$.",
     "solutionHtml": "<strong>Step 1: State the general formula for $n$-th derivative of $e^{ax}\\cos(bx+c)$</strong>\n\n    The $n$-th derivative of $y = e^{ax}\\cos(bx + c)$ is given by the formula:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n = (a^2 + b^2)^{n/2} e^{ax} \\cos(bx + c + n\\phi)$$</div></div>\n    where $\\phi = \\tan^{-1}(\\frac{b}{a})$.\n\n    <strong>Step 2: Substitute the parameters from the given function</strong>\n\n    Comparing the given function $y = e^{4x}\\cos(3x + 5)$ to the general form:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$a = 4, \\quad b = 3, \\quad c = 5$$</div></div>\n\n    <strong>Step 3: Calculate the constants</strong>\n\n    Calculate the amplitude constant:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(a^2 + b^2)^{1/2} = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$$</div></div>\n    Therefore, the term $(n^2 + m^2)^{n/2}$ becomes:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(a^2 + b^2)^{n/2} = 5^n$$</div></div>\n    \n    Calculate the phase shift angle $\\phi$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\phi = \\tan^{-1}(\\frac{3}{4})$$</div></div>\n\n    <strong>Step 4: Write the final $n$-th derivative formula</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n = 5^n e^{4x} \\cos(3x + 5 + n\\tan^{-1}(\\frac{3}{4}))$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{y_n = 5^n e^{4x} \\cos(3x + 5 + n\\tan^{-1}(\\frac{3}{4}))}$$</div></div>"
   },
-  {
+    {
     "id": "cse23-ct1-seca-q1",
     "discipline": "CSE",
     "batch": 23,
@@ -5211,7 +5211,7 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Functions"
+        "Functions"
     ],
     "difficulty": "Medium",
     "length": "Medium",
@@ -5222,7 +5222,7 @@ const questions = [
     "solutionHtml": "<strong>Step 1: Determine the Domain</strong>\n\n    The function piecewise branches cover the entire real line:\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li>$x \\le -1$\n        <li>$-1 < x < 1$\n        <li>$x \\ge 1$\n    </ul>\n    Combining these intervals, the domain of the function is:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$Domain = (-\\infty, \\infty)$$</div></div>\n\n    <strong>Step 2: Determine the Range</strong>\n\n    We analyze the range of each piecewise branch:\n    <ol class=\"list-decimal pl-5 space-y-1\">\n        <li>For $x \\le -1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = 0 \\implies f(x) \\in \\{0\\}$$</div></div>\n        <li>For $-1 < x < 1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = \\sqrt{1-x^2}$$</div></div>\n        Since $0 \\le x^2 < 1$, we have $0 < 1 - x^2 \\le 1$, which gives:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$0 < \\sqrt{1-x^2} \\le 1 \\implies f(x) \\in (0, 1]$$</div></div>\n        <li>For $x \\ge 1$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = x \\implies f(x) \\in [1, \\infty)$$</div></div>\n    </ol>\n    Combining the outputs from all three branches:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$Range = \\{0\\} \\cup (0, 1] \\cup [1, \\infty) = [0, \\infty)$$</div></div>\n\n    <strong>Step 3: Graph Description</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li>For $x \\in (-\\infty, -1]$, the graph is a flat horizontal line lying directly on the x-axis ($y = 0$).\n        <li>For $x \\in (-1, 1)$, the graph is the upper half of a unit circle centered at the origin, starting with an open circle at $(-1, 0)$, reaching its peak at $(0, 1)$, and ending with an open circle at $(1, 0)$.\n        <li>For $x \\in [1, \\infty)$, the graph is a straight line $y = x$ starting at the solid point $(1, 1)$ and extending upwards to infinity at a $45^\\circ$ angle.\n    </ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{Domain = (-\\infty, \\infty), \\quad Range = [0, \\infty)}$$</div></div>"
   },
-  {
+    {
     "id": "cse23-ct1-seca-q2",
     "discipline": "CSE",
     "batch": 23,
@@ -5232,18 +5232,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Discuss the continuity of the following function at $x = 0, 3/2$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = \\begin{cases}3+2x, & for  -3/2 \\le x \\le 0 \\\\ \n3-2x, & for  0 \\le x < 3/2 \\\\ \n-3-2x, & for  x \\ge 3/2 \n\\end{cases}$$</div></div>",
     "solutionHtml": "<strong>Step 1: Test continuity at $x = 0$</strong>\n\n    A function is continuous at $x = 0$ if and only if $\\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0^+} f(x) = f(0)$.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Function value:</strong> $f(0) = 3 + 2(0) = 3$ (using the first branch).\n        <li><strong>Left-Hand Limit (LHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0^-} (3 + 2x) = 3$$</div></div>\n        <li><strong>Right-Hand Limit (RHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 0^+} f(x) = \\lim_{x \\to 0^+} (3 - 2x) = 3$$</div></div>\n    </ul>\n    Since $LHL = RHL = f(0) = 3$, the function $f(x)$ is <strong>continuous</strong> at $x = 0$.\n\n    <strong>Step 2: Test continuity at $x = 2$</strong>\n\n    We check if $\\lim_{x \\to 2^-} f(x) = \\lim_{x \\to 2^+} f(x) = f(2)$.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Function value:</strong> $f(3/2) = -3 - 2(3/2) = -3 - 3 = -6$ (using the third branch).\n        <li><strong>Left-Hand Limit (LHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 3/2^-} f(x) = \\lim_{x \\to 3/2^-} (3 - 2x) = 3 - 2(\\frac{3}{2}) = 0$$</div></div>\n        <li><strong>Right-Hand Limit (RHL):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 3/2^+} f(x) = \\lim_{x \\to 3/2^+} (-3 - 2x) = -3 - 2(\\frac{3}{2}) = -6$$</div></div>\n    </ul>\n    Since $LHL \\neq RHL$ ($0 \\neq -6$), the limit at $x = 3/2$ does not exist. Hence, $f(x)$ has a jump discontinuity and is <strong>discontinuous</strong> at $x = 3/2$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{f(x)  is continuous at  x = 0  and discontinuous at  x = 3/2.}$$</div></div>"
   },
-  {
+    {
     "id": "cse23-ct1-seca-q3",
     "discipline": "CSE",
     "batch": 23,
@@ -5253,19 +5253,19 @@ const questions = [
     "section": "A",
     "questionNumber": "3",
     "topics": [
-      "Differentiation",
-      "Implicit Differentiation"
+        "Differentiation",
+        "Implicit Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Define explicit function and implicit function. Find $dy/dx$ of:\n<ol class=\"list-decimal pl-5 space-y-1\">\n    <li>$x^y + y^x = a^b$\n    <li>$y = x^{\\tan^{-1}x} + (\\cos x)^{\\ln x}$\n    <li>$x = e^t \\sin t, \\ y = e^t \\cos t$\n</ol>",
     "solutionHtml": "<strong>Definitions:</strong>\n<ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Explicit Function:</strong> A function in which the dependent variable $y$ is expressed directly and solely in terms of the independent variable $x$. It is written in the form $y = f(x)$. \\\\\n<em>Example:</em> $y = x^2 + 5x + 6$.\n        <li><strong>Implicit Function:</strong> A function in which the dependent variable $y$ is not expressed directly in terms of $x$, but is instead defined via an equation involving both variables. It is written in the form $F(x, y) = 0$. \\\\\n<em>Example:</em> $x^2 + y^2 - 25 = 0$.\n    </ul>\n\n\n(i) Find $\\frac{dy}{dx}$ of $x^y + y^x = a^b$\n\n<strong>Step 1: Use substitution</strong>\n\n    Let $u = x^y$ and $v = y^x$. Thus:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$u + v = a^b \\implies \\frac{du}{dx} + \\frac{dv}{dx} = 0$$</div></div>\n\n    <strong>Step 2: Differentiate $u = x^y$</strong>\n\n    Taking natural logs:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln u = y \\ln x$$</div></div>\n    Differentiating implicitly with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{u}\\frac{du}{dx} = y_1 \\ln x + \\frac{y}{x} \\implies \\frac{du}{dx} = x^y ( y_1 \\ln x + \\frac{y}{x} )$$</div></div>\n\n    <strong>Step 3: Differentiate $v = y^x$</strong>\n\n    Taking natural logs:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln v = x \\ln y$$</div></div>\n    Differentiating implicitly with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{v}\\frac{dv}{dx} = \\ln y + \\frac{x}{y} y_1 \\implies \\frac{dv}{dx} = y^x ( \\ln y + \\frac{x}{y} y_1 )$$</div></div>\n\n    <strong>Step 4: Combine and solve for $y_1$</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$x^y ( y_1 \\ln x + \\frac{y}{x} ) + y^x ( \\ln y + \\frac{x}{y} y_1 ) = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 ( x^y \\ln x + x y^{x-1} ) + y x^{y-1} + y^x \\ln y = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = -\\frac{y x^{y-1} + y^x \\ln y}{x^y \\ln x + x y^{x-1}}$$</div></div>\n\n\n(ii) Find $\\frac{dy}{dx}$ of $y = x^{\\tan^{-1}x} + (\\cos x)^{\\ln x}$\n\n    <strong>Step 1: Differentiate each term independently</strong>\n\n    Let $y = u + v$, where $u = x^{\\tan^{-1}x}$ and $v = (\\cos x)^{\\ln x}$.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>For $u = x^{\\tan^{-1}x}$:</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln u = \\tan^{-1}x \\ln x \\implies \\frac{1}{u}\\frac{du}{dx} = \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1}x}{x}$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{du}{dx} = x^{\\tan^{-1}x} ( \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1}x}{x} )$$</div></div>\n        <li><strong>For $v = (\\cos x)^{\\ln x}$:</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln v = \\ln x \\ln(\\cos x) \\implies \\frac{1}{v}\\frac{dv}{dx} = \\frac{\\ln(\\cos x)}{x} + \\ln x ( -\\frac{\\sin x}{\\cos x} )$$</div></div>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dv}{dx} = (\\cos x)^{\\ln x} ( \\frac{\\ln(\\cos x)}{x} - \\ln x \\tan x )$$</div></div>\n    </ul>\n    Combining these derivatives:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = x^{\\tan^{-1}x} ( \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1}x}{x} ) + (\\cos x)^{\\ln x} ( \\frac{\\ln(\\cos x)}{x} - \\ln x \\tan x )$$</div></div>\n\n\n(iii) Find $\\frac{dy}{dx}$ of $x = e^t \\sin t, \\ y = e^t \\cos t$\n\n    <strong>Step 1: Perform parametric differentiation</strong>\n\n    Differentiating $x$ with respect to $t$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dx}{dt} = e^t \\sin t + e^t \\cos t = e^t(\\sin t + \\cos t)$$</div></div>\n    Differentiating $y$ with respect to $t$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dt} = e^t \\cos t - e^t \\sin t = e^t(\\cos t - \\sin t)$$</div></div>\n    Finding $\\frac{dy}{dx}$ using the chain rule:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{e^t(\\cos t - \\sin t)}{e^t(\\sin t + \\cos t)} = \\frac{\\cos t - \\sin t}{\\sin t + \\cos t}$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\n<div class=\"overflow-x-auto\">$$</div>\n&(i)  \\frac{dy}{dx} = -\\frac{y x^{y-1} + y^x \\ln y}{x^y \\ln x + x y^{x-1}} \\\\\n&(ii)  \\frac{dy}{dx} = x^{\\tan^{-1}x} ( \\frac{\\ln x}{1+x^2} + \\frac{\\tan^{-1}x}{x} ) + (\\cos x)^{\\ln x} ( \\frac{\\ln(\\cos x)}{x} - \\ln x \\tan x ) \\\\\n&(iii)  \\frac{dy}{dx} = \\frac{\\cos t - \\sin t}{\\sin t + \\cos t}\n\n<div class=\"overflow-x-auto\">$$</div>\n}$$</div></div>"
   },
-  {
+    {
     "id": "cse23-ct1-seca-q4",
     "discipline": "CSE",
     "batch": 23,
@@ -5275,18 +5275,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State and prove Leibnitz's theorem. If $y = (\\sin^{-1} x)^2$ then show that \n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2 y_n = 0$$</div></div>\nAlso find $(y_n)_0$.",
     "solutionHtml": "<strong>Step 1: State Leibnitz's Theorem</strong>\n\n    If $u$ and $v$ are two functions of $x$ that can be differentiated $n$ times, then the $n$-th order derivative of their product $uv$ is given by:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_n = u_n v + \\binom{n}{1} u_{n-1} v_1 + \\binom{n}{2} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n$$</div></div>\n\n    <strong>Step 2: Prove Leibnitz's Theorem</strong>\n\n    We prove the theorem using Mathematical Induction.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li><strong>Base Case ($n=1$):</strong> By the standard product rule:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_1 = u_1 v + u v_1$$</div></div>\n        Since $\\binom{1}{0}=1$ and $\\binom{1}{1}=1$, the theorem holds for $n=1$.\n        <li><strong>Inductive Hypothesis:</strong> Assume the theorem is true for $n=k$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_k = u_k v + \\binom{k}{1} u_{k-1} v_1 + \\binom{k}{2} u_{k-2} v_2 + \\dots + \\binom{k}{r} u_{k-r} v_r + \\dots + u v_k$$</div></div>\n        <li><strong>Inductive Step:</strong> Differentiating both sides once more with respect to $x$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_{k+1} = \\frac{d}{dx} [ (uv)_k ]$$</div></div>\n        Using the product rule on each term:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_{k+1} = ( u_{k+1} v + u_k v_1 ) + \\binom{k}{1} ( u_k v_1 + u_{k-1} v_2 ) + \\dots + \\binom{k}{r} ( u_{k+1-r} v_r + u_{k-r} v_{r+1} ) + \\dots$$</div></div>\n        Grouping like terms together:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_{k+1} = u_{k+1} v + [ 1 + \\binom{k}{1} ] u_k v_1 + [ \\binom{k}{1} + \\binom{k}{2} ] u_{k-1} v_2 + \\dots + [ \\binom{k}{r} + \\binom{k}{r-1} ] u_{k+1-r} v_r + \\dots + u v_{k+1}$$</div></div>\n        Using Pascal's Identity $\\binom{k}{r} + \\binom{k}{r-1} = \\binom{k+1}{r}$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_{k+1} = u_{k+1} v + \\binom{k+1}{1} u_k v_1 + \\binom{k+1}{2} u_{k-1} v_2 + \\dots + u v_{k+1}$$</div></div>\n        This is the statement for $n = k+1$. Thus, by induction, the theorem is proved for all $n \\in \\mathbb{N}$.\n    </ul>\n\n    <strong>Step 3: Establish the second-order equation for $y = (\\sin^{-1}x)^2$</strong>\n\n    Given:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y = (\\sin^{-1}x)^2 \\implies y(0) = 0$$</div></div>\n    Differentiating once with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = \\frac{2\\sin^{-1}x}{\\sqrt{1-x^2}} \\implies y_1(0) = 0$$</div></div>\n    Squaring both sides:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1^2(1-x^2) = 4(\\sin^{-1}x)^2 = 4y$$</div></div>\n    Differentiating again with respect to $x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$2y_1 y_2(1-x^2) - 2x y_1^2 = 4y_1$$</div></div>\n    Dividing by $2y_1$ (since $y_1 \\neq 0$):\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(1-x^2) - xy_1 = 2 \\implies y_2(0) = 2$$</div></div>\n\n    <strong>Step 4: Differentiate $n$ times using Leibnitz's Theorem</strong>\n\n    Differentiating $y_2(1-x^2) - xy_1 - 2 = 0$ $n$ times:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$[ y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) ] - [ y_{n+1}x + n y_n ] = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - x y_{n+1} - n y_n = 0$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2 y_n = 0$$</div></div>\n\n    <strong>Step 5: Find $(y_n)_0$</strong>\n\n    Setting $x=0$ in the above recurrence relation:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_{n+2}(0) = n^2 y_n(0)$$</div></div>\n    Since $y_1(0) = 0$, all odd-order derivatives at $x=0$ are zero:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_{2k+1}(0) = 0$$</div></div>\n    For even-order derivatives, we use $y_2(0) = 2$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_4(0) = 2^2 \\cdot y_2(0) = 2^2 \\cdot 2$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_6(0) = 4^2 \\cdot y_4(0) = 4^2 \\cdot 2^2 \\cdot 2$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n(0) = 2 \\cdot 2^2 \\cdot 4^2 \\cdot \\dots \\cdot (n-2)^2 \\quad (for even  n \\ge 2)$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\ny_n(0) = \\begin{cases}2 \\cdot 2^2 \\cdot 4^2 \\dots (n-2)^2, & when  n  is even \\\\ \n0, & when  n  is odd \n\\end{cases}\n}$$</div></div>"
   },
-  {
+    {
     "id": "cse23-ct1-secb-q1",
     "discipline": "CSE",
     "batch": 23,
@@ -5296,18 +5296,18 @@ const questions = [
     "section": "B",
     "questionNumber": "1",
     "topics": [
-      "Definite Integration"
+        "Definite Integration"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State and prove the Fundamental Theorem of Calculus.",
     "solutionHtml": "Statement\n\nThe Fundamental Theorem of Calculus (FTC) consists of two parts that connect the concept of differentiating a function with the concept of integrating it.\n\n\n    <strong>First Fundamental Theorem of Calculus (FTC 1):</strong>\n\n    If $f$ is continuous on the closed interval $[a, b]$, then the function $g$ defined by:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(x) = \\int_{a}^{x} f(t) \\, dt \\quad for  x \\in [a, b]$$</div></div>\n    is continuous on $[a, b]$, differentiable on the open interval $(a, b)$, and its derivative is:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g'(x) = f(x)$$</div></div>\n\n    <strong>Second Fundamental Theorem of Calculus (FTC 2):</strong>\n\n    If $f$ is continuous on the closed interval $[a, b]$, and $F$ is any antiderivative of $f$ on $[a, b]$ such that $F'(x) = f(x)$, then:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int_{a}^{b} f(x) \\, dx = F(b) - F(a)$$</div></div>\n\n\nProof of FTC 1\n\nLet $g(x) = \\int_{a}^{x} f(t) \\, dt$. By definition of the derivative:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{g(x+h) - g(x)}{h}$$</div></div>\nSubstituting the integral form of $g(x)$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{1}{h} [ \\int_{a}^{x+h} f(t) \\, dt - \\int_{a}^{x} f(t) \\, dt ] = \\lim_{h \\to 0} \\frac{1}{h} \\int_{x}^{x+h} f(t) \\, dt$$</div></div>\nSince $f$ is continuous on the closed interval $[x, x+h]$ (or $[x+h, x]$ if $h < 0$), by the Mean Value Theorem for Integrals, there exists a number $c$ in this interval such that:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int_{x}^{x+h} f(t) \\, dt = f(c) \\cdot h$$</div></div>\nSubstituting this back into the derivative equation:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g'(x) = \\lim_{h \\to 0} \\frac{1}{h} [f(c) \\cdot h] = \\lim_{h \\to 0} f(c)$$</div></div>\nAs $h \\to 0$, the interval $[x, x+h]$ squeezes down to the single point $x$. Since $c$ is forced to lie within this interval, we must have $c \\to x$. Because $f$ is continuous:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{h \\to 0} f(c) = f(x)$$</div></div>\nThus, $g'(x) = f(x)$.\n\nProof of FTC 2\n\nLet $F(x)$ be any antiderivative of $f(x)$ on $[a, b]$, meaning $F'(x) = f(x)$. \nFrom FTC 1, we also know that $g(x) = \\int_{a}^{x} f(t) \\, dt$ is an antiderivative of $f(x)$ because $g'(x) = f(x)$.\n\nSince any two antiderivatives of the same function differ only by a constant $C$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(x) = F(x) + C \\quad for all  x \\in [a, b]$$</div></div>\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li>To find $C$, we evaluate the relation at $x = a$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(a) = F(a) + C$$</div></div>\n    Since $g(a) = \\int_{a}^{a} f(t) \\, dt = 0$, we have:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$0 = F(a) + C \\implies C = -F(a)$$</div></div>\n    <li>Substituting $C$ back into the relation:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(x) = F(x) - F(a)$$</div></div>\n    <li>Now evaluating at $x = b$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$g(b) = F(b) - F(a)$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int_{a}^{b} f(t) \\, dt = F(b) - F(a)$$</div></div>\n</ul>\nReplacing variable $t$ with $x$ yields the required result:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int_{a}^{b} f(x) \\, dx = F(b) - F(a)$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{Fundamental Theorem of Calculus proven successfully.}$$</div></div>"
   },
-  {
+    {
     "id": "cse23-ct1-secb-q2",
     "discipline": "CSE",
     "batch": 23,
@@ -5317,19 +5317,19 @@ const questions = [
     "section": "B",
     "questionNumber": "2",
     "topics": [
-      "Indefinite Integration",
-      "Reduction Formula"
+        "Indefinite Integration",
+        "Reduction Formula"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","top-integration","difficult"],
     "questionHtml": "Obtain the reduction formula for $\\int \\sin^m x \\cos^n x \\, dx$.",
     "solutionHtml": "<strong>Step 1: Set up the integral and split the term</strong>\n\n    Let $I_{m, n} = \\int \\sin^m x \\cos^n x \\, dx$.\n    We can rewrite this by splitting one factor of $\\sin x$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = \\int \\sin^{m-1} x ( \\sin x \\cos^n x ) \\, dx$$</div></div>\n\n    <strong>Step 2: Apply Integration by Parts</strong>\n\n    Let $u = \\sin^{m-1} x$ and $dv = \\sin x \\cos^n x \\, dx$.\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li>Differentiating $u$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$du = (m-1) \\sin^{m-2} x \\cos x \\, dx$$</div></div>\n        <li>Integrating $dv$:\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$v = \\int \\sin x \\cos^n x \\, dx = -\\frac{\\cos^{n+1} x}{n+1}$$</div></div>\n    </ul>\n    Using the integration by parts formula $\\int u \\, dv = uv - \\int v \\, du$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{n+1} - \\int ( -\\frac{\\cos^{n+1} x}{n+1} ) [ (m-1) \\sin^{m-2} x \\cos x ] \\, dx$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{n+1} + \\frac{m-1}{n+1} \\int \\sin^{m-2} x \\cos^{n+2} x \\, dx$$</div></div>\n\n    <strong>Step 3: Simplify using trigonometric identity</strong>\n\n    Using $\\cos^{n+2} x = \\cos^n x \\cos^2 x = \\cos^n x (1 - \\sin^2 x)$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\int \\sin^{m-2} x \\cos^{n+2} x \\, dx = \\int \\sin^{m-2} x \\cos^n x (1 - \\sin^2 x) \\, dx$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$= \\int \\sin^{m-2} x \\cos^n x \\, dx - \\int \\sin^m x \\cos^n x \\, dx$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$= I_{m-2, n} - I_{m, n}$$</div></div>\n\n    <strong>Step 4: Solve for $I_{m, n}$</strong>\n\n    Substitute this expansion back into the equation from Step 2:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{n+1} + \\frac{m-1}{n+1} ( I_{m-2, n} - I_{m, n} )$$</div></div>\n    Multiply the entire equation by $(n+1)$ to clear the fractions:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(n+1) I_{m, n} = -\\sin^{m-1} x \\cos^{n+1} x + (m-1) I_{m-2, n} - (m-1) I_{m, n}$$</div></div>\n    Group the $I_{m, n}$ terms on the left side:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(n+1) I_{m, n} + (m-1) I_{m, n} = -\\sin^{m-1} x \\cos^{n+1} x + (m-1) I_{m-2, n}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(m+n) I_{m, n} = -\\sin^{m-1} x \\cos^{n+1} x + (m-1) I_{m-2, n}$$</div></div>\n    Divide both sides by $(m+n)$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{m+n} + \\frac{m-1}{m+n} I_{m-2, n}$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\\int \\sin^m x \\cos^n x \\, dx = -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{m+n} + \\frac{m-1}{m+n} \\int \\sin^{m-2} x \\cos^n x \\, dx}$$</div></div>"
   },
-  {
+    {
     "id": "cse23-ct1-secb-q3",
     "discipline": "CSE",
     "batch": 23,
@@ -5339,19 +5339,19 @@ const questions = [
     "section": "B",
     "questionNumber": "3",
     "topics": [
-      "Definite Integration",
-      "Reduction Formula"
+        "Definite Integration",
+        "Reduction Formula"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Evaluate the definite integral $\\int_{0}^{\\pi/2} \\sin^5 x \\cos^4 x \\, dx$ using the reduction/Wallis' formula.",
     "solutionHtml": "<strong>Step 1: Set up using Wallis' definite integral reduction relation</strong>\n\n    The definite integral version of the reduction formula over the limits $[0, \\pi/2]$ is:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = \\int_{0}^{\\pi/2} \\sin^m x \\cos^n x \\, dx$$</div></div>\n    Applying the limits to the boundary term of the indefinite reduction formula:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$[ -\\frac{\\sin^{m-1} x \\cos^{n+1} x}{m+n} ]_{0}^{\\pi/2} = 0 - 0 = 0$$</div></div>\n    Therefore, the definite integral reduction formula simplifies directly to:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{m, n} = \\frac{m-1}{m+n} I_{m-2, n}$$</div></div>\n\n    <strong>Step 2: Apply the reduction formula step-by-step</strong>\n\n    We want to evaluate $I_{5, 4}$:\n    <ol class=\"list-decimal pl-5 space-y-1\">\n        <li><strong>First reduction (reducing $m=5$):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{5, 4} = \\frac{5-1}{5+4} I_{3, 4} = \\frac{4}{9} I_{3, 4}$$</div></div>\n\n        <li><strong>Second reduction (reducing $m=3$):</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{3, 4} = \\frac{3-1}{3+4} I_{1, 4} = \\frac{2}{7} I_{1, 4}$$</div></div>\n\n        <li><strong>Evaluate the base case $I_{1, 4}$:</strong>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{1, 4} = \\int_{0}^{\\pi/2} \\sin x \\cos^4 x \\, dx$$</div></div>\n        Using substitution: let $u = \\cos x \\implies du = -\\sin x \\, dx$.\n        <ul class=\"list-disc pl-5 space-y-1\">\n            <li>At $x=0$, $u = 1$.\n            <li>At $x=\\pi/2$, $u = 0$.\n        </ul>\n        <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{1, 4} = \\int_{1}^{0} -u^4 \\, du = \\int_{0}^{1} u^4 \\, du = [ \\frac{u^5}{5} ]_{0}^{1} = \\frac{1}{5}$$</div></div>\n    </ol>\n\n    <strong>Step 3: Calculate final numerical value</strong>\n\n    Substitute the values back:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{5, 4} = \\frac{4}{9} \\cdot \\frac{2}{7} \\cdot I_{1, 4}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$I_{5, 4} = \\frac{4}{9} \\cdot \\frac{2}{7} \\cdot \\frac{1}{5} = \\frac{8}{315}$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\\int_{0}^{\\pi/2} \\sin^5 x \\cos^4 x \\, dx = \\frac{8}{315}}$$</div></div>"
   },
-  {
+    {
     "id": "cse24-ct1-seca-q1",
     "discipline": "CSE",
     "batch": 24,
@@ -5361,18 +5361,18 @@ const questions = [
     "section": "A",
     "questionNumber": "1",
     "topics": [
-      "Functions"
+        "Functions"
     ],
     "difficulty": "Medium",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["difficult"],
     "questionHtml": "Define function, even function and odd function with examples. Draw the graph and also find the domain and range of $f(x) = |x - 4| + |x| + |x + 6|$.",
     "solutionHtml": "Definitions\n\n    <strong>Function:</strong> A relation $f$ from a set $A$ to a set $B$ is a function if every element $x \\in A$ is associated with exactly one element $y \\in B$. It is denoted as $f: A \\to B$. \\\\\n<em>Example:</em> $f(x) = x^2$.\n    <strong>Even Function:</strong> A function $f(x)$ is even if $f(-x) = f(x)$ for all $x$ in its domain. The graph of an even function is symmetric with respect to the y-axis. \\\\\n<em>Example:</em> $f(x) = \\cos x$.\n    <strong>Odd Function:</strong> A function $f(x)$ is odd if $f(-x) = -f(x)$ for all $x$ in its domain. The graph of an odd function is symmetric with respect to the origin. \\\\\n<em>Example:</em> $f(x) = \\sin x$.\n\n\nPiecewise Analysis of $f(x)$\n\nTo graph $f(x) = |x - 4| + |x| + |x + 6|$, we analyze the critical points: $x = -6$, $x = 0$, and $x = 4$.\n\n<ol class=\"list-decimal pl-5 space-y-1\">\n    <li><strong>Case 1: $x < -6$</strong> \\\\\nAll absolute terms are negative:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = -(x - 4) - x - (x + 6) = -x + 4 - x - x - 6 = -3x - 2$$</div></div>\n\n    <li><strong>Case 2: $-6 \\le x < 0$</strong> \\\\\nHere, $x + 6 \\ge 0$, while $x < 0$ and $x - 4 < 0$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = -(x - 4) - x + (x + 6) = -x + 4 - x + x + 6 = -x + 10$$</div></div>\n\n    <li><strong>Case 3: $0 \\le x < 4$</strong> \\\\\nHere, $x \\ge 0$ and $x + 6 \\ge 0$, while $x - 4 < 0$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = -(x - 4) + x + (x + 6) = -x + 1 + x + x + 1 = x + 2$$</div></div>\n\n    <li><strong>Case 4: $x \\ge 1$</strong> \\\\\nAll terms are non-negative:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = (x - 4) + (x) + (x + 2)$$</div></div>\n    <em>Note: Correction in absolute boundaries: $x - 4 \\ge 0 \\implies x \\ge 4$:</em>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = (x - 4) + x + (x + 6) = 3x + 2$$</div></div>\n</ol>\n\nThus, the piecewise representation is:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = \\begin{cases}-3x - 2, & when  x < -6 \\\\ \n-x + 10, & when  -6 \\le x < 0 \\\\ \nx + 10, & when  0 \\le x < 4 \\\\ \n3x + 2, & when  x \\ge 4 \n\\end{cases}$$</div></div>\n\nDomain and Range\n\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li><strong>Domain:</strong> The absolute value terms are defined for all real numbers. Thus:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$Domain = (-\\infty, \\infty)$$</div></div>\n    <li><strong>Range:</strong> Let's check the local minima at the critical points:\n    <ul class=\"list-disc pl-5 space-y-1\">\n        <li>At $x = -6$: $f(-6) = |-10| + |-6| + |0| = 16$\n        <li>At $x = 0$: $f(0) = |-4| + |0| + |6| = 10$\n        <li>At $x = 4$: $f(4) = |0| + |4| + |10| = 14$\n    </ul>\n    The absolute minimum value is $10$ at $x = 0$. Since the branches tend to infinity as $x \\to \\pm \\infty$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$Range = [10, \\infty)$$</div></div>\n</ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{Domain = (-\\infty, \\infty), \\quad Range = [10, \\infty)}$$</div></div>"
   },
-  {
+    {
     "id": "cse24-ct1-seca-q2",
     "discipline": "CSE",
     "batch": 24,
@@ -5382,18 +5382,18 @@ const questions = [
     "section": "A",
     "questionNumber": "2",
     "topics": [
-      "Limits & Continuity"
+        "Limits & Continuity"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Define limit of a function. A function is defined by\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(x) = \\begin{cases}x^2, & when  x \\le 1 \\\\ \nx, & when  1 < x \\le 2 \\\\ \n\\frac{1}{4}x^3, & when  x > 2 \n\\end{cases}$$</div></div>\nFind $\\lim_{x \\to 1} f(x)$ and discuss the continuity of $f(x)$ at $x = 1$.",
     "solutionHtml": "Definition of Limit\n\nThe limit of a function $f(x)$ as $x$ approaches a point $a$ is the value that $f(x)$ gets closer to as $x$ gets arbitrarily close to $a$. It exists and equals $L$ if and only if:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L$$</div></div>\n\nEvaluation of the Limit at $x = 1$\n\nWe evaluate the left-hand and right-hand limits at $x = 1$:\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li><strong>Left-Hand Limit (LHL):</strong>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 1^-} f(x) = \\lim_{x \\to 1^-} (x^2) = 1^2 = 1$$</div></div>\n    <li><strong>Right-Hand Limit (RHL):</strong>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 1^+} f(x) = \\lim_{x \\to 1^+} (x) = 1$$</div></div>\n</ul>\nSince $LHL = RHL = 1$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 1} f(x) = 1$$</div></div>\n\nContinuity at $x = 1$\n\nFor the function to be continuous at $x = 1$, we require:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\lim_{x \\to 1} f(x) = f(1)$$</div></div>\nFrom the piecewise definition:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$f(1) = 1^2 = 1$$</div></div>\nSince $\\lim_{x \\to 1} f(x) = f(1) = 1$, the function $f(x)$ is continuous at $x = 1$.",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\\lim_{x \\to 1} f(x) = 1, \\quad The function is continuous at  x = 1.}$$</div></div>"
   },
-  {
+    {
     "id": "cse24-ct1-seca-q3",
     "discipline": "CSE",
     "batch": 24,
@@ -5403,18 +5403,18 @@ const questions = [
     "section": "A",
     "questionNumber": "3",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "Find $\\frac{dy}{dx}$ of:\n<ol class=\"list-decimal pl-5 space-y-1\">\n    <li>$(\\cos x)^y = (\\sin y)^x$\n    <li>$y = (\\tan x)^{\\cot x} + (\\cot x)^{\\tan x}$\n    <li>$x = a\\cos^3 t, \\ y = a\\sin^3 t$\n</ol>",
     "solutionHtml": "\n\n(i) Find $\\frac{dy}{dx}$ of $(\\cos x)^y = (\\sin y)^x$\n\nTaking the natural logarithm on both sides:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y \\ln(\\cos x) = x \\ln(\\sin y)$$</div></div>\nDifferentiating implicitly with respect to $x$ using the product rule:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 \\ln(\\cos x) + y \\cdot \\frac{1}{\\cos x} \\cdot (-\\sin x) = 1 \\cdot \\ln(\\sin y) + x \\cdot \\frac{1}{\\sin y} \\cdot (\\cos y \\cdot y_1)$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 \\ln(\\cos x) - y \\tan x = \\ln(\\sin y) + x \\cot y \\cdot y_1$$</div></div>\nCollect terms containing $y_1$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 [ \\ln(\\cos x) - x \\cot y ] = y \\tan x + \\ln(\\sin y)$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = \\frac{y \\tan x + \\ln(\\sin y)}{\\ln(\\cos x) - x \\cot y}$$</div></div>\n\n\n(ii) Find $\\frac{dy}{dx}$ of $y = (\\tan x)^{\\cot x} + (\\cot x)^{\\tan x}$\n\nLet $y = u + v$, where $u = (\\tan x)^{\\cot x}$ and $v = (\\cot x)^{\\tan x}$.\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li><strong>Differentiating $u = (\\tan x)^{\\cot x}$:</strong>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln u = \\cot x \\ln(\\tan x)$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{u}\\frac{du}{dx} = -\\csc^2 x \\ln(\\tan x) + \\cot x \\cdot \\frac{\\sec^2 x}{\\tan x}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{u}\\frac{du}{dx} = -\\csc^2 x \\ln(\\tan x) + \\csc^2 x = \\csc^2 x (1 - \\ln(\\tan x))$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{du}{dx} = (\\tan x)^{\\cot x} \\csc^2 x (1 - \\ln(\\tan x))$$</div></div>\n\n    <li><strong>Differentiating $v = (\\cot x)^{\\tan x}$:</strong>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\ln v = \\tan x \\ln(\\cot x)$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{v}\\frac{dv}{dx} = \\sec^2 x \\ln(\\cot x) + \\tan x \\cdot \\frac{-\\csc^2 x}{\\cot x}$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{1}{v}\\frac{dv}{dx} = \\sec^2 x \\ln(\\cot x) - \\sec^2 x = \\sec^2 x (\\ln(\\cot x) - 1)$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dv}{dx} = (\\cot x)^{\\tan x} \\sec^2 x (\\ln(\\cot x) - 1)$$</div></div>\n</ul>\nCombining the parts:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = (\\tan x)^{\\cot x} \\csc^2 x [1 - \\ln(\\tan x)] + (\\cot x)^{\\tan x} \\sec^2 x [\\ln(\\cot x) - 1]$$</div></div>\n\n\n(iii) Find $\\frac{dy}{dx}$ of $x = a\\cos^3 t, \\ y = a\\sin^3 t$\n\nWe use parametric differentiation:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dx}{dt} = 3a\\cos^2 t \\cdot (-\\sin t) = -3a\\cos^2 t \\sin t$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dt} = 3a\\sin^2 t \\cdot (\\cos t) = 3a\\sin^2 t \\cos t$$</div></div>\nNow find $dy/dx$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{3a\\sin^2 t \\cos t}{-3a\\cos^2 t \\sin t} = -\\frac{\\sin t}{\\cos t} = -\\tan t$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\n<div class=\"overflow-x-auto\">$$</div>\n&(i)  \\frac{dy}{dx} = \\frac{y \\tan x + \\ln(\\sin y)}{\\ln(\\cos x) - x \\cot y} \\\\\n&(ii)  \\frac{dy}{dx} = (\\tan x)^{\\cot x} \\csc^2 x [1 - \\ln(\\tan x)] + (\\cot x)^{\\tan x} \\sec^2 x [\\ln(\\cot x) - 1] \\\\\n&(iii)  \\frac{dy}{dx} = -\\tan t\n\n<div class=\"overflow-x-auto\">$$</div>\n}$$</div></div>"
   },
-  {
+    {
     "id": "cse24-ct1-seca-q4",
     "discipline": "CSE",
     "batch": 24,
@@ -5424,18 +5424,18 @@ const questions = [
     "section": "A",
     "questionNumber": "4",
     "topics": [
-      "Differentiation"
+        "Differentiation"
     ],
     "difficulty": "Hard",
     "length": "Long",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential","difficult"],
     "questionHtml": "State Leibnitz's theorem. If $y = e^{m\\sin^{-1}x}$, then using Leibnitz's theorem show that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0$. Also find the value of $(y_n)_0$.\n\n<em>Note: The printed exam paper has a minor typographical sign error in the equation where it states $+ (n^2+m^2)y_n = 0$. The rigorous derivation below proves the mathematically correct identity, which is $- (n^2 + m^2)y_n = 0$.</em>",
     "solutionHtml": "State Leibnitz's Theorem\n\nIf $u$ and $v$ are two functions of $x$ possessing derivatives of the $n$-th order, then:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(uv)_n = u_n v + \\binom{n}{1} u_{n-1} v_1 + \\binom{n}{2} u_{n-2} v_2 + \\dots + \\binom{n}{r} u_{n-r} v_r + \\dots + u v_n$$</div></div>\n\nDerivation of the Differential Equation\n\nGiven:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y = e^{m\\sin^{-1}x} \\implies y(0) = e^0 = 1$$</div></div>\nDifferentiating with respect to $x$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1 = e^{m\\sin^{-1}x} \\cdot \\frac{m}{\\sqrt{1-x^2}} = \\frac{my}{\\sqrt{1-x^2}} \\implies y_1(0) = m$$</div></div>\nSquaring both sides:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1^2 (1-x^2) = m^2 y^2$$</div></div>\nDifferentiating again with respect to $x$:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$2y_1 y_2 (1-x^2) + y_1^2 (-2x) = m^2 (2y y_1)$$</div></div>\nDividing by $2y_1$ (since $y_1 \\neq 0$):\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(1-x^2) - xy_1 - m^2 y = 0 \\implies y_2(0) = m^2$$</div></div>\n\nApplying Leibnitz's Theorem\n\nDifferentiating the relation $y_2(1-x^2) - xy_1 - m^2 y = 0$ $n$ times with respect to $x$:\n<ol class=\"list-decimal pl-5 space-y-1\">\n    <li>For $y_2(1-x^2)$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$[y_2(1-x^2)]_n = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \\frac{n(n-1)}{2} y_n (-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n$$</div></div>\n    <li>For $-xy_1$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$-[y_1 x]_n = -( y_{n+1}x + n y_n ) = -x y_{n+1} - n y_n$$</div></div>\n    <li>For $-m^2 y$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$-m^2 y_n$$</div></div>\n</ol>\nSumming these expressions:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - x y_{n+1} - n y_n - m^2 y_n = 0$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - n + n + m^2)y_n = 0$$</div></div>\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0$$</div></div>\n\nFinding $(y_n)_0$\n\nSetting $x=0$ in the recurrence relation:\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_{n+2}(0) = (n^2 + m^2)y_n(0)$$</div></div>\nUsing $y(0) = 1$ and $y_1(0) = m$:\n<ul class=\"list-disc pl-5 space-y-1\">\n    <li><strong>Case 1: If $n$ is even</strong> \\\\\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_2(0) = m^2$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_4(0) = (2^2 + m^2)y_2(0) = m^2(2^2 + m^2)$$</div></div>\n    In general:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(y_n)_0 = m^2 (2^2 + m^2)(4^2 + m^2) \\dots ((n-2)^2 + m^2)$$</div></div>\n    <li><strong>Case 2: If $n$ is odd</strong> \\\\\n<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_1(0) = m$$</div></div>\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_3(0) = (1^2 + m^2)y_1(0) = m(1^2 + m^2)$$</div></div>\n    In general:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(y_n)_0 = m (1^2 + m^2)(3^2 + m^2) \\dots ((n-2)^2 + m^2)$$</div></div>\n</ul>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{\n(y_n)_0 = \\begin{cases}m^2(2^2+m^2)(4^2+m^2)\\dots((n-2)^2+m^2), & when  n  is even \\\\ \nm(1^2+m^2)(3^2+m^2)\\dots((n-2)^2+m^2), & when  n  is odd \n\\end{cases}\n}$$</div></div>"
   },
-  {
+    {
     "id": "cse24-ct1-seca-q5",
     "discipline": "CSE",
     "batch": 24,
@@ -5445,18 +5445,16 @@ const questions = [
     "section": "A",
     "questionNumber": "5",
     "topics": [
-      "Differentiation",
-      "Successive Differentiation"
+        "Differentiation",
+        "Successive Differentiation"
     ],
     "difficulty": "Medium",
     "length": "Medium",
     "frequency": 1,
     "appearances": [],
-    "tags": [],
+    "tags": ["essential"],
     "questionHtml": "Find $n$-th derivatives of $y = e^{2x} \\sin(4x + 3)$.",
     "solutionHtml": "<strong>Step 1: State the general formula for the $n$-th derivative of $e^{ax}\\sin(bx+c)$</strong>\n\n    The $n$-th derivative of $y = e^{ax}\\sin(bx+c)$ is:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n = (a^2+b^2)^{n/2} e^{ax} \\sin(bx+c + n\\phi)$$</div></div>\n    where $\\phi = \\tan^{-1}(\\frac{b}{a})$.\n\n    <strong>Step 2: Substitute parameters</strong>\n\n    From $y = e^{2x}\\sin(4x + 3)$:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$a = 2, \\quad b = 4, \\quad c = 3$$</div></div>\n\n    <strong>Step 3: Compute values</strong>\n\n    Calculate the amplitude term:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(a^2+b^2)^{1/2} = \\sqrt{2^2 + 4^2} = \\sqrt{4 + 16} = \\sqrt{20} = 2\\sqrt{5}$$</div></div>\n    So:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$(a^2+b^2)^{n/2} = (\\sqrt{20})^n = 20^{n/2} = 2^n 5^{n/2}$$</div></div>\n\n    Calculate the phase shift:\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\phi = \\tan^{-1}(\\frac{4}{2}) = \\tan^{-1}(2)$$</div></div>\n\n    <strong>Step 4: Write the general formula</strong>\n\n    <div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$y_n = 2^n 5^{n/2} e^{2x} \\sin(4x+3 + n\\tan^{-1}(2))$$</div></div>",
     "finalAnswerHtml": "<div class=\"overflow-x-auto\"><div class=\"overflow-x-auto\">$$\\boxed{y_n = 2^n 5^{n/2} e^{2x} \\sin(4x+3 + n\\tan^{-1}(2))}$$</div></div>"
   }
 ];
-
-if (typeof module !== 'undefined') module.exports = questions;

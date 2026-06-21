@@ -1,0 +1,237 @@
+% FILE: CSE-23_CT-1_SecB.tex
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\babelfont{rm}{Noto Sans}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-ct1-secb-q1  
+% discipline=CSE  
+% year=23  
+% exam_type=CT  
+% section=B  
+% ct_number=1  
+% question_number=1  
+% topic=Definite Integration  
+% subtopic=General  
+% difficulty=Medium  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec B) - Q1}
+
+Question:
+State and prove the Fundamental Theorem of Calculus.
+
+Solution:
+
+\subsection*{Statement}
+The Fundamental Theorem of Calculus (FTC) consists of two parts that connect the concept of differentiating a function with the concept of integrating it.
+
+\begin{description}
+    \item[First Fundamental Theorem of Calculus (FTC 1):] \ \\
+    If $f$ is continuous on the closed interval $[a, b]$, then the function $g$ defined by:
+    \[ g(x) = \int_{a}^{x} f(t) \, dt \quad \text{for } x \in [a, b] \]
+    is continuous on $[a, b]$, differentiable on the open interval $(a, b)$, and its derivative is:
+    \[ g'(x) = f(x) \]
+
+    \item[Second Fundamental Theorem of Calculus (FTC 2):] \ \\
+    If $f$ is continuous on the closed interval $[a, b]$, and $F$ is any antiderivative of $f$ on $[a, b]$ such that $F'(x) = f(x)$, then:
+    \[ \int_{a}^{b} f(x) \, dx = F(b) - F(a) \]
+\end{description}
+
+\subsection*{Proof of FTC 1}
+Let $g(x) = \int_{a}^{x} f(t) \, dt$. By definition of the derivative:
+\[ g'(x) = \lim_{h \to 0} \frac{g(x+h) - g(x)}{h} \]
+Substituting the integral form of $g(x)$:
+\[ g'(x) = \lim_{h \to 0} \frac{1}{h} \left[ \int_{a}^{x+h} f(t) \, dt - \int_{a}^{x} f(t) \, dt \right] = \lim_{h \to 0} \frac{1}{h} \int_{x}^{x+h} f(t) \, dt \]
+Since $f$ is continuous on the closed interval $[x, x+h]$ (or $[x+h, x]$ if $h < 0$), by the Mean Value Theorem for Integrals, there exists a number $c$ in this interval such that:
+\[ \int_{x}^{x+h} f(t) \, dt = f(c) \cdot h \]
+Substituting this back into the derivative equation:
+\[ g'(x) = \lim_{h \to 0} \frac{1}{h} [f(c) \cdot h] = \lim_{h \to 0} f(c) \]
+As $h \to 0$, the interval $[x, x+h]$ squeezes down to the single point $x$. Since $c$ is forced to lie within this interval, we must have $c \to x$. Because $f$ is continuous:
+\[ \lim_{h \to 0} f(c) = f(x) \]
+Thus, $g'(x) = f(x)$.
+
+\subsection*{Proof of FTC 2}
+Let $F(x)$ be any antiderivative of $f(x)$ on $[a, b]$, meaning $F'(x) = f(x)$. 
+From FTC 1, we also know that $g(x) = \int_{a}^{x} f(t) \, dt$ is an antiderivative of $f(x)$ because $g'(x) = f(x)$.
+
+Since any two antiderivatives of the same function differ only by a constant $C$:
+\[ g(x) = F(x) + C \quad \text{for all } x \in [a, b] \]
+\begin{itemize}
+    \item To find $C$, we evaluate the relation at $x = a$:
+    \[ g(a) = F(a) + C \]
+    Since $g(a) = \int_{a}^{a} f(t) \, dt = 0$, we have:
+    \[ 0 = F(a) + C \implies C = -F(a) \]
+    \item Substituting $C$ back into the relation:
+    \[ g(x) = F(x) - F(a) \]
+    \item Now evaluating at $x = b$:
+    \[ g(b) = F(b) - F(a) \]
+    \[ \int_{a}^{b} f(t) \, dt = F(b) - F(a) \]
+\end{itemize}
+Replacing variable $t$ with $x$ yields the required result:
+\[ \int_{a}^{b} f(x) \, dx = F(b) - F(a) \]
+
+Final Answer:
+\[ 
+\boxed{\text{Fundamental Theorem of Calculus proven successfully.}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-ct1-secb-q2  
+% discipline=CSE  
+% year=23  
+% exam_type=CT  
+% section=B  
+% ct_number=1  
+% question_number=2  
+% topic=Indefinite Integration  
+% subtopic=Reduction Formula  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec B) - Q2}
+
+Question:
+Obtain the reduction formula for $\int \sin^m x \cos^n x \, dx$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Set up the integral and split the term] \ \\
+    Let $I_{m, n} = \int \sin^m x \cos^n x \, dx$.
+    We can rewrite this by splitting one factor of $\sin x$:
+    \[ I_{m, n} = \int \sin^{m-1} x \left( \sin x \cos^n x \right) \, dx \]
+
+    \item[Step 2: Apply Integration by Parts] \ \\
+    Let $u = \sin^{m-1} x$ and $dv = \sin x \cos^n x \, dx$.
+    \begin{itemize}
+        \item Differentiating $u$:
+        \[ du = (m-1) \sin^{m-2} x \cos x \, dx \]
+        \item Integrating $dv$:
+        \[ v = \int \sin x \cos^n x \, dx = -\frac{\cos^{n+1} x}{n+1} \]
+    \end{itemize}
+    Using the integration by parts formula $\int u \, dv = uv - \int v \, du$:
+    \[ I_{m, n} = -\frac{\sin^{m-1} x \cos^{n+1} x}{n+1} - \int \left( -\frac{\cos^{n+1} x}{n+1} \right) \left[ (m-1) \sin^{m-2} x \cos x \right] \, dx \]
+    \[ I_{m, n} = -\frac{\sin^{m-1} x \cos^{n+1} x}{n+1} + \frac{m-1}{n+1} \int \sin^{m-2} x \cos^{n+2} x \, dx \]
+
+    \item[Step 3: Simplify using trigonometric identity] \ \\
+    Using $\cos^{n+2} x = \cos^n x \cos^2 x = \cos^n x (1 - \sin^2 x)$:
+    \[ \int \sin^{m-2} x \cos^{n+2} x \, dx = \int \sin^{m-2} x \cos^n x (1 - \sin^2 x) \, dx \]
+    \[ = \int \sin^{m-2} x \cos^n x \, dx - \int \sin^m x \cos^n x \, dx \]
+    \[ = I_{m-2, n} - I_{m, n} \]
+
+    \item[Step 4: Solve for $I_{m, n}$] \ \\
+    Substitute this expansion back into the equation from Step 2:
+    \[ I_{m, n} = -\frac{\sin^{m-1} x \cos^{n+1} x}{n+1} + \frac{m-1}{n+1} \left( I_{m-2, n} - I_{m, n} \right) \]
+    Multiply the entire equation by $(n+1)$ to clear the fractions:
+    \[ (n+1) I_{m, n} = -\sin^{m-1} x \cos^{n+1} x + (m-1) I_{m-2, n} - (m-1) I_{m, n} \]
+    Group the $I_{m, n}$ terms on the left side:
+    \[ (n+1) I_{m, n} + (m-1) I_{m, n} = -\sin^{m-1} x \cos^{n+1} x + (m-1) I_{m-2, n} \]
+    \[ (m+n) I_{m, n} = -\sin^{m-1} x \cos^{n+1} x + (m-1) I_{m-2, n} \]
+    Divide both sides by $(m+n)$:
+    \[ I_{m, n} = -\frac{\sin^{m-1} x \cos^{n+1} x}{m+n} + \frac{m-1}{m+n} I_{m-2, n} \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\int \sin^m x \cos^n x \, dx = -\frac{\sin^{m-1} x \cos^{n+1} x}{m+n} + \frac{m-1}{m+n} \int \sin^{m-2} x \cos^n x \, dx} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-ct1-secb-q3  
+% discipline=CSE  
+% year=23  
+% exam_type=CT  
+% section=B  
+% ct_number=1  
+% question_number=3  
+% topic=Definite Integration  
+% subtopic=Reduction Formula  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec B) - Q3}
+
+Question:
+Evaluate the definite integral $\int_{0}^{\pi/2} \sin^5 x \cos^4 x \, dx$ using the reduction/Wallis' formula.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: Set up using Wallis' definite integral reduction relation] \ \\
+    The definite integral version of the reduction formula over the limits $[0, \pi/2]$ is:
+    \[ I_{m, n} = \int_{0}^{\pi/2} \sin^m x \cos^n x \, dx \]
+    Applying the limits to the boundary term of the indefinite reduction formula:
+    \[ \left[ -\frac{\sin^{m-1} x \cos^{n+1} x}{m+n} \right]_{0}^{\pi/2} = 0 - 0 = 0 \]
+    Therefore, the definite integral reduction formula simplifies directly to:
+    \[ I_{m, n} = \frac{m-1}{m+n} I_{m-2, n} \]
+
+    \item[Step 2: Apply the reduction formula step-by-step] \ \\
+    We want to evaluate $I_{5, 4}$:
+    \begin{enumerate}
+        \item \textbf{First reduction (reducing $m=5$):}
+        \[ I_{5, 4} = \frac{5-1}{5+4} I_{3, 4} = \frac{4}{9} I_{3, 4} \]
+        
+        \item \textbf{Second reduction (reducing $m=3$):}
+        \[ I_{3, 4} = \frac{3-1}{3+4} I_{1, 4} = \frac{2}{7} I_{1, 4} \]
+        
+        \item \textbf{Evaluate the base case $I_{1, 4}$:}
+        \[ I_{1, 4} = \int_{0}^{\pi/2} \sin x \cos^4 x \, dx \]
+        Using substitution: let $u = \cos x \implies du = -\sin x \, dx$.
+        \begin{itemize}
+            \item At $x=0$, $u = 1$.
+            \item At $x=\pi/2$, $u = 0$.
+        \end{itemize}
+        \[ I_{1, 4} = \int_{1}^{0} -u^4 \, du = \int_{0}^{1} u^4 \, du = \left[ \frac{u^5}{5} \right]_{0}^{1} = \frac{1}{5} \]
+    \end{enumerate}
+
+    \item[Step 3: Calculate final numerical value] \ \\
+    Substitute the values back:
+    \[ I_{5, 4} = \frac{4}{9} \cdot \frac{2}{7} \cdot I_{1, 4} \]
+    \[ I_{5, 4} = \frac{4}{9} \cdot \frac{2}{7} \cdot \frac{1}{5} = \frac{8}{315} \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{\int_{0}^{\pi/2} \sin^5 x \cos^4 x \, dx = \frac{8}{315}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

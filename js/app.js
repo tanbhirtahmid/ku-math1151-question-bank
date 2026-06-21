@@ -42,14 +42,72 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     applyFiltersAndRender();
+    // Update URL to reflect current filters
+    var newHash = serializeFilterState();
+    history.replaceState(null, '', newHash);
   });
 
   // All click interactions inside app-container
   appContainer.addEventListener('click', function (e) {
+    // --- Topic Card Click ---
+    const topicCard = e.target.closest('.topic-card');
+    if (topicCard) {
+      state.filters.topic = topicCard.dataset.topic;
+      state._fromTopicCard = true;
+      var newHash = serializeFilterState('topics');
+      history.replaceState(null, '', newHash);
+      renderTopicsView();
+      return;
+    }
+
+    // --- Back to All Topics ---
+    const backBtn = e.target.closest('#back-to-all-topics');
+    if (backBtn) {
+      state.filters.topic = 'All';
+      state._fromTopicCard = false;
+      history.replaceState(null, '', '#topics');
+      renderTopicsView();
+      return;
+    }
+
+    // --- Filter Chip Click (dismiss) ---
+    const chip = e.target.closest('.filter-chip');
+    if (chip && appContainer.contains(chip)) {
+      var key = chip.dataset.filterKey;
+      if (key === 'search') {
+        state.searchQuery = '';
+        if (globalSearchInput) globalSearchInput.value = '';
+        if (globalSearchMobileInput) globalSearchMobileInput.value = '';
+      } else {
+        state.filters[key] = 'All';
+      }
+      applyFiltersAndRender();
+      var newHash = serializeFilterState();
+      history.replaceState(null, '', newHash);
+      return;
+    }
+
+    // --- Copy Question Link ---
+    const copyBtn = e.target.closest('.copy-link-btn');
+    if (copyBtn) {
+      var qid = copyBtn.dataset.qid;
+      var url = window.location.origin + window.location.pathname + '#papers?q=' + qid;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () {
+          var originalHtml = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<span class="text-emerald-600 font-semibold">Copied!</span>';
+          setTimeout(function () { copyBtn.innerHTML = originalHtml; }, 2000);
+        });
+      }
+      return;
+    }
+
     // --- Clear Filters ---
     if (e.target.closest('#clear-filters')) {
       Object.keys(state.filters).forEach(key => state.filters[key] = 'All');
       applyFiltersAndRender();
+      var newHash = serializeFilterState();
+      history.replaceState(null, '', newHash);
       return;
     }
 
@@ -106,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- TOC Exam Item Click ---
     const tocItem = e.target.closest('.toc-exam-item');
     if (tocItem) {
+      const wasPapers = state.currentView === 'papers';
       state.filters.discipline = tocItem.dataset.discipline;
       state.filters.batch = tocItem.dataset.batch;
       state.filters.examType = tocItem.dataset.examtype;
@@ -115,9 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
       state.filters.difficulty = 'All';
       state.searchQuery = '';
       if (globalSearchInput) globalSearchInput.value = '';
-
-      const wasPapers = state.currentView === 'papers';
-      window.location.hash = '#papers';
+      if (globalSearchMobileInput) globalSearchMobileInput.value = '';
 
       // Close mobile TOC after selection
       const tocContainer = document.querySelector('.toc-container');
@@ -125,8 +182,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (tocContainer) tocContainer.classList.remove('open');
       if (mobToggle) mobToggle.classList.remove('open');
 
+      var newHash = serializeFilterState('papers');
       if (wasPapers) {
+        // Already on papers: update URL silently + re-render directly
+        history.replaceState(null, '', newHash);
         applyFiltersAndRender();
+      } else {
+        // Navigate: set hash to trigger hashchange → renderApp
+        window.location.hash = newHash;
       }
       return;
     }
@@ -153,8 +216,63 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       return;
     }
+
+    // --- Mobile Search Toggle ---
+    const searchToggle = e.target.closest('#mobile-search-toggle');
+    if (searchToggle) {
+      const mobileSearch = document.getElementById('global-search-mobile');
+      if (mobileSearch) {
+        mobileSearch.classList.toggle('hidden');
+        if (!mobileSearch.classList.contains('hidden')) {
+          const input = document.getElementById('global-search-mobile-input');
+          if (input) setTimeout(function() { input.focus(); }, 100);
+        }
+      }
+      return;
+    }
+  });
+
+  // Close mobile search when clicking outside
+  document.addEventListener('click', function (e) {
+    const mobileSearch = document.getElementById('global-search-mobile');
+    const searchToggle = document.getElementById('mobile-search-toggle');
+    if (mobileSearch && !mobileSearch.classList.contains('hidden')) {
+      if (!e.target.closest('#global-search-mobile') && !e.target.closest('#mobile-search-toggle')) {
+        mobileSearch.classList.add('hidden');
+      }
+    }
   });
 
   // --- 3. Initial Load ---
   renderApp();
+
+  // --- 4. Deep-link: auto-expand solution for the question if ?q= present ---
+  function autoExpandDeepLink() {
+    var qid = state._deepLinkQid || state._shouldAutoExpand;
+    if (!qid) return;
+    var toggleBtn = document.querySelector('.toggle-solution-btn[data-qid="' + qid + '"]');
+    if (toggleBtn) {
+      toggleBtn.click();
+      // Scroll to the question card
+      setTimeout(function () {
+        var card = toggleBtn.closest('article');
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 200);
+    }
+    state._deepLinkQid = null;
+    state._shouldAutoExpand = null;
+  }
+
+  // Override renderApp to trigger auto-expand after each render
+  var _autoExpandTimer = null;
+  var origRenderApp = renderApp;
+  renderApp = function () {
+    origRenderApp();
+    if (_autoExpandTimer) clearTimeout(_autoExpandTimer);
+    _autoExpandTimer = setTimeout(autoExpandDeepLink, 400);
+  };
+  window.renderApp = renderApp;
+
+  // Also trigger after initial render
+  setTimeout(autoExpandDeepLink, 400);
 });

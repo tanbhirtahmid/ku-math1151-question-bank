@@ -3,12 +3,25 @@
  */
 
 const globalSearchInput = document.getElementById('global-search');
+const globalSearchMobileInput = document.getElementById('global-search-mobile-input');
 
-globalSearchInput.addEventListener('input', debounce(function (e) {
+function onSearchInput(e) {
   state.searchQuery = e.target.value;
+  // Sync the other input
+  if (e.target === globalSearchInput && globalSearchMobileInput) {
+    globalSearchMobileInput.value = e.target.value;
+  } else if (globalSearchInput) {
+    globalSearchInput.value = e.target.value;
+  }
   if (state.currentView === 'dashboard') {
     window.location.hash = '#papers';
     return;
   }
   applyFiltersAndRender();
-}, 300));
+}
+
+globalSearchInput.addEventListener('input', debounce(onSearchInput, 300));
+
+if (globalSearchMobileInput) {
+  globalSearchMobileInput.addEventListener('input', debounce(onSearchInput, 300));
+}

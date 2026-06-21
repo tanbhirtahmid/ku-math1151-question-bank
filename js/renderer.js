@@ -6,12 +6,14 @@ const appContainer = document.getElementById('app-container');
 const navLinks = document.querySelectorAll('.nav-link');
 
 function renderApp() {
-  const hash = window.location.hash.replace('#', '') || 'dashboard';
-  state.currentView = hash;
+  var parsed = parseHashParams();
+  var view = parsed.view || 'dashboard';
+  state.currentView = view;
 
   // Update active nav link
-  navLinks.forEach(link => {
-    if (link.getAttribute('href') === '#' + hash) {
+  navLinks.forEach(function (link) {
+    var linkView = link.getAttribute('href').replace('#', '').split('?')[0];
+    if (linkView === view) {
       link.classList.add('text-blue-600', 'border-blue-600');
       link.classList.remove('border-transparent');
     } else {
@@ -20,7 +22,10 @@ function renderApp() {
     }
   });
 
-  switch (hash) {
+  // Deep-link to a specific question (auto-expand its solution)
+  state._shouldAutoExpand = state._deepLinkQid || parsed.params.q;
+
+  switch (view) {
     case 'dashboard':
       renderDashboard();
       break;
@@ -119,8 +124,12 @@ function renderExplorer(filteredQuestions, title) {
         // Left Sidebar: TOC
         '<aside class="explorer-sidebar lg:w-56 flex-shrink-0 lg:order-1">',
           '<div>',
+            (state.currentView === 'topics' && state._fromTopicCard
+              ? '<button id="back-to-all-topics" class="mb-3 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg> All Topics</button>'
+              : ''),
             '<h2 class="text-2xl font-extrabold text-slate-900 mb-1">' + title + '</h2>',
-            '<p id="result-count" class="text-slate-500 text-sm mb-6">' + filteredQuestions.length + ' questions found</p>',
+            '<p id="result-count" class="text-slate-500 text-sm mb-3">' + filteredQuestions.length + ' questions found</p>',
+            renderFilterChips(),
           '</div>',
           '<div class="toc-wrapper">',
             '<button id="toc-mobile-toggle" class="toc-mobile-toggle" aria-label="Toggle table of contents"><span>Table of Contents</span></button>',
@@ -142,7 +151,9 @@ function renderExplorer(filteredQuestions, title) {
             renderFilterDropdown('topic', 'Topic', ['All'].concat(topicTaxonomy)),
             renderFilterDropdown('difficulty', 'Difficulty', ['All', 'Easy', 'Medium', 'Hard']),
             renderFilterDropdown('examType', 'Exam Type', ['All', 'CT', 'Term Final']),
-            renderFilterDropdown('examNumber', 'Exam Number', getExamNumberOptions()),
+            (state.filters.examType === 'Term Final'
+              ? '<div><label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Exam Number</label><div class="text-xs text-slate-400 italic px-2.5 py-2.5">N/A for Term Finals</div></div>'
+              : renderFilterDropdown('examNumber', 'Exam Number', getExamNumberOptions(state.filters.examType))),
             '<div>',
               '<label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Section</label>',
               '<select data-filter="section" class="filter-select w-full bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 p-2.5">',
@@ -215,19 +226,33 @@ function renderQuestionCard(q) {
             q.questionHtml,
           '</div>',
         '</div>',
-        '<div class="flex flex-wrap gap-2 mb-8">',
+        '<div class="flex flex-wrap gap-2 mb-6">',
           q.topics.map(function (t) {
             return '<span class="text-[11px] font-medium text-slate-500 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">#' + t + '</span>';
           }).join(''),
         '</div>',
-        '<div class="border-t border-slate-100 pt-6">',
+        // Repeat-linking: show appearance IDs if frequency > 1
+        (q.frequency > 1 && q.appearances && q.appearances.length > 0
+          ? '<div class="mb-6 flex flex-wrap items-center gap-1.5 text-xs"><span class="font-semibold text-amber-600">Also appeared in:</span> ' +
+            q.appearances.map(function (aid) {
+              return '<a href="#papers?q=' + aid + '" class="inline-block px-2 py-0.5 bg-amber-50 text-amber-700 rounded-md border border-amber-200 hover:bg-amber-100 transition-colors font-mono">' + aid + '</a>';
+            }).join('') +
+            '</div>'
+          : ''),
+        '<div class="border-t border-slate-100 pt-6 flex flex-wrap items-center justify-between gap-3">',
           '<button class="toggle-solution-btn flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors" data-qid="' + q.id + '">',
             '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">',
               '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>',
             '</svg>',
             '<span>View Step-by-Step Solution</span>',
           '</button>',
-          '<div id="sol-' + q.id + '" class="solution-container hidden mt-6 space-y-6"></div>',
+          '<button class="copy-link-btn flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-blue-600 transition-colors" data-qid="' + q.id + '" title="Copy link to this question">',
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">',
+              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>',
+            '</svg>',
+            '<span>Copy link</span>',
+          '</button>',
+          '<div id="sol-' + q.id + '" class="solution-container hidden mt-6 w-full space-y-6"></div>',
         '</div>',
       '</div>',
     '</article>',
@@ -248,15 +273,60 @@ function renderEmptyState() {
   ].join('');
 }
 
-function getExamNumberOptions() {
-  if (!examNumberOptionsCache) {
-    examNumberOptionsCache = ['All'].concat(
-      Array.from(new Set(questions.map(function (q) { return q.examNumber; })))
-        .filter(function (n) { return n !== null && n !== undefined; })
-        .sort(function (a, b) { return a - b; })
-    );
+function renderFilterChips() {
+  var chips = [];
+  var labelMap = {
+    discipline: 'Discipline',
+    batch: 'Batch',
+    topic: 'Topic',
+    difficulty: 'Difficulty',
+    examType: 'Exam Type',
+    examNumber: 'Exam #',
+    section: 'Section'
+  };
+
+  Object.keys(state.filters).forEach(function (key) {
+    var val = state.filters[key];
+    if (val !== 'All' && val !== '' && val !== null && val !== undefined) {
+      chips.push({
+        label: (labelMap[key] || key) + ': ' + val,
+        filterKey: key,
+        filterVal: val
+      });
+    }
+  });
+
+  if (state.searchQuery) {
+    chips.push({
+      label: 'Search: "' + state.searchQuery + '"',
+      filterKey: 'search',
+      filterVal: state.searchQuery
+    });
   }
-  return examNumberOptionsCache;
+
+  if (chips.length === 0) return '';
+
+  return '<div class="flex flex-wrap gap-1.5 mb-4">' +
+    chips.map(function (chip) {
+      return '<button class="filter-chip inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold bg-blue-50 text-blue-700 rounded-full border border-blue-100 hover:bg-blue-100 transition-colors" data-filter-key="' + chip.filterKey + '" data-filter-val="' + chip.filterVal + '">' +
+        chip.label +
+        '<svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>' +
+        '</button>';
+    }).join('') +
+    '</div>';
+}
+
+function getExamNumberOptions(examType) {
+  // Filter exam numbers based on current examType
+  var filtered = questions;
+  if (examType && examType !== 'All') {
+    filtered = questions.filter(function (q) { return q.examType === examType; });
+  }
+  return ['All'].concat(
+    Array.from(new Set(filtered.map(function (q) { return q.examNumber; })))
+      .filter(function (n) { return n !== null && n !== undefined; })
+      .sort(function (a, b) { return a - b; })
+  );
 }
 
 function renderFilterDropdown(key, label, options) {
@@ -273,6 +343,69 @@ function renderFilterDropdown(key, label, options) {
 }
 
 function renderPapersView() { applyFiltersAndRender(); }
-function renderTopicsView() { applyFiltersAndRender(); }
+
+function renderTopicsView() {
+  if (state.filters.topic !== 'All') {
+    // Filtered by a topic: render explorer with a back button
+    state._fromTopicCard = true;
+    applyFiltersAndRender();
+    return;
+  }
+  state._fromTopicCard = false;
+  renderTopicGrid();
+}
+
+function renderTopicGrid() {
+  // Compute topic stats
+  var topicData = {};
+  questions.forEach(function (q) {
+    q.topics.forEach(function (t) {
+      if (!topicData[t]) {
+        topicData[t] = { total: 0, Easy: 0, Medium: 0, Hard: 0 };
+      }
+      topicData[t].total++;
+      topicData[t][q.difficulty]++;
+    });
+  });
+
+  // Sort by count descending
+  var sortedTopics = Object.keys(topicData).sort(function (a, b) {
+    return topicData[b].total - topicData[a].total;
+  });
+
+  var maxCount = sortedTopics.length > 0 ? topicData[sortedTopics[0]].total : 1;
+
+  var cardsHtml = sortedTopics.map(function (topic) {
+    var data = topicData[topic];
+    // Opacity based on density relative to max
+    var ratio = data.total / maxCount;
+    var opacityClass = ratio < 0.05 ? 'opacity-40' : ratio < 0.15 ? 'opacity-65' : ratio < 0.3 ? 'opacity-85' : '';
+    
+    return [
+      '<div class="topic-card cursor-pointer bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-400 hover:-translate-y-1 transition-all p-5 ' + opacityClass + '" data-topic="' + topic.replace(/"/g, '&quot;') + '">',
+        '<h3 class="text-base font-bold text-slate-900 mb-2 line-clamp-2">' + topic + '</h3>',
+        '<div class="text-2xl font-extrabold text-blue-600 mb-3">' + data.total + '</div>',
+        '<div class="flex flex-wrap gap-1.5 text-xs">',
+          data.Easy > 0 ? '<span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded-full font-medium">' + data.Easy + ' Easy</span>' : '',
+          data.Medium > 0 ? '<span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full font-medium">' + data.Medium + ' Med</span>' : '',
+          data.Hard > 0 ? '<span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded-full font-medium">' + data.Hard + ' Hard</span>' : '',
+        '</div>',
+      '</div>',
+    ].join('');
+  }).join('');
+
+  appContainer.innerHTML = [
+    '<div class="max-w-6xl mx-auto px-4 md:px-6 py-8">',
+      '<div class="mb-8">',
+        '<h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Topic Explorer</h2>',
+        '<p class="text-slate-500 text-sm mt-1">' + sortedTopics.length + ' topics &mdash; click a card to browse its questions</p>',
+      '</div>',
+      '<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">',
+        cardsHtml,
+      '</div>',
+    '</div>',
+  ].join('');
+}
+
 function renderRepeatedView() { applyFiltersAndRender(); }
 function renderRevisionView() { applyFiltersAndRender(); }

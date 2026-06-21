@@ -1,0 +1,400 @@
+% FILE: CSE-24_CT-1.tex
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\babelfont{rm}{Noto Sans}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-ct1-seca-q1  
+% discipline=CSE  
+% year=24  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=1  
+% topic=Functions  
+% subtopic=Curve Sketching  
+% difficulty=Medium  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q1}
+
+Question:
+Define function, even function and odd function with examples. Draw the graph and also find the domain and range of $f(x) = |x - 4| + |x| + |x + 6|$.
+
+Solution:
+
+\subsection*{Definitions}
+\begin{description}
+    \item[Function:] A relation $f$ from a set $A$ to a set $B$ is a function if every element $x \in A$ is associated with exactly one element $y \in B$. It is denoted as $f: A \to B$. \\
+    \textit{Example:} $f(x) = x^2$.
+    \item[Even Function:] A function $f(x)$ is even if $f(-x) = f(x)$ for all $x$ in its domain. The graph of an even function is symmetric with respect to the y-axis. \\
+    \textit{Example:} $f(x) = \cos x$.
+    \item[Odd Function:] A function $f(x)$ is odd if $f(-x) = -f(x)$ for all $x$ in its domain. The graph of an odd function is symmetric with respect to the origin. \\
+    \textit{Example:} $f(x) = \sin x$.
+\end{description}
+
+\subsection*{Piecewise Analysis of $f(x)$}
+To graph $f(x) = |x - 4| + |x| + |x + 6|$, we analyze the critical points: $x = -6$, $x = 0$, and $x = 4$.
+
+\begin{enumerate}
+    \item \textbf{Case 1: $x < -6$} \\
+    All absolute terms are negative:
+    \[ f(x) = -(x - 4) - x - (x + 6) = -x + 4 - x - x - 6 = -3x - 2 \]
+
+    \item \textbf{Case 2: $-6 \le x < 0$} \\
+    Here, $x + 6 \ge 0$, while $x < 0$ and $x - 4 < 0$:
+    \[ f(x) = -(x - 4) - x + (x + 6) = -x + 4 - x + x + 6 = -x + 10 \]
+
+    \item \textbf{Case 3: $0 \le x < 4$} \\
+    Here, $x \ge 0$ and $x + 6 \ge 0$, while $x - 4 < 0$:
+    \[ f(x) = -(x - 4) + x + (x + 6) = -x + 1 + x + x + 1 = x + 2 \]
+
+    \item \textbf{Case 4: $x \ge 1$} \\
+    All terms are non-negative:
+    \[ f(x) = (x - 4) + (x) + (x + 2) \]
+    \textit{Note: Correction in absolute boundaries: $x - 4 \ge 0 \implies x \ge 4$:}
+    \[ f(x) = (x - 4) + x + (x + 6) = 3x + 2 \]
+\end{enumerate}
+
+Thus, the piecewise representation is:
+\[ 
+f(x) = \begin{cases} 
+-3x - 2, & \text{when } x < -6 \\ 
+-x + 10, & \text{when } -6 \le x < 0 \\ 
+x + 10, & \text{when } 0 \le x < 4 \\ 
+3x + 2, & \text{when } x \ge 4 
+\end{cases} 
+\]
+
+\subsection*{Domain and Range}
+\begin{itemize}
+    \item \textbf{Domain:} The absolute value terms are defined for all real numbers. Thus:
+    \[ \text{Domain} = (-\infty, \infty) \]
+    \item \textbf{Range:} Let's check the local minima at the critical points:
+    \begin{itemize}
+        \item At $x = -6$: $f(-6) = |-10| + |-6| + |0| = 16$
+        \item At $x = 0$: $f(0) = |-4| + |0| + |6| = 10$
+        \item At $x = 4$: $f(4) = |0| + |4| + |10| = 14$
+    \end{itemize}
+    The absolute minimum value is $10$ at $x = 0$. Since the branches tend to infinity as $x \to \pm \infty$:
+    \[ \text{Range} = [10, \infty) \]
+\end{itemize}
+
+Final Answer:
+\[ 
+\boxed{\text{Domain} = (-\infty, \infty), \quad \text{Range} = [10, \infty)} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-ct1-seca-q2  
+% discipline=CSE  
+% year=24  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=2  
+% topic=Limits  
+% subtopic=Continuity  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q2}
+
+Question:
+Define limit of a function. A function is defined by
+\[ 
+f(x) = \begin{cases} 
+x^2, & \text{when } x \le 1 \\ 
+x, & \text{when } 1 < x \le 2 \\ 
+\frac{1}{4}x^3, & \text{when } x > 2 
+\end{cases} 
+\]
+Find $\lim_{x \to 1} f(x)$ and discuss the continuity of $f(x)$ at $x = 1$.
+
+Solution:
+
+\subsection*{Definition of Limit}
+The limit of a function $f(x)$ as $x$ approaches a point $a$ is the value that $f(x)$ gets closer to as $x$ gets arbitrarily close to $a$. It exists and equals $L$ if and only if:
+\[ \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L \]
+
+\subsection*{Evaluation of the Limit at $x = 1$}
+We evaluate the left-hand and right-hand limits at $x = 1$:
+\begin{itemize}
+    \item \textbf{Left-Hand Limit (LHL):}
+    \[ \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x^2) = 1^2 = 1 \]
+    \item \textbf{Right-Hand Limit (RHL):}
+    \[ \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (x) = 1 \]
+\end{itemize}
+Since $\text{LHL} = \text{RHL} = 1$:
+\[ \lim_{x \to 1} f(x) = 1 \]
+
+\subsection*{Continuity at $x = 1$}
+For the function to be continuous at $x = 1$, we require:
+\[ \lim_{x \to 1} f(x) = f(1) \]
+From the piecewise definition:
+\[ f(1) = 1^2 = 1 \]
+Since $\lim_{x \to 1} f(x) = f(1) = 1$, the function $f(x)$ is continuous at $x = 1$.
+
+Final Answer:
+\[ 
+\boxed{\lim_{x \to 1} f(x) = 1, \quad \text{The function is continuous at } x = 1.} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-ct1-seca-q3  
+% discipline=CSE  
+% year=24  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=3  
+% topic=Differentiation  
+% subtopic=Basic Differentiation  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q3}
+
+Question:
+Find $\frac{dy}{dx}$ of:
+\begin{enumerate}[label=(\roman*)]
+    \item $(\cos x)^y = (\sin y)^x$
+    \item $y = (\tan x)^{\cot x} + (\cot x)^{\tan x}$
+    \item $x = a\cos^3 t, \ y = a\sin^3 t$
+\end{enumerate}
+
+Solution:
+
+\subsection*{(i) Find $\frac{dy}{dx}$ of $(\cos x)^y = (\sin y)^x$}
+Taking the natural logarithm on both sides:
+\[ y \ln(\cos x) = x \ln(\sin y) \]
+Differentiating implicitly with respect to $x$ using the product rule:
+\[ y_1 \ln(\cos x) + y \cdot \frac{1}{\cos x} \cdot (-\sin x) = 1 \cdot \ln(\sin y) + x \cdot \frac{1}{\sin y} \cdot (\cos y \cdot y_1) \]
+\[ y_1 \ln(\cos x) - y \tan x = \ln(\sin y) + x \cot y \cdot y_1 \]
+Collect terms containing $y_1$:
+\[ y_1 \left[ \ln(\cos x) - x \cot y \right] = y \tan x + \ln(\sin y) \]
+\[ y_1 = \frac{y \tan x + \ln(\sin y)}{\ln(\cos x) - x \cot y} \]
+
+\subsection*{(ii) Find $\frac{dy}{dx}$ of $y = (\tan x)^{\cot x} + (\cot x)^{\tan x}$}
+Let $y = u + v$, where $u = (\tan x)^{\cot x}$ and $v = (\cot x)^{\tan x}$.
+\begin{itemize}
+    \item \textbf{Differentiating $u = (\tan x)^{\cot x}$:}
+    \[ \ln u = \cot x \ln(\tan x) \]
+    \[ \frac{1}{u}\frac{du}{dx} = -\csc^2 x \ln(\tan x) + \cot x \cdot \frac{\sec^2 x}{\tan x} \]
+    \[ \frac{1}{u}\frac{du}{dx} = -\csc^2 x \ln(\tan x) + \csc^2 x = \csc^2 x (1 - \ln(\tan x)) \]
+    \[ \frac{du}{dx} = (\tan x)^{\cot x} \csc^2 x (1 - \ln(\tan x)) \]
+
+    \item \textbf{Differentiating $v = (\cot x)^{\tan x}$:}
+    \[ \ln v = \tan x \ln(\cot x) \]
+    \[ \frac{1}{v}\frac{dv}{dx} = \sec^2 x \ln(\cot x) + \tan x \cdot \frac{-\csc^2 x}{\cot x} \]
+    \[ \frac{1}{v}\frac{dv}{dx} = \sec^2 x \ln(\cot x) - \sec^2 x = \sec^2 x (\ln(\cot x) - 1) \]
+    \[ \frac{dv}{dx} = (\cot x)^{\tan x} \sec^2 x (\ln(\cot x) - 1) \]
+\end{itemize}
+Combining the parts:
+\[ \frac{dy}{dx} = (\tan x)^{\cot x} \csc^2 x [1 - \ln(\tan x)] + (\cot x)^{\tan x} \sec^2 x [\ln(\cot x) - 1] \]
+
+\subsection*{(iii) Find $\frac{dy}{dx}$ of $x = a\cos^3 t, \ y = a\sin^3 t$}
+We use parametric differentiation:
+\[ \frac{dx}{dt} = 3a\cos^2 t \cdot (-\sin t) = -3a\cos^2 t \sin t \]
+\[ \frac{dy}{dt} = 3a\sin^2 t \cdot (\cos t) = 3a\sin^2 t \cos t \]
+Now find $dy/dx$:
+\[ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{3a\sin^2 t \cos t}{-3a\cos^2 t \sin t} = -\frac{\sin t}{\cos t} = -\tan t \]
+
+Final Answer:
+\[ 
+\boxed{
+\begin{aligned}
+&\text{(i) } \frac{dy}{dx} = \frac{y \tan x + \ln(\sin y)}{\ln(\cos x) - x \cot y} \\
+&\text{(ii) } \frac{dy}{dx} = (\tan x)^{\cot x} \csc^2 x [1 - \ln(\tan x)] + (\cot x)^{\tan x} \sec^2 x [\ln(\cot x) - 1] \\
+&\text{(iii) } \frac{dy}{dx} = -\tan t
+\end{aligned}
+} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-ct1-seca-q4  
+% discipline=CSE  
+% year=24  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=4  
+% topic=Differentiation  
+% subtopic=Leibnitz Rule  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q4}
+
+Question:
+State Leibnitz's theorem. If $y = e^{m\sin^{-1}x}$, then using Leibnitz's theorem show that $(1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0$. Also find the value of $(y_n)_0$.
+
+\textit{Note: The printed exam paper has a minor typographical sign error in the equation where it states $+ (n^2+m^2)y_n = 0$. The rigorous derivation below proves the mathematically correct identity, which is $- (n^2 + m^2)y_n = 0$.}
+
+Solution:
+
+\subsection*{State Leibnitz's Theorem}
+If $u$ and $v$ are two functions of $x$ possessing derivatives of the $n$-th order, then:
+\[ (uv)_n = u_n v + \binom{n}{1} u_{n-1} v_1 + \binom{n}{2} u_{n-2} v_2 + \dots + \binom{n}{r} u_{n-r} v_r + \dots + u v_n \]
+
+\subsection*{Derivation of the Differential Equation}
+Given:
+\[ y = e^{m\sin^{-1}x} \implies y(0) = e^0 = 1 \]
+Differentiating with respect to $x$:
+\[ y_1 = e^{m\sin^{-1}x} \cdot \frac{m}{\sqrt{1-x^2}} = \frac{my}{\sqrt{1-x^2}} \implies y_1(0) = m \]
+Squaring both sides:
+\[ y_1^2 (1-x^2) = m^2 y^2 \]
+Differentiating again with respect to $x$:
+\[ 2y_1 y_2 (1-x^2) + y_1^2 (-2x) = m^2 (2y y_1) \]
+Dividing by $2y_1$ (since $y_1 \neq 0$):
+\[ y_2(1-x^2) - xy_1 - m^2 y = 0 \implies y_2(0) = m^2 \]
+
+\subsection*{Applying Leibnitz's Theorem}
+Differentiating the relation $y_2(1-x^2) - xy_1 - m^2 y = 0$ $n$ times with respect to $x$:
+\begin{enumerate}
+    \item For $y_2(1-x^2)$:
+    \[ [y_2(1-x^2)]_n = y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \frac{n(n-1)}{2} y_n (-2) = (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n \]
+    \item For $-xy_1$:
+    \[ -[y_1 x]_n = -\left( y_{n+1}x + n y_n \right) = -x y_{n+1} - n y_n \]
+    \item For $-m^2 y$:
+    \[ -m^2 y_n \]
+\end{enumerate}
+Summing these expressions:
+\[ (1-x^2)y_{n+2} - 2nxy_{n+1} - n(n-1)y_n - x y_{n+1} - n y_n - m^2 y_n = 0 \]
+\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 - n + n + m^2)y_n = 0 \]
+\[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2)y_n = 0 \]
+
+\subsection*{Finding $(y_n)_0$}
+Setting $x=0$ in the recurrence relation:
+\[ y_{n+2}(0) = (n^2 + m^2)y_n(0) \]
+Using $y(0) = 1$ and $y_1(0) = m$:
+\begin{itemize}
+    \item \textbf{Case 1: If $n$ is even} \\
+    \[ y_2(0) = m^2 \]
+    \[ y_4(0) = (2^2 + m^2)y_2(0) = m^2(2^2 + m^2) \]
+    In general:
+    \[ (y_n)_0 = m^2 (2^2 + m^2)(4^2 + m^2) \dots ((n-2)^2 + m^2) \]
+    \item \textbf{Case 2: If $n$ is odd} \\
+    \[ y_1(0) = m \]
+    \[ y_3(0) = (1^2 + m^2)y_1(0) = m(1^2 + m^2) \]
+    In general:
+    \[ (y_n)_0 = m (1^2 + m^2)(3^2 + m^2) \dots ((n-2)^2 + m^2) \]
+\end{itemize}
+
+Final Answer:
+\[ 
+\boxed{
+(y_n)_0 = \begin{cases} 
+m^2(2^2+m^2)(4^2+m^2)\dots((n-2)^2+m^2), & \text{when } n \text{ is even} \\ 
+m(1^2+m^2)(3^2+m^2)\dots((n-2)^2+m^2), & \text{when } n \text{ is odd} 
+\end{cases}
+} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-ct1-seca-q5  
+% discipline=CSE  
+% year=24  
+% exam_type=CT  
+% section=A  
+% ct_number=1  
+% question_number=5  
+% topic=Differentiation  
+% subtopic=Successive Differentiation  
+% difficulty=Medium  
+% length=Medium  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-1 (Sec A) - Q5}
+
+Question:
+Find $n$-th derivatives of $y = e^{2x} \sin(4x + 3)$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: State the general formula for the $n$-th derivative of $e^{ax}\sin(bx+c)$] \ \\
+    The $n$-th derivative of $y = e^{ax}\sin(bx+c)$ is:
+    \[ y_n = (a^2+b^2)^{n/2} e^{ax} \sin(bx+c + n\phi) \]
+    where $\phi = \tan^{-1}\left(\frac{b}{a}\right)$.
+
+    \item[Step 2: Substitute parameters] \ \\
+    From $y = e^{2x}\sin(4x + 3)$:
+    \[ a = 2, \quad b = 4, \quad c = 3 \]
+
+    \item[Step 3: Compute values] \ \\
+    Calculate the amplitude term:
+    \[ (a^2+b^2)^{1/2} = \sqrt{2^2 + 4^2} = \sqrt{4 + 16} = \sqrt{20} = 2\sqrt{5} \]
+    So:
+    \[ (a^2+b^2)^{n/2} = (\sqrt{20})^n = 20^{n/2} = 2^n 5^{n/2} \]
+
+    Calculate the phase shift:
+    \[ \phi = \tan^{-1}\left(\frac{4}{2}\right) = \tan^{-1}(2) \]
+
+    \item[Step 4: Write the general formula] \ \\
+    \[ y_n = 2^n 5^{n/2} e^{2x} \sin\left(4x+3 + n\tan^{-1}(2)\right) \]
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{y_n = 2^n 5^{n/2} e^{2x} \sin\left(4x+3 + n\tan^{-1}(2)\right)} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

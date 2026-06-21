@@ -1,0 +1,100 @@
+% FILE: CSE-19_CT-2.tex
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\babelfont{rm}{Noto Sans}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_START  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse19-ct2-seca-q1  
+% discipline=CSE  
+% year=19  
+% exam_type=CT  
+% section=A  
+% ct_number=2  
+% question_number=1  
+% topic=Differentiation  
+% subtopic=Leibnitz Rule  
+% difficulty=Hard  
+% length=Long  
+% question_type=New  
+% frequency=1  
+% appearances=  
+% OCR_STATUS=VERIFIED
+
+\section*{CT-2 (Sec A) - Q1}
+
+Question:
+State Leibnitz's theorem. Find the value of the $n$-th derivative of $y = e^{m\sin^{-1}x}$ at $x = 0$.
+
+Solution:
+
+\begin{description}
+    \item[Step 1: State Leibnitz's Theorem] \ \\
+    If $u$ and $v$ are two functions of $x$ possessing derivatives of the $n$-th order, then the $n$-th order derivative of their product $uv$ is given by:
+    \[ (uv)_n = u_n v + \binom{n}{1} u_{n-1} v_1 + \binom{n}{2} u_{n-2} v_2 + \dots + \binom{n}{r} u_{n-r} v_r + \dots + u v_n \]
+    where subscripts represent the order of differentiation.
+
+    \item[Step 2: Find successive derivatives of $y = e^{m\sin^{-1}x}$] \ \\
+    Given:
+    \[ y = e^{m\sin^{-1}x} \implies y(0) = e^0 = 1 \]
+    Differentiating once with respect to $x$:
+    \[ y_1 = e^{m\sin^{-1}x} \cdot \frac{m}{\sqrt{1-x^2}} = \frac{my}{\sqrt{1-x^2}} \implies y_1(0) = m \]
+    Squaring both sides to remove the radical:
+    \[ y_1^2 (1-x^2) = m^2 y^2 \]
+    Differentiating again with respect to $x$:
+    \[ 2y_1 y_2 (1-x^2) + y_1^2 (-2x) = m^2 (2y y_1) \]
+    Dividing through by $2y_1$:
+    \[ y_2(1-x^2) - xy_1 = m^2 y \]
+    At $x = 0$:
+    \[ y_2(0) - 0 = m^2 y(0) \implies y_2(0) = m^2 \]
+
+    \item[Step 3: Apply Leibnitz's Theorem to get a recurrence relation] \ \\
+    Differentiating the equation $y_2(1-x^2) - xy_1 - m^2 y = 0$ $n$ times using Leibnitz's theorem:
+    \[ \left[ y_{n+2}(1-x^2) + n y_{n+1}(-2x) + \frac{n(n-1)}{2} y_n (-2) \right] - \left[ y_{n+1}x + n y_n \right] - m^2 y_n = 0 \]
+    \[ (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - (n^2 + m^2) y_n = 0 \]
+    At $x = 0$, this simplifies to:
+    \[ y_{n+2}(0) = (n^2 + m^2)y_n(0) \]
+
+    \item[Step 4: Find the general value of $y_n(0)$] \ \\
+    We use the recurrence relation $y_{n+2}(0) = (n^2 + m^2)y_n(0)$ to find the pattern:
+    \begin{itemize}
+        \item \textbf{Case 1: If $n$ is even} \\
+        Let $n = 2k$ for $k \ge 1$:
+        \[ y_2(0) = m^2 \]
+        \[ y_4(0) = (2^2 + m^2)y_2(0) = m^2(2^2 + m^2) \]
+        \[ y_6(0) = (4^2 + m^2)y_4(0) = m^2(2^2 + m^2)(4^2 + m^2) \]
+        In general, for even $n$:
+        \[ y_n(0) = m^2(2^2 + m^2)(4^2 + m^2) \dots ((n-2)^2 + m^2) \]
+
+        \item \textbf{Case 2: If $n$ is odd} \\
+        Let $n = 2k+1$ for $k \ge 0$:
+        \[ y_1(0) = m \]
+        \[ y_3(0) = (1^2 + m^2)y_1(0) = m(1^2 + m^2) \]
+        \[ y_5(0) = (3^2 + m^2)y_3(0) = m(1^2 + m^2)(3^2 + m^2) \]
+        In general, for odd $n$:
+        \[ y_n(0) = m(1^2 + m^2)(3^2 + m^2) \dots ((n-2)^2 + m^2) \]
+    \end{itemize}
+\end{description}
+
+Final Answer:
+\[ 
+\boxed{y_n(0) = \begin{cases} 
+m^2(2^2 + m^2)(4^2 + m^2) \dots ((n-2)^2 + m^2), & \text{when } n \text{ is even} \\ 
+m(1^2 + m^2)(3^2 + m^2) \dots ((n-2)^2 + m^2), & \text{when } n \text{ is odd} 
+\end{cases}} 
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% QUESTION_END  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

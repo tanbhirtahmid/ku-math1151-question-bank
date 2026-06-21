@@ -1,0 +1,860 @@
+% FILE: CSE-24_TermFinal.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q1a
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1a
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q1(a)}
+Question:
+Define function, even function and odd function with examples. Draw the graph and also find the domain and range of $f(x) = |x-4| + |x| + |x+6|$.
+
+Solution:
+Step 1: Define Function, Even Function, and Odd Function.
+\begin{itemize}
+    \item \textbf{Function}: A relation $f$ from a set $A$ (domain) to a set $B$ (codomain) is a function if every element $x \in A$ is associated with exactly one element $y = f(x) \in B$.
+    \\ \textit{Example}: $f(x) = x^2$.
+    \item \textbf{Even Function}: A function $f(x)$ is even if $f(-x) = f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the $y$-axis.
+    \\ \textit{Example}: $f(x) = \cos x$.
+    \item \textbf{Odd Function}: A function $f(x)$ is odd if $f(-x) = -f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the origin.
+    \\ \textit{Example}: $f(x) = \sin x$.
+\end{itemize}
+
+Step 2: Determine the Domain of $f(x) = |x-4| + |x| + |x+6|$.
+Since $f(x)$ is a sum of absolute value functions, which are defined for all real numbers:
+\[
+\text{Domain} = (-\infty, \infty) \quad \text{or} \quad \mathbb{R}
+\]
+
+Step 3: Define $f(x)$ piecewise to find the Range and graph behavior.
+The critical points of the absolute values are $x = -6$, $x = 0$, and $x = 4$.
+\begin{itemize}
+    \item \textbf{Case 1: $x < -6$}
+    \[
+    f(x) = -(x-4) - x - (x+6) = -x+4-x-x-6 = -3x - 2
+    \]
+    \item \textbf{Case 2: $-6 \le x < 0$}
+    \[
+    f(x) = -(x-4) - x + (x+6) = -x+4-x+x+6 = -x + 10
+    \]
+    \item \textbf{Case 3: $0 \le x < 4$}
+    \[
+    f(x) = -(x-4) + x + (x+6) = -x+4+x+x+6 = x + 10
+    \]
+    \item \textbf{Case 4: $x \ge 4$}
+    \[
+    f(x) = (x-4) + x + (x+6) = 3x + 2
+    \]
+\end{itemize}
+
+Step 4: Find the Range.
+Evaluate the function at the critical points:
+\begin{align*}
+    f(-6) &= |-6-4| + |-6| + |-6+6| = 10 + 6 + 0 = 16 \\
+    f(0) &= |0-4| + |0| + |0+6| = 4 + 0 + 6 = 10 \\
+    f(4) &= |4-4| + |4| + |4+6| = 0 + 4 + 10 = 14
+\end{align*}
+The global minimum of the function occurs at $x = 0$ with value $10$. As $x \to \pm\infty$, $f(x) \to \infty$. Thus:
+\[
+\text{Range} = [10, \infty)
+\]
+
+Step 5: Describe the Graph.
+The graph is a continuous, piecewise linear curve consisting of four segments:
+\begin{itemize}
+    \item A line with slope $-3$ for $x \in (-\infty, -6)$ ending at $(-6, 16)$.
+    \item A line with slope $-1$ for $x \in [-6, 0)$ connecting $(-6, 16)$ to $(0, 10)$.
+    \item A line with slope $+1$ for $x \in [0, 4)$ connecting $(0, 10)$ to $(4, 14)$.
+    \item A line with slope $+3$ for $x \in [4, \infty)$ originating from $(4, 14)$.
+\end{itemize}
+
+Final Answer:
+\[
+\boxed{\text{Domain} = (-\infty, \infty), \quad \text{Range} = [10, \infty)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q1b
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1b
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q1(b)}
+Question:
+Define limit of a function. A function is defined by
+\[
+f(x) = \begin{cases} 
+x^2, & \text{when } x \le 1 \\ 
+x, & \text{when } 1 < x \le 2 \\ 
+\frac{1}{4}x^3, & \text{when } x > 2 
+\end{cases}
+\]
+Find $\lim_{x \to 1} f(x)$ and discuss the continuity of $f(x)$ at $x = 1$.
+
+Solution:
+Step 1: Define the limit of a function.
+Let $f(x)$ be defined on an open interval containing $c$, except possibly at $c$ itself. We say that the limit of $f(x)$ as $x$ approaches $c$ is $L$, written as:
+\[
+\lim_{x \to c} f(x) = L
+\]
+if for every $\epsilon > 0$ there exists a $\delta > 0$ such that $0 < |x - c| < \delta \implies |f(x) - L| < \epsilon$.
+
+Step 2: Find the left-hand limit (LHL) at $x = 1$.
+For $x \le 1$, $f(x) = x^2$:
+\[
+\text{LHL} = \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} x^2 = 1^2 = 1
+\]
+
+Step 3: Find the right-hand limit (RHL) at $x = 1$.
+For $1 < x \le 2$, $f(x) = x$:
+\[
+\text{RHL} = \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} x = 1
+\]
+
+Step 4: Determine the existence of the limit.
+Since $\text{LHL} = \text{RHL} = 1$:
+\[
+\lim_{x \to 1} f(x) = 1
+\]
+
+Step 5: Discuss continuity at $x = 1$.
+A function is continuous at $x = c$ if:
+\[
+\lim_{x \to c} f(x) = f(c)
+\]
+Here, the functional value at $x = 1$ is:
+\[
+f(1) = 1^2 = 1
+\]
+Since $\lim_{x \to 1} f(x) = 1 = f(1)$, the function $f(x)$ is continuous at $x = 1$.
+
+Final Answer:
+\[
+\boxed{\lim_{x \to 1} f(x) = 1, \quad \text{and the function is continuous at } x = 1.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q2ai
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2ai
+% topic=Differentiation
+% subtopic=Implicit Differentiation
+% difficulty=Medium
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)(i)}
+Question:
+Find $\frac{dy}{dx}$ of $(\cos x)^y = (\sin y)^x$.
+
+Solution:
+Step 1: Take the natural logarithm of both sides.
+\[
+\ln\left( (\cos x)^y \right) = \ln\left( (\sin y)^x \right) \implies y \ln(\cos x) = x \ln(\sin y)
+\]
+
+Step 2: Differentiate both sides implicitly with respect to $x$ using the product rule.
+\[
+\frac{d}{dx} [y \ln(\cos x)] = \frac{d}{dx} [x \ln(\sin y)]
+\]
+\[
+\frac{dy}{dx} \ln(\cos x) + y \cdot \frac{1}{\cos x}(-\sin x) = 1 \cdot \ln(\sin y) + x \cdot \frac{1}{\sin y}(\cos y) \frac{dy}{dx}
+\]
+\[
+\frac{dy}{dx} \ln(\cos x) - y \tan x = \ln(\sin y) + x \cot y \frac{dy}{dx}
+\]
+
+Step 3: Group the terms involving $\frac{dy}{dx}$.
+\[
+\frac{dy}{dx} \ln(\cos x) - x \cot y \frac{dy}{dx} = \ln(\sin y) + y \tan x
+\]
+\[
+\frac{dy}{dx} \left[ \ln(\cos x) - x \cot y \right] = \ln(\sin y) + y \tan x
+\]
+
+Step 4: Solve for $\frac{dy}{dx}$.
+\[
+\frac{dy}{dx} = \frac{\ln(\sin y) + y \tan x}{\ln(\cos x) - x \cot y}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{dy}{dx} = \frac{\ln(\sin y) + y \tan x}{\ln(\cos x) - x \cot y}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q2aii
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=B
+% ct_number=UNKNOWN
+% question_number=2aii
+% topic=Differentiation
+% subtopic=Logarithmic Differentiation
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)(ii)}
+Question:
+Find $\frac{dy}{dx}$ of $y = (\tan x)^{\cot x} + (\cot x)^{\tan x}$.
+
+Solution:
+Step 1: Express the terms separately.
+Let $y = u + v$, where $u = (\tan x)^{\cot x}$ and $v = (\cot x)^{\tan x}$. Then $\frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx}$.
+
+Step 2: Find the derivative of $u = (\tan x)^{\cot x}$ using logarithmic differentiation.
+\[
+\ln u = \cot x \ln(\tan x)
+\]
+Differentiate with respect to $x$:
+\[
+\frac{1}{u} \frac{du}{dx} = -\csc^2 x \ln(\tan x) + \cot x \cdot \frac{1}{\tan x} \sec^2 x
+\]
+Simplify the second term:
+\[
+\cot x \cdot \cot x \cdot \sec^2 x = \frac{\cos^2 x}{\sin^2 x} \cdot \frac{1}{\cos^2 x} = \frac{1}{\sin^2 x} = \csc^2 x
+\]
+So:
+\[
+\frac{1}{u} \frac{du}{dx} = -\csc^2 x \ln(\tan x) + \csc^2 x = \csc^2 x [1 - \ln(\tan x)]
+\]
+\[
+\frac{du}{dx} = (\tan x)^{\cot x} \csc^2 x [1 - \ln(\tan x)]
+\]
+
+Step 3: Find the derivative of $v = (\cot x)^{\tan x}$ using logarithmic differentiation.
+\[
+\ln v = \tan x \ln(\cot x)
+\]
+Differentiate with respect to $x$:
+\[
+\frac{1}{v} \frac{dv}{dx} = \sec^2 x \ln(\cot x) + \tan x \cdot \frac{1}{\cot x} (-\csc^2 x)
+\]
+Simplify the second term:
+\[
+\tan x \cdot \tan x \cdot (-\csc^2 x) = -\frac{\sin^2 x}{\cos^2 x} \cdot \frac{1}{\sin^2 x} = -\sec^2 x
+\]
+So:
+\[
+\frac{1}{v} \frac{dv}{dx} = \sec^2 x \ln(\cot x) - \sec^2 x = \sec^2 x [\ln(\cot x) - 1]
+\]
+\[
+\frac{dv}{dx} = (\cot x)^{\tan x} \sec^2 x [\ln(\cot x) - 1]
+\]
+
+Step 4: Combine the derivatives.
+\[
+\frac{dy}{dx} = (\tan x)^{\cot x} \csc^2 x [1 - \ln(\tan x)] + (\cot x)^{\tan x} \sec^2 x [\ln(\cot x) - 1]
+\]
+
+Final Answer:
+\[
+\boxed{\frac{dy}{dx} = (\tan x)^{\cot x} \csc^2 x [1 - \ln(\tan x)] + (\cot x)^{\tan x} \sec^2 x [\ln(\cot x) - 1]}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q2aiii
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2aiii
+% topic=Differentiation
+% subtopic=Basic Differentiation
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)(iii)}
+Question:
+Find $\frac{dy}{dx}$ of $x = a \cos^3 t, y = a \sin^3 t$.
+
+Solution:
+Step 1: Find the parametric derivatives $\frac{dx}{dt}$ and $\frac{dy}{dt}$.
+\[
+\frac{dx}{dt} = \frac{d}{dt} (a \cos^3 t) = -3a \cos^2 t \sin t
+\]
+\[
+\frac{dy}{dt} = \frac{d}{dt} (a \sin^3 t) = 3a \sin^2 t \cos t
+\]
+
+Step 2: Compute $\frac{dy}{dx}$ using the chain rule.
+\[
+\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{3a \sin^2 t \cos t}{-3a \cos^2 t \sin t}
+\]
+Cancel out common factors:
+\[
+\frac{dy}{dx} = -\frac{\sin t}{\cos t} = -\tan t
+\]
+
+Final Answer:
+\[
+\boxed{\frac{dy}{dx} = -\tan t}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q2b
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2b
+% topic=Differentiation
+% subtopic=Successive Differentiation
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(b)}
+Question:
+Find $n$-th derivatives of $y = e^{2x} \sin(4x+3)$.
+
+Solution:
+Step 1: State the general formula for the $n$-th derivative.
+For a function of the form $u(x) = e^{ax} \sin(bx+c)$, the $n$-th derivative is:
+\[
+D^n [e^{ax} \sin(bx+c)] = (a^2+b^2)^{n/2} e^{ax} \sin\left( bx+c + n\phi \right)
+\]
+where $\tan\phi = \frac{b}{a}$.
+
+Step 2: Identify parameters.
+Here, $a = 2$, $b = 4$, and $c = 2$.
+Compute the amplitude factor:
+\[
+\sqrt{a^2 + b^2} = \sqrt{2^2 + 4^2} = \sqrt{4 + 16} = \sqrt{20} = 2\sqrt{5}
+\]
+Compute the phase angle $\phi$:
+\[
+\tan\phi = \frac{4}{2} = 2 \implies \phi = \tan^{-1}(2)
+\]
+
+Step 3: Formulate the $n$-th derivative.
+\[
+y_n = (20)^{n/2} e^{2x} \sin\left( 4x+3 + n\tan^{-1}(2) \right)
+\]
+
+Final Answer:
+\[
+\boxed{y_n = 20^{n/2} e^{2x} \sin\left( 4x+3 + n\tan^{-1}(2) \right)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q2c
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2c
+% topic=Series Expansion
+% subtopic=Taylor Series
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(c)}
+Question:
+Expand $\cos x$ in powers of $x - \frac{\pi}{4}$.
+
+Solution:
+Step 1: State the Taylor series formula.
+The Taylor series expansion of $f(x)$ about $x = a$ is:
+\[
+f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \dots = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
+\]
+Here, $f(x) = \cos x$ and $a = \frac{\pi}{4}$.
+
+Step 2: Evaluate $f(x)$ and its derivatives at $a = \frac{\pi}{4}$.
+\begin{align*}
+    f(x) &= \cos x \implies f\left(\frac{\pi}{4}\right) = \frac{1}{\sqrt{2}} \\
+    f'(x) &= -\sin x \implies f'\left(\frac{\pi}{4}\right) = -\frac{1}{\sqrt{2}} \\
+    f''(x) &= -\cos x \implies f''\left(\frac{\pi}{4}\right) = -\frac{1}{\sqrt{2}} \\
+    f'''(x) &= \sin x \implies f'''\left(\frac{\pi}{4}\right) = \frac{1}{\sqrt{2}} \\
+    f^{(4)}(x) &= \cos x \implies f^{(4)}\left(\frac{\pi}{4}\right) = \frac{1}{\sqrt{2}}
+\end{align*}
+
+Step 3: Construct the expansion.
+\[
+\cos x = \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}}\left(x-\frac{\pi}{4}\right) - \frac{1}{2!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^2 + \frac{1}{3!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^3 + \frac{1}{4!\sqrt{2}}\left(x-\frac{\pi}{4}\right)^4 - \dots
+\]
+Factoring out $\frac{1}{\sqrt{2}}$:
+\[
+\cos x = \frac{1}{\sqrt{2}} \left[ 1 - \left(x-\frac{\pi}{4}\right) - \frac{1}{2!}\left(x-\frac{\pi}{4}\right)^2 + \frac{1}{3!}\left(x-\frac{\pi}{4}\right)^3 + \frac{1}{4!}\left(x-\frac{\pi}{4}\right)^4 - \dots \right]
+\]
+
+Final Answer:
+\[
+\boxed{\cos x = \frac{1}{\sqrt{2}} \left[ 1 - \left(x-\frac{\pi}{4}\right) - \frac{1}{2!}\left(x-\frac{\pi}{4}\right)^2 + \frac{1}{3!}\left(x-\frac{\pi}{4}\right)^3 + \frac{1}{4!}\left(x-\frac{\pi}{4}\right)^4 - \dots \right]}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q3a
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3a
+% topic=Differentiation
+% subtopic=Leibnitz Rule
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q3(a)}
+Question:
+If $y = (\sinh^{-1} x)^2$, then show that $(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + n^2 y_n = 0$, also find $(y_n)_0$.
+
+Solution:
+Step 1: Compute first and second derivatives.
+Given $y = (\sinh^{-1} x)^2$. Differentiating once with respect to $x$:
+\[
+y_1 = 2(\sinh^{-1} x) \cdot \frac{1}{\sqrt{1+x^2}}
+\]
+Multiply both sides by $\sqrt{1+x^2}$ and square:
+\[
+(1+x^2)y_1^2 = 4(\sinh^{-1} x)^2 \implies (1+x^2)y_1^2 = 4y
+\]
+Differentiate both sides again:
+\[
+2x y_1^2 + (1+x^2)\cdot 2y_1y_2 = 4y_1
+\]
+Divide by $2y_1$ (since $y_1 \ne 0$):
+\[
+(1+x^2)y_2 + x y_1 = 2 \quad \text{--- (Equation 1)}
+\]
+
+Step 2: Differentiate Equation 1 $n$ times using Leibnitz's theorem.
+\[
+D^n\left[ (1+x^2)y_2 \right] + D^n[x y_1] = 0
+\]
+- For $D^n\left[(1+x^2)y_2\right]$:
+  \[
+  (1+x^2)y_{n+2} + n(2x)y_{n+1} + \frac{n(n-1)}{2}(2)y_n = (1+x^2)y_{n+2} + 2n x y_{n+1} + n(n-1)y_n
+  \]
+- For $D^n[x y_1]$:
+  \[
+  x y_{n+1} + n(1)y_n = x y_{n+1} + n y_n
+  \]
+Summing both components:
+\[
+(1+x^2)y_{n+2} + (2n x + x)y_{n+1} + [n(n-1) + n]y_n = 0
+\]
+\[
+(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + n^2 y_n = 0
+\]
+This proves the first required equation.
+
+Step 3: Evaluate derivatives at $x = 0$.
+- At $x = 0$:
+  \[
+  y(0) = (\sinh^{-1} 0)^2 = 0
+  \]
+  \[
+  y_1(0) = 0
+  \]
+  From Equation 1:
+  \[
+  (1+0)y_2(0) + 0 \cdot y_1(0) = 2 \implies y_2(0) = 2
+  \]
+  From the general recurrence relation at $x = 0$:
+  \[
+  (y_{n+2})_0 = -n^2 (y_n)_0
+  \]
+
+Step 4: Resolve the sequence $(y_n)_0$ based on odd/even values of $n$.
+- \textbf{If $n$ is odd}:
+  Since $y_1(0) = 0$, all odd-ordered derivatives evaluated at $0$ are zero:
+  \[
+  (y_n)_0 = 0 \quad (\text{for odd } n)
+  \]
+- \textbf{If $n$ is even} (let $n = 2k$):
+  \[
+  (y_{2k})_0 = -(2k-2)^2 (y_{2k-2})_0 = (-1)^2 (2k-2)^2 (2k-4)^2 (y_{2k-4})_0 = \dots
+  \]
+  \[
+  (y_{2k})_0 = (-1)^{k-1} [ (2k-2)(2k-4)\dots 2 ]^2 (y_2)_0 = (-1)^{k-1} \left[ 2^{k-1}(k-1)! \right]^2 \cdot 2 = (-1)^{k-1} 2^{2k-1} \left[ (k-1)! \right]^2
+  \]
+
+Final Answer:
+\[
+\boxed{
+(y_n)_0 = \begin{cases} 
+0, & \text{if } n \text{ is odd} \\ 
+(-1)^{\frac{n}{2}-1} 2^{n-1} \left[ \left(\frac{n}{2}-1\right)! \right]^2, & \text{if } n \text{ is even (where } n \ge 2)
+\end{cases}
+}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q3b
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3b
+% topic=Applications of Derivatives
+% subtopic=Maxima \& Minima
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q3(b)}
+Question:
+Distinguish between critical points and points of inflection of a function. Find the extremum values of $f(x) = e^x + 2\cos x + e^{-x}$.
+
+Solution:
+Step 1: Distinguish between critical points and points of inflection.
+\begin{itemize}
+    \item \textbf{Critical Points}: Points $c$ in the domain of $f(x)$ where $f'(c) = 0$ or $f'(c)$ is undefined. These represent potential locations for local extrema (maxima/minima).
+    \item \textbf{Points of Inflection}: Points on a curve where the concavity changes. At these points, $f''(x) = 0$ (or is undefined) and $f''(x)$ changes its sign.
+\end{itemize}
+
+Step 2: Find critical points of $f(x) = e^x + 2\cos x + e^{-x}$.
+We can rewrite $f(x) = 2\cosh x + 2\cos x$.
+Differentiate with respect to $x$:
+\[
+f'(x) = e^x - 2\sin x - e^{-x} = 2\sinh x - 2\sin x
+\]
+Set $f'(x) = 0 \implies \sinh x = \sin x$.
+Since $\sinh x > x > \sin x$ for $x > 0$ and $\sinh x < x < \sin x$ for $x < 0$, the only real solution to $\sinh x = \sin x$ is:
+\[
+x = 0
+\]
+
+Step 3: Analyze the nature of the critical point $x = 0$ using higher-order derivatives.
+Compute successive derivatives at $x = 0$:
+\begin{align*}
+    f''(x) &= e^x - 2\cos x + e^{-x} \implies f''(0) = 1 - 2 + 1 = 0 \\
+    f'''(x) &= e^x + 2\sin x - e^{-x} = 2\sinh x + 2\sin x \implies f'''(0) = 0 \\
+    f^{(4)}(x) &= e^x + 2\cos x + e^{-x} \implies f^{(4)}(0) = 1 + 2 + 1 = 4 > 0
+\end{align*}
+Since the first non-zero derivative at the stationary point is of even order (4th) and is positive ($4 > 0$), $x = 0$ is a point of local minimum.
+
+Step 4: Compute the extremum (minimum) value.
+\[
+f(0) = e^0 + 2\cos 0 + e^{-0} = 1 + 2 + 1 = 4
+\]
+
+Final Answer:
+\[
+\boxed{\text{The function has a minimum value of } 4 \text{ at } x = 0.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q4a
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4a
+% topic=Applications of Derivatives
+% subtopic=Tangent \& Normal
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q4(a)}
+Question:
+Define tangent, subtangent, normal and subnormal of a curve $f(x)=0$ at $x=x_0$. Find the equation of tangent and normal line to the curve $x=e^{-t}\cos t, y=e^t\sin t$ at $t=\pi$.
+
+Solution:
+Step 1: Geometrical Definitions.
+Let $P(x_0, y_0)$ be a point on a curve. Draw a tangent and normal at $P$ that intersect the $x$-axis at $T$ and $N$ respectively. Let $G(x_0, 0)$ be the foot of the perpendicular from $P$ to the $x$-axis.
+\begin{itemize}
+    \item \textbf{Tangent Length}: The length of the segment $PT$ on the tangent line.
+    \item \textbf{Subtangent}: The length of the projection segment $TG$ on the $x$-axis.
+    \item \textbf{Normal Length}: The length of the segment $PN$ on the normal line.
+    \item \textbf{Subnormal}: The length of the projection segment $GN$ on the $x$-axis.
+\end{itemize}
+
+Step 2: Find the coordinates of the point at $t = \pi$.
+\[
+x_0 = e^{-\pi} \cos\pi = -e^{-\pi}
+\]
+\[
+y_0 = e^\pi \sin\pi = 0
+\]
+So, the point of contact is $P\left(-e^{-\pi}, 0\right)$.
+
+Step 3: Find the derivative $\frac{dy}{dx}$ at $t = \pi$.
+Differentiate the parametric equations:
+\[
+\frac{dx}{dt} = -e^{-t}\cos t - e^{-t}\sin t = -e^{-t}(\cos t + \sin t)
+\]
+\[
+\frac{dy}{dt} = e^t\sin t + e^t\cos t = e^t(\sin t + \cos t)
+\]
+Using the chain rule:
+\[
+\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{e^t(\sin t + \cos t)}{-e^{-t}(\cos t + \sin t)} = -e^{2t}
+\]
+At $t = \pi$:
+\[
+m = \left.\frac{dy}{dx}\right|_{t=\pi} = -e^{2\pi}
+\]
+
+Step 4: Find the equations of the tangent and normal.
+\begin{itemize}
+    \item \textbf{Tangent Line}:
+    \[
+    y - y_0 = m(x - x_0) \implies y - 0 = -e^{2\pi}\left(x - \left(-e^{-\pi}\right)\right)
+    \]
+    \[
+    y = -e^{2\pi} x - e^{\pi} \implies e^{2\pi}x + y + e^\pi = 0
+    \]
+    \item \textbf{Normal Line}:
+    The slope of the normal is $-\frac{1}{m} = e^{-2\pi}$:
+    \[
+    y - y_0 = -\frac{1}{m}(x - x_0) \implies y - 0 = e^{-2\pi}\left(x - \left(-e^{-\pi}\right)\right)
+    \]
+    \[
+    y = e^{-2\pi} x + e^{-3\pi} \implies e^{-2\pi}x - y + e^{-3\pi} = 0 \quad (\text{or } e^\pi x - e^{3\pi} y + 1 = 0)
+    \]
+\end{itemize}
+
+Final Answer:
+\[
+\boxed{
+\begin{aligned}
+\text{Tangent: } & e^{2\pi}x + y + e^\pi = 0 \\
+\text{Normal: } & e^\pi x - e^{3\pi}y + 1 = 0
+\end{aligned}
+}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q4b
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4b
+% topic=Limits
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q4(b)}
+Question:
+Describe the indeterminate forms of limits. Evaluate the following using L'Hospital rule:
+(i) $\lim_{x \to 0} \frac{3 \tan x - 3x - x^3}{x^5}$ \quad
+(ii) $\lim_{x \to 0} (\sin x)^x$
+
+Solution:
+Step 1: Describe the Indeterminate Forms.
+In calculus, an indeterminate form is an algebraic expression obtained when evaluating limits whose limit cannot be determined solely from the limits of the individual parts. The seven classic indeterminate forms are:
+\[
+\frac{0}{0}, \quad \frac{\infty}{\infty}, \quad 0 \cdot \infty, \quad \infty - \infty, \quad 0^0, \quad 1^\infty, \quad \infty^0
+\]
+
+Step 2: Evaluate (i) $\lim_{x \to 0} \frac{3 \tan x - 3x - x^3}{x^5}$.
+The limit initially presents the indeterminate form $\frac{0}{0}$. Differentiating repeatedly using L'Hospital's rule:
+\[
+L_1 = \lim_{x \to 0} \frac{3\sec^2 x - 3 - 3x^2}{5x^4} \quad \left[\frac{0}{0}\right]
+\]
+Differentiate again:
+\[
+L_1 = \lim_{x \to 0} \frac{6\sec^2 x \tan x - 6x}{20x^3} \quad \left[\frac{0}{0}\right]
+\]
+Differentiate again:
+\[
+L_1 = \lim_{x \to 0} \frac{6\left(\sec^4 x + 2\sec^2 x \tan^2 x\right) - 6}{60x^2} \quad \left[\frac{0}{0}\right]
+\]
+Substitute $\sec^2 x = 1 + \tan^2 x$ to simplify:
+\[
+\sec^4 x + 2\sec^2 x \tan^2 x - 1 = (1 + \tan^2 x)^2 + 2(1 + \tan^2 x)\tan^2 x - 1 = 4\tan^2 x + 3\tan^4 x
+\]
+Thus:
+\[
+L_1 = \lim_{x \to 0} \frac{6\left(4\tan^2 x + 3\tan^4 x\right)}{60x^2} = \lim_{x \to 0} \frac{24\tan^2 x + 18\tan^4 x}{60x^2}
+\]
+Since $\lim_{x \to 0} \frac{\tan x}{x} = 1$:
+\[
+L_1 = \lim_{x \to 0} \left[ \frac{24}{60} \left(\frac{\tan x}{x}\right)^2 + \frac{18}{60} \frac{\tan^4 x}{x^2} \right] = \frac{24}{60} + 0 = \frac{2}{5}
+\]
+
+Step 3: Evaluate (ii) $\lim_{x \to 0} (\sin x)^x$.
+This presents the indeterminate form $0^0$. Let $L_2 = \lim_{x \to 0} (\sin x)^x$, then:
+\[
+\ln L_2 = \lim_{x \to 0} x \ln(\sin x) = \lim_{x \to 0} \frac{\ln(\sin x)}{\frac{1}{x}} \quad \left[\frac{-\infty}{\infty}\right]
+\]
+Applying L'Hospital's rule:
+\[
+\ln L_2 = \lim_{x \to 0} \frac{\cot x}{-\frac{1}{x^2}} = \lim_{x \to 0} \frac{-x^2}{\tan x} = \lim_{x \to 0} (-x) \cdot \left(\frac{x}{\tan x}\right) = 0 \cdot 1 = 0
+\]
+Thus, $L_2 = e^0 = 1$.
+
+Final Answer:
+\[
+\boxed{\text{(i) } \frac{2}{5}, \quad \text{(ii) } 1}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-final-seca-q4c
+% discipline=CSE
+% year=2024
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4c
+% topic=Partial Derivatives
+% subtopic=Total Derivatives
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q4(c)}
+Question:
+If $u = \ln(x^2+y^2+z^2)$ then construct the relation $x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} + z\frac{\partial u}{\partial z} = 2$.
+
+Solution:
+Step 1: Find the partial derivatives with respect to $x$, $y$, and $z$.
+Using the chain rule:
+\[
+\frac{\partial u}{\partial x} = \frac{1}{x^2+y^2+z^2} \cdot \frac{\partial}{\partial x}(x^2+y^2+z^2) = \frac{2x}{x^2+y^2+z^2}
+\]
+Similarly, by symmetry:
+\[
+\frac{\partial u}{\partial y} = \frac{2y}{x^2+y^2+z^2}
+\]
+\[
+\frac{\partial u}{\partial z} = \frac{2z}{x^2+y^2+z^2}
+\]
+
+Step 2: Substitute these partial derivatives into the target expression.
+\[
+x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} + z\frac{\partial u}{\partial z} = x\left(\frac{2x}{x^2+y^2+z^2}\right) + y\left(\frac{2y}{x^2+y^2+z^2}\right) + z\left(\frac{2z}{x^2+y^2+z^2}\right)
+\]
+\[
+= \frac{2x^2 + 2y^2 + 2z^2}{x^2+y^2+z^2}
+\]
+Factor out $2$ from the numerator:
+\[
+= \frac{2(x^2+y^2+z^2)}{x^2+y^2+z^2} = 2
+\]
+This successfully establishes and constructs the required relation.
+
+Final Answer:
+\[
+\boxed{x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y} + z\frac{\partial u}{\partial z} = 2}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

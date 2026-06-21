@@ -1,0 +1,682 @@
+% FILE: CSE-23_TermFinal.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-final-seca-q1a
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1a
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q1(a)}
+Question:
+Draw the graph of the following function and find the domain and range of it:
+\[
+f(x) = \begin{cases}
+0, & x \le -1 \\
+\sqrt{1-x^2}, & -1 < x < 1 \\
+x, & x \ge 1
+\end{cases}
+\]
+
+Solution:
+Step 1: Determine the Domain of $f(x)$.
+The piecewise definition partitions the real number line into three intervals: $x \le -1$, $-1 < x < 1$, and $x \ge 1$. Since every real number $x$ belongs to exactly one of these intervals, the function is defined everywhere.
+\[
+\text{Domain} = (-\infty, \infty) \quad \text{or} \quad \mathbb{R}
+\]
+
+Step 2: Determine the Range of $f(x)$.
+We evaluate the output values of $f(x)$ on each subinterval:
+\begin{itemize}
+    \item For $x \le -1$: $f(x) = 0$.
+    \item For $-1 < x < 1$: $f(x) = \sqrt{1-x^2}$. Since $x^2 \in [0, 1)$, the value under the square root ranges between $0$ (exclusive, as $x \to \pm 1$) and $1$ (inclusive, at $x = 0$). This gives the interval $(0, 1]$.
+    \item For $x \ge 1$: $f(x) = x$, which yields $[1, \infty)$.
+\end{itemize}
+Combining the outputs of all three cases:
+\[
+\text{Range} = \{0\} \cup (0, 1] \cup [1, \infty) = [0, \infty)
+\]
+
+Step 3: Analyze continuity and critical coordinates for the Graph.
+- At $x = -1$: 
+  \[
+  \lim_{x \to -1^-} f(x) = 0, \quad \lim_{x \to -1^+} f(x) = \sqrt{1 - (-1)^2} = 0, \quad f(-1) = 0
+  \]
+  Thus, $f(x)$ is continuous at $x = -1$.
+- At $x = 1$:
+  \[
+  \lim_{x \to 1^-} f(x) = \sqrt{1 - 1^2} = 0, \quad \lim_{x \to 1^+} f(x) = 1, \quad f(1) = 1
+  \]
+  Thus, there is a jump discontinuity at $x = 1$.
+
+Step 4: Draw the Graph.
+The graph consists of a flat line at $y = 0$ for $x \le -1$, an upper semicircle of radius 1 centered at $(0,0)$ for $x \in (-1, 1)$ reaching a peak at $(0,1)$, and a straight line starting at $(1,1)$ with slope 1 extending to infinity.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+  \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+  \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+  \draw[very thick, blue] (-2.5,0) -- (-1,0);
+  \draw[very thick, blue, domain=-1:1, samples=100] plot (\x, {sqrt(1-\x*\x)});
+  \draw[very thick, blue] (1,1) -- (2.5,2.5);
+  \fill[blue] (-1,0) circle (1.5pt);
+  \fill[blue] (1,1) circle (1.5pt);
+  \draw[blue, fill=white] (1,0) circle (1.5pt);
+  \node[below left] at (0,0) {$0$};
+  \node[below] at (-1,0) {$-1$};
+  \node[below] at (1,0) {$1$};
+  \node[left] at (0,1) {$1$};
+\end{tikzpicture}
+\end{center}
+
+Final Answer:
+\[
+\boxed{\text{Domain} = (-\infty, \infty), \quad \text{Range} = [0, \infty)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-final-seca-q1b
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=1b
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q1(b)}
+Question:
+Discuss the continuity of the following function at $x = 0, 3/2$:
+\[
+f(x) = \begin{cases}
+3 + 2x, & \text{for } -\frac{3}{2} \le x < 0 \\
+3 - 2x, & \text{for } 0 \le x < \frac{3}{2} \\
+-3 - 2x, & \text{for } x \ge \frac{3}{2}
+\end{cases}
+\]
+
+Solution:
+Step 1: Discuss continuity at $x = 0$.
+We evaluate the left-hand limit (LHL), right-hand limit (RHL), and functional value at $x = 0$:
+- **LHL**:
+  \[
+  \lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} (3 + 2x) = 3 + 2(0) = 3
+  \]
+- **RHL**:
+  \[
+  \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} (3 - 2x) = 3 - 2(0) = 3
+  \]
+- **Functional Value**:
+  \[
+  f(0) = 3 - 2(0) = 3
+  \]
+Since $\lim_{x \to 0^-} f(x) = \lim_{x \to 0^+} f(x) = f(0) = 3$, the function $f(x)$ is **continuous** at $x = 0$.
+
+Step 2: Discuss continuity at $x = \frac{3}{2}$.
+We evaluate the LHL, RHL, and functional value at $x = \frac{3}{2}$:
+- **LHL**:
+  \[
+  \lim_{x \to (3/2)^-} f(x) = \lim_{x \to (3/2)^-} (3 - 2x) = 3 - 2\left(\frac{3}{2}\right) = 3 - 3 = 0
+  \]
+- **RHL**:
+  \[
+  \lim_{x \to (3/2)^+} f(x) = \lim_{x \to (3/2)^+} (-3 - 2x) = -3 - 2\left(\frac{3}{2}\right) = -3 - 3 = -6
+  \]
+- **Functional Value**:
+  \[
+  f\left(\frac{3}{2}\right) = -3 - 2\left(\frac{3}{2}\right) = -6
+  \]
+Since $\lim_{x \to (3/2)^-} f(x) = 0 \ne \lim_{x \to (3/2)^+} f(x) = -6$, the limit does not exist at $x = \frac{3}{2}$. Therefore, the function is **discontinuous** (possessing a jump discontinuity) at $x = \frac{3}{2}$.
+
+Final Answer:
+\[
+\boxed{f(x) \text{ is continuous at } x = 0 \text{ and discontinuous at } x = \frac{3}{2}.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-final-seca-q2a
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2a
+% topic=Differentiation
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(a)}
+Question:
+Define explicit function and implicit function. Find $\frac{dy}{dx}$ of:
+\begin{enumerate}
+    \item[(i)] $x^n + y^n = a^n$
+    \item[(ii)] $y = x^{\tan^{-1} x} + (\cos x)^{\ln x}$
+    \item[(iii)] $x = e^t \sin t, \, y = e^t \cos t$
+\end{enumerate}
+
+Solution:
+Step 1: Define Explicit and Implicit Functions.
+- **Explicit Function**: A function where the dependent variable is expressed directly and solely in terms of the independent variable, typically in the form $y = f(x)$. Example: $y = x^2 + 5x + 6$.
+- **Implicit Function**: A function where the dependent variable is not isolated on one side of the equation, and the relation is expressed in the form $F(x, y) = 0$. Example: $x^2 + y^2 - 25 = 0$.
+
+Step 2: Solve part (i) $x^n + y^n = a^n$.
+Differentiating both sides with respect to $x$:
+\[
+\frac{d}{dx}(x^n + y^n) = \frac{d}{dx}(a^n) \implies n x^{n-1} + n y^{n-1} \frac{dy}{dx} = 0
+\]
+Isolating $\frac{dy}{dx}$:
+\[
+n y^{n-1} \frac{dy}{dx} = -n x^{n-1} \implies \frac{dy}{dx} = -\frac{x^{n-1}}{y^{n-1}} = -\left(\frac{x}{y}\right)^{n-1}
+\]
+
+Step 3: Solve part (ii) $y = x^{\tan^{-1} x} + (\cos x)^{\ln x}$.
+Let $y = u + v$, where $u = x^{\tan^{-1} x}$ and $v = (\cos x)^{\ln x}$. We find $\frac{du}{dx}$ and $\frac{dv}{dx}$ using logarithmic differentiation.
+- For $u = x^{\tan^{-1} x}$:
+  \[
+  \ln u = \tan^{-1} x \ln x \implies \frac{1}{u} \frac{du}{dx} = \frac{1}{1+x^2} \ln x + \tan^{-1} x \cdot \frac{1}{x}
+  \]
+  \[
+  \frac{du}{dx} = x^{\tan^{-1} x} \left[ \frac{\ln x}{1+x^2} + \frac{\tan^{-1} x}{x} \right]
+  \]
+- For $v = (\cos x)^{\ln x}$:
+  \[
+  \ln v = \ln x \ln(\cos x) \implies \frac{1}{v} \frac{dv}{dx} = \frac{1}{x} \ln(\cos x) + \ln x \left( \frac{1}{\cos x} (-\sin x) \right)
+  \]
+  \[
+  \frac{dv}{dx} = (\cos x)^{\ln x} \left[ \frac{\ln(\cos x)}{x} - \ln x \tan x \right]
+  \]
+Combining the derivatives:
+\[
+\frac{dy}{dx} = x^{\tan^{-1} x} \left[ \frac{\ln x}{1+x^2} + \frac{\tan^{-1} x}{x} \right] + (\cos x)^{\ln x} \left[ \frac{\ln(\cos x)}{x} - \ln x \tan x \right]
+\]
+
+Step 4: Solve part (iii) $x = e^t \sin t$, $y = e^t \cos t$.
+First, find $\frac{dx}{dt}$ and $\frac{dy}{dt}$ using the product rule:
+\[
+\frac{dx}{dt} = e^t \sin t + e^t \cos t = e^t(\sin t + \cos t)
+\]
+\[
+\frac{dy}{dt} = e^t \cos t - e^t \sin t = e^t(\cos t - \sin t)
+\]
+Now, compute $\frac{dy}{dx}$ using parametric differentiation:
+\[
+\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{e^t(\cos t - \sin t)}{e^t(\sin t + \cos t)} = \frac{\cos t - \sin t}{\sin t + \cos t}
+\]
+
+Final Answer:
+\begin{align*}
+    \text{(i) } \frac{dy}{dx} &= -\left(\frac{x}{y}\right)^{n-1} \\
+    \text{(ii) } \frac{dy}{dx} &= x^{\tan^{-1} x} \left[ \frac{\ln x}{1+x^2} + \frac{\tan^{-1} x}{x} \right] + (\cos x)^{\ln x} \left[ \frac{\ln(\cos x)}{x} - \ln x \tan x \right] \\
+    \text{(iii) } \frac{dy}{dx} &= \frac{\cos t - \sin t}{\sin t + \cos t}
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-final-seca-q2b
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=2b
+% topic=Differentiation
+% subtopic=Leibnitz Rule
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q2(b)}
+Question:
+State the Leibnitz's theorem. If $y = (\sinh^{-1} x)^2$ then show that
+\[
+(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + n^2 y_n = 0
+\]
+also find $(y_n)_0$.
+
+Solution:
+Step 1: State Leibnitz's Theorem.
+Leibnitz's theorem states that if $u(x)$ and $v(x)$ are two functions of $x$ possessing derivatives up to $n$-th order, then the $n$-th derivative of their product $uv$ is given by:
+\[
+(uv)_n = \sum_{r=0}^n \binom{n}{r} u_{n-r} v_r = u_n v + n u_{n-1} v_1 + \frac{n(n-1)}{2!} u_{n-2} v_2 + \dots + u v_n
+\]
+
+Step 2: Differentiate $y = (\sinh^{-1} x)^2$ to find the second derivative relation.
+Differentiating once with respect to $x$:
+\[
+y_1 = 2(\sinh^{-1} x) \cdot \frac{1}{\sqrt{1+x^2}}
+\]
+Multiplying both sides by $\sqrt{1+x^2}$ and squaring:
+\[
+(1+x^2) y_1^2 = 4(\sinh^{-1} x)^2 \implies (1+x^2) y_1^2 = 4y
+\]
+Differentiating again with respect to $x$:
+\[
+2x \cdot y_1^2 + (1+x^2) \cdot 2 y_1 y_2 = 4 y_1
+\]
+Dividing both sides by $2y_1$ (since $y_1 \ne 0$):
+\[
+(1+x^2)y_2 + x y_1 = 2 \quad \text{--- (Equation 1)}
+\]
+
+Step 3: Differentiate Equation 1 $n$ times using Leibnitz's Theorem.
+Differentiating both terms of Equation 1 $n$ times:
+\[
+D^n\left[(1+x^2)y_2\right] + D^n[x y_1] = 0
+\]
+Using Leibnitz's theorem on each term:
+\begin{align*}
+    D^n\left[(1+x^2)y_2\right] &= y_{n+2} (1+x^2) + n y_{n+1} (2x) + \frac{n(n-1)}{2} y_n (2) \\
+    &= (1+x^2)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n
+\end{align*}
+And:
+\[
+D^n[x y_1] = y_{n+1} x + n y_n (1) = x y_{n+1} + n y_n
+\]
+Summing the results:
+\[
+(1+x^2)y_{n+2} + 2nx y_{n+1} + n(n-1)y_n + x y_{n+1} + n y_n = 0
+\]
+\[
+(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + [n(n-1)+n]y_n = 0
+\]
+\[
+(1+x^2)y_{n+2} + (2n+1)xy_{n+1} + n^2 y_n = 0
+\]
+This proves the first part of the question.
+
+Step 4: Find the value of $(y_n)_0$.
+Evaluate $y$, $y_1$, and Equation 1 at $x = 0$:
+\begin{align*}
+    (y)_0 &= (\sinh^{-1} 0)^2 = 0 \\
+    (y_1)_0 &= \frac{2\sinh^{-1} 0}{\sqrt{1+0}} = 0 \\
+    (1+0)(y_2)_0 + 0 \cdot (y_1)_0 &= 2 \implies (y_2)_0 = 2
+\end{align*}
+Now, substitute $x = 0$ into our general $n$-th derivative relation:
+\[
+(1+0)(y_{n+2})_0 + (2n+1)(0)(y_{n+1})_0 + n^2(y_n)_0 = 0 \implies (y_{n+2})_0 = -n^2 (y_n)_0
+\]
+Analyzing this recurrence relation:
+- **If $n$ is odd**:
+  Since $(y_1)_0 = 0$, all subsequent odd-order derivatives evaluated at $x = 0$ are zero:
+  \[
+  (y_n)_0 = 0 \quad (\text{for odd } n)
+  \]
+- **If $n$ is even** (let $n = 2k$ for $k \ge 1$):
+  \begin{align*}
+      (y_{2k})_0 &= -(2k-2)^2 (y_{2k-2})_0 \\
+      &= (-1)^2 (2k-2)^2 (2k-4)^2 (y_{2k-4})_0 \\
+      &= (-1)^{k-1} \left[ (2k-2)(2k-4)\dots 2 \right]^2 (y_2)_0 \\
+      &= (-1)^{k-1} \left[ 2^{k-1} (k-1)! \right]^2 \cdot 2 \\
+      &= (-1)^{k-1} 2^{2k-1} \left[ (k-1)! \right]^2
+  \end{align*}
+  Replacing $2k$ with $n$ (so $k = n/2$):
+  \[
+  (y_n)_0 = (-1)^{\frac{n}{2}-1} 2^{n-1} \left[ \left(\frac{n}{2}-1\right)! \right]^2
+  \]
+
+Final Answer:
+\[
+\boxed{
+(y_n)_0 = \begin{cases} 
+0, & \text{if } n \text{ is odd} \\ 
+(-1)^{\frac{n}{2}-1} 2^{n-1} \left[ \left(\frac{n}{2}-1\right)! \right]^2, & \text{if } n \text{ is even (where } n \ge 2)
+\end{cases}
+}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-final-seca-q3a
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3a
+% topic=Applications of Derivatives
+% subtopic=Maxima \& Minima
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q3(a)}
+Question:
+Distinguish between critical points and stationary points of $f(x) = 0$. Find the extremum values of $y = x + \sin x$ for $0 < x < 2\pi$.
+
+Solution:
+Step 1: Distinguish between Critical and Stationary Points.
+- **Critical Point**: A point $c$ in the domain of a function $f(x)$ is a critical point if $f'(c) = 0$ or if $f'(c)$ is undefined.
+- **Stationary Point**: A point $c$ in the domain of a function $f(x)$ is a stationary point if $f'(c) = 0$. This represents a specific subclass of critical points where the derivative exists and the tangent line is horizontal.
+
+Step 2: Find the stationary/critical points of $y = f(x) = x + \sin x$ on $(0, 2\pi)$.
+Differentiating with respect to $x$:
+\[
+f'(x) = 1 + \cos x
+\]
+Setting $f'(x) = 0$:
+\[
+1 + \cos x = 0 \implies \cos x = -1
+\]
+For $x \in (0, 2\pi)$, the only solution is:
+\[
+x = \pi
+\]
+
+Step 3: Analyze the nature of the point $x = \pi$.
+We compute the higher-order derivatives of $f(x)$ at $x = \pi$:
+\[
+f''(x) = -\sin x \implies f''(\pi) = -\sin(\pi) = 0
+\]
+Since the second derivative is zero, we examine the third derivative:
+\[
+f'''(x) = -\cos x \implies f'''(\pi) = -\cos(\pi) = 1 \ne 0
+\]
+Since the first non-zero derivative at the stationary point is of odd order (3rd), $x = \pi$ is a **point of inflection** (saddle point) and is not a local extremum.
+
+Step 4: Conclude on extremum values.
+Since the only critical point in $(0, 2\pi)$ is a point of inflection, the function has no local maximum or minimum values on this interval.
+
+Final Answer:
+\[
+\boxed{\text{There are no local extremum values for } y = x + \sin x \text{ on the interval } 0 < x < 2\pi.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-final-seca-q3b
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3b
+% topic=Limits
+% subtopic=General
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q3(b)}
+Question:
+Evaluate $\lim_{x \to 0} \frac{a^x - 1 - x \log_e a}{x^2}$.
+
+Solution:
+Step 1: Check the form of the limit.
+As $x \to 0$, we substitute $x = 0$ into the expression:
+\[
+\frac{a^0 - 1 - 0 \cdot \log_e a}{0^2} = \frac{1 - 1 - 0}{0} = \frac{0}{0}
+\]
+Since the limit has an indeterminate form of $\frac{0}{0}$, we can apply L'Hospital's Rule.
+
+Step 2: Differentiate the numerator and denominator with respect to $x$.
+Recall that $\frac{d}{dx}(a^x) = a^x \ln a$.
+\[
+\lim_{x \to 0} \frac{\frac{d}{dx}\left( a^x - 1 - x \ln a \right)}{\frac{d}{dx}(x^2)} = \lim_{x \to 0} \frac{a^x \ln a - \ln a}{2x}
+\]
+
+Step 3: Evaluate the new limit.
+Substituting $x = 0$:
+\[
+\frac{a^0 \ln a - \ln a}{2(0)} = \frac{\ln a - \ln a}{0} = \frac{0}{0}
+\]
+Applying L'Hospital's Rule a second time:
+\[
+\lim_{x \to 0} \frac{\frac{d}{dx}\left( a^x \ln a - \ln a \right)}{\frac{d}{dx}(2x)} = \lim_{x \to 0} \frac{a^x (\ln a)^2}{2}
+\]
+
+Step 4: Evaluate the limit at $x = 0$.
+\[
+\lim_{x \to 0} \frac{a^x (\ln a)^2}{2} = \frac{a^0 (\ln a)^2}{2} = \frac{(\ln a)^2}{2}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{(\log_e a)^2}{2}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-final-seca-q3c
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=3c
+% topic=Applications of Derivatives
+% subtopic=Mean Value Theorem
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q3(c)}
+Question:
+Verify mean value theorem for $f(x) = 2x - x^2$ in the interval $[0,1]$.
+
+Solution:
+Step 1: Verify the hypotheses of Lagrange's Mean Value Theorem (LMVT).
+- **Continuity**: $f(x) = 2x - x^2$ is a polynomial function, so it is continuous on $[0, 1]$.
+- **Differentiability**: The derivative is $f'(x) = 2 - 2x$, which exists for all real numbers. Thus, $f(x)$ is differentiable on the open interval $(0, 1)$.
+Both conditions of LMVT are satisfied.
+
+Step 2: Set up the MVT equation.
+LMVT states that there exists some $c \in (0, 1)$ such that:
+\[
+f'(c) = \frac{f(b) - f(a)}{b - a}
+\]
+Here, $a = 0$ and $b = 1$.
+
+Step 3: Evaluate $f(0)$, $f(1)$, and the slope fraction.
+\begin{align*}
+    f(0) &= 2(0) - 0^2 = 0 \\
+    f(1) &= 2(1) - 1^2 = 1 \\
+    \frac{f(1) - f(0)}{1 - 0} &= \frac{1 - 0}{1} = 1
+\end{align*}
+
+Step 4: Solve for $c$.
+Equating $f'(c) = 1$:
+\[
+2 - 2c = 1 \implies 2c = 1 \implies c = \frac{1}{2}
+\]
+Since $c = \frac{1}{2}$ lies within the open interval $(0, 1)$, Lagrange's Mean Value Theorem is verified.
+
+Final Answer:
+\[
+\boxed{c = \frac{1}{2} \in (0, 1) \text{ verifies the Mean Value Theorem.}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-final-seca-q4a
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4a
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q4(a)}
+Question:
+Define increasing, decreasing and concavity of function. Find the intervals on which $f(x) = x^2 - 4x + 3$ is increasing and the intervals on which it is decreasing.
+
+Solution:
+Step 1: Definitions.
+- **Increasing Function**: A function $f(x)$ is strictly increasing on an interval if for any two points $x_1, x_2$ in the interval:
+  \[
+  x_1 < x_2 \implies f(x_1) \le f(x_2) \quad (\text{or } f'(x) \ge 0)
+  \]
+- **Decreasing Function**: A function $f(x)$ is strictly decreasing on an interval if for any two points $x_1, x_2$ in the interval:
+  \[
+  x_1 < x_2 \implies f(x_1) \ge f(x_2) \quad (\text{or } f'(x) \le 0)
+  \]
+- **Concavity**: Concavity refers to the direction of curvature of a function's graph. If $f''(x) > 0$ on an interval, the curve is concave upward (convex). If $f''(x) < 0$ on an interval, the curve is concave downward (concave).
+
+Step 2: Find the derivative of $f(x) = x^2 - 4x + 3$.
+\[
+f'(x) = 2x - 4
+\]
+
+Step 3: Determine the intervals of increasing and decreasing behavior.
+- **Increasing**: The function is increasing where $f'(x) \ge 0$:
+  \[
+  2x - 4 \ge 0 \implies 2x \ge 4 \implies x \ge 2
+  \]
+  Thus, $f(x)$ is increasing on the interval $[2, \infty)$ (or $(2, \infty)$).
+- **Decreasing**: The function is decreasing where $f'(x) \le 0$:
+  \[
+  2x - 4 \le 0 \implies 2x \le 4 \implies x \le 2
+  \]
+  Thus, $f(x)$ is decreasing on the interval $(-\infty, 2]$ (or $(-\infty, 2)$).
+
+Final Answer:
+\[
+\boxed{\text{Increasing on } [2, \infty) \text{ and Decreasing on } (-\infty, 2]}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse23-final-seca-q4b
+% discipline=CSE
+% year=2023
+% exam_type=Term Final
+% section=A
+% ct_number=UNKNOWN
+% question_number=4b
+% topic=Applications of Derivatives
+% subtopic=Maxima \& Minima
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{Term Final (Sec A) - Q4(b)}
+Question:
+Find the absolute extreme of $f(x) = 6x^{4/3} - 3x^{1/3}$ on the interval $[-1,1]$ and determine where these values occur.
+
+Solution:
+Step 1: Differentiate $f(x) = 6x^{4/3} - 3x^{1/3}$ to find the critical points.
+\[
+f'(x) = 6 \cdot \frac{4}{3} x^{1/3} - 3 \cdot \frac{1}{3} x^{-2/3} = 8x^{1/3} - \frac{1}{x^{2/3}}
+\]
+Express the derivative over a single denominator:
+\[
+f'(x) = \frac{8x - 1}{x^{2/3}}
+\]
+
+Step 2: Identify critical points.
+Critical points occur where $f'(x) = 0$ or where $f'(x)$ is undefined:
+- **Derivative is zero**:
+  \[
+  8x - 1 = 0 \implies x = \frac{1}{8}
+  \]
+- **Derivative is undefined**:
+  At $x = 0$, the denominator $x^{2/3}$ is zero, meaning $f'(x)$ is undefined.
+Since both $x = \frac{1}{8}$ and $x = 0$ lie in the interval $[-1, 1]$, they are valid critical points.
+
+Step 3: Evaluate $f(x)$ at critical points and interval boundary endpoints.
+- At $x = -1$ (Endpoint):
+  \[
+  f(-1) = 6(-1)^{4/3} - 3(-1)^{1/3} = 6(1) - 3(-1) = 6 + 3 = 9
+  \]
+- At $x = 0$ (Critical Point):
+  \[
+  f(0) = 6(0) - 3(0) = 0
+  \]
+- At $x = \frac{1}{8}$ (Critical Point):
+  \[
+  f\left(\frac{1}{8}\right) = 6\left(\frac{1}{8}\right)^{4/3} - 3\left(\frac{1}{8}\right)^{1/3} = 6 \left(\frac{1}{16}\right) - 3 \left(\frac{1}{2}\right) = \frac{3}{8} - \frac{12}{8} = -\frac{9}{8} = -1.125
+  \]
+- At $x = 1$ (Endpoint):
+  \[
+  f(1) = 6(1)^{4/3} - 3(1)^{1/3} = 6(1) - 3(1) = 3
+  \]
+
+Step 4: Compare values to find absolute extrema.
+- The highest value is $9$, which occurs at $x = -1$.
+- The lowest value is $-\frac{9}{8}$, which occurs at $x = \frac{1}{8}$.
+
+Final Answer:
+\[
+\boxed{\text{Absolute Maximum value of } 9 \text{ occurs at } x = -1, \text{ and Absolute Minimum value of } -\frac{9}{8} \text{ occurs at } x = \frac{1}{8}.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

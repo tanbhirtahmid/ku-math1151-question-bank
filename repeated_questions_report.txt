@@ -1,0 +1,66 @@
+========================================
+Repeated Question Analysis Report
+========================================
+Generated from 137 questions
+Analysis date: June 2026
+
+--- Methodology ---
+Questions are compared by normalizing their questionHtml text
+(stripping HTML, LaTeX commands, and whitespace) and grouping
+by their first 200 characters of normalized text.
+
+--- Detected Repeated Groups ---
+
+Group #1 (frequency=2):
+  - cse25-ct1-q3ii
+    batch=25, exam=CT(1), section=A
+    topics=['Differentiation', 'Logarithmic Differentiation']
+    qnum=3(ii)
+  - cse25-ece-ct1-q3ii
+    batch=25, exam=CT(1), section=A
+    topics=['Differentiation', 'Logarithmic Differentiation']
+    qnum=3(ii)
+
+Group #2 (frequency=2):
+  - cse25-ct1-q5
+    batch=25, exam=CT(1), section=A
+    topics=['Successive Differentiation']
+    qnum=5
+  - cse25-ece-ct1-q5
+    batch=25, exam=CT(1), section=A
+    topics=['Successive Differentiation']
+    qnum=5
+
+Group #3 (frequency=2):
+  - cse25-final-secb-q6a
+    batch=25, exam=Term Final(None), section=B
+    topics=['Definite Integration']
+    qnum=6(a)
+  - cse23-final-secb-q6a
+    batch=23, exam=Term Final(None), section=B
+    topics=['Definite Integration']
+    qnum=6(a)
+
+Group #4 (frequency=2):
+  - cse22-final-q8b
+    batch=22, exam=Term Final(None), section=B
+    topics=['Applications of Derivatives']
+    qnum=8(b)
+  - cse19-final-q6b
+    batch=19, exam=Term Final(None), section=B
+    topics=['Applications of Derivatives']
+    qnum=6b
+
+--- Frequency Distribution ---
+  frequency=1: 129 questions
+  frequency=2: 8 questions
+
+--- High-Frequency Questions ---
+  cse25-ct1-q3ii: freq=2, topic=Differentiation
+  cse25-ct1-q5: freq=2, topic=Successive Differentiation
+  cse25-ece-ct1-q3ii: freq=2, topic=Differentiation
+  cse25-ece-ct1-q5: freq=2, topic=Successive Differentiation
+  cse25-final-secb-q6a: freq=2, topic=Definite Integration
+  cse23-final-secb-q6a: freq=2, topic=Definite Integration
+  cse22-final-q8b: freq=2, topic=Applications of Derivatives
+  cse19-final-q6b: freq=2, topic=Applications of Derivatives

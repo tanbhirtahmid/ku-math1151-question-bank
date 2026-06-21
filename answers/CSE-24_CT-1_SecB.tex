@@ -1,0 +1,242 @@
+% FILE: CSE-24_CT-1.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-ct1-secb-q1
+% discipline=CSE
+% year=2024
+% exam_type=CT
+% section=B
+% ct_number=1
+% question_number=1
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Easy
+% length=Medium
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT1 (Sec B) - Q1}
+Question:
+Using the properties of definite integral, evaluate $\int_0^{\pi/2} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx$.
+
+Solution:
+Step 1: Define the integral.
+Let $I$ be the given definite integral:
+\[
+I = \int_0^{\pi/2} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx
+\]
+
+Step 2: Apply the definite integral property.
+Recall the integration property:
+\[
+\int_0^a f(x) \, dx = \int_0^a f(a - x) \, dx
+\]
+Applying this property with $a = \frac{\pi}{2}$:
+\[
+I = \int_0^{\pi/2} \frac{\sqrt{\sin\left(\frac{\pi}{2} - x\right)}}{\sqrt{\sin\left(\frac{\pi}{2} - x\right)} + \sqrt{\cos\left(\frac{\pi}{2} - x\right)}} \, dx
+\]
+Using the trigonometric cofunction identities $\sin\left(\frac{\pi}{2} - x\right) = \cos x$ and $\cos\left(\frac{\pi}{2} - x\right) = \sin x$:
+\[
+I = \int_0^{\pi/2} \frac{\sqrt{\cos x}}{\sqrt{\cos x} + \sqrt{\sin x}} \, dx
+\]
+
+Step 3: Add both forms of the integral.
+Summing the two expressions for $I$:
+\[
+2I = \int_0^{\pi/2} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx + \int_0^{\pi/2} \frac{\sqrt{\cos x}}{\sqrt{\cos x} + \sqrt{\sin x}} \, dx
+\]
+Combining the integrands:
+\[
+2I = \int_0^{\pi/2} \frac{\sqrt{\sin x} + \sqrt{\cos x}}{\sqrt{\sin x} + \sqrt{\cos x}} \, dx
+\]
+\[
+2I = \int_0^{\pi/2} 1 \, dx
+\]
+
+Step 4: Integrate and solve for $I$.
+\[
+2I = [x]_0^{\pi/2} = \frac{\pi}{2} - 0 = \frac{\pi}{2}
+\]
+Dividing by $2$:
+\[
+I = \frac{\pi}{4}
+\]
+
+Final Answer:
+\[
+\boxed{I = \frac{\pi}{4}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-ct1-secb-q2
+% discipline=CSE
+% year=2024
+% exam_type=CT
+% section=B
+% ct_number=1
+% question_number=2
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=Repeated PYQ Pattern
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT1 (Sec B) - Q2}
+Question:
+Derive the relation of Beta and Gamma functions.
+
+Solution:
+Step 1: Write Gamma functions using polar coordinate substitutions.
+Recall the definition of the Gamma function:
+\[
+\Gamma(m) = \int_0^\infty e^{-t} t^{m-1} \, dt
+\]
+Letting $t = x^2 \implies dt = 2x \, dx$:
+\[
+\Gamma(m) = 2 \int_0^\infty e^{-x^2} x^{2m-1} \, dx
+\]
+Similarly, we can write the Gamma function of $n$ using a different dummy variable $y$:
+\[
+\Gamma(n) = 2 \int_0^\infty e^{-y^2} y^{2n-1} \, dy
+\]
+
+Step 2: Multiply the two Gamma functions together.
+\[
+\Gamma(m)\Gamma(n) = \left( 2 \int_0^\infty e^{-x^2} x^{2m-1} \, dx \right) \left( 2 \int_0^\infty e^{-y^2} y^{2n-1} \, dy \right)
+\]
+Combining this into a double integral over the first quadrant of the $xy$ plane:
+\[
+\Gamma(m)\Gamma(n) = 4 \int_0^\infty \int_0^\infty e^{-(x^2+y^2)} x^{2m-1} y^{2n-1} \, dx \, dy
+\]
+
+Step 3: Convert the double integral into polar coordinates.
+Let $x = r\cos\theta$ and $y = r\sin\theta$. The Jacobian of the transformation is $dx \, dy = r \, dr \, d\theta$.
+The boundaries for the first quadrant are $r$ running from $0$ to $\infty$ and $\theta$ running from $0$ to $\frac{\pi}{2}$:
+\[
+\Gamma(m)\Gamma(n) = 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} (r\cos\theta)^{2m-1} (r\sin\theta)^{2n-1} r \, dr \, d\theta
+\]
+\[
+= 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} r^{2m-1} \cos^{2m-1}\theta \cdot r^{2n-1} \sin^{2n-1}\theta \cdot r \, dr \, d\theta
+\]
+\[
+= 4 \int_0^{\pi/2} \int_0^\infty e^{-r^2} r^{2(m+n)-1} \sin^{2n-1}\theta \cos^{2m-1}\theta \, dr \, d\theta
+\]
+
+Step 4: Separate the integral components.
+Since the limits of integration are independent constants, we can factor the integrals:
+\[
+\Gamma(m)\Gamma(n) = 2 \left( \int_0^\infty e^{-r^2} r^{2(m+n)-1} \, dr \right) \cdot 2 \left( \int_0^{\pi/2} \sin^{2n-1}\theta \cos^{2m-1}\theta \, d\theta \right)
+\]
+
+Step 5: Relate the components back to the Gamma and Beta definitions.
+- The first part is equal to: $\Gamma(m+n)$
+- The second part is the trigonometric form of the Beta function: $B(n, m)$ which is equal to $B(m, n)$ by symmetry.
+Therefore:
+\[
+\Gamma(m)\Gamma(n) = \Gamma(m+n) B(m, n)
+\]
+Dividing both sides by $\Gamma(m+n)$:
+\[
+B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}
+\]
+
+Final Answer:
+\[
+\boxed{B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse24-ct1-secb-q3
+% discipline=CSE
+% year=2024
+% exam_type=CT
+% section=B
+% ct_number=1
+% question_number=3
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT1 (Sec B) - Q3}
+Question:
+Integrate $\int_0^1 x^3 (1-x^2)^{3/2} \, dx$ by using gamma-beta function.
+
+Solution:
+Step 1: Apply substitution to match the Beta function form.
+Let $I = \int_0^1 x^3 (1 - x^2)^{3/2} \, dx$.
+Substitute $y = x^2 \implies dy = 2x \, dx \implies x \, dx = \frac{dy}{2}$.
+We can rewrite $x^3 \, dx$ as $x^2(x \, dx)$.
+The limits remain the same: when $x = 0$, $y = 0$; when $x = 1$, $y = 1$.
+Substituting these into the integral:
+\[
+I = \int_0^1 y (1-y)^{3/2} \frac{dy}{2}
+\]
+\[
+I = \frac{1}{2} \int_0^1 y^1 (1-y)^{3/2} \, dy
+\]
+
+Step 2: Express the integral in terms of the Beta function.
+The standard Beta function definition is:
+\[
+B(p, q) = \int_0^1 y^{p-1} (1-y)^{q-1} \, dy
+\]
+Comparing exponents:
+- $p - 1 = 1 \implies p = 2$
+- $q - 1 = \frac{3}{2} \implies q = \frac{5}{2}$
+Thus, the integral is:
+\[
+I = \frac{1}{2} B\left(2, \frac{5}{2}\right)
+\]
+
+Step 3: Evaluate using the relation to Gamma functions.
+Recall that:
+\[
+B\left(2, \frac{5}{2}\right) = \frac{\Gamma(2)\Gamma(5/2)}{\Gamma(2+5/2)} = \frac{\Gamma(2)\Gamma(5/2)}{\Gamma(9/2)}
+\]
+Compute the Gamma values:
+- $\Gamma(2) = 1! = 1$
+- $\Gamma\left(\frac{5}{2}\right) = \frac{3}{2} \cdot \frac{1}{2} \sqrt{\pi} = \frac{3}{4}\sqrt{\pi}$
+- $\Gamma\left(\frac{9}{2}\right) = \frac{7}{2} \cdot \frac{5}{2} \cdot \frac{3}{2} \cdot \frac{1}{2} \sqrt{\pi} = \frac{105}{16}\sqrt{\pi}$
+
+Substitute these values back:
+\[
+B\left(2, \frac{5}{2}\right) = \frac{1 \cdot \frac{3}{4}\sqrt{\pi}}{\frac{105}{16}\sqrt{\pi}} = \frac{3}{4} \cdot \frac{16}{105} = \frac{12}{105} = \frac{4}{35}
+\]
+
+Step 4: Compute the final value of the integral $I$.
+\[
+I = \frac{1}{2} B\left(2, \frac{5}{2}\right) = \frac{1}{2} \cdot \frac{4}{35} = \frac{2}{35}
+\]
+
+Final Answer:
+\[
+\boxed{I = \frac{2}{35}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

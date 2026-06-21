@@ -1,0 +1,210 @@
+% FILE: CSE-25_CT-2.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-ct2-secb-q1
+% discipline=CSE
+% year=2025
+% exam_type=CT
+% section=B
+% ct_number=2
+% question_number=1
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec B) - Q1}
+Question:
+Derive the formula for the right pyramid whose altitude is $h$ and the base is square with sides of length $a$.
+
+Solution:
+Step 1: Set up the coordinate system and cross-sectional area.
+Let the vertex of the pyramid be placed at the origin $O(0,0,0)$ and its altitude lie along the $x$-axis from $x = 0$ to $x = h$. The base of the pyramid lies at the plane $x = h$.
+
+At any point $x$ along the altitude ($0 \le x \le h$), the cross-section of the pyramid is a square of side length $s(x)$.
+
+Step 2: Relate the side length $s(x)$ of the cross-section to the base side $a$.
+By the property of similar triangles (proportionality of linear dimensions of similar cross-sections to their distance from the vertex):
+\[
+\frac{s(x)}{a} = \frac{x}{h} \implies s(x) = \frac{a}{h}x
+\]
+
+Step 3: Determine the cross-sectional area function $A(x)$.
+The area of the square cross-section at a distance $x$ from the vertex is:
+\[
+A(x) = [s(x)]^2 = \left(\frac{a}{h}x\right)^2 = \frac{a^2}{h^2} x^2
+\]
+
+Step 4: Integrate the cross-sectional area along the altitude to find the volume.
+The total volume $V$ of the pyramid is obtained by integrating $A(x)$ from $x = 0$ to $x = h$:
+\[
+V = \int_{0}^{h} A(x) \, dx = \int_{0}^{h} \frac{a^2}{h^2} x^2 \, dx
+\]
+\[
+V = \frac{a^2}{h^2} \left[ \frac{x^3}{3} \right]_{0}^{h} = \frac{a^2}{h^2} \left( \frac{h^3}{3} - 0 \right) = \frac{1}{3} a^2 h
+\]
+
+Final Answer:
+\[
+\boxed{V = \frac{1}{3}a^2h}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-ct2-secb-q2
+% discipline=CSE
+% year=2025
+% exam_type=CT
+% section=B
+% ct_number=2
+% question_number=2
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec B) - Q2}
+Question:
+Use cylindrical shells to find the volume of the solid generated when the region enclosed between $y = \sqrt{x}$, $x = 1$, $x = 4$, and the $x$-axis is revolved about the $y$-axis.
+
+Solution:
+Step 1: Set up the cylindrical shells formula.
+When a region bounded by $y = f(x)$, $x = a$, and $x = b$ (with $f(x) \ge 0$) is revolved about the $y$-axis, the volume $V$ of the generated solid of revolution is given by:
+\[
+V = \int_{a}^{b} 2\pi x \cdot (\text{height}) \, dx = 2\pi \int_{a}^{b} x \cdot f(x) \, dx
+\]
+
+Step 2: Substitute the given boundary conditions.
+Here, the bounding curve is $f(x) = \sqrt{x}$, and the integration limits are $x = 1$ to $x = 4$.
+\[
+V = 2\pi \int_{1}^{4} x \cdot \sqrt{x} \, dx = 2\pi \int_{1}^{4} x^{3/2} \, dx
+\]
+
+Step 3: Integrate and evaluate.
+\[
+V = 2\pi \left[ \frac{x^{5/2}}{5/2} \right]_{1}^{4} = 2\pi \left[ \frac{2}{5} x^{5/2} \right]_{1}^{4} = \frac{4\pi}{5} \left[ x^{5/2} \right]_{1}^{4}
+\]
+Evaluate at the upper and lower limits:
+- Upper limit: $4^{5/2} = (\sqrt{4})^5 = 2^5 = 32$
+- Lower limit: $1^{5/2} = 1$
+\[
+V = \frac{4\pi}{5} (32 - 1) = \frac{4\pi}{5} (31) = \frac{124\pi}{5}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{124\pi}{5}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse25-ct2-secb-q3
+% discipline=CSE
+% year=2025
+% exam_type=CT
+% section=B
+% ct_number=2
+% question_number=3
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec B) - Q3}
+Question:
+Find the volume of the solid obtained by rotating the asteroid $x^{2/3} + y^{2/3} = 1$ around its axis of symmetry.
+
+Solution:
+Step 1: Set up the coordinates and choose the axis of rotation.
+By the symmetry of the asteroid $x^{2/3} + y^{2/3} = 1$, rotating it about either the $x$-axis or the $y$-axis yields the same volume. Let us rotate the asteroid about the $x$-axis.
+
+The upper half of the curve is defined by:
+\[
+y^{2/3} = 1 - x^{2/3} \implies y^2 = (1 - x^{2/3})^3
+\]
+The curve intersects the $x$-axis at $x = -1$ and $x = 1$.
+
+Step 2: Set up the volume formula using the disk method.
+The volume $V$ of a solid generated by rotating the region under $y^2 = f(x)$ from $x = a$ to $x = b$ about the $x$-axis is given by:
+\[
+V = \int_{a}^{b} \pi y^2 \, dx = \pi \int_{-1}^{1} (1 - x^{2/3})^3 \, dx
+\]
+
+Step 3: Simplify using symmetry and expand the integrand.
+Since the integrand is an even function of $x$:
+\[
+V = 2\pi \int_{0}^{1} (1 - x^{2/3})^3 \, dx
+\]
+Using the algebraic expansion $(1-u)^3 = 1 - 3u + 3u^2 - u^3$ where $u = x^{2/3}$:
+\[
+(1 - x^{2/3})^3 = 1 - 3x^{2/3} + 3x^{4/3} - x^2
+\]
+Substituting this expansion back into the integral:
+\[
+V = 2\pi \int_{0}^{1} (1 - 3x^{2/3} + 3x^{4/3} - x^2) \, dx
+\]
+
+Step 4: Integrate term by term.
+\[
+V = 2\pi \left[ x - 3\left(\frac{x^{5/3}}{5/3}\right) + 3\left(\frac{x^{7/3}}{7/3}\right) - \frac{x^3}{3} \right]_{0}^{1}
+\]
+\[
+V = 2\pi \left[ x - \frac{9}{5} x^{5/3} + \frac{9}{7} x^{7/3} - \frac{x^3}{3} \right]_{0}^{1}
+\]
+Evaluating at the boundaries:
+\[
+V = 2\pi \left( 1 - \frac{9}{5} + \frac{9}{7} - \frac{1}{3} \right)
+\]
+
+Step 5: Compute the numerical sum.
+Find a common denominator for the terms inside the parentheses (which is $105$):
+\[
+1 - \frac{1}{3} = \frac{2}{3} = \frac{70}{105}
+\]
+\[
+-\frac{9}{5} = -\frac{189}{105}
+\]
+\[
+\frac{9}{7} = \frac{135}{105}
+\]
+Summing these fractions:
+\[
+\frac{2}{3} - \frac{9}{5} + \frac{9}{7} = \frac{70 - 189 + 135}{105} = \frac{16}{105}
+\]
+Multiply by the outside factor $2\pi$:
+\[
+V = 2\pi \left( \frac{16}{105} \right) = \frac{32\pi}{105}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{32\pi}{105}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
