@@ -21,38 +21,101 @@ code, pre, .math-container, .mjx-container {
 }
 
 /* --- MathJax & Equation Containers --- */
+
+/* Force block display so overflow-x:auto actually works */
 .mjx-container {
+  display: block !important;
+  min-width: 0 !important;
   max-width: 100% !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
-.math-container,
+/* Make mjx-container inline for inline math ($...$) but still scrollable */
+.mjx-container[jax="CHTML"][display="inline"],
+.mjx-container:not([display="true"]) {
+  display: inline-block !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  vertical-align: middle;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Scrollable wrapper for display math */
 .overflow-x-auto {
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 
-/* Prevent page-level horizontal scroll */
+/* Prevent page-level horizontal scroll - but NOT inside scroll containers */
 body {
   overflow-x: hidden;
 }
 
+/* Question text needs overflow protection (not wrapped in overflow-x-auto) */
+.question-text {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Final answer boxes */
+.final-answer-box {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Break long inline equations */
+.prose mjx-container,
+.question-text mjx-container {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 /* Reduce equation size on small screens */
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .mjx-container {
+    font-size: 92% !important;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
   .overflow-x-auto {
+    font-size: 92%;
+  }
+  .question-text {
+    font-size: 95%;
+  }
+  .final-answer-box {
+    font-size: 92%;
+  }
+}
+
+@media (max-width: 400px) {
+  .mjx-container {
+    font-size: 85% !important;
+  }
+  .overflow-x-auto {
+    font-size: 85%;
+  }
+  .question-text {
     font-size: 90%;
   }
-  .math-container {
-    font-size: 90%;
-  }
-  mjx-container {
-    font-size: 90% !important;
+  .final-answer-box {
+    font-size: 85%;
   }
 }
 

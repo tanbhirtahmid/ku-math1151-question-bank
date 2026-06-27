@@ -207,7 +207,7 @@ function renderQuestionCard(q) {
           '<span class="ml-auto text-slate-400 text-xs font-medium">#' + q.id + '</span>',
         '</div>',
         '<div class="prose prose-slate max-w-none mb-8">',
-          '<div class="text-lg font-medium text-slate-900 leading-relaxed">',
+          '<div class="question-text text-lg font-medium text-slate-900 leading-relaxed">',
             '<span class="text-blue-600 font-bold mr-2">Q' + q.questionNumber + '.</span>',
             q.questionHtml,
           '</div>',
