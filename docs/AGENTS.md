@@ -376,3 +376,12 @@ Solutions are displayed in a full-viewport-width modal overlay, not inline insid
 When adding new views, card types, or solution rendering logic, always render solutions through the modal system (the #solution-modal overlay in index.html, populated via solCache in app.js). Never reintroduce inline solution expand/collapse inside a card — the width constraint is what causes equation overflow in the first place.
 
 The modal handles its own MathJax typesetting (typesetPromise called on the modal element after content injection). Do not typeset the whole document — only the modal element.
+
+### Mobile equation overflow inside modal — paragraph-level scrolling
+
+On mobile viewports, long lines that mix regular text and inline math (e.g. Leibnitz expansion steps) cannot be broken or wrapped without corrupting the math rendering. The correct approach is paragraph-level horizontal scrolling:
+
+- `.solution-modal-solution p` and `li` must have `overflow-x: auto` — each paragraph becomes independently scrollable if its content is too wide
+- Do NOT use `overflow-wrap: break-word` or `word-break: break-word` on math-containing elements — these break LaTeX token rendering in some browsers
+- The modal body also has `overflow-x: auto` as a last-resort fallback
+- Never use `overflow: hidden` on the modal container or body — it makes wide content unreachable on mobile

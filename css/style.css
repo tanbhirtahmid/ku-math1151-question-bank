@@ -728,7 +728,7 @@ div.overflow-x-auto::-webkit-scrollbar-thumb:hover {
 
 .solution-modal-body {
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   padding: 1.75rem 2rem;
   flex: 1;
   display: flex;
@@ -769,14 +769,16 @@ div.overflow-x-auto::-webkit-scrollbar-thumb:hover {
   word-break: break-word;
 }
 
-/* All direct children of solution content */
+/* All direct children of solution content — paragraph-level scroll, no word-break */
 .solution-modal-solution p,
 .solution-modal-solution li,
 .solution-modal-solution div {
   min-width: 0;
   max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* Do NOT add overflow-wrap or word-break here — they break math tokens */
 }
 
 /* Block equations inside modal get generous scrollable space */
@@ -829,9 +831,11 @@ div.overflow-x-auto::-webkit-scrollbar-thumb:hover {
     max-width: 100%;
     max-height: 92vh;
     border-radius: 1.25rem 1.25rem 0 0;
+    overflow-x: hidden; /* card border stays clean */
   }
   .solution-modal-body {
-    padding: 1.25rem 1rem;
+    overflow-x: auto; /* but body scrolls */
+    padding: 1rem 0.75rem; /* slightly tighter padding on very small screens */
   }
 }
 
@@ -887,6 +891,21 @@ body.modal-open {
 }
 [data-theme="dark"] .solution-modal-body::-webkit-scrollbar-thumb {
   background: #30363d;
+}
+
+/* Horizontal scrollbar on scrollable paragraphs inside modal */
+.solution-modal-solution p::-webkit-scrollbar,
+.solution-modal-solution li::-webkit-scrollbar {
+  height: 3px; /* thinner than block equation scrollbar — less prominent */
+}
+.solution-modal-solution p::-webkit-scrollbar-thumb,
+.solution-modal-solution li::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 2px;
+}
+[data-theme="dark"] .solution-modal-solution p::-webkit-scrollbar-thumb,
+[data-theme="dark"] .solution-modal-solution li::-webkit-scrollbar-thumb {
+  background: rgba(48, 54, 61, 0.8);
 }
 
 /* Horizontal scrollbar on block equations inside modal */
