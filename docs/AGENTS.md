@@ -356,3 +356,15 @@ The overflow containment rules must hold on both mobile (375px+) and desktop (12
 - Never use `overflow: hidden` on a card or article as a containment shortcut — it clips the scrollbar and makes wide equations inaccessible.
 - Never use fixed pixel widths on equation wrappers — they break on screen sizes they weren't designed for.
 - Always test with a long equation (e.g. a Leibnitz expansion or a nested radical chain) at both 375px and 1280px viewport width before committing any layout change.
+
+### Permanent architectural rules — do not regress these
+
+The overflow fix operates at three layers simultaneously. All three must be present or the fix will partially break:
+
+1. **Flex ancestor chain**: Every flex/grid ancestor of a question card — #questions-area, article, article > div, .solution-container — must have `min-width: 0` and `max-width: 100%`. If you add a new wrapper element inside a card for any reason, add `min-width: 0` to it. This is non-negotiable for flex layouts.
+
+2. **Prose container**: `.solution-container p`, `li`, and `div` must have `overflow-wrap: break-word` and `max-width: 100%`. This is the safety net for mixed text+inline-math lines that are too long to fit.
+
+3. **Inline equations**: `mjx-container:not([display="true"])` must be `display: inline-block` with `overflow-x: auto` and `vertical-align: middle`. This makes wide inline equations scroll rather than overflow, without breaking normal inline rendering.
+
+Never remove any of these three layers thinking the other two are sufficient — each handles a different overflow scenario. Removing any one layer will cause regressions on specific question types.

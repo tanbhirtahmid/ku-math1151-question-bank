@@ -78,6 +78,16 @@ mjx-container[display="true"] {
   padding: 0.5rem 0;
 }
 
+/* Wide inline equations — scrollable inline-block, no sentence flow break */
+mjx-container:not([display="true"]) {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Scrollable wrapper for display math */
 .overflow-x-auto,
 .math-container {
@@ -99,16 +109,46 @@ div.overflow-x-auto {
 
 /* Flex child fix on solution and answer containers */
 .solution-container,
-.solution-container > div,
+.solution-container > div {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden; /* hard boundary — nothing escapes this box */
+}
+
 article .prose,
 article > div {
   min-width: 0;
   max-width: 100%;
 }
 
+/* Prose container word-breaking for mixed text+inline-math lines */
+.solution-container p,
+.solution-container li,
+.solution-container div {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 /* Prevent page-level horizontal scroll - but NOT inside scroll containers */
 body {
   overflow-x: hidden;
+}
+
+/* Questions column in the 3-col explorer layout — min-width:0 all the way up */
+#questions-area {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#questions-area article {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#questions-area article > div {
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* Question text needs overflow protection (not wrapped in overflow-x-auto) */
