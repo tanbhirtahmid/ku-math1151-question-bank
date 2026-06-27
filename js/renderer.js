@@ -112,9 +112,9 @@ function renderExplorer(filteredQuestions, title) {
 
   var tocHtml = getTOC();
   if (!batchOptionsCache) {
-    batchOptionsCache = ['All'].concat(
-      Array.from(new Set(questions.map(function (q) { return q.batch; })))
-    ).sort(function (a, b) { return b - a; });
+    var batches = Array.from(new Set(questions.map(function (q) { return q.batch; })));
+    batches.sort(function (a, b) { return b - a; });
+    batchOptionsCache = ['All'].concat(batches);
   }
 
   appContainer.innerHTML = [

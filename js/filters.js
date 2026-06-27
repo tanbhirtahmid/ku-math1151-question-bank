@@ -26,6 +26,12 @@ function applyFiltersAndRender() {
     return dMatch && bMatch && tMatch && diffMatch && etMatch && enMatch && secMatch && sMatch;
   });
 
+  // Sort questions: newest batch first (descending), then by original array order
+  filtered.sort(function (a, b) {
+    if (a.batch !== b.batch) return b.batch - a.batch;
+    return 0;
+  });
+
   if (state.currentView === 'repeated') {
     filtered = filtered.filter(function (q) { return q.frequency > 1; });
   } else if (state.currentView === 'revision') {
