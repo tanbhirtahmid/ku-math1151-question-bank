@@ -53,13 +53,13 @@ code, pre, .math-container, .mjx-container {
 
 /* --- MathJax & Equation Containers --- */
 
-/* Force ALL mjx-containers to be scrollable, not just display ones */
+/* Inline equations — must stay inline, no forced block display */
 mjx-container {
-  display: block !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  max-width: 100% !important;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  /* NO display property here — let MathJax set it naturally */
 }
 
 /* The inner math element must not force width on its parent */
@@ -68,16 +68,14 @@ mjx-container > * {
   /* do NOT set overflow here — only the container scrolls */
 }
 
-/* Make mjx-container inline for inline math ($...$) but still scrollable */
-.mjx-container[jax="CHTML"][display="inline"],
-.mjx-container:not([display="true"]) {
-  display: inline-block !important;
-  max-width: 100% !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  vertical-align: middle;
-  padding-top: 0;
-  padding-bottom: 0;
+/* Block/display equations only — these are the ones that need scrolling */
+mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0;
 }
 
 /* Scrollable wrapper for display math */
