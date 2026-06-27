@@ -22,27 +22,19 @@ code, pre, .math-container, .mjx-container {
 
 /* --- MathJax & Equation Containers --- */
 
-/* Block-level display equations ($$...$$) */
-mjx-container[display="true"] {
-  display: block;
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-width: 100%;
-  -webkit-overflow-scrolling: touch;
-  padding: 0.5rem 0;
-}
-
-/* Force block display so overflow-x:auto actually works */
-.mjx-container {
+/* Force ALL mjx-containers to be scrollable, not just display ones */
+mjx-container {
   display: block !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  scrollbar-width: thin;
+  max-width: 100% !important;
   -webkit-overflow-scrolling: touch;
+}
+
+/* The inner math element must not force width on its parent */
+mjx-container > * {
+  max-width: none;
+  /* do NOT set overflow here — only the container scrolls */
 }
 
 /* Make mjx-container inline for inline math ($...$) but still scrollable */
@@ -66,6 +58,14 @@ mjx-container[display="true"] {
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: thin;
+}
+
+/* Every div wrapping an equation in the imported question HTML */
+div.overflow-x-auto {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  display: block !important;
 }
 
 /* Flex child fix on solution and answer containers */
@@ -98,22 +98,28 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Subtle scrollbar for equation wrappers */
-mjx-container[display="true"]::-webkit-scrollbar,
-.overflow-x-auto::-webkit-scrollbar,
-.math-container::-webkit-scrollbar {
-  height: 3px;
+/* Scrollbar for equation wrappers — 6px for comfortable mouse drag */
+mjx-container::-webkit-scrollbar,
+div.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
 }
-mjx-container[display="true"]::-webkit-scrollbar-thumb,
-.overflow-x-auto::-webkit-scrollbar-thumb,
-.math-container::-webkit-scrollbar-thumb {
+
+mjx-container::-webkit-scrollbar-track,
+div.overflow-x-auto::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 0 4px;
+}
+
+mjx-container::-webkit-scrollbar-thumb,
+div.overflow-x-auto::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 2px;
+  border-radius: 3px;
+  min-width: 40px;
 }
-[data-theme="dark"] mjx-container[display="true"]::-webkit-scrollbar-thumb,
-[data-theme="dark"] .overflow-x-auto::-webkit-scrollbar-thumb,
-[data-theme="dark"] .math-container::-webkit-scrollbar-thumb {
-  background: #30363d;
+
+mjx-container::-webkit-scrollbar-thumb:hover,
+div.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 /* Break long inline equations */
@@ -465,6 +471,17 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb,
 [data-theme="dark"] mjx-container,
 [data-theme="dark"] mjx-container * {
   color: #e6edf3 !important;
+}
+
+/* Scrollbar thumbs in dark mode */
+[data-theme="dark"] mjx-container::-webkit-scrollbar-thumb,
+[data-theme="dark"] div.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #30363d;
+}
+
+[data-theme="dark"] mjx-container::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] div.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
 }
 
 /* Sidebar scrollbar in dark mode */
