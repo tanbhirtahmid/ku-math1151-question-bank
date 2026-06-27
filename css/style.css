@@ -8,8 +8,39 @@ code, pre, .math-container, .mjx-container {
 }
 
 /* --- Navigation --- */
-.nav-link.text-blue-600 {
-  border-bottom-color: currentColor;
+.nav-pills {
+  display: flex;
+  background: rgba(0,0,0,0.04);
+  border-radius: 10px;
+  padding: 4px;
+  border: 1px solid rgba(0,0,0,0.06);
+  gap: 2px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #64748b;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-link:hover {
+  background: rgba(0,0,0,0.06);
+  color: #1e293b;
+}
+
+/* Active state — renderer.js toggles text-blue-600 onto the active .nav-link */
+.nav-link.text-blue-600,
+.nav-link.text-blue-600:hover {
+  background: #2563eb;
+  color: #ffffff;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -383,8 +414,21 @@ div.overflow-x-auto::-webkit-scrollbar-thumb:hover {
   background-color: #0d1117;
   border-color: #30363d;
 }
+[data-theme="dark"] .nav-pills {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.06);
+}
+[data-theme="dark"] .nav-link {
+  color: rgba(255,255,255,0.6);
+}
 [data-theme="dark"] .nav-link:hover {
-  background-color: #1c2128;
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.9);
+}
+[data-theme="dark"] .nav-link.text-blue-600,
+[data-theme="dark"] .nav-link.text-blue-600:hover {
+  background: #1d4ed8;
+  color: #ffffff;
 }
 
 /* Cards & Stats */
