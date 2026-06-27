@@ -1,0 +1,377 @@
+% FILE: CSE-26_CT-1.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct1-seca-q1
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=A
+% ct_number=1
+% question_number=1
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT1 (Sec A) - Q1}
+Question:
+Define function, even function and odd function with examples. Draw the graph and also find the domain and range of $f(x) = |x-2| + |x| + |x+1|$.
+
+Solution:
+Step 1: Definitions.
+\begin{itemize}
+    \item \textbf{Function}: A rule $f$ that assigns to each element $x$ in a set $D$ (domain) exactly one element $f(x)$ in a set $Y$ (codomain). Example: $f(x) = x^2$.
+    \item \textbf{Even Function}: A function $f$ for which $f(-x) = f(x)$ for all $x$ in its domain. Its graph is symmetric about the $y$-axis. Example: $f(x) = \cos x$.
+    \item \textbf{Odd Function}: A function $f$ for which $f(-x) = -f(x)$ for all $x$ in its domain. Its graph is symmetric about the origin. Example: $f(x) = \sin x$.
+\end{itemize}
+
+Step 2: Piecewise definition of $f(x) = |x-2| + |x| + |x+1|$.
+The critical points are $x = -1$, $x = 0$, and $x = 2$.
+\begin{itemize}
+    \item For $x < -1$:
+    \[
+    f(x) = -(x-2) - x - (x+1) = -3x + 1
+    \]
+    \item For $-1 \le x < 0$:
+    \[
+    f(x) = -(x-2) - x + (x+1) = -x + 3
+    \]
+    \item For $0 \le x < 2$:
+    \[
+    f(x) = -(x-2) + x + (x+1) = x + 3
+    \]
+    \item For $x \ge 2$:
+    \[
+    f(x) = (x-2) + x + (x+1) = 3x - 1
+    \]
+\end{itemize}
+
+Step 3: Domain and Range.
+\begin{itemize}
+    \item \textbf{Domain}: The function is defined for all real numbers. Thus:
+    \[
+    \text{Domain} = (-\infty, \infty) \quad \text{or} \quad \mathbb{R}
+    \]
+    \item \textbf{Range}: Evaluating $f(x)$ at its critical points:
+    \[
+    f(-1) = 4, \quad f(0) = 3, \quad f(2) = 5
+    \]
+    Since $f(x) \to \infty$ as $x \to \pm\infty$ and the absolute minimum occurs at $x = 0$ with value $3$:
+    \[
+    \text{Range} = [3, \infty)
+    \]
+\end{itemize}
+
+Step 4: Graphical Description.
+The graph is a continuous, piecewise linear curve with vertices at $(-1, 4)$, $(0, 3)$, and $(2, 5)$, opening upwards to infinity on both sides with slopes $-3$, $-1$, $+1$, and $+3$ respectively.
+
+Final Answer:
+\[
+\boxed{\text{Domain} = (-\infty, \infty), \quad \text{Range} = [3, \infty)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct1-seca-q2
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=A
+% ct_number=1
+% question_number=2
+% topic=Continuity
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT1 (Sec A) - Q2}
+Question:
+Define limit of a function. A function is defined by
+\[
+f(x) = \begin{cases} 
+-x, & \text{when } x \le 0 \\ 
+x, & \text{when } 0 < x \le 1 \\ 
+2-x, & \text{when } x \ge 1 
+\end{cases}
+\]
+Find $\lim_{x \to 1} f(x)$ and discuss the continuity of $f(x)$ at $x = 0, 1$.
+
+Solution:
+Step 1: Definition of limit of a function.
+$\lim_{x \to c} f(x) = L$ if for every $\epsilon > 0$ there exists a $\delta > 0$ such that:
+\[
+0 < |x-c| < \delta \implies |f(x) - L| < \epsilon
+\]
+
+Step 2: Find $\lim_{x \to 1} f(x)$.
+\begin{itemize}
+    \item Left-hand limit (LHL) as $x \to 1^-$:
+    \[
+    \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x) = 1
+    \]
+    \item Right-hand limit (RHL) as $x \to 1^+$:
+    \[
+    \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (2-x) = 2 - 1 = 1
+    \]
+\end{itemize}
+Since $\text{LHL} = \text{RHL} = 1$:
+\[
+\lim_{x \to 1} f(x) = 1
+\]
+
+Step 3: Discuss continuity at $x = 0$.
+\begin{itemize}
+    \item Left-hand limit: $\lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} (-x) = 0$
+    \item Right-hand limit: $\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} (x) = 0$
+    \item Functional value: $f(0) = -(0) = 0$
+\end{itemize}
+Since $\lim_{x \to 0} f(x) = f(0) = 0$, $f(x)$ is continuous at $x = 0$.
+
+Step 4: Discuss continuity at $x = 1$.
+\begin{itemize}
+    \item Left-hand limit: $\lim_{x \to 1^-} f(x) = 1$
+    \item Right-hand limit: $\lim_{x \to 1^+} f(x) = 1$
+    \item Functional value: From the branches defined, we have $f(1) = 1$ (from both $x \le 1$ and $x \ge 1$ definitions).
+\end{itemize}
+Since $\lim_{x \to 1} f(x) = f(1) = 1$, $f(x)$ is continuous at $x = 1$.
+
+Final Answer:
+\[
+\boxed{\lim_{x \to 1} f(x) = 1; \text{ the function is continuous at both } x=0 \text{ and } x=1.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct1-seca-q3
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=A
+% ct_number=1
+% question_number=3
+% topic=Differentiation
+% subtopic=Implicit Differentiation
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT1 (Sec A) - Q3}
+Question:
+Find $\frac{dy}{dx}$ of:
+\begin{enumerate}
+    \item[(i)] $x^m + y^m = a^m$
+    \item[(ii)] $y = x^{\tan x} + (\sin x)^{\cos x}$
+    \item[(iii)] $y = \sqrt{\sin x + \sqrt{\sin x + \sqrt{\sin x + \dots \infty}}}$
+\end{enumerate}
+
+Solution:
+Step 1: Solve part (i) $x^m + y^m = a^m$.
+Differentiating implicitly with respect to $x$:
+\[
+m x^{m-1} + m y^{m-1} \frac{dy}{dx} = 0 \implies \frac{dy}{dx} = -\left(\frac{x}{y}\right)^{m-1}
+\]
+
+Step 2: Solve part (ii) $y = x^{\tan x} + (\sin x)^{\cos x}$.
+Let $y = u + v$, where $u = x^{\tan x}$ and $v = (\sin x)^{\cos x}$.
+For $u = x^{\tan x}$:
+\[
+\ln u = \tan x \ln x \implies \frac{1}{u} \frac{du}{dx} = \sec^2 x \ln x + \frac{\tan x}{x}
+\]
+\[
+\frac{du}{dx} = x^{\tan x} \left( \sec^2 x \ln x + \frac{\tan x}{x} \right)
+\]
+For $v = (\sin x)^{\cos x}$:
+\[
+\ln v = \cos x \ln(\sin x) \implies \frac{1}{v} \frac{dv}{dx} = -\sin x \ln(\sin x) + \cos x \cdot \frac{\cos x}{\sin x}
+\]
+\[
+\frac{dv}{dx} = (\sin x)^{\cos x} \left( \cos x \cot x - \sin x \ln(\sin x) \right)
+\]
+Thus:
+\[
+\frac{dy}{dx} = x^{\tan x} \left( \sec^2 x \ln x + \frac{\tan x}{x} \right) + (\sin x)^{\cos x} \left( \cos x \cot x - \sin x \ln(\sin x) \right)
+\]
+
+Step 3: Solve part (iii) $y = \sqrt{\sin x + \sqrt{\sin x + \dots \infty}}$.
+By definition:
+\[
+y = \sqrt{\sin x + y} \implies y^2 = \sin x + y
+\]
+Differentiating implicitly with respect to $x$:
+\[
+2y \frac{dy}{dx} = \cos x + \frac{dy}{dx} \implies (2y - 1) \frac{dy}{dx} = \cos x \implies \frac{dy}{dx} = \frac{\cos x}{2y - 1}
+\]
+
+Final Answer:
+\begin{align*}
+    \text{(i) } \frac{dy}{dx} &= -\left(\frac{x}{y}\right)^{m-1} \\
+    \text{(ii) } \frac{dy}{dx} &= x^{\tan x} \left( \sec^2 x \ln x + \frac{\tan x}{x} \right) + (\sin x)^{\cos x} \left( \cos x \cot x - \sin x \ln(\sin x) \right) \\
+    \text{(iii) } \frac{dy}{dx} &= \frac{\cos x}{2y - 1}
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct1-seca-q4
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=A
+% ct_number=1
+% question_number=4
+% topic=Differentiation
+% subtopic=Leibnitz Rule
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT1 (Sec A) - Q4}
+Question:
+State Leibnitz's theorem. If $y = \cosh(m \cosh^{-1} x)$, then using Leibnitz's theorem show that $(x^2 - 1)y_{n+2} + (2n+1)xy_{n+1} + (n^2 - m^2)y_n = 0$. Also find the value of $(y_n)_0$.
+\newline
+\textit{Note: The printed exam paper contains a typo showing $- (2n+1)xy_{n+1}$ instead of $+ (2n+1)xy_{n+1}$. The mathematically correct relation is derived below.}
+
+Solution:
+Step 1: State Leibnitz's Theorem.
+If $u(x)$ and $v(x)$ are $n$-times differentiable functions, then the $n$-th derivative of their product is:
+\[
+(uv)_n = \sum_{r=0}^n \binom{n}{r} u_{n-r} v_r = u_n v + n u_{n-1} v_1 + \frac{n(n-1)}{2!} u_{n-2} v_2 + \dots + u v_n
+\]
+
+Step 2: Obtain the base differential equation.
+Given $y = \cosh(m \cosh^{-1} x)$. Differentiating with respect to $x$:
+\[
+y_1 = \sinh(m \cosh^{-1} x) \cdot \frac{m}{\sqrt{x^2 - 1}} \implies \sqrt{x^2 - 1} y_1 = m \sinh(m \cosh^{-1} x)
+\]
+Squaring both sides:
+\[
+(x^2 - 1)y_1^2 = m^2 \sinh^2(m \cosh^{-1} x) = m^2 \left( \cosh^2(m \cosh^{-1} x) - 1 \right) = m^2 (y^2 - 1)
+\]
+Differentiating again with respect to $x$:
+\[
+2x y_1^2 + (x^2 - 1) \cdot 2 y_1 y_2 = m^2 \cdot 2 y y_1
+\]
+Dividing by $2y_1$:
+\[
+(x^2 - 1)y_2 + x y_1 - m^2 y = 0 \quad \text{--- (Equation 1)}
+\]
+
+Step 3: Differentiate Equation 1 $n$ times using Leibnitz's Theorem.
+\[
+D^n\left[ (x^2 - 1)y_2 \right] + D^n [x y_1] - m^2 y_n = 0
+\]
+Using Leibnitz's theorem:
+\[
+\left[ y_{n+2}(x^2 - 1) + n y_{n+1}(2x) + \frac{n(n-1)}{2} y_n(2) \right] + \left[ y_{n+1} x + n y_n \right] - m^2 y_n = 0
+\]
+\[
+(x^2 - 1)y_{n+2} + (2n + 1)x y_{n+1} + (n^2 - m^2)y_n = 0
+\]
+This proves the standard relation.
+
+Step 4: Find the value of $(y_n)_0$.
+Evaluate $y$, $y_1$, and Equation 1 at $x = 0$:
+\[
+(y)_0 = \cosh(m \cosh^{-1} 0) = \cosh\left(i \frac{m\pi}{2}\right) = \cos\left(\frac{m\pi}{2}\right)
+\]
+\[
+(y_1)_0 = \frac{m \sinh(m \cosh^{-1} 0)}{\sqrt{0 - 1}} = \frac{m \cdot i \sin\left(\frac{m\pi}{2}\right)}{i} = m \sin\left(\frac{m\pi}{2}\right)
+\]
+At $x = 0$, Equation 1 becomes:
+\[
+-y_2(0) - m^2 y(0) = 0 \implies (y_2)_0 = -m^2 (y)_0
+\]
+The recurrence relation at $x = 0$ is:
+\[
+-y_{n+2}(0) + (n^2 - m^2)y_n(0) = 0 \implies (y_{n+2})_0 = (n^2 - m^2)(y_n)_0
+\]
+Sequentially solving this:
+\begin{itemize}
+    \item \textbf{If $n$ is even} ($n = 2k$):
+    \[
+    (y_{2k})_0 = (-1)^k \prod_{j=1}^k \left[ m^2 - (2j-2)^2 \right] \cos\left(\frac{m\pi}{2}\right)
+    \]
+    \item \textbf{If $n$ is odd} ($n = 2k+1$):
+    \[
+    (y_{2k+1})_0 = (-1)^k \left( \prod_{j=1}^k \left[ m^2 - (2j-1)^2 \right] \right) m \sin\left(\frac{m\pi}{2}\right)
+    \]
+\end{itemize}
+
+Final Answer:
+\[
+\boxed{(y_{n+2})_0 = (n^2 - m^2)(y_n)_0 \text{ with } y_0 = \cos\left(\frac{m\pi}{2}\right), y_1 = m \sin\left(\frac{m\pi}{2}\right)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct1-seca-q5
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=A
+% ct_number=1
+% question_number=5
+% topic=Differentiation
+% subtopic=Successive Differentiation
+% difficulty=Easy
+% length=Short
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT1 (Sec A) - Q5}
+Question:
+Find $n$-th derivatives of $y = \cos(5x + 2)$.
+
+Solution:
+Step 1: State the general formula for the $n$-th derivative of cosine.
+For $y = \cos(ax + b)$, the $n$-th derivative is:
+\[
+y_n = a^n \cos\left( ax + b + \frac{n\pi}{2} \right)
+\]
+
+Step 2: Substitute $a = 5$ and $b = 2$.
+\[
+y_n = 5^n \cos\left( 5x + 2 + \frac{n\pi}{2} \right)
+\]
+
+Final Answer:
+\[
+\boxed{y_n = 5^n \cos\left( 5x + 2 + \frac{n\pi}{2} \right)}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

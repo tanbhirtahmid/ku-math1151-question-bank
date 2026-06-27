@@ -26,7 +26,8 @@ const topicTaxonomy = [
   "Reduction Formula", "Definite Integration", "Beta Function",
   "Gamma Function", "Beta-Gamma Function", "Variable Separable",
   "Homogeneous", "Linear Differential Equations", "Euler's Theorem", "Partial Derivatives",
-  "Taylor Series", "Maclaurin Series"
+  "Taylor Series", "Maclaurin Series",
+  "Applications of Derivatives"
 ];
 
 // Lazy solution cache: populated during renderQuestionCard, consumed on first click

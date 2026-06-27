@@ -1,0 +1,298 @@
+% FILE: CSE-26_CT-2.tex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct2-seca-q1
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=A
+% ct_number=2
+% question_number=1
+% topic=Maxima & Minima
+% subtopic=General
+% difficulty=Medium
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec A) - Q1}
+Question:
+Distinguish between extremum points and inflection points of $f(x)=0$. Find the extremum values of $y = e^x + 2\cos x + e^{-x}$ for $0 < x < 2\pi$.
+
+Solution:
+Step 1: Distinguish between extremum points and inflection points.
+\begin{itemize}
+    \item \textbf{Extremum Point}: A point on a curve $y = f(x)$ where the function reaches a local maximum or local minimum. At an extremum point, the first derivative is zero ($f'(x) = 0$, stationary points) or undefined (critical points), and the first derivative $f'(x)$ changes its sign as it passes through the point.
+    \item \textbf{Inflection Point}: A point on a curve $y = f(x)$ where the concavity changes (i.e., the curve changes from concave up to concave down, or vice versa). At an inflection point, the second derivative is zero ($f''(x) = 0$) or undefined, and the second derivative $f''(x)$ changes its sign as it passes through the point.
+\end{itemize}
+
+Step 2: Find the stationary/critical points of $y = e^x + 2\cos x + e^{-x}$ for $0 < x < 2\pi$.
+We rewrite the function as:
+\[
+y = 2\cosh x + 2\cos x
+\]
+Differentiating with respect to $x$:
+\[
+y' = e^x - 2\sin x - e^{-x} = 2\sinh x - 2\sin x
+\]
+To find the stationary points, set $y' = 0$:
+\[
+2\sinh x - 2\sin x = 0 \implies \sinh x = \sin x
+\]
+
+Step 3: Analyze the equation $\sinh x = \sin x$ on the open interval $(0, 2\pi)$.
+For any $x > 0$, we have the inequality:
+\[
+\sinh x = x + \frac{x^3}{3!} + \frac{x^5}{5!} + \dots > x > \sin x
+\]
+Since $\sinh x > \sin x$ for all $x > 0$, there are no real solutions to $\sinh x = \sin x$ on the interval $(0, 2\pi)$.
+
+Step 4: Conclude on extremum values.
+Since there are no critical points in the open interval $(0, 2\pi)$, the function has no local extremum values on this domain.
+
+Final Answer:
+\[
+\boxed{\text{There are no extremum values for } y = e^x + 2\cos x + e^{-x} \text{ in the interval } 0 < x < 2\pi.}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct2-seca-q2
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=A
+% ct_number=2
+% question_number=2
+% topic=Applications of Derivatives
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec A) - Q2}
+Question:
+What is curvature? Find the radius of curvature of the curve $y = \frac{12}{x}$ at $(3, 4)$.
+
+Solution:
+Step 1: Define curvature and radius of curvature.
+\begin{itemize}
+    \item \textbf{Curvature} ($\kappa$): Curvature is a measure of how sharply a curve bends at a given point. For a Cartesian curve $y = f(x)$, it is defined as:
+    \[
+    \kappa = \frac{|y''|}{\left(1 + (y')^2\right)^{3/2}}
+    \]
+    \item \textbf{Radius of Curvature} ($\rho$): The radius of curvature is the reciprocal of the curvature:
+    \[
+    \rho = \frac{1}{\kappa} = \frac{\left(1 + (y')^2\right)^{3/2}}{|y''|}
+    \]
+\end{itemize}
+
+Step 2: Find the derivatives of the curve $y = \frac{12}{x}$.
+\[
+y' = \frac{d}{dx}\left(\frac{12}{x}\right) = -\frac{12}{x^2}
+\]
+\[
+y'' = \frac{d^2}{dx^2}\left(\frac{12}{x}\right) = \frac{24}{x^3}
+\]
+
+Step 3: Evaluate the derivatives at the point $(3, 4)$.
+At $x = 3$:
+\[
+y' = -\frac{12}{3^2} = -\frac{12}{9} = -\frac{4}{3}
+\]
+\[
+y'' = \frac{24}{3^3} = \frac{24}{27} = \frac{8}{9}
+\]
+
+Step 4: Compute the radius of curvature $\rho$.
+\[
+\rho = \frac{\left[1 + \left(-\frac{4}{3}\right)^2\right]^{3/2}}{\left|\frac{8}{9}\right|} = \frac{\left[1 + \frac{16}{9}\right]^{3/2}}{\frac{8}{9}}
+\]
+\[
+\rho = \frac{\left(\frac{25}{9}\right)^{3/2}}{\frac{8}{9}} = \frac{\frac{125}{27}}{\frac{8}{9}} = \frac{125}{27} \times \frac{9}{8} = \frac{125}{24}
+\]
+
+Final Answer:
+\[
+\boxed{\rho = \frac{125}{24}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct2-seca-q3
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=A
+% ct_number=2
+% question_number=3
+% topic=Applications of Derivatives
+% subtopic=Tangent & Normal
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec A) - Q3}
+Question:
+Define sub tangent and sub normal. Find the equation of tangent line and normal line at $(2, 2)$ of the curve $xy^2 = 4(4-x)$.
+
+Solution:
+Step 1: Define subtangent and subnormal.
+Let $P(x_1, y_1)$ be a point on a curve. Let the tangent and the normal drawn at $P$ intersect the $x$-axis at $T$ and $N$ respectively, and let $M$ be the projection of $P$ on the $x$-axis.
+\begin{itemize}
+    \item \textbf{Subtangent}: The segment $TM$ on the $x$-axis, whose length is given by:
+    \[
+    \text{Length of Subtangent} = \left| \frac{y_1}{y'} \right|
+    \]
+    \item \textbf{Subnormal}: The segment $MN$ on the $x$-axis, whose length is given by:
+    \[
+    \text{Length of Subnormal} = |y_1 y'|
+    \]
+\end{itemize}
+
+Step 2: Find the derivative $y'$ of the curve $xy^2 = 4(4-x)$ at $(2, 2)$.
+We can rewrite the equation as:
+\[
+xy^2 = 16 - 4x
+\]
+Differentiating implicitly with respect to $x$:
+\[
+y^2 + x \cdot 2y y' = -4
+\]
+At $(2, 2)$, substitute $x = 2$ and $y = 2$:
+\[
+(2)^2 + 2(2)(2)y' = -4 \implies 4 + 8y' = -4
+\]
+\[
+8y' = -8 \implies y' = -1
+\]
+Thus, the slope of the tangent line is $m = -1$.
+
+Step 3: Find the equation of the tangent line at $(2, 2)$.
+Using the point-slope form with $m = -1$:
+\[
+y - 2 = -1(x - 2) \implies y - 2 = -x + 2 \implies x + y - 4 = 0
+\]
+
+Step 4: Find the equation of the normal line at $(2, 2)$.
+The slope of the normal line is $m' = -\frac{1}{m} = 1$.
+Using the point-slope form with $m' = 1$:
+\[
+y - 2 = 1(x - 2) \implies y - 2 = x - 2 \implies x - y = 0
+\]
+
+Final Answer:
+\[
+\boxed{\text{Tangent: } x + y - 4 = 0, \quad \text{Normal: } x - y = 0}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct2-seca-q4
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=A
+% ct_number=2
+% question_number=4
+% topic=Partial Derivatives
+% subtopic=Euler's Theorem
+% difficulty=Hard
+% length=Long
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+\section*{CT2 (Sec A) - Q4}
+Question:
+State Euler theorem for homogeneous function of two variables with example. If $u = \ln\sqrt{x^2 + y^2 + z^2}$ then show that $(x^2 + y^2 + z^2)\left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right) = 1$.
+
+Solution:
+Step 1: State Euler's theorem for homogeneous functions.
+\begin{itemize}
+    \item \textbf{Euler's Theorem}: If $f(x, y)$ is a homogeneous function of degree $n$ in the independent variables $x$ and $y$, then:
+    \[
+    x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = n f(x, y)
+    \]
+    \item \textbf{Example}: Let $f(x, y) = x^2 + 3xy + y^2$. This is homogeneous of degree $n = 2$.
+    \begin{align*}
+        \frac{\partial f}{\partial x} = 2x + 3y &\implies x \frac{\partial f}{\partial x} = 2x^2 + 3xy \\
+        \frac{\partial f}{\partial y} = 3x + 2y &\implies y \frac{\partial f}{\partial y} = 3xy + 2y^2
+    \end{align*}
+    Summing them:
+    \[
+    x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = 2x^2 + 6xy + 2y^2 = 2(x^2 + 3xy + y^2) = 2 f(x, y)
+    \]
+    This verifies the theorem.
+\end{itemize}
+
+Step 2: Simplify the function $u = \ln\sqrt{x^2 + y^2 + z^2}$.
+\[
+u = \ln(x^2 + y^2 + z^2)^{1/2} = \frac{1}{2} \ln(x^2 + y^2 + z^2)
+\]
+
+Step 3: Calculate the first partial derivatives.
+\[
+\frac{\partial u}{\partial x} = \frac{1}{2} \cdot \frac{2x}{x^2 + y^2 + z^2} = \frac{x}{x^2 + y^2 + z^2}
+\]
+By symmetry:
+\[
+\frac{\partial u}{\partial y} = \frac{y}{x^2 + y^2 + z^2}, \quad \frac{\partial u}{\partial z} = \frac{z}{x^2 + y^2 + z^2}
+\]
+
+Step 4: Calculate the second partial derivatives.
+Differentiating $\frac{\partial u}{\partial x}$ with respect to $x$ using the quotient rule:
+\[
+\frac{\partial^2 u}{\partial x^2} = \frac{(x^2 + y^2 + z^2)(1) - x(2x)}{(x^2 + y^2 + z^2)^2} = \frac{y^2 + z^2 - x^2}{(x^2 + y^2 + z^2)^2}
+\]
+By symmetry:
+\[
+\frac{\partial^2 u}{\partial y^2} = \frac{x^2 + z^2 - y^2}{(x^2 + y^2 + z^2)^2}, \quad \frac{\partial^2 u}{\partial z^2} = \frac{x^2 + y^2 - z^2}{(x^2 + y^2 + z^2)^2}
+\]
+
+Step 5: Sum the second partial derivatives.
+\[
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} = \frac{(y^2 + z^2 - x^2) + (x^2 + z^2 - y^2) + (x^2 + y^2 - z^2)}{(x^2 + y^2 + z^2)^2}
+\]
+\[
+= \frac{x^2 + y^2 + z^2}{(x^2 + y^2 + z^2)^2} = \frac{1}{x^2 + y^2 + z^2}
+\]
+
+Step 6: Multiply both sides by $(x^2 + y^2 + z^2)$.
+\[
+(x^2 + y^2 + z^2)\left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right) = (x^2 + y^2 + z^2) \cdot \frac{1}{x^2 + y^2 + z^2} = 1
+\]
+Hence proved.
+
+Final Answer:
+\[
+\boxed{(x^2 + y^2 + z^2)\left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right) = 1}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

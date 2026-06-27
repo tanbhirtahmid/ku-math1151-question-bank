@@ -1,0 +1,289 @@
+% FILE: CSE-26_CT-1.tex
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+
+\babelfont{rm}{Noto Sans}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct1-secb-q1
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=B
+% ct_number=1
+% question_number=1
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{CT1 (Sec B) - Q1}
+Question:
+Define Beta and Gamma functions and derive their relation.
+
+Solution:
+Step 1: Define the Beta and Gamma functions.
+The Beta function, denoted by \(B(m, n)\), is defined by the definite integral:
+\[
+B(m, n) = \int_{0}^{1} x^{m-1} (1-x)^{n-1} dx \quad \text{for } m > 0, \, n > 0
+\]
+The Gamma function, denoted by \(\Gamma(n)\), is defined by the improper integral:
+\[
+\Gamma(n) = \int_{0}^{\infty} e^{-x} x^{n-1} dx \quad \text{for } n > 0
+\]
+
+Step 2: Derive the relationship between the Beta and Gamma functions.
+By definition of the Gamma function:
+\[
+\Gamma(m) = \int_{0}^{\infty} e^{-t} t^{m-1} dt
+\]
+Let \(t = x^2 \implies dt = 2x dx\). Under this substitution, the limits of integration remain \(0\) to \(\infty\):
+\[
+\Gamma(m) = \int_{0}^{\infty} e^{-x^2} (x^2)^{m-1} \cdot 2x dx = 2 \int_{0}^{\infty} e^{-x^2} x^{2m-1} dx
+\]
+Similarly, for \(\Gamma(n)\), using the substitution \(t = y^2 \implies dt = 2y dy\):
+\[
+\Gamma(n) = 2 \int_{0}^{\infty} e^{-y^2} y^{2n-1} dy
+\]
+Multiplying the two Gamma functions yields a double integral:
+\[
+\Gamma(m)\Gamma(n) = \left( 2 \int_{0}^{\infty} e^{-x^2} x^{2m-1} dx \right) \left( 2 \int_{0}^{\infty} e^{-y^2} y^{2n-1} dy \right)
+\]
+\[
+\Gamma(m)\Gamma(n) = 4 \int_{0}^{\infty} \int_{0}^{\infty} e^{-(x^2+y^2)} x^{2m-1} y^{2n-1} dx dy
+\]
+
+Step 3: Evaluate the double integral using polar coordinates.
+Let \(x = r \cos\theta\) and \(y = r \sin\theta\), so that \(x^2 + y^2 = r^2\) and the Jacobian of the transformation gives \(dx dy = r dr d\theta\).
+Since the region of integration is the first quadrant (\(x \ge 0, y \ge 0\)), the limits for \(r\) are \(0\) to \(\infty\), and the limits for \(\theta\) are \(0\) to \(\frac{\pi}{2}\).
+Substituting these into the double integral:
+\[
+\Gamma(m)\Gamma(n) = 4 \int_{0}^{\pi/2} \int_{0}^{\infty} e^{-r^2} (r \cos\theta)^{2m-1} (r \sin\theta)^{2n-1} r dr d\theta
+\]
+\[
+\Gamma(m)\Gamma(n) = 4 \int_{0}^{\pi/2} \int_{0}^{\infty} e^{-r^2} r^{2m+2n-2} \cos^{2m-1}\theta \sin^{2n-1}\theta \cdot r dr d\theta
+\]
+Separating the integrals:
+\[
+\Gamma(m)\Gamma(n) = 4 \left( \int_{0}^{\infty} e^{-r^2} r^{2(m+n)-1} dr \right) \left( \int_{0}^{\pi/2} \sin^{2n-1}\theta \cos^{2m-1}\theta d\theta \right)
+\]
+
+Step 4: Express the separated integrals in terms of Gamma and Beta functions.
+Note that the first integral corresponds to \(\frac{1}{2}\Gamma(m+n)\):
+\[
+2 \int_{0}^{\infty} e^{-r^2} r^{2(m+n)-1} dr = \Gamma(m+n) \implies \int_{0}^{\infty} e^{-r^2} r^{2(m+n)-1} dr = \frac{1}{2}\Gamma(m+n)
+\]
+The second integral is the trigonometric representation of the Beta function:
+\[
+2 \int_{0}^{\pi/2} \sin^{2n-1}\theta \cos^{2m-1}\theta d\theta = B(n, m) = B(m, n) \implies \int_{0}^{\pi/2} \sin^{2n-1}\theta \cos^{2m-1}\theta d\theta = \frac{1}{2} B(m, n)
+\]
+Substituting these results back into the equation:
+\[
+\Gamma(m)\Gamma(n) = 4 \left( \frac{1}{2}\Gamma(m+n) \right) \left( \frac{1}{2} B(m, n) \right)
+\]
+\[
+\Gamma(m)\Gamma(n) = \Gamma(m+n) B(m, n)
+\]
+Rearranging for \(B(m, n)\) gives the relation:
+\[
+B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}
+\]
+
+Final Answer:
+\[
+\boxed{B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct1-secb-q2
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=B
+% ct_number=1
+% question_number=2
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Medium
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{CT1 (Sec B) - Q2}
+Question:
+Evaluate the integral \(\int_{0}^{\infty} \sqrt{x} e^{-\sqrt[3]{x}} dx\) using the Gamma function.
+
+Solution:
+Step 1: Identify and apply an appropriate substitution.
+Let \(t = \sqrt[3]{x} = x^{1/3}\).
+Then \(x = t^3\), which gives:
+\[
+dx = 3t^2 dt
+\]
+For the limits of integration:
+As \(x \to 0\), \(t \to 0\).
+As \(x \to \infty\), \(t \to \infty\).
+
+Step 2: Transform the integral into the standard Gamma-function form.
+Substitute \(x\), \(\sqrt{x} = t^{3/2}\), and \(dx\) into the original integral:
+\[
+\int_{0}^{\infty} \sqrt{x} e^{-\sqrt[3]{x}} dx = \int_{0}^{\infty} t^{3/2} e^{-t} \cdot 3t^2 dt
+\]
+Combine the terms of \(t\):
+\[
+= 3 \int_{0}^{\infty} e^{-t} t^{7/2} dt
+\]
+
+Step 3: Evaluate using the definition of the Gamma function.
+The definition of the Gamma function is \(\Gamma(n) = \int_{0}^{\infty} e^{-t} t^{n-1} dt\).
+Comparing this with our integral, we have \(n-1 = 7/2 \implies n = 9/2\).
+Thus, the integral is:
+\[
+3 \int_{0}^{\infty} e^{-t} t^{7/2} dt = 3 \Gamma\left(\frac{9}{2}\right)
+\]
+
+Step 4: Compute the value of \(\Gamma(9/2)\).
+Using the recurrence relation \(\Gamma(n) = (n-1)\Gamma(n-1)\):
+\[
+\Gamma\left(\frac{9}{2}\right) = \frac{7}{2} \cdot \Gamma\left(\frac{7}{2}\right)
+\]
+\[
+= \frac{7}{2} \cdot \frac{5}{2} \cdot \Gamma\left(\frac{5}{2}\right)
+\]
+\[
+= \frac{7}{2} \cdot \frac{5}{2} \cdot \frac{3}{2} \cdot \Gamma\left(\frac{3}{2}\right)
+\]
+\[
+= \frac{7}{2} \cdot \frac{5}{2} \cdot \frac{3}{2} \cdot \frac{1}{2} \cdot \Gamma\left(\frac{1}{2}\right)
+\]
+Since \(\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}\):
+\[
+\Gamma\left(\frac{9}{2}\right) = \frac{105}{16}\sqrt{\pi}
+\]
+Therefore, the final value is:
+\[
+3 \cdot \frac{105}{16}\sqrt{\pi} = \frac{315}{16}\sqrt{\pi}
+\]
+
+Final Answer:
+\[
+\boxed{\frac{315}{16}\sqrt{\pi}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% id=cse26-ct1-secb-q3
+% discipline=CSE
+% year=2026
+% exam_type=CT
+% section=B
+% ct_number=1
+% question_number=3
+% topic=Definite Integration
+% subtopic=General
+% difficulty=Hard
+% length=Medium
+% question_type=New
+% frequency=1
+% appearances=
+% OCR_STATUS=VERIFIED
+
+\section*{CT1 (Sec B) - Q3}
+Question:
+Using the Beta-Gamma functions, prove that \(\int_{0}^{1} \frac{dx}{(1-x^8)^{\frac{1}{8}}} = \frac{\pi}{4\sqrt{2-\sqrt{2}}}\).
+
+Solution:
+Step 1: Apply an appropriate substitution to transform the integral into the Beta function form.
+Let \(I = \int_{0}^{1} \frac{dx}{(1-x^8)^{1/8}}\).
+Let \(x^8 = y \implies x = y^{1/8}\).
+Differentiating both sides gives:
+\[
+dx = \frac{1}{8} y^{-7/8} dy
+\]
+The limits of integration remain unchanged: when \(x = 0\), \(y = 0\) and when \(x = 1\), \(y = 1\).
+Substituting these into the integral:
+\[
+I = \int_{0}^{1} (1-y)^{-1/8} \cdot \frac{1}{8} y^{-7/8} dy = \frac{1}{8} \int_{0}^{1} y^{-7/8} (1-y)^{-1/8} dy
+\]
+
+Step 2: Express the integral in terms of Beta and Gamma functions.
+The Beta function is defined as \(B(m, n) = \int_{0}^{1} y^{m-1} (1-y)^{n-1} dy\).
+Comparing the terms:
+\[
+m - 1 = -\frac{7}{8} \implies m = \frac{1}{8}
+\]
+\[
+n - 1 = -\frac{1}{8} \implies n = \frac{7}{8}
+\]
+So, the integral is:
+\[
+I = \frac{1}{8} B\left(\frac{1}{8}, \frac{7}{8}\right)
+\]
+Using the relation \(B(m, n) = \frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}\):
+\[
+I = \frac{1}{8} \frac{\Gamma\left(\frac{1}{8}\right)\Gamma\left(\frac{7}{8}\right)}{\Gamma\left(\frac{1}{8} + \frac{7}{8}\right)} = \frac{1}{8} \frac{\Gamma\left(\frac{1}{8}\right)\Gamma\left(\frac{7}{8}\right)}{\Gamma(1)}
+\]
+Since \(\Gamma(1) = 1\):
+\[
+I = \frac{1}{8} \Gamma\left(\frac{1}{8}\right)\Gamma\left(1 - \frac{1}{8}\right)
+\]
+
+Step 3: Apply Euler's reflection formula.
+According to Euler's reflection formula, \(\Gamma(p)\Gamma(1-p) = \frac{\pi}{\sin(p\pi)}\) for \(0 < p < 1\).
+Setting \(p = \frac{1}{8}\):
+\[
+\Gamma\left(\frac{1}{8}\right)\Gamma\left(1 - \frac{1}{8}\right) = \frac{\pi}{\sin\left(\frac{\pi}{8}\right)}
+\]
+Thus, the integral is:
+\[
+I = \frac{\pi}{8 \sin\left(\frac{\pi}{8}\right)}
+\]
+
+Step 4: Evaluate \(\sin\left(\frac{\pi}{8}\right)\) and simplify the expression.
+Using the half-angle formula for sine, \(\sin^2\theta = \frac{1 - \cos(2\theta)}{2}\).
+For \(\theta = \frac{\pi}{8}\):
+\[
+\sin^2\left(\frac{\pi}{8}\right) = \frac{1 - \cos\left(\frac{\pi}{4}\right)}{2} = \frac{1 - \frac{1}{\sqrt{2}}}{2} = \frac{\sqrt{2} - 1}{2\sqrt{2}} = \frac{2 - \sqrt{2}}{4}
+\]
+Taking the positive square root since \(\frac{\pi}{8}\) is in the first quadrant:
+\[
+\sin\left(\frac{\pi}{8}\right) = \frac{\sqrt{2 - \sqrt{2}}}{2}
+\]
+Substitute this back into the expression for \(I\):
+\[
+I = \frac{\pi}{8 \left(\frac{\sqrt{2 - \sqrt{2}}}{2}\right)} = \frac{\pi}{4\sqrt{2 - \sqrt{2}}}
+\]
+Thus, we have successfully proved the given relation.
+
+Final Answer:
+\[
+\boxed{\frac{\pi}{4\sqrt{2-\sqrt{2}}}}
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION_END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
