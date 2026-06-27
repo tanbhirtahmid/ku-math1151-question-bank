@@ -22,6 +22,16 @@ code, pre, .math-container, .mjx-container {
 
 /* --- MathJax & Equation Containers --- */
 
+/* Block-level display equations ($$...$$) */
+mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0;
+}
+
 /* Force block display so overflow-x:auto actually works */
 .mjx-container {
   display: block !important;
@@ -48,13 +58,23 @@ code, pre, .math-container, .mjx-container {
 }
 
 /* Scrollable wrapper for display math */
-.overflow-x-auto {
+.overflow-x-auto,
+.math-container {
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: thin;
+}
+
+/* Flex child fix on solution and answer containers */
+.solution-container,
+.solution-container > div,
+article .prose,
+article > div {
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* Prevent page-level horizontal scroll - but NOT inside scroll containers */
@@ -76,6 +96,24 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+}
+
+/* Subtle scrollbar for equation wrappers */
+mjx-container[display="true"]::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar,
+.math-container::-webkit-scrollbar {
+  height: 3px;
+}
+mjx-container[display="true"]::-webkit-scrollbar-thumb,
+.overflow-x-auto::-webkit-scrollbar-thumb,
+.math-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+[data-theme="dark"] mjx-container[display="true"]::-webkit-scrollbar-thumb,
+[data-theme="dark"] .overflow-x-auto::-webkit-scrollbar-thumb,
+[data-theme="dark"] .math-container::-webkit-scrollbar-thumb {
+  background: #30363d;
 }
 
 /* Break long inline equations */
