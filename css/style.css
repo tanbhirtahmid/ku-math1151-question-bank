@@ -78,15 +78,6 @@ mjx-container[display="true"] {
   padding: 0.5rem 0;
 }
 
-/* Wide inline equations — scrollable inline-block, no sentence flow break */
-mjx-container:not([display="true"]) {
-  display: inline-block;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  vertical-align: middle;
-  -webkit-overflow-scrolling: touch;
-}
 
 /* Scrollable wrapper for display math */
 .overflow-x-auto,

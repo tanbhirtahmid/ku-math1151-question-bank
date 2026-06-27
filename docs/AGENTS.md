@@ -365,6 +365,6 @@ The overflow fix operates at three layers simultaneously. All three must be pres
 
 2. **Prose container**: `.solution-container p`, `li`, and `div` must have `overflow-wrap: break-word` and `max-width: 100%`. This is the safety net for mixed text+inline-math lines that are too long to fit.
 
-3. **Inline equations**: `mjx-container:not([display="true"])` must be `display: inline-block` with `overflow-x: auto` and `vertical-align: middle`. This makes wide inline equations scroll rather than overflow, without breaking normal inline rendering.
+**Never apply overflow-x: auto or display: inline-block to inline mjx-container elements.** Browsers render a scrollbar track on any element with overflow-x: auto regardless of whether content actually overflows — so applying this to inline equations creates visible scrollbars under every single equation even when they fit perfectly. Inline equations (mjx-container without display="true") should have no display or overflow overrides at all. If a line of mixed text and inline math is too wide, the paragraph container (with overflow-wrap: break-word) handles it, not the equation element itself.
 
 Never remove any of these three layers thinking the other two are sufficient — each handles a different overflow scenario. Removing any one layer will cause regressions on specific question types.
