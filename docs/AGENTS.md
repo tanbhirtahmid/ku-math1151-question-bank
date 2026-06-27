@@ -368,3 +368,11 @@ The overflow fix operates at three layers simultaneously. All three must be pres
 **Never apply overflow-x: auto or display: inline-block to inline mjx-container elements.** Browsers render a scrollbar track on any element with overflow-x: auto regardless of whether content actually overflows — so applying this to inline equations creates visible scrollbars under every single equation even when they fit perfectly. Inline equations (mjx-container without display="true") should have no display or overflow overrides at all. If a line of mixed text and inline math is too wide, the paragraph container (with overflow-wrap: break-word) handles it, not the equation element itself.
 
 Never remove any of these three layers thinking the other two are sufficient — each handles a different overflow scenario. Removing any one layer will cause regressions on specific question types.
+
+### Solution modal architecture
+
+Solutions are displayed in a full-viewport-width modal overlay, not inline inside the narrow question card. This is the permanent architectural solution to equation overflow — the modal's max-width of 820px gives block equations far more room than the ~400px card column, and the modal body is a proper scroll container.
+
+When adding new views, card types, or solution rendering logic, always render solutions through the modal system (the #solution-modal overlay in index.html, populated via solCache in app.js). Never reintroduce inline solution expand/collapse inside a card — the width constraint is what causes equation overflow in the first place.
+
+The modal handles its own MathJax typesetting (typesetPromise called on the modal element after content injection). Do not typeset the whole document — only the modal element.

@@ -198,9 +198,9 @@ function renderQuestionCard(q) {
   };
 
   return [
-    '<article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow">',
+    '<article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow" data-qid="' + q.id + '">',
       '<div class="p-6 md:p-8">',
-        '<div class="flex flex-wrap items-center gap-2 mb-6">',
+        '<div class="question-badges flex flex-wrap items-center gap-2 mb-6">',
           '<span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-wider rounded-full">' + q.discipline + ' ' + q.batch + '</span>',
           '<span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded-full">' + q.examType + ' ' + (q.examNumber || '') + ' (Sec ' + q.section + ')</span>',
           '<span class="px-3 py-1 ' + (difficultyColors[q.difficulty] || 'bg-slate-100 text-slate-600') + ' text-[10px] font-bold uppercase tracking-wider rounded-full">' + q.difficulty + '</span>',
@@ -230,7 +230,7 @@ function renderQuestionCard(q) {
             '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">',
               '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>',
             '</svg>',
-            '<span>View Step-by-Step Solution</span>',
+            '<span>View Solution</span>',
           '</button>',
           '<button class="copy-link-btn flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-blue-600 transition-colors" data-qid="' + q.id + '" title="Copy link to this question">',
             '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">',
@@ -238,7 +238,6 @@ function renderQuestionCard(q) {
             '</svg>',
             '<span>Copy link</span>',
           '</button>',
-          '<div id="sol-' + q.id + '" class="solution-container hidden mt-6 w-full space-y-6"></div>',
         '</div>',
       '</div>',
     '</article>',

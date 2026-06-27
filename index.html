@@ -138,5 +138,25 @@
   <script src="js/router.js"></script>
   <script src="js/app.js"></script>
 
+  <!-- Solution Modal Overlay -->
+  <div id="solution-modal" class="solution-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-question-label" style="display:none">
+    <div class="solution-modal-container">
+      <div class="solution-modal-header">
+        <div id="modal-question-meta" class="solution-modal-meta"></div>
+        <button id="solution-modal-close" class="solution-modal-close" aria-label="Close solution">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="solution-modal-body">
+        <div id="modal-question-content" class="solution-modal-question"></div>
+        <div class="solution-modal-divider"></div>
+        <div id="modal-solution-content" class="solution-modal-solution"></div>
+        <div id="modal-final-answer" class="solution-modal-final-answer"></div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

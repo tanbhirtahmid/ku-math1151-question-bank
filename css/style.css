@@ -98,27 +98,10 @@ div.overflow-x-auto {
   display: block !important;
 }
 
-/* Flex child fix on solution and answer containers */
-.solution-container,
-.solution-container > div {
-  min-width: 0;
-  max-width: 100%;
-  overflow: hidden; /* hard boundary — nothing escapes this box */
-}
-
 article .prose,
 article > div {
   min-width: 0;
   max-width: 100%;
-}
-
-/* Prose container word-breaking for mixed text+inline-math lines */
-.solution-container p,
-.solution-container li,
-.solution-container div {
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 /* Prevent page-level horizontal scroll - but NOT inside scroll containers */
@@ -662,6 +645,268 @@ div.overflow-x-auto::-webkit-scrollbar-thumb:hover {
 }
 [data-theme="dark"] .text-emerald-600 {
   color: #3fb950;
+}
+
+/* === Solution Modal Overlay === */
+.solution-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  /* animate in */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.solution-modal-overlay.modal-visible {
+  opacity: 1;
+}
+
+.solution-modal-container {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  width: 100%;
+  max-width: 820px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* animate in */
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.2s ease;
+}
+.solution-modal-overlay.modal-visible .solution-modal-container {
+  transform: translateY(0) scale(1);
+}
+
+.solution-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.solution-modal-meta {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #64748b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.solution-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.375rem;
+  border-radius: 0.5rem;
+  color: #94a3b8;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.solution-modal-close:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+.solution-modal-close svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.solution-modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1.75rem 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* Crucial: this is the scroll container, not the page */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* The question restatement at the top of modal */
+.solution-modal-question {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.7;
+  /* Overflow safety for question text */
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.solution-modal-divider {
+  height: 1px;
+  background: #e2e8f0;
+  flex-shrink: 0;
+}
+
+/* Solution content area */
+.solution-modal-solution {
+  color: #475569;
+  line-height: 1.8;
+  font-size: 0.9375rem;
+  /* Overflow safety — this is the critical layer */
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* All direct children of solution content */
+.solution-modal-solution p,
+.solution-modal-solution li,
+.solution-modal-solution div {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Block equations inside modal get generous scrollable space */
+.solution-modal-solution mjx-container[display="true"],
+.solution-modal-question mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 0.75rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Inline equations inside modal — no overflow override, let them be natural */
+.solution-modal-solution mjx-container:not([display="true"]),
+.solution-modal-question mjx-container:not([display="true"]) {
+  max-width: 100%;
+}
+
+/* Any .overflow-x-auto divs inside imported solution HTML */
+.solution-modal-solution .overflow-x-auto,
+.solution-modal-solution .math-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Final answer box at bottom of modal */
+.solution-modal-final-answer {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.875rem;
+  padding: 1.25rem 1.5rem;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+.solution-modal-final-answer:empty {
+  display: none;
+}
+
+/* Mobile: full screen modal on small viewports */
+@media (max-width: 640px) {
+  .solution-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .solution-modal-container {
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+  .solution-modal-body {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* Prevent body scroll when modal open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* === Dark mode for modal === */
+[data-theme="dark"] .solution-modal-container {
+  background: #161b22;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+[data-theme="dark"] .solution-modal-header {
+  border-color: #30363d;
+}
+[data-theme="dark"] .solution-modal-meta {
+  color: #8b949e;
+}
+[data-theme="dark"] .solution-modal-close {
+  color: #484f58;
+}
+[data-theme="dark"] .solution-modal-close:hover {
+  background: #1c2128;
+  color: #e6edf3;
+}
+[data-theme="dark"] .solution-modal-question {
+  color: #e6edf3;
+}
+[data-theme="dark"] .solution-modal-divider {
+  background: #30363d;
+}
+[data-theme="dark"] .solution-modal-solution {
+  color: #c9d1d9;
+}
+[data-theme="dark"] .solution-modal-final-answer {
+  background: #0d2818;
+  border-color: #238636;
+  color: #3fb950;
+}
+[data-theme="dark"] mjx-container,
+[data-theme="dark"] mjx-container * {
+  color: #e6edf3 !important;
+}
+
+/* Scrollbar inside modal body */
+.solution-modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+.solution-modal-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+[data-theme="dark"] .solution-modal-body::-webkit-scrollbar-thumb {
+  background: #30363d;
+}
+
+/* Horizontal scrollbar on block equations inside modal */
+.solution-modal-solution mjx-container[display="true"]::-webkit-scrollbar,
+.solution-modal-solution .overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+.solution-modal-solution mjx-container[display="true"]::-webkit-scrollbar-thumb,
+.solution-modal-solution .overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+  min-width: 40px;
+}
+.solution-modal-solution mjx-container[display="true"]::-webkit-scrollbar-thumb:hover,
+.solution-modal-solution .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+[data-theme="dark"] .solution-modal-solution mjx-container[display="true"]::-webkit-scrollbar-thumb,
+[data-theme="dark"] .solution-modal-solution .overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #30363d;
 }
 
 /* Mobile search bar */

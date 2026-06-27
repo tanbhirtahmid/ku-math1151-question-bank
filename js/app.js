@@ -119,45 +119,49 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // --- Solution Toggle (lazy load) ---
+    // --- Solution Modal (open overlay) ---
     const solBtn = e.target.closest('.toggle-solution-btn');
     if (solBtn) {
       const qid = solBtn.dataset.qid;
-      const target = document.getElementById('sol-' + qid);
-      if (!target) return;
-      const icon = solBtn.querySelector('svg');
-      const span = solBtn.querySelector('span');
+      const data = solCache[qid];
+      if (!data) return;
 
-      if (target.classList.contains('hidden')) {
-        // Lazy-load solution HTML on first open
-        if (!target.dataset.loaded) {
-          const data = solCache[qid];
-          if (data) {
-            target.innerHTML =
-              '<div class="p-6 md:p-8 bg-slate-50 rounded-2xl border border-slate-100 text-slate-700 leading-relaxed">' +
-                data.solutionHtml +
-              '</div>' +
-              (data.finalAnswerHtml
-                ? '<div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-100 text-emerald-900">' +
-                    '<h4 class="text-sm font-bold uppercase tracking-widest text-emerald-600 mb-2">Final Answer</h4>' +
-                    data.finalAnswerHtml +
-                  '</div>'
-                : '');
-          }
-          target.dataset.loaded = 'true';
-          // Typeset only the newly inserted content
-          if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise([target]);
-          }
-        }
-        target.classList.remove('hidden');
-        if (icon) icon.classList.add('rotate-180');
-        if (span) span.textContent = 'Hide Solution';
-      } else {
-        target.classList.add('hidden');
-        if (icon) icon.classList.remove('rotate-180');
-        if (span) span.textContent = 'View Step-by-Step Solution';
+      const modal = document.getElementById('solution-modal');
+      const modalMeta = document.getElementById('modal-question-meta');
+      const modalQuestion = document.getElementById('modal-question-content');
+      const modalSolution = document.getElementById('modal-solution-content');
+      const modalFinal = document.getElementById('modal-final-answer');
+
+      // Find the question card to pull meta badges HTML
+      const card = document.querySelector('article[data-qid="' + qid + '"]');
+      modalMeta.innerHTML = card ? card.querySelector('.question-badges').innerHTML : '';
+
+      // Restate the question at top of modal
+      const questionEl = card ? card.querySelector('.question-text') : null;
+      modalQuestion.innerHTML = questionEl ? questionEl.innerHTML : '';
+
+      // Inject solution
+      modalSolution.innerHTML = data.solutionHtml || '';
+
+      // Inject final answer if present
+      modalFinal.innerHTML = data.finalAnswerHtml
+        ? '<div class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3">Final Answer</div>' + data.finalAnswerHtml
+        : '';
+
+      // Show modal
+      modal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+
+      // Animate in on next frame
+      requestAnimationFrame(function() {
+        modal.classList.add('modal-visible');
+      });
+
+      // Typeset MathJax inside modal only
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([modal]);
       }
+
       return;
     }
 
@@ -242,6 +246,32 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+
+  // Close modal on X button
+  document.getElementById('solution-modal-close').addEventListener('click', closeModal);
+
+  // Close modal on overlay backdrop click
+  document.getElementById('solution-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  function closeModal() {
+    var modal = document.getElementById('solution-modal');
+    modal.classList.remove('modal-visible');
+    setTimeout(function() {
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+      // Clear contents so MathJax doesn't re-process stale content
+      document.getElementById('modal-solution-content').innerHTML = '';
+      document.getElementById('modal-final-answer').innerHTML = '';
+      document.getElementById('modal-question-content').innerHTML = '';
+    }, 200); // matches the CSS transition duration
+  }
 
   // --- 3. Initial Load ---
   renderApp();
